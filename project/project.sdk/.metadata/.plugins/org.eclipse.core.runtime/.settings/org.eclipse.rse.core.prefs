@@ -1,0 +1,4 @@
+activeuserprofiles=HEP-PC;Team
+eclipse.preferences.version=1
+org.eclipse.rse.systemtype.local.systemType.defaultUserId=HEP
+useridperkey=HEP-PC.Local\=HEP;

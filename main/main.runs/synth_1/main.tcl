@@ -28,10 +28,13 @@ set_property parent.project_path C:/Users/HEP/Documents/universefactory/main/mai
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part em.avnet.com:microzed_7010:part0:1.1 [current_project]
-set_property ip_repo_paths c:/users/hep/documents/universefactory/main/main.srcs [current_project]
+set_property ip_repo_paths c:/Users/HEP/Documents/universefactory/main/main.srcs [current_project]
 set_property ip_output_repo c:/Users/HEP/Documents/universefactory/main/main.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_verilog -library xil_defaultlib C:/Users/HEP/Documents/universefactory/main/main.srcs/sources_1/new/main.v
+read_verilog -library xil_defaultlib {
+  C:/Users/HEP/Documents/universefactory/main/main.srcs/sources_1/new/housekeeping.v
+  C:/Users/HEP/Documents/universefactory/main/main.srcs/sources_1/new/main.v
+}
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be

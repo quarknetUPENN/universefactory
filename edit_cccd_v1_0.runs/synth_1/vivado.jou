@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Tue Jun 26 13:52:25 2018
+# Process ID: 3136
+# Current directory: c:/Users/HEP/Documents/universefactory/edit_cccd_v1_0.runs/synth_1
+# Command line: vivado.exe -log cccd_v1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cccd_v1_0.tcl
+# Log file: c:/Users/HEP/Documents/universefactory/edit_cccd_v1_0.runs/synth_1/cccd_v1_0.vds
+# Journal file: c:/Users/HEP/Documents/universefactory/edit_cccd_v1_0.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source cccd_v1_0.tcl -notrace

@@ -170,6 +170,40 @@ proc create_root_design { parentCell } {
   set DTMROC_HARD_N [ create_bd_port -dir O DTMROC_HARD_N ]
   set DTMROC_HARD_P [ create_bd_port -dir O DTMROC_HARD_P ]
 
+  # Create instance: axi_interconnect_0, and set properties
+  set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
+  set_property -dict [ list \
+   CONFIG.NUM_MI {1} \
+ ] $axi_interconnect_0
+
+  # Create instance: cccd_0, and set properties
+  set cccd_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:cccd:1.0 cccd_0 ]
+
+  # Create instance: ila_0, and set properties
+  set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
+  set_property -dict [ list \
+   CONFIG.ALL_PROBE_SAME_MU {false} \
+   CONFIG.ALL_PROBE_SAME_MU_CNT {16} \
+   CONFIG.C_ADV_TRIGGER {true} \
+   CONFIG.C_ENABLE_ILA_AXI_MON {false} \
+   CONFIG.C_EN_STRG_QUAL {1} \
+   CONFIG.C_MONITOR_TYPE {Native} \
+   CONFIG.C_NUM_OF_PROBES {7} \
+   CONFIG.C_PROBE0_MU_CNT {16} \
+   CONFIG.C_PROBE0_WIDTH {1} \
+   CONFIG.C_PROBE1_MU_CNT {16} \
+   CONFIG.C_PROBE1_WIDTH {1} \
+   CONFIG.C_PROBE2_MU_CNT {16} \
+   CONFIG.C_PROBE2_WIDTH {1} \
+   CONFIG.C_PROBE3_MU_CNT {16} \
+   CONFIG.C_PROBE3_WIDTH {27} \
+   CONFIG.C_PROBE4_MU_CNT {16} \
+   CONFIG.C_PROBE4_WIDTH {2} \
+   CONFIG.C_PROBE5_MU_CNT {16} \
+   CONFIG.C_PROBE5_WIDTH {159} \
+   CONFIG.C_PROBE6_MU_CNT {16} \
+ ] $ila_0
+
   # Create instance: main_0, and set properties
   set main_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:main:1.0 main_0 ]
 
@@ -624,33 +658,45 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_USB1_RESET_ENABLE {0} \
    CONFIG.PCW_USB_RESET_ENABLE {1} \
    CONFIG.PCW_USB_RESET_SELECT {Share reset pin} \
-   CONFIG.PCW_USE_M_AXI_GP0 {0} \
+   CONFIG.PCW_USE_M_AXI_GP0 {1} \
    CONFIG.PCW_USE_M_AXI_GP1 {0} \
+   CONFIG.PCW_USE_S_AXI_GP0 {0} \
  ] $processing_system7_0
 
   # Create instance: util_ds_buf_1, and set properties
   set util_ds_buf_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.1 util_ds_buf_1 ]
 
   # Create interface connections
+  connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins cccd_0/S00_AXI]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
+  connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins axi_interconnect_0/S00_AXI] [get_bd_intf_pins processing_system7_0/M_AXI_GP0]
 
   # Create port connections
   connect_bd_net -net DTMROC_CMD_OUT_N_1 [get_bd_ports DTMROC_CMD_OUT_N] [get_bd_pins util_ds_buf_1/IBUF_DS_N]
   connect_bd_net -net DTMROC_CMD_OUT_P_1 [get_bd_ports DTMROC_CMD_OUT_P] [get_bd_pins util_ds_buf_1/IBUF_DS_P]
   connect_bd_net -net DTMROC_DATA_OUT_1 [get_bd_ports DTMROC_DATA_OUT] [get_bd_pins main_0/dtm_data_out]
+  connect_bd_net -net Net [get_bd_pins cccd_0/done] [get_bd_pins ila_0/probe4] [get_bd_pins main_0/done]
+  connect_bd_net -net cccd_0_field6 [get_bd_pins cccd_0/field6] [get_bd_pins main_0/field6]
+  connect_bd_net -net cccd_0_field15 [get_bd_pins cccd_0/field15] [get_bd_pins ila_0/probe3] [get_bd_pins main_0/field15]
+  connect_bd_net -net cccd_0_trigger [get_bd_pins cccd_0/trigger] [get_bd_pins ila_0/probe2] [get_bd_pins main_0/trigger]
   connect_bd_net -net main_0_clkbx_n [get_bd_ports DTMROC_BX_N] [get_bd_pins main_0/clkbx_n]
   connect_bd_net -net main_0_clkbx_p [get_bd_ports DTMROC_BX_P] [get_bd_pins main_0/clkbx_p]
+  connect_bd_net -net main_0_cmd_in_tp [get_bd_pins ila_0/probe0] [get_bd_pins main_0/cmd_in_tp]
+  connect_bd_net -net main_0_datagood [get_bd_pins ila_0/probe6] [get_bd_pins main_0/datagood]
   connect_bd_net -net main_0_dtm_cmd_in_n [get_bd_ports DTMROC_CMD_IN_N] [get_bd_pins main_0/dtm_cmd_in_n]
   connect_bd_net -net main_0_dtm_cmd_in_p [get_bd_ports DTMROC_CMD_IN_P] [get_bd_pins main_0/dtm_cmd_in_p]
   connect_bd_net -net main_0_dtm_hard_n [get_bd_ports DTMROC_HARD_N] [get_bd_pins main_0/dtm_hard_n]
   connect_bd_net -net main_0_dtm_hard_p [get_bd_ports DTMROC_HARD_P] [get_bd_pins main_0/dtm_hard_p]
-  connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins main_0/rst_n] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins main_0/clk40] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+  connect_bd_net -net main_0_received_data [get_bd_pins cccd_0/received_data] [get_bd_pins ila_0/probe5] [get_bd_pins main_0/received_data]
+  connect_bd_net -net proc_sys_reset_0_interconnect_aresetn [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins proc_sys_reset_0/interconnect_aresetn]
+  connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins cccd_0/s00_axi_aresetn] [get_bd_pins main_0/rst_n] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins cccd_0/s00_axi_aclk] [get_bd_pins ila_0/clk] [get_bd_pins main_0/clk40] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins proc_sys_reset_0/ext_reset_in] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
-  connect_bd_net -net util_ds_buf_1_IBUF_OUT [get_bd_pins main_0/dtm_cmd_out] [get_bd_pins util_ds_buf_1/IBUF_OUT]
+  connect_bd_net -net util_ds_buf_1_IBUF_OUT [get_bd_pins ila_0/probe1] [get_bd_pins main_0/dtm_cmd_out] [get_bd_pins util_ds_buf_1/IBUF_OUT]
 
   # Create address segments
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs cccd_0/S00_AXI/S00_AXI_reg] SEG_cccd_0_S00_AXI_reg
 
 
   # Restore current instance
