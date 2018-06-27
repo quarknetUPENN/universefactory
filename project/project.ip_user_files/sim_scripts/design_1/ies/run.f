@@ -47,8 +47,8 @@
   "../../../bd/design_1/ip/design_1_util_ds_buf_1_0/sim/design_1_util_ds_buf_1_0.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../bd/design_1/ipshared/b2f2/sources_1/new/housekeeping.v" \
-  "../../../bd/design_1/ipshared/b2f2/sources_1/new/main.v" \
+  "../../../bd/design_1/ipshared/ddbf/sources_1/new/housekeeping.v" \
+  "../../../bd/design_1/ipshared/ddbf/sources_1/new/main.v" \
   "../../../bd/design_1/ip/design_1_main_0_0/sim/design_1_main_0_0.v" \
   "../../../bd/design_1/ipshared/9a25/hdl/cccd_v1_0_S00_AXI.v" \
   "../../../bd/design_1/ipshared/9a25/hdl/cccd_v1_0.v" \

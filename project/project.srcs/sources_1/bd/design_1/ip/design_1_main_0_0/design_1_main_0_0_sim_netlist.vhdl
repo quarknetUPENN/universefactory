@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
--- Date        : Wed Jun 27 11:20:33 2018
+-- Date        : Wed Jun 27 16:55:32 2018
 -- Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 -- Command     : write_vhdl -force -mode funcsim
 --               C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_main_0_0/design_1_main_0_0_sim_netlist.vhdl
@@ -136,12 +136,12 @@ architecture STRUCTURE of design_1_main_0_0_main is
   signal \data_cntr[0]_i_15_n_0\ : STD_LOGIC;
   signal \data_cntr[0]_i_16_n_0\ : STD_LOGIC;
   signal \data_cntr[0]_i_17_n_0\ : STD_LOGIC;
-  signal \data_cntr[0]_i_19_n_0\ : STD_LOGIC;
+  signal \data_cntr[0]_i_18_n_0\ : STD_LOGIC;
   signal \data_cntr[0]_i_1_n_0\ : STD_LOGIC;
   signal \data_cntr[0]_i_20_n_0\ : STD_LOGIC;
   signal \data_cntr[0]_i_21_n_0\ : STD_LOGIC;
   signal \data_cntr[0]_i_22_n_0\ : STD_LOGIC;
-  signal \data_cntr[0]_i_24_n_0\ : STD_LOGIC;
+  signal \data_cntr[0]_i_23_n_0\ : STD_LOGIC;
   signal \data_cntr[0]_i_25_n_0\ : STD_LOGIC;
   signal \data_cntr[0]_i_26_n_0\ : STD_LOGIC;
   signal \data_cntr[0]_i_27_n_0\ : STD_LOGIC;
@@ -152,6 +152,7 @@ architecture STRUCTURE of design_1_main_0_0_main is
   signal \data_cntr[0]_i_32_n_0\ : STD_LOGIC;
   signal \data_cntr[0]_i_33_n_0\ : STD_LOGIC;
   signal \data_cntr[0]_i_34_n_0\ : STD_LOGIC;
+  signal \data_cntr[0]_i_35_n_0\ : STD_LOGIC;
   signal \data_cntr[0]_i_4_n_0\ : STD_LOGIC;
   signal \data_cntr[0]_i_5_n_0\ : STD_LOGIC;
   signal \data_cntr[0]_i_6_n_0\ : STD_LOGIC;
@@ -218,14 +219,14 @@ architecture STRUCTURE of design_1_main_0_0_main is
   signal \data_cntr_reg[0]_i_12_n_1\ : STD_LOGIC;
   signal \data_cntr_reg[0]_i_12_n_2\ : STD_LOGIC;
   signal \data_cntr_reg[0]_i_12_n_3\ : STD_LOGIC;
-  signal \data_cntr_reg[0]_i_18_n_0\ : STD_LOGIC;
-  signal \data_cntr_reg[0]_i_18_n_1\ : STD_LOGIC;
-  signal \data_cntr_reg[0]_i_18_n_2\ : STD_LOGIC;
-  signal \data_cntr_reg[0]_i_18_n_3\ : STD_LOGIC;
-  signal \data_cntr_reg[0]_i_23_n_0\ : STD_LOGIC;
-  signal \data_cntr_reg[0]_i_23_n_1\ : STD_LOGIC;
-  signal \data_cntr_reg[0]_i_23_n_2\ : STD_LOGIC;
-  signal \data_cntr_reg[0]_i_23_n_3\ : STD_LOGIC;
+  signal \data_cntr_reg[0]_i_19_n_0\ : STD_LOGIC;
+  signal \data_cntr_reg[0]_i_19_n_1\ : STD_LOGIC;
+  signal \data_cntr_reg[0]_i_19_n_2\ : STD_LOGIC;
+  signal \data_cntr_reg[0]_i_19_n_3\ : STD_LOGIC;
+  signal \data_cntr_reg[0]_i_24_n_0\ : STD_LOGIC;
+  signal \data_cntr_reg[0]_i_24_n_1\ : STD_LOGIC;
+  signal \data_cntr_reg[0]_i_24_n_2\ : STD_LOGIC;
+  signal \data_cntr_reg[0]_i_24_n_3\ : STD_LOGIC;
   signal \data_cntr_reg[0]_i_2_n_0\ : STD_LOGIC;
   signal \data_cntr_reg[0]_i_2_n_1\ : STD_LOGIC;
   signal \data_cntr_reg[0]_i_2_n_2\ : STD_LOGIC;
@@ -234,6 +235,7 @@ architecture STRUCTURE of design_1_main_0_0_main is
   signal \data_cntr_reg[0]_i_2_n_5\ : STD_LOGIC;
   signal \data_cntr_reg[0]_i_2_n_6\ : STD_LOGIC;
   signal \data_cntr_reg[0]_i_2_n_7\ : STD_LOGIC;
+  signal \data_cntr_reg[0]_i_3_n_1\ : STD_LOGIC;
   signal \data_cntr_reg[0]_i_3_n_2\ : STD_LOGIC;
   signal \data_cntr_reg[0]_i_3_n_3\ : STD_LOGIC;
   signal \data_cntr_reg[12]_i_1_n_0\ : STD_LOGIC;
@@ -733,9 +735,8 @@ architecture STRUCTURE of design_1_main_0_0_main is
   signal \received_data[158]_i_6_n_0\ : STD_LOGIC;
   signal \received_data[158]_i_7_n_0\ : STD_LOGIC;
   signal \NLW_data_cntr_reg[0]_i_12_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_data_cntr_reg[0]_i_18_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_data_cntr_reg[0]_i_23_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_data_cntr_reg[0]_i_3_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal \NLW_data_cntr_reg[0]_i_19_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW_data_cntr_reg[0]_i_24_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_data_cntr_reg[0]_i_3_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_data_cntr_reg[28]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   signal \NLW_done_reg[1]_i_12_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -755,8 +756,8 @@ architecture STRUCTURE of design_1_main_0_0_main is
   attribute BOX_TYPE of RD_CLK_DELAY_1 : label is "PRIMITIVE";
   attribute BOX_TYPE of RD_CLK_DELAY_2 : label is "PRIMITIVE";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \data_cntr[0]_i_16\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \data_cntr[0]_i_17\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \data_cntr[0]_i_17\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \data_cntr[0]_i_18\ : label is "soft_lutpair20";
   attribute SOFT_HLUTNM of \data_size[1]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \data_size[3]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \data_size[4]_i_1\ : label is "soft_lutpair5";
@@ -2611,7 +2612,7 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
     )
         port map (
       I0 => data_cntr_reg(1),
-      I1 => \data_cntr[0]_i_17_n_0\,
+      I1 => \data_cntr[0]_i_18_n_0\,
       I2 => field15(0),
       I3 => field15(2),
       I4 => field15(1),
@@ -2654,7 +2655,16 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
       I1 => msgcntr_reg(26),
       O => \data_cntr[0]_i_15_n_0\
     );
-\data_cntr[0]_i_16\: unisim.vcomponents.LUT3
+\data_cntr[0]_i_16\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => msgcntr_reg(25),
+      I1 => msgcntr_reg(24),
+      O => \data_cntr[0]_i_16_n_0\
+    );
+\data_cntr[0]_i_17\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"61"
     )
@@ -2662,25 +2672,16 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
       I0 => field15(2),
       I1 => field15(3),
       I2 => field15(4),
-      O => \data_cntr[0]_i_16_n_0\
+      O => \data_cntr[0]_i_17_n_0\
     );
-\data_cntr[0]_i_17\: unisim.vcomponents.LUT2
+\data_cntr[0]_i_18\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"E"
     )
         port map (
       I0 => field15(4),
       I1 => field15(3),
-      O => \data_cntr[0]_i_17_n_0\
-    );
-\data_cntr[0]_i_19\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => msgcntr_reg(25),
-      I1 => msgcntr_reg(24),
-      O => \data_cntr[0]_i_19_n_0\
+      O => \data_cntr[0]_i_18_n_0\
     );
 \data_cntr[0]_i_20\: unisim.vcomponents.LUT2
     generic map(
@@ -2709,14 +2710,14 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
       I1 => msgcntr_reg(18),
       O => \data_cntr[0]_i_22_n_0\
     );
-\data_cntr[0]_i_24\: unisim.vcomponents.LUT2
+\data_cntr[0]_i_23\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => msgcntr_reg(17),
       I1 => msgcntr_reg(16),
-      O => \data_cntr[0]_i_24_n_0\
+      O => \data_cntr[0]_i_23_n_0\
     );
 \data_cntr[0]_i_25\: unisim.vcomponents.LUT2
     generic map(
@@ -2745,21 +2746,21 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
       I1 => msgcntr_reg(10),
       O => \data_cntr[0]_i_27_n_0\
     );
-\data_cntr[0]_i_28\: unisim.vcomponents.LUT1
+\data_cntr[0]_i_28\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => msgcntr_reg(8),
+      I1 => msgcntr_reg(9),
+      O => \data_cntr[0]_i_28_n_0\
+    );
+\data_cntr[0]_i_29\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => msgcntr_reg(7),
-      O => \data_cntr[0]_i_28_n_0\
-    );
-\data_cntr[0]_i_29\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => msgcntr_reg(5),
-      I1 => msgcntr_reg(4),
       O => \data_cntr[0]_i_29_n_0\
     );
 \data_cntr[0]_i_30\: unisim.vcomponents.LUT2
@@ -2767,8 +2768,8 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
       INIT => X"1"
     )
         port map (
-      I0 => msgcntr_reg(2),
-      I1 => msgcntr_reg(3),
+      I0 => msgcntr_reg(5),
+      I1 => msgcntr_reg(4),
       O => \data_cntr[0]_i_30_n_0\
     );
 \data_cntr[0]_i_31\: unisim.vcomponents.LUT2
@@ -2776,8 +2777,8 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
       INIT => X"1"
     )
         port map (
-      I0 => msgcntr_reg(8),
-      I1 => msgcntr_reg(9),
+      I0 => msgcntr_reg(2),
+      I1 => msgcntr_reg(3),
       O => \data_cntr[0]_i_31_n_0\
     );
 \data_cntr[0]_i_32\: unisim.vcomponents.LUT2
@@ -2807,12 +2808,21 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
       I1 => msgcntr_reg(3),
       O => \data_cntr[0]_i_34_n_0\
     );
+\data_cntr[0]_i_35\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => msgcntr_reg(1),
+      I1 => msgcntr_reg(0),
+      O => \data_cntr[0]_i_35_n_0\
+    );
 \data_cntr[0]_i_4\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"02FF0200"
     )
         port map (
-      I0 => \data_cntr[0]_i_16_n_0\,
+      I0 => \data_cntr[0]_i_17_n_0\,
       I1 => field15(1),
       I2 => field15(0),
       I3 => \done_reg[1]_i_3_n_1\,
@@ -2827,7 +2837,7 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
       I0 => field15(1),
       I1 => field15(2),
       I2 => field15(0),
-      I3 => \data_cntr[0]_i_17_n_0\,
+      I3 => \data_cntr[0]_i_18_n_0\,
       I4 => \done_reg[1]_i_3_n_1\,
       I5 => data_cntr_reg(2),
       O => \data_cntr[0]_i_5_n_0\
@@ -2840,7 +2850,7 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
       I0 => field15(1),
       I1 => field15(2),
       I2 => field15(0),
-      I3 => \data_cntr[0]_i_17_n_0\,
+      I3 => \data_cntr[0]_i_18_n_0\,
       I4 => \done_reg[1]_i_3_n_1\,
       I5 => data_cntr_reg(1),
       O => \data_cntr[0]_i_6_n_0\
@@ -2862,7 +2872,7 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
       I0 => data_cntr_reg(3),
       I1 => field15(0),
       I2 => field15(1),
-      I3 => \data_cntr[0]_i_16_n_0\,
+      I3 => \data_cntr[0]_i_17_n_0\,
       I4 => \done_reg[1]_i_3_n_1\,
       O => \data_cntr[0]_i_8_n_0\
     );
@@ -2872,7 +2882,7 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
     )
         port map (
       I0 => data_cntr_reg(2),
-      I1 => \data_cntr[0]_i_17_n_0\,
+      I1 => \data_cntr[0]_i_18_n_0\,
       I2 => field15(0),
       I3 => field15(2),
       I4 => field15(1),
@@ -3257,7 +3267,7 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
       I0 => field15(2),
       I1 => field15(1),
       I2 => field15(0),
-      I3 => \data_cntr[0]_i_17_n_0\,
+      I3 => \data_cntr[0]_i_18_n_0\,
       I4 => \done_reg[1]_i_3_n_1\,
       I5 => data_cntr_reg(5),
       O => \data_cntr[4]_i_4_n_0\
@@ -3297,7 +3307,7 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
     )
         port map (
       I0 => data_cntr_reg(5),
-      I1 => \data_cntr[0]_i_17_n_0\,
+      I1 => \data_cntr[0]_i_18_n_0\,
       I2 => field15(0),
       I3 => field15(1),
       I4 => field15(2),
@@ -3399,7 +3409,7 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
     );
 \data_cntr_reg[0]_i_12\: unisim.vcomponents.CARRY4
      port map (
-      CI => \data_cntr_reg[0]_i_18_n_0\,
+      CI => \data_cntr_reg[0]_i_19_n_0\,
       CO(3) => \data_cntr_reg[0]_i_12_n_0\,
       CO(2) => \data_cntr_reg[0]_i_12_n_1\,
       CO(1) => \data_cntr_reg[0]_i_12_n_2\,
@@ -3407,25 +3417,25 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
       CYINIT => '0',
       DI(3 downto 0) => B"0000",
       O(3 downto 0) => \NLW_data_cntr_reg[0]_i_12_O_UNCONNECTED\(3 downto 0),
-      S(3) => \data_cntr[0]_i_19_n_0\,
-      S(2) => \data_cntr[0]_i_20_n_0\,
-      S(1) => \data_cntr[0]_i_21_n_0\,
-      S(0) => \data_cntr[0]_i_22_n_0\
+      S(3) => \data_cntr[0]_i_20_n_0\,
+      S(2) => \data_cntr[0]_i_21_n_0\,
+      S(1) => \data_cntr[0]_i_22_n_0\,
+      S(0) => \data_cntr[0]_i_23_n_0\
     );
-\data_cntr_reg[0]_i_18\: unisim.vcomponents.CARRY4
+\data_cntr_reg[0]_i_19\: unisim.vcomponents.CARRY4
      port map (
-      CI => \data_cntr_reg[0]_i_23_n_0\,
-      CO(3) => \data_cntr_reg[0]_i_18_n_0\,
-      CO(2) => \data_cntr_reg[0]_i_18_n_1\,
-      CO(1) => \data_cntr_reg[0]_i_18_n_2\,
-      CO(0) => \data_cntr_reg[0]_i_18_n_3\,
+      CI => \data_cntr_reg[0]_i_24_n_0\,
+      CO(3) => \data_cntr_reg[0]_i_19_n_0\,
+      CO(2) => \data_cntr_reg[0]_i_19_n_1\,
+      CO(1) => \data_cntr_reg[0]_i_19_n_2\,
+      CO(0) => \data_cntr_reg[0]_i_19_n_3\,
       CYINIT => '0',
       DI(3 downto 0) => B"0000",
-      O(3 downto 0) => \NLW_data_cntr_reg[0]_i_18_O_UNCONNECTED\(3 downto 0),
-      S(3) => \data_cntr[0]_i_24_n_0\,
-      S(2) => \data_cntr[0]_i_25_n_0\,
-      S(1) => \data_cntr[0]_i_26_n_0\,
-      S(0) => \data_cntr[0]_i_27_n_0\
+      O(3 downto 0) => \NLW_data_cntr_reg[0]_i_19_O_UNCONNECTED\(3 downto 0),
+      S(3) => \data_cntr[0]_i_25_n_0\,
+      S(2) => \data_cntr[0]_i_26_n_0\,
+      S(1) => \data_cntr[0]_i_27_n_0\,
+      S(0) => \data_cntr[0]_i_28_n_0\
     );
 \data_cntr_reg[0]_i_2\: unisim.vcomponents.CARRY4
      port map (
@@ -3448,40 +3458,39 @@ RD_CLK_DELAY_2: unisim.vcomponents.FDCE
       S(1) => \data_cntr[0]_i_10_n_0\,
       S(0) => \data_cntr[0]_i_11_n_0\
     );
-\data_cntr_reg[0]_i_23\: unisim.vcomponents.CARRY4
+\data_cntr_reg[0]_i_24\: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
-      CO(3) => \data_cntr_reg[0]_i_23_n_0\,
-      CO(2) => \data_cntr_reg[0]_i_23_n_1\,
-      CO(1) => \data_cntr_reg[0]_i_23_n_2\,
-      CO(0) => \data_cntr_reg[0]_i_23_n_3\,
-      CYINIT => '0',
-      DI(3) => '0',
-      DI(2) => \data_cntr[0]_i_28_n_0\,
-      DI(1) => \data_cntr[0]_i_29_n_0\,
-      DI(0) => \data_cntr[0]_i_30_n_0\,
-      O(3 downto 0) => \NLW_data_cntr_reg[0]_i_23_O_UNCONNECTED\(3 downto 0),
-      S(3) => \data_cntr[0]_i_31_n_0\,
-      S(2) => \data_cntr[0]_i_32_n_0\,
-      S(1) => \data_cntr[0]_i_33_n_0\,
-      S(0) => \data_cntr[0]_i_34_n_0\
+      CO(3) => \data_cntr_reg[0]_i_24_n_0\,
+      CO(2) => \data_cntr_reg[0]_i_24_n_1\,
+      CO(1) => \data_cntr_reg[0]_i_24_n_2\,
+      CO(0) => \data_cntr_reg[0]_i_24_n_3\,
+      CYINIT => '1',
+      DI(3) => \data_cntr[0]_i_29_n_0\,
+      DI(2) => \data_cntr[0]_i_30_n_0\,
+      DI(1) => \data_cntr[0]_i_31_n_0\,
+      DI(0) => '0',
+      O(3 downto 0) => \NLW_data_cntr_reg[0]_i_24_O_UNCONNECTED\(3 downto 0),
+      S(3) => \data_cntr[0]_i_32_n_0\,
+      S(2) => \data_cntr[0]_i_33_n_0\,
+      S(1) => \data_cntr[0]_i_34_n_0\,
+      S(0) => \data_cntr[0]_i_35_n_0\
     );
 \data_cntr_reg[0]_i_3\: unisim.vcomponents.CARRY4
      port map (
       CI => \data_cntr_reg[0]_i_12_n_0\,
-      CO(3) => \NLW_data_cntr_reg[0]_i_3_CO_UNCONNECTED\(3),
-      CO(2) => data_cntr1,
+      CO(3) => data_cntr1,
+      CO(2) => \data_cntr_reg[0]_i_3_n_1\,
       CO(1) => \data_cntr_reg[0]_i_3_n_2\,
       CO(0) => \data_cntr_reg[0]_i_3_n_3\,
       CYINIT => '0',
-      DI(3) => '0',
-      DI(2) => msgcntr_reg(31),
-      DI(1 downto 0) => B"00",
+      DI(3) => msgcntr_reg(31),
+      DI(2 downto 0) => B"000",
       O(3 downto 0) => \NLW_data_cntr_reg[0]_i_3_O_UNCONNECTED\(3 downto 0),
-      S(3) => '0',
-      S(2) => \data_cntr[0]_i_13_n_0\,
-      S(1) => \data_cntr[0]_i_14_n_0\,
-      S(0) => \data_cntr[0]_i_15_n_0\
+      S(3) => \data_cntr[0]_i_13_n_0\,
+      S(2) => \data_cntr[0]_i_14_n_0\,
+      S(1) => \data_cntr[0]_i_15_n_0\,
+      S(0) => \data_cntr[0]_i_16_n_0\
     );
 \data_cntr_reg[10]\: unisim.vcomponents.FDRE
     generic map(

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Wed Jun 27 11:28:59 2018
+| Date         : Wed Jun 27 17:05:47 2018
 | Host         : HEP-PC running 64-bit Service Pack 1  (build 7601)
 | Command      : report_utilization -file design_1_wrapper_utilization_placed.rpt -pb design_1_wrapper_utilization_placed.pb
 | Design       : design_1_wrapper
@@ -69,13 +69,13 @@ Table of Contents
 +-------------------------------------------+------+-------+-----------+-------+
 |                 Site Type                 | Used | Fixed | Available | Util% |
 +-------------------------------------------+------+-------+-----------+-------+
-| Slice                                     | 4079 |     0 |      4400 | 92.70 |
-|   SLICEL                                  | 2588 |     0 |           |       |
-|   SLICEM                                  | 1491 |     0 |           |       |
+| Slice                                     | 4161 |     0 |      4400 | 94.57 |
+|   SLICEL                                  | 2665 |     0 |           |       |
+|   SLICEM                                  | 1496 |     0 |           |       |
 | LUT as Logic                              | 6911 |     0 |     17600 | 39.27 |
 |   using O5 output only                    |    0 |       |           |       |
-|   using O6 output only                    | 5891 |       |           |       |
-|   using O5 and O6                         | 1020 |       |           |       |
+|   using O6 output only                    | 5890 |       |           |       |
+|   using O5 and O6                         | 1021 |       |           |       |
 | LUT as Memory                             | 4211 |     0 |      6000 | 70.18 |
 |   LUT as Distributed RAM                  |  152 |     0 |           |       |
 |     using O5 output only                  |    0 |       |           |       |
@@ -85,10 +85,10 @@ Table of Contents
 |     using O5 output only                  |    7 |       |           |       |
 |     using O6 output only                  |  224 |       |           |       |
 |     using O5 and O6                       | 3828 |       |           |       |
-| LUT Flip Flop Pairs                       | 5214 |     0 |     17600 | 29.63 |
+| LUT Flip Flop Pairs                       | 5168 |     0 |     17600 | 29.36 |
 |   fully used LUT-FF pairs                 |  489 |       |           |       |
-|   LUT-FF pairs with one unused LUT output | 3998 |       |           |       |
-|   LUT-FF pairs with one unused Flip Flop  | 4306 |       |           |       |
+|   LUT-FF pairs with one unused LUT output | 4021 |       |           |       |
+|   LUT-FF pairs with one unused Flip Flop  | 4293 |       |           |       |
 | Unique Control Sets                       |  484 |       |           |       |
 +-------------------------------------------+------+-------+-----------+-------+
 * Note: Review the Control Sets Report for more information regarding control sets.
@@ -192,7 +192,7 @@ Table of Contents
 | CARRY4   |  1149 |           CarryLogic |
 | LUT3     |   940 |                  LUT |
 | LUT5     |   629 |                  LUT |
-| LUT2     |   476 |                  LUT |
+| LUT2     |   477 |                  LUT |
 | MUXF7    |   339 |                MuxFx |
 | LUT1     |   196 |                  LUT |
 | FDCE     |   173 |         Flop & Latch |

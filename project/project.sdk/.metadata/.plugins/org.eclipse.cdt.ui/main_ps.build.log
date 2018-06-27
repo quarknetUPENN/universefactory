@@ -1,8 +1,38 @@
-12:50:20 **** Incremental Build of configuration Debug for project main_ps ****
+18:24:40 **** Auto Build of configuration Debug for project main_ps ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
-make: Nothing to be done for `main-build'.
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:76:5: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+     printb(&comms[10]);  // print out the returned data as binary
+     ^~~~~~
+     print
+../src/helloworld.c: At top level:
+../src/helloworld.c:83:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:83:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:76:5: note: previous implicit declaration of 'printb' was here
+     printb(&comms[10]);  // print out the returned data as binary
+     ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  70940	   2580	  23328	  96848	  17a50	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
 
-12:50:20 Build Finished (took 179ms)
+18:24:41 Build Finished (took 692ms)
 

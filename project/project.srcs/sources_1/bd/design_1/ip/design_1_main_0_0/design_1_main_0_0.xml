@@ -220,11 +220,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jun 27 15:18:20 UTC 2018</spirit:value>
+            <spirit:value>Wed Jun 27 20:54:13 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:3b1c1731</spirit:value>
+            <spirit:value>8:645cbaa8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -240,11 +240,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jun 27 15:18:20 UTC 2018</spirit:value>
+            <spirit:value>Wed Jun 27 20:54:13 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:3b1c1731</spirit:value>
+            <spirit:value>8:645cbaa8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -259,11 +259,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jun 27 15:18:20 UTC 2018</spirit:value>
+            <spirit:value>Wed Jun 27 20:54:13 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:7dc6cc73</spirit:value>
+            <spirit:value>8:8e5dd2e1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -279,11 +279,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jun 27 15:18:20 UTC 2018</spirit:value>
+            <spirit:value>Wed Jun 27 20:54:13 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:7dc6cc73</spirit:value>
+            <spirit:value>8:8e5dd2e1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -297,11 +297,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jun 27 15:20:33 UTC 2018</spirit:value>
+            <spirit:value>Wed Jun 27 20:55:32 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:3b1c1731</spirit:value>
+            <spirit:value>8:645cbaa8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -565,11 +565,11 @@
         <spirit:userFileType>xdc</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b2f2/sources_1/new/housekeeping.v</spirit:name>
+        <spirit:name>../../ipshared/ddbf/sources_1/new/housekeeping.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b2f2/sources_1/new/main.v</spirit:name>
+        <spirit:name>../../ipshared/ddbf/sources_1/new/main.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -584,11 +584,11 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/b2f2/sources_1/new/housekeeping.v</spirit:name>
+        <spirit:name>../../ipshared/ddbf/sources_1/new/housekeeping.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/b2f2/sources_1/new/main.v</spirit:name>
+        <spirit:name>../../ipshared/ddbf/sources_1/new/main.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -647,7 +647,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>main_v1_0</xilinx:displayName>
-      <xilinx:coreRevision>24</xilinx:coreRevision>
+      <xilinx:coreRevision>27</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:main:1.0_ARCHIVE_LOCATION">c:/Users/HEP/Documents/universefactory/main/main.srcs</xilinx:tag>
       </xilinx:tags>
@@ -661,7 +661,7 @@
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="95d6f643"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="854c3128"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="107a2427"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="1546bd3b"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="611a257c"/>
     </xilinx:packagingInfo>

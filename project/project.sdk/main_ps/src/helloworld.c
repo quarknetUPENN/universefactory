@@ -49,7 +49,6 @@
 #include "platform.h"
 #include "xil_printf.h"
 
-
 int main()
 {
     init_platform();
@@ -58,30 +57,43 @@ int main()
 
     print("Hello World\n\r");
 
-    while(1){
-//    	comms[0] = 0b00000000000000000000000000000110;
-//    	comms[0] = 0b01010111000011000000001000110000;    // read common status register
-//    	comms[0] = 0b11010111000011000000001000110000;
+    //    	comms[0] = 0b00000000000000000000000000000110;
+    //    	comms[0] = 0b01010111000011000000001000110000;    // read common status register
+    //    	comms[0] = 0b11010111000011000000001000110000;
 
 
-    	comms[5] = 0b00001111000011110000000000000000;
-     	comms[0] = 0b01010111000111000000010010100000;    // write threshold register 1, trigger 0
-    	comms[0] = 0b11010111000111000000010010100000;
+	comms[5] = 0b00110001110000110000000000000000;
+	comms[0] = 0b01010111000111000000010010100000;    // write threshold register 1, trigger 0
+	comms[0] = 0b11010111000111000000010010100000;
 
-    	print("GET SLOW'D ");
+    print("Hello World2\n\r");
 //    	comms[0] = 0b0111222233333333444444555555XXXX;
-    	comms[5] = 0b00000000000000000000000000000000;
-     	comms[0] = 0b01010111000011000000011010100000;    // Read threshold register 1, trigger 0
-    	comms[0] = 0b11010111000011000000011010100000;
+	comms[5] = 0b00000000000000000000000000000000;
+	comms[0] = 0b01010111000011000000011010100000;    // Read threshold register 1, trigger 0
+	comms[0] = 0b11010111000011000000011010100000;
+    print("Hello World3\n\r");
 
-    	print("GET SLOW'D ");
-    	comms[0] = 0b01010100000000000000000000000000;
-    	comms[0] = 0b11010100000000000000000000000000;
-
-        print("help me am are be stuck in a while loop\n\r");
-
-    }
+    printb(&comms[10]);  // print out the returned data as binary
 
     cleanup_platform();
     return 0;
+}
+
+//assumes little endian
+void printb(const * ptr)
+{
+	size_t const size = sizeof(ptr);
+    unsigned char *b = (unsigned char*) ptr;
+    unsigned char byte;
+    int i, j;
+
+    for (i=size-1;i>=0;i--)
+    {
+        for (j=7;j>=0;j--)
+        {
+            byte = (b[i] >> j) & 1;
+            printf("%u", byte);
+        }
+    }
+    puts("");
 }

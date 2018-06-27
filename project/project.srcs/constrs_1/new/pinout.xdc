@@ -25,23 +25,20 @@ set_property PACKAGE_PIN J14 [get_ports {DTMROC_DATA_OUT[0]}]
 
 set_property IOSTANDARD LVDS_25 [get_ports {DTMROC_BX_P[0]}]
 set_property IOSTANDARD LVDS_25 [get_ports DTMROC_CMD_OUT_P]
-set_property IOSTANDARD LVDS_25 [get_ports {DTMROC_HARD_P[0]}]
-set_property IOSTANDARD LVDS_25 [get_ports {DTMROC_CMD_IN_P[0]}]
 
 set_property PACKAGE_PIN T14 [get_ports {DTMROC_BX_P[0]}]
-set_property PACKAGE_PIN Y16 [get_ports {DTMROC_HARD_P[0]}]
-set_property PACKAGE_PIN U13 [get_ports {DTMROC_CMD_IN_P[0]}]
 set_property PACKAGE_PIN U14 [get_ports DTMROC_CMD_OUT_P]
 
-set_property TYPE clk [get_bd_ports clkbx]
 
 
 
-set_property PACKAGE_PIN Y17 [get_ports {DTMROC_HARD_N[0]}]
-set_property IOSTANDARD LVDS_25 [get_ports {DTMROC_HARD_N[0]}]
-set_property IOSTANDARD LVDS_25 [get_ports {DTMROC_CMD_IN_N[0]}]
-set_property PACKAGE_PIN V13 [get_ports {DTMROC_CMD_IN_N[0]}]
-set_property DIFF_TERM FALSE [get_ports {DTMROC_HARD_N[0]}]
 
 set_property PACKAGE_PIN Y16 [get_ports DTMROC_HARD_P]
 set_property PACKAGE_PIN U13 [get_ports DTMROC_CMD_IN_P]
+
+set_property DIFF_TERM TRUE [get_ports DTMROC_CMD_OUT_P]
+set_property DIFF_TERM TRUE [get_ports DTMROC_CMD_OUT_N]
+set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
+set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
+set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
+connect_debug_port dbg_hub/clk [get_nets clk]

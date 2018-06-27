@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Wed Jun 27 11:20:33 2018
+// Date        : Wed Jun 27 16:55:31 2018
 // Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 // Command     : write_verilog -force -mode funcsim
 //               C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_main_0_0/design_1_main_0_0_sim_netlist.v
@@ -219,12 +219,12 @@ module design_1_main_0_0_main
   wire \data_cntr[0]_i_15_n_0 ;
   wire \data_cntr[0]_i_16_n_0 ;
   wire \data_cntr[0]_i_17_n_0 ;
-  wire \data_cntr[0]_i_19_n_0 ;
+  wire \data_cntr[0]_i_18_n_0 ;
   wire \data_cntr[0]_i_1_n_0 ;
   wire \data_cntr[0]_i_20_n_0 ;
   wire \data_cntr[0]_i_21_n_0 ;
   wire \data_cntr[0]_i_22_n_0 ;
-  wire \data_cntr[0]_i_24_n_0 ;
+  wire \data_cntr[0]_i_23_n_0 ;
   wire \data_cntr[0]_i_25_n_0 ;
   wire \data_cntr[0]_i_26_n_0 ;
   wire \data_cntr[0]_i_27_n_0 ;
@@ -235,6 +235,7 @@ module design_1_main_0_0_main
   wire \data_cntr[0]_i_32_n_0 ;
   wire \data_cntr[0]_i_33_n_0 ;
   wire \data_cntr[0]_i_34_n_0 ;
+  wire \data_cntr[0]_i_35_n_0 ;
   wire \data_cntr[0]_i_4_n_0 ;
   wire \data_cntr[0]_i_5_n_0 ;
   wire \data_cntr[0]_i_6_n_0 ;
@@ -301,14 +302,14 @@ module design_1_main_0_0_main
   wire \data_cntr_reg[0]_i_12_n_1 ;
   wire \data_cntr_reg[0]_i_12_n_2 ;
   wire \data_cntr_reg[0]_i_12_n_3 ;
-  wire \data_cntr_reg[0]_i_18_n_0 ;
-  wire \data_cntr_reg[0]_i_18_n_1 ;
-  wire \data_cntr_reg[0]_i_18_n_2 ;
-  wire \data_cntr_reg[0]_i_18_n_3 ;
-  wire \data_cntr_reg[0]_i_23_n_0 ;
-  wire \data_cntr_reg[0]_i_23_n_1 ;
-  wire \data_cntr_reg[0]_i_23_n_2 ;
-  wire \data_cntr_reg[0]_i_23_n_3 ;
+  wire \data_cntr_reg[0]_i_19_n_0 ;
+  wire \data_cntr_reg[0]_i_19_n_1 ;
+  wire \data_cntr_reg[0]_i_19_n_2 ;
+  wire \data_cntr_reg[0]_i_19_n_3 ;
+  wire \data_cntr_reg[0]_i_24_n_0 ;
+  wire \data_cntr_reg[0]_i_24_n_1 ;
+  wire \data_cntr_reg[0]_i_24_n_2 ;
+  wire \data_cntr_reg[0]_i_24_n_3 ;
   wire \data_cntr_reg[0]_i_2_n_0 ;
   wire \data_cntr_reg[0]_i_2_n_1 ;
   wire \data_cntr_reg[0]_i_2_n_2 ;
@@ -317,6 +318,7 @@ module design_1_main_0_0_main
   wire \data_cntr_reg[0]_i_2_n_5 ;
   wire \data_cntr_reg[0]_i_2_n_6 ;
   wire \data_cntr_reg[0]_i_2_n_7 ;
+  wire \data_cntr_reg[0]_i_3_n_1 ;
   wire \data_cntr_reg[0]_i_3_n_2 ;
   wire \data_cntr_reg[0]_i_3_n_3 ;
   wire \data_cntr_reg[12]_i_1_n_0 ;
@@ -824,9 +826,8 @@ module design_1_main_0_0_main
   wire \received_data[158]_i_7_n_0 ;
   wire trigger;
   wire [3:0]\NLW_data_cntr_reg[0]_i_12_O_UNCONNECTED ;
-  wire [3:0]\NLW_data_cntr_reg[0]_i_18_O_UNCONNECTED ;
-  wire [3:0]\NLW_data_cntr_reg[0]_i_23_O_UNCONNECTED ;
-  wire [3:3]\NLW_data_cntr_reg[0]_i_3_CO_UNCONNECTED ;
+  wire [3:0]\NLW_data_cntr_reg[0]_i_19_O_UNCONNECTED ;
+  wire [3:0]\NLW_data_cntr_reg[0]_i_24_O_UNCONNECTED ;
   wire [3:0]\NLW_data_cntr_reg[0]_i_3_O_UNCONNECTED ;
   wire [3:3]\NLW_data_cntr_reg[28]_i_1_CO_UNCONNECTED ;
   wire [3:0]\NLW_done_reg[1]_i_12_O_UNCONNECTED ;
@@ -2060,7 +2061,7 @@ module design_1_main_0_0_main
     .INIT(64'h0300000055555555)) 
     \data_cntr[0]_i_10 
        (.I0(data_cntr_reg[1]),
-        .I1(\data_cntr[0]_i_17_n_0 ),
+        .I1(\data_cntr[0]_i_18_n_0 ),
         .I2(field15[0]),
         .I3(field15[2]),
         .I4(field15[1]),
@@ -2090,27 +2091,27 @@ module design_1_main_0_0_main
        (.I0(msgcntr_reg[27]),
         .I1(msgcntr_reg[26]),
         .O(\data_cntr[0]_i_15_n_0 ));
+  LUT2 #(
+    .INIT(4'h1)) 
+    \data_cntr[0]_i_16 
+       (.I0(msgcntr_reg[25]),
+        .I1(msgcntr_reg[24]),
+        .O(\data_cntr[0]_i_16_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'h61)) 
-    \data_cntr[0]_i_16 
+    \data_cntr[0]_i_17 
        (.I0(field15[2]),
         .I1(field15[3]),
         .I2(field15[4]),
-        .O(\data_cntr[0]_i_16_n_0 ));
+        .O(\data_cntr[0]_i_17_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT2 #(
     .INIT(4'hE)) 
-    \data_cntr[0]_i_17 
+    \data_cntr[0]_i_18 
        (.I0(field15[4]),
         .I1(field15[3]),
-        .O(\data_cntr[0]_i_17_n_0 ));
-  LUT2 #(
-    .INIT(4'h1)) 
-    \data_cntr[0]_i_19 
-       (.I0(msgcntr_reg[25]),
-        .I1(msgcntr_reg[24]),
-        .O(\data_cntr[0]_i_19_n_0 ));
+        .O(\data_cntr[0]_i_18_n_0 ));
   LUT2 #(
     .INIT(4'h1)) 
     \data_cntr[0]_i_20 
@@ -2131,10 +2132,10 @@ module design_1_main_0_0_main
         .O(\data_cntr[0]_i_22_n_0 ));
   LUT2 #(
     .INIT(4'h1)) 
-    \data_cntr[0]_i_24 
+    \data_cntr[0]_i_23 
        (.I0(msgcntr_reg[17]),
         .I1(msgcntr_reg[16]),
-        .O(\data_cntr[0]_i_24_n_0 ));
+        .O(\data_cntr[0]_i_23_n_0 ));
   LUT2 #(
     .INIT(4'h1)) 
     \data_cntr[0]_i_25 
@@ -2153,28 +2154,28 @@ module design_1_main_0_0_main
        (.I0(msgcntr_reg[11]),
         .I1(msgcntr_reg[10]),
         .O(\data_cntr[0]_i_27_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \data_cntr[0]_i_28 
-       (.I0(msgcntr_reg[7]),
-        .O(\data_cntr[0]_i_28_n_0 ));
   LUT2 #(
     .INIT(4'h1)) 
+    \data_cntr[0]_i_28 
+       (.I0(msgcntr_reg[8]),
+        .I1(msgcntr_reg[9]),
+        .O(\data_cntr[0]_i_28_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
     \data_cntr[0]_i_29 
-       (.I0(msgcntr_reg[5]),
-        .I1(msgcntr_reg[4]),
+       (.I0(msgcntr_reg[7]),
         .O(\data_cntr[0]_i_29_n_0 ));
   LUT2 #(
     .INIT(4'h1)) 
     \data_cntr[0]_i_30 
-       (.I0(msgcntr_reg[2]),
-        .I1(msgcntr_reg[3]),
+       (.I0(msgcntr_reg[5]),
+        .I1(msgcntr_reg[4]),
         .O(\data_cntr[0]_i_30_n_0 ));
   LUT2 #(
     .INIT(4'h1)) 
     \data_cntr[0]_i_31 
-       (.I0(msgcntr_reg[8]),
-        .I1(msgcntr_reg[9]),
+       (.I0(msgcntr_reg[2]),
+        .I1(msgcntr_reg[3]),
         .O(\data_cntr[0]_i_31_n_0 ));
   LUT2 #(
     .INIT(4'h2)) 
@@ -2194,10 +2195,16 @@ module design_1_main_0_0_main
        (.I0(msgcntr_reg[2]),
         .I1(msgcntr_reg[3]),
         .O(\data_cntr[0]_i_34_n_0 ));
+  LUT2 #(
+    .INIT(4'h1)) 
+    \data_cntr[0]_i_35 
+       (.I0(msgcntr_reg[1]),
+        .I1(msgcntr_reg[0]),
+        .O(\data_cntr[0]_i_35_n_0 ));
   LUT5 #(
     .INIT(32'h02FF0200)) 
     \data_cntr[0]_i_4 
-       (.I0(\data_cntr[0]_i_16_n_0 ),
+       (.I0(\data_cntr[0]_i_17_n_0 ),
         .I1(field15[1]),
         .I2(field15[0]),
         .I3(\done_reg[1]_i_3_n_1 ),
@@ -2209,7 +2216,7 @@ module design_1_main_0_0_main
        (.I0(field15[1]),
         .I1(field15[2]),
         .I2(field15[0]),
-        .I3(\data_cntr[0]_i_17_n_0 ),
+        .I3(\data_cntr[0]_i_18_n_0 ),
         .I4(\done_reg[1]_i_3_n_1 ),
         .I5(data_cntr_reg[2]),
         .O(\data_cntr[0]_i_5_n_0 ));
@@ -2219,7 +2226,7 @@ module design_1_main_0_0_main
        (.I0(field15[1]),
         .I1(field15[2]),
         .I2(field15[0]),
-        .I3(\data_cntr[0]_i_17_n_0 ),
+        .I3(\data_cntr[0]_i_18_n_0 ),
         .I4(\done_reg[1]_i_3_n_1 ),
         .I5(data_cntr_reg[1]),
         .O(\data_cntr[0]_i_6_n_0 ));
@@ -2235,14 +2242,14 @@ module design_1_main_0_0_main
        (.I0(data_cntr_reg[3]),
         .I1(field15[0]),
         .I2(field15[1]),
-        .I3(\data_cntr[0]_i_16_n_0 ),
+        .I3(\data_cntr[0]_i_17_n_0 ),
         .I4(\done_reg[1]_i_3_n_1 ),
         .O(\data_cntr[0]_i_8_n_0 ));
   LUT6 #(
     .INIT(64'h0300000055555555)) 
     \data_cntr[0]_i_9 
        (.I0(data_cntr_reg[2]),
-        .I1(\data_cntr[0]_i_17_n_0 ),
+        .I1(\data_cntr[0]_i_18_n_0 ),
         .I2(field15[0]),
         .I3(field15[2]),
         .I4(field15[1]),
@@ -2501,7 +2508,7 @@ module design_1_main_0_0_main
        (.I0(field15[2]),
         .I1(field15[1]),
         .I2(field15[0]),
-        .I3(\data_cntr[0]_i_17_n_0 ),
+        .I3(\data_cntr[0]_i_18_n_0 ),
         .I4(\done_reg[1]_i_3_n_1 ),
         .I5(data_cntr_reg[5]),
         .O(\data_cntr[4]_i_4_n_0 ));
@@ -2529,7 +2536,7 @@ module design_1_main_0_0_main
     .INIT(64'h0000300055555555)) 
     \data_cntr[4]_i_8 
        (.I0(data_cntr_reg[5]),
-        .I1(\data_cntr[0]_i_17_n_0 ),
+        .I1(\data_cntr[0]_i_18_n_0 ),
         .I2(field15[0]),
         .I3(field15[1]),
         .I4(field15[2]),
@@ -2599,19 +2606,19 @@ module design_1_main_0_0_main
         .Q(data_cntr_reg[0]),
         .R(1'b0));
   CARRY4 \data_cntr_reg[0]_i_12 
-       (.CI(\data_cntr_reg[0]_i_18_n_0 ),
+       (.CI(\data_cntr_reg[0]_i_19_n_0 ),
         .CO({\data_cntr_reg[0]_i_12_n_0 ,\data_cntr_reg[0]_i_12_n_1 ,\data_cntr_reg[0]_i_12_n_2 ,\data_cntr_reg[0]_i_12_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(\NLW_data_cntr_reg[0]_i_12_O_UNCONNECTED [3:0]),
-        .S({\data_cntr[0]_i_19_n_0 ,\data_cntr[0]_i_20_n_0 ,\data_cntr[0]_i_21_n_0 ,\data_cntr[0]_i_22_n_0 }));
-  CARRY4 \data_cntr_reg[0]_i_18 
-       (.CI(\data_cntr_reg[0]_i_23_n_0 ),
-        .CO({\data_cntr_reg[0]_i_18_n_0 ,\data_cntr_reg[0]_i_18_n_1 ,\data_cntr_reg[0]_i_18_n_2 ,\data_cntr_reg[0]_i_18_n_3 }),
+        .S({\data_cntr[0]_i_20_n_0 ,\data_cntr[0]_i_21_n_0 ,\data_cntr[0]_i_22_n_0 ,\data_cntr[0]_i_23_n_0 }));
+  CARRY4 \data_cntr_reg[0]_i_19 
+       (.CI(\data_cntr_reg[0]_i_24_n_0 ),
+        .CO({\data_cntr_reg[0]_i_19_n_0 ,\data_cntr_reg[0]_i_19_n_1 ,\data_cntr_reg[0]_i_19_n_2 ,\data_cntr_reg[0]_i_19_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(\NLW_data_cntr_reg[0]_i_18_O_UNCONNECTED [3:0]),
-        .S({\data_cntr[0]_i_24_n_0 ,\data_cntr[0]_i_25_n_0 ,\data_cntr[0]_i_26_n_0 ,\data_cntr[0]_i_27_n_0 }));
+        .O(\NLW_data_cntr_reg[0]_i_19_O_UNCONNECTED [3:0]),
+        .S({\data_cntr[0]_i_25_n_0 ,\data_cntr[0]_i_26_n_0 ,\data_cntr[0]_i_27_n_0 ,\data_cntr[0]_i_28_n_0 }));
   CARRY4 \data_cntr_reg[0]_i_2 
        (.CI(1'b0),
         .CO({\data_cntr_reg[0]_i_2_n_0 ,\data_cntr_reg[0]_i_2_n_1 ,\data_cntr_reg[0]_i_2_n_2 ,\data_cntr_reg[0]_i_2_n_3 }),
@@ -2619,20 +2626,20 @@ module design_1_main_0_0_main
         .DI({\data_cntr[0]_i_4_n_0 ,\data_cntr[0]_i_5_n_0 ,\data_cntr[0]_i_6_n_0 ,\data_cntr[0]_i_7_n_0 }),
         .O({\data_cntr_reg[0]_i_2_n_4 ,\data_cntr_reg[0]_i_2_n_5 ,\data_cntr_reg[0]_i_2_n_6 ,\data_cntr_reg[0]_i_2_n_7 }),
         .S({\data_cntr[0]_i_8_n_0 ,\data_cntr[0]_i_9_n_0 ,\data_cntr[0]_i_10_n_0 ,\data_cntr[0]_i_11_n_0 }));
-  CARRY4 \data_cntr_reg[0]_i_23 
+  CARRY4 \data_cntr_reg[0]_i_24 
        (.CI(1'b0),
-        .CO({\data_cntr_reg[0]_i_23_n_0 ,\data_cntr_reg[0]_i_23_n_1 ,\data_cntr_reg[0]_i_23_n_2 ,\data_cntr_reg[0]_i_23_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,\data_cntr[0]_i_28_n_0 ,\data_cntr[0]_i_29_n_0 ,\data_cntr[0]_i_30_n_0 }),
-        .O(\NLW_data_cntr_reg[0]_i_23_O_UNCONNECTED [3:0]),
-        .S({\data_cntr[0]_i_31_n_0 ,\data_cntr[0]_i_32_n_0 ,\data_cntr[0]_i_33_n_0 ,\data_cntr[0]_i_34_n_0 }));
+        .CO({\data_cntr_reg[0]_i_24_n_0 ,\data_cntr_reg[0]_i_24_n_1 ,\data_cntr_reg[0]_i_24_n_2 ,\data_cntr_reg[0]_i_24_n_3 }),
+        .CYINIT(1'b1),
+        .DI({\data_cntr[0]_i_29_n_0 ,\data_cntr[0]_i_30_n_0 ,\data_cntr[0]_i_31_n_0 ,1'b0}),
+        .O(\NLW_data_cntr_reg[0]_i_24_O_UNCONNECTED [3:0]),
+        .S({\data_cntr[0]_i_32_n_0 ,\data_cntr[0]_i_33_n_0 ,\data_cntr[0]_i_34_n_0 ,\data_cntr[0]_i_35_n_0 }));
   CARRY4 \data_cntr_reg[0]_i_3 
        (.CI(\data_cntr_reg[0]_i_12_n_0 ),
-        .CO({\NLW_data_cntr_reg[0]_i_3_CO_UNCONNECTED [3],data_cntr1,\data_cntr_reg[0]_i_3_n_2 ,\data_cntr_reg[0]_i_3_n_3 }),
+        .CO({data_cntr1,\data_cntr_reg[0]_i_3_n_1 ,\data_cntr_reg[0]_i_3_n_2 ,\data_cntr_reg[0]_i_3_n_3 }),
         .CYINIT(1'b0),
-        .DI({1'b0,msgcntr_reg[31],1'b0,1'b0}),
+        .DI({msgcntr_reg[31],1'b0,1'b0,1'b0}),
         .O(\NLW_data_cntr_reg[0]_i_3_O_UNCONNECTED [3:0]),
-        .S({1'b0,\data_cntr[0]_i_13_n_0 ,\data_cntr[0]_i_14_n_0 ,\data_cntr[0]_i_15_n_0 }));
+        .S({\data_cntr[0]_i_13_n_0 ,\data_cntr[0]_i_14_n_0 ,\data_cntr[0]_i_15_n_0 ,\data_cntr[0]_i_16_n_0 }));
   FDRE #(
     .INIT(1'b0)) 
     \data_cntr_reg[10] 

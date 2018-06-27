@@ -82,8 +82,8 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/design_1/ip/design_1_util_ds_buf_1_0/sim/design_1_util_ds_buf_1_0.vhd" \
 
 vlog -work xil_defaultlib -64 "+incdir+../../../../project.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../project.srcs/sources_1/bd/design_1/ipshared/02c8/hdl/verilog" "+incdir+../../../../project.srcs/sources_1/bd/design_1/ipshared/b193/hdl" "+incdir+../../../../project.srcs/sources_1/bd/design_1/ipshared/6180/hdl/verilog" "+incdir+../../../../project.srcs/sources_1/bd/design_1/ipshared/a08d/hdl/verilog" "+incdir+../../../../project.srcs/sources_1/bd/design_1/ipshared/2875/hdl/verilog" "+incdir+../../../../project.srcs/sources_1/bd/design_1/ipshared/2c14/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2018.1/data/xilinx_vip/include" "+incdir+../../../../project.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../project.srcs/sources_1/bd/design_1/ipshared/02c8/hdl/verilog" "+incdir+../../../../project.srcs/sources_1/bd/design_1/ipshared/b193/hdl" "+incdir+../../../../project.srcs/sources_1/bd/design_1/ipshared/6180/hdl/verilog" "+incdir+../../../../project.srcs/sources_1/bd/design_1/ipshared/a08d/hdl/verilog" "+incdir+../../../../project.srcs/sources_1/bd/design_1/ipshared/2875/hdl/verilog" "+incdir+../../../../project.srcs/sources_1/bd/design_1/ipshared/2c14/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2018.1/data/xilinx_vip/include" \
-"../../../bd/design_1/ipshared/b2f2/sources_1/new/housekeeping.v" \
-"../../../bd/design_1/ipshared/b2f2/sources_1/new/main.v" \
+"../../../bd/design_1/ipshared/ddbf/sources_1/new/housekeeping.v" \
+"../../../bd/design_1/ipshared/ddbf/sources_1/new/main.v" \
 "../../../bd/design_1/ip/design_1_main_0_0/sim/design_1_main_0_0.v" \
 "../../../bd/design_1/ipshared/9a25/hdl/cccd_v1_0_S00_AXI.v" \
 "../../../bd/design_1/ipshared/9a25/hdl/cccd_v1_0.v" \

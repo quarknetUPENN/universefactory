@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Wed Jun 27 11:30:40 2018
+| Date             : Wed Jun 27 17:07:24 2018
 | Host             : HEP-PC running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.794        |
+| Total On-Chip Power (W)  | 1.797        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.669        |
+| Dynamic (W)              | 1.672        |
 | Device Static (W)        | 0.125        |
 | Total Off-Chip Power (W) | 0.004        |
 | Effective TJA (C/W)      | 11.5         |
@@ -54,7 +54,7 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.017 |        5 |       --- |             --- |
-| Slice Logic              |     0.002 |    31618 |       --- |             --- |
+| Slice Logic              |     0.002 |    31619 |       --- |             --- |
 |   LUT as Logic           |     0.001 |     6911 |     17600 |           39.27 |
 |   Register               |    <0.001 |    10879 |     35200 |           30.91 |
 |   CARRY4                 |    <0.001 |     1149 |      4400 |           26.11 |
@@ -62,12 +62,12 @@ Table of Contents
 |   LUT as Shift Register  |    <0.001 |     4059 |      6000 |           67.65 |
 |   F7/F8 Muxes            |    <0.001 |      455 |     17600 |            2.59 |
 |   Others                 |     0.000 |     3141 |       --- |             --- |
-| Signals                  |     0.003 |    17278 |       --- |             --- |
+| Signals                  |     0.003 |    17265 |       --- |             --- |
 | Block RAM                |     0.003 |      5.5 |        60 |            9.17 |
-| I/O                      |     0.116 |        8 |       100 |            8.00 |
+| I/O                      |     0.119 |        8 |       100 |            8.00 |
 | PS7                      |     1.529 |        1 |       --- |             --- |
 | Static Power             |     0.125 |          |           |                 |
-| Total                    |     1.794 |          |           |                 |
+| Total                    |     1.797 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -80,7 +80,7 @@ Table of Contents
 | Vccint    |       1.000 |     0.032 |       0.024 |      0.008 |
 | Vccaux    |       1.800 |     0.009 |       0.001 |      0.008 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
-| Vcco25    |       2.500 |     0.048 |       0.047 |      0.001 |
+| Vcco25    |       2.500 |     0.049 |       0.048 |      0.001 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
@@ -155,10 +155,10 @@ Table of Contents
 +------------------------------------------------------------------------------------+-----------+
 | Name                                                                               | Power (W) |
 +------------------------------------------------------------------------------------+-----------+
-| design_1_wrapper                                                                   |     1.669 |
-|   dbg_hub                                                                          |     0.002 |
-|     inst                                                                           |     0.002 |
-|       BSCANID.u_xsdbm_id                                                           |     0.002 |
+| design_1_wrapper                                                                   |     1.672 |
+|   dbg_hub                                                                          |     0.001 |
+|     inst                                                                           |     0.001 |
+|       BSCANID.u_xsdbm_id                                                           |     0.001 |
 |         CORE_XSDB.UUT_MASTER                                                       |     0.001 |
 |           U_ICON_INTERFACE                                                         |    <0.001 |
 |             U_CMD1                                                                 |    <0.001 |
@@ -237,7 +237,7 @@ Table of Contents
 |           U_SYNC                                                                   |    <0.001 |
 |         SWITCH_N_EXT_BSCAN.bscan_inst                                              |    <0.001 |
 |         SWITCH_N_EXT_BSCAN.bscan_switch                                            |    <0.001 |
-|   design_1_i                                                                       |     1.667 |
+|   design_1_i                                                                       |     1.670 |
 |     axi_interconnect_0                                                             |     0.002 |
 |       s00_couplers                                                                 |     0.002 |
 |         auto_pc                                                                    |     0.002 |
@@ -5668,8 +5668,8 @@ Table of Contents
 |           SEQ_COUNTER                                                              |    <0.001 |
 |     processing_system7_0                                                           |     1.529 |
 |       inst                                                                         |     1.529 |
-|     util_ds_buf_1                                                                  |     0.002 |
-|       U0                                                                           |     0.002 |
+|     util_ds_buf_1                                                                  |     0.005 |
+|       U0                                                                           |     0.005 |
 +------------------------------------------------------------------------------------+-----------+
 
 
