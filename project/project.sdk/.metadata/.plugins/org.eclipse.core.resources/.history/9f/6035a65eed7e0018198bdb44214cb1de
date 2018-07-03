@@ -73,7 +73,7 @@ int main()
 
     //Show status register
     printb(&cdmareg[1]);
-    print("^ Pre-write status register\n\r");
+    print("kicks\n\r");
 
     //Show the memory address
     printf("%p\n",cdmadapt);
@@ -94,7 +94,7 @@ int main()
 
 
     //Display status to console window, then print the status register[1] and the destination address[8]
-    print("\n Transfer sequence started... \n");
+    print("\n Transfer sequence started...");
     while(!BIT(1,cdmareg[1])){
     	print("Hi");				//If not yet idle, wait...
     }

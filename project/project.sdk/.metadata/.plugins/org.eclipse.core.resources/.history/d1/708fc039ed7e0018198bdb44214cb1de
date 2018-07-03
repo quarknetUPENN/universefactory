@@ -73,7 +73,7 @@ int main()
 
     //Show status register
     printb(&cdmareg[1]);
-    print("^ Pre-write status register\n\r");
+    print("kicks\n\r");
 
     //Show the memory address
     printf("%p\n",cdmadapt);
@@ -101,7 +101,7 @@ int main()
     printb(&cdmareg[1]);
     printb(&cdmareg[8]);
 
-    print("\n Transfer sequence completed...");
+    print("\n Transfer sequence completed... \n");
 
 
     //Print out what's stored in memory

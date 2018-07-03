@@ -57,59 +57,50 @@ int main()
     int i;
     init_platform();
 
-    volatile unsigned int *cdmareg = (volatile unsigned int *) 0x7e200000;  //axi cdma start address set to pointer
+    volatile unsigned int *cdmareg = (volatile unsigned int *) 0x7e200000;
     volatile unsigned int *cdmadapt =  malloc(1000); //maxes out at 7348
 
 
-    //Complain if malloc can't find enough space (it'll return 0)
     if (cdmadapt == 0x0){
     	print("ERROR: Unable to allocate that much memory!");
     	cleanup_platform();
     	return 1;
     }
 
-    //Soft reset via control register
     cdmareg[0] = 0b00000000000000000000000000000100;
-
-    //Show status register
     printb(&cdmareg[1]);
-    print("^ Pre-write status register\n\r");
-
-    //Show the memory address
+    print("kicks\n\r");
     printf("%p\n",cdmadapt);
 
-    //Enable interrupt on completion
-    cdmareg[0] = 0x00001000;
 
-    //If idle, initiate the DMA-write sequence: write source address[6], destination address[8], bytes to transfer[10]
-    //If not idle, wait
+    cdmareg[0] = 0x00001000;
     if (BIT(1,cdmareg[1])){
     	cdmareg[6] = 0x40000000;
     	cdmareg[8] = cdmadapt;
     	cdmareg[10] = 0x00000328;
         printb(&cdmareg[1]);
+
     } else {
     	print("Not Idle");
     }
 
 
-    //Display status to console window, then print the status register[1] and the destination address[8]
-    print("\n Transfer sequence started... \n");
+    print(" end reg values \n");
+    print("\n transfer started\n");
     while(!BIT(1,cdmareg[1])){
-    	print("Hi");				//If not yet idle, wait...
+    	print("Hi");
     }
     printb(&cdmareg[1]);
     printb(&cdmareg[8]);
 
-    print("\n Transfer sequence completed...");
+    print("\n transfer finished\n");
 
 
-    //Print out what's stored in memory
 	for (i=0;i<=10;i++){
 		printb(&cdmadapt[i]);
 	}
 
-	//Clean up
+
 	free(cdmadapt);
 	free(cdmareg);
 	free(i);
