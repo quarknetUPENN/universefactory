@@ -1,3 +1,0 @@
-NumberHits:4
-Timestamp: Tue Jun 26 20:49:17 UTC 2018
-VLNV: xilinx.com:user:cccd:1.0

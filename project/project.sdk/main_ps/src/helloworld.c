@@ -46,37 +46,88 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "platform.h"
 #include "xil_printf.h"
 
+#define BIT(pos,var) ((var) & (1<<(pos)))
+
 int main()
 {
+    int i;
     init_platform();
 
+    volatile unsigned int *cdmareg = (volatile unsigned int *) 0x7e200000;
+    volatile unsigned int *cdmadapt =  malloc(1000); //maxes out at 7348
+
+
+    if (cdmadapt == 0x0){
+    	print("ERROR: Unable to allocate that much memory!");
+    	cleanup_platform();
+    	return 1;
+    }
+
+    cdmareg[0] = 0b00000000000000000000000000000100;
+    printb(&cdmareg[1]);
+    print("kicks\n\r");
+    printf("%p\n",cdmadapt);
+
+
+    cdmareg[0] = 0x00001000;
+    if (BIT(1,cdmareg[1])){
+    	cdmareg[6] = 0x40000000;
+    	cdmareg[8] = cdmadapt;
+    	cdmareg[10] = 0x00000328;
+        printb(&cdmareg[1]);
+
+    } else {
+    	print("Not Idle");
+    }
+
+
+    print(" end reg values \n");
+    print("\n transfer started\n");
+    while(!BIT(1,cdmareg[1])){
+    	print("Hi");
+    }
+    printb(&cdmareg[1]);
+    printb(&cdmareg[8]);
+
+    print("\n transfer finished\n");
+
+
+	for (i=0;i<=10;i++){
+		printb(&cdmadapt[i]);
+	}
+
+
+	free(cdmadapt);
+	free(cdmareg);
+	free(i);
+    cleanup_platform();
+    return 0;
+}
+
+void rwthreshreg(){
     volatile unsigned int *comms = (volatile unsigned int *) 0x43c00000;
 
     print("Hello World\n\r");
-
-    //    	comms[0] = 0b00000000000000000000000000000110;
-    //    	comms[0] = 0b01010111000011000000001000110000;    // read common status register
-    //    	comms[0] = 0b11010111000011000000001000110000;
-
-
 	comms[5] = 0b00110001110000110000000000000000;
 	comms[0] = 0b01010111000111000000010010100000;    // write threshold register 1, trigger 0
 	comms[0] = 0b11010111000111000000010010100000;
+	printb(&comms[6]);
+	//printf("%d",CHECK_BIT(comms[6],0));
+	//printf("%d",CHECK_BIT(comms[6],1));
 
-    print("Hello World2\n\r");
-//    	comms[0] = 0b0111222233333333444444555555XXXX;
+//  comms[0] = 0b0111222233333333444444555555XXXX;
 	comms[5] = 0b00000000000000000000000000000000;
 	comms[0] = 0b01010111000011000000011010100000;    // Read threshold register 1, trigger 0
 	comms[0] = 0b11010111000011000000011010100000;
-    print("Hello World3\n\r");
-
-    printb(&comms[10]);  // print out the returned data as binary
-
-    cleanup_platform();
-    return 0;
+	print("comm6 then comm10\n\r");
+	printb(&comms[6]);
+	//printf("%d",CHECK_BIT(comms[6],0));
+	//printf("%d",CHECK_BIT(comms[6],1));
+	printb(&comms[10]);  // print out the returned data as binary
 }
 
 //assumes little endian

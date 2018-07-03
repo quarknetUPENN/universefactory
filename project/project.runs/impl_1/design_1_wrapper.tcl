@@ -75,6 +75,9 @@ set rc [catch {
   set_property webtalk.parent_dir C:/Users/HEP/Documents/universefactory/project/project.cache/wt [current_project]
   set_property parent.project_path C:/Users/HEP/Documents/universefactory/project/project.xpr [current_project]
   set_property ip_repo_paths {
+  C:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0
+  C:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0
+  C:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0
   C:/Users/HEP/Documents/universefactory/cccd_1.0
   C:/Users/HEP/Documents/universefactory/main/main.srcs
 } [current_project]

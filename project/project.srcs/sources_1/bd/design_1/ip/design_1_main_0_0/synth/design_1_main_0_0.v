@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:main:1.0
-// IP Revision: 27
+// IP Revision: 31
 
 (* X_CORE_INFO = "main,Vivado 2018.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_main_0_0,main,{}" *)
-(* CORE_GENERATION_INFO = "design_1_main_0_0,main,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=main,x_ipVersion=1.0,x_ipCoreRevision=27,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* CORE_GENERATION_INFO = "design_1_main_0_0,main,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=main,x_ipVersion=1.0,x_ipCoreRevision=31,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_main_0_0 (
   clk40,
