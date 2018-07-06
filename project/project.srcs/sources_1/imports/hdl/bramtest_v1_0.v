@@ -13,11 +13,11 @@
 	);
 	   assign clkb = clk40;
 	   assign enb = 1'b1;
-	   assign web = 4'b1111;
+	   assign web = 4'b0001;
 	   assign rstb = 1'b0;
-	   
-	   
-	   reg [3:0] cntr  = 0;
+	   	   
+	   reg [7:0] cntr  = 0;
+
 	   always @ (posedge clk40) begin
 	       cntr <= cntr + 1;
 	       addrb <= 32'h40000000 + cntr;

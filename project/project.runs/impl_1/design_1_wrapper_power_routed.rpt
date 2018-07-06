@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Tue Jul  3 10:08:58 2018
+| Date             : Fri Jul  6 12:40:50 2018
 | Host             : HEP-PC running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.794        |
+| Total On-Chip Power (W)  | 1.793        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 1.668        |
@@ -54,20 +54,20 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.010 |        5 |       --- |             --- |
-| Slice Logic              |     0.002 |    14552 |       --- |             --- |
-|   LUT as Logic           |     0.002 |     4605 |     17600 |           26.16 |
-|   Register               |    <0.001 |     7234 |     35200 |           20.55 |
+| Slice Logic              |     0.002 |    14565 |       --- |             --- |
+|   LUT as Logic           |     0.002 |     4607 |     17600 |           26.18 |
+|   Register               |    <0.001 |     7242 |     35200 |           20.57 |
 |   CARRY4                 |    <0.001 |      125 |      4400 |            2.84 |
 |   LUT as Shift Register  |    <0.001 |      405 |      6000 |            6.75 |
 |   LUT as Distributed RAM |    <0.001 |       82 |      6000 |            1.37 |
 |   F7/F8 Muxes            |    <0.001 |       68 |     17600 |            0.39 |
 |   Others                 |     0.000 |      800 |       --- |             --- |
-| Signals                  |     0.003 |    10561 |       --- |             --- |
-| Block RAM                |     0.004 |      5.5 |        60 |            9.17 |
+| Signals                  |     0.003 |    10576 |       --- |             --- |
+| Block RAM                |     0.003 |      5.5 |        60 |            9.17 |
 | I/O                      |     0.119 |        8 |       100 |            8.00 |
 | PS7                      |     1.531 |        1 |       --- |             --- |
 | Static Power             |     0.125 |          |           |                 |
-| Total                    |     1.794 |          |           |                 |
+| Total                    |     1.793 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,7 +77,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.026 |       0.019 |      0.008 |
+| Vccint    |       1.000 |     0.026 |       0.018 |      0.008 |
 | Vccaux    |       1.800 |     0.009 |       0.001 |      0.008 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.049 |       0.048 |      0.001 |
@@ -155,9 +155,9 @@ Table of Contents
 | Name                                                                               | Power (W) |
 +------------------------------------------------------------------------------------+-----------+
 | design_1_wrapper                                                                   |     1.668 |
-|   dbg_hub                                                                          |     0.002 |
-|     inst                                                                           |     0.002 |
-|       BSCANID.u_xsdbm_id                                                           |     0.002 |
+|   dbg_hub                                                                          |     0.001 |
+|     inst                                                                           |     0.001 |
+|       BSCANID.u_xsdbm_id                                                           |     0.001 |
 |         CORE_XSDB.UUT_MASTER                                                       |     0.001 |
 |           U_ICON_INTERFACE                                                         |    <0.001 |
 |             U_CMD1                                                                 |    <0.001 |
@@ -236,7 +236,7 @@ Table of Contents
 |           U_SYNC                                                                   |    <0.001 |
 |         SWITCH_N_EXT_BSCAN.bscan_inst                                              |    <0.001 |
 |         SWITCH_N_EXT_BSCAN.bscan_switch                                            |    <0.001 |
-|   design_1_i                                                                       |     1.667 |
+|   design_1_i                                                                       |     1.666 |
 |     axi_bram_ctrl_0                                                                |    <0.001 |
 |       U0                                                                           |    <0.001 |
 |         gext_inst.abcv4_0_ext_inst                                                 |    <0.001 |
@@ -517,15 +517,15 @@ Table of Contents
 |                 gen_srls[0].gen_rep[0].srl_nx1                                     |    <0.001 |
 |                 gen_srls[0].gen_rep[1].srl_nx1                                     |    <0.001 |
 |             splitter_aw_mi                                                         |    <0.001 |
-|     blk_mem_gen_0                                                                  |     0.002 |
-|       U0                                                                           |     0.002 |
-|         inst_blk_mem_gen                                                           |     0.002 |
-|           gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen                    |     0.002 |
-|             valid.cstr                                                             |     0.002 |
+|     blk_mem_gen_0                                                                  |     0.001 |
+|       U0                                                                           |     0.001 |
+|         inst_blk_mem_gen                                                           |     0.001 |
+|           gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen                    |     0.001 |
+|             valid.cstr                                                             |     0.001 |
 |               ramloop[0].ram.r                                                     |     0.001 |
 |                 prim_noinit.ram                                                    |     0.001 |
-|               ramloop[1].ram.r                                                     |     0.001 |
-|                 prim_noinit.ram                                                    |     0.001 |
+|               ramloop[1].ram.r                                                     |    <0.001 |
+|                 prim_noinit.ram                                                    |    <0.001 |
 |     bramtest_v1_0_0                                                                |    <0.001 |
 |       inst                                                                         |    <0.001 |
 |     cccd_0                                                                         |    <0.001 |

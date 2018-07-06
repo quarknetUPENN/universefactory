@@ -54,11 +54,25 @@
 
 int main()
 {
+	int control = 1; // R/W to thresholds: 0 | R/W to RAM: 1
+
+	if (control == 0) {
+		while(1){
+			rwthreshreg();
+		}
+	}
+	else if(control == 1){
+		rwram();
+	}
+
+}
+int rwram(){
     int i;
     init_platform();
 
     volatile unsigned int *cdmareg = (volatile unsigned int *) 0x7e200000;  //axi cdma start address set to pointer
-    volatile unsigned int *cdmadapt =  malloc(1000); //maxes out at 7348
+    volatile unsigned int *cdmadapt =  malloc(7345); //maxes out at 7348
+   // volatile unsigned int *cdmadapter = realloc(cdmadapt, 7360);  //doesnt work
 
 
     //Complain if malloc can't find enough space (it'll return 0)
@@ -68,14 +82,17 @@ int main()
     	return 1;
     }
 
+
     //Soft reset via control register
     cdmareg[0] = 0b00000000000000000000000000000100;
 
     //Show status register
+    print("Pre-write status register: \n");
     printb(&cdmareg[1]);
-    print("^ Pre-write status register\n\r");
+
 
     //Show the memory address
+    print("\r Memory address allocated: \n");
     printf("%p\n",cdmadapt);
 
     //Enable interrupt on completion
@@ -86,7 +103,8 @@ int main()
     if (BIT(1,cdmareg[1])){
     	cdmareg[6] = 0x40000000;
     	cdmareg[8] = cdmadapt;
-    	cdmareg[10] = 0x00000328;
+    	cdmareg[10] = 0x00001CB4;
+        print("\r Post-write status register: \n");
         printb(&cdmareg[1]);
     } else {
     	print("Not Idle");
@@ -98,14 +116,12 @@ int main()
     while(!BIT(1,cdmareg[1])){
     	print("Hi");				//If not yet idle, wait...
     }
-    printb(&cdmareg[1]);
-    printb(&cdmareg[8]);
 
-    print("\n Transfer sequence completed...");
+    print("\n Transfer sequence completed, ");
 
-
+    print("now reading from memory...\n");
     //Print out what's stored in memory
-	for (i=0;i<=10;i++){
+	for (i=0;i<=63;i++){
 		printb(&cdmadapt[i]);
 	}
 
@@ -115,23 +131,23 @@ int main()
 	free(i);
     cleanup_platform();
     return 0;
-}
 
+}
 void rwthreshreg(){
     volatile unsigned int *comms = (volatile unsigned int *) 0x43c00000;
 
     print("Hello World\n\r");
-	comms[5] = 0b00110001110000110000000000000000;
-	comms[0] = 0b01010111000111000000010010100000;    // write threshold register 1, trigger 0
-	comms[0] = 0b11010111000111000000010010100000;
+	comms[5] = 0b00001111000011110000111100001111;
+	comms[0] = 0b01010111000111000000000010100000;    // write threshold register 1, trigger 0
+	comms[0] = 0b11010111000111000000000010100000;
 	printb(&comms[6]);
 	//printf("%d",CHECK_BIT(comms[6],0));
 	//printf("%d",CHECK_BIT(comms[6],1));
 
 //  comms[0] = 0b0111222233333333444444555555XXXX;
 	comms[5] = 0b00000000000000000000000000000000;
-	comms[0] = 0b01010111000011000000011010100000;    // Read threshold register 1, trigger 0
-	comms[0] = 0b11010111000011000000011010100000;
+	comms[0] = 0b01010111000011000000001010100000;    // Read threshold register 1, trigger 0
+	comms[0] = 0b11010111000011000000001010100000;
 	print("comm6 then comm10\n\r");
 	printb(&comms[6]);
 	//printf("%d",CHECK_BIT(comms[6],0));

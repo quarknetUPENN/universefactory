@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Tue Jul  3 09:51:06 2018
+// Date        : Fri Jul  6 12:35:09 2018
 // Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_bramtest_v1_0_0_0/design_1_bramtest_v1_0_0_0_sim_netlist.v
+//               C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_bramtest_v1_0_0_0/design_1_bramtest_v1_0_0_0_sim_netlist.v
 // Design      : design_1_bramtest_v1_0_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -33,7 +33,7 @@ module design_1_bramtest_v1_0_0_0
   wire \<const0> ;
   wire \<const1> ;
   wire clk40;
-  wire [3:0]\^dinb ;
+  wire [7:0]\^dinb ;
 
   assign addrb[31] = \<const0> ;
   assign addrb[30] = \<const1> ;
@@ -59,11 +59,7 @@ module design_1_bramtest_v1_0_0_0
   assign addrb[10] = \<const0> ;
   assign addrb[9] = \<const0> ;
   assign addrb[8] = \<const0> ;
-  assign addrb[7] = \<const0> ;
-  assign addrb[6] = \<const0> ;
-  assign addrb[5] = \<const0> ;
-  assign addrb[4] = \<const0> ;
-  assign addrb[3:0] = \^dinb [3:0];
+  assign addrb[7:0] = \^dinb [7:0];
   assign clkb = clk40;
   assign dinb[31] = \<const0> ;
   assign dinb[30] = \<const0> ;
@@ -89,16 +85,12 @@ module design_1_bramtest_v1_0_0_0
   assign dinb[10] = \<const0> ;
   assign dinb[9] = \<const0> ;
   assign dinb[8] = \<const0> ;
-  assign dinb[7] = \<const0> ;
-  assign dinb[6] = \<const0> ;
-  assign dinb[5] = \<const0> ;
-  assign dinb[4] = \<const0> ;
-  assign dinb[3:0] = \^dinb [3:0];
+  assign dinb[7:0] = \^dinb [7:0];
   assign enb = \<const1> ;
   assign rstb = \<const0> ;
-  assign web[3] = \<const1> ;
-  assign web[2] = \<const1> ;
-  assign web[1] = \<const1> ;
+  assign web[3] = \<const0> ;
+  assign web[2] = \<const0> ;
+  assign web[1] = \<const0> ;
   assign web[0] = \<const1> ;
   GND GND
        (.G(\<const0> ));
@@ -113,13 +105,14 @@ endmodule
 module design_1_bramtest_v1_0_0_0_bramtest_v1_0
    (dinb,
     clk40);
-  output [3:0]dinb;
+  output [7:0]dinb;
   input clk40;
 
   wire clk40;
-  wire [3:0]cntr_reg__0;
-  wire [3:0]dinb;
-  wire [3:0]p_0_in;
+  wire \cntr[7]_i_2_n_0 ;
+  wire [7:0]cntr_reg__0;
+  wire [7:0]dinb;
+  wire [7:0]p_0_in;
 
   FDRE \addrb_reg[0] 
        (.C(clk40),
@@ -145,20 +138,43 @@ module design_1_bramtest_v1_0_0_0_bramtest_v1_0
         .D(cntr_reg__0[3]),
         .Q(dinb[3]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  FDRE \addrb_reg[4] 
+       (.C(clk40),
+        .CE(1'b1),
+        .D(cntr_reg__0[4]),
+        .Q(dinb[4]),
+        .R(1'b0));
+  FDRE \addrb_reg[5] 
+       (.C(clk40),
+        .CE(1'b1),
+        .D(cntr_reg__0[5]),
+        .Q(dinb[5]),
+        .R(1'b0));
+  FDRE \addrb_reg[6] 
+       (.C(clk40),
+        .CE(1'b1),
+        .D(cntr_reg__0[6]),
+        .Q(dinb[6]),
+        .R(1'b0));
+  FDRE \addrb_reg[7] 
+       (.C(clk40),
+        .CE(1'b1),
+        .D(cntr_reg__0[7]),
+        .Q(dinb[7]),
+        .R(1'b0));
   LUT1 #(
     .INIT(2'h1)) 
     \cntr[0]_i_1 
        (.I0(cntr_reg__0[0]),
         .O(p_0_in[0]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \cntr[1]_i_1 
        (.I0(cntr_reg__0[0]),
         .I1(cntr_reg__0[1]),
         .O(p_0_in[1]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \cntr[2]_i_1 
@@ -175,6 +191,51 @@ module design_1_bramtest_v1_0_0_0_bramtest_v1_0
         .I2(cntr_reg__0[2]),
         .I3(cntr_reg__0[3]),
         .O(p_0_in[3]));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'h7FFF8000)) 
+    \cntr[4]_i_1 
+       (.I0(cntr_reg__0[2]),
+        .I1(cntr_reg__0[0]),
+        .I2(cntr_reg__0[1]),
+        .I3(cntr_reg__0[3]),
+        .I4(cntr_reg__0[4]),
+        .O(p_0_in[4]));
+  LUT6 #(
+    .INIT(64'h7FFFFFFF80000000)) 
+    \cntr[5]_i_1 
+       (.I0(cntr_reg__0[3]),
+        .I1(cntr_reg__0[1]),
+        .I2(cntr_reg__0[0]),
+        .I3(cntr_reg__0[2]),
+        .I4(cntr_reg__0[4]),
+        .I5(cntr_reg__0[5]),
+        .O(p_0_in[5]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT2 #(
+    .INIT(4'h6)) 
+    \cntr[6]_i_1 
+       (.I0(\cntr[7]_i_2_n_0 ),
+        .I1(cntr_reg__0[6]),
+        .O(p_0_in[6]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT3 #(
+    .INIT(8'h78)) 
+    \cntr[7]_i_1 
+       (.I0(\cntr[7]_i_2_n_0 ),
+        .I1(cntr_reg__0[6]),
+        .I2(cntr_reg__0[7]),
+        .O(p_0_in[7]));
+  LUT6 #(
+    .INIT(64'h8000000000000000)) 
+    \cntr[7]_i_2 
+       (.I0(cntr_reg__0[5]),
+        .I1(cntr_reg__0[3]),
+        .I2(cntr_reg__0[1]),
+        .I3(cntr_reg__0[0]),
+        .I4(cntr_reg__0[2]),
+        .I5(cntr_reg__0[4]),
+        .O(\cntr[7]_i_2_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \cntr_reg[0] 
@@ -206,6 +267,38 @@ module design_1_bramtest_v1_0_0_0_bramtest_v1_0
         .CE(1'b1),
         .D(p_0_in[3]),
         .Q(cntr_reg__0[3]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \cntr_reg[4] 
+       (.C(clk40),
+        .CE(1'b1),
+        .D(p_0_in[4]),
+        .Q(cntr_reg__0[4]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \cntr_reg[5] 
+       (.C(clk40),
+        .CE(1'b1),
+        .D(p_0_in[5]),
+        .Q(cntr_reg__0[5]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \cntr_reg[6] 
+       (.C(clk40),
+        .CE(1'b1),
+        .D(p_0_in[6]),
+        .Q(cntr_reg__0[6]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \cntr_reg[7] 
+       (.C(clk40),
+        .CE(1'b1),
+        .D(p_0_in[7]),
+        .Q(cntr_reg__0[7]),
         .R(1'b0));
 endmodule
 `ifndef GLBL

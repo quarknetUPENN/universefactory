@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Tue Jul  3 09:47:31 2018
+//Date        : Fri Jul  6 12:33:03 2018
 //Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -304,8 +304,6 @@ module design_1
   assign DTMROC_DATA_OUT_1 = DTMROC_DATA_OUT[11:0];
   assign DTMROC_HARD_N = main_0_dtm_hard_n;
   assign DTMROC_HARD_P = main_0_dtm_hard_p;
-  (* BMM_INFO_ADDRESS_SPACE = "byte  0x40000000 32 > design_1 blk_mem_gen_0" *) 
-  (* KEEP_HIERARCHY = "yes" *) 
   design_1_axi_bram_ctrl_0_0 axi_bram_ctrl_0
        (.bram_addr_a(axi_bram_ctrl_0_BRAM_PORTA_ADDR),
         .bram_clk_a(axi_bram_ctrl_0_BRAM_PORTA_CLK),
@@ -656,8 +654,6 @@ module design_1
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(proc_sys_reset_0_peripheral_aresetn),
         .slowest_sync_clk(processing_system7_0_FCLK_CLK0));
-  (* BMM_INFO_PROCESSOR = "arm > design_1 axi_bram_ctrl_0" *) 
-  (* KEEP_HIERARCHY = "yes" *) 
   design_1_processing_system7_0_0 processing_system7_0
        (.DDR_Addr(DDR_addr[14:0]),
         .DDR_BankAddr(DDR_ba[2:0]),

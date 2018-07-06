@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
--- Date        : Tue Jul  3 09:51:06 2018
+-- Date        : Fri Jul  6 12:35:09 2018
 -- Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_bramtest_v1_0_0_0/design_1_bramtest_v1_0_0_0_sim_netlist.vhdl
+--               C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_bramtest_v1_0_0_0/design_1_bramtest_v1_0_0_0_sim_netlist.vhdl
 -- Design      : design_1_bramtest_v1_0_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -16,7 +16,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_1_bramtest_v1_0_0_0_bramtest_v1_0 is
   port (
-    dinb : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    dinb : out STD_LOGIC_VECTOR ( 7 downto 0 );
     clk40 : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -24,13 +24,16 @@ entity design_1_bramtest_v1_0_0_0_bramtest_v1_0 is
 end design_1_bramtest_v1_0_0_0_bramtest_v1_0;
 
 architecture STRUCTURE of design_1_bramtest_v1_0_0_0_bramtest_v1_0 is
-  signal \cntr_reg__0\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal p_0_in : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \cntr[7]_i_2_n_0\ : STD_LOGIC;
+  signal \cntr_reg__0\ : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal p_0_in : STD_LOGIC_VECTOR ( 7 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \cntr[0]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \cntr[1]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \cntr[2]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \cntr[1]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \cntr[2]_i_1\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \cntr[3]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \cntr[4]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \cntr[6]_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \cntr[7]_i_1\ : label is "soft_lutpair1";
 begin
 \addrb_reg[0]\: unisim.vcomponents.FDRE
      port map (
@@ -62,6 +65,38 @@ begin
       CE => '1',
       D => \cntr_reg__0\(3),
       Q => dinb(3),
+      R => '0'
+    );
+\addrb_reg[4]\: unisim.vcomponents.FDRE
+     port map (
+      C => clk40,
+      CE => '1',
+      D => \cntr_reg__0\(4),
+      Q => dinb(4),
+      R => '0'
+    );
+\addrb_reg[5]\: unisim.vcomponents.FDRE
+     port map (
+      C => clk40,
+      CE => '1',
+      D => \cntr_reg__0\(5),
+      Q => dinb(5),
+      R => '0'
+    );
+\addrb_reg[6]\: unisim.vcomponents.FDRE
+     port map (
+      C => clk40,
+      CE => '1',
+      D => \cntr_reg__0\(6),
+      Q => dinb(6),
+      R => '0'
+    );
+\addrb_reg[7]\: unisim.vcomponents.FDRE
+     port map (
+      C => clk40,
+      CE => '1',
+      D => \cntr_reg__0\(7),
+      Q => dinb(7),
       R => '0'
     );
 \cntr[0]_i_1\: unisim.vcomponents.LUT1
@@ -101,6 +136,63 @@ begin
       I2 => \cntr_reg__0\(2),
       I3 => \cntr_reg__0\(3),
       O => p_0_in(3)
+    );
+\cntr[4]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"7FFF8000"
+    )
+        port map (
+      I0 => \cntr_reg__0\(2),
+      I1 => \cntr_reg__0\(0),
+      I2 => \cntr_reg__0\(1),
+      I3 => \cntr_reg__0\(3),
+      I4 => \cntr_reg__0\(4),
+      O => p_0_in(4)
+    );
+\cntr[5]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"7FFFFFFF80000000"
+    )
+        port map (
+      I0 => \cntr_reg__0\(3),
+      I1 => \cntr_reg__0\(1),
+      I2 => \cntr_reg__0\(0),
+      I3 => \cntr_reg__0\(2),
+      I4 => \cntr_reg__0\(4),
+      I5 => \cntr_reg__0\(5),
+      O => p_0_in(5)
+    );
+\cntr[6]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"6"
+    )
+        port map (
+      I0 => \cntr[7]_i_2_n_0\,
+      I1 => \cntr_reg__0\(6),
+      O => p_0_in(6)
+    );
+\cntr[7]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"78"
+    )
+        port map (
+      I0 => \cntr[7]_i_2_n_0\,
+      I1 => \cntr_reg__0\(6),
+      I2 => \cntr_reg__0\(7),
+      O => p_0_in(7)
+    );
+\cntr[7]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000000000000000"
+    )
+        port map (
+      I0 => \cntr_reg__0\(5),
+      I1 => \cntr_reg__0\(3),
+      I2 => \cntr_reg__0\(1),
+      I3 => \cntr_reg__0\(0),
+      I4 => \cntr_reg__0\(2),
+      I5 => \cntr_reg__0\(4),
+      O => \cntr[7]_i_2_n_0\
     );
 \cntr_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -146,6 +238,50 @@ begin
       Q => \cntr_reg__0\(3),
       R => '0'
     );
+\cntr_reg[4]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk40,
+      CE => '1',
+      D => p_0_in(4),
+      Q => \cntr_reg__0\(4),
+      R => '0'
+    );
+\cntr_reg[5]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk40,
+      CE => '1',
+      D => p_0_in(5),
+      Q => \cntr_reg__0\(5),
+      R => '0'
+    );
+\cntr_reg[6]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk40,
+      CE => '1',
+      D => p_0_in(6),
+      Q => \cntr_reg__0\(6),
+      R => '0'
+    );
+\cntr_reg[7]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk40,
+      CE => '1',
+      D => p_0_in(7),
+      Q => \cntr_reg__0\(7),
+      R => '0'
+    );
 end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -175,7 +311,7 @@ architecture STRUCTURE of design_1_bramtest_v1_0_0_0 is
   signal \<const0>\ : STD_LOGIC;
   signal \<const1>\ : STD_LOGIC;
   signal \^clk40\ : STD_LOGIC;
-  signal \^dinb\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \^dinb\ : STD_LOGIC_VECTOR ( 7 downto 0 );
 begin
   \^clk40\ <= clk40;
   addrb(31) <= \<const0>\;
@@ -202,11 +338,7 @@ begin
   addrb(10) <= \<const0>\;
   addrb(9) <= \<const0>\;
   addrb(8) <= \<const0>\;
-  addrb(7) <= \<const0>\;
-  addrb(6) <= \<const0>\;
-  addrb(5) <= \<const0>\;
-  addrb(4) <= \<const0>\;
-  addrb(3 downto 0) <= \^dinb\(3 downto 0);
+  addrb(7 downto 0) <= \^dinb\(7 downto 0);
   clkb <= \^clk40\;
   dinb(31) <= \<const0>\;
   dinb(30) <= \<const0>\;
@@ -232,16 +364,12 @@ begin
   dinb(10) <= \<const0>\;
   dinb(9) <= \<const0>\;
   dinb(8) <= \<const0>\;
-  dinb(7) <= \<const0>\;
-  dinb(6) <= \<const0>\;
-  dinb(5) <= \<const0>\;
-  dinb(4) <= \<const0>\;
-  dinb(3 downto 0) <= \^dinb\(3 downto 0);
+  dinb(7 downto 0) <= \^dinb\(7 downto 0);
   enb <= \<const1>\;
   rstb <= \<const0>\;
-  web(3) <= \<const1>\;
-  web(2) <= \<const1>\;
-  web(1) <= \<const1>\;
+  web(3) <= \<const0>\;
+  web(2) <= \<const0>\;
+  web(1) <= \<const0>\;
   web(0) <= \<const1>\;
 GND: unisim.vcomponents.GND
      port map (
@@ -254,6 +382,6 @@ VCC: unisim.vcomponents.VCC
 inst: entity work.design_1_bramtest_v1_0_0_0_bramtest_v1_0
      port map (
       clk40 => \^clk40\,
-      dinb(3 downto 0) => \^dinb\(3 downto 0)
+      dinb(7 downto 0) => \^dinb\(7 downto 0)
     );
 end STRUCTURE;
