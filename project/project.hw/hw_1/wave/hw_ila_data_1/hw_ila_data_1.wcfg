@@ -10,16 +10,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1024001fs"></ZoomEndTime>
-      <Cursor1Time time="313000fs"></Cursor1Time>
+      <ZoomEndTime time="7741fs"></ZoomEndTime>
+      <Cursor1Time time="512000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="346"></NameColumnWidth>
-      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+      <ValueColumnWidth column_width="112"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
-   <wave_markers>
-   </wave_markers>
+   <WVObjectSize size="7" />
    <wvobject fp_name="design_1_i/bram_controller_addr_0_addrout" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">design_1_i/bram_controller_addr_0_addrout[15:0]</obj_property>
@@ -68,5 +66,14 @@
       <obj_property name="ObjectShortName">tdc_0_bramen</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/tdc_0_occupied_data_spaces" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/tdc_0_occupied_data_spaces[6:0]</obj_property>
+      <obj_property name="ObjectShortName">tdc_0_occupied_data_spaces[6:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

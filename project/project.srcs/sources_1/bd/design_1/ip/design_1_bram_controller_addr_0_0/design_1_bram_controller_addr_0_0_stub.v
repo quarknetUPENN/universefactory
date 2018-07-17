@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Tue Jul 17 09:34:52 2018
+// Date        : Tue Jul 17 15:45:09 2018
 // Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 // Command     : write_verilog -force -mode synth_stub
-//               c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_bram_controller_addr_0_0/design_1_bram_controller_addr_0_0_stub.v
+//               C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_bram_controller_addr_0_0/design_1_bram_controller_addr_0_0_stub.v
 // Design      : design_1_bram_controller_addr_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1

@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:tdc:1.0
-// IP Revision: 20
+// IP Revision: 26
 
 `timescale 1ns/1ps
 
@@ -68,6 +68,9 @@ module design_1_tdc_0_1 (
   bramwe,
   bramrst,
   bramrddata,
+  occupied_data_spaces,
+  l1as_received,
+  l1as_sent,
   s00_axi_awaddr,
   s00_axi_awprot,
   s00_axi_awvalid,
@@ -113,6 +116,9 @@ output wire bramrst;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_PORT_A, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORT_A DOUT" *)
 input wire [15 : 0] bramrddata;
+output wire [6 : 0] occupied_data_spaces;
+output wire [31 : 0] l1as_received;
+output wire [31 : 0] l1as_sent;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *)
 input wire [6 : 0] s00_axi_awaddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *)
@@ -178,6 +184,9 @@ input wire s00_axi_aresetn;
     .bramwe(bramwe),
     .bramrst(bramrst),
     .bramrddata(bramrddata),
+    .occupied_data_spaces(occupied_data_spaces),
+    .l1as_received(l1as_received),
+    .l1as_sent(l1as_sent),
     .s00_axi_awaddr(s00_axi_awaddr),
     .s00_axi_awprot(s00_axi_awprot),
     .s00_axi_awvalid(s00_axi_awvalid),

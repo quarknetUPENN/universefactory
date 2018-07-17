@@ -88,12 +88,12 @@ input wire enb;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB WE" *)
 input wire [0 : 0] web;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB ADDR" *)
-input wire [13 : 0] addrb;
+input wire [15 : 0] addrb;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB DIN" *)
-input wire [127 : 0] dinb;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_PORTB, MEM_SIZE 2097152, MEM_WIDTH 128, MEM_ECC NONE, MASTER_TYPE OTHER, READ_WRITE_MODE READ_WRITE" *)
+input wire [31 : 0] dinb;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_PORTB, MEM_SIZE 2097152, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_WRITE_MODE READ_WRITE" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB DOUT" *)
-output wire [127 : 0] doutb;
+output wire [31 : 0] doutb;
 
   blk_mem_gen_v8_4_1 #(
     .C_FAMILY("zynq"),
@@ -114,8 +114,8 @@ output wire [127 : 0] doutb;
     .C_LOAD_INIT_FILE(0),
     .C_INIT_FILE_NAME("no_coe_file_loaded"),
     .C_INIT_FILE("NONE"),
-    .C_USE_DEFAULT_DATA(0),
-    .C_DEFAULT_DATA("0"),
+    .C_USE_DEFAULT_DATA(1),
+    .C_DEFAULT_DATA("fede"),
     .C_HAS_RSTA(0),
     .C_RST_PRIORITY_A("CE"),
     .C_RSTRAM_A(0),
@@ -139,11 +139,11 @@ output wire [127 : 0] doutb;
     .C_USE_BYTE_WEB(0),
     .C_WEB_WIDTH(1),
     .C_WRITE_MODE_B("WRITE_FIRST"),
-    .C_WRITE_WIDTH_B(128),
-    .C_READ_WIDTH_B(128),
-    .C_WRITE_DEPTH_B(9625),
-    .C_READ_DEPTH_B(9625),
-    .C_ADDRB_WIDTH(14),
+    .C_WRITE_WIDTH_B(32),
+    .C_READ_WIDTH_B(32),
+    .C_WRITE_DEPTH_B(38500),
+    .C_READ_DEPTH_B(38500),
+    .C_ADDRB_WIDTH(16),
     .C_HAS_MEM_OUTPUT_REGS_A(1),
     .C_HAS_MEM_OUTPUT_REGS_B(1),
     .C_HAS_MUX_OUTPUT_REGS_A(0),
@@ -166,9 +166,9 @@ output wire [127 : 0] doutb;
     .C_EN_SHUTDOWN_PIN(0),
     .C_EN_SAFETY_CKT(0),
     .C_DISABLE_WARN_BHV_RANGE(0),
-    .C_COUNT_36K_BRAM("40"),
-    .C_COUNT_18K_BRAM("0"),
-    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     73.283696 mW")
+    .C_COUNT_36K_BRAM("34"),
+    .C_COUNT_18K_BRAM("4"),
+    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     35.690324 mW")
   ) inst (
     .clka(clka),
     .rsta(1'D0),

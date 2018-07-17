@@ -278,7 +278,7 @@ proc create_root_design { parentCell } {
    CONFIG.ALL_PROBE_SAME_MU_CNT {2} \
    CONFIG.C_ENABLE_ILA_AXI_MON {false} \
    CONFIG.C_MONITOR_TYPE {Native} \
-   CONFIG.C_NUM_OF_PROBES {6} \
+   CONFIG.C_NUM_OF_PROBES {9} \
    CONFIG.C_PROBE0_MU_CNT {2} \
    CONFIG.C_PROBE0_WIDTH {17} \
    CONFIG.C_PROBE1_MU_CNT {2} \
@@ -289,6 +289,12 @@ proc create_root_design { parentCell } {
    CONFIG.C_PROBE4_MU_CNT {2} \
    CONFIG.C_PROBE4_WIDTH {32} \
    CONFIG.C_PROBE5_MU_CNT {2} \
+   CONFIG.C_PROBE6_MU_CNT {2} \
+   CONFIG.C_PROBE6_WIDTH {7} \
+   CONFIG.C_PROBE7_MU_CNT {2} \
+   CONFIG.C_PROBE7_WIDTH {32} \
+   CONFIG.C_PROBE8_MU_CNT {2} \
+   CONFIG.C_PROBE8_WIDTH {32} \
  ] $ila_0
 
   # Create instance: main_0, and set properties
@@ -807,6 +813,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net tdc_0_dac_spi [get_bd_ports dac_spi_0] [get_bd_pins tdc_0/dac_spi]
   connect_bd_net -net tdc_0_data_mode_cmd [get_bd_pins main_0/event_trigger] [get_bd_pins tdc_0/data_mode_cmd_out]
   connect_bd_net -net tdc_0_is_data_mode [get_bd_pins main_0/is_data_mode] [get_bd_pins tdc_0/is_data_mode]
+  connect_bd_net -net tdc_0_l1as_received [get_bd_pins ila_0/probe7] [get_bd_pins tdc_0/l1as_received]
+  connect_bd_net -net tdc_0_l1as_sent [get_bd_pins ila_0/probe8] [get_bd_pins tdc_0/l1as_sent]
+  connect_bd_net -net tdc_0_occupied_data_spaces [get_bd_pins ila_0/probe6] [get_bd_pins tdc_0/occupied_data_spaces]
   connect_bd_net -net util_ds_buf_0_IBUF_OUT [get_bd_pins tdc_0/dtmroc_data_out] [get_bd_pins util_ds_buf_0/IBUF_OUT]
   connect_bd_net -net util_ds_buf_1_IBUF_OUT [get_bd_pins main_0/dtm_cmd_out] [get_bd_pins util_ds_buf_1/IBUF_OUT]
 

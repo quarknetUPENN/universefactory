@@ -90,7 +90,7 @@ module data_trig_test(
     reg stahp = 0;
     always @ (posedge clk40) begin
         cmdout_hist <= {cmdout_hist[62:0],data_mode_cmd_out};
-        if (cmdout_hist[9:7] == 3'b110) begin
+        if (cmdout_hist[8:6] == 3'b110) begin
             send_more_l1as <= send_more_l1as + 1;
         end
         

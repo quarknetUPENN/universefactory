@@ -134,7 +134,7 @@ void ghjk(){
 
 	 tdc[0] = 0b10000000000000000000000000000000;
 	 int i = 0;
-	 while (i < 100000) {
+	 while (i < 10000000) {
 		 i++;
 	 }
 	 tdc[0] = 0b00000000000000000000000000000000;
@@ -142,7 +142,7 @@ void ghjk(){
 	 printb(&tdc[4]);
 	 print("done\n");
 
-	 for (int i = 13250; i < 15000; i++){
+	 for (int i = 1325; i < 2000; i++){
 		 printf("this is %d ", i);
 		 printb(&bram[i]);
 	 }

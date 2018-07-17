@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Tue Jul 17 10:36:38 2018
+//Date        : Tue Jul 17 16:14:32 2018
 //Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -285,6 +285,9 @@ module design_1
   wire [6:0]tdc_0_dac_spi;
   wire tdc_0_data_mode_cmd;
   wire tdc_0_is_data_mode;
+  wire [31:0]tdc_0_l1as_received;
+  wire [31:0]tdc_0_l1as_sent;
+  wire [6:0]tdc_0_occupied_data_spaces;
   wire [0:0]util_ds_buf_0_IBUF_OUT;
   wire [0:0]util_ds_buf_1_IBUF_OUT;
 
@@ -562,7 +565,10 @@ module design_1
         .probe2(tdc_0_bramen),
         .probe3(bram_controller_addr_0_addrout),
         .probe4(blk_mem_gen_0_doutb),
-        .probe5(Net3));
+        .probe5(Net3),
+        .probe6(tdc_0_occupied_data_spaces),
+        .probe7(tdc_0_l1as_received),
+        .probe8(tdc_0_l1as_sent));
   design_1_main_0_0 main_0
        (.clk40(processing_system7_0_FCLK_CLK0),
         .clkbx_n(main_0_clkbx_n),
@@ -705,6 +711,9 @@ module design_1
         .data_mode_cmd_out(tdc_0_data_mode_cmd),
         .dtmroc_data_out(util_ds_buf_0_IBUF_OUT),
         .is_data_mode(tdc_0_is_data_mode),
+        .l1as_received(tdc_0_l1as_received),
+        .l1as_sent(tdc_0_l1as_sent),
+        .occupied_data_spaces(tdc_0_occupied_data_spaces),
         .s00_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s00_axi_araddr(axi_interconnect_0_M00_AXI_ARADDR[6:0]),
         .s00_axi_aresetn(proc_sys_reset_0_peripheral_aresetn),

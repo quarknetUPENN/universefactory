@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5952 
+INFO: Helper process launched with PID 6064 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 418.348 ; gain = 100.617
+Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 418.375 ; gain = 100.648
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'tdc_v1_0' [C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/hdl/tdc_v1_0.v:4]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
@@ -37,12 +37,9 @@ INFO: [Synth 8-6157] synthesizing module 'data_recorder' [C:/Users/HEP/Documents
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/data_recorder.v:137]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/data_recorder.v:152]
 INFO: [Synth 8-6155] done synthesizing module 'data_recorder' (3#1) [C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/data_recorder.v:23]
-WARNING: [Synth 8-689] width (1) of port connection 'eventid' does not match port width (32) of module 'data_recorder' [C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/hdl/tdc_v1_0.v:122]
-WARNING: [Synth 8-350] instance 'data_recorder_inst' of module 'data_recorder' requires 14 connections, but only 13 given [C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/hdl/tdc_v1_0.v:115]
 INFO: [Synth 8-6157] synthesizing module 'trig_arbiter' [C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/trig_arbiter.v:23]
 	Parameter L1A_PER_EVENT bound to: 3 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'trig_arbiter' (4#1) [C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/trig_arbiter.v:23]
-WARNING: [Synth 8-689] width (1) of port connection 'eventid' does not match port width (32) of module 'trig_arbiter' [C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/hdl/tdc_v1_0.v:140]
 INFO: [Synth 8-6155] done synthesizing module 'tdc_v1_0' (5#1) [C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/hdl/tdc_v1_0.v:4]
 WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[287]
 WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[286]
@@ -146,17 +143,17 @@ WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[1
 WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[188]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 479.340 ; gain = 161.609
+Finished Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 479.352 ; gain = 161.625
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 479.340 ; gain = 161.609
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 479.578 ; gain = 161.852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 479.340 ; gain = 161.609
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 479.625 ; gain = 161.898
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-802] inferred FSM for state register 'inner_cntr_reg' in module 'data_recorder'
@@ -173,7 +170,7 @@ INFO: [Synth 8-5544] ROM "events_received" won't be mapped to Block RAM because 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'inner_cntr_reg' using encoding 'one-hot' in module 'data_recorder'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 511.805 ; gain = 194.074
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 516.887 ; gain = 199.160
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -368,8 +365,6 @@ INFO: [Synth 8-3886] merging instance 'tdc_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (tdc_v1_0_S00_AXI_inst/\axi_rresp_reg[1] )
 INFO: [Synth 8-3886] merging instance 'tdc_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'tdc_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (tdc_v1_0_S00_AXI_inst/\axi_bresp_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_recorder_inst/bramen_reg )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_recorder_inst/bramen_disabler_reg[0] )
 INFO: [Synth 8-3886] merging instance 'data_recorder_inst/dout_hist_reg[48]' (FD) to 'data_recorder_inst/dout_hist_reg[79]'
 INFO: [Synth 8-3886] merging instance 'data_recorder_inst/dout_hist_reg[49]' (FD) to 'data_recorder_inst/dout_hist_reg[79]'
 INFO: [Synth 8-3886] merging instance 'data_recorder_inst/dout_hist_reg[50]' (FD) to 'data_recorder_inst/dout_hist_reg[79]'
@@ -417,33 +412,16 @@ INFO: [Synth 8-3886] merging instance 'data_recorder_inst/dout_hist_reg[91]' (FD
 INFO: [Synth 8-3886] merging instance 'data_recorder_inst/dout_hist_reg[92]' (FD) to 'data_recorder_inst/dout_hist_reg[94]'
 INFO: [Synth 8-3886] merging instance 'data_recorder_inst/dout_hist_reg[93]' (FD) to 'data_recorder_inst/dout_hist_reg[94]'
 INFO: [Synth 8-3886] merging instance 'data_recorder_inst/dout_hist_reg[94]' (FD) to 'data_recorder_inst/dout_hist_reg[95]'
-INFO: [Synth 8-3886] merging instance 'data_recorder_inst/bramwrdata_reg[1]' (FDE_1) to 'data_recorder_inst/bramwrdata_reg[15]'
-INFO: [Synth 8-3886] merging instance 'data_recorder_inst/bramwrdata_reg[2]' (FDE_1) to 'data_recorder_inst/bramwrdata_reg[15]'
-INFO: [Synth 8-3886] merging instance 'data_recorder_inst/bramwrdata_reg[3]' (FDE_1) to 'data_recorder_inst/bramwrdata_reg[15]'
-INFO: [Synth 8-3886] merging instance 'data_recorder_inst/bramwrdata_reg[4]' (FDE_1) to 'data_recorder_inst/bramwrdata_reg[15]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-3332] Sequential element (axi_awaddr_reg[1]) is unused and will be removed from module tdc_v1_0_S00_AXI.
 WARNING: [Synth 8-3332] Sequential element (axi_awaddr_reg[0]) is unused and will be removed from module tdc_v1_0_S00_AXI.
 WARNING: [Synth 8-3332] Sequential element (axi_bresp_reg[1]) is unused and will be removed from module tdc_v1_0_S00_AXI.
 WARNING: [Synth 8-3332] Sequential element (axi_araddr_reg[1]) is unused and will be removed from module tdc_v1_0_S00_AXI.
 WARNING: [Synth 8-3332] Sequential element (axi_araddr_reg[0]) is unused and will be removed from module tdc_v1_0_S00_AXI.
 WARNING: [Synth 8-3332] Sequential element (axi_rresp_reg[1]) is unused and will be removed from module tdc_v1_0_S00_AXI.
-WARNING: [Synth 8-3332] Sequential element (data_recorder_inst/bramen_enabler_reg[2]) is unused and will be removed from module tdc_v1_0.
-WARNING: [Synth 8-3332] Sequential element (data_recorder_inst/bramen_enabler_reg[1]) is unused and will be removed from module tdc_v1_0.
-WARNING: [Synth 8-3332] Sequential element (data_recorder_inst/bramen_enabler_reg[0]) is unused and will be removed from module tdc_v1_0.
-WARNING: [Synth 8-3332] Sequential element (data_recorder_inst/bramen_disabler_reg[4]) is unused and will be removed from module tdc_v1_0.
-WARNING: [Synth 8-3332] Sequential element (data_recorder_inst/bramen_disabler_reg[3]) is unused and will be removed from module tdc_v1_0.
-WARNING: [Synth 8-3332] Sequential element (data_recorder_inst/bramen_disabler_reg[2]) is unused and will be removed from module tdc_v1_0.
-WARNING: [Synth 8-3332] Sequential element (data_recorder_inst/bramen_disabler_reg[1]) is unused and will be removed from module tdc_v1_0.
-WARNING: [Synth 8-3332] Sequential element (data_recorder_inst/bramen_disabler_reg[0]) is unused and will be removed from module tdc_v1_0.
-WARNING: [Synth 8-3332] Sequential element (data_recorder_inst/bramen_reg) is unused and will be removed from module tdc_v1_0.
 WARNING: [Synth 8-3332] Sequential element (trig_arbiter_inst/msg_reg[0]) is unused and will be removed from module tdc_v1_0.
-WARNING: [Synth 8-3332] Sequential element (trig_arbiter_inst/events_received_helper_reg[2]) is unused and will be removed from module tdc_v1_0.
-WARNING: [Synth 8-3332] Sequential element (trig_arbiter_inst/events_received_helper_reg[1]) is unused and will be removed from module tdc_v1_0.
-WARNING: [Synth 8-3332] Sequential element (trig_arbiter_inst/events_received_helper_reg[0]) is unused and will be removed from module tdc_v1_0.
 WARNING: [Synth 8-3332] Sequential element (trig_arbiter_inst/occupied_data_spaces_reg[0]) is unused and will be removed from module tdc_v1_0.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:33 . Memory (MB): peak = 682.250 ; gain = 364.520
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:37 . Memory (MB): peak = 698.531 ; gain = 380.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -456,7 +434,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 682.250 ; gain = 364.520
+Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 698.531 ; gain = 380.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -468,7 +446,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 682.250 ; gain = 364.520
+Finished Technology Mapping : Time (s): cpu = 00:00:39 ; elapsed = 00:00:39 . Memory (MB): peak = 698.531 ; gain = 380.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -492,7 +470,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 682.250 ; gain = 364.520
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:40 . Memory (MB): peak = 698.531 ; gain = 380.805
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -505,7 +483,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 682.250 ; gain = 364.520
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:40 . Memory (MB): peak = 698.531 ; gain = 380.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -517,25 +495,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 682.250 ; gain = 364.520
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:40 . Memory (MB): peak = 698.531 ; gain = 380.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 682.250 ; gain = 364.520
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:40 . Memory (MB): peak = 698.531 ; gain = 380.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 682.250 ; gain = 364.520
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:40 . Memory (MB): peak = 698.531 ; gain = 380.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 682.250 ; gain = 364.520
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:40 . Memory (MB): peak = 698.531 ; gain = 380.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -552,16 +530,16 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     3|
-|2     |CARRY4 |    35|
-|3     |LUT1   |     7|
-|4     |LUT2   |   166|
-|5     |LUT3   |   176|
-|6     |LUT4   |   256|
-|7     |LUT5   |   108|
-|8     |LUT6   |   612|
+|2     |CARRY4 |    48|
+|3     |LUT1   |     8|
+|4     |LUT2   |   163|
+|5     |LUT3   |   183|
+|6     |LUT4   |   294|
+|7     |LUT5   |    95|
+|8     |LUT6   |   613|
 |9     |MUXF7  |   128|
-|10    |FDRE   |  1396|
-|11    |FDSE   |    12|
+|10    |FDRE   |  1438|
+|11    |FDSE   |    29|
 |12    |FD_1   |     3|
 |13    |IBUF   |    80|
 |14    |OBUF   |    87|
@@ -571,19 +549,19 @@ Report Instance Areas:
 +------+------------------------+-----------------+------+
 |      |Instance                |Module           |Cells |
 +------+------------------------+-----------------+------+
-|1     |top                     |                 |  3069|
-|2     |  data_recorder_inst    |data_recorder    |   992|
+|1     |top                     |                 |  3172|
+|2     |  data_recorder_inst    |data_recorder    |  1031|
 |3     |  tdc_v1_0_S00_AXI_inst |tdc_v1_0_S00_AXI |  1575|
-|4     |  trig_arbiter_inst     |trig_arbiter     |   331|
+|4     |  trig_arbiter_inst     |trig_arbiter     |   395|
 +------+------------------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 682.250 ; gain = 364.520
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:40 . Memory (MB): peak = 698.531 ; gain = 380.805
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 366 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 682.250 ; gain = 364.520
-Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 682.250 ; gain = 364.520
+Synthesis finished with 0 errors, 0 critical warnings and 351 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:00:40 . Memory (MB): peak = 698.531 ; gain = 380.805
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:40 . Memory (MB): peak = 698.531 ; gain = 380.805
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 246 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 259 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -592,10 +570,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FD_1 => FDRE (inverted pins: C): 3 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-138 Infos, 134 Warnings, 0 Critical Warnings and 0 Errors encountered.
+131 Infos, 119 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 721.254 ; gain = 416.242
+synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:48 . Memory (MB): peak = 738.441 ; gain = 433.430
 INFO: [Common 17-1381] The checkpoint 'C:/Users/HEP/Documents/universefactory/ip_repo/edit_tdc_v1_0.runs/synth_1/tdc_v1_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file tdc_v1_0_utilization_synth.rpt -pb tdc_v1_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 721.254 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon Jul 16 13:59:59 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 738.441 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Jul 17 14:31:33 2018...

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Jul 17 10:36:42 2018" VIVADOVERSION="2018.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Jul 17 16:14:35 2018" VIVADOVERSION="2018.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:microzed_7010:part0:1.1" DEVICE="7z010" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -3499,7 +3499,7 @@
         <PARAMETER NAME="C_SLOT_0_AXI_PROTOCOL" VALUE="AXI4"/>
         <PARAMETER NAME="C_NUM_MONITOR_SLOTS" VALUE="1"/>
         <PARAMETER NAME="C_ENABLE_ILA_AXI_MON" VALUE="0"/>
-        <PARAMETER NAME="C_NUM_OF_PROBES" VALUE="6"/>
+        <PARAMETER NAME="C_NUM_OF_PROBES" VALUE="9"/>
         <PARAMETER NAME="C_DATA_DEPTH" VALUE="1024"/>
         <PARAMETER NAME="C_MAJOR_VERSION" VALUE="2018"/>
         <PARAMETER NAME="C_MINOR_VERSION" VALUE="1"/>
@@ -3515,8 +3515,8 @@
         <PARAMETER NAME="C_TRIGOUT_EN" VALUE="0"/>
         <PARAMETER NAME="C_TRIGIN_EN" VALUE="0"/>
         <PARAMETER NAME="C_SLOT_0_AXIS_TUSER_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_SLOT_0_AXIS_TDEST_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_SLOT_0_AXIS_TID_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_SLOT_0_AXIS_TDEST_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_SLOT_0_AXIS_TID_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_SLOT_0_AXI_ID_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_ARUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_RUSER_WIDTH" VALUE="1"/>
@@ -3529,9 +3529,9 @@
         <PARAMETER NAME="C_PROBE3_WIDTH" VALUE="16"/>
         <PARAMETER NAME="C_PROBE4_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_PROBE5_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE6_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE7_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE8_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_PROBE6_WIDTH" VALUE="7"/>
+        <PARAMETER NAME="C_PROBE7_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_PROBE8_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_PROBE9_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE10_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE11_WIDTH" VALUE="1"/>
@@ -5577,9 +5577,9 @@
         <PARAMETER NAME="C_PROBE3_MU_CNT" VALUE="2"/>
         <PARAMETER NAME="C_PROBE4_MU_CNT" VALUE="2"/>
         <PARAMETER NAME="C_PROBE5_MU_CNT" VALUE="2"/>
-        <PARAMETER NAME="C_PROBE6_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE7_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE8_MU_CNT" VALUE="1"/>
+        <PARAMETER NAME="C_PROBE6_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE7_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE8_MU_CNT" VALUE="2"/>
         <PARAMETER NAME="C_PROBE9_MU_CNT" VALUE="1"/>
         <PARAMETER NAME="C_PROBE10_MU_CNT" VALUE="1"/>
         <PARAMETER NAME="C_PROBE11_MU_CNT" VALUE="1"/>
@@ -6654,6 +6654,21 @@
             <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_en_a"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" LEFT="6" NAME="probe6" RIGHT="0" SIGIS="undef" SIGNAME="tdc_0_occupied_data_spaces">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="tdc_0" PORT="occupied_data_spaces"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="probe7" RIGHT="0" SIGIS="undef" SIGNAME="tdc_0_l1as_received">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="tdc_0" PORT="l1as_received"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="probe8" RIGHT="0" SIGIS="undef" SIGNAME="tdc_0_l1as_sent">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="tdc_0" PORT="l1as_sent"/>
+          </CONNECTIONS>
+        </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -6794,12 +6809,12 @@
             <CONNECTION INSTANCE="cccd_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="main_0" PORT="rst_n"/>
-            <CONNECTION INSTANCE="tdc_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="M01_ARESETN"/>
             <CONNECTION INSTANCE="axi_interconnect_1" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="axi_interconnect_1" PORT="M00_ARESETN"/>
+            <CONNECTION INSTANCE="tdc_0" PORT="s00_axi_aresetn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -8152,8 +8167,6 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP1_ACLK"/>
             <CONNECTION INSTANCE="main_0" PORT="clk40"/>
             <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1"/>
-            <CONNECTION INSTANCE="tdc_0" PORT="clk40"/>
-            <CONNECTION INSTANCE="tdc_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="ACLK"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="M00_ACLK"/>
@@ -8161,6 +8174,8 @@
             <CONNECTION INSTANCE="axi_interconnect_1" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="axi_interconnect_1" PORT="ACLK"/>
             <CONNECTION INSTANCE="axi_interconnect_1" PORT="M00_ACLK"/>
+            <CONNECTION INSTANCE="tdc_0" PORT="clk40"/>
+            <CONNECTION INSTANCE="tdc_0" PORT="s00_axi_aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -8480,6 +8495,21 @@
         <PORT DIR="I" LEFT="15" NAME="bramrddata" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_douta">
           <CONNECTIONS>
             <CONNECTION INSTANCE="blk_mem_gen_0" PORT="douta"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="6" NAME="occupied_data_spaces" RIGHT="0" SIGIS="undef" SIGNAME="tdc_0_occupied_data_spaces">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ila_0" PORT="probe6"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="l1as_received" RIGHT="0" SIGIS="undef" SIGNAME="tdc_0_l1as_received">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ila_0" PORT="probe7"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="l1as_sent" RIGHT="0" SIGIS="undef" SIGNAME="tdc_0_l1as_sent">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ila_0" PORT="probe8"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="6" NAME="s00_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_M00_AXI_awaddr">
