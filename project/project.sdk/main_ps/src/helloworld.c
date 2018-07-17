@@ -49,111 +49,153 @@
 #include <stdlib.h>
 #include "platform.h"
 #include "xil_printf.h"
+#include <string.h>
+#include <stdbool.h>
 
-#define BIT(pos,var) ((var) & (1<<(pos)))
+#define BIT(var,pos) ((var) & (1<<(pos)))
+
+volatile unsigned int *comms = (volatile unsigned int *) 0x43c00000;
+volatile unsigned int *tdc = (volatile unsigned int *) 0x43c10000;
+volatile unsigned int *bram = (volatile unsigned int *) 0x80000000;
+typedef enum cmd {
+    L1A 		= 0b1100000,
+	SoftRst 	= 0b1010100,
+	BXRst 		= 0b1010010,
+	WrReg 		= 0b1010111,
+	RdReg 		= 0b1010111
+} command;
+
+typedef enum reg {
+	Config = 0b00000, Status = 0b00011, Thresh1 = 0b01010, Thresh2 = 0b01100
+} registers;
+
+void cccd(enum cmd command, enum reg registers, bool isRead, int chipId, int payload){
+	int cmdlength = 0;
+	switch (registers) {
+		case Config:
+			cmdlength = 0b00100100;
+			comms[5] = payload << 8;
+			break;
+		case Status:
+			cmdlength = 0b00001100;
+			comms[5] = payload;
+			break;
+		case Thresh1:
+			cmdlength = 0b00011100;
+			comms[5] = payload << 16;
+			break;
+		case Thresh2:
+			cmdlength = 0b00011100;
+			comms[5] = payload << 16;
+			break;
+		default:
+			cmdlength = 0;
+			comms[5] = 0;
+			break;
+	}
+
+
+	int field15 = (command << 24) + (cmdlength << 16) + (chipId << 10) + ((isRead ? 1 : 0) << 9) + (registers << 4);
+	comms[0] = (0 << 31) + field15;
+	comms[0] = (1 << 31) + field15;
+
+	printb(&comms[0]);
+	printb(&comms[5]);
+}
+
 
 int main()
 {
-	int control = 1; // R/W to thresholds: 0 | R/W to RAM: 1
+	cccd(WrReg, Config, false, 6, 3);
+	ghjk();
 
-	if (control == 0) {
-		while(1){
-			rwthreshreg();
-		}
-	}
-	else if(control == 1){
-		rwram();
-	}
+
+
+//	 for (int i = 0; i < 640; i++){
+//		 printf("this is %d ", i);
+//		 printb(&bram[i]);
+//	 }
+}
+
+void ghjk(){
+
+	 tdc[0] = 0b00000000000000000000000000000000;
+
+
+	 tdc[1] = 0xffffffff;
+	 tdc[2] = 0xffffffff;
+
+	 tdc[1] = 0x00000000;
+	 tdc[2] = 0x00000000;
+
+	 printb(&tdc[3]);
+	 printb(&tdc[4]);
+
+
+	 tdc[0] = 0b10000000000000000000000000000000;
+	 int i = 0;
+	 while (i < 100000) {
+		 i++;
+	 }
+	 tdc[0] = 0b00000000000000000000000000000000;
+	 printb(&tdc[3]);
+	 printb(&tdc[4]);
+	 print("done\n");
+
+	 for (int i = 13250; i < 15000; i++){
+		 printf("this is %d ", i);
+		 printb(&bram[i]);
+	 }
+
+
 
 }
-int rwram(){
-    int i;
-    init_platform();
+void asdf(){
+	 printf("hello world");
+	 tdc[0] = 0;
+//              0bT111222233333333AAAAAA555555XXXX;
 
-    volatile unsigned int *cdmareg = (volatile unsigned int *) 0x7e200000;  //axi cdma start address set to pointer
-    volatile unsigned int *cdmadapt =  malloc(7345); //maxes out at 7348
-   // volatile unsigned int *cdmadapter = realloc(cdmadapt, 7360);  //doesnt work
+	 comms[5] = 0b00001111000011110000000000000000;
 
+	 comms[0] = 0b01010111000111000001100010100000;
+	 comms[0] = 0b11010111000111000001100010100000;
+	 print("\n blah");
 
-    //Complain if malloc can't find enough space (it'll return 0)
-    if (cdmadapt == 0x0){
-    	print("ERROR: Unable to allocate that much memory!");
-    	cleanup_platform();
-    	return 1;
-    }
-
-
-    //Soft reset via control register
-    cdmareg[0] = 0b00000000000000000000000000000100;
-
-    //Show status register
-    print("Pre-write status register: \n");
-    printb(&cdmareg[1]);
+	 comms[5] = 0;
+	 comms[0] = 0b01010111000011000001101010100000;
+	 comms[0] = 0b11010111000011000001101010100000;
 
 
-    //Show the memory address
-    print("\r Memory address allocated: \n");
-    printf("%p\n",cdmadapt);
+//              0bT111222233333333AAAAAA555555XXXX;
+//	 comms[5] = 0b00001111000011110000111100001111;
+//	 comms[0] = 0b01010111000111000000000010100000;     //Write Thresh Reg
+// 	 comms[0] = 0b11010111000111000000000010100000;
+// 	 printb(&comms[10]);
 
-    //Enable interrupt on completion
-    cdmareg[0] = 0x00001000;
+//	 comms[5] = 0;
+////	 comms[0] = 0b01010100000000000000000000000000;     //Soft Reset
+////	 comms[0] = 0b11010100000000000000000000000000;
+////	 print("\n some text");
+//	 comms[0] = 0b01010111000011000000101000110000;     //Read Common Status Reg
+//	 comms[0] = 0b11010111000011000000101000110000;
 
-    //If idle, initiate the DMA-write sequence: write source address[6], destination address[8], bytes to transfer[10]
-    //If not idle, wait
-    if (BIT(1,cdmareg[1])){
-    	cdmareg[6] = 0x40000000;
-    	cdmareg[8] = cdmadapt;
-    	cdmareg[10] = 0x00001CB4;
-        print("\r Post-write status register: \n");
-        printb(&cdmareg[1]);
-    } else {
-    	print("Not Idle");
-    }
+//	 comms[0] = 0b01010111000111000000101100010000;     //Read temperature-voltage reg
+//	 comms[0] = 0b11010111000111000000101100010000;
 
+//	 comms[0] = 0b01010111001001000000011000000000;		//Read config reg
+//	 comms[0] = 0b11010111001001000000011000000000;
 
-    //Display status to console window, then print the status register[1] and the destination address[8]
-    print("\n Transfer sequence started... \n");
-    while(!BIT(1,cdmareg[1])){
-    	print("Hi");				//If not yet idle, wait...
-    }
-
-    print("\n Transfer sequence completed, ");
-
-    print("now reading from memory...\n");
-    //Print out what's stored in memory
-	for (i=0;i<=63;i++){
-		printb(&cdmadapt[i]);
-	}
-
-	//Clean up
-	free(cdmadapt);
-	free(cdmareg);
-	free(i);
-    cleanup_platform();
-    return 0;
+//	 comms[0] = 0b01010111001001001111110000000000;		//Write config reg
+//	 comms[0] = 0b11010111001001001111110000000000;
+////
+//	 comms[0] = 0b01010111000111000000001010100000;     //Read Thresh Reg
+// 	 comms[0] = 0b11010111000111000000001010100000;
+	 printb(&comms[6]);
+	 puts("");
+ 	 printb(&comms[10]);
 
 }
-void rwthreshreg(){
-    volatile unsigned int *comms = (volatile unsigned int *) 0x43c00000;
 
-    print("Hello World\n\r");
-	comms[5] = 0b00001111000011110000111100001111;
-	comms[0] = 0b01010111000111000000000010100000;    // write threshold register 1, trigger 0
-	comms[0] = 0b11010111000111000000000010100000;
-	printb(&comms[6]);
-	//printf("%d",CHECK_BIT(comms[6],0));
-	//printf("%d",CHECK_BIT(comms[6],1));
-
-//  comms[0] = 0b0111222233333333444444555555XXXX;
-	comms[5] = 0b00000000000000000000000000000000;
-	comms[0] = 0b01010111000011000000001010100000;    // Read threshold register 1, trigger 0
-	comms[0] = 0b11010111000011000000001010100000;
-	print("comm6 then comm10\n\r");
-	printb(&comms[6]);
-	//printf("%d",CHECK_BIT(comms[6],0));
-	//printf("%d",CHECK_BIT(comms[6],1));
-	printb(&comms[10]);  // print out the returned data as binary
-}
 
 //assumes little endian
 void printb(const * ptr)

@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/data_recorder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_recorder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sim_1/new/data_recorder_test.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_recorder_test

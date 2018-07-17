@@ -2,8 +2,8 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Fri Jun 29 17:39:46 2018
-# Process ID: 2856
+# Start of session at: Mon Jul  9 13:59:36 2018
+# Process ID: 5148
 # Current directory: C:/Users/HEP/Documents/universefactory/main/main.runs/synth_1
 # Command line: vivado.exe -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
 # Log file: C:/Users/HEP/Documents/universefactory/main/main.runs/synth_1/main.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 6084 
+INFO: Helper process launched with PID 5124 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 418.188 ; gain = 100.875
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 418.039 ; gain = 101.199
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'main' [C:/Users/HEP/Documents/universefactory/main/main.srcs/sources_1/new/main.v:24]
 INFO: [Synth 8-6157] synthesizing module 'housekeeping' [C:/Users/HEP/Documents/universefactory/main/main.srcs/sources_1/new/housekeeping.v:23]
@@ -45,18 +45,6 @@ INFO: [Synth 8-6157] synthesizing module 'FDCE' [C:/Xilinx/Vivado/2018.1/scripts
 INFO: [Synth 8-6155] done synthesizing module 'FDCE' (5#1) [C:/Xilinx/Vivado/2018.1/scripts/rt/data/unisim_comp.v:3750]
 INFO: [Synth 8-6155] done synthesizing module 'main' (6#1) [C:/Users/HEP/Documents/universefactory/main/main.srcs/sources_1/new/main.v:24]
 WARNING: [Synth 8-3331] design main has unconnected port rst_n
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[11]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[10]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[9]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[8]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[7]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[6]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[5]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[4]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[3]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[2]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[1]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[0]
 WARNING: [Synth 8-3331] design main has unconnected port field6[15]
 WARNING: [Synth 8-3331] design main has unconnected port field6[14]
 WARNING: [Synth 8-3331] design main has unconnected port field6[13]
@@ -73,8 +61,10 @@ WARNING: [Synth 8-3331] design main has unconnected port field6[3]
 WARNING: [Synth 8-3331] design main has unconnected port field6[2]
 WARNING: [Synth 8-3331] design main has unconnected port field6[1]
 WARNING: [Synth 8-3331] design main has unconnected port field6[0]
+WARNING: [Synth 8-3331] design main has unconnected port is_data_mode
+WARNING: [Synth 8-3331] design main has unconnected port event_trigger
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 468.477 ; gain = 151.164
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 468.328 ; gain = 151.488
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -87,10 +77,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 468.477 ; gain = 151.164
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 468.328 ; gain = 151.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 468.477 ; gain = 151.164
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 468.328 ; gain = 151.488
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -106,29 +96,29 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.098 . Memory (MB): peak = 789.047 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 786.262 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 789.047 ; gain = 471.734
+Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 786.262 ; gain = 469.422
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 789.047 ; gain = 471.734
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 786.262 ; gain = 469.422
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 789.047 ; gain = 471.734
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 786.262 ; gain = 469.422
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "done" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "data_size" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "cmd_out_hist" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "received_data" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 789.047 ; gain = 471.734
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 786.262 ; gain = 469.422
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -202,18 +192,6 @@ INFO: [Synth 8-5546] ROM "done" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "cmd_out_hist" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "received_data" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-3331] design main has unconnected port rst_n
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[11]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[10]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[9]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[8]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[7]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[6]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[5]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[4]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[3]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[2]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[1]
-WARNING: [Synth 8-3331] design main has unconnected port dtm_data_out[0]
 WARNING: [Synth 8-3331] design main has unconnected port field6[15]
 WARNING: [Synth 8-3331] design main has unconnected port field6[14]
 WARNING: [Synth 8-3331] design main has unconnected port field6[13]
@@ -230,6 +208,8 @@ WARNING: [Synth 8-3331] design main has unconnected port field6[3]
 WARNING: [Synth 8-3331] design main has unconnected port field6[2]
 WARNING: [Synth 8-3331] design main has unconnected port field6[1]
 WARNING: [Synth 8-3331] design main has unconnected port field6[0]
+WARNING: [Synth 8-3331] design main has unconnected port is_data_mode
+WARNING: [Synth 8-3331] design main has unconnected port event_trigger
 INFO: [Synth 8-3886] merging instance 'data_size_reg[6]' (FDE) to 'data_size_reg[0]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_size_reg[0] )
 INFO: [Synth 8-3886] merging instance 'data_size_reg[1]' (FDE) to 'data_size_reg[2]'
@@ -251,7 +231,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\received
 WARNING: [Synth 8-3332] Sequential element (data_size_reg[0]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (received_data_reg[14]) is unused and will be removed from module main.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 789.047 ; gain = 471.734
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 786.262 ; gain = 469.422
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -263,13 +243,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 802.148 ; gain = 484.836
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:52 . Memory (MB): peak = 798.414 ; gain = 481.574
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 802.773 ; gain = 485.461
+Finished Timing Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:52 . Memory (MB): peak = 799.074 ; gain = 482.234
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -281,7 +261,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 823.766 ; gain = 506.453
+Finished Technology Mapping : Time (s): cpu = 00:00:48 ; elapsed = 00:00:52 . Memory (MB): peak = 819.902 ; gain = 503.063
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -305,7 +285,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 823.766 ; gain = 506.453
+Finished IO Insertion : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 819.902 ; gain = 503.063
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -318,7 +298,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 823.766 ; gain = 506.453
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 819.902 ; gain = 503.063
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -330,25 +310,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 823.766 ; gain = 506.453
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 819.902 ; gain = 503.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 823.766 ; gain = 506.453
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 819.902 ; gain = 503.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 823.766 ; gain = 506.453
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 819.902 ; gain = 503.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 823.766 ; gain = 506.453
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 819.902 ; gain = 503.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -375,7 +355,7 @@ Report Cell Usage:
 |9     |FDCE   |     2|
 |10    |FDRE   |   484|
 |11    |IBUF   |   174|
-|12    |OBUF   |   163|
+|12    |OBUF   |   161|
 |13    |OBUFDS |     3|
 +------+-------+------+
 
@@ -383,15 +363,15 @@ Report Instance Areas:
 +------+--------------+-------------+------+
 |      |Instance      |Module       |Cells |
 +------+--------------+-------------+------+
-|1     |top           |             |  1121|
+|1     |top           |             |  1119|
 |2     |  housekeeper |housekeeping |     5|
 +------+--------------+-------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 823.766 ; gain = 506.453
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 819.902 ; gain = 503.063
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 31 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:42 . Memory (MB): peak = 823.766 ; gain = 185.883
-Synthesis Optimization Complete : Time (s): cpu = 00:00:51 ; elapsed = 00:00:57 . Memory (MB): peak = 823.766 ; gain = 506.453
+Synthesis finished with 0 errors, 0 critical warnings and 21 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:41 . Memory (MB): peak = 819.902 ; gain = 185.129
+Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 819.902 ; gain = 503.063
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 178 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -402,10 +382,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-51 Infos, 61 Warnings, 0 Critical Warnings and 0 Errors encountered.
+51 Infos, 41 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:01:02 . Memory (MB): peak = 825.973 ; gain = 521.129
+synth_design: Time (s): cpu = 00:00:52 ; elapsed = 00:00:58 . Memory (MB): peak = 820.602 ; gain = 516.039
 INFO: [Common 17-1381] The checkpoint 'C:/Users/HEP/Documents/universefactory/main/main.runs/synth_1/main.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.204 . Memory (MB): peak = 825.973 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Jun 29 17:41:10 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 820.602 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Jul  9 14:00:43 2018...

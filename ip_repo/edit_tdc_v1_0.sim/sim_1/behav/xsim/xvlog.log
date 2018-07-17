@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/data_recorder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_recorder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/trig_arbiter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module trig_arbiter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/ip_repo/edit_tdc_v1_0.srcs/sim_1/new/data_trig_test.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_trig_test

@@ -1,0 +1,691 @@
+
+*** Running vivado
+    with args -log design_1_tdc_0_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_tdc_0_1.tcl
+
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source design_1_tdc_0_1.tcl -notrace
+Command: synth_design -top design_1_tdc_0_1 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 7132 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 466.309 ; gain = 105.121
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_tdc_0_1' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_tdc_0_1/synth/design_1_tdc_0_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'tdc_v1_0' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/hdl/tdc_v1_0.v:4]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'tdc_v1_0_S00_AXI' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/hdl/tdc_v1_0_S00_AXI.v:4]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 4 - type: integer 
+INFO: [Synth 8-226] default block is never used [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/hdl/tdc_v1_0_S00_AXI.v:291]
+INFO: [Synth 8-226] default block is never used [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/hdl/tdc_v1_0_S00_AXI.v:656]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/hdl/tdc_v1_0_S00_AXI.v:257]
+INFO: [Synth 8-6155] done synthesizing module 'tdc_v1_0_S00_AXI' (1#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/hdl/tdc_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6157] synthesizing module 'dac_controller' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/dac_controller.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'dac_controller' (2#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/dac_controller.v:23]
+INFO: [Synth 8-6157] synthesizing module 'data_recorder' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:135]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:150]
+INFO: [Synth 8-6155] done synthesizing module 'data_recorder' (3#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:23]
+WARNING: [Synth 8-689] width (18) of port connection 'ps_data_loc_tracker_raw' does not match port width (64) of module 'data_recorder' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/hdl/tdc_v1_0.v:110]
+WARNING: [Synth 8-689] width (18) of port connection 'data_loc_tracker_external' does not match port width (64) of module 'data_recorder' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/hdl/tdc_v1_0.v:111]
+WARNING: [Synth 8-689] width (1) of port connection 'eventid' does not match port width (32) of module 'data_recorder' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/hdl/tdc_v1_0.v:113]
+WARNING: [Synth 8-350] instance 'data_recorder_inst' of module 'data_recorder' requires 14 connections, but only 13 given [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/hdl/tdc_v1_0.v:106]
+INFO: [Synth 8-6157] synthesizing module 'trig_arbiter' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/trig_arbiter.v:23]
+	Parameter L1A_PER_EVENT bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'trig_arbiter' (4#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/trig_arbiter.v:23]
+WARNING: [Synth 8-689] width (18) of port connection 'data_loc_tracker' does not match port width (64) of module 'trig_arbiter' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/hdl/tdc_v1_0.v:128]
+WARNING: [Synth 8-689] width (1) of port connection 'eventid' does not match port width (32) of module 'trig_arbiter' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/hdl/tdc_v1_0.v:131]
+INFO: [Synth 8-6155] done synthesizing module 'tdc_v1_0' (5#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/hdl/tdc_v1_0.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_tdc_0_1' (6#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_tdc_0_1/synth/design_1_tdc_0_1.v:57]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[287]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[286]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[285]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[284]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[283]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[282]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[281]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[280]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[279]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[278]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[277]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[276]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[275]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[274]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[273]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[272]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[271]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[270]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[269]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[268]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[267]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[266]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[265]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[264]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[263]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[262]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[261]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[260]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[259]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[258]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[257]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[256]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[255]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[254]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[253]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[252]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[251]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[250]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[249]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[248]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[247]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[246]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[245]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[244]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[243]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[242]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[241]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[240]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[239]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[238]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[237]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[236]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[235]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[234]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[233]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[232]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[231]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[230]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[229]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[228]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[227]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[226]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[225]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[224]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[223]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[222]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[221]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[220]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[219]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[218]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[217]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[216]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[215]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[214]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[213]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[212]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[211]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[210]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[209]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[208]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[207]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[206]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[205]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[204]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[203]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[202]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[201]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[200]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[199]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[198]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[197]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[196]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[195]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[194]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[193]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[192]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[191]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[190]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[189]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[188]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 528.086 ; gain = 166.898
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin data_recorder_inst:is_data_mode to constant 0 [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/hdl/tdc_v1_0.v:106]
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 528.086 ; gain = 166.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 528.086 ; gain = 166.898
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.170 . Memory (MB): peak = 862.930 ; gain = 3.566
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 862.930 ; gain = 501.742
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 862.930 ; gain = 501.742
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 862.930 ; gain = 501.742
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'inner_cntr_reg' in module 'data_recorder'
+INFO: [Synth 8-5546] ROM "l1a_seen" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "inner_cntr" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "events_received" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                              000
+                 iSTATE0 |                              010 |                              001
+                 iSTATE1 |                              100 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'inner_cntr_reg' using encoding 'one-hot' in module 'data_recorder'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 862.930 ; gain = 501.742
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	  64 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               96 Bit    Registers := 1     
+	               64 Bit    Registers := 2     
+	               32 Bit    Registers := 32    
+	               16 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 76    
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 31    
+	  32 Input     32 Bit        Muxes := 31    
+	  64 Input     17 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 3     
+	   3 Input      9 Bit        Muxes := 2     
+	  64 Input      6 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 94    
+	   8 Input      1 Bit        Muxes := 64    
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module tdc_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 32    
+	                7 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 31    
+	  32 Input     32 Bit        Muxes := 31    
+	   2 Input      1 Bit        Muxes := 5     
+Module data_recorder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	               96 Bit    Registers := 1     
+	               64 Bit    Registers := 2     
+	               16 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 67    
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+	  64 Input     17 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	  64 Input      6 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 68    
+	   8 Input      1 Bit        Muxes := 64    
+	   3 Input      1 Bit        Muxes := 1     
+Module trig_arbiter 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	  64 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 2     
+	   3 Input      9 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 21    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "inst/data_recorder_inst/l1a_seen" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3917] design design_1_tdc_0_1 has port dac_spi[6] driven by constant 0
+INFO: [Synth 8-3917] design design_1_tdc_0_1 has port dac_spi[5] driven by constant 0
+INFO: [Synth 8-3917] design design_1_tdc_0_1 has port dac_spi[4] driven by constant 0
+INFO: [Synth 8-3917] design design_1_tdc_0_1 has port dac_spi[3] driven by constant 0
+INFO: [Synth 8-3917] design design_1_tdc_0_1 has port dac_spi[2] driven by constant 0
+INFO: [Synth 8-3917] design design_1_tdc_0_1 has port dac_spi[1] driven by constant 0
+INFO: [Synth 8-3917] design design_1_tdc_0_1 has port dac_spi[0] driven by constant 0
+INFO: [Synth 8-3917] design design_1_tdc_0_1 has port bramwe driven by constant 1
+INFO: [Synth 8-3917] design design_1_tdc_0_1 has port bramrst driven by constant 0
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/trig_arbiter_inst/msg_reg[0] )
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[63]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[62]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[62]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[61]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[61]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[60]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[60]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[59]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[59]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[58]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[58]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[57]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[57]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[56]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[56]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[55]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[55]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[54]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[54]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[53]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[53]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[52]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[52]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[51]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[51]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[50]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[50]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[49]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[49]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[48]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[48]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[47]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[47]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[46]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[46]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[45]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[45]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[44]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[44]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[43]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[43]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[42]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[42]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[41]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[41]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[40]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[40]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[39]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[39]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[38]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[38]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[37]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[37]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[36]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[36]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[35]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[35]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[34]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[34]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[33]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[33]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[32]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[31]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[30]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[30]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[29]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[29]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[28]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[28]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[27]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[27]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[26]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[26]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[25]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[25]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[24]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[24]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[23]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[23]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[22]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[22]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[21]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[21]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[20]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[20]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[19]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/ps_data_loc_tracker_reg[19]' (FD_1) to 'inst/data_recorder_inst/ps_data_loc_tracker_reg[18]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/data_recorder_inst/ps_data_loc_tracker_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/trig_arbiter_inst/occupied_data_spaces_reg[5] )
+INFO: [Synth 8-3886] merging instance 'inst/tdc_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'inst/tdc_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/tdc_v1_0_S00_AXI_inst /\axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/tdc_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'inst/tdc_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/tdc_v1_0_S00_AXI_inst /\axi_bresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/data_recorder_inst/bramen_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/data_recorder_inst/bramen_disabler_reg[0] )
+WARNING: [Synth 8-3332] Sequential element (axi_awaddr_reg[1]) is unused and will be removed from module tdc_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_awaddr_reg[0]) is unused and will be removed from module tdc_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_bresp_reg[1]) is unused and will be removed from module tdc_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_araddr_reg[1]) is unused and will be removed from module tdc_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_araddr_reg[0]) is unused and will be removed from module tdc_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_rresp_reg[1]) is unused and will be removed from module tdc_v1_0_S00_AXI.
+INFO: [Synth 8-3332] Sequential element (inst/data_recorder_inst/ps_data_loc_tracker_reg[18]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/data_recorder_inst/bramen_enabler_reg[2]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/data_recorder_inst/bramen_enabler_reg[1]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/data_recorder_inst/bramen_enabler_reg[0]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/data_recorder_inst/bramen_reg) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/data_recorder_inst/bramen_disabler_reg[4]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/data_recorder_inst/bramen_disabler_reg[3]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/data_recorder_inst/bramen_disabler_reg[2]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/data_recorder_inst/bramen_disabler_reg[1]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/data_recorder_inst/bramen_disabler_reg[0]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/trig_arbiter_inst/occupied_data_spaces_reg[5]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/trig_arbiter_inst/msg_reg[0]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/trig_arbiter_inst/events_received_helper_reg[2]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/trig_arbiter_inst/events_received_helper_reg[1]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/trig_arbiter_inst/events_received_helper_reg[0]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/trig_arbiter_inst/occupied_data_spaces_reg[4]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/trig_arbiter_inst/occupied_data_spaces_reg[3]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/trig_arbiter_inst/occupied_data_spaces_reg[2]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/trig_arbiter_inst/occupied_data_spaces_reg[1]) is unused and will be removed from module design_1_tdc_0_1.
+INFO: [Synth 8-3332] Sequential element (inst/trig_arbiter_inst/occupied_data_spaces_reg[0]) is unused and will be removed from module design_1_tdc_0_1.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:50 . Memory (MB): peak = 862.930 ; gain = 501.742
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:04 ; elapsed = 00:01:09 . Memory (MB): peak = 875.531 ; gain = 514.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:04 ; elapsed = 00:01:09 . Memory (MB): peak = 877.246 ; gain = 516.059
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:05 ; elapsed = 00:01:10 . Memory (MB): peak = 909.105 ; gain = 547.918
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:07 ; elapsed = 00:01:12 . Memory (MB): peak = 909.105 ; gain = 547.918
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[16] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[16]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[16] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[16]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[15] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[15]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[15] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[15]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[14] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[14]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[14] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[14]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[13] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[13]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[13] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[13]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[12] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[12]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[12] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[12]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[11] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[11]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[11] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[11]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[10] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[10]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[10] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[10]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[9] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[9]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[9] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[9]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[8] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[8]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[8] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[8]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[7] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[7]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[7] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[7]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[6] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[6]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[6] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[6]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[5] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[5]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[5] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[5]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[4] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[4]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[4] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[4]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[3] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[3]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[3] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[3]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[2] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[2]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[2] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[2]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[1] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[1]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[1] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[1]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[0] with 1st driver pin 'inst/data_recorder_inst/bramaddr_reg[0]__0/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:159]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bramaddr[0] with 2nd driver pin 'inst/data_recorder_inst/bramaddr_reg[0]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:167]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[0] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[0]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[0] with 2nd driver pin 'inst/data_recorder_inst/genblk1[0].pl_data_loc_tracker_reg[0]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[1] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[1]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[1] with 2nd driver pin 'inst/data_recorder_inst/genblk1[1].pl_data_loc_tracker_reg[1]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[2] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[2]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[2] with 2nd driver pin 'inst/data_recorder_inst/genblk1[2].pl_data_loc_tracker_reg[2]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[3] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[3]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[3] with 2nd driver pin 'inst/data_recorder_inst/genblk1[3].pl_data_loc_tracker_reg[3]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[4] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[4]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[4] with 2nd driver pin 'inst/data_recorder_inst/genblk1[4].pl_data_loc_tracker_reg[4]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[5] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[5]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[5] with 2nd driver pin 'inst/data_recorder_inst/genblk1[5].pl_data_loc_tracker_reg[5]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[6] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[6]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[6] with 2nd driver pin 'inst/data_recorder_inst/genblk1[6].pl_data_loc_tracker_reg[6]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[7] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[7]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[7] with 2nd driver pin 'inst/data_recorder_inst/genblk1[7].pl_data_loc_tracker_reg[7]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[8] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[8]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[8] with 2nd driver pin 'inst/data_recorder_inst/genblk1[8].pl_data_loc_tracker_reg[8]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[9] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[9]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[9] with 2nd driver pin 'inst/data_recorder_inst/genblk1[9].pl_data_loc_tracker_reg[9]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[10] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[10]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[10] with 2nd driver pin 'inst/data_recorder_inst/genblk1[10].pl_data_loc_tracker_reg[10]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[11] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[11]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[11] with 2nd driver pin 'inst/data_recorder_inst/genblk1[11].pl_data_loc_tracker_reg[11]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[12] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[12]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[12] with 2nd driver pin 'inst/data_recorder_inst/genblk1[12].pl_data_loc_tracker_reg[12]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[13] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[13]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[13] with 2nd driver pin 'inst/data_recorder_inst/genblk1[13].pl_data_loc_tracker_reg[13]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[14] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[14]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[14] with 2nd driver pin 'inst/data_recorder_inst/genblk1[14].pl_data_loc_tracker_reg[14]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[15] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[15]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[15] with 2nd driver pin 'inst/data_recorder_inst/genblk1[15].pl_data_loc_tracker_reg[15]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[16] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[16]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[16] with 2nd driver pin 'inst/data_recorder_inst/genblk1[16].pl_data_loc_tracker_reg[16]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[17] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[17]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[17] with 2nd driver pin 'inst/data_recorder_inst/genblk1[17].pl_data_loc_tracker_reg[17]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[18] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[18]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[18] with 2nd driver pin 'inst/data_recorder_inst/genblk1[18].pl_data_loc_tracker_reg[18]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[19] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[19]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[19] with 2nd driver pin 'inst/data_recorder_inst/genblk1[19].pl_data_loc_tracker_reg[19]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[20] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[20]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[20] with 2nd driver pin 'inst/data_recorder_inst/genblk1[20].pl_data_loc_tracker_reg[20]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[21] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[21]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[21] with 2nd driver pin 'inst/data_recorder_inst/genblk1[21].pl_data_loc_tracker_reg[21]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[22] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[22]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[22] with 2nd driver pin 'inst/data_recorder_inst/genblk1[22].pl_data_loc_tracker_reg[22]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[23] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[23]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[23] with 2nd driver pin 'inst/data_recorder_inst/genblk1[23].pl_data_loc_tracker_reg[23]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[24] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[24]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[24] with 2nd driver pin 'inst/data_recorder_inst/genblk1[24].pl_data_loc_tracker_reg[24]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[25] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[25]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[25] with 2nd driver pin 'inst/data_recorder_inst/genblk1[25].pl_data_loc_tracker_reg[25]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[26] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[26]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[26] with 2nd driver pin 'inst/data_recorder_inst/genblk1[26].pl_data_loc_tracker_reg[26]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[27] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[27]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[27] with 2nd driver pin 'inst/data_recorder_inst/genblk1[27].pl_data_loc_tracker_reg[27]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[28] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[28]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[28] with 2nd driver pin 'inst/data_recorder_inst/genblk1[28].pl_data_loc_tracker_reg[28]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[29] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[29]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[29] with 2nd driver pin 'inst/data_recorder_inst/genblk1[29].pl_data_loc_tracker_reg[29]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[30] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[30]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[30] with 2nd driver pin 'inst/data_recorder_inst/genblk1[30].pl_data_loc_tracker_reg[30]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[31] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[31]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[31] with 2nd driver pin 'inst/data_recorder_inst/genblk1[31].pl_data_loc_tracker_reg[31]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[32] with 1st driver pin 'inst/data_recorder_inst/pl_data_loc_tracker_reg[32]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net inst/data_recorder_inst/pl_data_loc_tracker[32] with 2nd driver pin 'inst/data_recorder_inst/genblk1[32].pl_data_loc_tracker_reg[32]/Q' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/c9f5/src/data_recorder.v:60]
+INFO: [Common 17-14] Message 'Synth 8-3352' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|       81|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:07 ; elapsed = 00:01:12 . Memory (MB): peak = 909.105 ; gain = 547.918
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:07 ; elapsed = 00:01:12 . Memory (MB): peak = 909.105 ; gain = 547.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:07 ; elapsed = 00:01:12 . Memory (MB): peak = 909.105 ; gain = 547.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:07 ; elapsed = 00:01:12 . Memory (MB): peak = 909.105 ; gain = 547.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:07 ; elapsed = 00:01:12 . Memory (MB): peak = 909.105 ; gain = 547.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    40|
+|2     |LUT1   |     7|
+|3     |LUT2   |   162|
+|4     |LUT3   |    93|
+|5     |LUT4   |   153|
+|6     |LUT5   |   154|
+|7     |LUT6   |   640|
+|8     |MUXF7  |   128|
+|9     |FDRE   |  1511|
+|10    |FDSE   |    12|
+|11    |FD_1   |     3|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------------+-----------------+------+
+|      |Instance                  |Module           |Cells |
++------+--------------------------+-----------------+------+
+|1     |top                       |                 |  2903|
+|2     |  inst                    |tdc_v1_0         |  2903|
+|3     |    data_recorder_inst    |data_recorder    |   970|
+|4     |    tdc_v1_0_S00_AXI_inst |tdc_v1_0_S00_AXI |  1607|
+|5     |    trig_arbiter_inst     |trig_arbiter     |   322|
++------+--------------------------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:07 ; elapsed = 00:01:12 . Memory (MB): peak = 909.105 ; gain = 547.918
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 162 critical warnings and 28 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:00:58 . Memory (MB): peak = 909.105 ; gain = 213.074
+Synthesis Optimization Complete : Time (s): cpu = 00:01:07 ; elapsed = 00:01:12 . Memory (MB): peak = 909.105 ; gain = 547.918
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 171 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  FD_1 => FDRE (inverted pins: C): 3 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+118 Infos, 114 Warnings, 100 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:10 ; elapsed = 00:01:16 . Memory (MB): peak = 909.105 ; gain = 560.633
+INFO: [Common 17-1381] The checkpoint 'C:/Users/HEP/Documents/universefactory/project/project.runs/design_1_tdc_0_1_synth_1/design_1_tdc_0_1.dcp' has been generated.

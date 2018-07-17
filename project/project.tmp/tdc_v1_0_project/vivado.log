@@ -1,0 +1,1373 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Wed Jul 11 08:24:58 2018
+# Process ID: 5828
+# Current directory: C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4756 C:\Users\HEP\Documents\universefactory\project\project.tmp\tdc_v1_0_project\tdc_v1_0_project.xpr
+# Log file: C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/vivado.log
+# Journal file: C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.xpr
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/asym_ram_sdp_read_wider.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/hdl/dtmroc_rec.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/component.xml'.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0'.
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'C:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo'.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'.
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:11 . Memory (MB): peak = 853.297 ; gain = 154.066
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/asym_ram_sdp_read_wider.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/hdl/dtmroc_rec.v] -no_script -reset -force -quiet
+remove_files  {C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/asym_ram_sdp_read_wider.v C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/hdl/dtmroc_rec.v}
+export_ip_user_files -of_objects  [get_files C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/component.xml] -no_script -reset -force -quiet
+remove_files  C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/component.xml
+ipx::package_project -root_dir C:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0 -vendor xilinx.com -library user -taxonomy /UserIP -generated_files -import_files -set_current false
+WARNING: [IP_Flow 19-4963] design_1_blk_mem_gen_0_0 has board value specified. The packaged IP will be restricted to usage with board 'em.avnet.com:microzed_7010:part0:1.1'
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_0' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'BRAM_PORTA_0_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3158] Bus Interface 's00_axi_0': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-3153] Bus Interface 'BRAM_PORTA_0_clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+ipx::package_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 867.863 ; gain = 0.000
+ipx::unload_core c:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0/component.xml
+ipx::edit_ip_in_project -upgrade true -name tmp_edit_project -directory C:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0 c:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo'.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo'.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXI' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXI_ARESETN' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXI_ACLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXI_ARESETN': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXI_ACLK': Added interface parameter 'ASSOCIATED_BUSIF' with value 'S_AXI'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXI_ACLK': Added interface parameter 'ASSOCIATED_RESET' with value 'S_AXI_ARESETN'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo'.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo'.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'.
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 902.250 ; gain = 34.387
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo'.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 907.063 ; gain = 39.199
+update_compile_order -fileset sources_1
+set_property previous_version_for_upgrade xilinx.com:user:design_1_wrapper:1.0 [ipx::current_core]
+set_property core_revision 1 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path c:/Users/HEP/Documents/universefactory/ip_repo
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo'
+open_project C:/Users/HEP/Documents/universefactory/project/project.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0'.
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'C:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 982.059 ; gain = 41.559
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd}
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_0
+Adding cell -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf_1
+Adding cell -- xilinx.com:user:cccd:1.0 - cccd_0
+Adding cell -- xilinx.com:ip:axi_bram_ctrl:4.0 - axi_bram_ctrl_0
+Adding cell -- xilinx.com:user:main:1.0 - main_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /util_ds_buf_1/IBUF_OUT(clk) and /main_0/dtm_cmd_out(undef)
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <design_1> from BD file <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1075.074 ; gain = 93.016
+current_project tdc_v1_0_project
+ipx::open_ipxact_file C:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0/component.xml
+WARNING: [IP_Flow 19-4963] design_1_blk_mem_gen_0_0 has board value specified. The packaged IP will be restricted to usage with board 'em.avnet.com:microzed_7010:part0:1.1'
+WARNING: [IP_Flow 19-5226] Project source file 'c:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0/component.xml' ignored by IP packager.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/trig_arbiter.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/tdc_v1_0_S00_AXI.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/data_recorder.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/synth/design_1.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/dac_controller.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1_ooc.xdc' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/trig_arbiter.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/tdc_v1_0_S00_AXI.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/data_recorder.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/dac_controller.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/trig_arbiter.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/tdc_v1_0_S00_AXI.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/data_recorder.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/sim/design_1.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/dac_controller.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/trig_arbiter.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/tdc_v1_0_S00_AXI.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/data_recorder.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/dac_controller.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+WARNING: [IP_Flow 19-4308] Project file 'c:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sim_1/new/data_recorder_test.v' is not found in the component files. It will be added automatically when merging sources and repackaging. Please remove the file from the source project if this is not desired.
+set_property core_revision 2 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+current_project project
+set_property  ip_repo_paths  {c:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0 c:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0 c:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0 c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0 c:/Users/HEP/Documents/universefactory/cccd_1.0 c:/Users/HEP/Documents/universefactory/main/main.srcs} [current_project]
+current_project tdc_v1_0_project
+current_project project
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+current_project tdc_v1_0_project
+startgroup
+current_project project
+create_bd_cell -type ip -vlnv xilinx.com:user:tdc:1.0 tdc_0
+endgroup
+set_property location {4.5 2027 113} [get_bd_cells tdc_0]
+set_property location {5 2051 170} [get_bd_cells tdc_0]
+set_property location {4 1501 542} [get_bd_cells tdc_0]
+current_project tdc_v1_0_project
+open_bd_design {C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd}
+Adding cell -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_gen_0
+Adding cell -- xilinx.com:module_ref:dac_controller:1.0 - dac_controller_0
+Adding cell -- xilinx.com:module_ref:data_recorder:1.0 - data_recorder_0
+Adding cell -- xilinx.com:module_ref:trig_arbiter:1.0 - trig_arbiter_0
+Adding cell -- xilinx.com:module_ref:tdc_v1_0_S00_AXI:1.0 - tdc_v1_0_S00_AXI_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /data_recorder_0/bramclk(undef) and /blk_mem_gen_0/clkb(clk)
+Successfully read diagram <design_1> from BD file <C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 1241.609 ; gain = 50.809
+validate_bd_design
+CRITICAL WARNING: [BD 41-1356] Address block </tdc_v1_0_S00_AXI_0/S_AXI/reg0> is not mapped into </s00_axi_0>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Address block </tdc_v1_0_S00_AXI_0/S_AXI/reg0> is not mapped into </s00_axi_0>. Please use Address Editor to either map or exclude it.
+WARNING: [BD 41-927] Following properties on pin /tdc_v1_0_S00_AXI_0/S_AXI_ACLK have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_s00_axi_aclk_0 
+delete_bd_objs [get_bd_ports clk40_0]
+create_bd_port -dir I clk40
+set_property location {-31 286} [get_bd_ports clk40]
+connect_bd_net [get_bd_ports clk40] [get_bd_pins data_recorder_0/clk40]
+delete_bd_objs [get_bd_nets dtmroc_data_out_0_1] [get_bd_ports dtmroc_data_out_0]
+create_bd_port -dir I -from 47 -to 0 dtmroc_data_out
+set_property location {-19 240} [get_bd_ports dtmroc_data_out]
+connect_bd_net [get_bd_ports dtmroc_data_out] [get_bd_pins data_recorder_0/dtmroc_data_out]
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+delete_bd_objs [get_bd_nets tdc_v1_0_S00_AXI_0_ps_data_loc_tracker] [get_bd_nets data_recorder_0_data_loc_tracker_external] [get_bd_nets data_recorder_0_bramaddr] [get_bd_nets data_recorder_0_bramclk] [get_bd_nets data_recorder_0_bramwrdata] [get_bd_nets data_recorder_0_bramen] [get_bd_nets data_recorder_0_bramwe] [get_bd_nets dtmroc_data_out_1] [get_bd_cells data_recorder_0]
+update_compile_order -fileset sources_1
+delete_bd_objs [get_bd_nets dac_controller_0_dac_set_lines] [get_bd_cells dac_controller_0]
+update_compile_order -fileset sources_1
+reset_target all [get_files  C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd]
+export_ip_user_files -of_objects  [get_files  C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd] -sync -no_script -force -quiet
+delete_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd]
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.runs/design_1_blk_mem_gen_0_0_synth_1
+
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+create_bd_cell -type module -reference dac_controller dac_controller_0
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+update_compile_order -fileset sources_1
+CRITICAL WARNING: [HDL 9-806] Syntax error near ",". [C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/dac_controller.v:28]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "}". [C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/dac_controller.v:28]
+CRITICAL WARNING: [HDL 9-806] Syntax error near ",". [C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/dac_controller.v:28]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "}". [C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/new/dac_controller.v:28]
+delete_bd_objs [get_bd_cells dac_controller_0]
+update_compile_order -fileset sources_1
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+create_bd_cell -type module -reference dac_controller dac_controller_0
+set_property location {2 1186 380} [get_bd_cells dac_controller_0]
+connect_bd_net [get_bd_ports dac_set_line_0] [get_bd_pins dac_controller_0/dac_set_lines]
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+ipx::unload_core c:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0/component.xml
+update_compile_order -fileset sources_1
+report_ip_status -name ip_status 
+current_project project
+delete_bd_objs [get_bd_cells tdc_0]
+current_project tdc_v1_0_project
+WARNING: [IP_Flow 19-4318] IP-XACT file does not exist: c:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0/component.xml. It will be created.
+close_project
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo'.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+report_ip_status -name ip_status
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+open_project C:/Users/HEP/Documents/universefactory/main/main.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'.
+open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1284.305 ; gain = 0.000
+update_compile_order -fileset sources_1
+ipx::open_ipxact_file C:/Users/HEP/Documents/universefactory/main/main.srcs/component.xml
+WARNING: [IP_Flow 19-5226] Project source file 'c:/Users/HEP/Documents/universefactory/main/main.srcs/component.xml' ignored by IP packager.
+create_project tdc C:/Users/HEP/Documents/universefactory/tdc -part xc7z010clg400-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'.
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1432.563 ; gain = 15.410
+set_property board_part em.avnet.com:microzed_7010:part0:1.1 [current_project]
+current_project project
+current_project tdc
+file mkdir C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new
+close [ open C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/dac_controller.v w ]
+add_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/dac_controller.v
+close [ open C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/s00_axi_lite.v w ]
+add_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/s00_axi_lite.v
+close [ open C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/trig_arbiter.v w ]
+add_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/trig_arbiter.v
+close [ open C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/data_recorder.v w ]
+add_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/data_recorder.v
+update_compile_order -fileset sources_1
+create_bd_design "design_1"
+Wrote  : <C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd> 
+create_bd_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1455.047 ; gain = 15.313
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+create_bd_cell: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1670.938 ; gain = 213.496
+endgroup
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Use_Byte_Write_Enable {true} CONFIG.Byte_Size {8} CONFIG.Algorithm {Fixed_Primitives} CONFIG.Primitive {2kx9} CONFIG.Write_Width_A {144} CONFIG.Read_Width_A {144} CONFIG.Write_Width_B {144} CONFIG.Read_Width_B {144} CONFIG.Enable_B {Use_ENB_Pin} CONFIG.Register_PortA_Output_of_Memory_Primitives {false} CONFIG.Register_PortB_Output_of_Memory_Primitives {false} CONFIG.Use_RSTA_Pin {true} CONFIG.Use_RSTB_Pin {true} CONFIG.Port_B_Clock {100} CONFIG.Port_B_Write_Rate {50} CONFIG.Port_B_Enable_Rate {100} CONFIG.use_bram_block {BRAM_Controller} CONFIG.EN_SAFETY_CKT {true}] [get_bd_cells blk_mem_gen_0]
+set_property location {1 127 -302} [get_bd_cells blk_mem_gen_0]
+create_bd_cell -type module -reference tdc_v1_0_S00_AXI tdc_v1_0_S00_AXI_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXI' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXI_ARESETN' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXI_ACLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXI_ARESETN': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXI_ACLK': Added interface parameter 'ASSOCIATED_BUSIF' with value 'S_AXI'.
+INFO: [IP_Flow 19-4728] Bus Interface 'S_AXI_ACLK': Added interface parameter 'ASSOCIATED_RESET' with value 'S_AXI_ARESETN'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+set_property location {1 125 -84} [get_bd_cells tdc_v1_0_S00_AXI_0]
+create_bd_cell -type module -reference dac_controller dac_controller_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+create_bd_cell -type module -reference data_recorder data_recorder_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+create_bd_cell -type module -reference trig_arbiter trig_arbiter_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+connect_bd_net [get_bd_pins trig_arbiter_0/clk40] [get_bd_pins data_recorder_0/clk40]
+create_bd_port -dir I -type clk clk40
+connect_bd_net [get_bd_ports clk40] [get_bd_pins data_recorder_0/clk40]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /trig_arbiter_0/clk40(undef) and /clk40(clk)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /data_recorder_0/clk40(undef) and /clk40(clk)
+create_bd_port -dir I -from 47 -to 0 dtmroc_data_out
+connect_bd_net [get_bd_ports dtmroc_data_out] [get_bd_pins data_recorder_0/dtmroc_data_out]
+connect_bd_net [get_bd_pins data_recorder_0/ps_data_loc_tracker_raw] [get_bd_pins tdc_v1_0_S00_AXI_0/ps_data_loc_tracker]
+connect_bd_net [get_bd_pins data_recorder_0/data_loc_tracker_external] [get_bd_pins tdc_v1_0_S00_AXI_0/data_loc_tracker]
+connect_bd_net [get_bd_pins tdc_v1_0_S00_AXI_0/dac_threshs] [get_bd_pins dac_controller_0/dac_threshs]
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins tdc_v1_0_S00_AXI_0/S_AXI]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_v1_0_S00_AXI_0/S_AXI_ACLK]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_v1_0_S00_AXI_0/S_AXI_ARESETN]
+endgroup
+connect_bd_net [get_bd_pins tdc_v1_0_S00_AXI_0/is_data_mode] [get_bd_pins trig_arbiter_0/is_data_mode]
+connect_bd_net [get_bd_pins trig_arbiter_0/trig_pattern] [get_bd_pins tdc_v1_0_S00_AXI_0/trig_pattern]
+create_bd_port -dir O -from 47 -to 0 dac_set_lines
+connect_bd_net [get_bd_ports dac_set_lines] [get_bd_pins dac_controller_0/dac_set_lines]
+create_bd_port -dir I -from 23 -to 0 comparators
+connect_bd_net [get_bd_ports comparators] [get_bd_pins trig_arbiter_0/comparators]
+create_bd_port -dir O is_data_mode
+connect_bd_net [get_bd_ports is_data_mode] [get_bd_pins tdc_v1_0_S00_AXI_0/is_data_mode]
+create_bd_port -dir O event_trigger
+connect_bd_net [get_bd_ports event_trigger] [get_bd_pins trig_arbiter_0/event_trigger]
+regenerate_bd_layout
+set_property location {2 679 252} [get_bd_cells blk_mem_gen_0]
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA]
+endgroup
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+connect_bd_net [get_bd_pins data_recorder_0/bramaddr] [get_bd_pins blk_mem_gen_0/addrb]
+WARNING: [BD 41-1306] The connection to interface pin /blk_mem_gen_0/addrb is being overridden by the user. This pin will not be connected as a part of interface connection BRAM_PORTB
+connect_bd_net [get_bd_pins data_recorder_0/bramclk] [get_bd_pins blk_mem_gen_0/clkb]
+WARNING: [BD 41-1306] The connection to interface pin /blk_mem_gen_0/clkb is being overridden by the user. This pin will not be connected as a part of interface connection BRAM_PORTB
+WARNING: [BD 41-1731] Type mismatch between connected pins: /data_recorder_0/bramclk(undef) and /blk_mem_gen_0/clkb(clk)
+connect_bd_net [get_bd_pins data_recorder_0/bramwrdata] [get_bd_pins blk_mem_gen_0/dinb]
+WARNING: [BD 41-1306] The connection to interface pin /blk_mem_gen_0/dinb is being overridden by the user. This pin will not be connected as a part of interface connection BRAM_PORTB
+connect_bd_net [get_bd_pins data_recorder_0/bramen] [get_bd_pins blk_mem_gen_0/enb]
+WARNING: [BD 41-1306] The connection to interface pin /blk_mem_gen_0/enb is being overridden by the user. This pin will not be connected as a part of interface connection BRAM_PORTB
+connect_bd_net [get_bd_pins data_recorder_0/bramwe] [get_bd_pins blk_mem_gen_0/web]
+WARNING: [BD 41-1306] The connection to interface pin /blk_mem_gen_0/web is being overridden by the user. This pin will not be connected as a part of interface connection BRAM_PORTB
+regenerate_bd_layout
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+file mkdir C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new/data_recorder_testbench.v w ]
+add_files -fileset sim_1 C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new/data_recorder_testbench.v
+update_compile_order -fileset sim_1
+set_property top data_recorder_testbench [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+make_wrapper -files [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -top
+CRITICAL WARNING: [BD 41-1356] Address block </tdc_v1_0_S00_AXI_0/S_AXI/reg0> is not mapped into </S_AXI_0>. Please use Address Editor to either map or exclude it.
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter WRITE_WIDTH_A(144) on '/blk_mem_gen_0' with propagated value(32). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter READ_WIDTH_A(144) on '/blk_mem_gen_0' with propagated value(32). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter WRITE_WIDTH_B(144) on '/blk_mem_gen_0' with propagated value(32). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter READ_WIDTH_B(144) on '/blk_mem_gen_0' with propagated value(32). Command ignored
+CRITICAL WARNING: [BD 41-1356] Address block </tdc_v1_0_S00_AXI_0/S_AXI/reg0> is not mapped into </S_AXI_0>. Please use Address Editor to either map or exclude it.
+Wrote  : <C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/blk_mem_gen_0/addrb'(32) to net 'data_recorder_0_bramaddr'(13) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/synth/design_1.v
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/blk_mem_gen_0/addrb'(32) to net 'data_recorder_0_bramaddr'(13) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+add_files -norecurse C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+update_compile_order -fileset sources_1
+set_property top design_1_wrapper [current_fileset]
+update_compile_order -fileset sources_1
+set_property source_mgmt_mode DisplayOnly [current_project]
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+generate_target Simulation [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+CRITICAL WARNING: [BD 41-1356] Address block </tdc_v1_0_S00_AXI_0/S_AXI/reg0> is not mapped into </S_AXI_0>. Please use Address Editor to either map or exclude it.
+Wrote  : <C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/blk_mem_gen_0/addrb'(32) to net 'data_recorder_0_bramaddr'(13) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/synth/design_1.v
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/blk_mem_gen_0/addrb'(32) to net 'data_recorder_0_bramaddr'(13) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block blk_mem_gen_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block tdc_v1_0_S00_AXI_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block dac_controller_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block data_recorder_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block trig_arbiter_0 .
+Exporting to file C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+export_ip_user_files -of_objects [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files -ipstatic_source_dir C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/modelsim} {questa=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/questa} {riviera=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/riviera} {activehdl=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/HEP/Documents/universefactory/tdc/tdc.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2018.1/data/xsim/ip/xsim_ip.ini' copied to run dir:'C:/Users/HEP/Documents/universefactory/tdc/tdc.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'data_recorder_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HEP/Documents/universefactory/tdc/tdc.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj data_recorder_testbench_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/s00_axi_lite.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tdc_v1_0_S00_AXI
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/dac_controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dac_controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/data_recorder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_recorder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/trig_arbiter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module trig_arbiter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files/bd/design_1/ip/design_1_blk_mem_gen_0_0/sim/design_1_blk_mem_gen_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_blk_mem_gen_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files/bd/design_1/ip/design_1_tdc_v1_0_S00_AXI_0_0/sim/design_1_tdc_v1_0_S00_AXI_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_tdc_v1_0_S00_AXI_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files/bd/design_1/ip/design_1_dac_controller_0_0/sim/design_1_dac_controller_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_dac_controller_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files/bd/design_1/ip/design_1_data_recorder_0_0/sim/design_1_data_recorder_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_data_recorder_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files/bd/design_1/ip/design_1_trig_arbiter_0_0/sim/design_1_trig_arbiter_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_trig_arbiter_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files/bd/design_1/sim/design_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new/data_recorder_testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_recorder_test
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HEP/Documents/universefactory/tdc/tdc.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HEP/Documents/universefactory/tdc/tdc.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.1
+Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto 4dca9b7281194eeca8d0dcc8be520bed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_1 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot data_recorder_testbench_behav xil_defaultlib.data_recorder_testbench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+ERROR: [XSIM 43-3225] Cannot find design unit xil_defaultlib.data_recorder_testbench in library work located at xsim.dir/work.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/HEP/Documents/universefactory/tdc/tdc.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/HEP/Documents/universefactory/tdc/tdc.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+set_property top data_recorder_test [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/HEP/Documents/universefactory/tdc/tdc.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2018.1/data/xsim/ip/xsim_ip.ini' copied to run dir:'C:/Users/HEP/Documents/universefactory/tdc/tdc.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'data_recorder_test' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HEP/Documents/universefactory/tdc/tdc.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj data_recorder_test_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HEP/Documents/universefactory/tdc/tdc.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.1
+Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto 4dca9b7281194eeca8d0dcc8be520bed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_1 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot data_recorder_test_behav xil_defaultlib.data_recorder_test xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.data_recorder
+Compiling module xil_defaultlib.data_recorder_test
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot data_recorder_test_behav
+
+****** Webtalk v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/HEP/Documents/universefactory/tdc/tdc.sim/sim_1/behav/xsim/xsim.dir/data_recorder_test_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/HEP/Documents/universefactory/tdc/tdc.sim/sim_1/behav/xsim/xsim.dir/data_recorder_test_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Jul 11 09:01:47 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2018.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Jul 11 09:01:47 2018...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1768.281 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/HEP/Documents/universefactory/tdc/tdc.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "data_recorder_test_behav -key {Behavioral:sim_1:Functional:data_recorder_test} -tclbatch {data_recorder_test.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.1
+Time resolution is 1 ps
+source data_recorder_test.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'data_recorder_test_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 1779.125 ; gain = 10.844
+ipx::package_project -root_dir c:/users/hep/documents/universefactory/tdc/tdc.srcs -vendor xilinx.com -library user -taxonomy /UserIP -generated_files
+WARNING: [Ipptcl 7-1467] The compile order has been set manually. This prevents the packager from updating                 it if necessary. If errors related to compile order occur, try enabling automatic                 reordering, or calling package_project with the -force_update_compile_order option
+WARNING: [IP_Flow 19-4963] design_1_blk_mem_gen_0_0 has board value specified. The packaged IP will be restricted to usage with board 'em.avnet.com:microzed_7010:part0:1.1'
+INFO: [IP_Flow 19-5107] Inferred bus interface 'S_AXI_0' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'BRAM_PORTA_0_rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'BRAM_PORTA_0_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'BRAM_PORTA_0_clk': Added interface parameter 'ASSOCIATED_RESET' with value 'BRAM_PORTA_0_rst'.
+WARNING: [IP_Flow 19-3158] Bus Interface 'S_AXI_0': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.
+WARNING: [IP_Flow 19-3153] Bus Interface 'BRAM_PORTA_0_clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+ipx::add_bus_interface BRAM_A_0 [ipx::current_core]
+set_property abstraction_type_vlnv xilinx.com:interface:bram_rtl:1.0 [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property bus_type_vlnv xilinx.com:interface:bram:1.0 [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+ipx::add_port_map RST [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_rst [ipx::get_port_maps RST -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map CLK [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_clk [ipx::get_port_maps CLK -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map DIN [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_din [ipx::get_port_maps DIN -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map EN [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_en [ipx::get_port_maps EN -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map DOUT [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_dout [ipx::get_port_maps DOUT -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map WE [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_we [ipx::get_port_maps WE -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map ADDR [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_addr [ipx::get_port_maps ADDR -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+set_property core_revision 2 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property  ip_repo_paths  c:/users/hep/documents/universefactory/tdc/tdc.srcs [current_project]
+current_project project
+current_project tdc
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/users/hep/documents/universefactory/tdc/tdc.srcs'.
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:dac_controller:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/dac_controller' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/dac_controller
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:data_recorder:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/data_recorder' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/data_recorder
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:tdc_v1_0_S00_AXI:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/tdc_v1_0_S00_AXI' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/tdc_v1_0_S00_AXI
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:trig_arbiter:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/trig_arbiter' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/trig_arbiter
+set_property core_revision 3 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/users/hep/documents/universefactory/tdc/tdc.srcs
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/users/hep/documents/universefactory/tdc/tdc.srcs'
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:dac_controller:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/dac_controller' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/dac_controller
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:data_recorder:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/data_recorder' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/data_recorder
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:tdc_v1_0_S00_AXI:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/tdc_v1_0_S00_AXI' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/tdc_v1_0_S00_AXI
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:trig_arbiter:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/trig_arbiter' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/trig_arbiter
+set_property core_revision 4 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/users/hep/documents/universefactory/tdc/tdc.srcs
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/users/hep/documents/universefactory/tdc/tdc.srcs'
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:dac_controller:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/dac_controller' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/dac_controller
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:data_recorder:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/data_recorder' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/data_recorder
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:tdc_v1_0_S00_AXI:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/tdc_v1_0_S00_AXI' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/tdc_v1_0_S00_AXI
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:trig_arbiter:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/trig_arbiter' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/trig_arbiter
+current_project project
+set_property  ip_repo_paths  {c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0 c:/Users/HEP/Documents/universefactory/cccd_1.0 c:/Users/HEP/Documents/universefactory/main/main.srcs} [current_project]
+current_project tdc
+current_project project
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+set_property  ip_repo_paths  {c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0 c:/Users/HEP/Documents/universefactory/cccd_1.0 c:/Users/HEP/Documents/universefactory/main/main.srcs C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs} [current_project]
+current_project tdc
+current_project project
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs'.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/s00_axi_lite.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/dac_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new/data_recorder_testbench.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/trig_arbiter.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/data_recorder.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/s00_axi_lite.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/dac_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new/data_recorder_testbench.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/trig_arbiter.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/data_recorder.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/s00_axi_lite.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/dac_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new/data_recorder_testbench.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/trig_arbiter.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/data_recorder.v:]
+update_ip_catalog
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-39] 'update_ip_catalog' failed due to earlier errors.
+open_bd_design {C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:tdc:1.0 tdc_0
+endgroup
+set_property location {5 1578 497} [get_bd_cells tdc_0]
+set_property location {4.5 2168 187} [get_bd_cells tdc_0]
+connect_bd_intf_net [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins tdc_0/BRAM_A_0]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M01_AXI] [get_bd_intf_pins tdc_0/S_AXI_0]
+connect_bd_net [get_bd_pins tdc_0/S_AXI_ACLK_0] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /tdc_0/S_AXI_ACLK_0(undef)
+connect_bd_net [get_bd_pins tdc_0/S_AXI_ARESETN_0] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /proc_sys_reset_0/peripheral_aresetn(rst) and /tdc_0/S_AXI_ARESETN_0(undef)
+connect_bd_net [get_bd_pins tdc_0/clk40] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /tdc_0/clk40(undef)
+set_property location {4 1727 460} [get_bd_cells tdc_0]
+current_project tdc
+current_project main
+close_project
+ipx::unload_core c:/users/hep/documents/universefactory/tdc/tdc.srcs/component.xml
+open_bd_design {C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd}
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+open_project C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.xpr
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0/component.xml'.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0'.
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'C:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo'.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0'. The path is contained within another repository.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'.
+open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1832.387 ; gain = 0.000
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd}
+Adding cell -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_gen_0
+Adding cell -- xilinx.com:module_ref:trig_arbiter:1.0 - trig_arbiter_0
+Adding cell -- xilinx.com:module_ref:tdc_v1_0_S00_AXI:1.0 - tdc_v1_0_S00_AXI_0
+Adding cell -- xilinx.com:module_ref:dac_controller:1.0 - dac_controller_0
+Successfully read diagram <design_1> from BD file <C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 1864.879 ; gain = 32.492
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+close_project
+launch_runs synth_1 -jobs 4
+INFO: [BD 41-1029] Generation completed for the IP Integrator block blk_mem_gen_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block tdc_v1_0_S00_AXI_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block dac_controller_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block data_recorder_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block trig_arbiter_0 .
+ERROR: [filemgmt 56-189] Failed to resolve reference. Nothing was found in the project to match the name 'dac_controller'.
+ERROR: [Runs 36-346] File 'c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_dac_controller_0_0/design_1_dac_controller_0_0.xci' needed for run contains invalid reference(s).
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+add_files {C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/dac_controller.v C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/s00_axi_lite.v C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/trig_arbiter.v C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/data_recorder.v}
+WARNING: [filemgmt 56-12] File 'C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/dac_controller.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File 'C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/s00_axi_lite.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File 'C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/trig_arbiter.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File 'C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/data_recorder.v' cannot be added to the project because it already exists in the project, skipping this file
+reset_target all [get_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+export_ip_user_files -of_objects  [get_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -sync -no_script -force -quiet
+delete_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+generate_target all [get_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+CRITICAL WARNING: [BD 41-1356] Address block </tdc_v1_0_S00_AXI_0/S_AXI/reg0> is not mapped into </S_AXI_0>. Please use Address Editor to either map or exclude it.
+Wrote  : <C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/blk_mem_gen_0/addrb'(32) to net 'data_recorder_0_bramaddr'(13) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/synth/design_1.v
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/blk_mem_gen_0/addrb'(32) to net 'data_recorder_0_bramaddr'(13) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block blk_mem_gen_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block tdc_v1_0_S00_AXI_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block dac_controller_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block data_recorder_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block trig_arbiter_0 .
+Exporting to file C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+catch { config_ip_cache -export [get_ips -all design_1_blk_mem_gen_0_0] }
+export_ip_user_files -of_objects [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs -jobs 4 {design_1_blk_mem_gen_0_0_synth_1 design_1_tdc_v1_0_S00_AXI_0_0_synth_1 design_1_dac_controller_0_0_synth_1 design_1_data_recorder_0_0_synth_1 design_1_trig_arbiter_0_0_synth_1}
+ERROR: [filemgmt 56-189] Failed to resolve reference. Nothing was found in the project to match the name 'tdc_v1_0_S00_AXI'.
+ERROR: [Runs 36-346] File 'c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_tdc_v1_0_S00_AXI_0_0/design_1_tdc_v1_0_S00_AXI_0_0.xci' needed for run contains invalid reference(s).
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+open_bd_design {C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd}
+open_bd_design {C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd}
+export_ip_user_files -of_objects  [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -no_script -reset -force -quiet
+remove_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd
+file delete -force C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+create_bd_design "design_1"
+Wrote  : <C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd> 
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+export_ip_user_files -of_objects  [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v] -no_script -reset -force -quiet
+remove_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0
+endgroup
+set_property location {1 155 -39} [get_bd_cells blk_mem_gen_0]
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+can't use non-numeric string as operand of "/"
+can't use non-numeric string as operand of "/"
+can't use non-numeric string as operand of "/"
+can't use non-numeric string as operand of "/"
+can't use non-numeric string as operand of "/"
+can't use non-numeric string as operand of "/"
+can't use non-numeric string as operand of "/"
+can't use non-numeric string as operand of "/"
+can't use non-numeric string as operand of "/"
+can't use non-numeric string as operand of "/"
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Use_Byte_Write_Enable {true} CONFIG.Byte_Size {8} CONFIG.Algorithm {Fixed_Primitives} CONFIG.Primitive {2kx9} CONFIG.Write_Width_A {144} CONFIG.Read_Width_A {144} CONFIG.Write_Width_B {144} CONFIG.Read_Width_B {144} CONFIG.Enable_B {Use_ENB_Pin} CONFIG.Register_PortA_Output_of_Memory_Primitives {false} CONFIG.Use_RSTA_Pin {true} CONFIG.Use_RSTB_Pin {true} CONFIG.Port_B_Clock {100} CONFIG.Port_B_Write_Rate {50} CONFIG.Port_B_Enable_Rate {100} CONFIG.use_bram_block {BRAM_Controller} CONFIG.EN_SAFETY_CKT {true}] [get_bd_cells blk_mem_gen_0]
+set_property source_mgmt_mode All [current_project]
+create_bd_cell -type module -reference data_recorder data_recorder_0
+connect_bd_net [get_bd_pins data_recorder_0/bramaddr] [get_bd_pins blk_mem_gen_0/addrb]
+WARNING: [BD 41-1306] The connection to interface pin /blk_mem_gen_0/addrb is being overridden by the user. This pin will not be connected as a part of interface connection BRAM_PORTB
+update_compile_order -fileset sources_1
+set_property source_mgmt_mode DisplayOnly [current_project]
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+connect_bd_net [get_bd_pins data_recorder_0/bramclk] [get_bd_pins blk_mem_gen_0/clkb]
+WARNING: [BD 41-1306] The connection to interface pin /blk_mem_gen_0/clkb is being overridden by the user. This pin will not be connected as a part of interface connection BRAM_PORTB
+WARNING: [BD 41-1731] Type mismatch between connected pins: /data_recorder_0/bramclk(undef) and /blk_mem_gen_0/clkb(clk)
+startgroup
+connect_bd_net [get_bd_pins data_recorder_0/bramwrdata] [get_bd_pins blk_mem_gen_0/dinb]
+WARNING: [BD 41-1306] The connection to interface pin /blk_mem_gen_0/dinb is being overridden by the user. This pin will not be connected as a part of interface connection BRAM_PORTB
+endgroup
+connect_bd_net [get_bd_pins data_recorder_0/bramen] [get_bd_pins blk_mem_gen_0/enb]
+WARNING: [BD 41-1306] The connection to interface pin /blk_mem_gen_0/enb is being overridden by the user. This pin will not be connected as a part of interface connection BRAM_PORTB
+connect_bd_net [get_bd_pins data_recorder_0/bramwe] [get_bd_pins blk_mem_gen_0/web]
+WARNING: [BD 41-1306] The connection to interface pin /blk_mem_gen_0/web is being overridden by the user. This pin will not be connected as a part of interface connection BRAM_PORTB
+startgroup
+make_bd_pins_external  [get_bd_pins data_recorder_0/clk40]
+endgroup
+set_property source_mgmt_mode All [current_project]
+create_bd_cell -type module -reference dac_controller dac_controller_0
+startgroup
+make_bd_pins_external  [get_bd_pins dac_controller_0/dac_set_lines]
+endgroup
+set_property source_mgmt_mode DisplayOnly [current_project]
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+make_wrapper -files [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -top
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter WRITE_WIDTH_A(144) on '/blk_mem_gen_0' with propagated value(32). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter READ_WIDTH_A(144) on '/blk_mem_gen_0' with propagated value(32). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter WRITE_WIDTH_B(144) on '/blk_mem_gen_0' with propagated value(32). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter READ_WIDTH_B(144) on '/blk_mem_gen_0' with propagated value(32). Command ignored
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. These pins are tied-off to all 0's to avoid error in Implementation flow.
+Please check your design and connect them as needed: 
+/data_recorder_0/dtmroc_data_out
+/data_recorder_0/ps_data_loc_tracker_raw
+/dac_controller_0/dac_threshs
+
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+Wrote  : <C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/blk_mem_gen_0/addrb'(32) to net 'data_recorder_0_bramaddr'(13) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/synth/design_1.v
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/blk_mem_gen_0/addrb'(32) to net 'data_recorder_0_bramaddr'(13) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+add_files -norecurse C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+update_module_reference design_1_data_recorder_0_0
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+ERROR: [filemgmt 56-189] Failed to resolve reference. Nothing was found in the project to match the name 'data_recorder'.
+ERROR: [Common 17-39] 'update_module_reference' failed due to earlier errors.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+CRITICAL WARNING: [filemgmt 56-176] Module references are not supported in manual compile order mode and will be ignored.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference tdc_v1_0_S00_AXI tdc_v1_0_S00_AXI_0
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA]
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins tdc_v1_0_S00_AXI_0/S_AXI]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_v1_0_S00_AXI_0/S_AXI_ACLK]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_v1_0_S00_AXI_0/S_AXI_ARESETN]
+endgroup
+connect_bd_net [get_bd_pins tdc_v1_0_S00_AXI_0/data_loc_tracker] [get_bd_pins data_recorder_0/data_loc_tracker_external]
+connect_bd_net [get_bd_pins tdc_v1_0_S00_AXI_0/ps_data_loc_tracker] [get_bd_pins data_recorder_0/ps_data_loc_tracker_raw]
+startgroup
+make_bd_pins_external  [get_bd_pins data_recorder_0/dtmroc_data_out]
+endgroup
+connect_bd_net [get_bd_pins dac_controller_0/dac_threshs] [get_bd_pins tdc_v1_0_S00_AXI_0/dac_threshs]
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_v1_0_S00_AXI_0/is_data_mode]
+endgroup
+create_bd_cell -type module -reference trig_arbiter trig_arbiter_0
+connect_bd_net [get_bd_pins trig_arbiter_0/trig_pattern] [get_bd_pins tdc_v1_0_S00_AXI_0/trig_pattern]
+connect_bd_net [get_bd_pins trig_arbiter_0/is_data_mode] [get_bd_pins tdc_v1_0_S00_AXI_0/is_data_mode]
+connect_bd_net [get_bd_ports clk40_0] [get_bd_pins trig_arbiter_0/clk40]
+startgroup
+make_bd_pins_external  [get_bd_pins trig_arbiter_0/event_trigger]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins trig_arbiter_0/comparators]
+endgroup
+regenerate_bd_layout
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+update_compile_order -fileset sources_1
+ipx::open_ipxact_file c:/users/hep/documents/universefactory/tdc/tdc.srcs/component.xml
+WARNING: [IP_Flow 19-4963] design_1_blk_mem_gen_0_0 has board value specified. The packaged IP will be restricted to usage with board 'em.avnet.com:microzed_7010:part0:1.1'
+WARNING: [IP_Flow 19-5226] Project source file 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/component.xml' ignored by IP packager.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagebehavioralsimulation (Simulation)': File 'c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ipshared/67d8/simulation/blk_mem_gen_v8_4.v' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagebehavioralsimulation (Simulation)': File 'c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_0/sim/design_1_blk_mem_gen_0_0.v' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagebehavioralsimulation (Simulation)': File 'c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_tdc_v1_0_S00_AXI_0_0/sim/design_1_tdc_v1_0_S00_AXI_0_0.v' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagebehavioralsimulation (Simulation)': File 'c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_dac_controller_0_0/sim/design_1_dac_controller_0_0.v' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagebehavioralsimulation (Simulation)': File 'c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_data_recorder_0_0/sim/design_1_data_recorder_0_0.v' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagebehavioralsimulation (Simulation)': File 'c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_trig_arbiter_0_0/sim/design_1_trig_arbiter_0_0.v' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+ipx::remove_file ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_trig_arbiter_0_0/sim/design_1_trig_arbiter_0_0.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+ipx::remove_file ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ipshared/67d8/simulation/blk_mem_gen_v8_4.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+ipx::remove_file ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_0/sim/design_1_blk_mem_gen_0_0.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+ipx::remove_file ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_tdc_v1_0_S00_AXI_0_0/sim/design_1_tdc_v1_0_S00_AXI_0_0.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+ipx::remove_file ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_dac_controller_0_0/sim/design_1_dac_controller_0_0.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+ipx::remove_file ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_data_recorder_0_0/sim/design_1_data_recorder_0_0.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+ipx::merge_project_changes ports [ipx::current_core]
+WARNING: [IP_Flow 19-4963] design_1_blk_mem_gen_0_0 has board value specified. The packaged IP will be restricted to usage with board 'em.avnet.com:microzed_7010:part0:1.1'
+WARNING: [IP_Flow 19-5226] Project source file 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/component.xml' ignored by IP packager.
+CRITICAL WARNING: [IP_Flow 19-4835] Multiple IP ports (S_AXI_0_wvalid S_AXI_0_wstrb S_AXI_0_wready S_AXI_0_wdata S_AXI_0_rvalid S_AXI_0_rresp S_AXI_0_rready S_AXI_0_rdata S_AXI_0_bvalid S_AXI_0_bresp S_AXI_0_bready S_AXI_0_awvalid S_AXI_0_awready S_AXI_0_awprot S_AXI_0_awaddr S_AXI_0_arvalid S_AXI_0_arready S_AXI_0_arprot S_AXI_0_araddr) were removed from the interface 'S_AXI_0'. Please review the IP interface 'S_AXI_0'.
+CRITICAL WARNING: [IP_Flow 19-4834] IP port (BRAM_PORTA_0_rst) was removed from the interface 'BRAM_PORTA_0_rst'. Please review the IP interface 'BRAM_PORTA_0_rst'.
+CRITICAL WARNING: [IP_Flow 19-4834] IP port (BRAM_PORTA_0_clk) was removed from the interface 'BRAM_PORTA_0_clk'. Please review the IP interface 'BRAM_PORTA_0_clk'.
+CRITICAL WARNING: [IP_Flow 19-4835] Multiple IP ports (BRAM_PORTA_0_we BRAM_PORTA_0_rst BRAM_PORTA_0_en BRAM_PORTA_0_dout BRAM_PORTA_0_din BRAM_PORTA_0_clk BRAM_PORTA_0_addr) were removed from the interface 'BRAM_A_0'. Please review the IP interface 'BRAM_A_0'.
+INFO: [IP_Flow 19-3166] Bus Interface 'S_AXI_0': References existing memory map 'S_AXI_0'.
+ERROR: [Common 17-39] 'ipx::merge_project_changes' failed due to earlier errors.
+set_property location {-21 80} [get_bd_intf_ports BRAM_PORTA_0]
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_target all [get_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+export_ip_user_files -of_objects  [get_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -sync -no_script -force -quiet
+generate_target all [get_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+CRITICAL WARNING: [BD 41-1356] Address block </tdc_v1_0_S00_AXI_0/S_AXI/reg0> is not mapped into </S_AXI_0>. Please use Address Editor to either map or exclude it.
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter WRITE_WIDTH_A(144) on '/blk_mem_gen_0' with propagated value(32). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter READ_WIDTH_A(144) on '/blk_mem_gen_0' with propagated value(32). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter WRITE_WIDTH_B(144) on '/blk_mem_gen_0' with propagated value(32). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter READ_WIDTH_B(144) on '/blk_mem_gen_0' with propagated value(32). Command ignored
+CRITICAL WARNING: [BD 41-1356] Address block </tdc_v1_0_S00_AXI_0/S_AXI/reg0> is not mapped into </S_AXI_0>. Please use Address Editor to either map or exclude it.
+Wrote  : <C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/blk_mem_gen_0/addrb'(32) to net 'data_recorder_0_bramaddr'(13) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/synth/design_1.v
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/blk_mem_gen_0/addrb'(32) to net 'data_recorder_0_bramaddr'(13) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block blk_mem_gen_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block data_recorder_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block dac_controller_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block tdc_v1_0_S00_AXI_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block trig_arbiter_0 .
+Exporting to file C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+catch { config_ip_cache -export [get_ips -all design_1_blk_mem_gen_0_0] }
+export_ip_user_files -of_objects [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs -jobs 4 {design_1_blk_mem_gen_0_0_synth_1 design_1_data_recorder_0_0_synth_1 design_1_dac_controller_0_0_synth_1 design_1_tdc_v1_0_S00_AXI_0_0_synth_1 design_1_trig_arbiter_0_0_synth_1}
+[Wed Jul 11 09:34:16 2018] Launched design_1_blk_mem_gen_0_0_synth_1, design_1_data_recorder_0_0_synth_1, design_1_dac_controller_0_0_synth_1, design_1_tdc_v1_0_S00_AXI_0_0_synth_1, design_1_trig_arbiter_0_0_synth_1...
+Run output will be captured here:
+design_1_blk_mem_gen_0_0_synth_1: C:/Users/HEP/Documents/universefactory/tdc/tdc.runs/design_1_blk_mem_gen_0_0_synth_1/runme.log
+design_1_data_recorder_0_0_synth_1: C:/Users/HEP/Documents/universefactory/tdc/tdc.runs/design_1_data_recorder_0_0_synth_1/runme.log
+design_1_dac_controller_0_0_synth_1: C:/Users/HEP/Documents/universefactory/tdc/tdc.runs/design_1_dac_controller_0_0_synth_1/runme.log
+design_1_tdc_v1_0_S00_AXI_0_0_synth_1: C:/Users/HEP/Documents/universefactory/tdc/tdc.runs/design_1_tdc_v1_0_S00_AXI_0_0_synth_1/runme.log
+design_1_trig_arbiter_0_0_synth_1: C:/Users/HEP/Documents/universefactory/tdc/tdc.runs/design_1_trig_arbiter_0_0_synth_1/runme.log
+export_simulation -of_objects [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files -ipstatic_source_dir C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/modelsim} {questa=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/questa} {riviera=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/riviera} {activehdl=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+ipx::merge_project_changes ports [ipx::current_core]
+WARNING: [IP_Flow 19-4963] design_1_blk_mem_gen_0_0 has board value specified. The packaged IP will be restricted to usage with board 'em.avnet.com:microzed_7010:part0:1.1'
+WARNING: [IP_Flow 19-5226] Project source file 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/component.xml' ignored by IP packager.
+INFO: [IP_Flow 19-3166] Bus Interface 'S_AXI_0': References existing memory map 'S_AXI_0'.
+ERROR: [Common 17-39] 'ipx::merge_project_changes' failed due to earlier errors.
+ipx::add_bus_interface dfdf [ipx::current_core]
+set_property abstraction_type_vlnv xilinx.com:interface:aximm_rtl:1.0 [ipx::get_bus_interfaces dfdf -of_objects [ipx::current_core]]
+set_property bus_type_vlnv xilinx.com:interface:aximm:1.0 [ipx::get_bus_interfaces dfdf -of_objects [ipx::current_core]]
+set_property interface_mode master [ipx::get_bus_interfaces dfdf -of_objects [ipx::current_core]]
+ipx::add_bus_parameter NUM_READ_OUTSTANDING [ipx::get_bus_interfaces dfdf -of_objects [ipx::current_core]]
+ipx::add_bus_parameter NUM_WRITE_OUTSTANDING [ipx::get_bus_interfaces dfdf -of_objects [ipx::current_core]]
+ipx::remove_bus_interface dfdf [ipx::current_core]
+ipx::add_port_map AWVALID [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awvalid [ipx::get_port_maps AWVALID -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map AWREADY [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awready [ipx::get_port_maps AWREADY -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map AWADDR [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awaddr [ipx::get_port_maps AWADDR -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map AWPROT [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awprot [ipx::get_port_maps AWPROT -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map ARADDR [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_araddr [ipx::get_port_maps ARADDR -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::remove_port_map AWVALID [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+ipx::remove_port_map AWREADY [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+ipx::remove_port_map AWADDR [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+ipx::remove_port_map AWPROT [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+ipx::add_port_map BVALID [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_bvalid [ipx::get_port_maps BVALID -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map RREADY [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_rready [ipx::get_port_maps RREADY -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map BREADY [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_bready [ipx::get_port_maps BREADY -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map AWREADY [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awready [ipx::get_port_maps AWREADY -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map AWVALID [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awvalid [ipx::get_port_maps AWVALID -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map AWPROT [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awprot [ipx::get_port_maps AWPROT -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map WDATA [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_wdata [ipx::get_port_maps WDATA -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map RRESP [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_rresp [ipx::get_port_maps RRESP -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map ARPROT [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_arprot [ipx::get_port_maps ARPROT -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map RVALID [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_rvalid [ipx::get_port_maps RVALID -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map ARREADY [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_arready [ipx::get_port_maps ARREADY -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map AWADDR [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awaddr [ipx::get_port_maps AWADDR -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map WVALID [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_wvalid [ipx::get_port_maps WVALID -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map WREADY [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_wready [ipx::get_port_maps WREADY -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map ARVALID [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_arvalid [ipx::get_port_maps ARVALID -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map WSTRB [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_wstrb [ipx::get_port_maps WSTRB -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map BRESP [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_bresp [ipx::get_port_maps BRESP -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map RDATA [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_rdata [ipx::get_port_maps RDATA -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map RST [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_rst [ipx::get_port_maps RST -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map CLK [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_clk [ipx::get_port_maps CLK -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map DIN [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_din [ipx::get_port_maps DIN -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map EN [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_en [ipx::get_port_maps EN -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map DOUT [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_dout [ipx::get_port_maps DOUT -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map WE [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_we [ipx::get_port_maps WE -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map ADDR [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_addr [ipx::get_port_maps ADDR -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::merge_project_changes files [ipx::current_core]
+WARNING: [IP_Flow 19-4963] design_1_blk_mem_gen_0_0 has board value specified. The packaged IP will be restricted to usage with board 'em.avnet.com:microzed_7010:part0:1.1'
+WARNING: [IP_Flow 19-5226] Project source file 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/component.xml' ignored by IP packager.
+set_property core_revision 5 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/users/hep/documents/universefactory/tdc/tdc.srcs
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/users/hep/documents/universefactory/tdc/tdc.srcs'
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:dac_controller:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/dac_controller' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/dac_controller
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:data_recorder:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/data_recorder' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/data_recorder
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:tdc_v1_0_S00_AXI:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/tdc_v1_0_S00_AXI' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/tdc_v1_0_S00_AXI
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:trig_arbiter:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/trig_arbiter' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/trig_arbiter
+current_project project
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs'.
+report_ip_status -name ip_status
+current_project tdc
+current_project project
+delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M01_AXI] [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTA] [get_bd_cells tdc_0]
+report_ip_status -name ip_status 
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:tdc:1.0 tdc_0
+endgroup
+set_property location {5.5 2034 83} [get_bd_cells tdc_0]
+connect_bd_intf_net [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins tdc_0/BRAM_A_0]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M01_AXI] [get_bd_intf_pins tdc_0/S_AXI_0]
+connect_bd_net [get_bd_pins tdc_0/clk40_0] [get_bd_pins tdc_0/S_AXI_ACLK_0]
+undo
+INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins tdc_0/clk40_0] [get_bd_pins tdc_0/S_AXI_ACLK_0]'
+connect_bd_net [get_bd_pins tdc_0/S_AXI_ACLK_0] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /tdc_0/S_AXI_ACLK_0(undef)
+connect_bd_net [get_bd_pins tdc_0/clk40_0] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /tdc_0/clk40_0(undef)
+connect_bd_net [get_bd_pins tdc_0/S_AXI_ARESETN_0] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /proc_sys_reset_0/peripheral_aresetn(rst) and /tdc_0/S_AXI_ARESETN_0(undef)
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_0/dac_set_lines_0]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_0/comparators_0]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_0/dtmroc_data_out_0]
+endgroup
+regenerate_bd_layout
+regenerate_bd_layout
+startgroup
+set_property -dict [list CONFIG.NUM_MI {1}] [get_bd_cells axi_interconnect_1]
+endgroup
+regenerate_bd_layout
+connect_bd_net [get_bd_pins main_0/is_data_mode] [get_bd_pins tdc_0/is_data_mode_0]
+connect_bd_net [get_bd_pins tdc_0/event_trigger_0] [get_bd_pins main_0/event_trigger]
+regenerate_bd_layout
+set_property location {2005 692} [get_bd_intf_ports DDR]
+regenerate_bd_layout -routing
+regenerate_bd_layout
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_run design_1_xbar_0_synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/HEP/Documents/universefactory/project/project.runs/design_1_xbar_0_synth_1
+
+reset_run design_1_processing_system7_0_0_synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/HEP/Documents/universefactory/project/project.runs/design_1_processing_system7_0_0_synth_1
+
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/HEP/Documents/universefactory/project/project.runs/synth_1
+
+launch_runs synth_1 -jobs 4
+CRITICAL WARNING: [BD 41-1356] Address block </tdc_0/S_AXI_0/reg0> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-967] AXI interface pin /tdc_0/S_AXI_0 is not associated to any clock pin. It may not work correctly.
+CRITICAL WARNING: [BD 41-1343] Reset pin /main_0/rst_n (associated clock /main_0/clkbx_n) is connected to reset source /proc_sys_reset_0/peripheral_aresetn (synchronous to clock source /processing_system7_0/FCLK_CLK0).
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /main_0/clkbx_n.
+CRITICAL WARNING: [BD 41-1356] Address block </tdc_0/S_AXI_0/reg0> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /tdc_0/BRAM_A_0(OTHER) and /axi_bram_ctrl_0/BRAM_PORTA(BRAM_CTRL)
+ERROR: [BD 41-237] Bus Interface property FREQ_HZ does not match between /tdc_0/S_AXI_0(100000000) and /axi_interconnect_0/xbar/M01_AXI(40000000)
+WARNING: [BD 41-927] Following properties on pin /main_0/clk40 have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_0_FCLK_CLK0 
+WARNING: [BD 41-927] Following properties on pin /main_0/clkbx_p have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_main_0_0_clkbx_p 
+WARNING: [BD 41-927] Following properties on pin /main_0/clkbx_n have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_main_0_0_clkbx_n 
+ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd 
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_axi_bram_ctrl_0_0, cache-ID = 2f1ea9dba83e696f; cache size = 339.046 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_xbar_0, cache-ID = 765160593e596697; cache size = 339.046 MB.
+ERROR: [Vivado 12-4756] Launch of runs aborted due to earlier errors while preparing sub-designs for run execution.
+report_ip_status -name ip_status 
+current_project tdc
+current_project project
+assign_bd_address [get_bd_addr_segs {tdc_0/S_AXI_0/reg0 }]
+</tdc_0/S_AXI_0/reg0> is being mapped into </processing_system7_0/Data> at <0x43C10000 [ 64K ]>
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+launch_runs synth_1 -jobs 4
+CRITICAL WARNING: [BD 41-967] AXI interface pin /tdc_0/S_AXI_0 is not associated to any clock pin. It may not work correctly.
+CRITICAL WARNING: [BD 41-1343] Reset pin /main_0/rst_n (associated clock /main_0/clkbx_n) is connected to reset source /proc_sys_reset_0/peripheral_aresetn (synchronous to clock source /processing_system7_0/FCLK_CLK0).
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /main_0/clkbx_n.
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /tdc_0/BRAM_A_0(OTHER) and /axi_bram_ctrl_0/BRAM_PORTA(BRAM_CTRL)
+ERROR: [BD 41-237] Bus Interface property FREQ_HZ does not match between /tdc_0/S_AXI_0(100000000) and /axi_interconnect_0/xbar/M01_AXI(40000000)
+WARNING: [BD 41-927] Following properties on pin /main_0/clk40 have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_0_FCLK_CLK0 
+WARNING: [BD 41-927] Following properties on pin /main_0/clkbx_p have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_main_0_0_clkbx_p 
+WARNING: [BD 41-927] Following properties on pin /main_0/clkbx_n have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_main_0_0_clkbx_n 
+ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd 
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_axi_bram_ctrl_0_0, cache-ID = 2f1ea9dba83e696f; cache size = 339.046 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_xbar_0, cache-ID = 755f44f5f28b21f9; cache size = 339.046 MB.
+ERROR: [Vivado 12-4756] Launch of runs aborted due to earlier errors while preparing sub-designs for run execution.
+set_property CONFIG.FREQ_HZ 40000000 [get_bd_intf_pins /tdc_0/S_AXI_0]
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+launch_runs synth_1 -jobs 4
+CRITICAL WARNING: [BD 41-1343] Reset pin /main_0/rst_n (associated clock /main_0/clkbx_n) is connected to reset source /proc_sys_reset_0/peripheral_aresetn (synchronous to clock source /processing_system7_0/FCLK_CLK0).
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /main_0/clkbx_n.
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /tdc_0/BRAM_A_0(OTHER) and /axi_bram_ctrl_0/BRAM_PORTA(BRAM_CTRL)
+WARNING: [BD 41-927] Following properties on pin /main_0/clk40 have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_0_FCLK_CLK0 
+WARNING: [BD 41-927] Following properties on pin /main_0/clkbx_p have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_main_0_0_clkbx_p 
+WARNING: [BD 41-927] Following properties on pin /main_0/clkbx_n have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_main_0_0_clkbx_n 
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd> 
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/tdc_0/BRAM_PORTA_0_din'(144) to net 'axi_bram_ctrl_0_BRAM_PORTA_DIN'(64) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/tdc_0/BRAM_PORTA_0_addr'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(21) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/tdc_0/BRAM_PORTA_0_we'(18) to net 'axi_bram_ctrl_0_BRAM_PORTA_WE'(8) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_bram_ctrl_0/bram_rddata_a'(64) to net 'axi_bram_ctrl_0_BRAM_PORTA_DOUT'(144) - Only lower order bits will be connected.
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/synth/design_1.v
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/tdc_0/BRAM_PORTA_0_din'(144) to net 'axi_bram_ctrl_0_BRAM_PORTA_DIN'(64) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/tdc_0/BRAM_PORTA_0_addr'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(21) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/tdc_0/BRAM_PORTA_0_we'(18) to net 'axi_bram_ctrl_0_BRAM_PORTA_WE'(8) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_bram_ctrl_0/bram_rddata_a'(64) to net 'axi_bram_ctrl_0_BRAM_PORTA_DOUT'(144) - Only lower order bits will be connected.
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_ds_buf_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block main_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block cccd_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_bram_ctrl_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block tdc_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/s00_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/s00_couplers/auto_us .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_axi_bram_ctrl_0_0, cache-ID = 2f1ea9dba83e696f; cache size = 339.046 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_xbar_0, cache-ID = 755f44f5f28b21f9; cache size = 339.046 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_1, cache-ID = b45d7bdcbc5680cb; cache size = 339.046 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_us_0, cache-ID = 5205a2ebdd8fcdad; cache size = 339.046 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 7a65fd9e486c4575; cache size = 339.046 MB.
+[Wed Jul 11 09:50:54 2018] Launched design_1_processing_system7_0_0_synth_1, design_1_main_0_0_synth_1, design_1_tdc_0_2_synth_1...
+Run output will be captured here:
+design_1_processing_system7_0_0_synth_1: C:/Users/HEP/Documents/universefactory/project/project.runs/design_1_processing_system7_0_0_synth_1/runme.log
+design_1_main_0_0_synth_1: C:/Users/HEP/Documents/universefactory/project/project.runs/design_1_main_0_0_synth_1/runme.log
+design_1_tdc_0_2_synth_1: C:/Users/HEP/Documents/universefactory/project/project.runs/design_1_tdc_0_2_synth_1/runme.log
+[Wed Jul 11 09:50:54 2018] Launched synth_1...
+Run output will be captured here: C:/Users/HEP/Documents/universefactory/project/project.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:01:03 ; elapsed = 00:01:08 . Memory (MB): peak = 2275.531 ; gain = 105.785
+set_property CONFIG.MASTER_TYPE {LITERALLY ANYTHING?} [get_bd_intf_pins /tdc_0/BRAM_A_0]
+current_project tdc
+set_property CONFIG.MASTER_TYPE BRAM_CTRL [get_bd_intf_pins /tdc_0/BRAM_A_0]
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd> 
+current_project tdc
+ipx::add_file C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new/data_recorder_testbench.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+set_property type verilogSource [ipx::get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new/data_recorder_testbench.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property library_name xil_defaultlib [ipx::get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new/data_recorder_testbench.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 6 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/users/hep/documents/universefactory/tdc/tdc.srcs
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/users/hep/documents/universefactory/tdc/tdc.srcs'
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:dac_controller:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/dac_controller' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/dac_controller
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:data_recorder:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/data_recorder' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/data_recorder
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:tdc_v1_0_S00_AXI:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/tdc_v1_0_S00_AXI' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/tdc_v1_0_S00_AXI
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:trig_arbiter:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/trig_arbiter' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/trig_arbiter
+ipx::reorder_files -after ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_0/design_1_blk_mem_gen_0_0.xci ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]
+set_property core_revision 7 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/users/hep/documents/universefactory/tdc/tdc.srcs
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/users/hep/documents/universefactory/tdc/tdc.srcs'
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:dac_controller:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/dac_controller' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/dac_controller
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:data_recorder:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/data_recorder' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/data_recorder
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:tdc_v1_0_S00_AXI:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/tdc_v1_0_S00_AXI' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/tdc_v1_0_S00_AXI
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:trig_arbiter:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/trig_arbiter' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/trig_arbiter
+current_project project
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs'.
+report_ip_status -name ip_status
+current_project tdc
+current_project project
+upgrade_ip -vlnv xilinx.com:user:tdc:1.0 [get_ips  design_1_tdc_0_2] -log ip_upgrade.log
+Upgrading 'C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3422] Upgraded design_1_tdc_0_2 (tdc_v1_0 1.0) from revision 5 to revision 7
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /tdc_0_upgraded_ipi/S_AXI_ACLK_0(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /proc_sys_reset_0/peripheral_aresetn(rst) and /tdc_0_upgraded_ipi/S_AXI_ARESETN_0(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /tdc_0_upgraded_ipi/clk40_0(undef)
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'C:/Users/HEP/Documents/universefactory/project/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_tdc_0_2] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/HEP/Documents/universefactory/project/project.runs/synth_1
+
+launch_runs synth_1 -jobs 4
+CRITICAL WARNING: [BD 41-967] AXI interface pin /tdc_0/S_AXI_0 is not associated to any clock pin. It may not work correctly.
+CRITICAL WARNING: [BD 41-1343] Reset pin /main_0/rst_n (associated clock /main_0/clkbx_n) is connected to reset source /proc_sys_reset_0/peripheral_aresetn (synchronous to clock source /processing_system7_0/FCLK_CLK0).
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /main_0/clkbx_n.
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /tdc_0/BRAM_A_0(OTHER) and /axi_bram_ctrl_0/BRAM_PORTA(BRAM_CTRL)
+ERROR: [BD 41-237] Bus Interface property FREQ_HZ does not match between /tdc_0/S_AXI_0(100000000) and /axi_interconnect_0/xbar/M01_AXI(40000000)
+WARNING: [BD 41-927] Following properties on pin /main_0/clk40 have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_0_FCLK_CLK0 
+WARNING: [BD 41-927] Following properties on pin /main_0/clkbx_p have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_main_0_0_clkbx_p 
+WARNING: [BD 41-927] Following properties on pin /main_0/clkbx_n have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_main_0_0_clkbx_n 
+ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd 
+ERROR: [Vivado 12-4756] Launch of runs aborted due to earlier errors while preparing sub-designs for run execution.
+set_property CONFIG.FREQ_HZ 40000000 [get_bd_intf_pins /tdc_0/S_AXI_0]
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd> 
+launch_runs synth_1 -jobs 4
+CRITICAL WARNING: [BD 41-1343] Reset pin /main_0/rst_n (associated clock /main_0/clkbx_n) is connected to reset source /proc_sys_reset_0/peripheral_aresetn (synchronous to clock source /processing_system7_0/FCLK_CLK0).
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /main_0/clkbx_n.
+CRITICAL WARNING: [BD 41-237] Bus Interface property MASTER_TYPE does not match between /tdc_0/BRAM_A_0(OTHER) and /axi_bram_ctrl_0/BRAM_PORTA(BRAM_CTRL)
+WARNING: [BD 41-927] Following properties on pin /main_0/clk40 have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_processing_system7_0_0_FCLK_CLK0 
+WARNING: [BD 41-927] Following properties on pin /main_0/clkbx_p have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_main_0_0_clkbx_p 
+WARNING: [BD 41-927] Following properties on pin /main_0/clkbx_n have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=design_1_main_0_0_clkbx_n 
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd> 
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/tdc_0/BRAM_PORTA_0_din'(144) to net 'axi_bram_ctrl_0_BRAM_PORTA_DIN'(64) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/tdc_0/BRAM_PORTA_0_addr'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(21) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/tdc_0/BRAM_PORTA_0_we'(18) to net 'axi_bram_ctrl_0_BRAM_PORTA_WE'(8) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_bram_ctrl_0/bram_rddata_a'(64) to net 'axi_bram_ctrl_0_BRAM_PORTA_DOUT'(144) - Only lower order bits will be connected.
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/synth/design_1.v
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/tdc_0/BRAM_PORTA_0_din'(144) to net 'axi_bram_ctrl_0_BRAM_PORTA_DIN'(64) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/tdc_0/BRAM_PORTA_0_addr'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(21) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/tdc_0/BRAM_PORTA_0_we'(18) to net 'axi_bram_ctrl_0_BRAM_PORTA_WE'(8) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_bram_ctrl_0/bram_rddata_a'(64) to net 'axi_bram_ctrl_0_BRAM_PORTA_DOUT'(144) - Only lower order bits will be connected.
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_ds_buf_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block main_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block cccd_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_bram_ctrl_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block tdc_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/s00_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/s00_couplers/auto_us .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_1, cache-ID = b45d7bdcbc5680cb; cache size = 340.456 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_us_0, cache-ID = 5205a2ebdd8fcdad; cache size = 340.456 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 7a65fd9e486c4575; cache size = 340.456 MB.
+[Wed Jul 11 10:00:20 2018] Launched design_1_tdc_0_2_synth_1...
+Run output will be captured here: C:/Users/HEP/Documents/universefactory/project/project.runs/design_1_tdc_0_2_synth_1/runme.log
+[Wed Jul 11 10:00:20 2018] Launched synth_1...
+Run output will be captured here: C:/Users/HEP/Documents/universefactory/project/project.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2315.590 ; gain = 37.418
+create_bd_cell -type ip -vlnv xilinx.com:module_ref:dac_controller:1.0 dac_controller_0
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+delete_bd_objs [get_bd_cells dac_controller_0]
+delete_bd_objs [get_bd_nets tdc_0_event_trigger_0] [get_bd_nets tdc_0_is_data_mode_0] [get_bd_intf_nets axi_interconnect_0_M01_AXI] [get_bd_nets dtmroc_data_out_0_0_1] [get_bd_nets tdc_0_dac_set_lines_0] [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTA] [get_bd_nets comparators_0_0_1] [get_bd_cells tdc_0]
+save_bd_design
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : <C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+close_project
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/cccd_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/main/main.srcs'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs'.
+set_property core_revision 8 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/users/hep/documents/universefactory/tdc/tdc.srcs
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/users/hep/documents/universefactory/tdc/tdc.srcs'
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:data_recorder:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/data_recorder' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/data_recorder
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:tdc_v1_0_S00_AXI:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/tdc_v1_0_S00_AXI' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/tdc_v1_0_S00_AXI
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:module_ref:trig_arbiter:1.0'. The one found in IP location 'c:/users/hep/documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/trig_arbiter' will take precedence over the same IP in location c:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/mref/trig_arbiter
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 2315.590 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 11 10:06:33 2018...

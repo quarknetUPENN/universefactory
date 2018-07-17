@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="design_1_trig_arbiter_0_0_synth_1" LaunchDir="C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.runs/design_1_trig_arbiter_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_tdc_v1_0_S00_AXI_0_0_synth_1" LaunchDir="C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.runs/design_1_tdc_v1_0_S00_AXI_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_data_recorder_0_0_synth_1" LaunchDir="C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.runs/design_1_data_recorder_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_dac_controller_0_0_synth_1" LaunchDir="C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.runs/design_1_dac_controller_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="design_1_trig_arbiter_0_0_synth_1"/>
+		<Parent Id="design_1_tdc_v1_0_S00_AXI_0_0_synth_1"/>
+		<Parent Id="design_1_data_recorder_0_0_synth_1"/>
+		<Parent Id="design_1_dac_controller_0_0_synth_1"/>
+	</Run>
+</Runs>
+

@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Fri Jul  6 12:33:04 2018
+//Date        : Tue Jul 17 10:36:38 2018
 //Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -31,7 +31,8 @@ module design_1_wrapper
     DTMROC_CMD_IN_P,
     DTMROC_CMD_OUT_N,
     DTMROC_CMD_OUT_P,
-    DTMROC_DATA_OUT,
+    DTMROC_DATA_OUT_N,
+    DTMROC_DATA_OUT_P,
     DTMROC_HARD_N,
     DTMROC_HARD_P,
     FIXED_IO_ddr_vrn,
@@ -39,7 +40,9 @@ module design_1_wrapper
     FIXED_IO_mio,
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
-    FIXED_IO_ps_srstb);
+    FIXED_IO_ps_srstb,
+    comparators_0_0,
+    dac_spi_0);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -61,7 +64,8 @@ module design_1_wrapper
   output DTMROC_CMD_IN_P;
   input DTMROC_CMD_OUT_N;
   input DTMROC_CMD_OUT_P;
-  input [11:0]DTMROC_DATA_OUT;
+  input DTMROC_DATA_OUT_N;
+  input DTMROC_DATA_OUT_P;
   output DTMROC_HARD_N;
   output DTMROC_HARD_P;
   inout FIXED_IO_ddr_vrn;
@@ -70,6 +74,8 @@ module design_1_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
+  input [23:0]comparators_0_0;
+  output [6:0]dac_spi_0;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -92,7 +98,8 @@ module design_1_wrapper
   wire DTMROC_CMD_IN_P;
   wire DTMROC_CMD_OUT_N;
   wire DTMROC_CMD_OUT_P;
-  wire [11:0]DTMROC_DATA_OUT;
+  wire DTMROC_DATA_OUT_N;
+  wire DTMROC_DATA_OUT_P;
   wire DTMROC_HARD_N;
   wire DTMROC_HARD_P;
   wire FIXED_IO_ddr_vrn;
@@ -101,6 +108,8 @@ module design_1_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
+  wire [23:0]comparators_0_0;
+  wire [6:0]dac_spi_0;
 
   design_1 design_1_i
        (.DDR_addr(DDR_addr),
@@ -124,7 +133,8 @@ module design_1_wrapper
         .DTMROC_CMD_IN_P(DTMROC_CMD_IN_P),
         .DTMROC_CMD_OUT_N(DTMROC_CMD_OUT_N),
         .DTMROC_CMD_OUT_P(DTMROC_CMD_OUT_P),
-        .DTMROC_DATA_OUT(DTMROC_DATA_OUT),
+        .DTMROC_DATA_OUT_N(DTMROC_DATA_OUT_N),
+        .DTMROC_DATA_OUT_P(DTMROC_DATA_OUT_P),
         .DTMROC_HARD_N(DTMROC_HARD_N),
         .DTMROC_HARD_P(DTMROC_HARD_P),
         .FIXED_IO_ddr_vrn(FIXED_IO_ddr_vrn),
@@ -132,5 +142,7 @@ module design_1_wrapper
         .FIXED_IO_mio(FIXED_IO_mio),
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
-        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb));
+        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
+        .comparators_0_0(comparators_0_0),
+        .dac_spi_0(dac_spi_0));
 endmodule

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="data_trig_test_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="data_trig_test" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="310024998fs"></ZoomStartTime>
+      <ZoomEndTime time="960395001fs"></ZoomEndTime>
+      <Cursor1Time time="708000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="229"></NameColumnWidth>
+      <ValueColumnWidth column_width="128"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="26" />
+   <wave_markers>
+      <marker time="758000000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/data_trig_test/dtmroc_data_out" type="array">
+      <obj_property name="ElementShortName">dtmroc_data_out[47:0]</obj_property>
+      <obj_property name="ObjectShortName">dtmroc_data_out[47:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/comparators" type="array">
+      <obj_property name="ElementShortName">comparators[23:0]</obj_property>
+      <obj_property name="ObjectShortName">comparators[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/clk40" type="logic">
+      <obj_property name="ElementShortName">clk40</obj_property>
+      <obj_property name="ObjectShortName">clk40</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/data_recorder_inst/l1a_cntr" type="array">
+      <obj_property name="ElementShortName">l1a_cntr[8:0]</obj_property>
+      <obj_property name="ObjectShortName">l1a_cntr[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/data_recorder_inst/data_loc" type="array">
+      <obj_property name="ElementShortName">data_loc[5:0]</obj_property>
+      <obj_property name="ObjectShortName">data_loc[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/clk120" type="logic">
+      <obj_property name="ElementShortName">clk120</obj_property>
+      <obj_property name="ObjectShortName">clk120</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/ps_data_loc_tracker_raw" type="array">
+      <obj_property name="ElementShortName">ps_data_loc_tracker_raw[63:0]</obj_property>
+      <obj_property name="ObjectShortName">ps_data_loc_tracker_raw[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/is_data_mode" type="logic">
+      <obj_property name="ElementShortName">is_data_mode</obj_property>
+      <obj_property name="ObjectShortName">is_data_mode</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/trig_pattern" type="array">
+      <obj_property name="ElementShortName">trig_pattern[23:0]</obj_property>
+      <obj_property name="ObjectShortName">trig_pattern[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/eventid" type="array">
+      <obj_property name="ElementShortName">eventid[31:0]</obj_property>
+      <obj_property name="ObjectShortName">eventid[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/l1a_seen" type="logic">
+      <obj_property name="ElementShortName">l1a_seen</obj_property>
+      <obj_property name="ObjectShortName">l1a_seen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/data_loc_tracker" type="array">
+      <obj_property name="ElementShortName">data_loc_tracker[63:0]</obj_property>
+      <obj_property name="ObjectShortName">data_loc_tracker[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/data_mode_cmd_out" type="logic">
+      <obj_property name="ElementShortName">data_mode_cmd_out</obj_property>
+      <obj_property name="ObjectShortName">data_mode_cmd_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/bramaddr" type="array">
+      <obj_property name="ElementShortName">bramaddr[16:0]</obj_property>
+      <obj_property name="ObjectShortName">bramaddr[16:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/bramclk" type="logic">
+      <obj_property name="ElementShortName">bramclk</obj_property>
+      <obj_property name="ObjectShortName">bramclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/bramwrdata" type="array">
+      <obj_property name="ElementShortName">bramwrdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">bramwrdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/bramen" type="logic">
+      <obj_property name="ElementShortName">bramen</obj_property>
+      <obj_property name="ObjectShortName">bramen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/bramwe" type="logic">
+      <obj_property name="ElementShortName">bramwe</obj_property>
+      <obj_property name="ObjectShortName">bramwe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/bramrst" type="logic">
+      <obj_property name="ElementShortName">bramrst</obj_property>
+      <obj_property name="ObjectShortName">bramrst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/trig_arbiter_inst/should_send_soft_rst" type="logic">
+      <obj_property name="ElementShortName">should_send_soft_rst</obj_property>
+      <obj_property name="ObjectShortName">should_send_soft_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/trig_arbiter_inst/panic" type="logic">
+      <obj_property name="ElementShortName">panic</obj_property>
+      <obj_property name="ObjectShortName">panic</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/trig_arbiter_inst/l1as_sent" type="array">
+      <obj_property name="ElementShortName">l1as_sent[31:0]</obj_property>
+      <obj_property name="ObjectShortName">l1as_sent[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/trig_arbiter_inst/l1as_received" type="array">
+      <obj_property name="ElementShortName">l1as_received[31:0]</obj_property>
+      <obj_property name="ObjectShortName">l1as_received[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/trig_arbiter_inst/events_received" type="array">
+      <obj_property name="ElementShortName">events_received[31:0]</obj_property>
+      <obj_property name="ObjectShortName">events_received[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/trig_arbiter_inst/expecting_l1a" type="array">
+      <obj_property name="ElementShortName">expecting_l1a[10:0]</obj_property>
+      <obj_property name="ObjectShortName">expecting_l1a[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/data_trig_test/trig_arbiter_inst/old_is_data_mode" type="logic">
+      <obj_property name="ElementShortName">old_is_data_mode</obj_property>
+      <obj_property name="ObjectShortName">old_is_data_mode</obj_property>
+   </wvobject>
+</wave_config>

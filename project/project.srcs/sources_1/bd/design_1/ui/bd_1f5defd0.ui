@@ -1,70 +1,87 @@
 {
    ExpandedHierarchyInLayout: "",
-   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
+   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS-threadsafe
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -y 440 -defaultsOSRD
-preplace port DTMROC_CMD_OUT_N -pg 1 -y 760 -defaultsOSRD
-preplace port DTMROC_CMD_OUT_P -pg 1 -y 780 -defaultsOSRD
-preplace port DTMROC_CMD_IN_N -pg 1 -y 750 -defaultsOSRD
-preplace port DTMROC_CMD_IN_P -pg 1 -y 730 -defaultsOSRD
-preplace port DTMROC_HARD_N -pg 1 -y 830 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 460 -defaultsOSRD
-preplace port DTMROC_HARD_P -pg 1 -y 810 -defaultsOSRD
-preplace portBus DTMROC_DATA_OUT -pg 1 -y 820 -defaultsOSRD
-preplace portBus DTMROC_BX_N -pg 1 -y 790 -defaultsOSRD
-preplace portBus DTMROC_BX_P -pg 1 -y 770 -defaultsOSRD
-preplace inst util_ds_buf_1 -pg 1 -lvl 5 -y 740 -defaultsOSRD
-preplace inst axi_cdma_0 -pg 1 -lvl 3 -y 90 -defaultsOSRD
-preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -y 250 -defaultsOSRD
-preplace inst bramtest_v1_0_0 -pg 1 -lvl 5 -y 250 -defaultsOSRD
-preplace inst blk_mem_gen_0 -pg 1 -lvl 6 -y 150 -defaultsOSRD
+preplace port DDR -pg 1 -y 670 -defaultsOSRD
+preplace port DTMROC_DATA_OUT_N -pg 1 -y 980 -defaultsOSRD
+preplace port DTMROC_CMD_OUT_N -pg 1 -y 940 -defaultsOSRD
+preplace port DTMROC_DATA_OUT_P -pg 1 -y 960 -defaultsOSRD
+preplace port DTMROC_CMD_OUT_P -pg 1 -y 920 -defaultsOSRD
+preplace port DTMROC_CMD_IN_N -pg 1 -y 770 -defaultsOSRD
+preplace port DTMROC_CMD_IN_P -pg 1 -y 750 -defaultsOSRD
+preplace port DTMROC_HARD_N -pg 1 -y 850 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 690 -defaultsOSRD
+preplace port DTMROC_HARD_P -pg 1 -y 830 -defaultsOSRD
+preplace portBus comparators_0_0 -pg 1 -y 900 -defaultsOSRD
+preplace portBus DTMROC_BX_N -pg 1 -y 810 -defaultsOSRD
+preplace portBus dac_spi_0 -pg 1 -y 600 -defaultsOSRD
+preplace portBus DTMROC_BX_P -pg 1 -y 790 -defaultsOSRD
+preplace inst util_ds_buf_1 -pg 1 -lvl 5 -y 590 -defaultsOSRD
+preplace inst tdc_0 -pg 1 -lvl 3 -y 490 -defaultsOSRD
+preplace inst bram_controller_addr_0 -pg 1 -lvl 5 -y 190 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -y 500 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 6 -y 190 -defaultsOSRD
+preplace inst ila_0 -pg 1 -lvl 6 -y 480 -defaultsOSRD
 preplace inst main_0 -pg 1 -lvl 6 -y 820 -defaultsOSRD
-preplace inst system_ila_0 -pg 1 -lvl 3 -y 280 -defaultsOSRD
-preplace inst axi_interconnect_0 -pg 1 -lvl 2 -y 510 -defaultsOSRD
-preplace inst axi_interconnect_1 -pg 1 -lvl 4 -y 160 -defaultsOSRD
-preplace inst axi_bram_ctrl_0 -pg 1 -lvl 5 -y 80 -defaultsOSRD
-preplace inst cccd_0 -pg 1 -lvl 3 -y 540 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 5 -y 520 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 5 2 NJ 440 NJ
-preplace netloc axi_cdma_0_M_AXI 1 3 1 N
-preplace netloc bramtest_v1_0_0_clkb 1 5 1 1870
-preplace netloc axi_interconnect_1_M01_AXI 1 4 1 1390
-preplace netloc bramtest_v1_0_0_web 1 5 1 1910
-preplace netloc bramtest_v1_0_0_rstb 1 5 1 1900
-preplace netloc util_ds_buf_1_IBUF_OUT 1 5 1 1860
-preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 5 1 N
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 5 400 660 NJ 660 NJ 660 NJ 660 1860
+preplace inst axi_interconnect_0 -pg 1 -lvl 2 -y 490 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 2 -y 310 -defaultsOSRD
+preplace inst axi_interconnect_1 -pg 1 -lvl 2 -y 130 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 3 -y 150 -defaultsOSRD
+preplace inst util_ds_buf_0 -pg 1 -lvl 2 -y 960 -defaultsOSRD
+preplace inst cccd_0 -pg 1 -lvl 3 -y 830 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y 760 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 1 6 NJ 670 NJ 670 NJ 670 NJ 670 NJ 670 NJ
+preplace netloc axi_bram_ctrl_0_bram_addr_a 1 3 2 1250 110 1480
+preplace netloc tdc_0_bramwe 1 3 3 1260 100 NJ 100 2100J
+preplace netloc tdc_0_bramwrdata 1 3 3 N 410 N 410 2150
+preplace netloc util_ds_buf_1_IBUF_OUT 1 5 1 2070
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 490
+preplace netloc tdc_0_dac_spi 1 3 4 1220J 640 1460J 680 2150J 600 NJ
 preplace netloc main_0_dtm_hard_n 1 6 1 NJ
-preplace netloc bramtest_v1_0_0_dinb 1 5 1 1880
-preplace netloc cccd_0_field15 1 3 3 N 540 1350J 860 NJ
-preplace netloc DTMROC_CMD_OUT_P_1 1 0 5 30J 740 NJ 740 NJ 740 NJ 740 NJ
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 30 360 NJ 360 NJ 360 NJ 360 NJ 360 1870
+preplace netloc processing_system7_0_M_AXI_GP1 1 1 1 470
+preplace netloc tdc_0_bramclk 1 3 3 1270 420 N 420 2110
+preplace netloc tdc_0_bramen 1 3 3 N 430 N 430 2160
+preplace netloc comparators_0_0_1 1 0 3 -10J 1040 NJ 1040 860J
+preplace netloc tdc_0_is_data_mode 1 3 3 1270 510 NJ 510 2080J
+preplace netloc cccd_0_field15 1 3 3 N 830 NJ 830 NJ
+preplace netloc DTMROC_CMD_OUT_P_1 1 0 5 10J 610 450J 660 NJ 660 1260J 630 1480J
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 920 450
+preplace netloc bram_controller_addr_0_we 1 5 1 2100
+preplace netloc DTMROC_DATA_OUT_P_1 1 0 2 NJ 960 NJ
 preplace netloc main_0_dtm_hard_p 1 6 1 NJ
 preplace netloc main_0_clkbx_n 1 6 1 NJ
-preplace netloc proc_sys_reset_0_interconnect_aresetn 1 1 3 390 180 NJ 180 1020
+preplace netloc bram_controller_addr_0_addrout 1 5 1 2080
+preplace netloc util_ds_buf_0_IBUF_OUT 1 2 1 870
+preplace netloc proc_sys_reset_0_interconnect_aresetn 1 1 1 450
 preplace netloc main_0_dtm_cmd_in_n 1 6 1 NJ
-preplace netloc DTMROC_CMD_OUT_N_1 1 0 5 NJ 760 NJ 760 NJ 760 NJ 760 NJ
+preplace netloc DTMROC_CMD_OUT_N_1 1 0 5 0J 600 480J 650 NJ 650 NJ 650 1490J
+preplace netloc tdc_0_bramaddr 1 3 3 N 490 N 490 2070
 preplace netloc main_0_clkbx_p 1 6 1 NJ
-preplace netloc processing_system7_0_FIXED_IO 1 5 2 NJ 460 NJ
-preplace netloc bramtest_v1_0_0_enb 1 5 1 1890
+preplace netloc processing_system7_0_FIXED_IO 1 1 6 NJ 690 NJ 690 NJ 690 NJ 690 NJ 690 NJ
+preplace netloc axi_bram_ctrl_0_bram_wrdata_a 1 3 3 1230 120 NJ 120 2130J
+preplace netloc DTMROC_DATA_OUT_N_1 1 0 2 NJ 980 NJ
+preplace netloc clk_wiz_0_clk_out1 1 2 1 840J
+preplace netloc tdc_0_data_mode_cmd 1 3 3 1250 620 1470J 700 2060J
 preplace netloc main_0_dtm_cmd_in_p 1 6 1 NJ
-preplace netloc axi_interconnect_0_M00_AXI 1 2 1 N
-preplace netloc cccd_0_field6 1 3 3 N 560 1340J 880 NJ
-preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 5 380 290 720 190 1040 10 1400 820 1900J
-preplace netloc axi_interconnect_0_M01_AXI 1 2 1 700
-preplace netloc Net 1 2 5 730 970 NJ 970 NJ 970 NJ 970 2240
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 20 370 370 370 710 200 1030 20 1380 850 1880
-preplace netloc axi_interconnect_1_M00_AXI 1 4 1 1370
-preplace netloc main_0_received_data 1 2 5 740 980 NJ 980 NJ 980 NJ 980 2230
-preplace netloc cccd_0_trigger 1 3 3 N 520 1370J 840 NJ
-preplace netloc bramtest_v1_0_0_addrb 1 5 1 1860
-preplace netloc DTMROC_DATA_OUT_1 1 0 6 NJ 820 NJ 820 NJ 820 NJ 820 1360J 830 1910J
-levelinfo -pg 1 0 200 550 880 1190 1630 2070 2260 -top 0 -bot 990
+preplace netloc axi_interconnect_0_M00_AXI 1 2 1 820
+preplace netloc blk_mem_gen_0_douta 1 3 3 1240 80 NJ 80 2060J
+preplace netloc cccd_0_field6 1 3 3 N 850 NJ 850 NJ
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 5 500 250 850 930 1260J 790 NJ 790 NJ
+preplace netloc axi_interconnect_0_M01_AXI 1 2 1 820
+preplace netloc blk_mem_gen_0_doutb 1 3 3 1220 90 N 90 2120
+preplace netloc Net 1 2 5 880 950 NJ 950 NJ 950 NJ 950 2500
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 20 910 460 10 830 940 1230J 750 NJ 750 NJ
+preplace netloc axi_interconnect_1_M00_AXI 1 2 1 N
+preplace netloc Net2 1 3 3 1210 70 NJ 70 2140J
+preplace netloc main_0_received_data 1 2 5 890 960 NJ 960 NJ 960 NJ 960 2490
+preplace netloc cccd_0_trigger 1 3 3 N 810 NJ 810 NJ
+preplace netloc Net3 1 3 3 N 180 1490 110 2090
+levelinfo -pg 1 -30 240 670 1050 1440 1910 2340 2520 -top -310 -bot 1090
 ",
 }
 {
    da_axi4_cnt: "4",
    da_board_cnt: "2",
-   da_clkrst_cnt: "12",
+   da_clkrst_cnt: "14",
    da_ps7_cnt: "1",
 }

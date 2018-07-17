@@ -220,11 +220,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jul 03 13:48:08 UTC 2018</spirit:value>
+            <spirit:value>Thu Jul 12 15:17:20 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:14893a9e</spirit:value>
+            <spirit:value>8:37316394</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -240,11 +240,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jul 03 13:48:08 UTC 2018</spirit:value>
+            <spirit:value>Thu Jul 12 15:17:20 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:14893a9e</spirit:value>
+            <spirit:value>8:37316394</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -259,11 +259,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jul 03 13:48:08 UTC 2018</spirit:value>
+            <spirit:value>Thu Jul 12 15:17:20 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:b84b3156</spirit:value>
+            <spirit:value>8:16b6db75</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -279,11 +279,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jul 03 13:48:08 UTC 2018</spirit:value>
+            <spirit:value>Thu Jul 12 15:17:20 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:b84b3156</spirit:value>
+            <spirit:value>8:16b6db75</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -297,11 +297,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jul 03 13:48:34 UTC 2018</spirit:value>
+            <spirit:value>Thu Jul 12 15:17:33 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:14893a9e</spirit:value>
+            <spirit:value>8:37316394</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -425,24 +425,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>dtm_data_out</spirit:name>
-        <spirit:wire>
-          <spirit:direction>in</spirit:direction>
-          <spirit:vector>
-            <spirit:left spirit:format="long">11</spirit:left>
-            <spirit:right spirit:format="long">0</spirit:right>
-          </spirit:vector>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>trigger</spirit:name>
+        <spirit:name>command_trigger</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -523,9 +506,9 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>datagood</spirit:name>
+        <spirit:name>is_data_mode</spirit:name>
         <spirit:wire>
-          <spirit:direction>out</spirit:direction>
+          <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>wire</spirit:typeName>
@@ -536,9 +519,9 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>cmd_in_tp</spirit:name>
+        <spirit:name>event_trigger</spirit:name>
         <spirit:wire>
-          <spirit:direction>out</spirit:direction>
+          <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>wire</spirit:typeName>
@@ -565,11 +548,11 @@
         <spirit:userFileType>xdc</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7016/sources_1/new/housekeeping.v</spirit:name>
+        <spirit:name>../../ipshared/f44a/sources_1/new/housekeeping.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7016/sources_1/new/main.v</spirit:name>
+        <spirit:name>../../ipshared/f44a/sources_1/new/main.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -584,11 +567,11 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/7016/sources_1/new/housekeeping.v</spirit:name>
+        <spirit:name>../../ipshared/f44a/sources_1/new/housekeeping.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/7016/sources_1/new/main.v</spirit:name>
+        <spirit:name>../../ipshared/f44a/sources_1/new/main.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -647,7 +630,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>main_v1_0</xilinx:displayName>
-      <xilinx:coreRevision>31</xilinx:coreRevision>
+      <xilinx:coreRevision>34</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:main:1.0_ARCHIVE_LOCATION">c:/Users/HEP/Documents/universefactory/main/main.srcs</xilinx:tag>
       </xilinx:tags>
@@ -661,8 +644,8 @@
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="95d6f643"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="15b2052b"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="1546bd3b"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="3ef34321"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="6f81274c"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="611a257c"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>

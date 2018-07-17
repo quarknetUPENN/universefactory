@@ -1,0 +1,544 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Wed Jul 11 08:24:58 2018
+# Process ID: 5828
+# Current directory: C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4756 C:\Users\HEP\Documents\universefactory\project\project.tmp\tdc_v1_0_project\tdc_v1_0_project.xpr
+# Log file: C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/vivado.log
+# Journal file: C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/asym_ram_sdp_read_wider.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/hdl/dtmroc_rec.v] -no_script -reset -force -quiet
+remove_files  {C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/asym_ram_sdp_read_wider.v C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/hdl/dtmroc_rec.v}
+export_ip_user_files -of_objects  [get_files C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/component.xml] -no_script -reset -force -quiet
+remove_files  C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/component.xml
+ipx::package_project -root_dir C:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0 -vendor xilinx.com -library user -taxonomy /UserIP -generated_files -import_files -set_current false
+ipx::unload_core c:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0/component.xml
+ipx::edit_ip_in_project -upgrade true -name tmp_edit_project -directory C:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0 c:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0/component.xml
+update_compile_order -fileset sources_1
+set_property previous_version_for_upgrade xilinx.com:user:design_1_wrapper:1.0 [ipx::current_core]
+set_property core_revision 1 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path c:/Users/HEP/Documents/universefactory/ip_repo
+open_project C:/Users/HEP/Documents/universefactory/project/project.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd}
+current_project tdc_v1_0_project
+ipx::open_ipxact_file C:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0/component.xml
+set_property core_revision 2 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+current_project project
+set_property  ip_repo_paths  {c:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0 c:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0 c:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0 c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0 c:/Users/HEP/Documents/universefactory/cccd_1.0 c:/Users/HEP/Documents/universefactory/main/main.srcs} [current_project]
+current_project tdc_v1_0_project
+current_project project
+update_ip_catalog
+current_project tdc_v1_0_project
+startgroup
+current_project project
+create_bd_cell -type ip -vlnv xilinx.com:user:tdc:1.0 tdc_0
+endgroup
+set_property location {4.5 2027 113} [get_bd_cells tdc_0]
+set_property location {5 2051 170} [get_bd_cells tdc_0]
+set_property location {4 1501 542} [get_bd_cells tdc_0]
+current_project tdc_v1_0_project
+open_bd_design {C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd}
+validate_bd_design
+delete_bd_objs [get_bd_ports clk40_0]
+create_bd_port -dir I clk40
+set_property location {-31 286} [get_bd_ports clk40]
+connect_bd_net [get_bd_ports clk40] [get_bd_pins data_recorder_0/clk40]
+delete_bd_objs [get_bd_nets dtmroc_data_out_0_1] [get_bd_ports dtmroc_data_out_0]
+create_bd_port -dir I -from 47 -to 0 dtmroc_data_out
+set_property location {-19 240} [get_bd_ports dtmroc_data_out]
+connect_bd_net [get_bd_ports dtmroc_data_out] [get_bd_pins data_recorder_0/dtmroc_data_out]
+save_bd_design
+delete_bd_objs [get_bd_nets tdc_v1_0_S00_AXI_0_ps_data_loc_tracker] [get_bd_nets data_recorder_0_data_loc_tracker_external] [get_bd_nets data_recorder_0_bramaddr] [get_bd_nets data_recorder_0_bramclk] [get_bd_nets data_recorder_0_bramwrdata] [get_bd_nets data_recorder_0_bramen] [get_bd_nets data_recorder_0_bramwe] [get_bd_nets dtmroc_data_out_1] [get_bd_cells data_recorder_0]
+update_compile_order -fileset sources_1
+delete_bd_objs [get_bd_nets dac_controller_0_dac_set_lines] [get_bd_cells dac_controller_0]
+update_compile_order -fileset sources_1
+reset_target all [get_files  C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd]
+export_ip_user_files -of_objects  [get_files  C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd] -sync -no_script -force -quiet
+delete_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd]
+save_bd_design
+create_bd_cell -type module -reference dac_controller dac_controller_0
+save_bd_design
+update_compile_order -fileset sources_1
+delete_bd_objs [get_bd_cells dac_controller_0]
+update_compile_order -fileset sources_1
+save_bd_design
+create_bd_cell -type module -reference dac_controller dac_controller_0
+set_property location {2 1186 380} [get_bd_cells dac_controller_0]
+connect_bd_net [get_bd_ports dac_set_line_0] [get_bd_pins dac_controller_0/dac_set_lines]
+save_bd_design
+ipx::unload_core c:/Users/HEP/Documents/universefactory/ip_repo/tdc_v1.0/component.xml
+update_compile_order -fileset sources_1
+report_ip_status -name ip_status 
+current_project project
+delete_bd_objs [get_bd_cells tdc_0]
+current_project tdc_v1_0_project
+close_project
+update_ip_catalog -rebuild -scan_changes
+report_ip_status -name ip_status
+save_bd_design
+open_project C:/Users/HEP/Documents/universefactory/main/main.xpr
+update_compile_order -fileset sources_1
+ipx::open_ipxact_file C:/Users/HEP/Documents/universefactory/main/main.srcs/component.xml
+create_project tdc C:/Users/HEP/Documents/universefactory/tdc -part xc7z010clg400-1
+set_property board_part em.avnet.com:microzed_7010:part0:1.1 [current_project]
+current_project project
+current_project tdc
+file mkdir C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new
+close [ open C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/dac_controller.v w ]
+add_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/dac_controller.v
+close [ open C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/s00_axi_lite.v w ]
+add_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/s00_axi_lite.v
+close [ open C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/trig_arbiter.v w ]
+add_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/trig_arbiter.v
+close [ open C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/data_recorder.v w ]
+add_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/data_recorder.v
+update_compile_order -fileset sources_1
+create_bd_design "design_1"
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0
+endgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Use_Byte_Write_Enable {true} CONFIG.Byte_Size {8} CONFIG.Algorithm {Fixed_Primitives} CONFIG.Primitive {2kx9} CONFIG.Write_Width_A {144} CONFIG.Read_Width_A {144} CONFIG.Write_Width_B {144} CONFIG.Read_Width_B {144} CONFIG.Enable_B {Use_ENB_Pin} CONFIG.Register_PortA_Output_of_Memory_Primitives {false} CONFIG.Register_PortB_Output_of_Memory_Primitives {false} CONFIG.Use_RSTA_Pin {true} CONFIG.Use_RSTB_Pin {true} CONFIG.Port_B_Clock {100} CONFIG.Port_B_Write_Rate {50} CONFIG.Port_B_Enable_Rate {100} CONFIG.use_bram_block {BRAM_Controller} CONFIG.EN_SAFETY_CKT {true}] [get_bd_cells blk_mem_gen_0]
+set_property location {1 127 -302} [get_bd_cells blk_mem_gen_0]
+create_bd_cell -type module -reference tdc_v1_0_S00_AXI tdc_v1_0_S00_AXI_0
+set_property location {1 125 -84} [get_bd_cells tdc_v1_0_S00_AXI_0]
+create_bd_cell -type module -reference dac_controller dac_controller_0
+create_bd_cell -type module -reference data_recorder data_recorder_0
+create_bd_cell -type module -reference trig_arbiter trig_arbiter_0
+connect_bd_net [get_bd_pins trig_arbiter_0/clk40] [get_bd_pins data_recorder_0/clk40]
+create_bd_port -dir I -type clk clk40
+connect_bd_net [get_bd_ports clk40] [get_bd_pins data_recorder_0/clk40]
+create_bd_port -dir I -from 47 -to 0 dtmroc_data_out
+connect_bd_net [get_bd_ports dtmroc_data_out] [get_bd_pins data_recorder_0/dtmroc_data_out]
+connect_bd_net [get_bd_pins data_recorder_0/ps_data_loc_tracker_raw] [get_bd_pins tdc_v1_0_S00_AXI_0/ps_data_loc_tracker]
+connect_bd_net [get_bd_pins data_recorder_0/data_loc_tracker_external] [get_bd_pins tdc_v1_0_S00_AXI_0/data_loc_tracker]
+connect_bd_net [get_bd_pins tdc_v1_0_S00_AXI_0/dac_threshs] [get_bd_pins dac_controller_0/dac_threshs]
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins tdc_v1_0_S00_AXI_0/S_AXI]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_v1_0_S00_AXI_0/S_AXI_ACLK]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_v1_0_S00_AXI_0/S_AXI_ARESETN]
+endgroup
+connect_bd_net [get_bd_pins tdc_v1_0_S00_AXI_0/is_data_mode] [get_bd_pins trig_arbiter_0/is_data_mode]
+connect_bd_net [get_bd_pins trig_arbiter_0/trig_pattern] [get_bd_pins tdc_v1_0_S00_AXI_0/trig_pattern]
+create_bd_port -dir O -from 47 -to 0 dac_set_lines
+connect_bd_net [get_bd_ports dac_set_lines] [get_bd_pins dac_controller_0/dac_set_lines]
+create_bd_port -dir I -from 23 -to 0 comparators
+connect_bd_net [get_bd_ports comparators] [get_bd_pins trig_arbiter_0/comparators]
+create_bd_port -dir O is_data_mode
+connect_bd_net [get_bd_ports is_data_mode] [get_bd_pins tdc_v1_0_S00_AXI_0/is_data_mode]
+create_bd_port -dir O event_trigger
+connect_bd_net [get_bd_ports event_trigger] [get_bd_pins trig_arbiter_0/event_trigger]
+regenerate_bd_layout
+set_property location {2 679 252} [get_bd_cells blk_mem_gen_0]
+save_bd_design
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA]
+endgroup
+connect_bd_net [get_bd_pins data_recorder_0/bramaddr] [get_bd_pins blk_mem_gen_0/addrb]
+connect_bd_net [get_bd_pins data_recorder_0/bramclk] [get_bd_pins blk_mem_gen_0/clkb]
+connect_bd_net [get_bd_pins data_recorder_0/bramwrdata] [get_bd_pins blk_mem_gen_0/dinb]
+connect_bd_net [get_bd_pins data_recorder_0/bramen] [get_bd_pins blk_mem_gen_0/enb]
+connect_bd_net [get_bd_pins data_recorder_0/bramwe] [get_bd_pins blk_mem_gen_0/web]
+regenerate_bd_layout
+save_bd_design
+file mkdir C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new/data_recorder_testbench.v w ]
+add_files -fileset sim_1 C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new/data_recorder_testbench.v
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top data_recorder_testbench [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+make_wrapper -files [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -top
+add_files -norecurse C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top design_1_wrapper [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+set_property source_mgmt_mode DisplayOnly [current_project]
+generate_target Simulation [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+export_ip_user_files -of_objects [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files -ipstatic_source_dir C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/modelsim} {questa=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/questa} {riviera=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/riviera} {activehdl=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top data_recorder_test [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+launch_simulation
+source data_recorder_test.tcl
+ipx::package_project -root_dir c:/users/hep/documents/universefactory/tdc/tdc.srcs -vendor xilinx.com -library user -taxonomy /UserIP -generated_files
+ipx::add_bus_interface BRAM_A_0 [ipx::current_core]
+set_property abstraction_type_vlnv xilinx.com:interface:bram_rtl:1.0 [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property bus_type_vlnv xilinx.com:interface:bram:1.0 [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+ipx::add_port_map RST [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_rst [ipx::get_port_maps RST -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map CLK [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_clk [ipx::get_port_maps CLK -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map DIN [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_din [ipx::get_port_maps DIN -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map EN [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_en [ipx::get_port_maps EN -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map DOUT [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_dout [ipx::get_port_maps DOUT -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map WE [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_we [ipx::get_port_maps WE -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map ADDR [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_addr [ipx::get_port_maps ADDR -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+set_property core_revision 2 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property  ip_repo_paths  c:/users/hep/documents/universefactory/tdc/tdc.srcs [current_project]
+current_project project
+current_project tdc
+update_ip_catalog
+set_property core_revision 3 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/users/hep/documents/universefactory/tdc/tdc.srcs
+set_property core_revision 4 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/users/hep/documents/universefactory/tdc/tdc.srcs
+current_project project
+set_property  ip_repo_paths  {c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0 c:/Users/HEP/Documents/universefactory/cccd_1.0 c:/Users/HEP/Documents/universefactory/main/main.srcs} [current_project]
+current_project tdc
+current_project project
+update_ip_catalog
+set_property  ip_repo_paths  {c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0 c:/Users/HEP/Documents/universefactory/cccd_1.0 c:/Users/HEP/Documents/universefactory/main/main.srcs C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs} [current_project]
+current_project tdc
+current_project project
+update_ip_catalog
+update_ip_catalog
+open_bd_design {C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:tdc:1.0 tdc_0
+endgroup
+set_property location {5 1578 497} [get_bd_cells tdc_0]
+set_property location {4.5 2168 187} [get_bd_cells tdc_0]
+connect_bd_intf_net [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins tdc_0/BRAM_A_0]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M01_AXI] [get_bd_intf_pins tdc_0/S_AXI_0]
+connect_bd_net [get_bd_pins tdc_0/S_AXI_ACLK_0] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins tdc_0/S_AXI_ARESETN_0] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
+connect_bd_net [get_bd_pins tdc_0/clk40] [get_bd_pins processing_system7_0/FCLK_CLK0]
+set_property location {4 1727 460} [get_bd_cells tdc_0]
+current_project tdc
+current_project main
+close_project
+ipx::unload_core c:/users/hep/documents/universefactory/tdc/tdc.srcs/component.xml
+open_bd_design {C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd}
+open_project C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/HEP/Documents/universefactory/project/project.tmp/tdc_v1_0_project/tdc_v1_0_project.srcs/sources_1/bd/design_1/design_1.bd}
+close_project
+launch_runs synth_1 -jobs 4
+add_files {C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/dac_controller.v C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/s00_axi_lite.v C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/trig_arbiter.v C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/new/data_recorder.v}
+reset_target all [get_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+export_ip_user_files -of_objects  [get_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -sync -no_script -force -quiet
+delete_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+generate_target all [get_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+catch { config_ip_cache -export [get_ips -all design_1_blk_mem_gen_0_0] }
+export_ip_user_files -of_objects [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs -jobs 4 {design_1_blk_mem_gen_0_0_synth_1 design_1_tdc_v1_0_S00_AXI_0_0_synth_1 design_1_dac_controller_0_0_synth_1 design_1_data_recorder_0_0_synth_1 design_1_trig_arbiter_0_0_synth_1}
+open_bd_design {C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd}
+open_bd_design {C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd}
+export_ip_user_files -of_objects  [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -no_script -reset -force -quiet
+remove_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd
+file delete -force C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1
+create_bd_design "design_1"
+export_ip_user_files -of_objects  [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v] -no_script -reset -force -quiet
+remove_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0
+endgroup
+set_property location {1 155 -39} [get_bd_cells blk_mem_gen_0]
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Use_Byte_Write_Enable {true} CONFIG.Byte_Size {8} CONFIG.Algorithm {Fixed_Primitives} CONFIG.Primitive {2kx9} CONFIG.Write_Width_A {144} CONFIG.Read_Width_A {144} CONFIG.Write_Width_B {144} CONFIG.Read_Width_B {144} CONFIG.Enable_B {Use_ENB_Pin} CONFIG.Register_PortA_Output_of_Memory_Primitives {false} CONFIG.Use_RSTA_Pin {true} CONFIG.Use_RSTB_Pin {true} CONFIG.Port_B_Clock {100} CONFIG.Port_B_Write_Rate {50} CONFIG.Port_B_Enable_Rate {100} CONFIG.use_bram_block {BRAM_Controller} CONFIG.EN_SAFETY_CKT {true}] [get_bd_cells blk_mem_gen_0]
+set_property source_mgmt_mode All [current_project]
+create_bd_cell -type module -reference data_recorder data_recorder_0
+connect_bd_net [get_bd_pins data_recorder_0/bramaddr] [get_bd_pins blk_mem_gen_0/addrb]
+update_compile_order -fileset sources_1
+set_property source_mgmt_mode DisplayOnly [current_project]
+connect_bd_net [get_bd_pins data_recorder_0/bramclk] [get_bd_pins blk_mem_gen_0/clkb]
+startgroup
+connect_bd_net [get_bd_pins data_recorder_0/bramwrdata] [get_bd_pins blk_mem_gen_0/dinb]
+endgroup
+connect_bd_net [get_bd_pins data_recorder_0/bramen] [get_bd_pins blk_mem_gen_0/enb]
+connect_bd_net [get_bd_pins data_recorder_0/bramwe] [get_bd_pins blk_mem_gen_0/web]
+startgroup
+make_bd_pins_external  [get_bd_pins data_recorder_0/clk40]
+endgroup
+set_property source_mgmt_mode All [current_project]
+create_bd_cell -type module -reference dac_controller dac_controller_0
+startgroup
+make_bd_pins_external  [get_bd_pins dac_controller_0/dac_set_lines]
+endgroup
+set_property source_mgmt_mode DisplayOnly [current_project]
+make_wrapper -files [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -top
+add_files -norecurse C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+update_module_reference design_1_data_recorder_0_0
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference tdc_v1_0_S00_AXI tdc_v1_0_S00_AXI_0
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA]
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins tdc_v1_0_S00_AXI_0/S_AXI]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_v1_0_S00_AXI_0/S_AXI_ACLK]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_v1_0_S00_AXI_0/S_AXI_ARESETN]
+endgroup
+connect_bd_net [get_bd_pins tdc_v1_0_S00_AXI_0/data_loc_tracker] [get_bd_pins data_recorder_0/data_loc_tracker_external]
+connect_bd_net [get_bd_pins tdc_v1_0_S00_AXI_0/ps_data_loc_tracker] [get_bd_pins data_recorder_0/ps_data_loc_tracker_raw]
+startgroup
+make_bd_pins_external  [get_bd_pins data_recorder_0/dtmroc_data_out]
+endgroup
+connect_bd_net [get_bd_pins dac_controller_0/dac_threshs] [get_bd_pins tdc_v1_0_S00_AXI_0/dac_threshs]
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_v1_0_S00_AXI_0/is_data_mode]
+endgroup
+create_bd_cell -type module -reference trig_arbiter trig_arbiter_0
+connect_bd_net [get_bd_pins trig_arbiter_0/trig_pattern] [get_bd_pins tdc_v1_0_S00_AXI_0/trig_pattern]
+connect_bd_net [get_bd_pins trig_arbiter_0/is_data_mode] [get_bd_pins tdc_v1_0_S00_AXI_0/is_data_mode]
+connect_bd_net [get_bd_ports clk40_0] [get_bd_pins trig_arbiter_0/clk40]
+startgroup
+make_bd_pins_external  [get_bd_pins trig_arbiter_0/event_trigger]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins trig_arbiter_0/comparators]
+endgroup
+regenerate_bd_layout
+save_bd_design
+update_compile_order -fileset sources_1
+ipx::open_ipxact_file c:/users/hep/documents/universefactory/tdc/tdc.srcs/component.xml
+ipx::remove_file ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_trig_arbiter_0_0/sim/design_1_trig_arbiter_0_0.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+ipx::remove_file ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ipshared/67d8/simulation/blk_mem_gen_v8_4.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+ipx::remove_file ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_0/sim/design_1_blk_mem_gen_0_0.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+ipx::remove_file ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_tdc_v1_0_S00_AXI_0_0/sim/design_1_tdc_v1_0_S00_AXI_0_0.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+ipx::remove_file ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_dac_controller_0_0/sim/design_1_dac_controller_0_0.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+ipx::remove_file ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_data_recorder_0_0/sim/design_1_data_recorder_0_0.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+ipx::merge_project_changes ports [ipx::current_core]
+set_property location {-21 80} [get_bd_intf_ports BRAM_PORTA_0]
+save_bd_design
+reset_target all [get_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+export_ip_user_files -of_objects  [get_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -sync -no_script -force -quiet
+generate_target all [get_files  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+catch { config_ip_cache -export [get_ips -all design_1_blk_mem_gen_0_0] }
+export_ip_user_files -of_objects [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs -jobs 4 {design_1_blk_mem_gen_0_0_synth_1 design_1_data_recorder_0_0_synth_1 design_1_dac_controller_0_0_synth_1 design_1_tdc_v1_0_S00_AXI_0_0_synth_1 design_1_trig_arbiter_0_0_synth_1}
+export_simulation -of_objects [get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files -ipstatic_source_dir C:/Users/HEP/Documents/universefactory/tdc/tdc.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/modelsim} {questa=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/questa} {riviera=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/riviera} {activehdl=C:/Users/HEP/Documents/universefactory/tdc/tdc.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+ipx::merge_project_changes ports [ipx::current_core]
+ipx::add_bus_interface dfdf [ipx::current_core]
+set_property abstraction_type_vlnv xilinx.com:interface:aximm_rtl:1.0 [ipx::get_bus_interfaces dfdf -of_objects [ipx::current_core]]
+set_property bus_type_vlnv xilinx.com:interface:aximm:1.0 [ipx::get_bus_interfaces dfdf -of_objects [ipx::current_core]]
+set_property interface_mode master [ipx::get_bus_interfaces dfdf -of_objects [ipx::current_core]]
+ipx::add_bus_parameter NUM_READ_OUTSTANDING [ipx::get_bus_interfaces dfdf -of_objects [ipx::current_core]]
+ipx::add_bus_parameter NUM_WRITE_OUTSTANDING [ipx::get_bus_interfaces dfdf -of_objects [ipx::current_core]]
+ipx::remove_bus_interface dfdf [ipx::current_core]
+ipx::add_port_map AWVALID [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awvalid [ipx::get_port_maps AWVALID -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map AWREADY [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awready [ipx::get_port_maps AWREADY -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map AWADDR [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awaddr [ipx::get_port_maps AWADDR -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map AWPROT [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awprot [ipx::get_port_maps AWPROT -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map ARADDR [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_araddr [ipx::get_port_maps ARADDR -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::remove_port_map AWVALID [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+ipx::remove_port_map AWREADY [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+ipx::remove_port_map AWADDR [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+ipx::remove_port_map AWPROT [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+ipx::add_port_map BVALID [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_bvalid [ipx::get_port_maps BVALID -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map RREADY [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_rready [ipx::get_port_maps RREADY -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map BREADY [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_bready [ipx::get_port_maps BREADY -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map AWREADY [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awready [ipx::get_port_maps AWREADY -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map AWVALID [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awvalid [ipx::get_port_maps AWVALID -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map AWPROT [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awprot [ipx::get_port_maps AWPROT -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map WDATA [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_wdata [ipx::get_port_maps WDATA -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map RRESP [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_rresp [ipx::get_port_maps RRESP -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map ARPROT [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_arprot [ipx::get_port_maps ARPROT -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map RVALID [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_rvalid [ipx::get_port_maps RVALID -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map ARREADY [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_arready [ipx::get_port_maps ARREADY -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map AWADDR [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_awaddr [ipx::get_port_maps AWADDR -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map WVALID [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_wvalid [ipx::get_port_maps WVALID -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map WREADY [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_wready [ipx::get_port_maps WREADY -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map ARVALID [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_arvalid [ipx::get_port_maps ARVALID -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map WSTRB [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_wstrb [ipx::get_port_maps WSTRB -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map BRESP [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_bresp [ipx::get_port_maps BRESP -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map RDATA [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]
+set_property physical_name S_AXI_0_rdata [ipx::get_port_maps RDATA -of_objects [ipx::get_bus_interfaces S_AXI_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map RST [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_rst [ipx::get_port_maps RST -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map CLK [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_clk [ipx::get_port_maps CLK -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map DIN [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_din [ipx::get_port_maps DIN -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map EN [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_en [ipx::get_port_maps EN -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map DOUT [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_dout [ipx::get_port_maps DOUT -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map WE [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_we [ipx::get_port_maps WE -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::add_port_map ADDR [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]
+set_property physical_name BRAM_PORTA_0_addr [ipx::get_port_maps ADDR -of_objects [ipx::get_bus_interfaces BRAM_A_0 -of_objects [ipx::current_core]]]
+ipx::merge_project_changes files [ipx::current_core]
+set_property core_revision 5 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/users/hep/documents/universefactory/tdc/tdc.srcs
+current_project project
+update_ip_catalog -rebuild -scan_changes
+report_ip_status -name ip_status
+current_project tdc
+current_project project
+delete_bd_objs [get_bd_intf_nets axi_interconnect_0_M01_AXI] [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTA] [get_bd_cells tdc_0]
+report_ip_status -name ip_status 
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:tdc:1.0 tdc_0
+endgroup
+set_property location {5.5 2034 83} [get_bd_cells tdc_0]
+connect_bd_intf_net [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins tdc_0/BRAM_A_0]
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M01_AXI] [get_bd_intf_pins tdc_0/S_AXI_0]
+connect_bd_net [get_bd_pins tdc_0/clk40_0] [get_bd_pins tdc_0/S_AXI_ACLK_0]
+undo
+connect_bd_net [get_bd_pins tdc_0/S_AXI_ACLK_0] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins tdc_0/clk40_0] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins tdc_0/S_AXI_ARESETN_0] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_0/dac_set_lines_0]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_0/comparators_0]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins tdc_0/dtmroc_data_out_0]
+endgroup
+regenerate_bd_layout
+regenerate_bd_layout
+startgroup
+set_property -dict [list CONFIG.NUM_MI {1}] [get_bd_cells axi_interconnect_1]
+endgroup
+regenerate_bd_layout
+connect_bd_net [get_bd_pins main_0/is_data_mode] [get_bd_pins tdc_0/is_data_mode_0]
+connect_bd_net [get_bd_pins tdc_0/event_trigger_0] [get_bd_pins main_0/event_trigger]
+regenerate_bd_layout
+set_property location {2005 692} [get_bd_intf_ports DDR]
+regenerate_bd_layout -routing
+regenerate_bd_layout
+save_bd_design
+reset_run design_1_xbar_0_synth_1
+reset_run design_1_processing_system7_0_0_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+report_ip_status -name ip_status 
+current_project tdc
+current_project project
+assign_bd_address [get_bd_addr_segs {tdc_0/S_AXI_0/reg0 }]
+save_bd_design
+launch_runs synth_1 -jobs 4
+set_property CONFIG.FREQ_HZ 40000000 [get_bd_intf_pins /tdc_0/S_AXI_0]
+save_bd_design
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+set_property CONFIG.MASTER_TYPE {LITERALLY ANYTHING?} [get_bd_intf_pins /tdc_0/BRAM_A_0]
+current_project tdc
+set_property CONFIG.MASTER_TYPE BRAM_CTRL [get_bd_intf_pins /tdc_0/BRAM_A_0]
+save_bd_design
+current_project tdc
+ipx::add_file C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new/data_recorder_testbench.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+set_property type verilogSource [ipx::get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new/data_recorder_testbench.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property library_name xil_defaultlib [ipx::get_files C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs/sim_1/new/data_recorder_testbench.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 6 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/users/hep/documents/universefactory/tdc/tdc.srcs
+ipx::reorder_files -after ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_0/design_1_blk_mem_gen_0_0.xci ../../../../../../Users/HEP/Documents/universefactory/tdc/tdc.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]
+set_property core_revision 7 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/users/hep/documents/universefactory/tdc/tdc.srcs
+current_project project
+update_ip_catalog -rebuild -scan_changes
+report_ip_status -name ip_status
+current_project tdc
+current_project project
+upgrade_ip -vlnv xilinx.com:user:tdc:1.0 [get_ips  design_1_tdc_0_2] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_tdc_0_2] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+set_property CONFIG.FREQ_HZ 40000000 [get_bd_intf_pins /tdc_0/S_AXI_0]
+save_bd_design
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+create_bd_cell -type ip -vlnv xilinx.com:module_ref:dac_controller:1.0 dac_controller_0
+save_bd_design
+delete_bd_objs [get_bd_cells dac_controller_0]
+delete_bd_objs [get_bd_nets tdc_0_event_trigger_0] [get_bd_nets tdc_0_is_data_mode_0] [get_bd_intf_nets axi_interconnect_0_M01_AXI] [get_bd_nets dtmroc_data_out_0_0_1] [get_bd_nets tdc_0_dac_set_lines_0] [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTA] [get_bd_nets comparators_0_0_1] [get_bd_cells tdc_0]
+save_bd_design
+close_project
+set_property core_revision 8 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/users/hep/documents/universefactory/tdc/tdc.srcs
+close_sim

@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:main:1.0
-// IP Revision: 31
+// IP Revision: 34
 
 (* X_CORE_INFO = "main,Vivado 2018.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_main_0_0,main,{}" *)
-(* CORE_GENERATION_INFO = "design_1_main_0_0,main,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=main,x_ipVersion=1.0,x_ipCoreRevision=31,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* CORE_GENERATION_INFO = "design_1_main_0_0,main,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=main,x_ipVersion=1.0,x_ipCoreRevision=34,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_main_0_0 (
   clk40,
@@ -64,14 +64,13 @@ module design_1_main_0_0 (
   clkbx_n,
   dtm_hard_p,
   dtm_hard_n,
-  dtm_data_out,
-  trigger,
+  command_trigger,
   field15,
   field6,
   done,
   received_data,
-  datagood,
-  cmd_in_tp
+  is_data_mode,
+  event_trigger
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk40, ASSOCIATED_BUSIF clk40, FREQ_HZ 40000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0" *)
@@ -91,14 +90,13 @@ output wire clkbx_p;
 output wire clkbx_n;
 output wire dtm_hard_p;
 output wire dtm_hard_n;
-input wire [11 : 0] dtm_data_out;
-input wire trigger;
+input wire command_trigger;
 input wire [26 : 0] field15;
 input wire [159 : 0] field6;
 output wire [1 : 0] done;
 output wire [158 : 0] received_data;
-output wire datagood;
-output wire cmd_in_tp;
+input wire is_data_mode;
+input wire event_trigger;
 
   main inst (
     .clk40(clk40),
@@ -110,13 +108,12 @@ output wire cmd_in_tp;
     .clkbx_n(clkbx_n),
     .dtm_hard_p(dtm_hard_p),
     .dtm_hard_n(dtm_hard_n),
-    .dtm_data_out(dtm_data_out),
-    .trigger(trigger),
+    .command_trigger(command_trigger),
     .field15(field15),
     .field6(field6),
     .done(done),
     .received_data(received_data),
-    .datagood(datagood),
-    .cmd_in_tp(cmd_in_tp)
+    .is_data_mode(is_data_mode),
+    .event_trigger(event_trigger)
   );
 endmodule

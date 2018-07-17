@@ -60,13 +60,17 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param tcl.collectionResultDisplayLimit 0
+  set_param synth.incrementalSynthesisCache C:/Users/HEP/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-6780-HEP-PC/incrSyn
   set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7z010clg400-1
   set_property board_part em.avnet.com:microzed_7010:part0:1.1 [current_project]
@@ -75,11 +79,12 @@ set rc [catch {
   set_property webtalk.parent_dir C:/Users/HEP/Documents/universefactory/project/project.cache/wt [current_project]
   set_property parent.project_path C:/Users/HEP/Documents/universefactory/project/project.xpr [current_project]
   set_property ip_repo_paths {
-  C:/Users/HEP/Documents/universefactory/ip_repo/bramtest_1.0
-  C:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0
+  C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0
+  C:/Users/HEP/AppData/Roaming/Xilinx/ip_repo
   C:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0
   C:/Users/HEP/Documents/universefactory/cccd_1.0
   C:/Users/HEP/Documents/universefactory/main/main.srcs
+  C:/Users/HEP/Documents/universefactory/tdc/tdc.srcs
 } [current_project]
   set_property ip_output_repo C:/Users/HEP/Documents/universefactory/project/project.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
