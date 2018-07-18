@@ -1,0 +1,604 @@
+
+*** Running vivado
+    with args -log design_1_tdc_0_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_tdc_0_1.tcl
+
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source design_1_tdc_0_1.tcl -notrace
+Command: synth_design -top design_1_tdc_0_1 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6380 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 470.305 ; gain = 104.523
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_tdc_0_1' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_tdc_0_1/synth/design_1_tdc_0_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'tdc_v1_0' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0.v:4]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'tdc_v1_0_S00_AXI' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0_S00_AXI.v:3]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 4 - type: integer 
+INFO: [Synth 8-226] default block is never used [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0_S00_AXI.v:290]
+INFO: [Synth 8-226] default block is never used [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0_S00_AXI.v:655]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0_S00_AXI.v:257]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0_S00_AXI.v:258]
+INFO: [Synth 8-6155] done synthesizing module 'tdc_v1_0_S00_AXI' (1#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0_S00_AXI.v:3]
+INFO: [Synth 8-6157] synthesizing module 'dac_controller' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/dac_controller.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'dac_controller' (2#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/dac_controller.v:23]
+INFO: [Synth 8-6157] synthesizing module 'data_recorder' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/data_recorder.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/data_recorder.v:138]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/data_recorder.v:153]
+INFO: [Synth 8-6155] done synthesizing module 'data_recorder' (3#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/data_recorder.v:23]
+INFO: [Synth 8-6157] synthesizing module 'trig_arbiter' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/trig_arbiter.v:23]
+	Parameter L1A_PER_EVENT bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'trig_arbiter' (4#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/trig_arbiter.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'tdc_v1_0' (5#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_tdc_0_1' (6#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_tdc_0_1/synth/design_1_tdc_0_1.v:57]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[287]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[286]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[285]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[284]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[283]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[282]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[281]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[280]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[279]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[278]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[277]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[276]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[275]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[274]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[273]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[272]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[271]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[270]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[269]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[268]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[267]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[266]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[265]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[264]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[263]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[262]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[261]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[260]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[259]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[258]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[257]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[256]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[255]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[254]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[253]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[252]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[251]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[250]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[249]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[248]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[247]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[246]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[245]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[244]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[243]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[242]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[241]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[240]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[239]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[238]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[237]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[236]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[235]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[234]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[233]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[232]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[231]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[230]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[229]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[228]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[227]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[226]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[225]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[224]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[223]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[222]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[221]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[220]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[219]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[218]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[217]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[216]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[215]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[214]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[213]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[212]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[211]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[210]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[209]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[208]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[207]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[206]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[205]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[204]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[203]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[202]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[201]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[200]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[199]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[198]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[197]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[196]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[195]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[194]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[193]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[192]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[191]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[190]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[189]
+WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[188]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 529.918 ; gain = 164.137
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 529.918 ; gain = 164.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 529.918 ; gain = 164.137
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.103 . Memory (MB): peak = 859.891 ; gain = 2.613
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 859.891 ; gain = 494.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 859.891 ; gain = 494.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 859.891 ; gain = 494.109
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'inner_cntr_reg' in module 'data_recorder'
+INFO: [Synth 8-5546] ROM "pl_data_loc_tracker" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "l1a_seen" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "inner_cntr" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "l1a_cntr_sync120" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "events_received" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                              000
+                 iSTATE0 |                              010 |                              001
+                 iSTATE1 |                              100 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'inner_cntr_reg' using encoding 'one-hot' in module 'data_recorder'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 859.891 ; gain = 494.109
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     33 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	  64 Input      7 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               96 Bit    Registers := 1     
+	               64 Bit    Registers := 3     
+	               32 Bit    Registers := 31    
+	               16 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                9 Bit    Registers := 4     
+	                7 Bit    Registers := 3     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 77    
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 30    
+	  32 Input     32 Bit        Muxes := 30    
+	  64 Input     17 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 4     
+	   3 Input      9 Bit        Muxes := 2     
+	  64 Input      6 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 98    
+	   3 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 64    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module tdc_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 31    
+	                7 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 30    
+	  32 Input     32 Bit        Muxes := 30    
+	   2 Input      1 Bit        Muxes := 5     
+Module data_recorder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	               96 Bit    Registers := 1     
+	               64 Bit    Registers := 3     
+	               16 Bit    Registers := 1     
+	                9 Bit    Registers := 3     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 67    
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 3     
+	  64 Input     17 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	  64 Input      6 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 68    
+	   3 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 64    
+Module trig_arbiter 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     33 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	  64 Input      7 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 2     
+	   3 Input      9 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 25    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "l1a_seen" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "pl_data_loc_tracker" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/trig_arbiter_inst/msg_reg[0] )
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[32]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[16]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[0]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[33]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[17]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[1]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[34]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[18]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[2]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[35]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[19]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[3]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[36]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[20]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[4]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[37]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[21]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[5]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[38]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[22]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[6]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[39]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[23]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[7]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[40]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[24]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[8]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[41]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[25]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[9]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[42]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[26]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[10]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[43]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[27]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[11]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[44]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[28]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[12]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[45]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[29]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[13]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[46]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[30]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[14]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[47]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[31]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/tdc_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'inst/tdc_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/tdc_v1_0_S00_AXI_inst /\axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/tdc_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'inst/tdc_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/tdc_v1_0_S00_AXI_inst /\axi_bresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[48]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[49]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[50]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[51]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[52]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[53]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[54]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[55]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[56]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[57]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[58]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[59]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[60]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[61]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[62]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[63]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[64]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[65]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[66]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[67]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[68]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[69]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[70]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[71]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[72]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[73]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[74]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[75]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[76]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[77]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[78]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[79]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[79]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[80]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[81]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[82]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[83]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[84]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[85]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[86]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[87]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[88]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[89]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[90]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[91]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[92]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[93]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[94]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[95]'
+WARNING: [Synth 8-3332] Sequential element (axi_awaddr_reg[1]) is unused and will be removed from module tdc_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_awaddr_reg[0]) is unused and will be removed from module tdc_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_bresp_reg[1]) is unused and will be removed from module tdc_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_araddr_reg[1]) is unused and will be removed from module tdc_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_araddr_reg[0]) is unused and will be removed from module tdc_v1_0_S00_AXI.
+WARNING: [Synth 8-3332] Sequential element (axi_rresp_reg[1]) is unused and will be removed from module tdc_v1_0_S00_AXI.
+INFO: [Synth 8-3332] Sequential element (inst/trig_arbiter_inst/msg_reg[0]) is unused and will be removed from module design_1_tdc_0_1.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 859.891 ; gain = 494.109
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:15 ; elapsed = 00:01:17 . Memory (MB): peak = 875.738 ; gain = 509.957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 877.680 ; gain = 511.898
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:16 ; elapsed = 00:01:19 . Memory (MB): peak = 916.207 ; gain = 550.426
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    64|
+|2     |LUT1   |     9|
+|3     |LUT2   |   196|
+|4     |LUT3   |   215|
+|5     |LUT4   |   318|
+|6     |LUT5   |    98|
+|7     |LUT6   |   621|
+|8     |MUXF7  |   128|
+|9     |FDRE   |  1449|
+|10    |FDSE   |    29|
+|11    |FD_1   |     3|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------------+-----------------+------+
+|      |Instance                  |Module           |Cells |
++------+--------------------------+-----------------+------+
+|1     |top                       |                 |  3130|
+|2     |  inst                    |tdc_v1_0         |  3129|
+|3     |    data_recorder_inst    |data_recorder    |  1048|
+|4     |    tdc_v1_0_S00_AXI_inst |tdc_v1_0_S00_AXI |  1572|
+|5     |    trig_arbiter_inst     |trig_arbiter     |   505|
++------+--------------------------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 28 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:54 ; elapsed = 00:01:08 . Memory (MB): peak = 916.207 ; gain = 220.453
+Synthesis Optimization Complete : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 195 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  FD_1 => FDRE (inverted pins: C): 3 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+137 Infos, 108 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:21 ; elapsed = 00:01:24 . Memory (MB): peak = 916.207 ; gain = 563.082
+INFO: [Common 17-1381] The checkpoint 'C:/Users/HEP/Documents/universefactory/project/project.runs/design_1_tdc_0_1_synth_1/design_1_tdc_0_1.dcp' has been generated.

@@ -156,24 +156,10 @@ void ghjk(){
 
 	 int gaaaaaabage = 0;
 	 for (int i = 0; i < 10000; i = i + 2){
-		 gaaaaaabage = bram[i/2];
+		 gaaaaaabage = bram[i/2]; // DO NOT ERASE
 		 printf("this is [%d,%d] %08X ", i+1, i, bram[i/2]);
 		 printb(&bram[i/2]);
 	 }
-//	 for (int i = 0; i < 6; i = i+2){
-//		 //printf("this is (%d,%d) %08X   ", i+1, i, bram[i/2]);
-//		 printf("%s", "does this fix the index error");
-//		 printb(&bram[i/2]);
-//		 printf("%s", "does this fix the index error");
-//		 printb(&bram[i/2]);
-//		 printf("%s", "does this fix the index error");
-//		 printb(&bram[i/2]);
-//		 printf("%s", "does this fix the index error");
-//		 printb(&bram[i/2]);
-//		 printf("%s", "does this fix the index error");
-//		 printb(&bram[i/2]);
-//	 }
-
 }
 void asdf(){
 	 printf("hello world");

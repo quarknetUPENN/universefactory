@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Tue Jul 17 16:16:33 2018
+// Date        : Wed Jul 18 17:33:24 2018
 // Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 // Command     : write_verilog -force -mode funcsim
 //               C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_tdc_0_1/design_1_tdc_0_1_sim_netlist.v
@@ -128,13 +128,13 @@ module design_1_tdc_0_1
   assign bramclk = clk120;
   assign bramrst = \<const0> ;
   assign bramwe = \<const1> ;
-  assign dac_spi[6] = \<const0> ;
-  assign dac_spi[5] = \<const0> ;
-  assign dac_spi[4] = \<const0> ;
-  assign dac_spi[3] = \<const0> ;
-  assign dac_spi[2] = \<const0> ;
-  assign dac_spi[1] = \<const0> ;
-  assign dac_spi[0] = \<const0> ;
+  assign dac_spi[6] = \<const1> ;
+  assign dac_spi[5] = \<const1> ;
+  assign dac_spi[4] = \<const1> ;
+  assign dac_spi[3] = \<const1> ;
+  assign dac_spi[2] = \<const1> ;
+  assign dac_spi[1] = \<const1> ;
+  assign dac_spi[0] = \<const1> ;
   assign s00_axi_bresp[1] = \<const0> ;
   assign s00_axi_bresp[0] = \<const0> ;
   assign s00_axi_rresp[1] = \<const0> ;
@@ -359,6 +359,7 @@ module design_1_tdc_0_1_data_recorder
   wire \bramaddr[11]_i_80_n_0 ;
   wire \bramaddr[11]_i_81_n_0 ;
   wire \bramaddr[11]_i_82_n_0 ;
+  wire \bramaddr[11]_i_83_n_0 ;
   wire \bramaddr[11]_i_8_n_0 ;
   wire \bramaddr[11]_i_9_n_0 ;
   wire \bramaddr[15]_i_10_n_0 ;
@@ -395,6 +396,11 @@ module design_1_tdc_0_1_data_recorder
   wire \bramaddr[15]_i_3_n_0 ;
   wire \bramaddr[15]_i_40_n_0 ;
   wire \bramaddr[15]_i_41_n_0 ;
+  wire \bramaddr[15]_i_42_n_0 ;
+  wire \bramaddr[15]_i_43_n_0 ;
+  wire \bramaddr[15]_i_44_n_0 ;
+  wire \bramaddr[15]_i_45_n_0 ;
+  wire \bramaddr[15]_i_46_n_0 ;
   wire \bramaddr[15]_i_4_n_0 ;
   wire \bramaddr[15]_i_5_n_0 ;
   wire \bramaddr[15]_i_6_n_0 ;
@@ -416,8 +422,6 @@ module design_1_tdc_0_1_data_recorder
   wire \bramaddr[16]_i_21_n_0 ;
   wire \bramaddr[16]_i_22_n_0 ;
   wire \bramaddr[16]_i_23_n_0 ;
-  wire \bramaddr[16]_i_24_n_0 ;
-  wire \bramaddr[16]_i_25_n_0 ;
   wire \bramaddr[16]_i_4_n_0 ;
   wire \bramaddr[16]_i_5_n_0 ;
   wire \bramaddr[16]_i_6_n_0 ;
@@ -459,9 +463,6 @@ module design_1_tdc_0_1_data_recorder
   wire \bramaddr[3]_i_40_n_0 ;
   wire \bramaddr[3]_i_41_n_0 ;
   wire \bramaddr[3]_i_42_n_0 ;
-  wire \bramaddr[3]_i_43_n_0 ;
-  wire \bramaddr[3]_i_44_n_0 ;
-  wire \bramaddr[3]_i_45_n_0 ;
   wire \bramaddr[3]_i_4_n_0 ;
   wire \bramaddr[3]_i_5_n_0 ;
   wire \bramaddr[3]_i_6_n_0 ;
@@ -592,6 +593,8 @@ module design_1_tdc_0_1_data_recorder
   wire bramen_disabler0;
   wire \bramen_disabler[4]_i_2_n_0 ;
   wire \bramen_disabler[4]_i_3_n_0 ;
+  wire \bramen_disabler[4]_i_4_n_0 ;
+  wire \bramen_disabler[4]_i_5_n_0 ;
   wire bramen_enabler0;
   wire \bramen_enabler_reg_n_0_[0] ;
   wire \bramen_enabler_reg_n_0_[1] ;
@@ -619,8 +622,6 @@ module design_1_tdc_0_1_data_recorder
   wire \data_loc[0]_i_22_n_0 ;
   wire \data_loc[0]_i_23_n_0 ;
   wire \data_loc[0]_i_24_n_0 ;
-  wire \data_loc[0]_i_25_n_0 ;
-  wire \data_loc[0]_i_26_n_0 ;
   wire \data_loc[0]_i_2_n_0 ;
   wire \data_loc[0]_i_3_n_0 ;
   wire \data_loc[0]_i_4_n_0 ;
@@ -772,16 +773,14 @@ module design_1_tdc_0_1_data_recorder
   wire \l1a_cntr[0]_i_1_n_0 ;
   wire \l1a_cntr[1]_i_1_n_0 ;
   wire \l1a_cntr[2]_i_1_n_0 ;
-  wire \l1a_cntr[2]_i_2_n_0 ;
   wire \l1a_cntr[3]_i_1_n_0 ;
   wire \l1a_cntr[4]_i_1_n_0 ;
   wire \l1a_cntr[5]_i_1_n_0 ;
   wire \l1a_cntr[6]_i_1_n_0 ;
-  wire \l1a_cntr[6]_i_2_n_0 ;
   wire \l1a_cntr[7]_i_1_n_0 ;
-  wire \l1a_cntr[7]_i_2_n_0 ;
   wire \l1a_cntr[8]_i_2_n_0 ;
   wire \l1a_cntr[8]_i_3_n_0 ;
+  wire \l1a_cntr[8]_i_4_n_0 ;
   wire \l1a_cntr_reg_n_0_[0] ;
   wire \l1a_cntr_reg_n_0_[1] ;
   wire \l1a_cntr_reg_n_0_[2] ;
@@ -791,6 +790,16 @@ module design_1_tdc_0_1_data_recorder
   wire \l1a_cntr_reg_n_0_[6] ;
   wire \l1a_cntr_reg_n_0_[7] ;
   wire \l1a_cntr_reg_n_0_[8] ;
+  (* RTL_KEEP = "yes" *) wire l1a_cntr_sync120;
+  wire \l1a_cntr_sync120_reg_n_0_[0] ;
+  wire \l1a_cntr_sync120_reg_n_0_[1] ;
+  wire \l1a_cntr_sync120_reg_n_0_[2] ;
+  wire \l1a_cntr_sync120_reg_n_0_[3] ;
+  wire \l1a_cntr_sync120_reg_n_0_[4] ;
+  wire \l1a_cntr_sync120_reg_n_0_[5] ;
+  wire \l1a_cntr_sync120_reg_n_0_[6] ;
+  wire \l1a_cntr_sync120_reg_n_0_[7] ;
+  wire \l1a_cntr_sync120_reg_n_0_[8] ;
   wire l1a_seen;
   wire l1a_seen_i_1_n_0;
   wire l1a_seen_i_2_n_0;
@@ -800,6 +809,9 @@ module design_1_tdc_0_1_data_recorder
   wire \occupied_data_spaces[1]_i_13_n_0 ;
   wire \occupied_data_spaces[1]_i_14_n_0 ;
   wire \occupied_data_spaces[1]_i_15_n_0 ;
+  wire \occupied_data_spaces[1]_i_16_n_0 ;
+  wire \occupied_data_spaces[1]_i_17_n_0 ;
+  wire \occupied_data_spaces[1]_i_18_n_0 ;
   wire \occupied_data_spaces[1]_i_2_n_0 ;
   wire \occupied_data_spaces[1]_i_3_n_0 ;
   wire \occupied_data_spaces[1]_i_4_n_0 ;
@@ -826,48 +838,17 @@ module design_1_tdc_0_1_data_recorder
   wire \occupied_data_spaces[2]_i_25_n_0 ;
   wire \occupied_data_spaces[2]_i_26_n_0 ;
   wire \occupied_data_spaces[2]_i_27_n_0 ;
-  wire \occupied_data_spaces[2]_i_28_n_0 ;
-  wire \occupied_data_spaces[2]_i_29_n_0 ;
   wire \occupied_data_spaces[2]_i_2_n_0 ;
-  wire \occupied_data_spaces[2]_i_30_n_0 ;
-  wire \occupied_data_spaces[2]_i_31_n_0 ;
-  wire \occupied_data_spaces[2]_i_32_n_0 ;
-  wire \occupied_data_spaces[2]_i_33_n_0 ;
-  wire \occupied_data_spaces[2]_i_34_n_0 ;
-  wire \occupied_data_spaces[2]_i_35_n_0 ;
-  wire \occupied_data_spaces[2]_i_36_n_0 ;
-  wire \occupied_data_spaces[2]_i_37_n_0 ;
-  wire \occupied_data_spaces[2]_i_38_n_0 ;
-  wire \occupied_data_spaces[2]_i_39_n_0 ;
   wire \occupied_data_spaces[2]_i_3_n_0 ;
-  wire \occupied_data_spaces[2]_i_40_n_0 ;
-  wire \occupied_data_spaces[2]_i_41_n_0 ;
   wire \occupied_data_spaces[2]_i_4_n_0 ;
   wire \occupied_data_spaces[2]_i_5_n_0 ;
   wire \occupied_data_spaces[2]_i_6_n_0 ;
   wire \occupied_data_spaces[2]_i_7_n_0 ;
   wire \occupied_data_spaces[2]_i_8_n_0 ;
   wire \occupied_data_spaces[2]_i_9_n_0 ;
-  wire \occupied_data_spaces[5]_i_10_n_0 ;
-  wire \occupied_data_spaces[5]_i_11_n_0 ;
-  wire \occupied_data_spaces[5]_i_12_n_0 ;
-  wire \occupied_data_spaces[5]_i_13_n_0 ;
-  wire \occupied_data_spaces[5]_i_14_n_0 ;
-  wire \occupied_data_spaces[5]_i_15_n_0 ;
-  wire \occupied_data_spaces[5]_i_16_n_0 ;
-  wire \occupied_data_spaces[5]_i_17_n_0 ;
-  wire \occupied_data_spaces[5]_i_18_n_0 ;
-  wire \occupied_data_spaces[5]_i_19_n_0 ;
-  wire \occupied_data_spaces[5]_i_20_n_0 ;
-  wire \occupied_data_spaces[5]_i_21_n_0 ;
   wire \occupied_data_spaces[5]_i_2_n_0 ;
   wire \occupied_data_spaces[5]_i_3_n_0 ;
   wire \occupied_data_spaces[5]_i_4_n_0 ;
-  wire \occupied_data_spaces[5]_i_5_n_0 ;
-  wire \occupied_data_spaces[5]_i_6_n_0 ;
-  wire \occupied_data_spaces[5]_i_7_n_0 ;
-  wire \occupied_data_spaces[5]_i_8_n_0 ;
-  wire \occupied_data_spaces[5]_i_9_n_0 ;
   wire \occupied_data_spaces[6]_i_10_n_0 ;
   wire \occupied_data_spaces[6]_i_11_n_0 ;
   wire \occupied_data_spaces[6]_i_12_n_0 ;
@@ -894,10 +875,47 @@ module design_1_tdc_0_1_data_recorder
   wire \occupied_data_spaces[6]_i_32_n_0 ;
   wire \occupied_data_spaces[6]_i_33_n_0 ;
   wire \occupied_data_spaces[6]_i_34_n_0 ;
+  wire \occupied_data_spaces[6]_i_35_n_0 ;
+  wire \occupied_data_spaces[6]_i_36_n_0 ;
+  wire \occupied_data_spaces[6]_i_37_n_0 ;
+  wire \occupied_data_spaces[6]_i_38_n_0 ;
+  wire \occupied_data_spaces[6]_i_39_n_0 ;
   wire \occupied_data_spaces[6]_i_3_n_0 ;
+  wire \occupied_data_spaces[6]_i_40_n_0 ;
+  wire \occupied_data_spaces[6]_i_41_n_0 ;
+  wire \occupied_data_spaces[6]_i_42_n_0 ;
+  wire \occupied_data_spaces[6]_i_43_n_0 ;
+  wire \occupied_data_spaces[6]_i_44_n_0 ;
+  wire \occupied_data_spaces[6]_i_45_n_0 ;
+  wire \occupied_data_spaces[6]_i_46_n_0 ;
+  wire \occupied_data_spaces[6]_i_47_n_0 ;
+  wire \occupied_data_spaces[6]_i_48_n_0 ;
+  wire \occupied_data_spaces[6]_i_49_n_0 ;
   wire \occupied_data_spaces[6]_i_4_n_0 ;
+  wire \occupied_data_spaces[6]_i_50_n_0 ;
+  wire \occupied_data_spaces[6]_i_51_n_0 ;
+  wire \occupied_data_spaces[6]_i_52_n_0 ;
+  wire \occupied_data_spaces[6]_i_53_n_0 ;
+  wire \occupied_data_spaces[6]_i_54_n_0 ;
+  wire \occupied_data_spaces[6]_i_55_n_0 ;
+  wire \occupied_data_spaces[6]_i_56_n_0 ;
+  wire \occupied_data_spaces[6]_i_57_n_0 ;
+  wire \occupied_data_spaces[6]_i_58_n_0 ;
+  wire \occupied_data_spaces[6]_i_59_n_0 ;
   wire \occupied_data_spaces[6]_i_5_n_0 ;
+  wire \occupied_data_spaces[6]_i_60_n_0 ;
+  wire \occupied_data_spaces[6]_i_61_n_0 ;
+  wire \occupied_data_spaces[6]_i_62_n_0 ;
+  wire \occupied_data_spaces[6]_i_63_n_0 ;
+  wire \occupied_data_spaces[6]_i_64_n_0 ;
+  wire \occupied_data_spaces[6]_i_65_n_0 ;
+  wire \occupied_data_spaces[6]_i_66_n_0 ;
+  wire \occupied_data_spaces[6]_i_67_n_0 ;
+  wire \occupied_data_spaces[6]_i_68_n_0 ;
+  wire \occupied_data_spaces[6]_i_69_n_0 ;
   wire \occupied_data_spaces[6]_i_6_n_0 ;
+  wire \occupied_data_spaces[6]_i_70_n_0 ;
+  wire \occupied_data_spaces[6]_i_71_n_0 ;
   wire \occupied_data_spaces[6]_i_7_n_0 ;
   wire \occupied_data_spaces[6]_i_8_n_0 ;
   wire \occupied_data_spaces[6]_i_9_n_0 ;
@@ -1119,7 +1137,7 @@ module design_1_tdc_0_1_data_recorder
        (.I0(first_clk40_rise),
         .I1(inner_cntr__0[0]),
         .I2(inner_cntr__0[2]),
-        .I3(inner_cntr__0[1]),
+        .I3(l1a_cntr_sync120),
         .I4(inner_cntr__0[0]),
         .O(\FSM_onehot_inner_cntr[0]_i_1_n_0 ));
   LUT5 #(
@@ -1128,8 +1146,8 @@ module design_1_tdc_0_1_data_recorder
        (.I0(first_clk40_rise),
         .I1(inner_cntr__0[0]),
         .I2(inner_cntr__0[2]),
-        .I3(inner_cntr__0[1]),
-        .I4(inner_cntr__0[1]),
+        .I3(l1a_cntr_sync120),
+        .I4(l1a_cntr_sync120),
         .O(\FSM_onehot_inner_cntr[1]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'hFF57AA00)) 
@@ -1137,7 +1155,7 @@ module design_1_tdc_0_1_data_recorder
        (.I0(first_clk40_rise),
         .I1(inner_cntr__0[0]),
         .I2(inner_cntr__0[2]),
-        .I3(inner_cntr__0[1]),
+        .I3(l1a_cntr_sync120),
         .I4(inner_cntr__0[2]),
         .O(\FSM_onehot_inner_cntr[2]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:001,iSTATE0:010,iSTATE1:100," *) 
@@ -1162,7 +1180,7 @@ module design_1_tdc_0_1_data_recorder
        (.C(clk120),
         .CE(1'b1),
         .D(\FSM_onehot_inner_cntr[1]_i_1_n_0 ),
-        .Q(inner_cntr__0[1]),
+        .Q(l1a_cntr_sync120),
         .R(1'b0));
   (* FSM_ENCODED_STATES = "iSTATE:001,iSTATE0:010,iSTATE1:100," *) 
   (* KEEP = "yes" *) 
@@ -1176,7 +1194,6 @@ module design_1_tdc_0_1_data_recorder
         .D(\FSM_onehot_inner_cntr[2]_i_1_n_0 ),
         .Q(inner_cntr__0[2]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \bramaddr[11]_i_10 
@@ -1213,7 +1230,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(data_loc_tracker[19]),
         .I5(\bramaddr[11]_i_35_n_0 ),
         .O(\bramaddr[11]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT5 #(
     .INIT(32'h70FFFFFF)) 
     \bramaddr[11]_i_14 
@@ -1234,14 +1251,14 @@ module design_1_tdc_0_1_data_recorder
         .I5(data_loc_tracker[9]),
         .O(\bramaddr[11]_i_15_n_0 ));
   LUT6 #(
-    .INIT(64'hFF04FF04FFFFFF04)) 
+    .INIT(64'hBBBFBBBBAAAAAAAA)) 
     \bramaddr[11]_i_16 
-       (.I0(\bramaddr[11]_i_37_n_0 ),
-        .I1(\bramaddr[11]_i_38_n_0 ),
-        .I2(\bramaddr[11]_i_39_n_0 ),
-        .I3(\bramaddr[15]_i_18_n_0 ),
-        .I4(\data_loc[1]_i_5_n_0 ),
-        .I5(\bramaddr[16]_i_20_n_0 ),
+       (.I0(\bramaddr[15]_i_18_n_0 ),
+        .I1(\bramaddr[11]_i_37_n_0 ),
+        .I2(\bramaddr[11]_i_38_n_0 ),
+        .I3(\bramaddr[11]_i_39_n_0 ),
+        .I4(\bramaddr[11]_i_40_n_0 ),
+        .I5(\data_loc[1]_i_5_n_0 ),
         .O(\bramaddr[11]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'h7F7F7F7FFF7F7F7F)) 
@@ -1256,12 +1273,12 @@ module design_1_tdc_0_1_data_recorder
   LUT6 #(
     .INIT(64'hFFFFFFFF5454FF54)) 
     \bramaddr[11]_i_18 
-       (.I0(\bramaddr[11]_i_40_n_0 ),
-        .I1(\bramaddr[11]_i_41_n_0 ),
-        .I2(\bramaddr[11]_i_42_n_0 ),
+       (.I0(\bramaddr[11]_i_41_n_0 ),
+        .I1(\bramaddr[11]_i_42_n_0 ),
+        .I2(\bramaddr[11]_i_43_n_0 ),
         .I3(data_loc_tracker[18]),
-        .I4(\bramaddr[11]_i_43_n_0 ),
-        .I5(\bramaddr[11]_i_39_n_0 ),
+        .I4(\bramaddr[11]_i_44_n_0 ),
+        .I5(\bramaddr[11]_i_45_n_0 ),
         .O(\bramaddr[11]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'h7000FFFFFFFFFFFF)) 
@@ -1286,7 +1303,7 @@ module design_1_tdc_0_1_data_recorder
   LUT6 #(
     .INIT(64'h55F5D5F5FFFFFFFF)) 
     \bramaddr[11]_i_20 
-       (.I0(\data_loc[0]_i_15_n_0 ),
+       (.I0(\bramaddr[11]_i_46_n_0 ),
         .I1(data_loc_tracker[9]),
         .I2(data_loc_tracker[7]),
         .I3(data_loc_tracker[8]),
@@ -1296,12 +1313,12 @@ module design_1_tdc_0_1_data_recorder
   LUT6 #(
     .INIT(64'hFFFFFFFF55550111)) 
     \bramaddr[11]_i_21 
-       (.I0(\bramaddr[11]_i_44_n_0 ),
-        .I1(\bramaddr[11]_i_45_n_0 ),
-        .I2(\bramaddr[11]_i_46_n_0 ),
-        .I3(\bramaddr[11]_i_47_n_0 ),
-        .I4(\bramaddr[11]_i_48_n_0 ),
-        .I5(\bramaddr[11]_i_49_n_0 ),
+       (.I0(\bramaddr[11]_i_47_n_0 ),
+        .I1(\bramaddr[11]_i_48_n_0 ),
+        .I2(\bramaddr[11]_i_49_n_0 ),
+        .I3(\bramaddr[11]_i_50_n_0 ),
+        .I4(\bramaddr[11]_i_51_n_0 ),
+        .I5(\bramaddr[11]_i_52_n_0 ),
         .O(\bramaddr[11]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFF4F00FFFF)) 
@@ -1311,9 +1328,9 @@ module design_1_tdc_0_1_data_recorder
         .I2(data_loc_tracker[14]),
         .I3(data_loc_tracker[13]),
         .I4(data_loc_tracker[12]),
-        .I5(\bramaddr[11]_i_50_n_0 ),
+        .I5(\bramaddr[11]_i_53_n_0 ),
         .O(\bramaddr[11]_i_22_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT5 #(
     .INIT(32'h7755F755)) 
     \bramaddr[11]_i_23 
@@ -1333,7 +1350,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(data_loc_tracker[14]),
         .I5(data_loc_tracker[18]),
         .O(\bramaddr[11]_i_24_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  (* SOFT_HLUTNM = "soft_lutpair69" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     \bramaddr[11]_i_25 
@@ -1342,7 +1359,7 @@ module design_1_tdc_0_1_data_recorder
         .I2(data_loc_tracker[22]),
         .I3(data_loc_tracker[23]),
         .O(\bramaddr[11]_i_25_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
+  (* SOFT_HLUTNM = "soft_lutpair106" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \bramaddr[11]_i_26 
@@ -1350,16 +1367,16 @@ module design_1_tdc_0_1_data_recorder
         .I1(data_loc_tracker[27]),
         .O(\bramaddr[11]_i_26_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000FF8A0000)) 
+    .INIT(64'h0000888088888888)) 
     \bramaddr[11]_i_27 
-       (.I0(\bramaddr[11]_i_51_n_0 ),
-        .I1(\bramaddr[11]_i_52_n_0 ),
-        .I2(\bramaddr[11]_i_53_n_0 ),
-        .I3(\bramaddr[11]_i_54_n_0 ),
-        .I4(\bramaddr[11]_i_55_n_0 ),
-        .I5(\bramaddr[11]_i_56_n_0 ),
+       (.I0(data_loc_tracker[32]),
+        .I1(data_loc_tracker[31]),
+        .I2(\bramaddr[11]_i_54_n_0 ),
+        .I3(\bramaddr[11]_i_55_n_0 ),
+        .I4(\bramaddr[11]_i_56_n_0 ),
+        .I5(\bramaddr[11]_i_57_n_0 ),
         .O(\bramaddr[11]_i_27_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT5 #(
     .INIT(32'h70FFFFFF)) 
     \bramaddr[11]_i_28 
@@ -1369,7 +1386,7 @@ module design_1_tdc_0_1_data_recorder
         .I3(data_loc_tracker[25]),
         .I4(data_loc_tracker[26]),
         .O(\bramaddr[11]_i_28_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     \bramaddr[11]_i_29 
@@ -1388,7 +1405,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(\bramaddr[11]_i_14_n_0 ),
         .I5(\bramaddr[11]_i_15_n_0 ),
         .O(\bramaddr[11]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \bramaddr[11]_i_30 
@@ -1396,20 +1413,20 @@ module design_1_tdc_0_1_data_recorder
         .I1(data_loc_tracker[0]),
         .O(\bramaddr[11]_i_30_n_0 ));
   LUT6 #(
-    .INIT(64'hBFBBAAAAAAAAAAAA)) 
+    .INIT(64'hBFBBBBBBAAAAAAAA)) 
     \bramaddr[11]_i_31 
-       (.I0(\bramaddr[7]_i_30_n_0 ),
+       (.I0(\bramaddr[7]_i_28_n_0 ),
         .I1(data_loc_tracker[29]),
         .I2(data_loc_tracker[32]),
-        .I3(\bramaddr[11]_i_57_n_0 ),
-        .I4(data_loc_tracker[28]),
-        .I5(data_loc_tracker[27]),
+        .I3(data_loc_tracker[31]),
+        .I4(data_loc_tracker[30]),
+        .I5(\bramaddr[11]_i_58_n_0 ),
         .O(\bramaddr[11]_i_31_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT5 #(
     .INIT(32'hBFBFFFBF)) 
     \bramaddr[11]_i_32 
-       (.I0(\bramaddr[11]_i_58_n_0 ),
+       (.I0(\bramaddr[11]_i_59_n_0 ),
         .I1(data_loc_tracker[41]),
         .I2(data_loc_tracker[34]),
         .I3(data_loc_tracker[42]),
@@ -1421,65 +1438,63 @@ module design_1_tdc_0_1_data_recorder
        (.I0(data_loc_tracker[42]),
         .I1(data_loc_tracker[45]),
         .I2(data_loc_tracker[44]),
-        .I3(\bramaddr[11]_i_59_n_0 ),
-        .I4(\bramaddr[11]_i_60_n_0 ),
+        .I3(\bramaddr[11]_i_60_n_0 ),
+        .I4(\bramaddr[11]_i_61_n_0 ),
         .I5(data_loc_tracker[46]),
         .O(\bramaddr[11]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'h4FFFFFFFFFFFFFFF)) 
     \bramaddr[11]_i_34 
-       (.I0(\bramaddr[11]_i_61_n_0 ),
-        .I1(\bramaddr[11]_i_46_n_0 ),
-        .I2(\bramaddr[11]_i_57_n_0 ),
-        .I3(data_loc_tracker[33]),
-        .I4(data_loc_tracker[28]),
-        .I5(data_loc_tracker[27]),
+       (.I0(\bramaddr[11]_i_62_n_0 ),
+        .I1(\bramaddr[11]_i_49_n_0 ),
+        .I2(data_loc_tracker[30]),
+        .I3(data_loc_tracker[31]),
+        .I4(data_loc_tracker[33]),
+        .I5(\bramaddr[11]_i_58_n_0 ),
         .O(\bramaddr[11]_i_34_n_0 ));
   LUT6 #(
-    .INIT(64'h575757575F575757)) 
+    .INIT(64'h00FF00FF08FFFFFF)) 
     \bramaddr[11]_i_35 
-       (.I0(data_loc_tracker[16]),
-        .I1(data_loc_tracker[22]),
-        .I2(\data_loc[3]_i_8_n_0 ),
-        .I3(data_loc_tracker[23]),
-        .I4(data_loc_tracker[24]),
-        .I5(data_loc_tracker[25]),
+       (.I0(data_loc_tracker[23]),
+        .I1(data_loc_tracker[24]),
+        .I2(data_loc_tracker[25]),
+        .I3(data_loc_tracker[16]),
+        .I4(data_loc_tracker[22]),
+        .I5(\data_loc[3]_i_8_n_0 ),
         .O(\bramaddr[11]_i_35_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \bramaddr[11]_i_36 
        (.I0(data_loc_tracker[7]),
         .I1(data_loc_tracker[6]),
         .O(\bramaddr[11]_i_36_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF7FFFFFFF)) 
+  (* SOFT_HLUTNM = "soft_lutpair122" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \bramaddr[11]_i_37 
-       (.I0(data_loc_tracker[27]),
-        .I1(data_loc_tracker[30]),
-        .I2(\bramaddr[11]_i_43_n_0 ),
-        .I3(data_loc_tracker[26]),
-        .I4(data_loc_tracker[23]),
-        .I5(\bramaddr[11]_i_62_n_0 ),
+       (.I0(data_loc_tracker[5]),
+        .I1(data_loc_tracker[4]),
         .O(\bramaddr[11]_i_37_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000008000000)) 
+    .INIT(64'h7FFFFFFFFFFFFFFF)) 
     \bramaddr[11]_i_38 
-       (.I0(data_loc_tracker[61]),
-        .I1(data_loc_tracker[60]),
-        .I2(data_loc_tracker[62]),
-        .I3(data_loc_tracker[47]),
-        .I4(data_loc_tracker[46]),
-        .I5(\bramaddr[16]_i_16_n_0 ),
+       (.I0(\data_loc[3]_i_10_n_0 ),
+        .I1(\data_loc[1]_i_13_n_0 ),
+        .I2(data_loc_tracker[10]),
+        .I3(data_loc_tracker[9]),
+        .I4(data_loc_tracker[61]),
+        .I5(data_loc_tracker[60]),
         .O(\bramaddr[11]_i_38_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair70" *) 
-  LUT4 #(
-    .INIT(16'h7FFF)) 
+  LUT6 #(
+    .INIT(64'hFF7FFFFFFFFFFFFF)) 
     \bramaddr[11]_i_39 
-       (.I0(data_loc_tracker[12]),
-        .I1(data_loc_tracker[13]),
-        .I2(data_loc_tracker[16]),
-        .I3(data_loc_tracker[17]),
+       (.I0(\bramaddr[11]_i_44_n_0 ),
+        .I1(data_loc_tracker[26]),
+        .I2(data_loc_tracker[23]),
+        .I3(\bramaddr[11]_i_63_n_0 ),
+        .I4(data_loc_tracker[30]),
+        .I5(data_loc_tracker[27]),
         .O(\bramaddr[11]_i_39_n_0 ));
   LUT6 #(
     .INIT(64'h8F8F8F8F888F8888)) 
@@ -1492,97 +1507,94 @@ module design_1_tdc_0_1_data_recorder
         .I5(\bramaddr[11]_i_19_n_0 ),
         .O(\bramaddr[11]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'h70FFFFFFFFFFFFFF)) 
+    .INIT(64'h0000000080000000)) 
     \bramaddr[11]_i_40 
+       (.I0(\bramaddr[11]_i_64_n_0 ),
+        .I1(data_loc_tracker[43]),
+        .I2(data_loc_tracker[44]),
+        .I3(data_loc_tracker[46]),
+        .I4(data_loc_tracker[47]),
+        .I5(\bramaddr[11]_i_45_n_0 ),
+        .O(\bramaddr[11]_i_40_n_0 ));
+  LUT6 #(
+    .INIT(64'h70FFFFFFFFFFFFFF)) 
+    \bramaddr[11]_i_41 
        (.I0(data_loc_tracker[25]),
         .I1(data_loc_tracker[24]),
         .I2(data_loc_tracker[23]),
         .I3(data_loc_tracker[21]),
         .I4(data_loc_tracker[22]),
         .I5(data_loc_tracker[18]),
-        .O(\bramaddr[11]_i_40_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000FFFF8088)) 
-    \bramaddr[11]_i_41 
-       (.I0(data_loc_tracker[38]),
-        .I1(data_loc_tracker[39]),
-        .I2(\bramaddr[11]_i_63_n_0 ),
-        .I3(data_loc_tracker[40]),
-        .I4(\bramaddr[11]_i_54_n_0 ),
-        .I5(\bramaddr[11]_i_64_n_0 ),
         .O(\bramaddr[11]_i_41_n_0 ));
   LUT6 #(
-    .INIT(64'h75F5FFFFFFFFFFFF)) 
+    .INIT(64'h000000008AFFFFFF)) 
     \bramaddr[11]_i_42 
+       (.I0(\bramaddr[11]_i_65_n_0 ),
+        .I1(\bramaddr[11]_i_66_n_0 ),
+        .I2(data_loc_tracker[40]),
+        .I3(\data_loc[1]_i_13_n_0 ),
+        .I4(\bramaddr[11]_i_57_n_0 ),
+        .I5(\bramaddr[11]_i_67_n_0 ),
+        .O(\bramaddr[11]_i_42_n_0 ));
+  LUT6 #(
+    .INIT(64'h75F5FFFFFFFFFFFF)) 
+    \bramaddr[11]_i_43 
        (.I0(data_loc_tracker[27]),
         .I1(data_loc_tracker[29]),
         .I2(data_loc_tracker[28]),
         .I3(data_loc_tracker[30]),
         .I4(data_loc_tracker[26]),
         .I5(data_loc_tracker[23]),
-        .O(\bramaddr[11]_i_42_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+        .O(\bramaddr[11]_i_43_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair111" *) 
   LUT2 #(
     .INIT(4'h8)) 
-    \bramaddr[11]_i_43 
+    \bramaddr[11]_i_44 
        (.I0(data_loc_tracker[20]),
         .I1(data_loc_tracker[19]),
-        .O(\bramaddr[11]_i_43_n_0 ));
+        .O(\bramaddr[11]_i_44_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    \bramaddr[11]_i_45 
+       (.I0(data_loc_tracker[12]),
+        .I1(data_loc_tracker[13]),
+        .I2(data_loc_tracker[16]),
+        .I3(data_loc_tracker[17]),
+        .O(\bramaddr[11]_i_45_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair128" *) 
+  LUT3 #(
+    .INIT(8'h80)) 
+    \bramaddr[11]_i_46 
+       (.I0(data_loc_tracker[5]),
+        .I1(data_loc_tracker[1]),
+        .I2(data_loc_tracker[3]),
+        .O(\bramaddr[11]_i_46_n_0 ));
   LUT6 #(
     .INIT(64'h77F77777F7F7F7F7)) 
-    \bramaddr[11]_i_44 
+    \bramaddr[11]_i_47 
        (.I0(data_loc_tracker[19]),
         .I1(data_loc_tracker[21]),
         .I2(\data_loc[1]_i_10_n_0 ),
         .I3(data_loc_tracker[26]),
         .I4(data_loc_tracker[25]),
         .I5(data_loc_tracker[24]),
-        .O(\bramaddr[11]_i_44_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+        .O(\bramaddr[11]_i_47_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
-    \bramaddr[11]_i_45 
+    \bramaddr[11]_i_48 
        (.I0(data_loc_tracker[33]),
         .I1(data_loc_tracker[31]),
         .I2(data_loc_tracker[28]),
         .I3(data_loc_tracker[29]),
-        .O(\bramaddr[11]_i_45_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+        .O(\bramaddr[11]_i_48_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair71" *) 
   LUT2 #(
     .INIT(4'h8)) 
-    \bramaddr[11]_i_46 
+    \bramaddr[11]_i_49 
        (.I0(data_loc_tracker[35]),
         .I1(data_loc_tracker[34]),
-        .O(\bramaddr[11]_i_46_n_0 ));
-  LUT6 #(
-    .INIT(64'hFF400000FFFFFFFF)) 
-    \bramaddr[11]_i_47 
-       (.I0(\bramaddr[11]_i_65_n_0 ),
-        .I1(data_loc_tracker[47]),
-        .I2(data_loc_tracker[44]),
-        .I3(\bramaddr[11]_i_66_n_0 ),
-        .I4(\bramaddr[11]_i_67_n_0 ),
-        .I5(\data_loc[0]_i_5_n_0 ),
-        .O(\bramaddr[11]_i_47_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF7500FFFF)) 
-    \bramaddr[11]_i_48 
-       (.I0(data_loc_tracker[30]),
-        .I1(data_loc_tracker[32]),
-        .I2(data_loc_tracker[31]),
-        .I3(\bramaddr[11]_i_68_n_0 ),
-        .I4(\data_loc[1]_i_10_n_0 ),
-        .I5(\data_loc[3]_i_13_n_0 ),
-        .O(\bramaddr[11]_i_48_n_0 ));
-  LUT6 #(
-    .INIT(64'h4FFFFFFFFFFFFFFF)) 
-    \bramaddr[11]_i_49 
-       (.I0(data_loc_tracker[20]),
-        .I1(data_loc_tracker[19]),
-        .I2(data_loc_tracker[18]),
-        .I3(data_loc_tracker[17]),
-        .I4(data_loc_tracker[15]),
-        .I5(data_loc_tracker[13]),
         .O(\bramaddr[11]_i_49_n_0 ));
   LUT6 #(
     .INIT(64'h88888888B8B8BBB8)) 
@@ -1594,194 +1606,195 @@ module design_1_tdc_0_1_data_recorder
         .I4(\bramaddr[11]_i_22_n_0 ),
         .I5(\bramaddr[11]_i_23_n_0 ),
         .O(\bramaddr[11]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair148" *) 
+  LUT6 #(
+    .INIT(64'hFF400000FFFFFFFF)) 
+    \bramaddr[11]_i_50 
+       (.I0(\bramaddr[11]_i_68_n_0 ),
+        .I1(data_loc_tracker[47]),
+        .I2(data_loc_tracker[44]),
+        .I3(\bramaddr[11]_i_69_n_0 ),
+        .I4(\bramaddr[11]_i_70_n_0 ),
+        .I5(\data_loc[0]_i_5_n_0 ),
+        .O(\bramaddr[11]_i_50_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFF7500FFFF)) 
+    \bramaddr[11]_i_51 
+       (.I0(data_loc_tracker[30]),
+        .I1(data_loc_tracker[32]),
+        .I2(data_loc_tracker[31]),
+        .I3(\bramaddr[15]_i_39_n_0 ),
+        .I4(\data_loc[1]_i_10_n_0 ),
+        .I5(\data_loc[3]_i_13_n_0 ),
+        .O(\bramaddr[11]_i_51_n_0 ));
+  LUT6 #(
+    .INIT(64'h4FFFFFFFFFFFFFFF)) 
+    \bramaddr[11]_i_52 
+       (.I0(data_loc_tracker[20]),
+        .I1(data_loc_tracker[19]),
+        .I2(data_loc_tracker[18]),
+        .I3(data_loc_tracker[17]),
+        .I4(data_loc_tracker[15]),
+        .I5(data_loc_tracker[13]),
+        .O(\bramaddr[11]_i_52_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair146" *) 
   LUT3 #(
     .INIT(8'h7F)) 
-    \bramaddr[11]_i_50 
+    \bramaddr[11]_i_53 
        (.I0(data_loc_tracker[9]),
         .I1(data_loc_tracker[11]),
         .I2(data_loc_tracker[7]),
-        .O(\bramaddr[11]_i_50_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
-  LUT4 #(
-    .INIT(16'hAA2A)) 
-    \bramaddr[11]_i_51 
+        .O(\bramaddr[11]_i_53_n_0 ));
+  LUT6 #(
+    .INIT(64'h2FFFFFFFFFFFFFFF)) 
+    \bramaddr[11]_i_54 
+       (.I0(data_loc_tracker[44]),
+        .I1(\bramaddr[16]_i_23_n_0 ),
+        .I2(data_loc_tracker[40]),
+        .I3(data_loc_tracker[39]),
+        .I4(\bramaddr[11]_i_71_n_0 ),
+        .I5(\data_loc[1]_i_13_n_0 ),
+        .O(\bramaddr[11]_i_54_n_0 ));
+  LUT6 #(
+    .INIT(64'h004F000000000000)) 
+    \bramaddr[11]_i_55 
+       (.I0(\bramaddr[11]_i_72_n_0 ),
+        .I1(\data_loc[3]_i_10_n_0 ),
+        .I2(\bramaddr[11]_i_73_n_0 ),
+        .I3(\bramaddr[11]_i_74_n_0 ),
+        .I4(data_loc_tracker[47]),
+        .I5(data_loc_tracker[44]),
+        .O(\bramaddr[11]_i_55_n_0 ));
+  LUT6 #(
+    .INIT(64'h55D50000FFFFFFFF)) 
+    \bramaddr[11]_i_56 
        (.I0(data_loc_tracker[38]),
         .I1(data_loc_tracker[40]),
         .I2(data_loc_tracker[39]),
         .I3(data_loc_tracker[41]),
-        .O(\bramaddr[11]_i_51_n_0 ));
-  LUT6 #(
-    .INIT(64'h008F000000000000)) 
-    \bramaddr[11]_i_52 
-       (.I0(\data_loc[3]_i_10_n_0 ),
-        .I1(\bramaddr[11]_i_69_n_0 ),
-        .I2(\bramaddr[11]_i_70_n_0 ),
-        .I3(\bramaddr[11]_i_71_n_0 ),
-        .I4(data_loc_tracker[47]),
-        .I5(data_loc_tracker[44]),
-        .O(\bramaddr[11]_i_52_n_0 ));
-  LUT6 #(
-    .INIT(64'h8000000080808080)) 
-    \bramaddr[11]_i_53 
-       (.I0(data_loc_tracker[40]),
-        .I1(data_loc_tracker[39]),
-        .I2(\bramaddr[16]_i_23_n_0 ),
-        .I3(data_loc_tracker[46]),
-        .I4(data_loc_tracker[45]),
-        .I5(data_loc_tracker[44]),
-        .O(\bramaddr[11]_i_53_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair73" *) 
-  LUT4 #(
-    .INIT(16'h7FFF)) 
-    \bramaddr[11]_i_54 
-       (.I0(data_loc_tracker[36]),
-        .I1(data_loc_tracker[37]),
-        .I2(data_loc_tracker[33]),
-        .I3(data_loc_tracker[34]),
-        .O(\bramaddr[11]_i_54_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \bramaddr[11]_i_55 
-       (.I0(data_loc_tracker[31]),
-        .I1(data_loc_tracker[32]),
-        .O(\bramaddr[11]_i_55_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair127" *) 
-  LUT3 #(
-    .INIT(8'h08)) 
-    \bramaddr[11]_i_56 
-       (.I0(data_loc_tracker[33]),
-        .I1(data_loc_tracker[34]),
-        .I2(data_loc_tracker[35]),
+        .I4(\data_loc[1]_i_13_n_0 ),
+        .I5(data_loc_tracker[35]),
         .O(\bramaddr[11]_i_56_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \bramaddr[11]_i_57 
-       (.I0(data_loc_tracker[31]),
-        .I1(data_loc_tracker[30]),
+       (.I0(data_loc_tracker[34]),
+        .I1(data_loc_tracker[33]),
         .O(\bramaddr[11]_i_57_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \bramaddr[11]_i_58 
+       (.I0(data_loc_tracker[28]),
+        .I1(data_loc_tracker[27]),
+        .O(\bramaddr[11]_i_58_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair60" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
-    \bramaddr[11]_i_58 
+    \bramaddr[11]_i_59 
        (.I0(data_loc_tracker[38]),
         .I1(data_loc_tracker[40]),
         .I2(data_loc_tracker[35]),
         .I3(data_loc_tracker[37]),
-        .O(\bramaddr[11]_i_58_n_0 ));
-  LUT6 #(
-    .INIT(64'h7FFF7F7F55555555)) 
-    \bramaddr[11]_i_59 
-       (.I0(data_loc_tracker[49]),
-        .I1(data_loc_tracker[51]),
-        .I2(data_loc_tracker[52]),
-        .I3(\bramaddr[11]_i_72_n_0 ),
-        .I4(data_loc_tracker[53]),
-        .I5(data_loc_tracker[50]),
         .O(\bramaddr[11]_i_59_n_0 ));
   LUT6 #(
-    .INIT(64'hDDDDCCCCFDDDCCCC)) 
+    .INIT(64'hFFFFFFFF0800FF00)) 
     \bramaddr[11]_i_6 
-       (.I0(data_loc_tracker[4]),
-        .I1(\bramaddr[15]_i_18_n_0 ),
-        .I2(data_loc_tracker[5]),
-        .I3(data_loc_tracker[6]),
-        .I4(\data_loc[1]_i_5_n_0 ),
-        .I5(data_loc_tracker[7]),
+       (.I0(data_loc_tracker[5]),
+        .I1(data_loc_tracker[6]),
+        .I2(data_loc_tracker[7]),
+        .I3(\data_loc[1]_i_5_n_0 ),
+        .I4(data_loc_tracker[4]),
+        .I5(\bramaddr[15]_i_18_n_0 ),
         .O(\bramaddr[11]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair88" *) 
+  (* SOFT_HLUTNM = "soft_lutpair95" *) 
   LUT2 #(
-    .INIT(4'h7)) 
+    .INIT(4'h8)) 
     \bramaddr[11]_i_60 
        (.I0(data_loc_tracker[47]),
         .I1(data_loc_tracker[48]),
         .O(\bramaddr[11]_i_60_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair61" *) 
+  LUT6 #(
+    .INIT(64'hB0000000F0F0F0F0)) 
+    \bramaddr[11]_i_61 
+       (.I0(\bramaddr[11]_i_75_n_0 ),
+        .I1(data_loc_tracker[53]),
+        .I2(data_loc_tracker[49]),
+        .I3(data_loc_tracker[51]),
+        .I4(data_loc_tracker[52]),
+        .I5(data_loc_tracker[50]),
+        .O(\bramaddr[11]_i_61_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair58" *) 
   LUT4 #(
     .INIT(16'hBF00)) 
-    \bramaddr[11]_i_61 
+    \bramaddr[11]_i_62 
        (.I0(data_loc_tracker[39]),
         .I1(data_loc_tracker[38]),
         .I2(data_loc_tracker[37]),
         .I3(data_loc_tracker[36]),
-        .O(\bramaddr[11]_i_61_n_0 ));
-  LUT6 #(
-    .INIT(64'hEFFFFFFFFFFFFFFF)) 
-    \bramaddr[11]_i_62 
-       (.I0(\bramaddr[11]_i_73_n_0 ),
-        .I1(\bramaddr[11]_i_74_n_0 ),
-        .I2(\bramaddr[11]_i_75_n_0 ),
-        .I3(\data_loc[1]_i_5_n_0 ),
-        .I4(data_loc_tracker[6]),
-        .I5(data_loc_tracker[34]),
         .O(\bramaddr[11]_i_62_n_0 ));
-  LUT6 #(
-    .INIT(64'hFF00FF00FB000000)) 
+  (* SOFT_HLUTNM = "soft_lutpair107" *) 
+  LUT2 #(
+    .INIT(4'h7)) 
     \bramaddr[11]_i_63 
-       (.I0(\bramaddr[11]_i_71_n_0 ),
-        .I1(\bramaddr[11]_i_76_n_0 ),
-        .I2(\bramaddr[11]_i_77_n_0 ),
-        .I3(\bramaddr[11]_i_78_n_0 ),
-        .I4(data_loc_tracker[45]),
-        .I5(\bramaddr[16]_i_16_n_0 ),
+       (.I0(data_loc_tracker[51]),
+        .I1(data_loc_tracker[50]),
         .O(\bramaddr[11]_i_63_n_0 ));
   LUT6 #(
-    .INIT(64'h40FFFFFFFFFFFFFF)) 
+    .INIT(64'h0000000040000000)) 
     \bramaddr[11]_i_64 
+       (.I0(data_loc_tracker[62]),
+        .I1(data_loc_tracker[57]),
+        .I2(data_loc_tracker[6]),
+        .I3(data_loc_tracker[40]),
+        .I4(data_loc_tracker[34]),
+        .I5(\bramaddr[11]_i_76_n_0 ),
+        .O(\bramaddr[11]_i_64_n_0 ));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \bramaddr[11]_i_65 
+       (.I0(data_loc_tracker[39]),
+        .I1(data_loc_tracker[38]),
+        .O(\bramaddr[11]_i_65_n_0 ));
+  LUT6 #(
+    .INIT(64'hFF00FF00FB000000)) 
+    \bramaddr[11]_i_66 
+       (.I0(\bramaddr[11]_i_74_n_0 ),
+        .I1(\bramaddr[11]_i_77_n_0 ),
+        .I2(\bramaddr[11]_i_78_n_0 ),
+        .I3(\bramaddr[7]_i_64_n_0 ),
+        .I4(data_loc_tracker[45]),
+        .I5(\bramaddr[16]_i_22_n_0 ),
+        .O(\bramaddr[11]_i_66_n_0 ));
+  LUT6 #(
+    .INIT(64'h40FFFFFFFFFFFFFF)) 
+    \bramaddr[11]_i_67 
        (.I0(data_loc_tracker[35]),
         .I1(data_loc_tracker[34]),
         .I2(data_loc_tracker[33]),
         .I3(data_loc_tracker[31]),
         .I4(data_loc_tracker[28]),
         .I5(data_loc_tracker[32]),
-        .O(\bramaddr[11]_i_64_n_0 ));
+        .O(\bramaddr[11]_i_67_n_0 ));
   LUT6 #(
-    .INIT(64'h80CC88CC88CC88CC)) 
-    \bramaddr[11]_i_65 
-       (.I0(data_loc_tracker[50]),
-        .I1(data_loc_tracker[48]),
+    .INIT(64'h80AA88AA88AA88AA)) 
+    \bramaddr[11]_i_68 
+       (.I0(data_loc_tracker[48]),
+        .I1(data_loc_tracker[50]),
         .I2(\bramaddr[11]_i_79_n_0 ),
         .I3(data_loc_tracker[49]),
         .I4(data_loc_tracker[51]),
         .I5(data_loc_tracker[52]),
-        .O(\bramaddr[11]_i_65_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+        .O(\bramaddr[11]_i_68_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h70FFFFFF)) 
-    \bramaddr[11]_i_66 
+    \bramaddr[11]_i_69 
        (.I0(data_loc_tracker[46]),
         .I1(data_loc_tracker[45]),
         .I2(data_loc_tracker[44]),
         .I3(data_loc_tracker[41]),
         .I4(data_loc_tracker[43]),
-        .O(\bramaddr[11]_i_66_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT5 #(
-    .INIT(32'h80008080)) 
-    \bramaddr[11]_i_67 
-       (.I0(data_loc_tracker[40]),
-        .I1(data_loc_tracker[39]),
-        .I2(data_loc_tracker[37]),
-        .I3(data_loc_tracker[42]),
-        .I4(data_loc_tracker[41]),
-        .O(\bramaddr[11]_i_67_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair57" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \bramaddr[11]_i_68 
-       (.I0(data_loc_tracker[29]),
-        .I1(data_loc_tracker[28]),
-        .O(\bramaddr[11]_i_68_n_0 ));
-  LUT6 #(
-    .INIT(64'h2A0A0A0AFFFFFFFF)) 
-    \bramaddr[11]_i_69 
-       (.I0(\bramaddr[11]_i_80_n_0 ),
-        .I1(data_loc_tracker[61]),
-        .I2(data_loc_tracker[58]),
-        .I3(data_loc_tracker[60]),
-        .I4(data_loc_tracker[59]),
-        .I5(data_loc_tracker[55]),
         .O(\bramaddr[11]_i_69_n_0 ));
   LUT6 #(
     .INIT(64'h7FFF777777777777)) 
@@ -1793,89 +1806,92 @@ module design_1_tdc_0_1_data_recorder
         .I4(data_loc_tracker[15]),
         .I5(data_loc_tracker[14]),
         .O(\bramaddr[11]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair118" *) 
-  LUT3 #(
-    .INIT(8'h80)) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  LUT5 #(
+    .INIT(32'h80008080)) 
     \bramaddr[11]_i_70 
-       (.I0(data_loc_tracker[49]),
-        .I1(data_loc_tracker[48]),
-        .I2(data_loc_tracker[52]),
+       (.I0(data_loc_tracker[40]),
+        .I1(data_loc_tracker[39]),
+        .I2(data_loc_tracker[37]),
+        .I3(data_loc_tracker[42]),
+        .I4(data_loc_tracker[41]),
         .O(\bramaddr[11]_i_70_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair69" *) 
-  LUT4 #(
-    .INIT(16'h0888)) 
+  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \bramaddr[11]_i_71 
-       (.I0(data_loc_tracker[49]),
-        .I1(data_loc_tracker[48]),
-        .I2(data_loc_tracker[50]),
-        .I3(data_loc_tracker[51]),
+       (.I0(data_loc_tracker[43]),
+        .I1(data_loc_tracker[42]),
         .O(\bramaddr[11]_i_71_n_0 ));
   LUT6 #(
-    .INIT(64'h4044444440404040)) 
+    .INIT(64'hA222AA22AA22AA22)) 
     \bramaddr[11]_i_72 
-       (.I0(\bramaddr[11]_i_81_n_0 ),
+       (.I0(data_loc_tracker[55]),
+        .I1(\bramaddr[15]_i_46_n_0 ),
+        .I2(data_loc_tracker[61]),
+        .I3(data_loc_tracker[58]),
+        .I4(data_loc_tracker[60]),
+        .I5(data_loc_tracker[59]),
+        .O(\bramaddr[11]_i_72_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  LUT3 #(
+    .INIT(8'h80)) 
+    \bramaddr[11]_i_73 
+       (.I0(data_loc_tracker[52]),
+        .I1(data_loc_tracker[49]),
+        .I2(data_loc_tracker[48]),
+        .O(\bramaddr[11]_i_73_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair73" *) 
+  LUT4 #(
+    .INIT(16'h7000)) 
+    \bramaddr[11]_i_74 
+       (.I0(data_loc_tracker[50]),
+        .I1(data_loc_tracker[51]),
+        .I2(data_loc_tracker[49]),
+        .I3(data_loc_tracker[48]),
+        .O(\bramaddr[11]_i_74_n_0 ));
+  LUT6 #(
+    .INIT(64'h4044444440404040)) 
+    \bramaddr[11]_i_75 
+       (.I0(\bramaddr[11]_i_80_n_0 ),
         .I1(\bramaddr[15]_i_20_n_0 ),
-        .I2(\bramaddr[3]_i_25_n_0 ),
+        .I2(\bramaddr[11]_i_81_n_0 ),
         .I3(data_loc_tracker[62]),
         .I4(data_loc_tracker[61]),
         .I5(data_loc_tracker[60]),
-        .O(\bramaddr[11]_i_72_n_0 ));
-  LUT6 #(
-    .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \bramaddr[11]_i_73 
-       (.I0(\data_loc[3]_i_10_n_0 ),
-        .I1(data_loc_tracker[29]),
-        .I2(data_loc_tracker[33]),
-        .I3(data_loc_tracker[40]),
-        .I4(data_loc_tracker[57]),
-        .I5(\data_loc[1]_i_13_n_0 ),
-        .O(\bramaddr[11]_i_73_n_0 ));
+        .O(\bramaddr[11]_i_75_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair139" *) 
   LUT2 #(
     .INIT(4'h7)) 
-    \bramaddr[11]_i_74 
-       (.I0(data_loc_tracker[51]),
-        .I1(data_loc_tracker[50]),
-        .O(\bramaddr[11]_i_74_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair148" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \bramaddr[11]_i_75 
-       (.I0(data_loc_tracker[10]),
-        .I1(data_loc_tracker[9]),
-        .O(\bramaddr[11]_i_75_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair112" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
     \bramaddr[11]_i_76 
+       (.I0(data_loc_tracker[29]),
+        .I1(data_loc_tracker[33]),
+        .O(\bramaddr[11]_i_76_n_0 ));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \bramaddr[11]_i_77 
        (.I0(data_loc_tracker[47]),
         .I1(data_loc_tracker[46]),
-        .O(\bramaddr[11]_i_76_n_0 ));
-  LUT6 #(
-    .INIT(64'h80008888AAAAAAAA)) 
-    \bramaddr[11]_i_77 
-       (.I0(\bramaddr[11]_i_70_n_0 ),
-        .I1(\bramaddr[16]_i_17_n_0 ),
-        .I2(data_loc_tracker[59]),
-        .I3(data_loc_tracker[58]),
-        .I4(data_loc_tracker[57]),
-        .I5(\data_loc[3]_i_10_n_0 ),
         .O(\bramaddr[11]_i_77_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
+  LUT6 #(
+    .INIT(64'h0000400044444444)) 
     \bramaddr[11]_i_78 
-       (.I0(data_loc_tracker[42]),
-        .I1(data_loc_tracker[41]),
+       (.I0(\bramaddr[7]_i_47_n_0 ),
+        .I1(data_loc_tracker[52]),
+        .I2(data_loc_tracker[56]),
+        .I3(data_loc_tracker[55]),
+        .I4(\bramaddr[11]_i_82_n_0 ),
+        .I5(\data_loc[3]_i_10_n_0 ),
         .O(\bramaddr[11]_i_78_n_0 ));
   LUT6 #(
-    .INIT(64'hD0000000F000F000)) 
+    .INIT(64'hB000F0000000F000)) 
     \bramaddr[11]_i_79 
-       (.I0(\bramaddr[11]_i_80_n_0 ),
-        .I1(\bramaddr[11]_i_82_n_0 ),
+       (.I0(\bramaddr[11]_i_83_n_0 ),
+        .I1(\bramaddr[15]_i_46_n_0 ),
         .I2(data_loc_tracker[53]),
         .I3(data_loc_tracker[50]),
-        .I4(data_loc_tracker[55]),
-        .I5(data_loc_tracker[54]),
+        .I4(data_loc_tracker[54]),
+        .I5(data_loc_tracker[55]),
         .O(\bramaddr[11]_i_79_n_0 ));
   LUT6 #(
     .INIT(64'hABABABABBBBBBBAB)) 
@@ -1888,40 +1904,48 @@ module design_1_tdc_0_1_data_recorder
         .I5(\bramaddr[11]_i_28_n_0 ),
         .O(\bramaddr[11]_i_8_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \bramaddr[11]_i_80 
-       (.I0(data_loc_tracker[57]),
-        .I1(data_loc_tracker[56]),
-        .O(\bramaddr[11]_i_80_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair122" *) 
   LUT3 #(
     .INIT(8'h2A)) 
-    \bramaddr[11]_i_81 
+    \bramaddr[11]_i_80 
        (.I0(data_loc_tracker[56]),
         .I1(data_loc_tracker[57]),
         .I2(data_loc_tracker[58]),
+        .O(\bramaddr[11]_i_80_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair59" *) 
+  LUT2 #(
+    .INIT(4'h7)) 
+    \bramaddr[11]_i_81 
+       (.I0(data_loc_tracker[59]),
+        .I1(data_loc_tracker[56]),
         .O(\bramaddr[11]_i_81_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair51" *) 
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
+  LUT3 #(
+    .INIT(8'h70)) 
+    \bramaddr[11]_i_82 
+       (.I0(data_loc_tracker[58]),
+        .I1(data_loc_tracker[59]),
+        .I2(data_loc_tracker[57]),
+        .O(\bramaddr[11]_i_82_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair57" *) 
   LUT4 #(
     .INIT(16'h08AA)) 
-    \bramaddr[11]_i_82 
+    \bramaddr[11]_i_83 
        (.I0(data_loc_tracker[58]),
         .I1(data_loc_tracker[60]),
         .I2(data_loc_tracker[61]),
         .I3(data_loc_tracker[59]),
-        .O(\bramaddr[11]_i_82_n_0 ));
+        .O(\bramaddr[11]_i_83_n_0 ));
   LUT6 #(
-    .INIT(64'hAEEEFFFFFFFFFFFF)) 
+    .INIT(64'hFF70FFFFFFFFFFFF)) 
     \bramaddr[11]_i_9 
-       (.I0(\bramaddr[11]_i_29_n_0 ),
-        .I1(data_loc_tracker[10]),
-        .I2(data_loc_tracker[11]),
-        .I3(data_loc_tracker[12]),
+       (.I0(data_loc_tracker[12]),
+        .I1(data_loc_tracker[11]),
+        .I2(data_loc_tracker[10]),
+        .I3(\bramaddr[11]_i_29_n_0 ),
         .I4(data_loc_tracker[9]),
         .I5(data_loc_tracker[8]),
         .O(\bramaddr[11]_i_9_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT5 #(
     .INIT(32'hDFFFFFFF)) 
     \bramaddr[15]_i_10 
@@ -1931,7 +1955,7 @@ module design_1_tdc_0_1_data_recorder
         .I3(data_loc_tracker[2]),
         .I4(data_loc_tracker[3]),
         .O(\bramaddr[15]_i_10_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'h80)) 
     \bramaddr[15]_i_11 
@@ -1940,14 +1964,14 @@ module design_1_tdc_0_1_data_recorder
         .I2(data_loc_tracker[6]),
         .O(\bramaddr[15]_i_11_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000A8888888)) 
+    .INIT(64'h000000008A888888)) 
     \bramaddr[15]_i_12 
        (.I0(\bramaddr[15]_i_23_n_0 ),
         .I1(\bramaddr[15]_i_17_n_0 ),
-        .I2(data_loc_tracker[26]),
-        .I3(data_loc_tracker[25]),
-        .I4(\bramaddr[16]_i_12_n_0 ),
-        .I5(\bramaddr[16]_i_19_n_0 ),
+        .I2(\bramaddr[15]_i_24_n_0 ),
+        .I3(data_loc_tracker[26]),
+        .I4(data_loc_tracker[25]),
+        .I5(\bramaddr[15]_i_25_n_0 ),
         .O(\bramaddr[15]_i_12_n_0 ));
   LUT6 #(
     .INIT(64'h8000000000000000)) 
@@ -1963,13 +1987,13 @@ module design_1_tdc_0_1_data_recorder
     .INIT(64'hAAAAAAAABAAAAAAA)) 
     \bramaddr[15]_i_14 
        (.I0(\bramaddr[15]_i_10_n_0 ),
-        .I1(\bramaddr[15]_i_24_n_0 ),
-        .I2(\bramaddr[15]_i_11_n_0 ),
-        .I3(\bramaddr[16]_i_23_n_0 ),
-        .I4(data_loc_tracker[41]),
-        .I5(\bramaddr[15]_i_25_n_0 ),
+        .I1(\bramaddr[15]_i_26_n_0 ),
+        .I2(data_loc_tracker[6]),
+        .I3(data_loc_tracker[5]),
+        .I4(data_loc_tracker[4]),
+        .I5(\bramaddr[15]_i_27_n_0 ),
         .O(\bramaddr[15]_i_14_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT3 #(
     .INIT(8'h7F)) 
     \bramaddr[15]_i_15 
@@ -1980,12 +2004,12 @@ module design_1_tdc_0_1_data_recorder
   LUT6 #(
     .INIT(64'hFFBFBBBBAAAAAAAA)) 
     \bramaddr[15]_i_16 
-       (.I0(\bramaddr[15]_i_26_n_0 ),
-        .I1(\bramaddr[15]_i_27_n_0 ),
-        .I2(\bramaddr[15]_i_28_n_0 ),
-        .I3(\bramaddr[15]_i_29_n_0 ),
-        .I4(\bramaddr[15]_i_30_n_0 ),
-        .I5(\bramaddr[15]_i_31_n_0 ),
+       (.I0(\bramaddr[15]_i_28_n_0 ),
+        .I1(\bramaddr[15]_i_29_n_0 ),
+        .I2(\bramaddr[15]_i_30_n_0 ),
+        .I3(\bramaddr[15]_i_31_n_0 ),
+        .I4(\bramaddr[15]_i_32_n_0 ),
+        .I5(\bramaddr[15]_i_33_n_0 ),
         .O(\bramaddr[15]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'h7FFFFFFFFFFFFFFF)) 
@@ -1997,7 +2021,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(data_loc_tracker[20]),
         .I5(data_loc_tracker[19]),
         .O(\bramaddr[15]_i_17_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  (* SOFT_HLUTNM = "soft_lutpair67" *) 
   LUT3 #(
     .INIT(8'hDF)) 
     \bramaddr[15]_i_18 
@@ -2005,7 +2029,7 @@ module design_1_tdc_0_1_data_recorder
         .I1(DI),
         .I2(data_loc_tracker[1]),
         .O(\bramaddr[15]_i_18_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair151" *) 
+  (* SOFT_HLUTNM = "soft_lutpair116" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \bramaddr[15]_i_19 
@@ -2020,16 +2044,16 @@ module design_1_tdc_0_1_data_recorder
         .I2(\bramaddr[15]_i_6_n_0 ),
         .I3(\bramaddr[15]_i_7_n_0 ),
         .I4(\bramaddr[15]_i_8_n_0 ),
-        .I5(\bramaddr[16]_i_11_n_0 ),
+        .I5(\bramaddr[16]_i_9_n_0 ),
         .O(\bramaddr[15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair121" *) 
+  (* SOFT_HLUTNM = "soft_lutpair68" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \bramaddr[15]_i_20 
        (.I0(data_loc_tracker[55]),
         .I1(data_loc_tracker[54]),
         .O(\bramaddr[15]_i_20_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair115" *) 
+  (* SOFT_HLUTNM = "soft_lutpair113" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \bramaddr[15]_i_21 
@@ -2049,64 +2073,67 @@ module design_1_tdc_0_1_data_recorder
   LUT6 #(
     .INIT(64'hFFFDFDFDF5F5F5F5)) 
     \bramaddr[15]_i_23 
-       (.I0(\bramaddr[15]_i_32_n_0 ),
-        .I1(\bramaddr[16]_i_24_n_0 ),
+       (.I0(\bramaddr[15]_i_34_n_0 ),
+        .I1(\bramaddr[16]_i_18_n_0 ),
         .I2(\bramaddr[15]_i_17_n_0 ),
         .I3(\bramaddr[15]_i_22_n_0 ),
-        .I4(\bramaddr[15]_i_33_n_0 ),
-        .I5(\bramaddr[15]_i_34_n_0 ),
-        .O(\bramaddr[15]_i_23_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFBFFFFFFF)) 
-    \bramaddr[15]_i_24 
-       (.I0(\bramaddr[15]_i_35_n_0 ),
-        .I1(data_loc_tracker[11]),
-        .I2(data_loc_tracker[10]),
-        .I3(data_loc_tracker[12]),
-        .I4(\bramaddr[15]_i_28_n_0 ),
+        .I4(\bramaddr[15]_i_35_n_0 ),
         .I5(\bramaddr[15]_i_36_n_0 ),
+        .O(\bramaddr[15]_i_23_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    \bramaddr[15]_i_24 
+       (.I0(data_loc_tracker[27]),
+        .I1(data_loc_tracker[30]),
+        .I2(data_loc_tracker[28]),
+        .I3(data_loc_tracker[29]),
         .O(\bramaddr[15]_i_24_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
-  LUT3 #(
-    .INIT(8'h7F)) 
+  LUT6 #(
+    .INIT(64'h7FFFFFFFFFFFFFFF)) 
     \bramaddr[15]_i_25 
-       (.I0(data_loc_tracker[35]),
-        .I1(data_loc_tracker[36]),
-        .I2(data_loc_tracker[37]),
+       (.I0(data_loc_tracker[17]),
+        .I1(data_loc_tracker[16]),
+        .I2(data_loc_tracker[18]),
+        .I3(data_loc_tracker[13]),
+        .I4(data_loc_tracker[15]),
+        .I5(data_loc_tracker[14]),
         .O(\bramaddr[15]_i_25_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  LUT6 #(
+    .INIT(64'hFEFFFFFFFFFFFFFF)) 
+    \bramaddr[15]_i_26 
+       (.I0(\bramaddr[15]_i_37_n_0 ),
+        .I1(\bramaddr[15]_i_38_n_0 ),
+        .I2(\bramaddr[7]_i_47_n_0 ),
+        .I3(\bramaddr[15]_i_39_n_0 ),
+        .I4(data_loc_tracker[55]),
+        .I5(data_loc_tracker[60]),
+        .O(\bramaddr[15]_i_26_n_0 ));
+  LUT6 #(
+    .INIT(64'h7FFFFFFFFFFFFFFF)) 
+    \bramaddr[15]_i_27 
+       (.I0(data_loc_tracker[11]),
+        .I1(data_loc_tracker[10]),
+        .I2(data_loc_tracker[12]),
+        .I3(data_loc_tracker[47]),
+        .I4(data_loc_tracker[30]),
+        .I5(\data_loc[3]_i_10_n_0 ),
+        .O(\bramaddr[15]_i_27_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair102" *) 
   LUT3 #(
     .INIT(8'h7F)) 
-    \bramaddr[15]_i_26 
+    \bramaddr[15]_i_28 
        (.I0(data_loc_tracker[12]),
         .I1(data_loc_tracker[10]),
         .I2(data_loc_tracker[11]),
-        .O(\bramaddr[15]_i_26_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
-  LUT3 #(
-    .INIT(8'h80)) 
-    \bramaddr[15]_i_27 
-       (.I0(data_loc_tracker[16]),
-        .I1(data_loc_tracker[17]),
-        .I2(data_loc_tracker[18]),
-        .O(\bramaddr[15]_i_27_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair98" *) 
-  LUT3 #(
-    .INIT(8'h80)) 
-    \bramaddr[15]_i_28 
-       (.I0(data_loc_tracker[22]),
-        .I1(data_loc_tracker[23]),
-        .I2(data_loc_tracker[24]),
         .O(\bramaddr[15]_i_28_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000AAFE0000)) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  LUT3 #(
+    .INIT(8'h80)) 
     \bramaddr[15]_i_29 
-       (.I0(\bramaddr[15]_i_37_n_0 ),
-        .I1(\bramaddr[15]_i_38_n_0 ),
-        .I2(\bramaddr[15]_i_25_n_0 ),
-        .I3(\bramaddr[15]_i_39_n_0 ),
-        .I4(data_loc_tracker[26]),
-        .I5(\data_loc[3]_i_13_n_0 ),
+       (.I0(data_loc_tracker[18]),
+        .I1(data_loc_tracker[16]),
+        .I2(data_loc_tracker[17]),
         .O(\bramaddr[15]_i_29_n_0 ));
   LUT6 #(
     .INIT(64'h8F888F8F8F888F88)) 
@@ -2118,98 +2145,96 @@ module design_1_tdc_0_1_data_recorder
         .I4(\bramaddr[15]_i_8_n_0 ),
         .I5(\bramaddr[15]_i_9_n_0 ),
         .O(\bramaddr[15]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair61" *) 
   LUT3 #(
     .INIT(8'h80)) 
     \bramaddr[15]_i_30 
+       (.I0(data_loc_tracker[22]),
+        .I1(data_loc_tracker[23]),
+        .I2(data_loc_tracker[24]),
+        .O(\bramaddr[15]_i_30_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000077F70000)) 
+    \bramaddr[15]_i_31 
+       (.I0(data_loc_tracker[30]),
+        .I1(\bramaddr[15]_i_39_n_0 ),
+        .I2(\bramaddr[15]_i_40_n_0 ),
+        .I3(\bramaddr[15]_i_41_n_0 ),
+        .I4(data_loc_tracker[26]),
+        .I5(\data_loc[3]_i_13_n_0 ),
+        .O(\bramaddr[15]_i_31_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT3 #(
+    .INIT(8'h80)) 
+    \bramaddr[15]_i_32 
        (.I0(data_loc_tracker[19]),
         .I1(data_loc_tracker[20]),
         .I2(data_loc_tracker[21]),
-        .O(\bramaddr[15]_i_30_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair147" *) 
+        .O(\bramaddr[15]_i_32_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair145" *) 
   LUT3 #(
     .INIT(8'h80)) 
-    \bramaddr[15]_i_31 
+    \bramaddr[15]_i_33 
        (.I0(data_loc_tracker[14]),
         .I1(data_loc_tracker[15]),
         .I2(data_loc_tracker[13]),
-        .O(\bramaddr[15]_i_31_n_0 ));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    \bramaddr[15]_i_32 
-       (.I0(data_loc_tracker[33]),
-        .I1(data_loc_tracker[31]),
-        .I2(data_loc_tracker[32]),
-        .I3(data_loc_tracker[37]),
-        .I4(data_loc_tracker[36]),
-        .I5(\bramaddr[11]_i_46_n_0 ),
-        .O(\bramaddr[15]_i_32_n_0 ));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    \bramaddr[15]_i_33 
-       (.I0(data_loc_tracker[50]),
-        .I1(data_loc_tracker[53]),
-        .I2(data_loc_tracker[55]),
-        .I3(data_loc_tracker[54]),
-        .I4(data_loc_tracker[52]),
-        .I5(data_loc_tracker[51]),
         .O(\bramaddr[15]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'h8000000000000000)) 
     \bramaddr[15]_i_34 
+       (.I0(data_loc_tracker[33]),
+        .I1(data_loc_tracker[31]),
+        .I2(data_loc_tracker[32]),
+        .I3(\data_loc[1]_i_13_n_0 ),
+        .I4(data_loc_tracker[35]),
+        .I5(data_loc_tracker[34]),
+        .O(\bramaddr[15]_i_34_n_0 ));
+  LUT6 #(
+    .INIT(64'h8000000000000000)) 
+    \bramaddr[15]_i_35 
+       (.I0(data_loc_tracker[55]),
+        .I1(data_loc_tracker[54]),
+        .I2(data_loc_tracker[52]),
+        .I3(data_loc_tracker[51]),
+        .I4(data_loc_tracker[50]),
+        .I5(data_loc_tracker[53]),
+        .O(\bramaddr[15]_i_35_n_0 ));
+  LUT6 #(
+    .INIT(64'h8000000000000000)) 
+    \bramaddr[15]_i_36 
        (.I0(data_loc_tracker[38]),
         .I1(data_loc_tracker[39]),
         .I2(data_loc_tracker[43]),
         .I3(data_loc_tracker[42]),
         .I4(data_loc_tracker[41]),
         .I5(data_loc_tracker[40]),
-        .O(\bramaddr[15]_i_34_n_0 ));
-  LUT6 #(
-    .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \bramaddr[15]_i_35 
-       (.I0(\data_loc[3]_i_10_n_0 ),
-        .I1(data_loc_tracker[55]),
-        .I2(data_loc_tracker[60]),
-        .I3(data_loc_tracker[48]),
-        .I4(data_loc_tracker[49]),
-        .I5(\data_loc[3]_i_9_n_0 ),
-        .O(\bramaddr[15]_i_35_n_0 ));
-  LUT6 #(
-    .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \bramaddr[15]_i_36 
-       (.I0(data_loc_tracker[30]),
-        .I1(data_loc_tracker[18]),
-        .I2(data_loc_tracker[59]),
-        .I3(data_loc_tracker[47]),
-        .I4(data_loc_tracker[61]),
-        .I5(\bramaddr[11]_i_68_n_0 ),
         .O(\bramaddr[15]_i_36_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair145" *) 
-  LUT3 #(
-    .INIT(8'h7F)) 
+  LUT6 #(
+    .INIT(64'h7FFFFFFFFFFFFFFF)) 
     \bramaddr[15]_i_37 
-       (.I0(data_loc_tracker[28]),
-        .I1(data_loc_tracker[29]),
-        .I2(data_loc_tracker[30]),
+       (.I0(data_loc_tracker[37]),
+        .I1(data_loc_tracker[36]),
+        .I2(data_loc_tracker[35]),
+        .I3(data_loc_tracker[42]),
+        .I4(data_loc_tracker[41]),
+        .I5(data_loc_tracker[43]),
         .O(\bramaddr[15]_i_37_n_0 ));
   LUT6 #(
-    .INIT(64'h8000AAAAAAAAAAAA)) 
+    .INIT(64'hFFFFFFFF7FFFFFFF)) 
     \bramaddr[15]_i_38 
-       (.I0(\bramaddr[3]_i_30_n_0 ),
-        .I1(\bramaddr[15]_i_40_n_0 ),
-        .I2(\bramaddr[16]_i_18_n_0 ),
-        .I3(data_loc_tracker[44]),
-        .I4(\bramaddr[16]_i_23_n_0 ),
-        .I5(data_loc_tracker[41]),
+       (.I0(\data_loc[3]_i_9_n_0 ),
+        .I1(data_loc_tracker[22]),
+        .I2(data_loc_tracker[18]),
+        .I3(data_loc_tracker[59]),
+        .I4(data_loc_tracker[61]),
+        .I5(\bramaddr[15]_i_42_n_0 ),
         .O(\bramaddr[15]_i_38_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT4 #(
-    .INIT(16'h7FFF)) 
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \bramaddr[15]_i_39 
-       (.I0(data_loc_tracker[31]),
-        .I1(data_loc_tracker[34]),
-        .I2(data_loc_tracker[33]),
-        .I3(data_loc_tracker[32]),
+       (.I0(data_loc_tracker[29]),
+        .I1(data_loc_tracker[28]),
         .O(\bramaddr[15]_i_39_n_0 ));
   LUT6 #(
     .INIT(64'h8F8888888F888F88)) 
@@ -2222,25 +2247,65 @@ module design_1_tdc_0_1_data_recorder
         .I5(\bramaddr[15]_i_13_n_0 ),
         .O(\bramaddr[15]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'h7FFF7F7F7F7F7F7F)) 
+    .INIT(64'hFFFFFFFF80808000)) 
     \bramaddr[15]_i_40 
-       (.I0(data_loc_tracker[49]),
-        .I1(data_loc_tracker[47]),
-        .I2(data_loc_tracker[48]),
-        .I3(\bramaddr[11]_i_74_n_0 ),
-        .I4(data_loc_tracker[52]),
-        .I5(\bramaddr[15]_i_41_n_0 ),
+       (.I0(data_loc_tracker[44]),
+        .I1(data_loc_tracker[45]),
+        .I2(data_loc_tracker[46]),
+        .I3(\bramaddr[15]_i_43_n_0 ),
+        .I4(\bramaddr[15]_i_44_n_0 ),
+        .I5(\bramaddr[15]_i_37_n_0 ),
         .O(\bramaddr[15]_i_40_n_0 ));
   LUT6 #(
-    .INIT(64'hFF7F7F7F7F7F7F7F)) 
+    .INIT(64'h7FFFFFFF7FFF7FFF)) 
     \bramaddr[15]_i_41 
-       (.I0(data_loc_tracker[54]),
-        .I1(data_loc_tracker[55]),
-        .I2(data_loc_tracker[53]),
-        .I3(data_loc_tracker[57]),
-        .I4(data_loc_tracker[56]),
-        .I5(data_loc_tracker[58]),
+       (.I0(data_loc_tracker[32]),
+        .I1(data_loc_tracker[33]),
+        .I2(data_loc_tracker[34]),
+        .I3(data_loc_tracker[31]),
+        .I4(\bramaddr[15]_i_45_n_0 ),
+        .I5(\bramaddr[3]_i_30_n_0 ),
         .O(\bramaddr[15]_i_41_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair125" *) 
+  LUT2 #(
+    .INIT(4'h7)) 
+    \bramaddr[15]_i_42 
+       (.I0(data_loc_tracker[24]),
+        .I1(data_loc_tracker[23]),
+        .O(\bramaddr[15]_i_42_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT3 #(
+    .INIT(8'h7F)) 
+    \bramaddr[15]_i_43 
+       (.I0(data_loc_tracker[49]),
+        .I1(data_loc_tracker[48]),
+        .I2(data_loc_tracker[47]),
+        .O(\bramaddr[15]_i_43_n_0 ));
+  LUT6 #(
+    .INIT(64'h000000008FFF0000)) 
+    \bramaddr[15]_i_44 
+       (.I0(data_loc_tracker[58]),
+        .I1(\bramaddr[15]_i_46_n_0 ),
+        .I2(data_loc_tracker[55]),
+        .I3(\data_loc[3]_i_10_n_0 ),
+        .I4(data_loc_tracker[52]),
+        .I5(\bramaddr[11]_i_63_n_0 ),
+        .O(\bramaddr[15]_i_44_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  LUT3 #(
+    .INIT(8'h7F)) 
+    \bramaddr[15]_i_45 
+       (.I0(data_loc_tracker[35]),
+        .I1(data_loc_tracker[36]),
+        .I2(data_loc_tracker[37]),
+        .O(\bramaddr[15]_i_45_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \bramaddr[15]_i_46 
+       (.I0(data_loc_tracker[57]),
+        .I1(data_loc_tracker[56]),
+        .O(\bramaddr[15]_i_46_n_0 ));
   LUT6 #(
     .INIT(64'h888F88888F8F8F8F)) 
     \bramaddr[15]_i_5 
@@ -2256,15 +2321,15 @@ module design_1_tdc_0_1_data_recorder
     \bramaddr[15]_i_6 
        (.I0(\data_loc[2]_i_4_n_0 ),
         .I1(data_loc_tracker[13]),
-        .I2(data_loc_tracker[16]),
-        .I3(data_loc_tracker[17]),
-        .I4(data_loc_tracker[18]),
+        .I2(data_loc_tracker[18]),
+        .I3(data_loc_tracker[16]),
+        .I4(data_loc_tracker[17]),
         .I5(\bramaddr[15]_i_17_n_0 ),
         .O(\bramaddr[15]_i_6_n_0 ));
   LUT6 #(
     .INIT(64'hEFFFFFFFFFFFFFFF)) 
     \bramaddr[15]_i_7 
-       (.I0(\bramaddr[16]_i_6_n_0 ),
+       (.I0(\bramaddr[16]_i_14_n_0 ),
         .I1(\bramaddr[15]_i_18_n_0 ),
         .I2(data_loc_tracker[2]),
         .I3(data_loc_tracker[3]),
@@ -2274,21 +2339,21 @@ module design_1_tdc_0_1_data_recorder
   LUT6 #(
     .INIT(64'hEFFFFFFFFFFFFFFF)) 
     \bramaddr[15]_i_8 
-       (.I0(\bramaddr[16]_i_22_n_0 ),
-        .I1(\bramaddr[16]_i_21_n_0 ),
+       (.I0(\bramaddr[16]_i_16_n_0 ),
+        .I1(\bramaddr[16]_i_15_n_0 ),
         .I2(\bramaddr[15]_i_19_n_0 ),
         .I3(data_loc_tracker[27]),
         .I4(data_loc_tracker[29]),
         .I5(data_loc_tracker[28]),
         .O(\bramaddr[15]_i_8_n_0 ));
   LUT6 #(
-    .INIT(64'h555555555555D555)) 
+    .INIT(64'h555555555D555555)) 
     \bramaddr[15]_i_9 
-       (.I0(\bramaddr[16]_i_11_n_0 ),
-        .I1(data_loc_tracker[50]),
-        .I2(data_loc_tracker[53]),
-        .I3(\bramaddr[15]_i_20_n_0 ),
-        .I4(\bramaddr[15]_i_21_n_0 ),
+       (.I0(\bramaddr[16]_i_9_n_0 ),
+        .I1(\bramaddr[15]_i_20_n_0 ),
+        .I2(\bramaddr[15]_i_21_n_0 ),
+        .I3(data_loc_tracker[50]),
+        .I4(data_loc_tracker[53]),
         .I5(\bramaddr[15]_i_22_n_0 ),
         .O(\bramaddr[15]_i_9_n_0 ));
   LUT2 #(
@@ -2298,215 +2363,202 @@ module design_1_tdc_0_1_data_recorder
         .I1(\bramaddr[16]_i_4_n_0 ),
         .O(\bramaddr[16]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFF7FF)) 
+    .INIT(64'h0000000004000000)) 
     \bramaddr[16]_i_10 
-       (.I0(data_loc_tracker[26]),
-        .I1(data_loc_tracker[27]),
-        .I2(\bramaddr[16]_i_21_n_0 ),
-        .I3(\data_loc[1]_i_7_n_0 ),
-        .I4(\bramaddr[16]_i_22_n_0 ),
-        .I5(\bramaddr[15]_i_10_n_0 ),
+       (.I0(\bramaddr[16]_i_19_n_0 ),
+        .I1(\bramaddr[16]_i_20_n_0 ),
+        .I2(\bramaddr[15]_i_21_n_0 ),
+        .I3(\bramaddr[11]_i_49_n_0 ),
+        .I4(\bramaddr[11]_i_37_n_0 ),
+        .I5(\bramaddr[15]_i_25_n_0 ),
         .O(\bramaddr[16]_i_10_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000080000000)) 
+    .INIT(64'hFF7FFFFFFFFFFFFF)) 
     \bramaddr[16]_i_11 
-       (.I0(data_loc_tracker[40]),
-        .I1(data_loc_tracker[41]),
-        .I2(\bramaddr[16]_i_23_n_0 ),
-        .I3(data_loc_tracker[39]),
-        .I4(data_loc_tracker[38]),
-        .I5(\bramaddr[16]_i_24_n_0 ),
+       (.I0(data_loc_tracker[49]),
+        .I1(data_loc_tracker[48]),
+        .I2(data_loc_tracker[47]),
+        .I3(\bramaddr[15]_i_24_n_0 ),
+        .I4(\bramaddr[16]_i_21_n_0 ),
+        .I5(\data_loc[4]_i_6_n_0 ),
         .O(\bramaddr[16]_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \bramaddr[16]_i_12 
-       (.I0(data_loc_tracker[28]),
-        .I1(data_loc_tracker[29]),
-        .I2(data_loc_tracker[27]),
-        .I3(data_loc_tracker[30]),
+       (.I0(data_loc_tracker[21]),
+        .I1(data_loc_tracker[22]),
+        .I2(data_loc_tracker[56]),
+        .I3(data_loc_tracker[55]),
         .O(\bramaddr[16]_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
+  LUT6 #(
+    .INIT(64'h7FFFFFFFFFFFFFFF)) 
     \bramaddr[16]_i_13 
        (.I0(data_loc_tracker[41]),
         .I1(data_loc_tracker[40]),
+        .I2(data_loc_tracker[42]),
+        .I3(data_loc_tracker[63]),
+        .I4(data_loc_tracker[50]),
+        .I5(\data_loc[3]_i_10_n_0 ),
         .O(\bramaddr[16]_i_13_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFBFFFFFFF)) 
+    .INIT(64'h7FFFFFFFFFFFFFFF)) 
     \bramaddr[16]_i_14 
-       (.I0(\bramaddr[15]_i_21_n_0 ),
-        .I1(\bramaddr[7]_i_24_n_0 ),
-        .I2(data_loc_tracker[57]),
-        .I3(data_loc_tracker[58]),
-        .I4(\data_loc[3]_i_10_n_0 ),
-        .I5(\bramaddr[16]_i_25_n_0 ),
-        .O(\bramaddr[16]_i_14_n_0 ));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    \bramaddr[16]_i_15 
-       (.I0(\bramaddr[11]_i_46_n_0 ),
-        .I1(\bramaddr[11]_i_43_n_0 ),
-        .I2(data_loc_tracker[59]),
-        .I3(data_loc_tracker[60]),
-        .I4(data_loc_tracker[61]),
-        .I5(data_loc_tracker[62]),
-        .O(\bramaddr[16]_i_15_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT2 #(
-    .INIT(4'h7)) 
-    \bramaddr[16]_i_16 
-       (.I0(data_loc_tracker[44]),
-        .I1(data_loc_tracker[43]),
-        .O(\bramaddr[16]_i_16_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair123" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \bramaddr[16]_i_17 
-       (.I0(data_loc_tracker[55]),
-        .I1(data_loc_tracker[56]),
-        .O(\bramaddr[16]_i_17_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair110" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \bramaddr[16]_i_18 
-       (.I0(data_loc_tracker[46]),
-        .I1(data_loc_tracker[45]),
-        .O(\bramaddr[16]_i_18_n_0 ));
-  LUT6 #(
-    .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \bramaddr[16]_i_19 
-       (.I0(data_loc_tracker[18]),
-        .I1(data_loc_tracker[17]),
-        .I2(data_loc_tracker[16]),
-        .I3(data_loc_tracker[13]),
-        .I4(data_loc_tracker[15]),
-        .I5(data_loc_tracker[14]),
-        .O(\bramaddr[16]_i_19_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair142" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \bramaddr[16]_i_20 
-       (.I0(data_loc_tracker[5]),
-        .I1(data_loc_tracker[4]),
-        .O(\bramaddr[16]_i_20_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
-  LUT4 #(
-    .INIT(16'h7FFF)) 
-    \bramaddr[16]_i_21 
-       (.I0(data_loc_tracker[33]),
-        .I1(data_loc_tracker[31]),
-        .I2(data_loc_tracker[32]),
-        .I3(data_loc_tracker[30]),
-        .O(\bramaddr[16]_i_21_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair73" *) 
-  LUT4 #(
-    .INIT(16'h7FFF)) 
-    \bramaddr[16]_i_22 
-       (.I0(data_loc_tracker[34]),
-        .I1(data_loc_tracker[35]),
-        .I2(data_loc_tracker[36]),
-        .I3(data_loc_tracker[37]),
-        .O(\bramaddr[16]_i_22_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair99" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \bramaddr[16]_i_23 
-       (.I0(data_loc_tracker[43]),
-        .I1(data_loc_tracker[42]),
-        .O(\bramaddr[16]_i_23_n_0 ));
-  LUT6 #(
-    .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \bramaddr[16]_i_24 
-       (.I0(data_loc_tracker[47]),
-        .I1(data_loc_tracker[44]),
-        .I2(data_loc_tracker[46]),
-        .I3(data_loc_tracker[45]),
-        .I4(data_loc_tracker[49]),
-        .I5(data_loc_tracker[48]),
-        .O(\bramaddr[16]_i_24_n_0 ));
-  LUT6 #(
-    .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \bramaddr[16]_i_25 
-       (.I0(data_loc_tracker[33]),
-        .I1(data_loc_tracker[31]),
-        .I2(data_loc_tracker[32]),
-        .I3(data_loc_tracker[63]),
-        .I4(data_loc_tracker[22]),
-        .I5(data_loc_tracker[21]),
-        .O(\bramaddr[16]_i_25_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFEF000000000000)) 
-    \bramaddr[16]_i_4 
-       (.I0(\bramaddr[16]_i_6_n_0 ),
-        .I1(\bramaddr[16]_i_7_n_0 ),
-        .I2(\bramaddr[16]_i_8_n_0 ),
-        .I3(\bramaddr[16]_i_9_n_0 ),
-        .I4(l1a_seen_i_1_n_0),
-        .I5(inner_cntr__0[1]),
-        .O(\bramaddr[16]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h88888F8888888888)) 
-    \bramaddr[16]_i_5 
-       (.I0(bramaddr[16]),
-        .I1(DI),
-        .I2(\bramaddr[16]_i_10_n_0 ),
-        .I3(\data_loc[3]_i_4_n_0 ),
-        .I4(\data_loc[5]_i_4_n_0 ),
-        .I5(\bramaddr[16]_i_11_n_0 ),
-        .O(\bramaddr[16]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \bramaddr[16]_i_6 
        (.I0(\data_loc[3]_i_14_n_0 ),
         .I1(data_loc_tracker[12]),
         .I2(data_loc_tracker[9]),
         .I3(data_loc_tracker[6]),
         .I4(data_loc_tracker[8]),
         .I5(data_loc_tracker[7]),
+        .O(\bramaddr[16]_i_14_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair63" *) 
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    \bramaddr[16]_i_15 
+       (.I0(data_loc_tracker[33]),
+        .I1(data_loc_tracker[31]),
+        .I2(data_loc_tracker[32]),
+        .I3(data_loc_tracker[30]),
+        .O(\bramaddr[16]_i_15_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    \bramaddr[16]_i_16 
+       (.I0(data_loc_tracker[34]),
+        .I1(data_loc_tracker[35]),
+        .I2(data_loc_tracker[36]),
+        .I3(data_loc_tracker[37]),
+        .O(\bramaddr[16]_i_16_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \bramaddr[16]_i_17 
+       (.I0(data_loc_tracker[41]),
+        .I1(data_loc_tracker[40]),
+        .O(\bramaddr[16]_i_17_n_0 ));
+  LUT6 #(
+    .INIT(64'h7FFFFFFFFFFFFFFF)) 
+    \bramaddr[16]_i_18 
+       (.I0(data_loc_tracker[49]),
+        .I1(data_loc_tracker[48]),
+        .I2(data_loc_tracker[47]),
+        .I3(data_loc_tracker[44]),
+        .I4(data_loc_tracker[46]),
+        .I5(data_loc_tracker[45]),
+        .O(\bramaddr[16]_i_18_n_0 ));
+  LUT6 #(
+    .INIT(64'hF7FFFFFFFFFFFFFF)) 
+    \bramaddr[16]_i_19 
+       (.I0(data_loc_tracker[58]),
+        .I1(data_loc_tracker[57]),
+        .I2(\bramaddr[16]_i_22_n_0 ),
+        .I3(data_loc_tracker[61]),
+        .I4(data_loc_tracker[62]),
+        .I5(\bramaddr[16]_i_23_n_0 ),
+        .O(\bramaddr[16]_i_19_n_0 ));
+  LUT6 #(
+    .INIT(64'h8000000000000000)) 
+    \bramaddr[16]_i_20 
+       (.I0(data_loc_tracker[24]),
+        .I1(data_loc_tracker[23]),
+        .I2(\bramaddr[11]_i_44_n_0 ),
+        .I3(\bramaddr[15]_i_19_n_0 ),
+        .I4(data_loc_tracker[59]),
+        .I5(data_loc_tracker[60]),
+        .O(\bramaddr[16]_i_20_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair63" *) 
+  LUT3 #(
+    .INIT(8'h80)) 
+    \bramaddr[16]_i_21 
+       (.I0(data_loc_tracker[32]),
+        .I1(data_loc_tracker[31]),
+        .I2(data_loc_tracker[33]),
+        .O(\bramaddr[16]_i_21_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
+  LUT2 #(
+    .INIT(4'h7)) 
+    \bramaddr[16]_i_22 
+       (.I0(data_loc_tracker[44]),
+        .I1(data_loc_tracker[43]),
+        .O(\bramaddr[16]_i_22_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \bramaddr[16]_i_23 
+       (.I0(data_loc_tracker[46]),
+        .I1(data_loc_tracker[45]),
+        .O(\bramaddr[16]_i_23_n_0 ));
+  LUT6 #(
+    .INIT(64'h1000000000000000)) 
+    \bramaddr[16]_i_4 
+       (.I0(\bramaddr[16]_i_6_n_0 ),
+        .I1(\bramaddr[16]_i_7_n_0 ),
+        .I2(\l1a_cntr_sync120_reg_n_0_[7] ),
+        .I3(\l1a_cntr_sync120_reg_n_0_[4] ),
+        .I4(\l1a_cntr_sync120_reg_n_0_[0] ),
+        .I5(inner_cntr__0[2]),
+        .O(\bramaddr[16]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'h88888F8888888888)) 
+    \bramaddr[16]_i_5 
+       (.I0(bramaddr[16]),
+        .I1(DI),
+        .I2(\bramaddr[16]_i_8_n_0 ),
+        .I3(\data_loc[3]_i_4_n_0 ),
+        .I4(\data_loc[5]_i_4_n_0 ),
+        .I5(\bramaddr[16]_i_9_n_0 ),
+        .O(\bramaddr[16]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000000002000)) 
+    \bramaddr[16]_i_6 
+       (.I0(\bramaddr[16]_i_10_n_0 ),
+        .I1(\bramaddr[16]_i_11_n_0 ),
+        .I2(\bramaddr[16]_i_12_n_0 ),
+        .I3(\data_loc[3]_i_3_n_0 ),
+        .I4(\bramaddr[16]_i_13_n_0 ),
+        .I5(\bramaddr[16]_i_14_n_0 ),
         .O(\bramaddr[16]_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFF7FFFFFFF)) 
+    .INIT(64'hFDFFFFFFFFFFFFFF)) 
     \bramaddr[16]_i_7 
-       (.I0(\data_loc[4]_i_6_n_0 ),
-        .I1(\bramaddr[16]_i_12_n_0 ),
-        .I2(\bramaddr[16]_i_13_n_0 ),
-        .I3(data_loc_tracker[42]),
-        .I4(\data_loc[3]_i_3_n_0 ),
-        .I5(\bramaddr[16]_i_14_n_0 ),
+       (.I0(\l1a_cntr_sync120_reg_n_0_[8] ),
+        .I1(\l1a_cntr_sync120_reg_n_0_[2] ),
+        .I2(\l1a_cntr_sync120_reg_n_0_[6] ),
+        .I3(\l1a_cntr_sync120_reg_n_0_[1] ),
+        .I4(\l1a_cntr_sync120_reg_n_0_[3] ),
+        .I5(\l1a_cntr_sync120_reg_n_0_[5] ),
         .O(\bramaddr[16]_i_7_n_0 ));
   LUT6 #(
-    .INIT(64'h2000000000000000)) 
+    .INIT(64'hFFFFFFFFFFFFFF7F)) 
     \bramaddr[16]_i_8 
-       (.I0(\bramaddr[16]_i_15_n_0 ),
-        .I1(\bramaddr[16]_i_16_n_0 ),
-        .I2(\bramaddr[16]_i_17_n_0 ),
-        .I3(data_loc_tracker[23]),
-        .I4(data_loc_tracker[26]),
-        .I5(\bramaddr[16]_i_18_n_0 ),
+       (.I0(data_loc_tracker[26]),
+        .I1(data_loc_tracker[27]),
+        .I2(\data_loc[1]_i_7_n_0 ),
+        .I3(\bramaddr[16]_i_15_n_0 ),
+        .I4(\bramaddr[16]_i_16_n_0 ),
+        .I5(\bramaddr[15]_i_10_n_0 ),
         .O(\bramaddr[16]_i_8_n_0 ));
   LUT6 #(
-    .INIT(64'hBFFFFFFFFFFFFFFF)) 
+    .INIT(64'h0000000080000000)) 
     \bramaddr[16]_i_9 
-       (.I0(\bramaddr[16]_i_19_n_0 ),
-        .I1(data_loc_tracker[50]),
-        .I2(data_loc_tracker[49]),
-        .I3(\bramaddr[16]_i_20_n_0 ),
-        .I4(data_loc_tracker[47]),
-        .I5(data_loc_tracker[48]),
+       (.I0(\bramaddr[16]_i_17_n_0 ),
+        .I1(data_loc_tracker[42]),
+        .I2(data_loc_tracker[43]),
+        .I3(data_loc_tracker[39]),
+        .I4(data_loc_tracker[38]),
+        .I5(\bramaddr[16]_i_18_n_0 ),
         .O(\bramaddr[16]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFF55551000)) 
     \bramaddr[3]_i_10 
-       (.I0(\bramaddr[3]_i_18_n_0 ),
-        .I1(\bramaddr[3]_i_19_n_0 ),
-        .I2(\bramaddr[3]_i_20_n_0 ),
-        .I3(\bramaddr[3]_i_21_n_0 ),
-        .I4(\bramaddr[3]_i_22_n_0 ),
-        .I5(\bramaddr[3]_i_23_n_0 ),
+       (.I0(\bramaddr[3]_i_19_n_0 ),
+        .I1(\bramaddr[3]_i_20_n_0 ),
+        .I2(\bramaddr[3]_i_21_n_0 ),
+        .I3(\bramaddr[3]_i_22_n_0 ),
+        .I4(\bramaddr[3]_i_23_n_0 ),
+        .I5(\bramaddr[3]_i_24_n_0 ),
         .O(\bramaddr[3]_i_10_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT5 #(
     .INIT(32'h4FFFFFFF)) 
     \bramaddr[3]_i_11 
@@ -2516,82 +2568,81 @@ module design_1_tdc_0_1_data_recorder
         .I3(data_loc_tracker[3]),
         .I4(data_loc_tracker[1]),
         .O(\bramaddr[3]_i_11_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000AAAAEEFE)) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \bramaddr[3]_i_12 
-       (.I0(\data_loc[1]_i_2_n_0 ),
-        .I1(\data_loc[1]_i_6_n_0 ),
-        .I2(\data_loc[1]_i_7_n_0 ),
-        .I3(\bramaddr[3]_i_24_n_0 ),
-        .I4(\data_loc[1]_i_9_n_0 ),
-        .I5(\data_loc[1]_i_4_n_0 ),
+       (.I0(data_loc_tracker[1]),
+        .I1(data_loc_tracker[0]),
         .O(\bramaddr[3]_i_12_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFF7FFFFFFF)) 
+    .INIT(64'hFFFFFFFF55555100)) 
     \bramaddr[3]_i_13 
-       (.I0(data_loc_tracker[17]),
-        .I1(data_loc_tracker[45]),
-        .I2(data_loc_tracker[61]),
-        .I3(data_loc_tracker[6]),
-        .I4(data_loc_tracker[54]),
-        .I5(\bramaddr[3]_i_25_n_0 ),
+       (.I0(\data_loc[1]_i_9_n_0 ),
+        .I1(\bramaddr[3]_i_25_n_0 ),
+        .I2(\data_loc[1]_i_8_n_0 ),
+        .I3(\data_loc[1]_i_7_n_0 ),
+        .I4(\data_loc[1]_i_6_n_0 ),
+        .I5(\data_loc[1]_i_2_n_0 ),
         .O(\bramaddr[3]_i_13_n_0 ));
   LUT6 #(
-    .INIT(64'hEFFFFFFFFFFFFFFF)) 
+    .INIT(64'h7FFFFFFFFFFFFFFF)) 
     \bramaddr[3]_i_14 
-       (.I0(\bramaddr[3]_i_26_n_0 ),
-        .I1(\bramaddr[3]_i_27_n_0 ),
-        .I2(data_loc_tracker[1]),
-        .I3(data_loc_tracker[2]),
-        .I4(data_loc_tracker[18]),
-        .I5(data_loc_tracker[22]),
+       (.I0(data_loc_tracker[45]),
+        .I1(data_loc_tracker[54]),
+        .I2(data_loc_tracker[61]),
+        .I3(data_loc_tracker[17]),
+        .I4(data_loc_tracker[6]),
+        .I5(\bramaddr[11]_i_58_n_0 ),
         .O(\bramaddr[3]_i_14_n_0 ));
   LUT6 #(
-    .INIT(64'h7FFFFFFFFFFFFFFF)) 
+    .INIT(64'hFFFFFFFFBFFFFFFF)) 
     \bramaddr[3]_i_15 
+       (.I0(\bramaddr[3]_i_26_n_0 ),
+        .I1(data_loc_tracker[18]),
+        .I2(data_loc_tracker[22]),
+        .I3(data_loc_tracker[7]),
+        .I4(data_loc_tracker[23]),
+        .I5(\bramaddr[3]_i_27_n_0 ),
+        .O(\bramaddr[3]_i_15_n_0 ));
+  LUT6 #(
+    .INIT(64'h7FFFFFFFFFFFFFFF)) 
+    \bramaddr[3]_i_16 
        (.I0(data_loc_tracker[38]),
         .I1(data_loc_tracker[40]),
-        .I2(data_loc_tracker[24]),
-        .I3(data_loc_tracker[8]),
-        .I4(data_loc_tracker[49]),
-        .I5(data_loc_tracker[50]),
-        .O(\bramaddr[3]_i_15_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+        .I2(data_loc_tracker[49]),
+        .I3(data_loc_tracker[50]),
+        .I4(data_loc_tracker[55]),
+        .I5(data_loc_tracker[60]),
+        .O(\bramaddr[3]_i_16_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT4 #(
     .INIT(16'h0888)) 
-    \bramaddr[3]_i_16 
+    \bramaddr[3]_i_17 
        (.I0(data_loc_tracker[7]),
         .I1(data_loc_tracker[8]),
         .I2(data_loc_tracker[9]),
         .I3(data_loc_tracker[10]),
-        .O(\bramaddr[3]_i_16_n_0 ));
+        .O(\bramaddr[3]_i_17_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFF55550111)) 
-    \bramaddr[3]_i_17 
+    .INIT(64'hFFFFFFFF55551110)) 
+    \bramaddr[3]_i_18 
        (.I0(\bramaddr[3]_i_28_n_0 ),
         .I1(\bramaddr[3]_i_29_n_0 ),
         .I2(\bramaddr[3]_i_30_n_0 ),
         .I3(\bramaddr[3]_i_31_n_0 ),
         .I4(\bramaddr[3]_i_32_n_0 ),
         .I5(\bramaddr[3]_i_33_n_0 ),
-        .O(\bramaddr[3]_i_17_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+        .O(\bramaddr[3]_i_18_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
     .INIT(32'h77F7FFFF)) 
-    \bramaddr[3]_i_18 
+    \bramaddr[3]_i_19 
        (.I0(data_loc_tracker[13]),
         .I1(data_loc_tracker[15]),
         .I2(data_loc_tracker[17]),
         .I3(data_loc_tracker[18]),
         .I4(data_loc_tracker[16]),
-        .O(\bramaddr[3]_i_18_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
-  LUT3 #(
-    .INIT(8'h4F)) 
-    \bramaddr[3]_i_19 
-       (.I0(data_loc_tracker[26]),
-        .I1(data_loc_tracker[25]),
-        .I2(data_loc_tracker[24]),
         .O(\bramaddr[3]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hA0ACA0A0)) 
@@ -2602,87 +2653,85 @@ module design_1_tdc_0_1_data_recorder
         .I3(\bramaddr[3]_i_6_n_0 ),
         .I4(\bramaddr[3]_i_7_n_0 ),
         .O(\bramaddr[3]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  LUT3 #(
+    .INIT(8'h4F)) 
+    \bramaddr[3]_i_20 
+       (.I0(data_loc_tracker[26]),
+        .I1(data_loc_tracker[25]),
+        .I2(data_loc_tracker[24]),
+        .O(\bramaddr[3]_i_20_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair130" *) 
   LUT2 #(
     .INIT(4'h8)) 
-    \bramaddr[3]_i_20 
+    \bramaddr[3]_i_21 
        (.I0(data_loc_tracker[23]),
         .I1(data_loc_tracker[21]),
-        .O(\bramaddr[3]_i_20_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF45555555)) 
-    \bramaddr[3]_i_21 
-       (.I0(\bramaddr[3]_i_34_n_0 ),
-        .I1(\bramaddr[3]_i_35_n_0 ),
-        .I2(\data_loc[0]_i_5_n_0 ),
-        .I3(data_loc_tracker[35]),
-        .I4(data_loc_tracker[33]),
-        .I5(\bramaddr[3]_i_36_n_0 ),
         .O(\bramaddr[3]_i_21_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFF8000)) 
+    \bramaddr[3]_i_22 
+       (.I0(data_loc_tracker[29]),
+        .I1(data_loc_tracker[31]),
+        .I2(\data_loc[0]_i_3_n_0 ),
+        .I3(\bramaddr[3]_i_34_n_0 ),
+        .I4(\data_loc[0]_i_21_n_0 ),
+        .I5(\data_loc[3]_i_13_n_0 ),
+        .O(\bramaddr[3]_i_22_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
     .INIT(32'h77F7FFFF)) 
-    \bramaddr[3]_i_22 
+    \bramaddr[3]_i_23 
        (.I0(data_loc_tracker[17]),
         .I1(data_loc_tracker[19]),
         .I2(data_loc_tracker[21]),
         .I3(data_loc_tracker[22]),
         .I4(data_loc_tracker[20]),
-        .O(\bramaddr[3]_i_22_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+        .O(\bramaddr[3]_i_23_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
     .INIT(32'h7F7FFF7F)) 
-    \bramaddr[3]_i_23 
+    \bramaddr[3]_i_24 
        (.I0(data_loc_tracker[9]),
         .I1(data_loc_tracker[11]),
         .I2(data_loc_tracker[12]),
         .I3(data_loc_tracker[13]),
         .I4(data_loc_tracker[14]),
-        .O(\bramaddr[3]_i_23_n_0 ));
-  LUT6 #(
-    .INIT(64'h20AAA0AA20AA20AA)) 
-    \bramaddr[3]_i_24 
-       (.I0(\bramaddr[11]_i_57_n_0 ),
-        .I1(\data_loc[1]_i_13_n_0 ),
-        .I2(\bramaddr[11]_i_46_n_0 ),
-        .I3(\data_loc[1]_i_12_n_0 ),
-        .I4(\data_loc[1]_i_11_n_0 ),
-        .I5(\bramaddr[3]_i_37_n_0 ),
         .O(\bramaddr[3]_i_24_n_0 ));
   LUT2 #(
-    .INIT(4'h7)) 
+    .INIT(4'h8)) 
     \bramaddr[3]_i_25 
-       (.I0(data_loc_tracker[59]),
-        .I1(data_loc_tracker[56]),
+       (.I0(data_loc_tracker[31]),
+        .I1(data_loc_tracker[30]),
         .O(\bramaddr[3]_i_25_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF7FFFFFFF)) 
-    \bramaddr[3]_i_26 
-       (.I0(data_loc_tracker[39]),
-        .I1(data_loc_tracker[34]),
-        .I2(data_loc_tracker[29]),
-        .I3(data_loc_tracker[33]),
-        .I4(\bramaddr[7]_i_83_n_0 ),
-        .I5(\bramaddr[16]_i_16_n_0 ),
-        .O(\bramaddr[3]_i_26_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+  (* SOFT_HLUTNM = "soft_lutpair59" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
+    \bramaddr[3]_i_26 
+       (.I0(data_loc_tracker[56]),
+        .I1(data_loc_tracker[59]),
+        .I2(data_loc_tracker[8]),
+        .I3(data_loc_tracker[24]),
+        .O(\bramaddr[3]_i_26_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFF7FFFFFFFFFFFF)) 
     \bramaddr[3]_i_27 
-       (.I0(data_loc_tracker[60]),
-        .I1(data_loc_tracker[55]),
-        .I2(data_loc_tracker[7]),
-        .I3(data_loc_tracker[23]),
+       (.I0(data_loc_tracker[39]),
+        .I1(data_loc_tracker[34]),
+        .I2(\bramaddr[16]_i_22_n_0 ),
+        .I3(\bramaddr[11]_i_76_n_0 ),
+        .I4(data_loc_tracker[2]),
+        .I5(data_loc_tracker[1]),
         .O(\bramaddr[3]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'h70FFFFFFFFFFFFFF)) 
     \bramaddr[3]_i_28 
        (.I0(data_loc_tracker[26]),
         .I1(data_loc_tracker[25]),
-        .I2(\bramaddr[15]_i_28_n_0 ),
+        .I2(\bramaddr[15]_i_30_n_0 ),
         .I3(\data_loc[2]_i_4_n_0 ),
         .I4(data_loc_tracker[16]),
-        .I5(\bramaddr[15]_i_30_n_0 ),
+        .I5(\bramaddr[15]_i_32_n_0 ),
         .O(\bramaddr[3]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'h7FFFFFFFFFFFFFFF)) 
@@ -2704,29 +2753,29 @@ module design_1_tdc_0_1_data_recorder
         .I4(\bramaddr[3]_i_10_n_0 ),
         .I5(\bramaddr[3]_i_11_n_0 ),
         .O(\bramaddr[3]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  (* SOFT_HLUTNM = "soft_lutpair60" *) 
   LUT3 #(
-    .INIT(8'h80)) 
+    .INIT(8'h7F)) 
     \bramaddr[3]_i_30 
-       (.I0(data_loc_tracker[39]),
-        .I1(data_loc_tracker[38]),
-        .I2(data_loc_tracker[40]),
+       (.I0(data_loc_tracker[38]),
+        .I1(data_loc_tracker[40]),
+        .I2(data_loc_tracker[39]),
         .O(\bramaddr[3]_i_30_n_0 ));
   LUT6 #(
-    .INIT(64'hF700FFFFFFFFFFFF)) 
+    .INIT(64'h0000800088888888)) 
     \bramaddr[3]_i_31 
-       (.I0(data_loc_tracker[48]),
-        .I1(\bramaddr[11]_i_76_n_0 ),
-        .I2(\bramaddr[3]_i_38_n_0 ),
-        .I3(\bramaddr[7]_i_79_n_0 ),
-        .I4(data_loc_tracker[41]),
-        .I5(data_loc_tracker[42]),
+       (.I0(data_loc_tracker[41]),
+        .I1(data_loc_tracker[42]),
+        .I2(data_loc_tracker[48]),
+        .I3(\bramaddr[11]_i_77_n_0 ),
+        .I4(\bramaddr[3]_i_35_n_0 ),
+        .I5(\bramaddr[7]_i_50_n_0 ),
         .O(\bramaddr[3]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hBBBBFBBBBBBBBBBB)) 
     \bramaddr[3]_i_32 
-       (.I0(\bramaddr[3]_i_39_n_0 ),
-        .I1(\bramaddr[15]_i_28_n_0 ),
+       (.I0(\bramaddr[3]_i_36_n_0 ),
+        .I1(\bramaddr[15]_i_30_n_0 ),
         .I2(data_loc_tracker[32]),
         .I3(data_loc_tracker[30]),
         .I4(data_loc_tracker[33]),
@@ -2739,128 +2788,107 @@ module design_1_tdc_0_1_data_recorder
         .I1(data_loc_tracker[17]),
         .I2(data_loc_tracker[18]),
         .I3(\data_loc[2]_i_4_n_0 ),
-        .I4(\bramaddr[3]_i_40_n_0 ),
+        .I4(\bramaddr[3]_i_37_n_0 ),
         .I5(\bramaddr[7]_i_9_n_0 ),
         .O(\bramaddr[3]_i_33_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT5 #(
-    .INIT(32'h77F7FFFF)) 
+  LUT6 #(
+    .INIT(64'hD0FFFFFFFFFFFFFF)) 
     \bramaddr[3]_i_34 
-       (.I0(data_loc_tracker[29]),
-        .I1(data_loc_tracker[31]),
-        .I2(data_loc_tracker[33]),
-        .I3(data_loc_tracker[34]),
-        .I4(data_loc_tracker[32]),
+       (.I0(\bramaddr[3]_i_38_n_0 ),
+        .I1(\bramaddr[3]_i_39_n_0 ),
+        .I2(\bramaddr[11]_i_70_n_0 ),
+        .I3(\data_loc[0]_i_5_n_0 ),
+        .I4(data_loc_tracker[35]),
+        .I5(data_loc_tracker[33]),
         .O(\bramaddr[3]_i_34_n_0 ));
   LUT6 #(
-    .INIT(64'h8A88888888888888)) 
-    \bramaddr[3]_i_35 
-       (.I0(\bramaddr[11]_i_67_n_0 ),
-        .I1(\bramaddr[3]_i_41_n_0 ),
-        .I2(\bramaddr[3]_i_42_n_0 ),
-        .I3(\data_loc[0]_i_20_n_0 ),
-        .I4(data_loc_tracker[47]),
-        .I5(data_loc_tracker[45]),
-        .O(\bramaddr[3]_i_35_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT5 #(
-    .INIT(32'h7F7FFF7F)) 
-    \bramaddr[3]_i_36 
-       (.I0(data_loc_tracker[25]),
-        .I1(data_loc_tracker[27]),
-        .I2(data_loc_tracker[28]),
-        .I3(data_loc_tracker[29]),
-        .I4(data_loc_tracker[30]),
-        .O(\bramaddr[3]_i_36_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \bramaddr[3]_i_37 
-       (.I0(data_loc_tracker[39]),
-        .I1(data_loc_tracker[38]),
-        .O(\bramaddr[3]_i_37_n_0 ));
-  LUT6 #(
     .INIT(64'h8888808880888088)) 
-    \bramaddr[3]_i_38 
+    \bramaddr[3]_i_35 
        (.I0(data_loc_tracker[50]),
         .I1(data_loc_tracker[49]),
         .I2(\bramaddr[15]_i_21_n_0 ),
         .I3(data_loc_tracker[53]),
         .I4(\bramaddr[15]_i_20_n_0 ),
-        .I5(\bramaddr[11]_i_81_n_0 ),
-        .O(\bramaddr[3]_i_38_n_0 ));
+        .I5(\bramaddr[11]_i_80_n_0 ),
+        .O(\bramaddr[3]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'h20FFFFFFFFFFFFFF)) 
-    \bramaddr[3]_i_39 
+    \bramaddr[3]_i_36 
        (.I0(data_loc_tracker[32]),
         .I1(data_loc_tracker[34]),
-        .I2(\bramaddr[11]_i_57_n_0 ),
+        .I2(\bramaddr[3]_i_25_n_0 ),
         .I3(data_loc_tracker[28]),
         .I4(data_loc_tracker[29]),
         .I5(data_loc_tracker[27]),
-        .O(\bramaddr[3]_i_39_n_0 ));
-  LUT6 #(
-    .INIT(64'hB8888888B888B888)) 
-    \bramaddr[3]_i_4 
-       (.I0(bramaddr[1]),
-        .I1(DI),
-        .I2(data_loc_tracker[0]),
-        .I3(data_loc_tracker[1]),
-        .I4(\bramaddr[3]_i_12_n_0 ),
-        .I5(\data_loc[1]_i_5_n_0 ),
-        .O(\bramaddr[3]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+        .O(\bramaddr[3]_i_36_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'h80)) 
-    \bramaddr[3]_i_40 
+    \bramaddr[3]_i_37 
        (.I0(data_loc_tracker[11]),
         .I1(data_loc_tracker[12]),
         .I2(data_loc_tracker[13]),
-        .O(\bramaddr[3]_i_40_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+        .O(\bramaddr[3]_i_37_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFF55551555)) 
+    \bramaddr[3]_i_38 
+       (.I0(\bramaddr[3]_i_40_n_0 ),
+        .I1(data_loc_tracker[56]),
+        .I2(data_loc_tracker[55]),
+        .I3(data_loc_tracker[53]),
+        .I4(\bramaddr[3]_i_41_n_0 ),
+        .I5(\bramaddr[3]_i_42_n_0 ),
+        .O(\bramaddr[3]_i_38_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h77F7FFFF)) 
-    \bramaddr[3]_i_41 
+    \bramaddr[3]_i_39 
        (.I0(data_loc_tracker[41]),
         .I1(data_loc_tracker[43]),
         .I2(data_loc_tracker[45]),
         .I3(data_loc_tracker[46]),
         .I4(data_loc_tracker[44]),
-        .O(\bramaddr[3]_i_41_n_0 ));
+        .O(\bramaddr[3]_i_39_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000EF000000)) 
-    \bramaddr[3]_i_42 
-       (.I0(\bramaddr[3]_i_43_n_0 ),
-        .I1(\bramaddr[3]_i_44_n_0 ),
-        .I2(data_loc_tracker[56]),
-        .I3(data_loc_tracker[49]),
-        .I4(data_loc_tracker[51]),
-        .I5(\bramaddr[3]_i_45_n_0 ),
-        .O(\bramaddr[3]_i_42_n_0 ));
+    .INIT(64'h8888B888B8B8B8B8)) 
+    \bramaddr[3]_i_4 
+       (.I0(bramaddr[1]),
+        .I1(DI),
+        .I2(\bramaddr[3]_i_12_n_0 ),
+        .I3(\bramaddr[3]_i_13_n_0 ),
+        .I4(\data_loc[1]_i_4_n_0 ),
+        .I5(\data_loc[1]_i_5_n_0 ),
+        .O(\bramaddr[3]_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT5 #(
+    .INIT(32'h5DFFFFFF)) 
+    \bramaddr[3]_i_40 
+       (.I0(data_loc_tracker[52]),
+        .I1(data_loc_tracker[53]),
+        .I2(data_loc_tracker[54]),
+        .I3(data_loc_tracker[51]),
+        .I4(data_loc_tracker[49]),
+        .O(\bramaddr[3]_i_40_n_0 ));
   LUT6 #(
-    .INIT(64'h8808FFFF00000000)) 
-    \bramaddr[3]_i_43 
+    .INIT(64'h80F080F000F080F0)) 
+    \bramaddr[3]_i_41 
        (.I0(data_loc_tracker[59]),
         .I1(data_loc_tracker[60]),
-        .I2(data_loc_tracker[61]),
-        .I3(data_loc_tracker[62]),
-        .I4(data_loc_tracker[58]),
-        .I5(data_loc_tracker[57]),
-        .O(\bramaddr[3]_i_43_n_0 ));
-  LUT2 #(
-    .INIT(4'h7)) 
-    \bramaddr[3]_i_44 
-       (.I0(data_loc_tracker[55]),
-        .I1(data_loc_tracker[53]),
-        .O(\bramaddr[3]_i_44_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair62" *) 
-  LUT3 #(
-    .INIT(8'h4F)) 
-    \bramaddr[3]_i_45 
-       (.I0(data_loc_tracker[54]),
-        .I1(data_loc_tracker[53]),
-        .I2(data_loc_tracker[52]),
-        .O(\bramaddr[3]_i_45_n_0 ));
+        .I2(data_loc_tracker[57]),
+        .I3(data_loc_tracker[58]),
+        .I4(data_loc_tracker[61]),
+        .I5(data_loc_tracker[62]),
+        .O(\bramaddr[3]_i_41_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT5 #(
+    .INIT(32'h7FFF7F7F)) 
+    \bramaddr[3]_i_42 
+       (.I0(data_loc_tracker[45]),
+        .I1(data_loc_tracker[47]),
+        .I2(data_loc_tracker[48]),
+        .I3(data_loc_tracker[50]),
+        .I4(data_loc_tracker[49]),
+        .O(\bramaddr[3]_i_42_n_0 ));
   LUT3 #(
     .INIT(8'h3A)) 
     \bramaddr[3]_i_5 
@@ -2871,12 +2899,12 @@ module design_1_tdc_0_1_data_recorder
   LUT6 #(
     .INIT(64'h0000000000004000)) 
     \bramaddr[3]_i_6 
-       (.I0(\bramaddr[3]_i_13_n_0 ),
+       (.I0(\bramaddr[3]_i_14_n_0 ),
         .I1(data_loc_tracker[11]),
         .I2(data_loc_tracker[12]),
         .I3(data_loc_tracker[13]),
-        .I4(\bramaddr[3]_i_14_n_0 ),
-        .I5(\bramaddr[3]_i_15_n_0 ),
+        .I4(\bramaddr[3]_i_15_n_0 ),
+        .I5(\bramaddr[3]_i_16_n_0 ),
         .O(\bramaddr[3]_i_6_n_0 ));
   LUT6 #(
     .INIT(64'h77777FFF77777777)) 
@@ -2884,11 +2912,11 @@ module design_1_tdc_0_1_data_recorder
        (.I0(data_loc_tracker[1]),
         .I1(data_loc_tracker[2]),
         .I2(data_loc_tracker[6]),
-        .I3(\bramaddr[3]_i_16_n_0 ),
+        .I3(\bramaddr[3]_i_17_n_0 ),
         .I4(\bramaddr[7]_i_7_n_0 ),
-        .I5(\bramaddr[3]_i_17_n_0 ),
+        .I5(\bramaddr[3]_i_18_n_0 ),
         .O(\bramaddr[3]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  (* SOFT_HLUTNM = "soft_lutpair67" *) 
   LUT4 #(
     .INIT(16'hFF4F)) 
     \bramaddr[3]_i_8 
@@ -2897,7 +2925,7 @@ module design_1_tdc_0_1_data_recorder
         .I2(data_loc_tracker[0]),
         .I3(DI),
         .O(\bramaddr[3]_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT5 #(
     .INIT(32'h7FFF77FF)) 
     \bramaddr[3]_i_9 
@@ -2907,7 +2935,7 @@ module design_1_tdc_0_1_data_recorder
         .I3(data_loc_tracker[8]),
         .I4(data_loc_tracker[9]),
         .O(\bramaddr[3]_i_9_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT4 #(
     .INIT(16'h70FF)) 
     \bramaddr[7]_i_10 
@@ -2919,14 +2947,14 @@ module design_1_tdc_0_1_data_recorder
   LUT6 #(
     .INIT(64'hFFFFFFFF55550100)) 
     \bramaddr[7]_i_11 
-       (.I0(\bramaddr[7]_i_28_n_0 ),
-        .I1(\bramaddr[7]_i_29_n_0 ),
-        .I2(\bramaddr[7]_i_30_n_0 ),
-        .I3(\bramaddr[7]_i_31_n_0 ),
-        .I4(\bramaddr[7]_i_32_n_0 ),
-        .I5(\bramaddr[7]_i_33_n_0 ),
+       (.I0(\bramaddr[7]_i_26_n_0 ),
+        .I1(\bramaddr[7]_i_27_n_0 ),
+        .I2(\bramaddr[7]_i_28_n_0 ),
+        .I3(\bramaddr[7]_i_29_n_0 ),
+        .I4(\bramaddr[7]_i_30_n_0 ),
+        .I5(\bramaddr[7]_i_31_n_0 ),
         .O(\bramaddr[7]_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT5 #(
     .INIT(32'h20200020)) 
     \bramaddr[7]_i_12 
@@ -2941,70 +2969,70 @@ module design_1_tdc_0_1_data_recorder
     \bramaddr[7]_i_13 
        (.I0(data_loc_tracker[0]),
         .I1(DI),
-        .I2(\bramaddr[7]_i_34_n_0 ),
-        .I3(\bramaddr[7]_i_35_n_0 ),
-        .I4(\bramaddr[7]_i_36_n_0 ),
-        .I5(\bramaddr[7]_i_37_n_0 ),
+        .I2(\bramaddr[7]_i_32_n_0 ),
+        .I3(\bramaddr[7]_i_33_n_0 ),
+        .I4(\bramaddr[7]_i_34_n_0 ),
+        .I5(\bramaddr[7]_i_35_n_0 ),
         .O(\bramaddr[7]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT5 #(
     .INIT(32'h40FFFFFF)) 
     \bramaddr[7]_i_14 
        (.I0(data_loc_tracker[6]),
         .I1(data_loc_tracker[5]),
         .I2(data_loc_tracker[4]),
-        .I3(data_loc_tracker[3]),
-        .I4(data_loc_tracker[2]),
+        .I3(data_loc_tracker[2]),
+        .I4(data_loc_tracker[3]),
         .O(\bramaddr[7]_i_14_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFF55551055)) 
     \bramaddr[7]_i_15 
-       (.I0(\bramaddr[7]_i_38_n_0 ),
-        .I1(\bramaddr[7]_i_39_n_0 ),
-        .I2(\bramaddr[7]_i_40_n_0 ),
+       (.I0(\bramaddr[7]_i_36_n_0 ),
+        .I1(\bramaddr[7]_i_37_n_0 ),
+        .I2(\bramaddr[7]_i_38_n_0 ),
         .I3(data_loc_tracker[17]),
         .I4(\bramaddr[11]_i_24_n_0 ),
-        .I5(\bramaddr[7]_i_41_n_0 ),
+        .I5(\bramaddr[7]_i_39_n_0 ),
         .O(\bramaddr[7]_i_15_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFF55550100)) 
     \bramaddr[7]_i_16 
-       (.I0(\bramaddr[7]_i_42_n_0 ),
-        .I1(\bramaddr[7]_i_43_n_0 ),
-        .I2(\bramaddr[7]_i_29_n_0 ),
-        .I3(\bramaddr[7]_i_44_n_0 ),
-        .I4(\bramaddr[7]_i_45_n_0 ),
-        .I5(\bramaddr[7]_i_46_n_0 ),
+       (.I0(\bramaddr[7]_i_40_n_0 ),
+        .I1(\bramaddr[7]_i_41_n_0 ),
+        .I2(\bramaddr[7]_i_27_n_0 ),
+        .I3(\bramaddr[7]_i_42_n_0 ),
+        .I4(\bramaddr[7]_i_43_n_0 ),
+        .I5(\bramaddr[7]_i_44_n_0 ),
         .O(\bramaddr[7]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'h777F7F7F777F777F)) 
     \bramaddr[7]_i_17 
        (.I0(data_loc_tracker[2]),
         .I1(data_loc_tracker[4]),
-        .I2(\bramaddr[7]_i_47_n_0 ),
+        .I2(\bramaddr[7]_i_45_n_0 ),
         .I3(data_loc_tracker[7]),
         .I4(data_loc_tracker[9]),
         .I5(data_loc_tracker[8]),
         .O(\bramaddr[7]_i_17_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFF7F000F00)) 
+    .INIT(64'hFFFFFFFFF7003300)) 
     \bramaddr[7]_i_18 
-       (.I0(\bramaddr[7]_i_48_n_0 ),
-        .I1(\bramaddr[7]_i_49_n_0 ),
-        .I2(data_loc_tracker[46]),
+       (.I0(\bramaddr[7]_i_46_n_0 ),
+        .I1(data_loc_tracker[46]),
+        .I2(\bramaddr[7]_i_47_n_0 ),
         .I3(data_loc_tracker[45]),
         .I4(data_loc_tracker[47]),
-        .I5(\bramaddr[7]_i_50_n_0 ),
+        .I5(\bramaddr[7]_i_48_n_0 ),
         .O(\bramaddr[7]_i_18_n_0 ));
   LUT6 #(
-    .INIT(64'h7FFFFFFFFFFFFFFF)) 
+    .INIT(64'hFFFFFFFFBFFFFFFF)) 
     \bramaddr[7]_i_19 
-       (.I0(data_loc_tracker[28]),
-        .I1(data_loc_tracker[32]),
-        .I2(\bramaddr[7]_i_51_n_0 ),
-        .I3(data_loc_tracker[61]),
-        .I4(data_loc_tracker[60]),
-        .I5(\data_loc[3]_i_14_n_0 ),
+       (.I0(\bramaddr[7]_i_49_n_0 ),
+        .I1(data_loc_tracker[49]),
+        .I2(data_loc_tracker[50]),
+        .I3(data_loc_tracker[51]),
+        .I4(\bramaddr[7]_i_50_n_0 ),
+        .I5(\bramaddr[7]_i_51_n_0 ),
         .O(\bramaddr[7]_i_19_n_0 ));
   LUT6 #(
     .INIT(64'h8F888F8F8F888F88)) 
@@ -3016,98 +3044,96 @@ module design_1_tdc_0_1_data_recorder
         .I4(\bramaddr[7]_i_8_n_0 ),
         .I5(\bramaddr[7]_i_9_n_0 ),
         .O(\bramaddr[7]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h7FFFFFFFFFFFFFFF)) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT3 #(
+    .INIT(8'h7F)) 
     \bramaddr[7]_i_20 
-       (.I0(\bramaddr[7]_i_52_n_0 ),
-        .I1(data_loc_tracker[51]),
-        .I2(data_loc_tracker[20]),
-        .I3(data_loc_tracker[62]),
-        .I4(data_loc_tracker[39]),
-        .I5(data_loc_tracker[9]),
+       (.I0(data_loc_tracker[15]),
+        .I1(data_loc_tracker[16]),
+        .I2(data_loc_tracker[17]),
         .O(\bramaddr[7]_i_20_n_0 ));
   LUT6 #(
-    .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \bramaddr[7]_i_21 
-       (.I0(data_loc_tracker[27]),
-        .I1(data_loc_tracker[26]),
-        .I2(\bramaddr[7]_i_53_n_0 ),
-        .I3(\bramaddr[7]_i_54_n_0 ),
-        .I4(data_loc_tracker[55]),
-        .I5(data_loc_tracker[56]),
-        .O(\bramaddr[7]_i_21_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000080000000)) 
-    \bramaddr[7]_i_22 
-       (.I0(data_loc_tracker[44]),
-        .I1(data_loc_tracker[43]),
-        .I2(data_loc_tracker[45]),
-        .I3(data_loc_tracker[15]),
-        .I4(\data_loc[3]_i_9_n_0 ),
-        .I5(\bramaddr[7]_i_7_n_0 ),
-        .O(\bramaddr[7]_i_22_n_0 ));
-  LUT6 #(
     .INIT(64'hFFFFFFFF0888FFFF)) 
-    \bramaddr[7]_i_23 
+    \bramaddr[7]_i_21 
        (.I0(data_loc_tracker[15]),
         .I1(\data_loc[3]_i_9_n_0 ),
         .I2(data_loc_tracker[19]),
         .I3(data_loc_tracker[18]),
         .I4(data_loc_tracker[14]),
         .I5(\data_loc[2]_i_5_n_0 ),
-        .O(\bramaddr[7]_i_23_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+        .O(\bramaddr[7]_i_21_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair117" *) 
   LUT2 #(
     .INIT(4'h8)) 
-    \bramaddr[7]_i_24 
+    \bramaddr[7]_i_22 
        (.I0(data_loc_tracker[25]),
         .I1(data_loc_tracker[24]),
-        .O(\bramaddr[7]_i_24_n_0 ));
+        .O(\bramaddr[7]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAAFE000000000000)) 
-    \bramaddr[7]_i_25 
-       (.I0(\bramaddr[7]_i_55_n_0 ),
-        .I1(\bramaddr[7]_i_56_n_0 ),
-        .I2(\bramaddr[7]_i_57_n_0 ),
-        .I3(\bramaddr[7]_i_58_n_0 ),
-        .I4(\bramaddr[7]_i_59_n_0 ),
-        .I5(data_loc_tracker[28]),
-        .O(\bramaddr[7]_i_25_n_0 ));
+    \bramaddr[7]_i_23 
+       (.I0(\bramaddr[7]_i_52_n_0 ),
+        .I1(\bramaddr[7]_i_53_n_0 ),
+        .I2(\bramaddr[7]_i_54_n_0 ),
+        .I3(\bramaddr[7]_i_55_n_0 ),
+        .I4(\bramaddr[11]_i_58_n_0 ),
+        .I5(data_loc_tracker[26]),
+        .O(\bramaddr[7]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \bramaddr[7]_i_26 
+    \bramaddr[7]_i_24 
        (.I0(data_loc_tracker[17]),
         .I1(data_loc_tracker[16]),
         .I2(data_loc_tracker[15]),
         .I3(data_loc_tracker[22]),
         .I4(data_loc_tracker[21]),
         .I5(data_loc_tracker[20]),
-        .O(\bramaddr[7]_i_26_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair109" *) 
+        .O(\bramaddr[7]_i_24_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
   LUT3 #(
     .INIT(8'h7F)) 
-    \bramaddr[7]_i_27 
+    \bramaddr[7]_i_25 
        (.I0(data_loc_tracker[11]),
         .I1(data_loc_tracker[9]),
         .I2(data_loc_tracker[10]),
-        .O(\bramaddr[7]_i_27_n_0 ));
+        .O(\bramaddr[7]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'h7FFF7F7F77777777)) 
-    \bramaddr[7]_i_28 
+    \bramaddr[7]_i_26 
        (.I0(data_loc_tracker[9]),
         .I1(data_loc_tracker[12]),
         .I2(data_loc_tracker[15]),
         .I3(data_loc_tracker[18]),
         .I4(\data_loc[3]_i_9_n_0 ),
-        .I5(\bramaddr[7]_i_60_n_0 ),
-        .O(\bramaddr[7]_i_28_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+        .I5(\bramaddr[7]_i_56_n_0 ),
+        .O(\bramaddr[7]_i_26_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT3 #(
     .INIT(8'h4F)) 
-    \bramaddr[7]_i_29 
+    \bramaddr[7]_i_27 
        (.I0(data_loc_tracker[29]),
         .I1(data_loc_tracker[28]),
         .I2(data_loc_tracker[27]),
+        .O(\bramaddr[7]_i_27_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  LUT5 #(
+    .INIT(32'h7FFFFFFF)) 
+    \bramaddr[7]_i_28 
+       (.I0(data_loc_tracker[21]),
+        .I1(data_loc_tracker[20]),
+        .I2(data_loc_tracker[24]),
+        .I3(data_loc_tracker[23]),
+        .I4(data_loc_tracker[26]),
+        .O(\bramaddr[7]_i_28_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFF55550111)) 
+    \bramaddr[7]_i_29 
+       (.I0(\bramaddr[7]_i_57_n_0 ),
+        .I1(\bramaddr[7]_i_58_n_0 ),
+        .I2(\bramaddr[11]_i_60_n_0 ),
+        .I3(\bramaddr[7]_i_59_n_0 ),
+        .I4(\bramaddr[7]_i_60_n_0 ),
+        .I5(\bramaddr[7]_i_61_n_0 ),
         .O(\bramaddr[7]_i_29_n_0 ));
   LUT6 #(
     .INIT(64'h8FFF8F8F88888888)) 
@@ -3119,105 +3145,105 @@ module design_1_tdc_0_1_data_recorder
         .I4(\bramaddr[7]_i_11_n_0 ),
         .I5(\bramaddr[7]_i_12_n_0 ),
         .O(\bramaddr[7]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
-  LUT5 #(
-    .INIT(32'h7FFFFFFF)) 
-    \bramaddr[7]_i_30 
-       (.I0(data_loc_tracker[24]),
-        .I1(data_loc_tracker[23]),
-        .I2(data_loc_tracker[21]),
-        .I3(data_loc_tracker[20]),
-        .I4(data_loc_tracker[26]),
-        .O(\bramaddr[7]_i_30_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF55551110)) 
-    \bramaddr[7]_i_31 
-       (.I0(\bramaddr[7]_i_61_n_0 ),
-        .I1(\bramaddr[7]_i_62_n_0 ),
-        .I2(\bramaddr[11]_i_60_n_0 ),
-        .I3(\bramaddr[7]_i_63_n_0 ),
-        .I4(\bramaddr[7]_i_64_n_0 ),
-        .I5(\bramaddr[7]_i_65_n_0 ),
-        .O(\bramaddr[7]_i_31_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT5 #(
     .INIT(32'hBFFFFFFF)) 
-    \bramaddr[7]_i_32 
+    \bramaddr[7]_i_30 
        (.I0(\bramaddr[11]_i_35_n_0 ),
-        .I1(data_loc_tracker[14]),
-        .I2(data_loc_tracker[13]),
-        .I3(data_loc_tracker[19]),
-        .I4(data_loc_tracker[17]),
-        .O(\bramaddr[7]_i_32_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+        .I1(data_loc_tracker[19]),
+        .I2(data_loc_tracker[17]),
+        .I3(data_loc_tracker[14]),
+        .I4(data_loc_tracker[13]),
+        .O(\bramaddr[7]_i_30_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT5 #(
     .INIT(32'h5DDDFFFF)) 
-    \bramaddr[7]_i_33 
+    \bramaddr[7]_i_31 
        (.I0(data_loc_tracker[8]),
         .I1(data_loc_tracker[9]),
         .I2(data_loc_tracker[10]),
         .I3(data_loc_tracker[11]),
         .I4(data_loc_tracker[5]),
-        .O(\bramaddr[7]_i_33_n_0 ));
+        .O(\bramaddr[7]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \bramaddr[7]_i_34 
-       (.I0(\bramaddr[7]_i_66_n_0 ),
+    \bramaddr[7]_i_32 
+       (.I0(\bramaddr[7]_i_62_n_0 ),
         .I1(data_loc_tracker[61]),
         .I2(data_loc_tracker[62]),
-        .I3(\bramaddr[7]_i_67_n_0 ),
+        .I3(\bramaddr[7]_i_63_n_0 ),
         .I4(data_loc_tracker[7]),
         .I5(data_loc_tracker[5]),
-        .O(\bramaddr[7]_i_34_n_0 ));
+        .O(\bramaddr[7]_i_32_n_0 ));
   LUT6 #(
-    .INIT(64'hEFFFFFFFFFFFFFFF)) 
-    \bramaddr[7]_i_35 
-       (.I0(\bramaddr[7]_i_68_n_0 ),
-        .I1(\data_loc[3]_i_13_n_0 ),
-        .I2(data_loc_tracker[24]),
-        .I3(data_loc_tracker[8]),
-        .I4(data_loc_tracker[42]),
-        .I5(data_loc_tracker[41]),
-        .O(\bramaddr[7]_i_35_n_0 ));
+    .INIT(64'hF7FFFFFFFFFFFFFF)) 
+    \bramaddr[7]_i_33 
+       (.I0(data_loc_tracker[34]),
+        .I1(data_loc_tracker[31]),
+        .I2(\data_loc[3]_i_13_n_0 ),
+        .I3(\bramaddr[7]_i_64_n_0 ),
+        .I4(data_loc_tracker[24]),
+        .I5(data_loc_tracker[8]),
+        .O(\bramaddr[7]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'h0000000080000000)) 
-    \bramaddr[7]_i_36 
+    \bramaddr[7]_i_34 
        (.I0(data_loc_tracker[28]),
         .I1(data_loc_tracker[1]),
         .I2(data_loc_tracker[11]),
         .I3(data_loc_tracker[58]),
         .I4(\data_loc[2]_i_4_n_0 ),
-        .I5(\bramaddr[7]_i_69_n_0 ),
-        .O(\bramaddr[7]_i_36_n_0 ));
+        .I5(\bramaddr[7]_i_65_n_0 ),
+        .O(\bramaddr[7]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hDFFFFFFFFFFFFFFF)) 
-    \bramaddr[7]_i_37 
+    \bramaddr[7]_i_35 
        (.I0(\bramaddr[15]_i_20_n_0 ),
         .I1(\bramaddr[15]_i_21_n_0 ),
         .I2(data_loc_tracker[38]),
         .I3(data_loc_tracker[21]),
         .I4(data_loc_tracker[4]),
         .I5(data_loc_tracker[48]),
-        .O(\bramaddr[7]_i_37_n_0 ));
-  LUT6 #(
-    .INIT(64'h7FFFFFFF7FFF7FFF)) 
-    \bramaddr[7]_i_38 
-       (.I0(data_loc_tracker[9]),
-        .I1(data_loc_tracker[10]),
-        .I2(data_loc_tracker[12]),
-        .I3(data_loc_tracker[13]),
-        .I4(data_loc_tracker[16]),
-        .I5(\data_loc[2]_i_4_n_0 ),
-        .O(\bramaddr[7]_i_38_n_0 ));
+        .O(\bramaddr[7]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'h4FFFFFFFFFFFFFFF)) 
-    \bramaddr[7]_i_39 
+    \bramaddr[7]_i_36 
+       (.I0(data_loc_tracker[16]),
+        .I1(\data_loc[2]_i_4_n_0 ),
+        .I2(data_loc_tracker[10]),
+        .I3(data_loc_tracker[9]),
+        .I4(data_loc_tracker[13]),
+        .I5(data_loc_tracker[12]),
+        .O(\bramaddr[7]_i_36_n_0 ));
+  LUT6 #(
+    .INIT(64'h4FFFFFFFFFFFFFFF)) 
+    \bramaddr[7]_i_37 
        (.I0(data_loc_tracker[26]),
-        .I1(\bramaddr[7]_i_24_n_0 ),
+        .I1(\bramaddr[7]_i_22_n_0 ),
         .I2(data_loc_tracker[23]),
         .I3(data_loc_tracker[22]),
         .I4(data_loc_tracker[20]),
         .I5(data_loc_tracker[19]),
+        .O(\bramaddr[7]_i_37_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFF44454545)) 
+    \bramaddr[7]_i_38 
+       (.I0(\bramaddr[7]_i_66_n_0 ),
+        .I1(\bramaddr[7]_i_67_n_0 ),
+        .I2(\bramaddr[7]_i_68_n_0 ),
+        .I3(\bramaddr[7]_i_69_n_0 ),
+        .I4(\bramaddr[7]_i_70_n_0 ),
+        .I5(\bramaddr[7]_i_71_n_0 ),
+        .O(\bramaddr[7]_i_38_n_0 ));
+  LUT6 #(
+    .INIT(64'h7777F777FFFFFFFF)) 
+    \bramaddr[7]_i_39 
+       (.I0(data_loc_tracker[7]),
+        .I1(data_loc_tracker[8]),
+        .I2(data_loc_tracker[9]),
+        .I3(data_loc_tracker[10]),
+        .I4(data_loc_tracker[11]),
+        .I5(\bramaddr[11]_i_37_n_0 ),
         .O(\bramaddr[7]_i_39_n_0 ));
   LUT6 #(
     .INIT(64'h888F88888F8F8F8F)) 
@@ -3230,97 +3256,97 @@ module design_1_tdc_0_1_data_recorder
         .I5(data_loc_tracker[1]),
         .O(\bramaddr[7]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFF15551515)) 
+    .INIT(64'h7F77FFFFFFFFFFFF)) 
     \bramaddr[7]_i_40 
-       (.I0(\bramaddr[7]_i_70_n_0 ),
-        .I1(\bramaddr[11]_i_51_n_0 ),
-        .I2(\bramaddr[11]_i_46_n_0 ),
-        .I3(\bramaddr[7]_i_71_n_0 ),
-        .I4(\bramaddr[7]_i_72_n_0 ),
-        .I5(\bramaddr[7]_i_73_n_0 ),
-        .O(\bramaddr[7]_i_40_n_0 ));
-  LUT6 #(
-    .INIT(64'h7777F777FFFFFFFF)) 
-    \bramaddr[7]_i_41 
-       (.I0(data_loc_tracker[7]),
-        .I1(data_loc_tracker[8]),
-        .I2(data_loc_tracker[9]),
-        .I3(data_loc_tracker[10]),
-        .I4(data_loc_tracker[11]),
-        .I5(\bramaddr[16]_i_20_n_0 ),
-        .O(\bramaddr[7]_i_41_n_0 ));
-  LUT6 #(
-    .INIT(64'h77F7FFFFFFFFFFFF)) 
-    \bramaddr[7]_i_42 
        (.I0(data_loc_tracker[16]),
         .I1(data_loc_tracker[17]),
-        .I2(data_loc_tracker[18]),
-        .I3(data_loc_tracker[19]),
+        .I2(data_loc_tracker[19]),
+        .I3(data_loc_tracker[18]),
         .I4(data_loc_tracker[14]),
         .I5(data_loc_tracker[12]),
-        .O(\bramaddr[7]_i_42_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair56" *) 
+        .O(\bramaddr[7]_i_40_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair61" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
-    \bramaddr[7]_i_43 
+    \bramaddr[7]_i_41 
        (.I0(data_loc_tracker[21]),
         .I1(data_loc_tracker[22]),
         .I2(data_loc_tracker[24]),
         .I3(data_loc_tracker[26]),
-        .O(\bramaddr[7]_i_43_n_0 ));
+        .O(\bramaddr[7]_i_41_n_0 ));
   LUT6 #(
-    .INIT(64'hBFFFFFFFBFBFBFBF)) 
-    \bramaddr[7]_i_44 
-       (.I0(\bramaddr[7]_i_74_n_0 ),
-        .I1(data_loc_tracker[30]),
-        .I2(data_loc_tracker[28]),
-        .I3(data_loc_tracker[33]),
-        .I4(data_loc_tracker[32]),
-        .I5(data_loc_tracker[31]),
-        .O(\bramaddr[7]_i_44_n_0 ));
+    .INIT(64'hBAFFFFFFFAFFFFFF)) 
+    \bramaddr[7]_i_42 
+       (.I0(\bramaddr[7]_i_72_n_0 ),
+        .I1(data_loc_tracker[33]),
+        .I2(data_loc_tracker[31]),
+        .I3(data_loc_tracker[28]),
+        .I4(data_loc_tracker[30]),
+        .I5(data_loc_tracker[32]),
+        .O(\bramaddr[7]_i_42_n_0 ));
   LUT6 #(
     .INIT(64'h7500FFFFFFFFFFFF)) 
-    \bramaddr[7]_i_45 
+    \bramaddr[7]_i_43 
        (.I0(data_loc_tracker[23]),
         .I1(data_loc_tracker[25]),
         .I2(data_loc_tracker[24]),
-        .I3(\bramaddr[7]_i_53_n_0 ),
+        .I3(\bramaddr[7]_i_73_n_0 ),
         .I4(data_loc_tracker[18]),
         .I5(data_loc_tracker[20]),
-        .O(\bramaddr[7]_i_45_n_0 ));
+        .O(\bramaddr[7]_i_43_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFF40CC)) 
-    \bramaddr[7]_i_46 
-       (.I0(data_loc_tracker[15]),
-        .I1(data_loc_tracker[12]),
-        .I2(data_loc_tracker[14]),
+    .INIT(64'hFFFFFFFFFFFF08AA)) 
+    \bramaddr[7]_i_44 
+       (.I0(data_loc_tracker[12]),
+        .I1(data_loc_tracker[14]),
+        .I2(data_loc_tracker[15]),
         .I3(data_loc_tracker[13]),
-        .I4(\bramaddr[7]_i_75_n_0 ),
-        .I5(\bramaddr[7]_i_47_n_0 ),
-        .O(\bramaddr[7]_i_46_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair131" *) 
+        .I4(\bramaddr[7]_i_74_n_0 ),
+        .I5(\bramaddr[7]_i_45_n_0 ),
+        .O(\bramaddr[7]_i_44_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair119" *) 
   LUT2 #(
     .INIT(4'h7)) 
-    \bramaddr[7]_i_47 
+    \bramaddr[7]_i_45 
        (.I0(data_loc_tracker[6]),
         .I1(data_loc_tracker[5]),
-        .O(\bramaddr[7]_i_47_n_0 ));
+        .O(\bramaddr[7]_i_45_n_0 ));
   LUT6 #(
     .INIT(64'hDDDD5DDD5D5D5D5D)) 
-    \bramaddr[7]_i_48 
+    \bramaddr[7]_i_46 
        (.I0(data_loc_tracker[50]),
         .I1(data_loc_tracker[51]),
         .I2(data_loc_tracker[52]),
         .I3(data_loc_tracker[55]),
-        .I4(\bramaddr[7]_i_76_n_0 ),
+        .I4(\bramaddr[7]_i_75_n_0 ),
         .I5(\data_loc[3]_i_10_n_0 ),
-        .O(\bramaddr[7]_i_48_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair113" *) 
+        .O(\bramaddr[7]_i_46_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
   LUT2 #(
-    .INIT(4'h8)) 
-    \bramaddr[7]_i_49 
+    .INIT(4'h7)) 
+    \bramaddr[7]_i_47 
        (.I0(data_loc_tracker[48]),
         .I1(data_loc_tracker[49]),
+        .O(\bramaddr[7]_i_47_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFEFFFFFFF)) 
+    \bramaddr[7]_i_48 
+       (.I0(\bramaddr[7]_i_76_n_0 ),
+        .I1(\bramaddr[7]_i_41_n_0 ),
+        .I2(data_loc_tracker[41]),
+        .I3(data_loc_tracker[44]),
+        .I4(data_loc_tracker[16]),
+        .I5(\bramaddr[7]_i_77_n_0 ),
+        .O(\bramaddr[7]_i_48_n_0 ));
+  LUT6 #(
+    .INIT(64'h7FFFFFFFFFFFFFFF)) 
+    \bramaddr[7]_i_49 
+       (.I0(data_loc_tracker[27]),
+        .I1(data_loc_tracker[26]),
+        .I2(\data_loc[3]_i_14_n_0 ),
+        .I3(\bramaddr[7]_i_78_n_0 ),
+        .I4(data_loc_tracker[28]),
+        .I5(data_loc_tracker[32]),
         .O(\bramaddr[7]_i_49_n_0 ));
   LUT6 #(
     .INIT(64'hFF8F888888888888)) 
@@ -3332,184 +3358,197 @@ module design_1_tdc_0_1_data_recorder
         .I4(\bramaddr[7]_i_12_n_0 ),
         .I5(\bramaddr[7]_i_18_n_0 ),
         .O(\bramaddr[7]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFEFFFFFFF)) 
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  LUT3 #(
+    .INIT(8'h80)) 
     \bramaddr[7]_i_50 
-       (.I0(\bramaddr[7]_i_77_n_0 ),
-        .I1(\bramaddr[7]_i_43_n_0 ),
-        .I2(data_loc_tracker[41]),
-        .I3(data_loc_tracker[44]),
-        .I4(data_loc_tracker[16]),
-        .I5(\bramaddr[7]_i_78_n_0 ),
+       (.I0(data_loc_tracker[45]),
+        .I1(data_loc_tracker[43]),
+        .I2(data_loc_tracker[44]),
         .O(\bramaddr[7]_i_50_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
+  LUT6 #(
+    .INIT(64'hDFFFFFFFFFFFFFFF)) 
     \bramaddr[7]_i_51 
-       (.I0(data_loc_tracker[38]),
-        .I1(data_loc_tracker[37]),
+       (.I0(\bramaddr[11]_i_57_n_0 ),
+        .I1(\bramaddr[7]_i_79_n_0 ),
+        .I2(data_loc_tracker[20]),
+        .I3(data_loc_tracker[62]),
+        .I4(data_loc_tracker[39]),
+        .I5(data_loc_tracker[9]),
         .O(\bramaddr[7]_i_51_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair90" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFF2A00FFFF)) 
     \bramaddr[7]_i_52 
-       (.I0(data_loc_tracker[49]),
-        .I1(data_loc_tracker[50]),
+       (.I0(data_loc_tracker[32]),
+        .I1(data_loc_tracker[35]),
+        .I2(data_loc_tracker[36]),
+        .I3(\bramaddr[11]_i_57_n_0 ),
+        .I4(data_loc_tracker[30]),
+        .I5(\data_loc[3]_i_12_n_0 ),
         .O(\bramaddr[7]_i_52_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair56" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
+  LUT6 #(
+    .INIT(64'h4044444444444444)) 
     \bramaddr[7]_i_53 
-       (.I0(data_loc_tracker[22]),
-        .I1(data_loc_tracker[21]),
-        .O(\bramaddr[7]_i_53_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair127" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \bramaddr[7]_i_54 
-       (.I0(data_loc_tracker[34]),
-        .I1(data_loc_tracker[33]),
-        .O(\bramaddr[7]_i_54_n_0 ));
-  LUT6 #(
-    .INIT(64'hDDFDFDFDDDDDDDDD)) 
-    \bramaddr[7]_i_55 
-       (.I0(data_loc_tracker[30]),
-        .I1(\data_loc[3]_i_12_n_0 ),
-        .I2(data_loc_tracker[32]),
-        .I3(data_loc_tracker[35]),
-        .I4(data_loc_tracker[36]),
-        .I5(\bramaddr[7]_i_54_n_0 ),
-        .O(\bramaddr[7]_i_55_n_0 ));
-  LUT6 #(
-    .INIT(64'h0080AAAAAAAAAAAA)) 
-    \bramaddr[7]_i_56 
-       (.I0(\bramaddr[7]_i_79_n_0 ),
-        .I1(\bramaddr[7]_i_52_n_0 ),
-        .I2(data_loc_tracker[51]),
-        .I3(\bramaddr[7]_i_80_n_0 ),
-        .I4(\bramaddr[11]_i_76_n_0 ),
+       (.I0(\bramaddr[16]_i_22_n_0 ),
+        .I1(data_loc_tracker[45]),
+        .I2(\bramaddr[7]_i_80_n_0 ),
+        .I3(data_loc_tracker[46]),
+        .I4(data_loc_tracker[47]),
         .I5(data_loc_tracker[48]),
-        .O(\bramaddr[7]_i_56_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+        .O(\bramaddr[7]_i_53_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT3 #(
     .INIT(8'h7F)) 
-    \bramaddr[7]_i_57 
+    \bramaddr[7]_i_54 
        (.I0(data_loc_tracker[42]),
         .I1(data_loc_tracker[40]),
         .I2(data_loc_tracker[41]),
-        .O(\bramaddr[7]_i_57_n_0 ));
+        .O(\bramaddr[7]_i_54_n_0 ));
   LUT6 #(
     .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \bramaddr[7]_i_58 
+    \bramaddr[7]_i_55 
        (.I0(data_loc_tracker[38]),
         .I1(data_loc_tracker[37]),
         .I2(data_loc_tracker[39]),
         .I3(data_loc_tracker[34]),
         .I4(data_loc_tracker[33]),
         .I5(data_loc_tracker[32]),
-        .O(\bramaddr[7]_i_58_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair95" *) 
+        .O(\bramaddr[7]_i_55_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair145" *) 
   LUT2 #(
     .INIT(4'h8)) 
-    \bramaddr[7]_i_59 
-       (.I0(data_loc_tracker[27]),
-        .I1(data_loc_tracker[26]),
-        .O(\bramaddr[7]_i_59_n_0 ));
-  LUT6 #(
-    .INIT(64'hDDDDDDDFDDDDDDDD)) 
-    \bramaddr[7]_i_6 
-       (.I0(data_loc_tracker[2]),
-        .I1(\bramaddr[15]_i_18_n_0 ),
-        .I2(\bramaddr[7]_i_19_n_0 ),
-        .I3(\bramaddr[7]_i_20_n_0 ),
-        .I4(\bramaddr[7]_i_21_n_0 ),
-        .I5(\bramaddr[7]_i_22_n_0 ),
-        .O(\bramaddr[7]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \bramaddr[7]_i_60 
+    \bramaddr[7]_i_56 
        (.I0(data_loc_tracker[14]),
         .I1(data_loc_tracker[13]),
-        .O(\bramaddr[7]_i_60_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+        .O(\bramaddr[7]_i_56_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT5 #(
     .INIT(32'h7FFF7777)) 
-    \bramaddr[7]_i_61 
+    \bramaddr[7]_i_57 
        (.I0(data_loc_tracker[32]),
         .I1(data_loc_tracker[35]),
         .I2(data_loc_tracker[38]),
         .I3(data_loc_tracker[37]),
         .I4(data_loc_tracker[36]),
-        .O(\bramaddr[7]_i_61_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+        .O(\bramaddr[7]_i_57_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT5 #(
     .INIT(32'h7FFFFFFF)) 
-    \bramaddr[7]_i_62 
-       (.I0(data_loc_tracker[43]),
-        .I1(data_loc_tracker[44]),
-        .I2(data_loc_tracker[41]),
-        .I3(data_loc_tracker[40]),
+    \bramaddr[7]_i_58 
+       (.I0(data_loc_tracker[41]),
+        .I1(data_loc_tracker[40]),
+        .I2(data_loc_tracker[44]),
+        .I3(data_loc_tracker[43]),
         .I4(data_loc_tracker[46]),
-        .O(\bramaddr[7]_i_62_n_0 ));
+        .O(\bramaddr[7]_i_58_n_0 ));
   LUT6 #(
-    .INIT(64'hAA2AAAAA2A2A2A2A)) 
-    \bramaddr[7]_i_63 
+    .INIT(64'h75FF555555555555)) 
+    \bramaddr[7]_i_59 
        (.I0(data_loc_tracker[49]),
-        .I1(data_loc_tracker[51]),
-        .I2(data_loc_tracker[50]),
-        .I3(\bramaddr[7]_i_81_n_0 ),
-        .I4(\data_loc[3]_i_10_n_0 ),
-        .I5(data_loc_tracker[52]),
-        .O(\bramaddr[7]_i_63_n_0 ));
+        .I1(\bramaddr[7]_i_81_n_0 ),
+        .I2(\data_loc[3]_i_10_n_0 ),
+        .I3(data_loc_tracker[52]),
+        .I4(data_loc_tracker[51]),
+        .I5(data_loc_tracker[50]),
+        .O(\bramaddr[7]_i_59_n_0 ));
+  LUT6 #(
+    .INIT(64'hDDDDDDDDDDDDDFDD)) 
+    \bramaddr[7]_i_6 
+       (.I0(data_loc_tracker[2]),
+        .I1(\bramaddr[15]_i_18_n_0 ),
+        .I2(\bramaddr[7]_i_19_n_0 ),
+        .I3(\bramaddr[16]_i_12_n_0 ),
+        .I4(\bramaddr[7]_i_20_n_0 ),
+        .I5(\bramaddr[7]_i_7_n_0 ),
+        .O(\bramaddr[7]_i_6_n_0 ));
   LUT6 #(
     .INIT(64'h77F777F777F7F7F7)) 
-    \bramaddr[7]_i_64 
+    \bramaddr[7]_i_60 
        (.I0(data_loc_tracker[36]),
         .I1(data_loc_tracker[39]),
-        .I2(\bramaddr[16]_i_13_n_0 ),
+        .I2(\bramaddr[16]_i_17_n_0 ),
         .I3(data_loc_tracker[42]),
-        .I4(\bramaddr[16]_i_16_n_0 ),
+        .I4(\bramaddr[16]_i_22_n_0 ),
         .I5(data_loc_tracker[45]),
-        .O(\bramaddr[7]_i_64_n_0 ));
+        .O(\bramaddr[7]_i_60_n_0 ));
   LUT6 #(
-    .INIT(64'h4FCFFFFFFFFFFFFF)) 
-    \bramaddr[7]_i_65 
-       (.I0(data_loc_tracker[33]),
-        .I1(data_loc_tracker[32]),
-        .I2(data_loc_tracker[31]),
-        .I3(data_loc_tracker[34]),
-        .I4(data_loc_tracker[28]),
-        .I5(data_loc_tracker[30]),
-        .O(\bramaddr[7]_i_65_n_0 ));
+    .INIT(64'h7F77FFFFFF77FFFF)) 
+    \bramaddr[7]_i_61 
+       (.I0(data_loc_tracker[28]),
+        .I1(data_loc_tracker[30]),
+        .I2(data_loc_tracker[33]),
+        .I3(data_loc_tracker[32]),
+        .I4(data_loc_tracker[31]),
+        .I5(data_loc_tracker[34]),
+        .O(\bramaddr[7]_i_61_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair147" *) 
   LUT2 #(
     .INIT(4'h8)) 
-    \bramaddr[7]_i_66 
+    \bramaddr[7]_i_62 
        (.I0(data_loc_tracker[45]),
         .I1(data_loc_tracker[44]),
-        .O(\bramaddr[7]_i_66_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair120" *) 
+        .O(\bramaddr[7]_i_62_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
   LUT2 #(
     .INIT(4'h8)) 
-    \bramaddr[7]_i_67 
+    \bramaddr[7]_i_63 
        (.I0(data_loc_tracker[18]),
         .I1(data_loc_tracker[17]),
-        .O(\bramaddr[7]_i_67_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair129" *) 
+        .O(\bramaddr[7]_i_63_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \bramaddr[7]_i_64 
+       (.I0(data_loc_tracker[42]),
+        .I1(data_loc_tracker[41]),
+        .O(\bramaddr[7]_i_64_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair104" *) 
   LUT2 #(
     .INIT(4'h7)) 
-    \bramaddr[7]_i_68 
-       (.I0(data_loc_tracker[34]),
-        .I1(data_loc_tracker[31]),
-        .O(\bramaddr[7]_i_68_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
-  LUT2 #(
-    .INIT(4'h7)) 
-    \bramaddr[7]_i_69 
+    \bramaddr[7]_i_65 
        (.I0(data_loc_tracker[35]),
         .I1(data_loc_tracker[32]),
+        .O(\bramaddr[7]_i_65_n_0 ));
+  LUT6 #(
+    .INIT(64'h40FFFFFFFFFFFFFF)) 
+    \bramaddr[7]_i_66 
+       (.I0(\data_loc[1]_i_13_n_0 ),
+        .I1(data_loc_tracker[35]),
+        .I2(data_loc_tracker[34]),
+        .I3(data_loc_tracker[30]),
+        .I4(data_loc_tracker[29]),
+        .I5(data_loc_tracker[33]),
+        .O(\bramaddr[7]_i_66_n_0 ));
+  LUT6 #(
+    .INIT(64'h7F777777FFFFFFFF)) 
+    \bramaddr[7]_i_67 
+       (.I0(data_loc_tracker[34]),
+        .I1(data_loc_tracker[35]),
+        .I2(data_loc_tracker[41]),
+        .I3(data_loc_tracker[39]),
+        .I4(data_loc_tracker[40]),
+        .I5(data_loc_tracker[38]),
+        .O(\bramaddr[7]_i_67_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  LUT4 #(
+    .INIT(16'h7F77)) 
+    \bramaddr[7]_i_68 
+       (.I0(data_loc_tracker[39]),
+        .I1(data_loc_tracker[40]),
+        .I2(data_loc_tracker[43]),
+        .I3(data_loc_tracker[42]),
+        .O(\bramaddr[7]_i_68_n_0 ));
+  LUT6 #(
+    .INIT(64'hF700FFFFFFFFFFFF)) 
+    \bramaddr[7]_i_69 
+       (.I0(data_loc_tracker[50]),
+        .I1(data_loc_tracker[49]),
+        .I2(\bramaddr[7]_i_82_n_0 ),
+        .I3(data_loc_tracker[48]),
+        .I4(data_loc_tracker[46]),
+        .I5(data_loc_tracker[47]),
         .O(\bramaddr[7]_i_69_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair111" *) 
+  (* SOFT_HLUTNM = "soft_lutpair121" *) 
   LUT3 #(
     .INIT(8'h7F)) 
     \bramaddr[7]_i_7 
@@ -3517,178 +3556,172 @@ module design_1_tdc_0_1_data_recorder
         .I1(data_loc_tracker[4]),
         .I2(data_loc_tracker[5]),
         .O(\bramaddr[7]_i_7_n_0 ));
-  LUT6 #(
-    .INIT(64'h70FFFFFFFFFFFFFF)) 
+  (* SOFT_HLUTNM = "soft_lutpair147" *) 
+  LUT3 #(
+    .INIT(8'h80)) 
     \bramaddr[7]_i_70 
-       (.I0(data_loc_tracker[37]),
-        .I1(data_loc_tracker[36]),
-        .I2(\bramaddr[11]_i_46_n_0 ),
-        .I3(data_loc_tracker[30]),
-        .I4(data_loc_tracker[29]),
-        .I5(data_loc_tracker[33]),
+       (.I0(data_loc_tracker[44]),
+        .I1(data_loc_tracker[45]),
+        .I2(data_loc_tracker[42]),
         .O(\bramaddr[7]_i_70_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
-  LUT4 #(
-    .INIT(16'h7F77)) 
-    \bramaddr[7]_i_71 
-       (.I0(data_loc_tracker[39]),
-        .I1(data_loc_tracker[40]),
-        .I2(data_loc_tracker[43]),
-        .I3(data_loc_tracker[42]),
-        .O(\bramaddr[7]_i_71_n_0 ));
-  LUT6 #(
-    .INIT(64'hA2FFFFFFFFFFFFFF)) 
-    \bramaddr[7]_i_72 
-       (.I0(\bramaddr[11]_i_76_n_0 ),
-        .I1(data_loc_tracker[48]),
-        .I2(\bramaddr[7]_i_82_n_0 ),
-        .I3(data_loc_tracker[42]),
-        .I4(data_loc_tracker[45]),
-        .I5(data_loc_tracker[44]),
-        .O(\bramaddr[7]_i_72_n_0 ));
   LUT6 #(
     .INIT(64'h7000FFFFFFFFFFFF)) 
-    \bramaddr[7]_i_73 
+    \bramaddr[7]_i_71 
        (.I0(data_loc_tracker[31]),
         .I1(data_loc_tracker[32]),
         .I2(data_loc_tracker[30]),
         .I3(data_loc_tracker[29]),
-        .I4(\bramaddr[7]_i_24_n_0 ),
-        .I5(\bramaddr[7]_i_83_n_0 ),
-        .O(\bramaddr[7]_i_73_n_0 ));
+        .I4(\bramaddr[7]_i_22_n_0 ),
+        .I5(\bramaddr[11]_i_58_n_0 ),
+        .O(\bramaddr[7]_i_71_n_0 ));
   LUT6 #(
     .INIT(64'h00000000DDDD0D00)) 
-    \bramaddr[7]_i_74 
+    \bramaddr[7]_i_72 
        (.I0(data_loc_tracker[35]),
-        .I1(\bramaddr[11]_i_61_n_0 ),
-        .I2(\bramaddr[16]_i_23_n_0 ),
+        .I1(\bramaddr[11]_i_62_n_0 ),
+        .I2(\bramaddr[11]_i_71_n_0 ),
         .I3(data_loc_tracker[41]),
-        .I4(\bramaddr[11]_i_58_n_0 ),
-        .I5(\bramaddr[7]_i_68_n_0 ),
-        .O(\bramaddr[7]_i_74_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
+        .I4(\bramaddr[11]_i_59_n_0 ),
+        .I5(\bramaddr[7]_i_83_n_0 ),
+        .O(\bramaddr[7]_i_72_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \bramaddr[7]_i_73 
+       (.I0(data_loc_tracker[22]),
+        .I1(data_loc_tracker[21]),
+        .O(\bramaddr[7]_i_73_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair103" *) 
   LUT3 #(
     .INIT(8'h7F)) 
-    \bramaddr[7]_i_75 
+    \bramaddr[7]_i_74 
        (.I0(data_loc_tracker[8]),
         .I1(data_loc_tracker[10]),
         .I2(data_loc_tracker[11]),
-        .O(\bramaddr[7]_i_75_n_0 ));
+        .O(\bramaddr[7]_i_74_n_0 ));
   LUT6 #(
-    .INIT(64'h2F00FF000000FF00)) 
-    \bramaddr[7]_i_76 
+    .INIT(64'h00002F00FF00FF00)) 
+    \bramaddr[7]_i_75 
        (.I0(data_loc_tracker[61]),
         .I1(data_loc_tracker[62]),
         .I2(data_loc_tracker[60]),
         .I3(data_loc_tracker[56]),
-        .I4(data_loc_tracker[57]),
-        .I5(\bramaddr[7]_i_84_n_0 ),
-        .O(\bramaddr[7]_i_76_n_0 ));
+        .I4(\bramaddr[7]_i_84_n_0 ),
+        .I5(data_loc_tracker[57]),
+        .O(\bramaddr[7]_i_75_n_0 ));
   LUT6 #(
     .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \bramaddr[7]_i_77 
+    \bramaddr[7]_i_76 
        (.I0(data_loc_tracker[17]),
         .I1(data_loc_tracker[19]),
         .I2(data_loc_tracker[34]),
         .I3(data_loc_tracker[31]),
         .I4(data_loc_tracker[4]),
         .I5(data_loc_tracker[2]),
-        .O(\bramaddr[7]_i_77_n_0 ));
+        .O(\bramaddr[7]_i_76_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFF7FFFFFFF)) 
-    \bramaddr[7]_i_78 
+    .INIT(64'h7FFFFFFFFFFFFFFF)) 
+    \bramaddr[7]_i_77 
        (.I0(\bramaddr[7]_i_85_n_0 ),
         .I1(data_loc_tracker[9]),
         .I2(data_loc_tracker[7]),
-        .I3(data_loc_tracker[29]),
-        .I4(data_loc_tracker[27]),
-        .I5(\bramaddr[7]_i_86_n_0 ),
+        .I3(\bramaddr[7]_i_86_n_0 ),
+        .I4(data_loc_tracker[29]),
+        .I5(data_loc_tracker[27]),
+        .O(\bramaddr[7]_i_77_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \bramaddr[7]_i_78 
+       (.I0(data_loc_tracker[38]),
+        .I1(data_loc_tracker[37]),
         .O(\bramaddr[7]_i_78_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair102" *) 
-  LUT3 #(
-    .INIT(8'h80)) 
+  (* SOFT_HLUTNM = "soft_lutpair98" *) 
+  LUT2 #(
+    .INIT(4'h7)) 
     \bramaddr[7]_i_79 
-       (.I0(data_loc_tracker[45]),
-        .I1(data_loc_tracker[43]),
-        .I2(data_loc_tracker[44]),
+       (.I0(data_loc_tracker[61]),
+        .I1(data_loc_tracker[60]),
         .O(\bramaddr[7]_i_79_n_0 ));
   LUT6 #(
     .INIT(64'h00000000AAAAFFBF)) 
     \bramaddr[7]_i_8 
-       (.I0(\bramaddr[7]_i_23_n_0 ),
+       (.I0(\bramaddr[7]_i_21_n_0 ),
         .I1(data_loc_tracker[23]),
-        .I2(\bramaddr[7]_i_24_n_0 ),
-        .I3(\bramaddr[7]_i_25_n_0 ),
-        .I4(\bramaddr[7]_i_26_n_0 ),
-        .I5(\bramaddr[7]_i_27_n_0 ),
+        .I2(\bramaddr[7]_i_22_n_0 ),
+        .I3(\bramaddr[7]_i_23_n_0 ),
+        .I4(\bramaddr[7]_i_24_n_0 ),
+        .I5(\bramaddr[7]_i_25_n_0 ),
         .O(\bramaddr[7]_i_8_n_0 ));
   LUT6 #(
-    .INIT(64'h8000000088888888)) 
+    .INIT(64'h8000808080808080)) 
     \bramaddr[7]_i_80 
-       (.I0(data_loc_tracker[52]),
-        .I1(\data_loc[3]_i_10_n_0 ),
-        .I2(data_loc_tracker[59]),
-        .I3(data_loc_tracker[57]),
-        .I4(data_loc_tracker[58]),
-        .I5(\bramaddr[16]_i_17_n_0 ),
+       (.I0(data_loc_tracker[49]),
+        .I1(data_loc_tracker[50]),
+        .I2(data_loc_tracker[51]),
+        .I3(\bramaddr[7]_i_87_n_0 ),
+        .I4(\data_loc[3]_i_10_n_0 ),
+        .I5(data_loc_tracker[52]),
         .O(\bramaddr[7]_i_80_n_0 ));
   LUT6 #(
-    .INIT(64'hB0F000F000F000F0)) 
+    .INIT(64'h000000001FFF0000)) 
     \bramaddr[7]_i_81 
-       (.I0(\bramaddr[7]_i_87_n_0 ),
-        .I1(data_loc_tracker[59]),
-        .I2(data_loc_tracker[55]),
+       (.I0(data_loc_tracker[62]),
+        .I1(\bramaddr[7]_i_79_n_0 ),
+        .I2(data_loc_tracker[59]),
         .I3(data_loc_tracker[56]),
-        .I4(data_loc_tracker[57]),
-        .I5(data_loc_tracker[58]),
+        .I4(data_loc_tracker[55]),
+        .I5(\bramaddr[11]_i_80_n_0 ),
         .O(\bramaddr[7]_i_81_n_0 ));
   LUT6 #(
-    .INIT(64'hA8AA88AA88888888)) 
+    .INIT(64'h75F5000000000000)) 
     \bramaddr[7]_i_82 
-       (.I0(\bramaddr[7]_i_52_n_0 ),
-        .I1(\bramaddr[15]_i_21_n_0 ),
-        .I2(\bramaddr[7]_i_88_n_0 ),
-        .I3(\bramaddr[15]_i_20_n_0 ),
-        .I4(\bramaddr[11]_i_80_n_0 ),
-        .I5(data_loc_tracker[53]),
+       (.I0(data_loc_tracker[53]),
+        .I1(\bramaddr[15]_i_46_n_0 ),
+        .I2(\bramaddr[15]_i_20_n_0 ),
+        .I3(\bramaddr[7]_i_88_n_0 ),
+        .I4(data_loc_tracker[51]),
+        .I5(data_loc_tracker[52]),
         .O(\bramaddr[7]_i_82_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair124" *) 
+  (* SOFT_HLUTNM = "soft_lutpair129" *) 
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'h7)) 
     \bramaddr[7]_i_83 
-       (.I0(data_loc_tracker[28]),
-        .I1(data_loc_tracker[27]),
+       (.I0(data_loc_tracker[34]),
+        .I1(data_loc_tracker[31]),
         .O(\bramaddr[7]_i_83_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair100" *) 
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'h7)) 
     \bramaddr[7]_i_84 
        (.I0(data_loc_tracker[59]),
         .I1(data_loc_tracker[58]),
         .O(\bramaddr[7]_i_84_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \bramaddr[7]_i_85 
        (.I0(data_loc_tracker[39]),
         .I1(data_loc_tracker[36]),
         .O(\bramaddr[7]_i_85_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  (* SOFT_HLUTNM = "soft_lutpair143" *) 
   LUT2 #(
-    .INIT(4'h7)) 
+    .INIT(4'h8)) 
     \bramaddr[7]_i_86 
        (.I0(data_loc_tracker[14]),
         .I1(data_loc_tracker[12]),
         .O(\bramaddr[7]_i_86_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair101" *) 
-  LUT3 #(
-    .INIT(8'h40)) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT5 #(
+    .INIT(32'h08888888)) 
     \bramaddr[7]_i_87 
-       (.I0(data_loc_tracker[62]),
-        .I1(data_loc_tracker[60]),
-        .I2(data_loc_tracker[61]),
+       (.I0(data_loc_tracker[56]),
+        .I1(data_loc_tracker[55]),
+        .I2(data_loc_tracker[58]),
+        .I3(data_loc_tracker[57]),
+        .I4(data_loc_tracker[59]),
         .O(\bramaddr[7]_i_87_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair51" *) 
+  (* SOFT_HLUTNM = "soft_lutpair57" *) 
   LUT3 #(
     .INIT(8'h8F)) 
     \bramaddr[7]_i_88 
@@ -3696,7 +3729,7 @@ module design_1_tdc_0_1_data_recorder
         .I1(data_loc_tracker[59]),
         .I2(data_loc_tracker[58]),
         .O(\bramaddr[7]_i_88_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair144" *) 
+  (* SOFT_HLUTNM = "soft_lutpair108" *) 
   LUT3 #(
     .INIT(8'h80)) 
     \bramaddr[7]_i_9 
@@ -3842,33 +3875,46 @@ module design_1_tdc_0_1_data_recorder
         .Q(bramaddr[9]),
         .R(1'b0));
   LUT5 #(
-    .INIT(32'h00000100)) 
+    .INIT(32'h00000008)) 
     \bramen_disabler[4]_i_1 
        (.I0(\bramen_disabler[4]_i_2_n_0 ),
-        .I1(\bramen_disabler[4]_i_3_n_0 ),
-        .I2(bramen_disabler[1]),
-        .I3(\l1a_cntr_reg_n_0_[1] ),
-        .I4(bramen_disabler[0]),
-        .O(bramen_disabler0));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
-  LUT5 #(
-    .INIT(32'hFFFFFFFD)) 
-    \bramen_disabler[4]_i_2 
-       (.I0(\l1a_cntr[2]_i_2_n_0 ),
-        .I1(\l1a_cntr_reg_n_0_[0] ),
+        .I1(\l1a_cntr_reg_n_0_[1] ),
         .I2(\l1a_cntr_reg_n_0_[2] ),
-        .I3(\l1a_cntr_reg_n_0_[3] ),
-        .I4(\l1a_cntr_reg_n_0_[4] ),
-        .O(\bramen_disabler[4]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
-  LUT4 #(
-    .INIT(16'hFFEF)) 
-    \bramen_disabler[4]_i_3 
-       (.I0(Q[0]),
-        .I1(Q[1]),
-        .I2(DI),
         .I3(bramen_disabler[4]),
+        .I4(\bramen_disabler[4]_i_3_n_0 ),
+        .O(bramen_disabler0));
+  LUT6 #(
+    .INIT(64'h0000000000000004)) 
+    \bramen_disabler[4]_i_2 
+       (.I0(\l1a_cntr_reg_n_0_[0] ),
+        .I1(DI),
+        .I2(bramen_disabler[0]),
+        .I3(bramen_disabler[1]),
+        .I4(\bramen_disabler[4]_i_4_n_0 ),
+        .I5(\bramen_disabler[4]_i_5_n_0 ),
+        .O(\bramen_disabler[4]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \bramen_disabler[4]_i_3 
+       (.I0(\l1a_cntr_reg_n_0_[7] ),
+        .I1(\l1a_cntr_reg_n_0_[8] ),
+        .I2(\l1a_cntr_reg_n_0_[6] ),
+        .I3(\l1a_cntr_reg_n_0_[5] ),
         .O(\bramen_disabler[4]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \bramen_disabler[4]_i_4 
+       (.I0(\l1a_cntr_reg_n_0_[3] ),
+        .I1(\l1a_cntr_reg_n_0_[4] ),
+        .O(\bramen_disabler[4]_i_4_n_0 ));
+  LUT2 #(
+    .INIT(4'hE)) 
+    \bramen_disabler[4]_i_5 
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .O(\bramen_disabler[4]_i_5_n_0 ));
   FDSE #(
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
@@ -3950,7 +3996,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\bramen_enabler_reg_n_0_[1] ),
         .Q(p_0_in),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
   LUT4 #(
     .INIT(16'hA3A0)) 
     bramen_i_1
@@ -3972,7 +4018,7 @@ module design_1_tdc_0_1_data_recorder
     .INIT(64'h000000000000AAA8)) 
     \bramwrdata[15]_i_1 
        (.I0(p_0_in__0),
-        .I1(inner_cntr__0[1]),
+        .I1(l1a_cntr_sync120),
         .I2(inner_cntr__0[2]),
         .I3(inner_cntr__0[0]),
         .I4(Q[1]),
@@ -3985,7 +4031,7 @@ module design_1_tdc_0_1_data_recorder
         .I1(Q[1]),
         .I2(inner_cntr__0[0]),
         .I3(inner_cntr__0[2]),
-        .I4(inner_cntr__0[1]),
+        .I4(l1a_cntr_sync120),
         .O(\bramwrdata[15]_i_2_n_0 ));
   FDSE #(
     .IS_C_INVERTED(1'b1)) 
@@ -4125,6 +4171,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(\data_loc[0]_i_6_n_0 ),
         .I5(\data_loc[0]_i_7_n_0 ),
         .O(\data_loc[0]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair81" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \data_loc[0]_i_10 
@@ -4138,10 +4185,10 @@ module design_1_tdc_0_1_data_recorder
         .I1(data_loc_tracker[47]),
         .I2(data_loc_tracker[51]),
         .I3(data_loc_tracker[49]),
-        .I4(\data_loc[0]_i_19_n_0 ),
-        .I5(\data_loc[0]_i_20_n_0 ),
+        .I4(\data_loc[0]_i_18_n_0 ),
+        .I5(\data_loc[0]_i_19_n_0 ),
         .O(\data_loc[0]_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair108" *) 
+  (* SOFT_HLUTNM = "soft_lutpair91" *) 
   LUT3 #(
     .INIT(8'h8A)) 
     \data_loc[0]_i_12 
@@ -4150,71 +4197,68 @@ module design_1_tdc_0_1_data_recorder
         .I2(data_loc_tracker[45]),
         .O(\data_loc[0]_i_12_n_0 ));
   LUT6 #(
-    .INIT(64'h8A888A888A88AA88)) 
+    .INIT(64'h77777777F777F7F7)) 
     \data_loc[0]_i_13 
-       (.I0(\data_loc[0]_i_17_n_0 ),
-        .I1(\data_loc[0]_i_21_n_0 ),
-        .I2(\data_loc[0]_i_22_n_0 ),
-        .I3(\data_loc[0]_i_23_n_0 ),
-        .I4(\data_loc[0]_i_24_n_0 ),
-        .I5(\data_loc[0]_i_25_n_0 ),
+       (.I0(data_loc_tracker[13]),
+        .I1(data_loc_tracker[15]),
+        .I2(data_loc_tracker[16]),
+        .I3(data_loc_tracker[18]),
+        .I4(data_loc_tracker[17]),
+        .I5(\data_loc[0]_i_20_n_0 ),
         .O(\data_loc[0]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
-  LUT3 #(
-    .INIT(8'h4F)) 
-    \data_loc[0]_i_14 
-       (.I0(data_loc_tracker[30]),
-        .I1(data_loc_tracker[29]),
-        .I2(data_loc_tracker[28]),
-        .O(\data_loc[0]_i_14_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair146" *) 
-  LUT3 #(
-    .INIT(8'h80)) 
-    \data_loc[0]_i_15 
-       (.I0(data_loc_tracker[5]),
-        .I1(data_loc_tracker[1]),
-        .I2(data_loc_tracker[3]),
-        .O(\data_loc[0]_i_15_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT5 #(
-    .INIT(32'h80AAA0AA)) 
-    \data_loc[0]_i_16 
-       (.I0(data_loc_tracker[6]),
-        .I1(data_loc_tracker[10]),
-        .I2(data_loc_tracker[8]),
-        .I3(data_loc_tracker[7]),
-        .I4(data_loc_tracker[9]),
-        .O(\data_loc[0]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'h8000000000000000)) 
-    \data_loc[0]_i_17 
+    \data_loc[0]_i_14 
        (.I0(data_loc_tracker[3]),
         .I1(data_loc_tracker[1]),
         .I2(data_loc_tracker[5]),
         .I3(data_loc_tracker[7]),
         .I4(data_loc_tracker[11]),
         .I5(data_loc_tracker[9]),
+        .O(\data_loc[0]_i_14_n_0 ));
+  LUT6 #(
+    .INIT(64'hF8F8F8F8F8FFF8F8)) 
+    \data_loc[0]_i_15 
+       (.I0(\data_loc[0]_i_21_n_0 ),
+        .I1(\data_loc[0]_i_8_n_0 ),
+        .I2(\bramaddr[11]_i_23_n_0 ),
+        .I3(\data_loc[0]_i_22_n_0 ),
+        .I4(data_loc_tracker[5]),
+        .I5(\data_loc[0]_i_23_n_0 ),
+        .O(\data_loc[0]_i_15_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair100" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \data_loc[0]_i_16 
+       (.I0(data_loc_tracker[15]),
+        .I1(data_loc_tracker[13]),
+        .O(\data_loc[0]_i_16_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \data_loc[0]_i_17 
+       (.I0(data_loc_tracker[19]),
+        .I1(data_loc_tracker[17]),
         .O(\data_loc[0]_i_17_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair68" *) 
-  LUT4 #(
-    .INIT(16'h7FFF)) 
-    \data_loc[0]_i_18 
-       (.I0(data_loc_tracker[17]),
-        .I1(data_loc_tracker[19]),
-        .I2(data_loc_tracker[13]),
-        .I3(data_loc_tracker[15]),
-        .O(\data_loc[0]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'h2F00FF000000FF00)) 
-    \data_loc[0]_i_19 
+    \data_loc[0]_i_18 
        (.I0(data_loc_tracker[56]),
-        .I1(\data_loc[0]_i_26_n_0 ),
+        .I1(\data_loc[0]_i_24_n_0 ),
         .I2(data_loc_tracker[55]),
         .I3(data_loc_tracker[52]),
         .I4(data_loc_tracker[53]),
         .I5(data_loc_tracker[54]),
+        .O(\data_loc[0]_i_18_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair144" *) 
+  LUT3 #(
+    .INIT(8'hD0)) 
+    \data_loc[0]_i_19 
+       (.I0(data_loc_tracker[49]),
+        .I1(data_loc_tracker[50]),
+        .I2(data_loc_tracker[48]),
         .O(\data_loc[0]_i_19_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair105" *) 
   LUT3 #(
     .INIT(8'h7F)) 
     \data_loc[0]_i_2 
@@ -4222,65 +4266,52 @@ module design_1_tdc_0_1_data_recorder
         .I1(data_loc_tracker[31]),
         .I2(\data_loc[0]_i_8_n_0 ),
         .O(\data_loc[0]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair91" *) 
-  LUT3 #(
-    .INIT(8'h8A)) 
+  LUT6 #(
+    .INIT(64'h8000AAAAA0A0AAAA)) 
     \data_loc[0]_i_20 
-       (.I0(data_loc_tracker[48]),
-        .I1(data_loc_tracker[50]),
-        .I2(data_loc_tracker[49]),
+       (.I0(\data_loc[0]_i_17_n_0 ),
+        .I1(\bramaddr[3]_i_20_n_0 ),
+        .I2(data_loc_tracker[21]),
+        .I3(data_loc_tracker[23]),
+        .I4(data_loc_tracker[20]),
+        .I5(data_loc_tracker[22]),
         .O(\data_loc[0]_i_20_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT3 #(
     .INIT(8'h4F)) 
     \data_loc[0]_i_21 
-       (.I0(data_loc_tracker[14]),
-        .I1(data_loc_tracker[13]),
-        .I2(data_loc_tracker[12]),
+       (.I0(data_loc_tracker[30]),
+        .I1(data_loc_tracker[29]),
+        .I2(data_loc_tracker[28]),
         .O(\data_loc[0]_i_21_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT3 #(
-    .INIT(8'h8A)) 
-    \data_loc[0]_i_22 
-       (.I0(data_loc_tracker[16]),
-        .I1(data_loc_tracker[18]),
-        .I2(data_loc_tracker[17]),
-        .O(\data_loc[0]_i_22_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair132" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \data_loc[0]_i_23 
-       (.I0(data_loc_tracker[15]),
-        .I1(data_loc_tracker[13]),
-        .O(\data_loc[0]_i_23_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair68" *) 
+  (* SOFT_HLUTNM = "soft_lutpair131" *) 
   LUT2 #(
     .INIT(4'h7)) 
-    \data_loc[0]_i_24 
-       (.I0(data_loc_tracker[19]),
-        .I1(data_loc_tracker[17]),
-        .O(\data_loc[0]_i_24_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+    \data_loc[0]_i_22 
+       (.I0(data_loc_tracker[3]),
+        .I1(data_loc_tracker[1]),
+        .O(\data_loc[0]_i_22_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT5 #(
-    .INIT(32'h08CC88CC)) 
-    \data_loc[0]_i_25 
-       (.I0(data_loc_tracker[22]),
-        .I1(data_loc_tracker[20]),
-        .I2(data_loc_tracker[23]),
-        .I3(data_loc_tracker[21]),
-        .I4(\bramaddr[3]_i_19_n_0 ),
-        .O(\data_loc[0]_i_25_n_0 ));
+    .INIT(32'h80AAA0AA)) 
+    \data_loc[0]_i_23 
+       (.I0(data_loc_tracker[6]),
+        .I1(data_loc_tracker[10]),
+        .I2(data_loc_tracker[8]),
+        .I3(data_loc_tracker[7]),
+        .I4(data_loc_tracker[9]),
+        .O(\data_loc[0]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'h08880808AAAAAAAA)) 
-    \data_loc[0]_i_26 
+    \data_loc[0]_i_24 
        (.I0(data_loc_tracker[57]),
         .I1(data_loc_tracker[59]),
         .I2(data_loc_tracker[60]),
         .I3(data_loc_tracker[62]),
         .I4(data_loc_tracker[61]),
         .I5(data_loc_tracker[58]),
-        .O(\data_loc[0]_i_26_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair81" *) 
+        .O(\data_loc[0]_i_24_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair94" *) 
   LUT3 #(
     .INIT(8'h8A)) 
     \data_loc[0]_i_3 
@@ -4288,14 +4319,14 @@ module design_1_tdc_0_1_data_recorder
         .I1(data_loc_tracker[34]),
         .I2(data_loc_tracker[33]),
         .O(\data_loc[0]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \data_loc[0]_i_4 
        (.I0(data_loc_tracker[35]),
         .I1(data_loc_tracker[33]),
         .O(\data_loc[0]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'h8A)) 
     \data_loc[0]_i_5 
@@ -4314,26 +4345,26 @@ module design_1_tdc_0_1_data_recorder
         .I5(\data_loc[0]_i_12_n_0 ),
         .O(\data_loc[0]_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'hFEEEFEEEFFFFFEEE)) 
+    .INIT(64'hFFFFFFFF77F70000)) 
     \data_loc[0]_i_7 
        (.I0(\data_loc[0]_i_13_n_0 ),
-        .I1(\bramaddr[11]_i_23_n_0 ),
-        .I2(\data_loc[0]_i_14_n_0 ),
-        .I3(\data_loc[0]_i_8_n_0 ),
-        .I4(\data_loc[0]_i_15_n_0 ),
-        .I5(\data_loc[0]_i_16_n_0 ),
+        .I1(data_loc_tracker[12]),
+        .I2(data_loc_tracker[13]),
+        .I3(data_loc_tracker[14]),
+        .I4(\data_loc[0]_i_14_n_0 ),
+        .I5(\data_loc[0]_i_15_n_0 ),
         .O(\data_loc[0]_i_7_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000080000000)) 
+    .INIT(64'h0080000000000000)) 
     \data_loc[0]_i_8 
-       (.I0(\data_loc[0]_i_17_n_0 ),
-        .I1(data_loc_tracker[25]),
-        .I2(data_loc_tracker[27]),
-        .I3(data_loc_tracker[21]),
-        .I4(data_loc_tracker[23]),
-        .I5(\data_loc[0]_i_18_n_0 ),
+       (.I0(\data_loc[0]_i_14_n_0 ),
+        .I1(\data_loc[0]_i_16_n_0 ),
+        .I2(\data_loc[0]_i_17_n_0 ),
+        .I3(\data_loc[3]_i_13_n_0 ),
+        .I4(data_loc_tracker[21]),
+        .I5(data_loc_tracker[23]),
         .O(\data_loc[0]_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair97" *) 
+  (* SOFT_HLUTNM = "soft_lutpair51" *) 
   LUT3 #(
     .INIT(8'h4F)) 
     \data_loc[0]_i_9 
@@ -4351,7 +4382,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(\data_loc[1]_i_4_n_0 ),
         .I5(\data_loc[1]_i_5_n_0 ),
         .O(\data_loc[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair106" *) 
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \data_loc[1]_i_10 
@@ -4366,15 +4397,15 @@ module design_1_tdc_0_1_data_recorder
         .I2(data_loc_tracker[45]),
         .I3(data_loc_tracker[43]),
         .I4(data_loc_tracker[42]),
-        .I5(\bramaddr[16]_i_13_n_0 ),
+        .I5(\bramaddr[16]_i_17_n_0 ),
         .O(\data_loc[1]_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair150" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \data_loc[1]_i_12 
        (.I0(data_loc_tracker[32]),
         .I1(data_loc_tracker[33]),
         .O(\data_loc[1]_i_12_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair88" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \data_loc[1]_i_13 
@@ -4382,34 +4413,34 @@ module design_1_tdc_0_1_data_recorder
         .I1(data_loc_tracker[36]),
         .O(\data_loc[1]_i_13_n_0 ));
   LUT6 #(
-    .INIT(64'h0000FF00F700FF00)) 
+    .INIT(64'hFF00FF000000DF00)) 
     \data_loc[1]_i_14 
        (.I0(data_loc_tracker[52]),
         .I1(\data_loc[1]_i_15_n_0 ),
         .I2(\data_loc[1]_i_16_n_0 ),
-        .I3(\bramaddr[11]_i_76_n_0 ),
-        .I4(\bramaddr[7]_i_49_n_0 ),
-        .I5(\bramaddr[11]_i_74_n_0 ),
+        .I3(\bramaddr[11]_i_77_n_0 ),
+        .I4(\bramaddr[11]_i_63_n_0 ),
+        .I5(\bramaddr[7]_i_47_n_0 ),
         .O(\data_loc[1]_i_14_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT6 #(
+    .INIT(64'h7000000000000000)) 
+    \data_loc[1]_i_15 
+       (.I0(data_loc_tracker[60]),
+        .I1(data_loc_tracker[61]),
+        .I2(data_loc_tracker[55]),
+        .I3(data_loc_tracker[54]),
+        .I4(data_loc_tracker[59]),
+        .I5(data_loc_tracker[58]),
+        .O(\data_loc[1]_i_15_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT5 #(
     .INIT(32'h80AAAAAA)) 
-    \data_loc[1]_i_15 
+    \data_loc[1]_i_16 
        (.I0(data_loc_tracker[53]),
         .I1(data_loc_tracker[57]),
         .I2(data_loc_tracker[56]),
         .I3(data_loc_tracker[55]),
         .I4(data_loc_tracker[54]),
-        .O(\data_loc[1]_i_15_n_0 ));
-  LUT6 #(
-    .INIT(64'h7000000000000000)) 
-    \data_loc[1]_i_16 
-       (.I0(data_loc_tracker[60]),
-        .I1(data_loc_tracker[61]),
-        .I2(data_loc_tracker[59]),
-        .I3(data_loc_tracker[58]),
-        .I4(data_loc_tracker[55]),
-        .I5(data_loc_tracker[54]),
         .O(\data_loc[1]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'h08FFFFFFFFFFFFFF)) 
@@ -4441,7 +4472,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(data_loc_tracker[4]),
         .I5(data_loc_tracker[5]),
         .O(\data_loc[1]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair127" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \data_loc[1]_i_5 
@@ -4453,12 +4484,12 @@ module design_1_tdc_0_1_data_recorder
     \data_loc[1]_i_6 
        (.I0(data_loc_tracker[27]),
         .I1(data_loc_tracker[26]),
-        .I2(\bramaddr[7]_i_24_n_0 ),
+        .I2(\bramaddr[7]_i_22_n_0 ),
         .I3(\data_loc[1]_i_10_n_0 ),
         .I4(data_loc_tracker[19]),
         .I5(data_loc_tracker[18]),
         .O(\data_loc[1]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair57" *) 
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \data_loc[1]_i_7 
@@ -4474,7 +4505,7 @@ module design_1_tdc_0_1_data_recorder
         .I1(data_loc_tracker[39]),
         .I2(\data_loc[1]_i_11_n_0 ),
         .I3(\data_loc[1]_i_12_n_0 ),
-        .I4(\bramaddr[11]_i_46_n_0 ),
+        .I4(\bramaddr[11]_i_49_n_0 ),
         .I5(\data_loc[1]_i_13_n_0 ),
         .O(\data_loc[1]_i_8_n_0 ));
   LUT6 #(
@@ -4507,7 +4538,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(data_loc_tracker[59]),
         .I5(\data_loc[2]_i_12_n_0 ),
         .O(\data_loc[2]_i_10_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \data_loc[2]_i_11 
@@ -4516,7 +4547,7 @@ module design_1_tdc_0_1_data_recorder
         .I2(data_loc_tracker[32]),
         .I3(data_loc_tracker[35]),
         .O(\data_loc[2]_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair62" *) 
+  (* SOFT_HLUTNM = "soft_lutpair68" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \data_loc[2]_i_12 
@@ -4525,7 +4556,7 @@ module design_1_tdc_0_1_data_recorder
         .I2(data_loc_tracker[53]),
         .I3(data_loc_tracker[55]),
         .O(\data_loc[2]_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \data_loc[2]_i_2 
@@ -4544,14 +4575,14 @@ module design_1_tdc_0_1_data_recorder
         .I4(\data_loc[2]_i_6_n_0 ),
         .I5(\data_loc[2]_i_7_n_0 ),
         .O(\data_loc[2]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair105" *) 
+  (* SOFT_HLUTNM = "soft_lutpair141" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \data_loc[2]_i_4 
        (.I0(data_loc_tracker[15]),
         .I1(data_loc_tracker[14]),
         .O(\data_loc[2]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \data_loc[2]_i_5 
@@ -4568,7 +4599,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(\data_loc[4]_i_5_n_0 ),
         .I5(\data_loc[2]_i_11_n_0 ),
         .O(\data_loc[2]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair69" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \data_loc[2]_i_7 
@@ -4577,7 +4608,7 @@ module design_1_tdc_0_1_data_recorder
         .I2(data_loc_tracker[20]),
         .I3(data_loc_tracker[21]),
         .O(\data_loc[2]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+  (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \data_loc[2]_i_8 
@@ -4586,7 +4617,7 @@ module design_1_tdc_0_1_data_recorder
         .I2(data_loc_tracker[29]),
         .I3(data_loc_tracker[31]),
         .O(\data_loc[2]_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \data_loc[2]_i_9 
@@ -4605,43 +4636,44 @@ module design_1_tdc_0_1_data_recorder
         .I4(\data_loc[3]_i_6_n_0 ),
         .I5(\data_loc[3]_i_7_n_0 ),
         .O(\data_loc[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair94" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \data_loc[3]_i_10 
        (.I0(data_loc_tracker[54]),
         .I1(data_loc_tracker[53]),
         .O(\data_loc[3]_i_10_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair69" *) 
+  (* SOFT_HLUTNM = "soft_lutpair73" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \data_loc[3]_i_11 
-       (.I0(data_loc_tracker[49]),
-        .I1(data_loc_tracker[48]),
-        .I2(data_loc_tracker[50]),
-        .I3(data_loc_tracker[51]),
+       (.I0(data_loc_tracker[50]),
+        .I1(data_loc_tracker[51]),
+        .I2(data_loc_tracker[49]),
+        .I3(data_loc_tracker[48]),
         .O(\data_loc[3]_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair86" *) 
+  (* SOFT_HLUTNM = "soft_lutpair109" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \data_loc[3]_i_12 
        (.I0(data_loc_tracker[31]),
         .I1(data_loc_tracker[29]),
         .O(\data_loc[3]_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair92" *) 
+  (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \data_loc[3]_i_13 
        (.I0(data_loc_tracker[27]),
         .I1(data_loc_tracker[25]),
         .O(\data_loc[3]_i_13_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair110" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \data_loc[3]_i_14 
        (.I0(data_loc_tracker[11]),
         .I1(data_loc_tracker[10]),
         .O(\data_loc[3]_i_14_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \data_loc[3]_i_2 
@@ -4650,7 +4682,7 @@ module design_1_tdc_0_1_data_recorder
         .I2(data_loc_tracker[6]),
         .I3(data_loc_tracker[7]),
         .O(\data_loc[3]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \data_loc[3]_i_3 
@@ -4699,14 +4731,14 @@ module design_1_tdc_0_1_data_recorder
         .I4(data_loc_tracker[8]),
         .I5(\data_loc[3]_i_14_n_0 ),
         .O(\data_loc[3]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair104" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \data_loc[3]_i_8 
        (.I0(data_loc_tracker[21]),
         .I1(data_loc_tracker[20]),
         .O(\data_loc[3]_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair60" *) 
+  (* SOFT_HLUTNM = "soft_lutpair66" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \data_loc[3]_i_9 
@@ -4721,7 +4753,7 @@ module design_1_tdc_0_1_data_recorder
         .I2(\data_loc[4]_i_4_n_0 ),
         .I3(\data_loc[5]_i_3_n_0 ),
         .O(\data_loc[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT5 #(
     .INIT(32'h00008000)) 
     \data_loc[4]_i_2 
@@ -4731,7 +4763,7 @@ module design_1_tdc_0_1_data_recorder
         .I3(data_loc_tracker[2]),
         .I4(\data_loc[5]_i_4_n_0 ),
         .O(\data_loc[4]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \data_loc[4]_i_3 
@@ -4741,7 +4773,7 @@ module design_1_tdc_0_1_data_recorder
         .I3(data_loc_tracker[45]),
         .I4(\data_loc[4]_i_5_n_0 ),
         .O(\data_loc[4]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \data_loc[4]_i_4 
@@ -4751,7 +4783,7 @@ module design_1_tdc_0_1_data_recorder
         .I3(data_loc_tracker[34]),
         .I4(data_loc_tracker[33]),
         .O(\data_loc[4]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
+  (* SOFT_HLUTNM = "soft_lutpair51" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \data_loc[4]_i_5 
@@ -4760,7 +4792,7 @@ module design_1_tdc_0_1_data_recorder
         .I2(data_loc_tracker[42]),
         .I3(data_loc_tracker[43]),
         .O(\data_loc[4]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair61" *) 
+  (* SOFT_HLUTNM = "soft_lutpair58" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \data_loc[4]_i_6 
@@ -4795,7 +4827,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(data_loc_tracker[31]),
         .I5(\data_loc[3]_i_4_n_0 ),
         .O(\data_loc[5]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT5 #(
     .INIT(32'h7FFFFFFF)) 
     \data_loc[5]_i_4 
@@ -4805,7 +4837,7 @@ module design_1_tdc_0_1_data_recorder
         .I3(data_loc_tracker[5]),
         .I4(data_loc_tracker[4]),
         .O(\data_loc[5]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \data_loc[5]_i_5 
@@ -4908,7 +4940,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[0].data_loc_tracker[0]_i_1_n_0 ),
         .Q(data_loc_tracker[0]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
+  (* SOFT_HLUTNM = "soft_lutpair103" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[10].data_loc_tracker[10]_i_1 
@@ -4925,7 +4957,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[10].data_loc_tracker[10]_i_1_n_0 ),
         .Q(data_loc_tracker[10]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  (* SOFT_HLUTNM = "soft_lutpair110" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[11].data_loc_tracker[11]_i_1 
@@ -4942,7 +4974,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[11].data_loc_tracker[11]_i_1_n_0 ),
         .Q(data_loc_tracker[11]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  (* SOFT_HLUTNM = "soft_lutpair102" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[12].data_loc_tracker[12]_i_1 
@@ -4959,7 +4991,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[12].data_loc_tracker[12]_i_1_n_0 ),
         .Q(data_loc_tracker[12]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  (* SOFT_HLUTNM = "soft_lutpair100" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[13].data_loc_tracker[13]_i_1 
@@ -4976,7 +5008,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[13].data_loc_tracker[13]_i_1_n_0 ),
         .Q(data_loc_tracker[13]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair105" *) 
+  (* SOFT_HLUTNM = "soft_lutpair143" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[14].data_loc_tracker[14]_i_1 
@@ -4993,7 +5025,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[14].data_loc_tracker[14]_i_1_n_0 ),
         .Q(data_loc_tracker[14]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair132" *) 
+  (* SOFT_HLUTNM = "soft_lutpair141" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[15].data_loc_tracker[15]_i_1 
@@ -5010,7 +5042,6 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[15].data_loc_tracker[15]_i_1_n_0 ),
         .Q(data_loc_tracker[15]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair125" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[16].data_loc_tracker[16]_i_1 
@@ -5027,6 +5058,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[16].data_loc_tracker[16]_i_1_n_0 ),
         .Q(data_loc_tracker[16]),
         .R(1'b0));
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[17].data_loc_tracker[17]_i_1 
@@ -5043,7 +5075,6 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[17].data_loc_tracker[17]_i_1_n_0 ),
         .Q(data_loc_tracker[17]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair120" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[18].data_loc_tracker[18]_i_1 
@@ -5060,7 +5091,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[18].data_loc_tracker[18]_i_1_n_0 ),
         .Q(data_loc_tracker[18]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair119" *) 
+  (* SOFT_HLUTNM = "soft_lutpair111" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[19].data_loc_tracker[19]_i_1 
@@ -5077,7 +5108,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[19].data_loc_tracker[19]_i_1_n_0 ),
         .Q(data_loc_tracker[19]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair146" *) 
+  (* SOFT_HLUTNM = "soft_lutpair131" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[1].data_loc_tracker[1]_i_1 
@@ -5094,7 +5125,6 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[1].data_loc_tracker[1]_i_1_n_0 ),
         .Q(data_loc_tracker[1]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair114" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[20].data_loc_tracker[20]_i_1 
@@ -5111,7 +5141,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[20].data_loc_tracker[20]_i_1_n_0 ),
         .Q(data_loc_tracker[20]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair104" *) 
+  (* SOFT_HLUTNM = "soft_lutpair130" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[21].data_loc_tracker[21]_i_1 
@@ -5128,7 +5158,6 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[21].data_loc_tracker[21]_i_1_n_0 ),
         .Q(data_loc_tracker[21]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair107" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[22].data_loc_tracker[22]_i_1 
@@ -5145,7 +5174,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[22].data_loc_tracker[22]_i_1_n_0 ),
         .Q(data_loc_tracker[22]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair106" *) 
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[23].data_loc_tracker[23]_i_1 
@@ -5162,7 +5191,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[23].data_loc_tracker[23]_i_1_n_0 ),
         .Q(data_loc_tracker[23]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair98" *) 
+  (* SOFT_HLUTNM = "soft_lutpair125" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[24].data_loc_tracker[24]_i_1 
@@ -5179,7 +5208,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[24].data_loc_tracker[24]_i_1_n_0 ),
         .Q(data_loc_tracker[24]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+  (* SOFT_HLUTNM = "soft_lutpair117" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[25].data_loc_tracker[25]_i_1 
@@ -5196,7 +5225,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[25].data_loc_tracker[25]_i_1_n_0 ),
         .Q(data_loc_tracker[25]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair95" *) 
+  (* SOFT_HLUTNM = "soft_lutpair116" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[26].data_loc_tracker[26]_i_1 
@@ -5213,7 +5242,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[26].data_loc_tracker[26]_i_1_n_0 ),
         .Q(data_loc_tracker[26]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair92" *) 
+  (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[27].data_loc_tracker[27]_i_1 
@@ -5230,7 +5259,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[27].data_loc_tracker[27]_i_1_n_0 ),
         .Q(data_loc_tracker[27]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  (* SOFT_HLUTNM = "soft_lutpair112" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[28].data_loc_tracker[28]_i_1 
@@ -5247,7 +5276,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[28].data_loc_tracker[28]_i_1_n_0 ),
         .Q(data_loc_tracker[28]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair86" *) 
+  (* SOFT_HLUTNM = "soft_lutpair109" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[29].data_loc_tracker[29]_i_1 
@@ -5280,7 +5309,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[2].data_loc_tracker[2]_i_1_n_0 ),
         .Q(data_loc_tracker[2]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
+  (* SOFT_HLUTNM = "soft_lutpair106" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[30].data_loc_tracker[30]_i_1 
@@ -5297,7 +5326,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[30].data_loc_tracker[30]_i_1_n_0 ),
         .Q(data_loc_tracker[30]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair105" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[31].data_loc_tracker[31]_i_1 
@@ -5314,7 +5343,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[31].data_loc_tracker[31]_i_1_n_0 ),
         .Q(data_loc_tracker[31]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  (* SOFT_HLUTNM = "soft_lutpair104" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[32].data_loc_tracker[32]_i_1 
@@ -5331,7 +5360,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[32].data_loc_tracker[32]_i_1_n_0 ),
         .Q(data_loc_tracker[32]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[33].data_loc_tracker[33]_i_1 
@@ -5348,7 +5377,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[33].data_loc_tracker[33]_i_1_n_0 ),
         .Q(data_loc_tracker[33]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair81" *) 
+  (* SOFT_HLUTNM = "soft_lutpair94" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[34].data_loc_tracker[34]_i_1 
@@ -5365,7 +5394,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[34].data_loc_tracker[34]_i_1_n_0 ),
         .Q(data_loc_tracker[34]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[35].data_loc_tracker[35]_i_1 
@@ -5382,7 +5411,6 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[35].data_loc_tracker[35]_i_1_n_0 ),
         .Q(data_loc_tracker[35]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[36].data_loc_tracker[36]_i_1 
@@ -5399,7 +5427,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[36].data_loc_tracker[36]_i_1_n_0 ),
         .Q(data_loc_tracker[36]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
+  (* SOFT_HLUTNM = "soft_lutpair88" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[37].data_loc_tracker[37]_i_1 
@@ -5416,7 +5444,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[37].data_loc_tracker[37]_i_1_n_0 ),
         .Q(data_loc_tracker[37]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[38].data_loc_tracker[38]_i_1 
@@ -5433,7 +5461,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[38].data_loc_tracker[38]_i_1_n_0 ),
         .Q(data_loc_tracker[38]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair89" *) 
+  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[39].data_loc_tracker[39]_i_1 
@@ -5450,7 +5478,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[39].data_loc_tracker[39]_i_1_n_0 ),
         .Q(data_loc_tracker[39]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair111" *) 
+  (* SOFT_HLUTNM = "soft_lutpair127" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[3].data_loc_tracker[3]_i_1 
@@ -5467,7 +5495,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[3].data_loc_tracker[3]_i_1_n_0 ),
         .Q(data_loc_tracker[3]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[40].data_loc_tracker[40]_i_1 
@@ -5484,7 +5512,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[40].data_loc_tracker[40]_i_1_n_0 ),
         .Q(data_loc_tracker[40]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair97" *) 
+  (* SOFT_HLUTNM = "soft_lutpair81" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[41].data_loc_tracker[41]_i_1 
@@ -5501,7 +5529,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[41].data_loc_tracker[41]_i_1_n_0 ),
         .Q(data_loc_tracker[41]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair99" *) 
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[42].data_loc_tracker[42]_i_1 
@@ -5518,7 +5546,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[42].data_loc_tracker[42]_i_1_n_0 ),
         .Q(data_loc_tracker[42]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair102" *) 
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[43].data_loc_tracker[43]_i_1 
@@ -5535,7 +5563,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[43].data_loc_tracker[43]_i_1_n_0 ),
         .Q(data_loc_tracker[43]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair108" *) 
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[44].data_loc_tracker[44]_i_1 
@@ -5552,7 +5580,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[44].data_loc_tracker[44]_i_1_n_0 ),
         .Q(data_loc_tracker[44]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair110" *) 
+  (* SOFT_HLUTNM = "soft_lutpair91" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[45].data_loc_tracker[45]_i_1 
@@ -5569,7 +5597,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[45].data_loc_tracker[45]_i_1_n_0 ),
         .Q(data_loc_tracker[45]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[46].data_loc_tracker[46]_i_1 
@@ -5586,7 +5614,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[46].data_loc_tracker[46]_i_1_n_0 ),
         .Q(data_loc_tracker[46]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair88" *) 
+  (* SOFT_HLUTNM = "soft_lutpair95" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[47].data_loc_tracker[47]_i_1 
@@ -5603,7 +5631,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[47].data_loc_tracker[47]_i_1_n_0 ),
         .Q(data_loc_tracker[47]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair113" *) 
+  (* SOFT_HLUTNM = "soft_lutpair144" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[48].data_loc_tracker[48]_i_1 
@@ -5620,7 +5648,6 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[48].data_loc_tracker[48]_i_1_n_0 ),
         .Q(data_loc_tracker[48]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[49].data_loc_tracker[49]_i_1 
@@ -5637,6 +5664,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[49].data_loc_tracker[49]_i_1_n_0 ),
         .Q(data_loc_tracker[49]),
         .R(1'b0));
+  (* SOFT_HLUTNM = "soft_lutpair122" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[4].data_loc_tracker[4]_i_1 
@@ -5653,7 +5681,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[4].data_loc_tracker[4]_i_1_n_0 ),
         .Q(data_loc_tracker[4]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair91" *) 
+  (* SOFT_HLUTNM = "soft_lutpair107" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[50].data_loc_tracker[50]_i_1 
@@ -5670,7 +5698,6 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[50].data_loc_tracker[50]_i_1_n_0 ),
         .Q(data_loc_tracker[50]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[51].data_loc_tracker[51]_i_1 
@@ -5687,7 +5714,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[51].data_loc_tracker[51]_i_1_n_0 ),
         .Q(data_loc_tracker[51]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair118" *) 
+  (* SOFT_HLUTNM = "soft_lutpair113" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[52].data_loc_tracker[52]_i_1 
@@ -5704,7 +5731,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[52].data_loc_tracker[52]_i_1_n_0 ),
         .Q(data_loc_tracker[52]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair94" *) 
+  (* SOFT_HLUTNM = "soft_lutpair118" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[53].data_loc_tracker[53]_i_1 
@@ -5721,7 +5748,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[53].data_loc_tracker[53]_i_1_n_0 ),
         .Q(data_loc_tracker[53]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair121" *) 
+  (* SOFT_HLUTNM = "soft_lutpair92" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[54].data_loc_tracker[54]_i_1 
@@ -5738,7 +5765,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[54].data_loc_tracker[54]_i_1_n_0 ),
         .Q(data_loc_tracker[54]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair123" *) 
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[55].data_loc_tracker[55]_i_1 
@@ -5755,7 +5782,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[55].data_loc_tracker[55]_i_1_n_0 ),
         .Q(data_loc_tracker[55]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair122" *) 
+  (* SOFT_HLUTNM = "soft_lutpair120" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[56].data_loc_tracker[56]_i_1 
@@ -5772,7 +5799,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[56].data_loc_tracker[56]_i_1_n_0 ),
         .Q(data_loc_tracker[56]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair126" *) 
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[57].data_loc_tracker[57]_i_1 
@@ -5789,6 +5816,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[57].data_loc_tracker[57]_i_1_n_0 ),
         .Q(data_loc_tracker[57]),
         .R(1'b0));
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[58].data_loc_tracker[58]_i_1 
@@ -5805,7 +5833,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[58].data_loc_tracker[58]_i_1_n_0 ),
         .Q(data_loc_tracker[58]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair100" *) 
+  (* SOFT_HLUTNM = "soft_lutpair97" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[59].data_loc_tracker[59]_i_1 
@@ -5822,7 +5850,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[59].data_loc_tracker[59]_i_1_n_0 ),
         .Q(data_loc_tracker[59]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair142" *) 
+  (* SOFT_HLUTNM = "soft_lutpair121" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[5].data_loc_tracker[5]_i_1 
@@ -5839,7 +5867,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[5].data_loc_tracker[5]_i_1_n_0 ),
         .Q(data_loc_tracker[5]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair101" *) 
+  (* SOFT_HLUTNM = "soft_lutpair98" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[60].data_loc_tracker[60]_i_1 
@@ -5856,7 +5884,6 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[60].data_loc_tracker[60]_i_1_n_0 ),
         .Q(data_loc_tracker[60]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair128" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[61].data_loc_tracker[61]_i_1 
@@ -5873,7 +5900,6 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[61].data_loc_tracker[61]_i_1_n_0 ),
         .Q(data_loc_tracker[61]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair103" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[62].data_loc_tracker[62]_i_1 
@@ -5890,7 +5916,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[62].data_loc_tracker[62]_i_1_n_0 ),
         .Q(data_loc_tracker[62]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair130" *) 
+  (* SOFT_HLUTNM = "soft_lutpair101" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[63].data_loc_tracker[63]_i_1 
@@ -5907,6 +5933,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[63].data_loc_tracker[63]_i_1_n_0 ),
         .Q(data_loc_tracker[63]),
         .R(1'b0));
+  (* SOFT_HLUTNM = "soft_lutpair119" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[6].data_loc_tracker[6]_i_1 
@@ -5923,7 +5950,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[6].data_loc_tracker[6]_i_1_n_0 ),
         .Q(data_loc_tracker[6]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair144" *) 
+  (* SOFT_HLUTNM = "soft_lutpair114" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[7].data_loc_tracker[7]_i_1 
@@ -5940,7 +5967,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[7].data_loc_tracker[7]_i_1_n_0 ),
         .Q(data_loc_tracker[7]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  (* SOFT_HLUTNM = "soft_lutpair108" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[8].data_loc_tracker[8]_i_1 
@@ -5957,7 +5984,7 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[8].data_loc_tracker[8]_i_1_n_0 ),
         .Q(data_loc_tracker[8]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair109" *) 
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
   LUT3 #(
     .INIT(8'h3A)) 
     \genblk1[9].data_loc_tracker[9]_i_1 
@@ -5974,56 +6001,46 @@ module design_1_tdc_0_1_data_recorder
         .D(\genblk1[9].data_loc_tracker[9]_i_1_n_0 ),
         .Q(data_loc_tracker[9]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair148" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \l1a_cntr[0]_i_1 
        (.I0(\l1a_cntr_reg_n_0_[0] ),
         .O(\l1a_cntr[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair149" *) 
+  (* SOFT_HLUTNM = "soft_lutpair148" *) 
   LUT2 #(
     .INIT(4'h9)) 
     \l1a_cntr[1]_i_1 
        (.I0(\l1a_cntr_reg_n_0_[0] ),
         .I1(\l1a_cntr_reg_n_0_[1] ),
         .O(\l1a_cntr[1]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hF0F0F0F0C3C3C3C1)) 
-    \l1a_cntr[2]_i_1 
-       (.I0(\l1a_cntr[2]_i_2_n_0 ),
-        .I1(\l1a_cntr_reg_n_0_[0] ),
-        .I2(\l1a_cntr_reg_n_0_[2] ),
-        .I3(\l1a_cntr_reg_n_0_[3] ),
-        .I4(\l1a_cntr_reg_n_0_[4] ),
-        .I5(\l1a_cntr_reg_n_0_[1] ),
-        .O(\l1a_cntr[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair58" *) 
+  (* SOFT_HLUTNM = "soft_lutpair62" *) 
   LUT4 #(
-    .INIT(16'h0001)) 
-    \l1a_cntr[2]_i_2 
-       (.I0(\l1a_cntr_reg_n_0_[7] ),
-        .I1(\l1a_cntr_reg_n_0_[8] ),
-        .I2(\l1a_cntr_reg_n_0_[6] ),
-        .I3(\l1a_cntr_reg_n_0_[5] ),
-        .O(\l1a_cntr[2]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+    .INIT(16'hA802)) 
+    \l1a_cntr[2]_i_1 
+       (.I0(\l1a_cntr[8]_i_3_n_0 ),
+        .I1(\l1a_cntr_reg_n_0_[0] ),
+        .I2(\l1a_cntr_reg_n_0_[1] ),
+        .I3(\l1a_cntr_reg_n_0_[2] ),
+        .O(\l1a_cntr[2]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair62" *) 
   LUT4 #(
     .INIT(16'hAAA9)) 
     \l1a_cntr[3]_i_1 
        (.I0(\l1a_cntr_reg_n_0_[3] ),
-        .I1(\l1a_cntr_reg_n_0_[0] ),
-        .I2(\l1a_cntr_reg_n_0_[2] ),
+        .I1(\l1a_cntr_reg_n_0_[2] ),
+        .I2(\l1a_cntr_reg_n_0_[0] ),
         .I3(\l1a_cntr_reg_n_0_[1] ),
         .O(\l1a_cntr[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT5 #(
     .INIT(32'hAAAAAAA9)) 
     \l1a_cntr[4]_i_1 
        (.I0(\l1a_cntr_reg_n_0_[4] ),
         .I1(\l1a_cntr_reg_n_0_[3] ),
         .I2(\l1a_cntr_reg_n_0_[1] ),
-        .I3(\l1a_cntr_reg_n_0_[2] ),
-        .I4(\l1a_cntr_reg_n_0_[0] ),
+        .I3(\l1a_cntr_reg_n_0_[0] ),
+        .I4(\l1a_cntr_reg_n_0_[2] ),
         .O(\l1a_cntr[4]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hAAAAAAAAAAAAAAA9)) 
@@ -6032,74 +6049,65 @@ module design_1_tdc_0_1_data_recorder
         .I1(\l1a_cntr_reg_n_0_[3] ),
         .I2(\l1a_cntr_reg_n_0_[4] ),
         .I3(\l1a_cntr_reg_n_0_[1] ),
-        .I4(\l1a_cntr_reg_n_0_[2] ),
-        .I5(\l1a_cntr_reg_n_0_[0] ),
+        .I4(\l1a_cntr_reg_n_0_[0] ),
+        .I5(\l1a_cntr_reg_n_0_[2] ),
         .O(\l1a_cntr[5]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000FFEF0010)) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  LUT5 #(
+    .INIT(32'hFF0F00E0)) 
     \l1a_cntr[6]_i_1 
-       (.I0(\l1a_cntr_reg_n_0_[3] ),
-        .I1(\l1a_cntr_reg_n_0_[4] ),
-        .I2(\l1a_cntr[7]_i_2_n_0 ),
+       (.I0(\l1a_cntr_reg_n_0_[8] ),
+        .I1(\l1a_cntr_reg_n_0_[7] ),
+        .I2(\l1a_cntr[8]_i_4_n_0 ),
         .I3(\l1a_cntr_reg_n_0_[5] ),
         .I4(\l1a_cntr_reg_n_0_[6] ),
-        .I5(\l1a_cntr[6]_i_2_n_0 ),
         .O(\l1a_cntr[6]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000100000000)) 
-    \l1a_cntr[6]_i_2 
-       (.I0(\l1a_cntr_reg_n_0_[1] ),
-        .I1(\l1a_cntr_reg_n_0_[4] ),
-        .I2(\l1a_cntr_reg_n_0_[3] ),
-        .I3(\l1a_cntr_reg_n_0_[2] ),
-        .I4(\l1a_cntr_reg_n_0_[0] ),
-        .I5(\l1a_cntr[2]_i_2_n_0 ),
-        .O(\l1a_cntr[6]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hAAAAAAAAAAA9AAAA)) 
+  LUT4 #(
+    .INIT(16'hA9AA)) 
     \l1a_cntr[7]_i_1 
        (.I0(\l1a_cntr_reg_n_0_[7] ),
-        .I1(\l1a_cntr_reg_n_0_[6] ),
-        .I2(\l1a_cntr_reg_n_0_[3] ),
-        .I3(\l1a_cntr_reg_n_0_[4] ),
-        .I4(\l1a_cntr[7]_i_2_n_0 ),
-        .I5(\l1a_cntr_reg_n_0_[5] ),
+        .I1(\l1a_cntr_reg_n_0_[5] ),
+        .I2(\l1a_cntr_reg_n_0_[6] ),
+        .I3(\l1a_cntr[8]_i_4_n_0 ),
         .O(\l1a_cntr[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair149" *) 
-  LUT3 #(
-    .INIT(8'h01)) 
-    \l1a_cntr[7]_i_2 
-       (.I0(\l1a_cntr_reg_n_0_[1] ),
-        .I1(\l1a_cntr_reg_n_0_[2] ),
-        .I2(\l1a_cntr_reg_n_0_[0] ),
-        .O(\l1a_cntr[7]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFF55D5)) 
+  LUT4 #(
+    .INIT(16'hFF40)) 
     \l1a_cntr[8]_i_1 
-       (.I0(\l1a_cntr[8]_i_3_n_0 ),
+       (.I0(p_0_in__0),
         .I1(\dout_hist_reg_n_0_[95] ),
         .I2(dtmroc_data_out),
-        .I3(p_0_in__0),
-        .I4(\l1a_cntr_reg_n_0_[8] ),
-        .I5(\l1a_cntr_reg_n_0_[7] ),
+        .I3(\l1a_cntr[8]_i_3_n_0 ),
         .O(l1a_cntr));
-  (* SOFT_HLUTNM = "soft_lutpair58" *) 
-  LUT3 #(
-    .INIT(8'h9A)) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  LUT5 #(
+    .INIT(32'hAAAAAA9A)) 
     \l1a_cntr[8]_i_2 
        (.I0(\l1a_cntr_reg_n_0_[8] ),
         .I1(\l1a_cntr_reg_n_0_[7] ),
-        .I2(\l1a_cntr[8]_i_3_n_0 ),
+        .I2(\l1a_cntr[8]_i_4_n_0 ),
+        .I3(\l1a_cntr_reg_n_0_[6] ),
+        .I4(\l1a_cntr_reg_n_0_[5] ),
         .O(\l1a_cntr[8]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT5 #(
-    .INIT(32'h00000004)) 
+    .INIT(32'hFFFEFFFF)) 
     \l1a_cntr[8]_i_3 
-       (.I0(\l1a_cntr_reg_n_0_[5] ),
-        .I1(\l1a_cntr[7]_i_2_n_0 ),
-        .I2(\l1a_cntr_reg_n_0_[4] ),
-        .I3(\l1a_cntr_reg_n_0_[3] ),
-        .I4(\l1a_cntr_reg_n_0_[6] ),
+       (.I0(\l1a_cntr_reg_n_0_[7] ),
+        .I1(\l1a_cntr_reg_n_0_[8] ),
+        .I2(\l1a_cntr_reg_n_0_[5] ),
+        .I3(\l1a_cntr_reg_n_0_[6] ),
+        .I4(\l1a_cntr[8]_i_4_n_0 ),
         .O(\l1a_cntr[8]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  LUT5 #(
+    .INIT(32'h00000001)) 
+    \l1a_cntr[8]_i_4 
+       (.I0(\l1a_cntr_reg_n_0_[2] ),
+        .I1(\l1a_cntr_reg_n_0_[0] ),
+        .I2(\l1a_cntr_reg_n_0_[1] ),
+        .I3(\l1a_cntr_reg_n_0_[4] ),
+        .I4(\l1a_cntr_reg_n_0_[3] ),
+        .O(\l1a_cntr[8]_i_4_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \l1a_cntr_reg[0] 
@@ -6172,23 +6180,96 @@ module design_1_tdc_0_1_data_recorder
         .D(\l1a_cntr[8]_i_2_n_0 ),
         .Q(\l1a_cntr_reg_n_0_[8] ),
         .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \l1a_cntr_sync120_reg[0] 
+       (.C(clk120),
+        .CE(l1a_cntr_sync120),
+        .D(\l1a_cntr_reg_n_0_[0] ),
+        .Q(\l1a_cntr_sync120_reg_n_0_[0] ),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \l1a_cntr_sync120_reg[1] 
+       (.C(clk120),
+        .CE(l1a_cntr_sync120),
+        .D(\l1a_cntr_reg_n_0_[1] ),
+        .Q(\l1a_cntr_sync120_reg_n_0_[1] ),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \l1a_cntr_sync120_reg[2] 
+       (.C(clk120),
+        .CE(l1a_cntr_sync120),
+        .D(\l1a_cntr_reg_n_0_[2] ),
+        .Q(\l1a_cntr_sync120_reg_n_0_[2] ),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \l1a_cntr_sync120_reg[3] 
+       (.C(clk120),
+        .CE(l1a_cntr_sync120),
+        .D(\l1a_cntr_reg_n_0_[3] ),
+        .Q(\l1a_cntr_sync120_reg_n_0_[3] ),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \l1a_cntr_sync120_reg[4] 
+       (.C(clk120),
+        .CE(l1a_cntr_sync120),
+        .D(\l1a_cntr_reg_n_0_[4] ),
+        .Q(\l1a_cntr_sync120_reg_n_0_[4] ),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \l1a_cntr_sync120_reg[5] 
+       (.C(clk120),
+        .CE(l1a_cntr_sync120),
+        .D(\l1a_cntr_reg_n_0_[5] ),
+        .Q(\l1a_cntr_sync120_reg_n_0_[5] ),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \l1a_cntr_sync120_reg[6] 
+       (.C(clk120),
+        .CE(l1a_cntr_sync120),
+        .D(\l1a_cntr_reg_n_0_[6] ),
+        .Q(\l1a_cntr_sync120_reg_n_0_[6] ),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \l1a_cntr_sync120_reg[7] 
+       (.C(clk120),
+        .CE(l1a_cntr_sync120),
+        .D(\l1a_cntr_reg_n_0_[7] ),
+        .Q(\l1a_cntr_sync120_reg_n_0_[7] ),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \l1a_cntr_sync120_reg[8] 
+       (.C(clk120),
+        .CE(l1a_cntr_sync120),
+        .D(\l1a_cntr_reg_n_0_[8] ),
+        .Q(\l1a_cntr_sync120_reg_n_0_[8] ),
+        .R(1'b0));
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
   LUT4 #(
-    .INIT(16'h0040)) 
+    .INIT(16'h0004)) 
     l1a_seen_i_1
        (.I0(\l1a_cntr_reg_n_0_[2] ),
-        .I1(\l1a_cntr_reg_n_0_[3] ),
-        .I2(\l1a_cntr_reg_n_0_[8] ),
+        .I1(\l1a_cntr_reg_n_0_[4] ),
+        .I2(\l1a_cntr_reg_n_0_[6] ),
         .I3(l1a_seen_i_2_n_0),
         .O(l1a_seen_i_1_n_0));
   LUT6 #(
-    .INIT(64'hF7FFFFFFFFFFFFFF)) 
+    .INIT(64'h7FFFFFFFFFFFFFFF)) 
     l1a_seen_i_2
        (.I0(\l1a_cntr_reg_n_0_[1] ),
         .I1(\l1a_cntr_reg_n_0_[0] ),
-        .I2(\l1a_cntr_reg_n_0_[6] ),
-        .I3(\l1a_cntr_reg_n_0_[7] ),
-        .I4(\l1a_cntr_reg_n_0_[4] ),
-        .I5(\l1a_cntr_reg_n_0_[5] ),
+        .I2(\l1a_cntr_reg_n_0_[3] ),
+        .I3(\l1a_cntr_reg_n_0_[5] ),
+        .I4(\l1a_cntr_reg_n_0_[8] ),
+        .I5(\l1a_cntr_reg_n_0_[7] ),
         .O(l1a_seen_i_2_n_0));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
@@ -6198,18 +6279,18 @@ module design_1_tdc_0_1_data_recorder
         .D(l1a_seen_i_1_n_0),
         .Q(l1a_seen),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT4 #(
-    .INIT(16'h9669)) 
+    .INIT(16'h6996)) 
     \occupied_data_spaces[0]_i_1 
-       (.I0(\occupied_data_spaces[1]_i_6_n_0 ),
-        .I1(\occupied_data_spaces[1]_i_5_n_0 ),
+       (.I0(\occupied_data_spaces[1]_i_5_n_0 ),
+        .I1(\occupied_data_spaces[1]_i_6_n_0 ),
         .I2(\occupied_data_spaces[1]_i_4_n_0 ),
         .I3(\occupied_data_spaces[1]_i_3_n_0 ),
         .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT5 #(
-    .INIT(32'h6AA9566A)) 
+    .INIT(32'h599A6559)) 
     \occupied_data_spaces[1]_i_1 
        (.I0(\occupied_data_spaces[1]_i_2_n_0 ),
         .I1(\occupied_data_spaces[1]_i_3_n_0 ),
@@ -6227,1017 +6308,1093 @@ module design_1_tdc_0_1_data_recorder
         .I4(data_loc_tracker[7]),
         .I5(data_loc_tracker[39]),
         .O(\occupied_data_spaces[1]_i_10_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair118" *) 
   LUT3 #(
-    .INIT(8'h96)) 
+    .INIT(8'h69)) 
     \occupied_data_spaces[1]_i_11 
        (.I0(data_loc_tracker[6]),
         .I1(data_loc_tracker[53]),
         .I2(data_loc_tracker[37]),
         .O(\occupied_data_spaces[1]_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair124" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT3 #(
     .INIT(8'h96)) 
     \occupied_data_spaces[1]_i_12 
-       (.I0(data_loc_tracker[27]),
-        .I1(data_loc_tracker[58]),
-        .I2(data_loc_tracker[11]),
+       (.I0(data_loc_tracker[8]),
+        .I1(data_loc_tracker[55]),
+        .I2(data_loc_tracker[24]),
         .O(\occupied_data_spaces[1]_i_12_n_0 ));
   LUT6 #(
     .INIT(64'h6996966996696996)) 
     \occupied_data_spaces[1]_i_13 
-       (.I0(data_loc_tracker[26]),
-        .I1(data_loc_tracker[10]),
-        .I2(data_loc_tracker[42]),
-        .I3(data_loc_tracker[43]),
-        .I4(data_loc_tracker[59]),
-        .I5(data_loc_tracker[12]),
-        .O(\occupied_data_spaces[1]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
-  LUT3 #(
-    .INIT(8'h96)) 
-    \occupied_data_spaces[1]_i_14 
-       (.I0(data_loc_tracker[8]),
-        .I1(data_loc_tracker[55]),
-        .I2(data_loc_tracker[24]),
-        .O(\occupied_data_spaces[1]_i_14_n_0 ));
-  LUT6 #(
-    .INIT(64'h6996966996696996)) 
-    \occupied_data_spaces[1]_i_15 
        (.I0(data_loc_tracker[41]),
         .I1(data_loc_tracker[57]),
         .I2(data_loc_tracker[25]),
         .I3(data_loc_tracker[40]),
         .I4(data_loc_tracker[56]),
         .I5(data_loc_tracker[9]),
-        .O(\occupied_data_spaces[1]_i_15_n_0 ));
+        .O(\occupied_data_spaces[1]_i_13_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT3 #(
     .INIT(8'h96)) 
-    \occupied_data_spaces[1]_i_2 
-       (.I0(\occupied_data_spaces[2]_i_2_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_3_n_0 ),
-        .I2(\occupied_data_spaces[2]_i_4_n_0 ),
-        .O(\occupied_data_spaces[1]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
-  LUT5 #(
-    .INIT(32'h69969669)) 
-    \occupied_data_spaces[1]_i_3 
-       (.I0(data_loc_tracker[16]),
-        .I1(data_loc_tracker[32]),
-        .I2(data_loc_tracker[48]),
-        .I3(\occupied_data_spaces[2]_i_15_n_0 ),
-        .I4(\occupied_data_spaces[2]_i_16_n_0 ),
-        .O(\occupied_data_spaces[1]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
-  LUT5 #(
-    .INIT(32'h69969669)) 
-    \occupied_data_spaces[1]_i_4 
-       (.I0(data_loc_tracker[44]),
-        .I1(data_loc_tracker[60]),
-        .I2(data_loc_tracker[28]),
-        .I3(\occupied_data_spaces[1]_i_7_n_0 ),
-        .I4(\occupied_data_spaces[1]_i_8_n_0 ),
-        .O(\occupied_data_spaces[1]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
-  LUT5 #(
-    .INIT(32'h96696996)) 
-    \occupied_data_spaces[1]_i_5 
-       (.I0(data_loc_tracker[47]),
-        .I1(data_loc_tracker[31]),
-        .I2(data_loc_tracker[63]),
-        .I3(\occupied_data_spaces[1]_i_9_n_0 ),
-        .I4(data_loc_tracker[0]),
-        .O(\occupied_data_spaces[1]_i_5_n_0 ));
+    \occupied_data_spaces[1]_i_14 
+       (.I0(data_loc_tracker[27]),
+        .I1(data_loc_tracker[58]),
+        .I2(data_loc_tracker[11]),
+        .O(\occupied_data_spaces[1]_i_14_n_0 ));
   LUT6 #(
     .INIT(64'h6996966996696996)) 
-    \occupied_data_spaces[1]_i_6 
-       (.I0(\occupied_data_spaces[1]_i_10_n_0 ),
-        .I1(\occupied_data_spaces[1]_i_11_n_0 ),
-        .I2(\occupied_data_spaces[1]_i_12_n_0 ),
-        .I3(\occupied_data_spaces[1]_i_13_n_0 ),
-        .I4(\occupied_data_spaces[1]_i_14_n_0 ),
-        .I5(\occupied_data_spaces[1]_i_15_n_0 ),
-        .O(\occupied_data_spaces[1]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair128" *) 
-  LUT3 #(
-    .INIT(8'h69)) 
-    \occupied_data_spaces[1]_i_7 
+    \occupied_data_spaces[1]_i_15 
+       (.I0(data_loc_tracker[26]),
+        .I1(data_loc_tracker[10]),
+        .I2(data_loc_tracker[42]),
+        .I3(data_loc_tracker[43]),
+        .I4(data_loc_tracker[59]),
+        .I5(data_loc_tracker[12]),
+        .O(\occupied_data_spaces[1]_i_15_n_0 ));
+  LUT6 #(
+    .INIT(64'h6996966996696996)) 
+    \occupied_data_spaces[1]_i_16 
        (.I0(data_loc_tracker[30]),
         .I1(data_loc_tracker[61]),
         .I2(data_loc_tracker[14]),
-        .O(\occupied_data_spaces[1]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair139" *) 
-  LUT3 #(
-    .INIT(8'h69)) 
-    \occupied_data_spaces[1]_i_8 
-       (.I0(data_loc_tracker[45]),
-        .I1(data_loc_tracker[13]),
-        .I2(data_loc_tracker[29]),
-        .O(\occupied_data_spaces[1]_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair147" *) 
-  LUT3 #(
-    .INIT(8'h69)) 
-    \occupied_data_spaces[1]_i_9 
-       (.I0(data_loc_tracker[15]),
-        .I1(data_loc_tracker[62]),
-        .I2(data_loc_tracker[46]),
-        .O(\occupied_data_spaces[1]_i_9_n_0 ));
-  LUT6 #(
-    .INIT(64'h71E7E78E8E181871)) 
-    \occupied_data_spaces[2]_i_1 
-       (.I0(\occupied_data_spaces[2]_i_2_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_3_n_0 ),
-        .I2(\occupied_data_spaces[2]_i_4_n_0 ),
-        .I3(\occupied_data_spaces[2]_i_5_n_0 ),
-        .I4(\occupied_data_spaces[2]_i_6_n_0 ),
-        .I5(\occupied_data_spaces[2]_i_7_n_0 ),
-        .O(D[2]));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
-  LUT5 #(
-    .INIT(32'hE81717E8)) 
-    \occupied_data_spaces[2]_i_10 
-       (.I0(data_loc_tracker[9]),
-        .I1(data_loc_tracker[56]),
-        .I2(data_loc_tracker[40]),
-        .I3(\occupied_data_spaces[5]_i_17_n_0 ),
-        .I4(\occupied_data_spaces[5]_i_16_n_0 ),
-        .O(\occupied_data_spaces[2]_i_10_n_0 ));
-  LUT6 #(
-    .INIT(64'h06606FF66FF60660)) 
-    \occupied_data_spaces[2]_i_11 
-       (.I0(\occupied_data_spaces[1]_i_11_n_0 ),
-        .I1(\occupied_data_spaces[1]_i_10_n_0 ),
-        .I2(\occupied_data_spaces[1]_i_15_n_0 ),
-        .I3(\occupied_data_spaces[1]_i_14_n_0 ),
-        .I4(\occupied_data_spaces[1]_i_13_n_0 ),
-        .I5(\occupied_data_spaces[1]_i_12_n_0 ),
-        .O(\occupied_data_spaces[2]_i_11_n_0 ));
-  LUT6 #(
-    .INIT(64'h6996966996696996)) 
-    \occupied_data_spaces[2]_i_12 
-       (.I0(\occupied_data_spaces[2]_i_21_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_22_n_0 ),
-        .I2(\occupied_data_spaces[2]_i_23_n_0 ),
-        .I3(\occupied_data_spaces[2]_i_24_n_0 ),
-        .I4(\occupied_data_spaces[2]_i_25_n_0 ),
-        .I5(\occupied_data_spaces[2]_i_26_n_0 ),
-        .O(\occupied_data_spaces[2]_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
-  LUT5 #(
-    .INIT(32'h17717117)) 
-    \occupied_data_spaces[2]_i_13 
-       (.I0(\occupied_data_spaces[2]_i_27_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_28_n_0 ),
-        .I2(data_loc_tracker[6]),
-        .I3(data_loc_tracker[53]),
-        .I4(data_loc_tracker[37]),
-        .O(\occupied_data_spaces[2]_i_13_n_0 ));
-  LUT6 #(
-    .INIT(64'h2B2BD42BD42BD4D4)) 
-    \occupied_data_spaces[2]_i_14 
-       (.I0(\occupied_data_spaces[1]_i_12_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_29_n_0 ),
-        .I2(\occupied_data_spaces[2]_i_30_n_0 ),
-        .I3(\occupied_data_spaces[1]_i_14_n_0 ),
-        .I4(\occupied_data_spaces[2]_i_31_n_0 ),
-        .I5(\occupied_data_spaces[2]_i_32_n_0 ),
-        .O(\occupied_data_spaces[2]_i_14_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair60" *) 
-  LUT4 #(
-    .INIT(16'h6996)) 
-    \occupied_data_spaces[2]_i_15 
-       (.I0(data_loc_tracker[17]),
-        .I1(data_loc_tracker[33]),
-        .I2(data_loc_tracker[1]),
-        .I3(\occupied_data_spaces[2]_i_33_n_0 ),
-        .O(\occupied_data_spaces[2]_i_15_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
-  LUT5 #(
-    .INIT(32'h69969669)) 
-    \occupied_data_spaces[2]_i_16 
-       (.I0(data_loc_tracker[35]),
-        .I1(data_loc_tracker[51]),
-        .I2(data_loc_tracker[19]),
-        .I3(\occupied_data_spaces[6]_i_28_n_0 ),
-        .I4(\occupied_data_spaces[6]_i_27_n_0 ),
-        .O(\occupied_data_spaces[2]_i_16_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair150" *) 
-  LUT3 #(
-    .INIT(8'h69)) 
-    \occupied_data_spaces[2]_i_17 
-       (.I0(data_loc_tracker[48]),
-        .I1(data_loc_tracker[32]),
-        .I2(data_loc_tracker[16]),
-        .O(\occupied_data_spaces[2]_i_17_n_0 ));
-  LUT6 #(
-    .INIT(64'h82EBEB82EB8282EB)) 
-    \occupied_data_spaces[2]_i_18 
-       (.I0(\occupied_data_spaces[6]_i_17_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_14_n_0 ),
-        .I2(\occupied_data_spaces[2]_i_13_n_0 ),
-        .I3(\occupied_data_spaces[6]_i_14_n_0 ),
-        .I4(\occupied_data_spaces[6]_i_13_n_0 ),
-        .I5(\occupied_data_spaces[6]_i_12_n_0 ),
-        .O(\occupied_data_spaces[2]_i_18_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
-  LUT5 #(
-    .INIT(32'hFF969600)) 
-    \occupied_data_spaces[2]_i_19 
-       (.I0(\occupied_data_spaces[2]_i_10_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_9_n_0 ),
-        .I2(\occupied_data_spaces[2]_i_8_n_0 ),
-        .I3(\occupied_data_spaces[2]_i_12_n_0 ),
-        .I4(\occupied_data_spaces[2]_i_11_n_0 ),
-        .O(\occupied_data_spaces[2]_i_19_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
-  LUT5 #(
-    .INIT(32'h96696996)) 
-    \occupied_data_spaces[2]_i_2 
-       (.I0(\occupied_data_spaces[2]_i_8_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_9_n_0 ),
-        .I2(\occupied_data_spaces[2]_i_10_n_0 ),
-        .I3(\occupied_data_spaces[2]_i_11_n_0 ),
-        .I4(\occupied_data_spaces[2]_i_12_n_0 ),
-        .O(\occupied_data_spaces[2]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h6996966996696996)) 
-    \occupied_data_spaces[2]_i_20 
-       (.I0(\occupied_data_spaces[6]_i_24_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_23_n_0 ),
-        .I2(\occupied_data_spaces[5]_i_7_n_0 ),
-        .I3(\occupied_data_spaces[2]_i_34_n_0 ),
-        .I4(\occupied_data_spaces[2]_i_35_n_0 ),
-        .I5(\occupied_data_spaces[6]_i_33_n_0 ),
-        .O(\occupied_data_spaces[2]_i_20_n_0 ));
-  LUT6 #(
-    .INIT(64'h171717E817E8E8E8)) 
-    \occupied_data_spaces[2]_i_21 
-       (.I0(data_loc_tracker[48]),
-        .I1(data_loc_tracker[32]),
-        .I2(data_loc_tracker[16]),
-        .I3(data_loc_tracker[1]),
-        .I4(data_loc_tracker[33]),
-        .I5(data_loc_tracker[17]),
-        .O(\occupied_data_spaces[2]_i_21_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    \occupied_data_spaces[2]_i_22 
-       (.I0(data_loc_tracker[18]),
-        .I1(data_loc_tracker[49]),
-        .I2(data_loc_tracker[2]),
-        .O(\occupied_data_spaces[2]_i_22_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair114" *) 
-  LUT3 #(
-    .INIT(8'h17)) 
-    \occupied_data_spaces[2]_i_23 
-       (.I0(data_loc_tracker[20]),
-        .I1(data_loc_tracker[4]),
-        .I2(data_loc_tracker[36]),
-        .O(\occupied_data_spaces[2]_i_23_n_0 ));
-  LUT6 #(
-    .INIT(64'h171717E817E8E8E8)) 
-    \occupied_data_spaces[2]_i_24 
-       (.I0(data_loc_tracker[3]),
-        .I1(data_loc_tracker[50]),
-        .I2(data_loc_tracker[34]),
-        .I3(data_loc_tracker[19]),
-        .I4(data_loc_tracker[51]),
-        .I5(data_loc_tracker[35]),
-        .O(\occupied_data_spaces[2]_i_24_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair107" *) 
-  LUT3 #(
-    .INIT(8'h17)) 
-    \occupied_data_spaces[2]_i_25 
-       (.I0(data_loc_tracker[22]),
-        .I1(data_loc_tracker[54]),
-        .I2(data_loc_tracker[38]),
-        .O(\occupied_data_spaces[2]_i_25_n_0 ));
-  LUT6 #(
-    .INIT(64'h171717E817E8E8E8)) 
-    \occupied_data_spaces[2]_i_26 
-       (.I0(data_loc_tracker[37]),
-        .I1(data_loc_tracker[53]),
-        .I2(data_loc_tracker[6]),
-        .I3(data_loc_tracker[21]),
-        .I4(data_loc_tracker[52]),
-        .I5(data_loc_tracker[5]),
-        .O(\occupied_data_spaces[2]_i_26_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
-  LUT3 #(
-    .INIT(8'h96)) 
-    \occupied_data_spaces[2]_i_27 
-       (.I0(data_loc_tracker[22]),
-        .I1(data_loc_tracker[54]),
-        .I2(data_loc_tracker[38]),
-        .O(\occupied_data_spaces[2]_i_27_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair89" *) 
-  LUT3 #(
-    .INIT(8'h96)) 
-    \occupied_data_spaces[2]_i_28 
-       (.I0(data_loc_tracker[39]),
-        .I1(data_loc_tracker[7]),
-        .I2(data_loc_tracker[23]),
-        .O(\occupied_data_spaces[2]_i_28_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
-  LUT3 #(
-    .INIT(8'h69)) 
-    \occupied_data_spaces[2]_i_29 
-       (.I0(data_loc_tracker[12]),
-        .I1(data_loc_tracker[59]),
-        .I2(data_loc_tracker[43]),
-        .O(\occupied_data_spaces[2]_i_29_n_0 ));
-  LUT6 #(
-    .INIT(64'h6996966996696996)) 
-    \occupied_data_spaces[2]_i_3 
-       (.I0(\occupied_data_spaces[6]_i_17_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_12_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_13_n_0 ),
-        .I3(\occupied_data_spaces[6]_i_14_n_0 ),
-        .I4(\occupied_data_spaces[2]_i_13_n_0 ),
-        .I5(\occupied_data_spaces[2]_i_14_n_0 ),
-        .O(\occupied_data_spaces[2]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
-  LUT3 #(
-    .INIT(8'h69)) 
-    \occupied_data_spaces[2]_i_30 
-       (.I0(data_loc_tracker[42]),
-        .I1(data_loc_tracker[10]),
-        .I2(data_loc_tracker[26]),
-        .O(\occupied_data_spaces[2]_i_30_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair141" *) 
-  LUT3 #(
-    .INIT(8'h69)) 
-    \occupied_data_spaces[2]_i_31 
-       (.I0(data_loc_tracker[9]),
-        .I1(data_loc_tracker[56]),
-        .I2(data_loc_tracker[40]),
-        .O(\occupied_data_spaces[2]_i_31_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair151" *) 
-  LUT3 #(
-    .INIT(8'h69)) 
-    \occupied_data_spaces[2]_i_32 
-       (.I0(data_loc_tracker[25]),
-        .I1(data_loc_tracker[57]),
-        .I2(data_loc_tracker[41]),
-        .O(\occupied_data_spaces[2]_i_32_n_0 ));
+        .I3(data_loc_tracker[45]),
+        .I4(data_loc_tracker[13]),
+        .I5(data_loc_tracker[29]),
+        .O(\occupied_data_spaces[1]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'h9669699669969669)) 
-    \occupied_data_spaces[2]_i_33 
+    \occupied_data_spaces[1]_i_17 
+       (.I0(data_loc_tracker[21]),
+        .I1(data_loc_tracker[52]),
+        .I2(data_loc_tracker[5]),
+        .I3(data_loc_tracker[36]),
+        .I4(data_loc_tracker[4]),
+        .I5(data_loc_tracker[20]),
+        .O(\occupied_data_spaces[1]_i_17_n_0 ));
+  LUT6 #(
+    .INIT(64'h9669699669969669)) 
+    \occupied_data_spaces[1]_i_18 
        (.I0(data_loc_tracker[3]),
         .I1(data_loc_tracker[50]),
         .I2(data_loc_tracker[34]),
         .I3(data_loc_tracker[18]),
         .I4(data_loc_tracker[49]),
         .I5(data_loc_tracker[2]),
-        .O(\occupied_data_spaces[2]_i_33_n_0 ));
-  LUT6 #(
-    .INIT(64'h8E7171718E8E8E71)) 
-    \occupied_data_spaces[2]_i_34 
-       (.I0(\occupied_data_spaces[5]_i_20_n_0 ),
-        .I1(\occupied_data_spaces[5]_i_21_n_0 ),
-        .I2(\occupied_data_spaces[2]_i_36_n_0 ),
-        .I3(\occupied_data_spaces[5]_i_18_n_0 ),
-        .I4(\occupied_data_spaces[5]_i_19_n_0 ),
-        .I5(\occupied_data_spaces[2]_i_37_n_0 ),
-        .O(\occupied_data_spaces[2]_i_34_n_0 ));
-  LUT6 #(
-    .INIT(64'hF66F60066006F66F)) 
-    \occupied_data_spaces[2]_i_35 
-       (.I0(\occupied_data_spaces[2]_i_38_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_39_n_0 ),
-        .I2(\occupied_data_spaces[2]_i_40_n_0 ),
-        .I3(\occupied_data_spaces[2]_i_36_n_0 ),
-        .I4(\occupied_data_spaces[2]_i_41_n_0 ),
-        .I5(\occupied_data_spaces[2]_i_37_n_0 ),
-        .O(\occupied_data_spaces[2]_i_35_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair139" *) 
+        .O(\occupied_data_spaces[1]_i_18_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT3 #(
-    .INIT(8'h17)) 
-    \occupied_data_spaces[2]_i_36 
-       (.I0(data_loc_tracker[29]),
-        .I1(data_loc_tracker[13]),
-        .I2(data_loc_tracker[45]),
-        .O(\occupied_data_spaces[2]_i_36_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+    .INIT(8'h96)) 
+    \occupied_data_spaces[1]_i_2 
+       (.I0(\occupied_data_spaces[2]_i_6_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_5_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_7_n_0 ),
+        .O(\occupied_data_spaces[1]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  LUT5 #(
+    .INIT(32'h69969669)) 
+    \occupied_data_spaces[1]_i_3 
+       (.I0(\occupied_data_spaces[1]_i_7_n_0 ),
+        .I1(data_loc_tracker[48]),
+        .I2(data_loc_tracker[32]),
+        .I3(data_loc_tracker[16]),
+        .I4(\occupied_data_spaces[1]_i_8_n_0 ),
+        .O(\occupied_data_spaces[1]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  LUT5 #(
+    .INIT(32'h96696996)) 
+    \occupied_data_spaces[1]_i_4 
+       (.I0(data_loc_tracker[47]),
+        .I1(data_loc_tracker[31]),
+        .I2(data_loc_tracker[63]),
+        .I3(\occupied_data_spaces[1]_i_9_n_0 ),
+        .I4(data_loc_tracker[0]),
+        .O(\occupied_data_spaces[1]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'h9669699669969669)) 
+    \occupied_data_spaces[1]_i_5 
+       (.I0(\occupied_data_spaces[1]_i_10_n_0 ),
+        .I1(\occupied_data_spaces[1]_i_11_n_0 ),
+        .I2(\occupied_data_spaces[1]_i_12_n_0 ),
+        .I3(\occupied_data_spaces[1]_i_13_n_0 ),
+        .I4(\occupied_data_spaces[1]_i_14_n_0 ),
+        .I5(\occupied_data_spaces[1]_i_15_n_0 ),
+        .O(\occupied_data_spaces[1]_i_5_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  LUT4 #(
+    .INIT(16'h9669)) 
+    \occupied_data_spaces[1]_i_6 
+       (.I0(data_loc_tracker[44]),
+        .I1(data_loc_tracker[60]),
+        .I2(data_loc_tracker[28]),
+        .I3(\occupied_data_spaces[1]_i_16_n_0 ),
+        .O(\occupied_data_spaces[1]_i_6_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  LUT4 #(
+    .INIT(16'h9669)) 
+    \occupied_data_spaces[1]_i_7 
+       (.I0(data_loc_tracker[35]),
+        .I1(data_loc_tracker[51]),
+        .I2(data_loc_tracker[19]),
+        .I3(\occupied_data_spaces[1]_i_17_n_0 ),
+        .O(\occupied_data_spaces[1]_i_7_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+  LUT4 #(
+    .INIT(16'h9669)) 
+    \occupied_data_spaces[1]_i_8 
+       (.I0(data_loc_tracker[17]),
+        .I1(data_loc_tracker[33]),
+        .I2(data_loc_tracker[1]),
+        .I3(\occupied_data_spaces[1]_i_18_n_0 ),
+        .O(\occupied_data_spaces[1]_i_8_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair123" *) 
   LUT3 #(
-    .INIT(8'h17)) 
-    \occupied_data_spaces[2]_i_37 
-       (.I0(data_loc_tracker[11]),
-        .I1(data_loc_tracker[58]),
-        .I2(data_loc_tracker[27]),
-        .O(\occupied_data_spaces[2]_i_37_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair141" *) 
+    .INIT(8'h96)) 
+    \occupied_data_spaces[1]_i_9 
+       (.I0(data_loc_tracker[15]),
+        .I1(data_loc_tracker[62]),
+        .I2(data_loc_tracker[46]),
+        .O(\occupied_data_spaces[1]_i_9_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair142" *) 
+  LUT3 #(
+    .INIT(8'h96)) 
+    \occupied_data_spaces[2]_i_1 
+       (.I0(\occupied_data_spaces[2]_i_2_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_3_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_4_n_0 ),
+        .O(D[2]));
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT3 #(
     .INIT(8'hE8)) 
-    \occupied_data_spaces[2]_i_38 
-       (.I0(data_loc_tracker[40]),
-        .I1(data_loc_tracker[56]),
-        .I2(data_loc_tracker[9]),
-        .O(\occupied_data_spaces[2]_i_38_n_0 ));
+    \occupied_data_spaces[2]_i_10 
+       (.I0(\occupied_data_spaces[6]_i_45_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_47_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_46_n_0 ),
+        .O(\occupied_data_spaces[2]_i_10_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair126" *) 
+  LUT3 #(
+    .INIT(8'h96)) 
+    \occupied_data_spaces[2]_i_11 
+       (.I0(\occupied_data_spaces[6]_i_27_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_26_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_25_n_0 ),
+        .O(\occupied_data_spaces[2]_i_11_n_0 ));
+  LUT3 #(
+    .INIT(8'hD4)) 
+    \occupied_data_spaces[2]_i_12 
+       (.I0(\occupied_data_spaces[6]_i_16_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_17_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_18_n_0 ),
+        .O(\occupied_data_spaces[2]_i_12_n_0 ));
   LUT6 #(
-    .INIT(64'h171717E817E8E8E8)) 
-    \occupied_data_spaces[2]_i_39 
-       (.I0(data_loc_tracker[55]),
-        .I1(data_loc_tracker[24]),
-        .I2(data_loc_tracker[8]),
-        .I3(data_loc_tracker[39]),
-        .I4(data_loc_tracker[7]),
-        .I5(data_loc_tracker[23]),
-        .O(\occupied_data_spaces[2]_i_39_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
-  LUT5 #(
-    .INIT(32'hFF696900)) 
-    \occupied_data_spaces[2]_i_4 
+    .INIT(64'h6996966996696996)) 
+    \occupied_data_spaces[2]_i_13 
+       (.I0(\occupied_data_spaces[6]_i_29_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_28_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_22_n_0 ),
+        .I3(\occupied_data_spaces[2]_i_19_n_0 ),
+        .I4(\occupied_data_spaces[2]_i_20_n_0 ),
+        .I5(\occupied_data_spaces[6]_i_33_n_0 ),
+        .O(\occupied_data_spaces[2]_i_13_n_0 ));
+  LUT6 #(
+    .INIT(64'hFF9696FF96FFFF96)) 
+    \occupied_data_spaces[2]_i_14 
+       (.I0(\occupied_data_spaces[1]_i_8_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_21_n_0 ),
+        .I2(\occupied_data_spaces[1]_i_7_n_0 ),
+        .I3(\occupied_data_spaces[1]_i_4_n_0 ),
+        .I4(\occupied_data_spaces[1]_i_6_n_0 ),
+        .I5(\occupied_data_spaces[1]_i_5_n_0 ),
+        .O(\occupied_data_spaces[2]_i_14_n_0 ));
+  LUT3 #(
+    .INIT(8'hD4)) 
+    \occupied_data_spaces[2]_i_15 
+       (.I0(\occupied_data_spaces[1]_i_6_n_0 ),
+        .I1(\occupied_data_spaces[1]_i_5_n_0 ),
+        .I2(\occupied_data_spaces[1]_i_4_n_0 ),
+        .O(\occupied_data_spaces[2]_i_15_n_0 ));
+  LUT6 #(
+    .INIT(64'h2B2BD42BD42BD4D4)) 
+    \occupied_data_spaces[2]_i_16 
+       (.I0(\occupied_data_spaces[1]_i_14_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_71_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_70_n_0 ),
+        .I3(\occupied_data_spaces[1]_i_12_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_69_n_0 ),
+        .I5(\occupied_data_spaces[6]_i_68_n_0 ),
+        .O(\occupied_data_spaces[2]_i_16_n_0 ));
+  LUT6 #(
+    .INIT(64'h6FF6066006606FF6)) 
+    \occupied_data_spaces[2]_i_17 
+       (.I0(\occupied_data_spaces[1]_i_15_n_0 ),
+        .I1(\occupied_data_spaces[1]_i_14_n_0 ),
+        .I2(\occupied_data_spaces[1]_i_13_n_0 ),
+        .I3(\occupied_data_spaces[1]_i_12_n_0 ),
+        .I4(\occupied_data_spaces[1]_i_11_n_0 ),
+        .I5(\occupied_data_spaces[1]_i_10_n_0 ),
+        .O(\occupied_data_spaces[2]_i_17_n_0 ));
+  LUT6 #(
+    .INIT(64'h9669699669969669)) 
+    \occupied_data_spaces[2]_i_18 
+       (.I0(\occupied_data_spaces[6]_i_61_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_60_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_65_n_0 ),
+        .I3(\occupied_data_spaces[6]_i_64_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_63_n_0 ),
+        .I5(\occupied_data_spaces[6]_i_62_n_0 ),
+        .O(\occupied_data_spaces[2]_i_18_n_0 ));
+  LUT6 #(
+    .INIT(64'h8E7171718E8E8E71)) 
+    \occupied_data_spaces[2]_i_19 
+       (.I0(\occupied_data_spaces[6]_i_52_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_53_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_22_n_0 ),
+        .I3(\occupied_data_spaces[6]_i_50_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_51_n_0 ),
+        .I5(\occupied_data_spaces[2]_i_23_n_0 ),
+        .O(\occupied_data_spaces[2]_i_19_n_0 ));
+  LUT3 #(
+    .INIT(8'h2B)) 
+    \occupied_data_spaces[2]_i_2 
+       (.I0(\occupied_data_spaces[2]_i_5_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_6_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_7_n_0 ),
+        .O(\occupied_data_spaces[2]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'hF99F90099009F99F)) 
+    \occupied_data_spaces[2]_i_20 
+       (.I0(\occupied_data_spaces[2]_i_24_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_22_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_25_n_0 ),
+        .I3(\occupied_data_spaces[2]_i_23_n_0 ),
+        .I4(\occupied_data_spaces[2]_i_26_n_0 ),
+        .I5(\occupied_data_spaces[2]_i_27_n_0 ),
+        .O(\occupied_data_spaces[2]_i_20_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair132" *) 
+  LUT3 #(
+    .INIT(8'h69)) 
+    \occupied_data_spaces[2]_i_21 
        (.I0(data_loc_tracker[48]),
         .I1(data_loc_tracker[32]),
         .I2(data_loc_tracker[16]),
-        .I3(\occupied_data_spaces[2]_i_15_n_0 ),
-        .I4(\occupied_data_spaces[2]_i_16_n_0 ),
-        .O(\occupied_data_spaces[2]_i_4_n_0 ));
+        .O(\occupied_data_spaces[2]_i_21_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair139" *) 
+  LUT3 #(
+    .INIT(8'h17)) 
+    \occupied_data_spaces[2]_i_22 
+       (.I0(data_loc_tracker[29]),
+        .I1(data_loc_tracker[13]),
+        .I2(data_loc_tracker[45]),
+        .O(\occupied_data_spaces[2]_i_22_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  LUT3 #(
+    .INIT(8'h17)) 
+    \occupied_data_spaces[2]_i_23 
+       (.I0(data_loc_tracker[11]),
+        .I1(data_loc_tracker[58]),
+        .I2(data_loc_tracker[27]),
+        .O(\occupied_data_spaces[2]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'h171717E817E8E8E8)) 
-    \occupied_data_spaces[2]_i_40 
+    \occupied_data_spaces[2]_i_24 
        (.I0(data_loc_tracker[12]),
         .I1(data_loc_tracker[59]),
         .I2(data_loc_tracker[43]),
         .I3(data_loc_tracker[28]),
         .I4(data_loc_tracker[60]),
         .I5(data_loc_tracker[44]),
-        .O(\occupied_data_spaces[2]_i_40_n_0 ));
+        .O(\occupied_data_spaces[2]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'h171717E817E8E8E8)) 
-    \occupied_data_spaces[2]_i_41 
+    \occupied_data_spaces[2]_i_25 
        (.I0(data_loc_tracker[26]),
         .I1(data_loc_tracker[10]),
         .I2(data_loc_tracker[42]),
         .I3(data_loc_tracker[25]),
         .I4(data_loc_tracker[57]),
         .I5(data_loc_tracker[41]),
-        .O(\occupied_data_spaces[2]_i_41_n_0 ));
-  LUT6 #(
-    .INIT(64'h0096960096000096)) 
-    \occupied_data_spaces[2]_i_5 
-       (.I0(\occupied_data_spaces[1]_i_4_n_0 ),
-        .I1(\occupied_data_spaces[1]_i_5_n_0 ),
-        .I2(\occupied_data_spaces[1]_i_6_n_0 ),
-        .I3(\occupied_data_spaces[2]_i_16_n_0 ),
-        .I4(\occupied_data_spaces[2]_i_15_n_0 ),
-        .I5(\occupied_data_spaces[2]_i_17_n_0 ),
-        .O(\occupied_data_spaces[2]_i_5_n_0 ));
+        .O(\occupied_data_spaces[2]_i_25_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
   LUT3 #(
-    .INIT(8'h2B)) 
-    \occupied_data_spaces[2]_i_6 
-       (.I0(\occupied_data_spaces[1]_i_6_n_0 ),
-        .I1(\occupied_data_spaces[1]_i_5_n_0 ),
-        .I2(\occupied_data_spaces[1]_i_4_n_0 ),
-        .O(\occupied_data_spaces[2]_i_6_n_0 ));
+    .INIT(8'h17)) 
+    \occupied_data_spaces[2]_i_26 
+       (.I0(data_loc_tracker[9]),
+        .I1(data_loc_tracker[56]),
+        .I2(data_loc_tracker[40]),
+        .O(\occupied_data_spaces[2]_i_26_n_0 ));
+  LUT6 #(
+    .INIT(64'h171717E817E8E8E8)) 
+    \occupied_data_spaces[2]_i_27 
+       (.I0(data_loc_tracker[24]),
+        .I1(data_loc_tracker[55]),
+        .I2(data_loc_tracker[8]),
+        .I3(data_loc_tracker[39]),
+        .I4(data_loc_tracker[7]),
+        .I5(data_loc_tracker[23]),
+        .O(\occupied_data_spaces[2]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'h6996966996696996)) 
+    \occupied_data_spaces[2]_i_3 
+       (.I0(\occupied_data_spaces[2]_i_8_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_9_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_10_n_0 ),
+        .I3(\occupied_data_spaces[2]_i_11_n_0 ),
+        .I4(\occupied_data_spaces[2]_i_12_n_0 ),
+        .I5(\occupied_data_spaces[2]_i_13_n_0 ),
+        .O(\occupied_data_spaces[2]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  LUT5 #(
+    .INIT(32'h2BB2B22B)) 
+    \occupied_data_spaces[2]_i_4 
+       (.I0(\occupied_data_spaces[2]_i_14_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_15_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_6_n_0 ),
+        .I3(\occupied_data_spaces[2]_i_5_n_0 ),
+        .I4(\occupied_data_spaces[2]_i_7_n_0 ),
+        .O(\occupied_data_spaces[2]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'h9669699669969669)) 
+    \occupied_data_spaces[2]_i_5 
+       (.I0(\occupied_data_spaces[6]_i_19_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_45_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_16_n_0 ),
+        .I3(\occupied_data_spaces[6]_i_16_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_17_n_0 ),
+        .I5(\occupied_data_spaces[6]_i_18_n_0 ),
+        .O(\occupied_data_spaces[2]_i_5_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  LUT5 #(
+    .INIT(32'h96696996)) 
+    \occupied_data_spaces[2]_i_6 
+       (.I0(\occupied_data_spaces[2]_i_17_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_18_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_32_n_0 ),
+        .I3(\occupied_data_spaces[6]_i_31_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_30_n_0 ),
+        .O(\occupied_data_spaces[2]_i_6_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  LUT5 #(
+    .INIT(32'h006969FF)) 
     \occupied_data_spaces[2]_i_7 
-       (.I0(\occupied_data_spaces[2]_i_18_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_19_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_8_n_0 ),
-        .I3(\occupied_data_spaces[6]_i_9_n_0 ),
-        .I4(\occupied_data_spaces[6]_i_7_n_0 ),
-        .I5(\occupied_data_spaces[2]_i_20_n_0 ),
+       (.I0(data_loc_tracker[48]),
+        .I1(data_loc_tracker[32]),
+        .I2(data_loc_tracker[16]),
+        .I3(\occupied_data_spaces[1]_i_8_n_0 ),
+        .I4(\occupied_data_spaces[1]_i_7_n_0 ),
         .O(\occupied_data_spaces[2]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
-  LUT5 #(
-    .INIT(32'h17E8E817)) 
+  LUT6 #(
+    .INIT(64'h69000069FF6969FF)) 
     \occupied_data_spaces[2]_i_8 
-       (.I0(data_loc_tracker[45]),
-        .I1(data_loc_tracker[13]),
-        .I2(data_loc_tracker[29]),
-        .I3(\occupied_data_spaces[5]_i_21_n_0 ),
-        .I4(\occupied_data_spaces[5]_i_20_n_0 ),
+       (.I0(\occupied_data_spaces[6]_i_18_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_17_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_16_n_0 ),
+        .I3(\occupied_data_spaces[2]_i_16_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_45_n_0 ),
+        .I5(\occupied_data_spaces[6]_i_19_n_0 ),
         .O(\occupied_data_spaces[2]_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT5 #(
-    .INIT(32'h17E8E817)) 
+    .INIT(32'h8EE8E88E)) 
     \occupied_data_spaces[2]_i_9 
-       (.I0(data_loc_tracker[27]),
-        .I1(data_loc_tracker[58]),
-        .I2(data_loc_tracker[11]),
-        .I3(\occupied_data_spaces[5]_i_19_n_0 ),
-        .I4(\occupied_data_spaces[5]_i_18_n_0 ),
+       (.I0(\occupied_data_spaces[2]_i_17_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_18_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_32_n_0 ),
+        .I3(\occupied_data_spaces[6]_i_31_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_30_n_0 ),
         .O(\occupied_data_spaces[2]_i_9_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT3 #(
     .INIT(8'h96)) 
     \occupied_data_spaces[3]_i_1 
-       (.I0(\occupied_data_spaces[6]_i_4_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_3_n_0 ),
+       (.I0(\occupied_data_spaces[6]_i_7_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_6_n_0 ),
         .I2(\occupied_data_spaces[6]_i_5_n_0 ),
         .O(D[3]));
   LUT6 #(
-    .INIT(64'hD42B2BD42BD4D42B)) 
+    .INIT(64'hCE0E31F131F1CE0E)) 
     \occupied_data_spaces[4]_i_1 
-       (.I0(\occupied_data_spaces[6]_i_5_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_4_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_3_n_0 ),
-        .I3(\occupied_data_spaces[5]_i_3_n_0 ),
-        .I4(\occupied_data_spaces[5]_i_2_n_0 ),
-        .I5(\occupied_data_spaces[6]_i_6_n_0 ),
+       (.I0(\occupied_data_spaces[6]_i_7_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_6_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_5_n_0 ),
+        .I3(\occupied_data_spaces[6]_i_4_n_0 ),
+        .I4(\occupied_data_spaces[5]_i_4_n_0 ),
+        .I5(\occupied_data_spaces[6]_i_3_n_0 ),
         .O(D[4]));
   LUT6 #(
-    .INIT(64'hE777EEE78EEE888E)) 
+    .INIT(64'h9959AAAA55559959)) 
     \occupied_data_spaces[5]_i_1 
-       (.I0(\occupied_data_spaces[5]_i_2_n_0 ),
-        .I1(\occupied_data_spaces[5]_i_3_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_3_n_0 ),
-        .I3(\occupied_data_spaces[6]_i_4_n_0 ),
-        .I4(\occupied_data_spaces[6]_i_5_n_0 ),
-        .I5(\occupied_data_spaces[6]_i_6_n_0 ),
+       (.I0(\occupied_data_spaces[6]_i_2_n_0 ),
+        .I1(\occupied_data_spaces[5]_i_2_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_5_n_0 ),
+        .I3(\occupied_data_spaces[5]_i_3_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_3_n_0 ),
+        .I5(\occupied_data_spaces[5]_i_4_n_0 ),
         .O(D[5]));
-  (* SOFT_HLUTNM = "soft_lutpair129" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    \occupied_data_spaces[5]_i_10 
-       (.I0(data_loc_tracker[34]),
-        .I1(data_loc_tracker[50]),
-        .I2(data_loc_tracker[3]),
-        .O(\occupied_data_spaces[5]_i_10_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair119" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    \occupied_data_spaces[5]_i_11 
-       (.I0(data_loc_tracker[35]),
-        .I1(data_loc_tracker[51]),
-        .I2(data_loc_tracker[19]),
-        .O(\occupied_data_spaces[5]_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair131" *) 
-  LUT3 #(
-    .INIT(8'h17)) 
-    \occupied_data_spaces[5]_i_12 
-       (.I0(data_loc_tracker[6]),
-        .I1(data_loc_tracker[53]),
-        .I2(data_loc_tracker[37]),
-        .O(\occupied_data_spaces[5]_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair116" *) 
-  LUT3 #(
-    .INIT(8'h17)) 
-    \occupied_data_spaces[5]_i_13 
-       (.I0(data_loc_tracker[5]),
-        .I1(data_loc_tracker[52]),
-        .I2(data_loc_tracker[21]),
-        .O(\occupied_data_spaces[5]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    \occupied_data_spaces[5]_i_14 
-       (.I0(data_loc_tracker[17]),
-        .I1(data_loc_tracker[33]),
-        .I2(data_loc_tracker[1]),
-        .O(\occupied_data_spaces[5]_i_14_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair125" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    \occupied_data_spaces[5]_i_15 
-       (.I0(data_loc_tracker[16]),
-        .I1(data_loc_tracker[32]),
-        .I2(data_loc_tracker[48]),
-        .O(\occupied_data_spaces[5]_i_15_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
-  LUT3 #(
-    .INIT(8'h17)) 
-    \occupied_data_spaces[5]_i_16 
-       (.I0(data_loc_tracker[8]),
-        .I1(data_loc_tracker[24]),
-        .I2(data_loc_tracker[55]),
-        .O(\occupied_data_spaces[5]_i_16_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
-  LUT3 #(
-    .INIT(8'h17)) 
-    \occupied_data_spaces[5]_i_17 
-       (.I0(data_loc_tracker[23]),
-        .I1(data_loc_tracker[7]),
-        .I2(data_loc_tracker[39]),
-        .O(\occupied_data_spaces[5]_i_17_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    \occupied_data_spaces[5]_i_18 
-       (.I0(data_loc_tracker[42]),
-        .I1(data_loc_tracker[10]),
-        .I2(data_loc_tracker[26]),
-        .O(\occupied_data_spaces[5]_i_18_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair126" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    \occupied_data_spaces[5]_i_19 
-       (.I0(data_loc_tracker[41]),
-        .I1(data_loc_tracker[57]),
-        .I2(data_loc_tracker[25]),
-        .O(\occupied_data_spaces[5]_i_19_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
-  LUT5 #(
-    .INIT(32'h007171FF)) 
+  LUT6 #(
+    .INIT(64'h8EFFFF8EFF8E8EFF)) 
     \occupied_data_spaces[5]_i_2 
-       (.I0(\occupied_data_spaces[6]_i_7_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_8_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_9_n_0 ),
+       (.I0(\occupied_data_spaces[2]_i_3_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_4_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_2_n_0 ),
+        .I3(\occupied_data_spaces[6]_i_13_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_14_n_0 ),
+        .I5(\occupied_data_spaces[6]_i_15_n_0 ),
+        .O(\occupied_data_spaces[5]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h00D5D500D50000D5)) 
+    \occupied_data_spaces[5]_i_3 
+       (.I0(\occupied_data_spaces[2]_i_2_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_4_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_3_n_0 ),
+        .I3(\occupied_data_spaces[6]_i_13_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_14_n_0 ),
+        .I5(\occupied_data_spaces[6]_i_15_n_0 ),
+        .O(\occupied_data_spaces[5]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  LUT5 #(
+    .INIT(32'h88870777)) 
+    \occupied_data_spaces[5]_i_4 
+       (.I0(\occupied_data_spaces[6]_i_8_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_9_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_12_n_0 ),
         .I3(\occupied_data_spaces[6]_i_11_n_0 ),
         .I4(\occupied_data_spaces[6]_i_10_n_0 ),
-        .O(\occupied_data_spaces[5]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    \occupied_data_spaces[5]_i_20 
-       (.I0(data_loc_tracker[43]),
-        .I1(data_loc_tracker[59]),
-        .I2(data_loc_tracker[12]),
-        .O(\occupied_data_spaces[5]_i_20_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
-  LUT3 #(
-    .INIT(8'hE8)) 
-    \occupied_data_spaces[5]_i_21 
-       (.I0(data_loc_tracker[44]),
-        .I1(data_loc_tracker[60]),
-        .I2(data_loc_tracker[28]),
-        .O(\occupied_data_spaces[5]_i_21_n_0 ));
-  LUT6 #(
-    .INIT(64'h8E8E8E008E000000)) 
-    \occupied_data_spaces[5]_i_3 
-       (.I0(\occupied_data_spaces[5]_i_4_n_0 ),
-        .I1(\occupied_data_spaces[5]_i_5_n_0 ),
-        .I2(\occupied_data_spaces[5]_i_6_n_0 ),
-        .I3(\occupied_data_spaces[5]_i_7_n_0 ),
-        .I4(\occupied_data_spaces[5]_i_8_n_0 ),
-        .I5(\occupied_data_spaces[5]_i_9_n_0 ),
-        .O(\occupied_data_spaces[5]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
-  LUT5 #(
-    .INIT(32'hFFE8E800)) 
-    \occupied_data_spaces[5]_i_4 
-       (.I0(data_loc_tracker[20]),
-        .I1(data_loc_tracker[4]),
-        .I2(data_loc_tracker[36]),
-        .I3(\occupied_data_spaces[5]_i_10_n_0 ),
-        .I4(\occupied_data_spaces[5]_i_11_n_0 ),
         .O(\occupied_data_spaces[5]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
-  LUT5 #(
-    .INIT(32'h77717111)) 
-    \occupied_data_spaces[5]_i_5 
-       (.I0(\occupied_data_spaces[5]_i_12_n_0 ),
-        .I1(\occupied_data_spaces[5]_i_13_n_0 ),
-        .I2(data_loc_tracker[22]),
-        .I3(data_loc_tracker[54]),
-        .I4(data_loc_tracker[38]),
-        .O(\occupied_data_spaces[5]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
-  LUT5 #(
-    .INIT(32'h001717FF)) 
-    \occupied_data_spaces[5]_i_6 
-       (.I0(data_loc_tracker[18]),
-        .I1(data_loc_tracker[49]),
-        .I2(data_loc_tracker[2]),
-        .I3(\occupied_data_spaces[5]_i_14_n_0 ),
-        .I4(\occupied_data_spaces[5]_i_15_n_0 ),
-        .O(\occupied_data_spaces[5]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
-  LUT5 #(
-    .INIT(32'h00E8E8FF)) 
-    \occupied_data_spaces[5]_i_7 
-       (.I0(data_loc_tracker[40]),
-        .I1(data_loc_tracker[56]),
-        .I2(data_loc_tracker[9]),
-        .I3(\occupied_data_spaces[5]_i_16_n_0 ),
-        .I4(\occupied_data_spaces[5]_i_17_n_0 ),
-        .O(\occupied_data_spaces[5]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
-  LUT5 #(
-    .INIT(32'hEEE8E888)) 
-    \occupied_data_spaces[5]_i_8 
-       (.I0(\occupied_data_spaces[5]_i_18_n_0 ),
-        .I1(\occupied_data_spaces[5]_i_19_n_0 ),
-        .I2(data_loc_tracker[11]),
-        .I3(data_loc_tracker[58]),
-        .I4(data_loc_tracker[27]),
-        .O(\occupied_data_spaces[5]_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
-  LUT5 #(
-    .INIT(32'hEEE8E888)) 
-    \occupied_data_spaces[5]_i_9 
-       (.I0(\occupied_data_spaces[5]_i_20_n_0 ),
-        .I1(\occupied_data_spaces[5]_i_21_n_0 ),
-        .I2(data_loc_tracker[29]),
-        .I3(data_loc_tracker[13]),
-        .I4(data_loc_tracker[45]),
-        .O(\occupied_data_spaces[5]_i_9_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
-  LUT5 #(
-    .INIT(32'h2A020000)) 
+  LUT6 #(
+    .INIT(64'h0800880008008888)) 
     \occupied_data_spaces[6]_i_1 
        (.I0(\occupied_data_spaces[6]_i_2_n_0 ),
         .I1(\occupied_data_spaces[6]_i_3_n_0 ),
         .I2(\occupied_data_spaces[6]_i_4_n_0 ),
         .I3(\occupied_data_spaces[6]_i_5_n_0 ),
         .I4(\occupied_data_spaces[6]_i_6_n_0 ),
+        .I5(\occupied_data_spaces[6]_i_7_n_0 ),
         .O(D[6]));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT5 #(
-    .INIT(32'h4DD4D44D)) 
+    .INIT(32'hB22B2BB2)) 
     \occupied_data_spaces[6]_i_10 
-       (.I0(\occupied_data_spaces[6]_i_23_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_24_n_0 ),
-        .I2(\occupied_data_spaces[5]_i_9_n_0 ),
-        .I3(\occupied_data_spaces[5]_i_8_n_0 ),
-        .I4(\occupied_data_spaces[5]_i_7_n_0 ),
+       (.I0(\occupied_data_spaces[6]_i_28_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_29_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_24_n_0 ),
+        .I3(\occupied_data_spaces[6]_i_23_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_22_n_0 ),
         .O(\occupied_data_spaces[6]_i_10_n_0 ));
   LUT6 #(
-    .INIT(64'hE8E817E817E81717)) 
+    .INIT(64'h1717E817E817E8E8)) 
     \occupied_data_spaces[6]_i_11 
-       (.I0(\occupied_data_spaces[5]_i_9_n_0 ),
-        .I1(\occupied_data_spaces[5]_i_8_n_0 ),
-        .I2(\occupied_data_spaces[5]_i_7_n_0 ),
-        .I3(\occupied_data_spaces[5]_i_6_n_0 ),
-        .I4(\occupied_data_spaces[5]_i_5_n_0 ),
-        .I5(\occupied_data_spaces[5]_i_4_n_0 ),
+       (.I0(\occupied_data_spaces[6]_i_24_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_23_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_22_n_0 ),
+        .I3(\occupied_data_spaces[6]_i_27_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_26_n_0 ),
+        .I5(\occupied_data_spaces[6]_i_25_n_0 ),
         .O(\occupied_data_spaces[6]_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
-  LUT5 #(
-    .INIT(32'h66696999)) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  LUT3 #(
+    .INIT(8'h2B)) 
     \occupied_data_spaces[6]_i_12 
-       (.I0(\occupied_data_spaces[6]_i_25_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_26_n_0 ),
-        .I2(data_loc_tracker[30]),
-        .I3(data_loc_tracker[61]),
-        .I4(data_loc_tracker[14]),
+       (.I0(\occupied_data_spaces[2]_i_12_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_10_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_11_n_0 ),
         .O(\occupied_data_spaces[6]_i_12_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  LUT5 #(
+    .INIT(32'h8228EBBE)) 
+    \occupied_data_spaces[6]_i_13 
+       (.I0(\occupied_data_spaces[2]_i_9_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_10_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_11_n_0 ),
+        .I3(\occupied_data_spaces[2]_i_12_n_0 ),
+        .I4(\occupied_data_spaces[2]_i_13_n_0 ),
+        .O(\occupied_data_spaces[6]_i_13_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  LUT5 #(
+    .INIT(32'h599AA665)) 
+    \occupied_data_spaces[6]_i_14 
+       (.I0(\occupied_data_spaces[6]_i_10_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_12_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_10_n_0 ),
+        .I3(\occupied_data_spaces[2]_i_11_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_11_n_0 ),
+        .O(\occupied_data_spaces[6]_i_14_n_0 ));
+  LUT5 #(
+    .INIT(32'h17FF0017)) 
+    \occupied_data_spaces[6]_i_15 
+       (.I0(\occupied_data_spaces[6]_i_30_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_31_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_32_n_0 ),
+        .I3(\occupied_data_spaces[6]_i_33_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_34_n_0 ),
+        .O(\occupied_data_spaces[6]_i_15_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT5 #(
-    .INIT(32'hE88E8EE8)) 
-    \occupied_data_spaces[6]_i_13 
-       (.I0(\occupied_data_spaces[6]_i_27_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_28_n_0 ),
+    .INIT(32'h17E8E817)) 
+    \occupied_data_spaces[6]_i_16 
+       (.I0(data_loc_tracker[30]),
+        .I1(data_loc_tracker[61]),
+        .I2(data_loc_tracker[14]),
+        .I3(\occupied_data_spaces[6]_i_35_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_36_n_0 ),
+        .O(\occupied_data_spaces[6]_i_16_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  LUT5 #(
+    .INIT(32'hA88A8AA8)) 
+    \occupied_data_spaces[6]_i_17 
+       (.I0(\occupied_data_spaces[6]_i_37_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_38_n_0 ),
         .I2(data_loc_tracker[19]),
         .I3(data_loc_tracker[51]),
         .I4(data_loc_tracker[35]),
-        .O(\occupied_data_spaces[6]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+        .O(\occupied_data_spaces[6]_i_17_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT5 #(
-    .INIT(32'h4114FFFF)) 
-    \occupied_data_spaces[6]_i_14 
-       (.I0(\occupied_data_spaces[6]_i_29_n_0 ),
-        .I1(data_loc_tracker[1]),
-        .I2(data_loc_tracker[33]),
-        .I3(data_loc_tracker[17]),
-        .I4(\occupied_data_spaces[6]_i_30_n_0 ),
-        .O(\occupied_data_spaces[6]_i_14_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+    .INIT(32'h9600FFFF)) 
+    \occupied_data_spaces[6]_i_18 
+       (.I0(data_loc_tracker[1]),
+        .I1(data_loc_tracker[33]),
+        .I2(data_loc_tracker[17]),
+        .I3(\occupied_data_spaces[6]_i_39_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_40_n_0 ),
+        .O(\occupied_data_spaces[6]_i_18_n_0 ));
+  LUT6 #(
+    .INIT(64'hA2A2A25DA25D5D5D)) 
+    \occupied_data_spaces[6]_i_19 
+       (.I0(\occupied_data_spaces[6]_i_41_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_42_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_43_n_0 ),
+        .I3(\occupied_data_spaces[1]_i_9_n_0 ),
+        .I4(data_loc_tracker[0]),
+        .I5(\occupied_data_spaces[6]_i_44_n_0 ),
+        .O(\occupied_data_spaces[6]_i_19_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  LUT5 #(
+    .INIT(32'h80808000)) 
+    \occupied_data_spaces[6]_i_2 
+       (.I0(\occupied_data_spaces[6]_i_8_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_9_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_10_n_0 ),
+        .I3(\occupied_data_spaces[6]_i_11_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_12_n_0 ),
+        .O(\occupied_data_spaces[6]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  LUT3 #(
+    .INIT(8'h96)) 
+    \occupied_data_spaces[6]_i_20 
+       (.I0(\occupied_data_spaces[6]_i_45_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_46_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_47_n_0 ),
+        .O(\occupied_data_spaces[6]_i_20_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
-    \occupied_data_spaces[6]_i_15 
-       (.I0(\occupied_data_spaces[2]_i_20_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_7_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_9_n_0 ),
-        .I3(\occupied_data_spaces[6]_i_8_n_0 ),
-        .I4(\occupied_data_spaces[2]_i_19_n_0 ),
-        .O(\occupied_data_spaces[6]_i_15_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair117" *) 
-  LUT3 #(
-    .INIT(8'h96)) 
-    \occupied_data_spaces[6]_i_16 
-       (.I0(\occupied_data_spaces[2]_i_13_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_22_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_21_n_0 ),
-        .O(\occupied_data_spaces[6]_i_16_n_0 ));
-  LUT6 #(
-    .INIT(64'h1717E817E817E8E8)) 
-    \occupied_data_spaces[6]_i_17 
-       (.I0(\occupied_data_spaces[1]_i_7_n_0 ),
-        .I1(\occupied_data_spaces[1]_i_8_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_31_n_0 ),
-        .I3(data_loc_tracker[0]),
-        .I4(\occupied_data_spaces[1]_i_9_n_0 ),
-        .I5(\occupied_data_spaces[6]_i_32_n_0 ),
-        .O(\occupied_data_spaces[6]_i_17_n_0 ));
-  LUT5 #(
-    .INIT(32'h2BFF002B)) 
-    \occupied_data_spaces[6]_i_18 
-       (.I0(\occupied_data_spaces[2]_i_10_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_8_n_0 ),
-        .I2(\occupied_data_spaces[2]_i_9_n_0 ),
-        .I3(\occupied_data_spaces[6]_i_33_n_0 ),
-        .I4(\occupied_data_spaces[6]_i_34_n_0 ),
-        .O(\occupied_data_spaces[6]_i_18_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
-  LUT5 #(
-    .INIT(32'h95A96A56)) 
-    \occupied_data_spaces[6]_i_19 
-       (.I0(\occupied_data_spaces[6]_i_10_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_7_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_8_n_0 ),
-        .I3(\occupied_data_spaces[6]_i_9_n_0 ),
-        .I4(\occupied_data_spaces[6]_i_11_n_0 ),
-        .O(\occupied_data_spaces[6]_i_19_n_0 ));
-  LUT6 #(
-    .INIT(64'h007171FF00000000)) 
-    \occupied_data_spaces[6]_i_2 
-       (.I0(\occupied_data_spaces[6]_i_7_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_8_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_9_n_0 ),
-        .I3(\occupied_data_spaces[6]_i_10_n_0 ),
-        .I4(\occupied_data_spaces[6]_i_11_n_0 ),
-        .I5(\occupied_data_spaces[5]_i_3_n_0 ),
-        .O(\occupied_data_spaces[6]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
-  LUT5 #(
-    .INIT(32'h2BB2B22B)) 
-    \occupied_data_spaces[6]_i_20 
-       (.I0(\occupied_data_spaces[2]_i_20_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_19_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_8_n_0 ),
-        .I3(\occupied_data_spaces[6]_i_9_n_0 ),
-        .I4(\occupied_data_spaces[6]_i_7_n_0 ),
-        .O(\occupied_data_spaces[6]_i_20_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
-  LUT5 #(
-    .INIT(32'h8EE8E88E)) 
     \occupied_data_spaces[6]_i_21 
-       (.I0(\occupied_data_spaces[2]_i_30_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_29_n_0 ),
-        .I2(data_loc_tracker[27]),
-        .I3(data_loc_tracker[58]),
-        .I4(data_loc_tracker[11]),
+       (.I0(\occupied_data_spaces[2]_i_13_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_12_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_11_n_0 ),
+        .I3(\occupied_data_spaces[2]_i_10_n_0 ),
+        .I4(\occupied_data_spaces[2]_i_9_n_0 ),
         .O(\occupied_data_spaces[6]_i_21_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
-  LUT5 #(
-    .INIT(32'h8EE8E88E)) 
-    \occupied_data_spaces[6]_i_22 
-       (.I0(\occupied_data_spaces[2]_i_32_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_31_n_0 ),
-        .I2(data_loc_tracker[8]),
-        .I3(data_loc_tracker[55]),
-        .I4(data_loc_tracker[24]),
-        .O(\occupied_data_spaces[6]_i_22_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT5 #(
     .INIT(32'h77717111)) 
+    \occupied_data_spaces[6]_i_22 
+       (.I0(\occupied_data_spaces[6]_i_48_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_49_n_0 ),
+        .I2(data_loc_tracker[9]),
+        .I3(data_loc_tracker[56]),
+        .I4(data_loc_tracker[40]),
+        .O(\occupied_data_spaces[6]_i_22_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  LUT5 #(
+    .INIT(32'hEEE8E888)) 
     \occupied_data_spaces[6]_i_23 
-       (.I0(\occupied_data_spaces[6]_i_26_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_25_n_0 ),
-        .I2(data_loc_tracker[14]),
-        .I3(data_loc_tracker[61]),
-        .I4(data_loc_tracker[30]),
+       (.I0(\occupied_data_spaces[6]_i_50_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_51_n_0 ),
+        .I2(data_loc_tracker[11]),
+        .I3(data_loc_tracker[58]),
+        .I4(data_loc_tracker[27]),
         .O(\occupied_data_spaces[6]_i_23_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFE8FFE8FFE8E8)) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  LUT5 #(
+    .INIT(32'hEEE8E888)) 
     \occupied_data_spaces[6]_i_24 
-       (.I0(\occupied_data_spaces[1]_i_7_n_0 ),
-        .I1(\occupied_data_spaces[1]_i_8_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_31_n_0 ),
-        .I3(data_loc_tracker[0]),
-        .I4(\occupied_data_spaces[1]_i_9_n_0 ),
-        .I5(\occupied_data_spaces[6]_i_32_n_0 ),
+       (.I0(\occupied_data_spaces[6]_i_52_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_53_n_0 ),
+        .I2(data_loc_tracker[29]),
+        .I3(data_loc_tracker[13]),
+        .I4(data_loc_tracker[45]),
         .O(\occupied_data_spaces[6]_i_24_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair103" *) 
-  LUT3 #(
-    .INIT(8'h17)) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  LUT5 #(
+    .INIT(32'hFFE8E800)) 
     \occupied_data_spaces[6]_i_25 
-       (.I0(data_loc_tracker[15]),
-        .I1(data_loc_tracker[62]),
-        .I2(data_loc_tracker[46]),
-        .O(\occupied_data_spaces[6]_i_25_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
-  LUT3 #(
-    .INIT(8'h17)) 
-    \occupied_data_spaces[6]_i_26 
-       (.I0(data_loc_tracker[47]),
-        .I1(data_loc_tracker[31]),
-        .I2(data_loc_tracker[63]),
-        .O(\occupied_data_spaces[6]_i_26_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
-  LUT3 #(
-    .INIT(8'h96)) 
-    \occupied_data_spaces[6]_i_27 
        (.I0(data_loc_tracker[36]),
         .I1(data_loc_tracker[4]),
         .I2(data_loc_tracker[20]),
+        .I3(\occupied_data_spaces[6]_i_54_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_55_n_0 ),
+        .O(\occupied_data_spaces[6]_i_25_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  LUT5 #(
+    .INIT(32'h77717111)) 
+    \occupied_data_spaces[6]_i_26 
+       (.I0(\occupied_data_spaces[6]_i_56_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_57_n_0 ),
+        .I2(data_loc_tracker[22]),
+        .I3(data_loc_tracker[54]),
+        .I4(data_loc_tracker[38]),
+        .O(\occupied_data_spaces[6]_i_26_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  LUT5 #(
+    .INIT(32'h001717FF)) 
+    \occupied_data_spaces[6]_i_27 
+       (.I0(data_loc_tracker[18]),
+        .I1(data_loc_tracker[49]),
+        .I2(data_loc_tracker[2]),
+        .I3(\occupied_data_spaces[6]_i_58_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_59_n_0 ),
         .O(\occupied_data_spaces[6]_i_27_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair116" *) 
-  LUT3 #(
-    .INIT(8'h96)) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  LUT5 #(
+    .INIT(32'h77717111)) 
     \occupied_data_spaces[6]_i_28 
-       (.I0(data_loc_tracker[21]),
-        .I1(data_loc_tracker[52]),
-        .I2(data_loc_tracker[5]),
+       (.I0(\occupied_data_spaces[6]_i_36_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_35_n_0 ),
+        .I2(data_loc_tracker[14]),
+        .I3(data_loc_tracker[61]),
+        .I4(data_loc_tracker[30]),
         .O(\occupied_data_spaces[6]_i_28_n_0 ));
   LUT6 #(
-    .INIT(64'h0069690069000069)) 
+    .INIT(64'h5D5D5DFF5DFFFFFF)) 
     \occupied_data_spaces[6]_i_29 
-       (.I0(data_loc_tracker[2]),
-        .I1(data_loc_tracker[49]),
-        .I2(data_loc_tracker[18]),
-        .I3(data_loc_tracker[34]),
-        .I4(data_loc_tracker[50]),
-        .I5(data_loc_tracker[3]),
+       (.I0(\occupied_data_spaces[6]_i_41_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_42_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_43_n_0 ),
+        .I3(\occupied_data_spaces[1]_i_9_n_0 ),
+        .I4(data_loc_tracker[0]),
+        .I5(\occupied_data_spaces[6]_i_44_n_0 ),
         .O(\occupied_data_spaces[6]_i_29_n_0 ));
-  LUT6 #(
-    .INIT(64'hFF96FF00FFFFFF96)) 
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
     \occupied_data_spaces[6]_i_3 
-       (.I0(\occupied_data_spaces[6]_i_12_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_13_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_14_n_0 ),
-        .I3(\occupied_data_spaces[6]_i_15_n_0 ),
-        .I4(\occupied_data_spaces[6]_i_16_n_0 ),
-        .I5(\occupied_data_spaces[6]_i_17_n_0 ),
+       (.I0(\occupied_data_spaces[6]_i_13_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_14_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_15_n_0 ),
         .O(\occupied_data_spaces[6]_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'h69FFFF69FF6969FF)) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  LUT5 #(
+    .INIT(32'h17E8E817)) 
     \occupied_data_spaces[6]_i_30 
-       (.I0(data_loc_tracker[2]),
-        .I1(data_loc_tracker[49]),
-        .I2(data_loc_tracker[18]),
-        .I3(data_loc_tracker[34]),
-        .I4(data_loc_tracker[50]),
-        .I5(data_loc_tracker[3]),
+       (.I0(data_loc_tracker[45]),
+        .I1(data_loc_tracker[13]),
+        .I2(data_loc_tracker[29]),
+        .I3(\occupied_data_spaces[6]_i_53_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_52_n_0 ),
         .O(\occupied_data_spaces[6]_i_30_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair145" *) 
-  LUT3 #(
-    .INIT(8'h69)) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  LUT5 #(
+    .INIT(32'h17E8E817)) 
     \occupied_data_spaces[6]_i_31 
-       (.I0(data_loc_tracker[28]),
-        .I1(data_loc_tracker[60]),
-        .I2(data_loc_tracker[44]),
+       (.I0(data_loc_tracker[27]),
+        .I1(data_loc_tracker[58]),
+        .I2(data_loc_tracker[11]),
+        .I3(\occupied_data_spaces[6]_i_51_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_50_n_0 ),
         .O(\occupied_data_spaces[6]_i_31_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair130" *) 
-  LUT3 #(
-    .INIT(8'h69)) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  LUT5 #(
+    .INIT(32'h17E8E817)) 
     \occupied_data_spaces[6]_i_32 
-       (.I0(data_loc_tracker[63]),
-        .I1(data_loc_tracker[31]),
-        .I2(data_loc_tracker[47]),
+       (.I0(data_loc_tracker[40]),
+        .I1(data_loc_tracker[56]),
+        .I2(data_loc_tracker[9]),
+        .I3(\occupied_data_spaces[6]_i_49_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_48_n_0 ),
         .O(\occupied_data_spaces[6]_i_32_n_0 ));
   LUT6 #(
-    .INIT(64'h09909FF99FF90990)) 
+    .INIT(64'h9FF9099009909FF9)) 
     \occupied_data_spaces[6]_i_33 
-       (.I0(\occupied_data_spaces[2]_i_22_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_21_n_0 ),
-        .I2(\occupied_data_spaces[2]_i_26_n_0 ),
-        .I3(\occupied_data_spaces[2]_i_25_n_0 ),
-        .I4(\occupied_data_spaces[2]_i_24_n_0 ),
-        .I5(\occupied_data_spaces[2]_i_23_n_0 ),
+       (.I0(\occupied_data_spaces[6]_i_60_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_61_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_62_n_0 ),
+        .I3(\occupied_data_spaces[6]_i_63_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_64_n_0 ),
+        .I5(\occupied_data_spaces[6]_i_65_n_0 ),
         .O(\occupied_data_spaces[6]_i_33_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \occupied_data_spaces[6]_i_34 
-       (.I0(\occupied_data_spaces[5]_i_9_n_0 ),
-        .I1(\occupied_data_spaces[5]_i_8_n_0 ),
-        .I2(\occupied_data_spaces[5]_i_7_n_0 ),
-        .I3(\occupied_data_spaces[6]_i_23_n_0 ),
-        .I4(\occupied_data_spaces[6]_i_24_n_0 ),
+       (.I0(\occupied_data_spaces[6]_i_24_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_23_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_22_n_0 ),
+        .I3(\occupied_data_spaces[6]_i_28_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_29_n_0 ),
         .O(\occupied_data_spaces[6]_i_34_n_0 ));
-  LUT6 #(
-    .INIT(64'h71F7F7FF00101071)) 
-    \occupied_data_spaces[6]_i_4 
-       (.I0(\occupied_data_spaces[2]_i_2_n_0 ),
-        .I1(\occupied_data_spaces[2]_i_3_n_0 ),
-        .I2(\occupied_data_spaces[2]_i_4_n_0 ),
-        .I3(\occupied_data_spaces[2]_i_5_n_0 ),
-        .I4(\occupied_data_spaces[2]_i_6_n_0 ),
-        .I5(\occupied_data_spaces[2]_i_7_n_0 ),
-        .O(\occupied_data_spaces[6]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair143" *) 
-  LUT3 #(
-    .INIT(8'h96)) 
-    \occupied_data_spaces[6]_i_5 
-       (.I0(\occupied_data_spaces[6]_i_18_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_19_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_20_n_0 ),
-        .O(\occupied_data_spaces[6]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair143" *) 
-  LUT3 #(
-    .INIT(8'h2B)) 
-    \occupied_data_spaces[6]_i_6 
-       (.I0(\occupied_data_spaces[6]_i_18_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_20_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_19_n_0 ),
-        .O(\occupied_data_spaces[6]_i_6_n_0 ));
-  LUT3 #(
-    .INIT(8'h2B)) 
-    \occupied_data_spaces[6]_i_7 
-       (.I0(\occupied_data_spaces[6]_i_12_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_14_n_0 ),
-        .I2(\occupied_data_spaces[6]_i_13_n_0 ),
-        .O(\occupied_data_spaces[6]_i_7_n_0 ));
-  LUT3 #(
-    .INIT(8'h96)) 
-    \occupied_data_spaces[6]_i_8 
-       (.I0(\occupied_data_spaces[5]_i_6_n_0 ),
-        .I1(\occupied_data_spaces[5]_i_5_n_0 ),
-        .I2(\occupied_data_spaces[5]_i_4_n_0 ),
-        .O(\occupied_data_spaces[6]_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair117" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT3 #(
     .INIT(8'h17)) 
+    \occupied_data_spaces[6]_i_35 
+       (.I0(data_loc_tracker[47]),
+        .I1(data_loc_tracker[31]),
+        .I2(data_loc_tracker[63]),
+        .O(\occupied_data_spaces[6]_i_35_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair123" *) 
+  LUT3 #(
+    .INIT(8'h17)) 
+    \occupied_data_spaces[6]_i_36 
+       (.I0(data_loc_tracker[15]),
+        .I1(data_loc_tracker[62]),
+        .I2(data_loc_tracker[46]),
+        .O(\occupied_data_spaces[6]_i_36_n_0 ));
+  LUT6 #(
+    .INIT(64'hFF9696FF96FFFF96)) 
+    \occupied_data_spaces[6]_i_37 
+       (.I0(data_loc_tracker[20]),
+        .I1(data_loc_tracker[4]),
+        .I2(data_loc_tracker[36]),
+        .I3(data_loc_tracker[5]),
+        .I4(data_loc_tracker[52]),
+        .I5(data_loc_tracker[21]),
+        .O(\occupied_data_spaces[6]_i_37_n_0 ));
+  LUT6 #(
+    .INIT(64'h9600009600969600)) 
+    \occupied_data_spaces[6]_i_38 
+       (.I0(data_loc_tracker[20]),
+        .I1(data_loc_tracker[4]),
+        .I2(data_loc_tracker[36]),
+        .I3(data_loc_tracker[5]),
+        .I4(data_loc_tracker[52]),
+        .I5(data_loc_tracker[21]),
+        .O(\occupied_data_spaces[6]_i_38_n_0 ));
+  LUT6 #(
+    .INIT(64'hFF9696FF96FFFF96)) 
+    \occupied_data_spaces[6]_i_39 
+       (.I0(data_loc_tracker[2]),
+        .I1(data_loc_tracker[49]),
+        .I2(data_loc_tracker[18]),
+        .I3(data_loc_tracker[34]),
+        .I4(data_loc_tracker[50]),
+        .I5(data_loc_tracker[3]),
+        .O(\occupied_data_spaces[6]_i_39_n_0 ));
+  LUT3 #(
+    .INIT(8'h8F)) 
+    \occupied_data_spaces[6]_i_4 
+       (.I0(\occupied_data_spaces[2]_i_3_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_4_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_2_n_0 ),
+        .O(\occupied_data_spaces[6]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'h69FFFF69FF6969FF)) 
+    \occupied_data_spaces[6]_i_40 
+       (.I0(data_loc_tracker[2]),
+        .I1(data_loc_tracker[49]),
+        .I2(data_loc_tracker[18]),
+        .I3(data_loc_tracker[34]),
+        .I4(data_loc_tracker[50]),
+        .I5(data_loc_tracker[3]),
+        .O(\occupied_data_spaces[6]_i_40_n_0 ));
+  LUT6 #(
+    .INIT(64'hFF9696FF96FFFF96)) 
+    \occupied_data_spaces[6]_i_41 
+       (.I0(data_loc_tracker[29]),
+        .I1(data_loc_tracker[13]),
+        .I2(data_loc_tracker[45]),
+        .I3(data_loc_tracker[14]),
+        .I4(data_loc_tracker[61]),
+        .I5(data_loc_tracker[30]),
+        .O(\occupied_data_spaces[6]_i_41_n_0 ));
+  LUT3 #(
+    .INIT(8'h69)) 
+    \occupied_data_spaces[6]_i_42 
+       (.I0(data_loc_tracker[28]),
+        .I1(data_loc_tracker[60]),
+        .I2(data_loc_tracker[44]),
+        .O(\occupied_data_spaces[6]_i_42_n_0 ));
+  LUT6 #(
+    .INIT(64'h9600009600969600)) 
+    \occupied_data_spaces[6]_i_43 
+       (.I0(data_loc_tracker[29]),
+        .I1(data_loc_tracker[13]),
+        .I2(data_loc_tracker[45]),
+        .I3(data_loc_tracker[14]),
+        .I4(data_loc_tracker[61]),
+        .I5(data_loc_tracker[30]),
+        .O(\occupied_data_spaces[6]_i_43_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair101" *) 
+  LUT3 #(
+    .INIT(8'h96)) 
+    \occupied_data_spaces[6]_i_44 
+       (.I0(data_loc_tracker[63]),
+        .I1(data_loc_tracker[31]),
+        .I2(data_loc_tracker[47]),
+        .O(\occupied_data_spaces[6]_i_44_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  LUT5 #(
+    .INIT(32'h8EE8E88E)) 
+    \occupied_data_spaces[6]_i_45 
+       (.I0(\occupied_data_spaces[6]_i_66_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_67_n_0 ),
+        .I2(data_loc_tracker[6]),
+        .I3(data_loc_tracker[53]),
+        .I4(data_loc_tracker[37]),
+        .O(\occupied_data_spaces[6]_i_45_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  LUT5 #(
+    .INIT(32'h8EE8E88E)) 
+    \occupied_data_spaces[6]_i_46 
+       (.I0(\occupied_data_spaces[6]_i_68_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_69_n_0 ),
+        .I2(data_loc_tracker[8]),
+        .I3(data_loc_tracker[55]),
+        .I4(data_loc_tracker[24]),
+        .O(\occupied_data_spaces[6]_i_46_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  LUT5 #(
+    .INIT(32'h8EE8E88E)) 
+    \occupied_data_spaces[6]_i_47 
+       (.I0(\occupied_data_spaces[6]_i_70_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_71_n_0 ),
+        .I2(data_loc_tracker[27]),
+        .I3(data_loc_tracker[58]),
+        .I4(data_loc_tracker[11]),
+        .O(\occupied_data_spaces[6]_i_47_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  LUT3 #(
+    .INIT(8'h17)) 
+    \occupied_data_spaces[6]_i_48 
+       (.I0(data_loc_tracker[8]),
+        .I1(data_loc_tracker[55]),
+        .I2(data_loc_tracker[24]),
+        .O(\occupied_data_spaces[6]_i_48_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair114" *) 
+  LUT3 #(
+    .INIT(8'h17)) 
+    \occupied_data_spaces[6]_i_49 
+       (.I0(data_loc_tracker[23]),
+        .I1(data_loc_tracker[7]),
+        .I2(data_loc_tracker[39]),
+        .O(\occupied_data_spaces[6]_i_49_n_0 ));
+  LUT6 #(
+    .INIT(64'h00000000006969FF)) 
+    \occupied_data_spaces[6]_i_5 
+       (.I0(\occupied_data_spaces[6]_i_16_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_17_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_18_n_0 ),
+        .I3(\occupied_data_spaces[6]_i_19_n_0 ),
+        .I4(\occupied_data_spaces[6]_i_20_n_0 ),
+        .I5(\occupied_data_spaces[6]_i_21_n_0 ),
+        .O(\occupied_data_spaces[6]_i_5_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \occupied_data_spaces[6]_i_50 
+       (.I0(data_loc_tracker[42]),
+        .I1(data_loc_tracker[10]),
+        .I2(data_loc_tracker[26]),
+        .O(\occupied_data_spaces[6]_i_50_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \occupied_data_spaces[6]_i_51 
+       (.I0(data_loc_tracker[41]),
+        .I1(data_loc_tracker[57]),
+        .I2(data_loc_tracker[25]),
+        .O(\occupied_data_spaces[6]_i_51_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair97" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \occupied_data_spaces[6]_i_52 
+       (.I0(data_loc_tracker[43]),
+        .I1(data_loc_tracker[59]),
+        .I2(data_loc_tracker[12]),
+        .O(\occupied_data_spaces[6]_i_52_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \occupied_data_spaces[6]_i_53 
+       (.I0(data_loc_tracker[44]),
+        .I1(data_loc_tracker[60]),
+        .I2(data_loc_tracker[28]),
+        .O(\occupied_data_spaces[6]_i_53_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair129" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \occupied_data_spaces[6]_i_54 
+       (.I0(data_loc_tracker[34]),
+        .I1(data_loc_tracker[50]),
+        .I2(data_loc_tracker[3]),
+        .O(\occupied_data_spaces[6]_i_54_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \occupied_data_spaces[6]_i_55 
+       (.I0(data_loc_tracker[35]),
+        .I1(data_loc_tracker[51]),
+        .I2(data_loc_tracker[19]),
+        .O(\occupied_data_spaces[6]_i_55_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  LUT3 #(
+    .INIT(8'h17)) 
+    \occupied_data_spaces[6]_i_56 
+       (.I0(data_loc_tracker[6]),
+        .I1(data_loc_tracker[53]),
+        .I2(data_loc_tracker[37]),
+        .O(\occupied_data_spaces[6]_i_56_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair128" *) 
+  LUT3 #(
+    .INIT(8'h17)) 
+    \occupied_data_spaces[6]_i_57 
+       (.I0(data_loc_tracker[5]),
+        .I1(data_loc_tracker[52]),
+        .I2(data_loc_tracker[21]),
+        .O(\occupied_data_spaces[6]_i_57_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \occupied_data_spaces[6]_i_58 
+       (.I0(data_loc_tracker[17]),
+        .I1(data_loc_tracker[33]),
+        .I2(data_loc_tracker[1]),
+        .O(\occupied_data_spaces[6]_i_58_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair132" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \occupied_data_spaces[6]_i_59 
+       (.I0(data_loc_tracker[16]),
+        .I1(data_loc_tracker[32]),
+        .I2(data_loc_tracker[48]),
+        .O(\occupied_data_spaces[6]_i_59_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  LUT3 #(
+    .INIT(8'h69)) 
+    \occupied_data_spaces[6]_i_6 
+       (.I0(\occupied_data_spaces[6]_i_15_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_14_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_13_n_0 ),
+        .O(\occupied_data_spaces[6]_i_6_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \occupied_data_spaces[6]_i_60 
+       (.I0(data_loc_tracker[18]),
+        .I1(data_loc_tracker[49]),
+        .I2(data_loc_tracker[2]),
+        .O(\occupied_data_spaces[6]_i_60_n_0 ));
+  LUT6 #(
+    .INIT(64'h171717E817E8E8E8)) 
+    \occupied_data_spaces[6]_i_61 
+       (.I0(data_loc_tracker[48]),
+        .I1(data_loc_tracker[32]),
+        .I2(data_loc_tracker[16]),
+        .I3(data_loc_tracker[1]),
+        .I4(data_loc_tracker[33]),
+        .I5(data_loc_tracker[17]),
+        .O(\occupied_data_spaces[6]_i_61_n_0 ));
+  LUT6 #(
+    .INIT(64'h171717E817E8E8E8)) 
+    \occupied_data_spaces[6]_i_62 
+       (.I0(data_loc_tracker[37]),
+        .I1(data_loc_tracker[53]),
+        .I2(data_loc_tracker[6]),
+        .I3(data_loc_tracker[21]),
+        .I4(data_loc_tracker[52]),
+        .I5(data_loc_tracker[5]),
+        .O(\occupied_data_spaces[6]_i_62_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  LUT3 #(
+    .INIT(8'h17)) 
+    \occupied_data_spaces[6]_i_63 
+       (.I0(data_loc_tracker[22]),
+        .I1(data_loc_tracker[54]),
+        .I2(data_loc_tracker[38]),
+        .O(\occupied_data_spaces[6]_i_63_n_0 ));
+  LUT6 #(
+    .INIT(64'h171717E817E8E8E8)) 
+    \occupied_data_spaces[6]_i_64 
+       (.I0(data_loc_tracker[3]),
+        .I1(data_loc_tracker[50]),
+        .I2(data_loc_tracker[34]),
+        .I3(data_loc_tracker[19]),
+        .I4(data_loc_tracker[51]),
+        .I5(data_loc_tracker[35]),
+        .O(\occupied_data_spaces[6]_i_64_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \occupied_data_spaces[6]_i_65 
+       (.I0(data_loc_tracker[36]),
+        .I1(data_loc_tracker[4]),
+        .I2(data_loc_tracker[20]),
+        .O(\occupied_data_spaces[6]_i_65_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair92" *) 
+  LUT3 #(
+    .INIT(8'h69)) 
+    \occupied_data_spaces[6]_i_66 
+       (.I0(data_loc_tracker[22]),
+        .I1(data_loc_tracker[54]),
+        .I2(data_loc_tracker[38]),
+        .O(\occupied_data_spaces[6]_i_66_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair146" *) 
+  LUT3 #(
+    .INIT(8'h69)) 
+    \occupied_data_spaces[6]_i_67 
+       (.I0(data_loc_tracker[39]),
+        .I1(data_loc_tracker[7]),
+        .I2(data_loc_tracker[23]),
+        .O(\occupied_data_spaces[6]_i_67_n_0 ));
+  LUT3 #(
+    .INIT(8'h69)) 
+    \occupied_data_spaces[6]_i_68 
+       (.I0(data_loc_tracker[25]),
+        .I1(data_loc_tracker[57]),
+        .I2(data_loc_tracker[41]),
+        .O(\occupied_data_spaces[6]_i_68_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair120" *) 
+  LUT3 #(
+    .INIT(8'h69)) 
+    \occupied_data_spaces[6]_i_69 
+       (.I0(data_loc_tracker[9]),
+        .I1(data_loc_tracker[56]),
+        .I2(data_loc_tracker[40]),
+        .O(\occupied_data_spaces[6]_i_69_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair142" *) 
+  LUT3 #(
+    .INIT(8'hD4)) 
+    \occupied_data_spaces[6]_i_7 
+       (.I0(\occupied_data_spaces[2]_i_2_n_0 ),
+        .I1(\occupied_data_spaces[2]_i_4_n_0 ),
+        .I2(\occupied_data_spaces[2]_i_3_n_0 ),
+        .O(\occupied_data_spaces[6]_i_7_n_0 ));
+  LUT3 #(
+    .INIT(8'h69)) 
+    \occupied_data_spaces[6]_i_70 
+       (.I0(data_loc_tracker[42]),
+        .I1(data_loc_tracker[10]),
+        .I2(data_loc_tracker[26]),
+        .O(\occupied_data_spaces[6]_i_70_n_0 ));
+  LUT3 #(
+    .INIT(8'h69)) 
+    \occupied_data_spaces[6]_i_71 
+       (.I0(data_loc_tracker[12]),
+        .I1(data_loc_tracker[59]),
+        .I2(data_loc_tracker[43]),
+        .O(\occupied_data_spaces[6]_i_71_n_0 ));
+  LUT3 #(
+    .INIT(8'hE8)) 
+    \occupied_data_spaces[6]_i_8 
+       (.I0(\occupied_data_spaces[6]_i_22_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_23_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_24_n_0 ),
+        .O(\occupied_data_spaces[6]_i_8_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair126" *) 
+  LUT3 #(
+    .INIT(8'h8E)) 
     \occupied_data_spaces[6]_i_9 
-       (.I0(\occupied_data_spaces[6]_i_21_n_0 ),
-        .I1(\occupied_data_spaces[6]_i_22_n_0 ),
-        .I2(\occupied_data_spaces[2]_i_13_n_0 ),
+       (.I0(\occupied_data_spaces[6]_i_25_n_0 ),
+        .I1(\occupied_data_spaces[6]_i_26_n_0 ),
+        .I2(\occupied_data_spaces[6]_i_27_n_0 ),
         .O(\occupied_data_spaces[6]_i_9_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
@@ -7831,7 +7988,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(\pl_data_loc_tracker[56]_i_2_n_0 ),
         .I5(\pl_data_loc_tracker_reg_n_0_[56] ),
         .O(\pl_data_loc_tracker[56]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair63" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT4 #(
     .INIT(16'h0001)) 
     \pl_data_loc_tracker[56]_i_2 
@@ -7850,7 +8007,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(\pl_data_loc_tracker[57]_i_2_n_0 ),
         .I5(\pl_data_loc_tracker_reg_n_0_[57] ),
         .O(\pl_data_loc_tracker[57]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair63" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT4 #(
     .INIT(16'h0010)) 
     \pl_data_loc_tracker[57]_i_2 
@@ -7869,7 +8026,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(\pl_data_loc_tracker[58]_i_2_n_0 ),
         .I5(\pl_data_loc_tracker_reg_n_0_[58] ),
         .O(\pl_data_loc_tracker[58]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair59" *) 
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT4 #(
     .INIT(16'h0010)) 
     \pl_data_loc_tracker[58]_i_2 
@@ -7888,7 +8045,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(\pl_data_loc_tracker[59]_i_2_n_0 ),
         .I5(\pl_data_loc_tracker_reg_n_0_[59] ),
         .O(\pl_data_loc_tracker[59]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair59" *) 
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT4 #(
     .INIT(16'h1000)) 
     \pl_data_loc_tracker[59]_i_2 
@@ -7917,7 +8074,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(\pl_data_loc_tracker[60]_i_2_n_0 ),
         .I5(\pl_data_loc_tracker_reg_n_0_[60] ),
         .O(\pl_data_loc_tracker[60]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair67" *) 
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
   LUT4 #(
     .INIT(16'h0004)) 
     \pl_data_loc_tracker[60]_i_2 
@@ -7936,7 +8093,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(\pl_data_loc_tracker[61]_i_2_n_0 ),
         .I5(\pl_data_loc_tracker_reg_n_0_[61] ),
         .O(\pl_data_loc_tracker[61]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair67" *) 
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
   LUT4 #(
     .INIT(16'h0040)) 
     \pl_data_loc_tracker[61]_i_2 
@@ -7955,7 +8112,7 @@ module design_1_tdc_0_1_data_recorder
         .I4(\pl_data_loc_tracker[62]_i_2_n_0 ),
         .I5(\pl_data_loc_tracker_reg_n_0_[62] ),
         .O(\pl_data_loc_tracker[62]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair65" *) 
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
   LUT4 #(
     .INIT(16'h0040)) 
     \pl_data_loc_tracker[62]_i_2 
@@ -7975,16 +8132,16 @@ module design_1_tdc_0_1_data_recorder
         .I5(\pl_data_loc_tracker_reg_n_0_[63] ),
         .O(\pl_data_loc_tracker[63]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000200)) 
+    .INIT(64'h0000000000000100)) 
     \pl_data_loc_tracker[63]_i_2 
-       (.I0(\l1a_cntr[2]_i_2_n_0 ),
+       (.I0(\bramen_disabler[4]_i_3_n_0 ),
         .I1(\l1a_cntr_reg_n_0_[2] ),
         .I2(\l1a_cntr_reg_n_0_[1] ),
         .I3(\l1a_cntr_reg_n_0_[0] ),
         .I4(\l1a_cntr_reg_n_0_[3] ),
         .I5(\l1a_cntr_reg_n_0_[4] ),
         .O(\pl_data_loc_tracker[63]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair65" *) 
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
   LUT4 #(
     .INIT(16'h4000)) 
     \pl_data_loc_tracker[63]_i_3 
@@ -7994,23 +8151,23 @@ module design_1_tdc_0_1_data_recorder
         .I3(data_loc[0]),
         .O(\pl_data_loc_tracker[63]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h5555555455555555)) 
+    .INIT(64'h00000000FFFFFFFE)) 
     \pl_data_loc_tracker[63]_i_4 
-       (.I0(\pl_data_loc_tracker[63]_i_2_n_0 ),
-        .I1(old_l1a_cntr[3]),
-        .I2(old_l1a_cntr[6]),
-        .I3(old_l1a_cntr[4]),
-        .I4(\pl_data_loc_tracker[63]_i_5_n_0 ),
-        .I5(\l1a_cntr[6]_i_2_n_0 ),
+       (.I0(old_l1a_cntr[1]),
+        .I1(old_l1a_cntr[6]),
+        .I2(old_l1a_cntr[8]),
+        .I3(\pl_data_loc_tracker[63]_i_5_n_0 ),
+        .I4(\l1a_cntr[8]_i_3_n_0 ),
+        .I5(\pl_data_loc_tracker[63]_i_2_n_0 ),
         .O(\pl_data_loc_tracker[63]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFEFFFFFFFF)) 
     \pl_data_loc_tracker[63]_i_5 
-       (.I0(old_l1a_cntr[8]),
-        .I1(old_l1a_cntr[2]),
-        .I2(old_l1a_cntr[1]),
+       (.I0(old_l1a_cntr[5]),
+        .I1(old_l1a_cntr[4]),
+        .I2(old_l1a_cntr[3]),
         .I3(old_l1a_cntr[7]),
-        .I4(old_l1a_cntr[5]),
+        .I4(old_l1a_cntr[2]),
         .I5(old_l1a_cntr[0]),
         .O(\pl_data_loc_tracker[63]_i_5_n_0 ));
   LUT6 #(
@@ -10335,9 +10492,9 @@ module design_1_tdc_0_1_tdc_v1_0
         .comparators(comparators),
         .data_loc_tracker(data_loc_tracker),
         .\expecting_l1a_reg[10] (tdc_v1_0_S00_AXI_inst_n_6),
-        .\l1as_sent_reg[11] (trig_arbiter_inst_n_35),
-        .\l1as_sent_reg[19] (trig_arbiter_inst_n_36),
-        .\l1as_sent_reg[27] (trig_arbiter_inst_n_34),
+        .\l1as_sent_reg[11] (trig_arbiter_inst_n_36),
+        .\l1as_sent_reg[15] (trig_arbiter_inst_n_35),
+        .\l1as_sent_reg[30] (trig_arbiter_inst_n_34),
         .ps_data_loc_tracker(ps_data_loc_tracker),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_araddr(s00_axi_araddr),
@@ -10413,7 +10570,7 @@ module design_1_tdc_0_1_tdc_v1_0
         .\l1as_received[9] (\l1as_received[9] ),
         .\occupied_data_spaces[6] (Q),
         .out(out[31:2]),
-        .\slv_reg0_reg[5] (tdc_v1_0_S00_AXI_inst_n_6));
+        .\slv_reg0_reg[1] (tdc_v1_0_S00_AXI_inst_n_6));
 endmodule
 
 (* ORIG_REF_NAME = "tdc_v1_0_S00_AXI" *) 
@@ -10433,9 +10590,9 @@ module design_1_tdc_0_1_tdc_v1_0_S00_AXI
     axi_bvalid_reg_0,
     axi_bvalid_reg_1,
     axi_arready_reg_0,
-    \l1as_sent_reg[27] ,
+    \l1as_sent_reg[30] ,
+    \l1as_sent_reg[15] ,
     \l1as_sent_reg[11] ,
-    \l1as_sent_reg[19] ,
     comparators,
     s00_axi_awaddr,
     s00_axi_wdata,
@@ -10460,9 +10617,9 @@ module design_1_tdc_0_1_tdc_v1_0_S00_AXI
   input axi_bvalid_reg_0;
   input axi_bvalid_reg_1;
   input axi_arready_reg_0;
-  input \l1as_sent_reg[27] ;
+  input \l1as_sent_reg[30] ;
+  input \l1as_sent_reg[15] ;
   input \l1as_sent_reg[11] ;
-  input \l1as_sent_reg[19] ;
   input [23:0]comparators;
   input [4:0]s00_axi_awaddr;
   input [31:0]s00_axi_wdata;
@@ -10872,8 +11029,8 @@ module design_1_tdc_0_1_tdc_v1_0_S00_AXI
   wire [63:0]data_loc_tracker;
   wire \expecting_l1a_reg[10] ;
   wire \l1as_sent_reg[11] ;
-  wire \l1as_sent_reg[19] ;
-  wire \l1as_sent_reg[27] ;
+  wire \l1as_sent_reg[15] ;
+  wire \l1as_sent_reg[30] ;
   wire \msg[8]_i_10_n_0 ;
   wire \msg[8]_i_11_n_0 ;
   wire \msg[8]_i_12_n_0 ;
@@ -15179,7 +15336,7 @@ module design_1_tdc_0_1_tdc_v1_0_S00_AXI
         .D(axi_arready_reg_0),
         .Q(s00_axi_rvalid),
         .R(SR));
-  (* SOFT_HLUTNM = "soft_lutpair152" *) 
+  (* SOFT_HLUTNM = "soft_lutpair149" *) 
   LUT4 #(
     .INIT(16'h0080)) 
     axi_wready_i_1
@@ -15198,115 +15355,115 @@ module design_1_tdc_0_1_tdc_v1_0_S00_AXI
     .INIT(64'hFFFFFFFFBAFFBABA)) 
     \msg[8]_i_10 
        (.I0(\msg[8]_i_25_n_0 ),
-        .I1(comparators[16]),
-        .I2(trig_pattern[16]),
-        .I3(comparators[14]),
-        .I4(trig_pattern[14]),
+        .I1(comparators[10]),
+        .I2(trig_pattern[10]),
+        .I3(comparators[11]),
+        .I4(trig_pattern[11]),
         .I5(\msg[8]_i_26_n_0 ),
         .O(\msg[8]_i_10_n_0 ));
   LUT4 #(
     .INIT(16'h4F44)) 
     \msg[8]_i_11 
-       (.I0(comparators[1]),
-        .I1(trig_pattern[1]),
-        .I2(comparators[7]),
-        .I3(trig_pattern[7]),
+       (.I0(comparators[22]),
+        .I1(trig_pattern[22]),
+        .I2(comparators[9]),
+        .I3(trig_pattern[9]),
         .O(\msg[8]_i_11_n_0 ));
   LUT5 #(
     .INIT(32'hFFFF22F2)) 
     \msg[8]_i_12 
-       (.I0(trig_pattern[11]),
-        .I1(comparators[11]),
-        .I2(trig_pattern[13]),
-        .I3(comparators[13]),
+       (.I0(trig_pattern[15]),
+        .I1(comparators[15]),
+        .I2(trig_pattern[3]),
+        .I3(comparators[3]),
         .I4(\msg[8]_i_27_n_0 ),
         .O(\msg[8]_i_12_n_0 ));
   LUT4 #(
     .INIT(16'h4F44)) 
     \msg[8]_i_13 
-       (.I0(comparators[12]),
-        .I1(trig_pattern[12]),
-        .I2(comparators[19]),
-        .I3(trig_pattern[19]),
+       (.I0(comparators[0]),
+        .I1(trig_pattern[0]),
+        .I2(comparators[23]),
+        .I3(trig_pattern[23]),
         .O(\msg[8]_i_13_n_0 ));
   LUT5 #(
     .INIT(32'hFFFF22F2)) 
     \msg[8]_i_14 
-       (.I0(trig_pattern[8]),
-        .I1(comparators[8]),
-        .I2(trig_pattern[23]),
-        .I3(comparators[23]),
+       (.I0(trig_pattern[18]),
+        .I1(comparators[18]),
+        .I2(trig_pattern[5]),
+        .I3(comparators[5]),
         .I4(\msg[8]_i_28_n_0 ),
         .O(\msg[8]_i_14_n_0 ));
   LUT4 #(
     .INIT(16'h4F44)) 
     \msg[8]_i_25 
-       (.I0(comparators[6]),
-        .I1(trig_pattern[6]),
-        .I2(comparators[9]),
-        .I3(trig_pattern[9]),
+       (.I0(comparators[13]),
+        .I1(trig_pattern[13]),
+        .I2(comparators[20]),
+        .I3(trig_pattern[20]),
         .O(\msg[8]_i_25_n_0 ));
   LUT5 #(
     .INIT(32'hFFFF22F2)) 
     \msg[8]_i_26 
-       (.I0(trig_pattern[20]),
-        .I1(comparators[20]),
-        .I2(trig_pattern[2]),
-        .I3(comparators[2]),
+       (.I0(trig_pattern[17]),
+        .I1(comparators[17]),
+        .I2(trig_pattern[4]),
+        .I3(comparators[4]),
         .I4(\msg[8]_i_52_n_0 ),
         .O(\msg[8]_i_26_n_0 ));
   LUT4 #(
     .INIT(16'h4F44)) 
     \msg[8]_i_27 
-       (.I0(comparators[10]),
-        .I1(trig_pattern[10]),
-        .I2(comparators[21]),
-        .I3(trig_pattern[21]),
+       (.I0(comparators[2]),
+        .I1(trig_pattern[2]),
+        .I2(comparators[16]),
+        .I3(trig_pattern[16]),
         .O(\msg[8]_i_27_n_0 ));
   LUT4 #(
     .INIT(16'h4F44)) 
     \msg[8]_i_28 
-       (.I0(comparators[3]),
-        .I1(trig_pattern[3]),
-        .I2(comparators[15]),
-        .I3(trig_pattern[15]),
+       (.I0(comparators[12]),
+        .I1(trig_pattern[12]),
+        .I2(comparators[19]),
+        .I3(trig_pattern[19]),
         .O(\msg[8]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000004)) 
     \msg[8]_i_4 
        (.I0(\msg[8]_i_5_n_0 ),
         .I1(\msg[8]_i_6_n_0 ),
-        .I2(\l1as_sent_reg[27] ),
-        .I3(\l1as_sent_reg[11] ),
-        .I4(\l1as_sent_reg[19] ),
+        .I2(\l1as_sent_reg[30] ),
+        .I3(\l1as_sent_reg[15] ),
+        .I4(\l1as_sent_reg[11] ),
         .I5(\msg[8]_i_10_n_0 ),
         .O(\expecting_l1a_reg[10] ));
   LUT6 #(
     .INIT(64'hFFFFFFFFBAFFBABA)) 
     \msg[8]_i_5 
        (.I0(\msg[8]_i_11_n_0 ),
-        .I1(comparators[5]),
-        .I2(trig_pattern[5]),
-        .I3(comparators[4]),
-        .I4(trig_pattern[4]),
+        .I1(comparators[1]),
+        .I2(trig_pattern[1]),
+        .I3(comparators[7]),
+        .I4(trig_pattern[7]),
         .I5(\msg[8]_i_12_n_0 ),
         .O(\msg[8]_i_5_n_0 ));
   LUT4 #(
     .INIT(16'h4F44)) 
     \msg[8]_i_52 
-       (.I0(comparators[22]),
-        .I1(trig_pattern[22]),
-        .I2(comparators[18]),
-        .I3(trig_pattern[18]),
+       (.I0(comparators[6]),
+        .I1(trig_pattern[6]),
+        .I2(comparators[21]),
+        .I3(trig_pattern[21]),
         .O(\msg[8]_i_52_n_0 ));
   LUT6 #(
     .INIT(64'h0000000045004545)) 
     \msg[8]_i_6 
        (.I0(\msg[8]_i_13_n_0 ),
-        .I1(comparators[0]),
-        .I2(trig_pattern[0]),
-        .I3(comparators[17]),
-        .I4(trig_pattern[17]),
+        .I1(comparators[14]),
+        .I2(trig_pattern[14]),
+        .I3(comparators[8]),
+        .I4(trig_pattern[8]),
         .I5(\msg[8]_i_14_n_0 ),
         .O(\msg[8]_i_6_n_0 ));
   LUT4 #(
@@ -15333,7 +15490,7 @@ module design_1_tdc_0_1_tdc_v1_0_S00_AXI
         .I2(p_0_in[1]),
         .I3(\slv_reg0[31]_i_3_n_0 ),
         .O(\slv_reg0[31]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair156" *) 
+  (* SOFT_HLUTNM = "soft_lutpair153" *) 
   LUT4 #(
     .INIT(16'h0004)) 
     \slv_reg0[31]_i_3 
@@ -15342,7 +15499,7 @@ module design_1_tdc_0_1_tdc_v1_0_S00_AXI
         .I2(p_0_in[3]),
         .I3(p_0_in[2]),
         .O(\slv_reg0[31]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair152" *) 
+  (* SOFT_HLUTNM = "soft_lutpair149" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \slv_reg0[31]_i_4 
@@ -16023,7 +16180,7 @@ module design_1_tdc_0_1_tdc_v1_0_S00_AXI
         .I2(p_0_in[1]),
         .I3(\slv_reg12[31]_i_2_n_0 ),
         .O(\slv_reg12[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair154" *) 
+  (* SOFT_HLUTNM = "soft_lutpair151" *) 
   LUT4 #(
     .INIT(16'h4000)) 
     \slv_reg12[31]_i_2 
@@ -16928,7 +17085,7 @@ module design_1_tdc_0_1_tdc_v1_0_S00_AXI
         .I2(p_0_in[1]),
         .I3(\slv_reg16[31]_i_2_n_0 ),
         .O(\slv_reg16[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair155" *) 
+  (* SOFT_HLUTNM = "soft_lutpair152" *) 
   LUT4 #(
     .INIT(16'h0400)) 
     \slv_reg16[31]_i_2 
@@ -18057,7 +18214,7 @@ module design_1_tdc_0_1_tdc_v1_0_S00_AXI
         .I2(p_0_in[1]),
         .I3(\slv_reg20[31]_i_2_n_0 ),
         .O(\slv_reg20[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair155" *) 
+  (* SOFT_HLUTNM = "soft_lutpair152" *) 
   LUT4 #(
     .INIT(16'h0800)) 
     \slv_reg20[31]_i_2 
@@ -18962,7 +19119,7 @@ module design_1_tdc_0_1_tdc_v1_0_S00_AXI
         .I2(p_0_in[1]),
         .I3(\slv_reg24[31]_i_2_n_0 ),
         .O(\slv_reg24[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair153" *) 
+  (* SOFT_HLUTNM = "soft_lutpair150" *) 
   LUT4 #(
     .INIT(16'h4000)) 
     \slv_reg24[31]_i_2 
@@ -19867,7 +20024,7 @@ module design_1_tdc_0_1_tdc_v1_0_S00_AXI
         .I2(p_0_in[1]),
         .I3(\slv_reg28[31]_i_2_n_0 ),
         .O(\slv_reg28[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair153" *) 
+  (* SOFT_HLUTNM = "soft_lutpair150" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \slv_reg28[31]_i_2 
@@ -20996,7 +21153,7 @@ module design_1_tdc_0_1_tdc_v1_0_S00_AXI
         .I2(p_0_in[1]),
         .I3(\slv_reg5[31]_i_2_n_0 ),
         .O(\slv_reg5[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair156" *) 
+  (* SOFT_HLUTNM = "soft_lutpair153" *) 
   LUT4 #(
     .INIT(16'h0400)) 
     \slv_reg5[31]_i_2 
@@ -21677,7 +21834,7 @@ module design_1_tdc_0_1_tdc_v1_0_S00_AXI
         .I2(p_0_in[1]),
         .I3(\slv_reg8[31]_i_2_n_0 ),
         .O(\slv_reg8[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair154" *) 
+  (* SOFT_HLUTNM = "soft_lutpair151" *) 
   LUT4 #(
     .INIT(16'h0040)) 
     \slv_reg8[31]_i_2 
@@ -22170,7 +22327,7 @@ module design_1_tdc_0_1_trig_arbiter
     data_mode_cmd_out,
     is_data_mode,
     clk40,
-    \slv_reg0_reg[5] ,
+    \slv_reg0_reg[1] ,
     l1a_seen,
     Q,
     D);
@@ -22230,7 +22387,7 @@ module design_1_tdc_0_1_trig_arbiter
   output data_mode_cmd_out;
   input is_data_mode;
   input clk40;
-  input \slv_reg0_reg[5] ;
+  input \slv_reg0_reg[1] ;
   input l1a_seen;
   input [1:0]Q;
   input [6:0]D;
@@ -22649,6 +22806,7 @@ module design_1_tdc_0_1_trig_arbiter
   wire \msg[8]_i_22_n_0 ;
   wire \msg[8]_i_24_n_0 ;
   wire \msg[8]_i_2_n_0 ;
+  wire \msg[8]_i_31_n_0 ;
   wire \msg[8]_i_32_n_0 ;
   wire \msg[8]_i_33_n_0 ;
   wire \msg[8]_i_34_n_0 ;
@@ -22665,7 +22823,6 @@ module design_1_tdc_0_1_trig_arbiter
   wire \msg[8]_i_44_n_0 ;
   wire \msg[8]_i_45_n_0 ;
   wire \msg[8]_i_46_n_0 ;
-  wire \msg[8]_i_47_n_0 ;
   wire \msg[8]_i_48_n_0 ;
   wire \msg[8]_i_49_n_0 ;
   wire \msg[8]_i_50_n_0 ;
@@ -22682,7 +22839,6 @@ module design_1_tdc_0_1_trig_arbiter
   wire \msg[8]_i_62_n_0 ;
   wire \msg[8]_i_63_n_0 ;
   wire \msg[8]_i_64_n_0 ;
-  wire \msg_reg[8]_i_18_n_0 ;
   wire \msg_reg[8]_i_18_n_1 ;
   wire \msg_reg[8]_i_18_n_2 ;
   wire \msg_reg[8]_i_18_n_3 ;
@@ -22694,6 +22850,7 @@ module design_1_tdc_0_1_trig_arbiter
   wire \msg_reg[8]_i_20_n_1 ;
   wire \msg_reg[8]_i_20_n_2 ;
   wire \msg_reg[8]_i_20_n_3 ;
+  wire \msg_reg[8]_i_21_n_0 ;
   wire \msg_reg[8]_i_21_n_1 ;
   wire \msg_reg[8]_i_21_n_2 ;
   wire \msg_reg[8]_i_21_n_3 ;
@@ -22709,10 +22866,10 @@ module design_1_tdc_0_1_trig_arbiter
   wire \msg_reg[8]_i_30_n_1 ;
   wire \msg_reg[8]_i_30_n_2 ;
   wire \msg_reg[8]_i_30_n_3 ;
-  wire \msg_reg[8]_i_31_n_0 ;
-  wire \msg_reg[8]_i_31_n_1 ;
-  wire \msg_reg[8]_i_31_n_2 ;
-  wire \msg_reg[8]_i_31_n_3 ;
+  wire \msg_reg[8]_i_47_n_0 ;
+  wire \msg_reg[8]_i_47_n_1 ;
+  wire \msg_reg[8]_i_47_n_2 ;
+  wire \msg_reg[8]_i_47_n_3 ;
   wire \msg_reg_n_0_[1] ;
   wire \msg_reg_n_0_[2] ;
   wire \msg_reg_n_0_[3] ;
@@ -22957,11 +23114,11 @@ module design_1_tdc_0_1_trig_arbiter
   wire panic_reg_n_0;
   wire should_send_soft_rst_i_1_n_0;
   wire should_send_soft_rst_reg_n_0;
-  wire \slv_reg0_reg[5] ;
+  wire \slv_reg0_reg[1] ;
   wire [3:3]\NLW_events_received_reg[28]_i_1_CO_UNCONNECTED ;
   wire [3:3]\NLW_l1as_received_reg[31]_i_3_CO_UNCONNECTED ;
   wire [3:3]\NLW_l1as_sent_reg[31]_i_2_CO_UNCONNECTED ;
-  wire [3:3]\NLW_msg_reg[8]_i_21_CO_UNCONNECTED ;
+  wire [3:3]\NLW_msg_reg[8]_i_18_CO_UNCONNECTED ;
   wire [3:3]\NLW_msgcntr2_inferred__1/i__carry__6_CO_UNCONNECTED ;
   wire [3:0]NLW_p_1_out_carry_O_UNCONNECTED;
   wire [3:0]NLW_p_1_out_carry__0_O_UNCONNECTED;
@@ -23157,7 +23314,7 @@ module design_1_tdc_0_1_trig_arbiter
         .I4(\events_received_helper[2]_i_2_n_0 ),
         .I5(\expecting_l1a[10]_i_1_n_0 ),
         .O(\events_received_helper[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair159" *) 
+  (* SOFT_HLUTNM = "soft_lutpair156" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \events_received_helper[2]_i_2 
@@ -23530,12 +23687,12 @@ module design_1_tdc_0_1_trig_arbiter
     \expecting_l1a[10]_i_2 
        (.I0(\events_received_helper[2]_i_2_n_0 ),
         .I1(\expecting_l1a[10]_i_4_n_0 ),
-        .I2(\slv_reg0_reg[5] ),
+        .I2(\slv_reg0_reg[1] ),
         .I3(\expecting_l1a[10]_i_5_n_0 ),
         .I4(\expecting_l1a[10]_i_6_n_0 ),
         .I5(\expecting_l1a[10]_i_7_n_0 ),
         .O(\expecting_l1a[10]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair164" *) 
+  (* SOFT_HLUTNM = "soft_lutpair161" *) 
   LUT4 #(
     .INIT(16'h05C0)) 
     \expecting_l1a[10]_i_3 
@@ -23544,7 +23701,7 @@ module design_1_tdc_0_1_trig_arbiter
         .I2(\expecting_l1a[10]_i_8_n_0 ),
         .I3(expecting_l1a_reg__0[10]),
         .O(p_0_in[10]));
-  (* SOFT_HLUTNM = "soft_lutpair163" *) 
+  (* SOFT_HLUTNM = "soft_lutpair160" *) 
   LUT4 #(
     .INIT(16'hAA80)) 
     \expecting_l1a[10]_i_4 
@@ -23553,7 +23710,7 @@ module design_1_tdc_0_1_trig_arbiter
         .I2(\panic1_inferred__0/i__carry__2_n_0 ),
         .I3(panic1_carry__1_n_1),
         .O(\expecting_l1a[10]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair158" *) 
+  (* SOFT_HLUTNM = "soft_lutpair155" *) 
   LUT5 #(
     .INIT(32'h00000001)) 
     \expecting_l1a[10]_i_5 
@@ -23572,14 +23729,14 @@ module design_1_tdc_0_1_trig_arbiter
         .I3(\expecting_l1a[10]_i_9_n_0 ),
         .I4(\expecting_l1a[10]_i_10_n_0 ),
         .O(\expecting_l1a[10]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair164" *) 
+  (* SOFT_HLUTNM = "soft_lutpair161" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \expecting_l1a[10]_i_7 
        (.I0(\expecting_l1a[6]_i_2_n_0 ),
         .I1(\expecting_l1a[10]_i_6_n_0 ),
         .O(\expecting_l1a[10]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair162" *) 
+  (* SOFT_HLUTNM = "soft_lutpair159" *) 
   LUT5 #(
     .INIT(32'h00000010)) 
     \expecting_l1a[10]_i_8 
@@ -23589,7 +23746,7 @@ module design_1_tdc_0_1_trig_arbiter
         .I3(expecting_l1a_reg__0[8]),
         .I4(expecting_l1a_reg__0[9]),
         .O(\expecting_l1a[10]_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair165" *) 
+  (* SOFT_HLUTNM = "soft_lutpair162" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     \expecting_l1a[10]_i_9 
@@ -23607,7 +23764,7 @@ module design_1_tdc_0_1_trig_arbiter
         .I3(expecting_l1a_reg__0[1]),
         .I4(\expecting_l1a[10]_i_7_n_0 ),
         .O(p_0_in[1]));
-  (* SOFT_HLUTNM = "soft_lutpair165" *) 
+  (* SOFT_HLUTNM = "soft_lutpair162" *) 
   LUT3 #(
     .INIT(8'hA9)) 
     \expecting_l1a[2]_i_1 
@@ -23615,7 +23772,7 @@ module design_1_tdc_0_1_trig_arbiter
         .I1(expecting_l1a_reg__0[1]),
         .I2(expecting_l1a_reg__0[0]),
         .O(p_0_in[2]));
-  (* SOFT_HLUTNM = "soft_lutpair160" *) 
+  (* SOFT_HLUTNM = "soft_lutpair157" *) 
   LUT4 #(
     .INIT(16'hAAA9)) 
     \expecting_l1a[3]_i_1 
@@ -23648,7 +23805,7 @@ module design_1_tdc_0_1_trig_arbiter
         .I2(\expecting_l1a[5]_i_2_n_0 ),
         .I3(\expecting_l1a[10]_i_7_n_0 ),
         .O(p_0_in[5]));
-  (* SOFT_HLUTNM = "soft_lutpair160" *) 
+  (* SOFT_HLUTNM = "soft_lutpair157" *) 
   LUT5 #(
     .INIT(32'h00000001)) 
     \expecting_l1a[5]_i_2 
@@ -23715,7 +23872,7 @@ module design_1_tdc_0_1_trig_arbiter
         .I3(\expecting_l1a[9]_i_2_n_0 ),
         .I4(\expecting_l1a[10]_i_7_n_0 ),
         .O(p_0_in[9]));
-  (* SOFT_HLUTNM = "soft_lutpair162" *) 
+  (* SOFT_HLUTNM = "soft_lutpair159" *) 
   LUT4 #(
     .INIT(16'h0004)) 
     \expecting_l1a[9]_i_2 
@@ -25056,7 +25213,7 @@ module design_1_tdc_0_1_trig_arbiter
         .I2(panic_reg_n_0),
         .I3(\msg[8]_i_3_n_0 ),
         .I4(should_send_soft_rst_reg_n_0),
-        .I5(\slv_reg0_reg[5] ),
+        .I5(\slv_reg0_reg[1] ),
         .O(\l1as_sent[31]_i_1_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
@@ -25380,7 +25537,7 @@ module design_1_tdc_0_1_trig_arbiter
         .D(\l1as_sent_reg[11]_i_1_n_6 ),
         .Q(out[7]),
         .R(\l1as_received[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair161" *) 
+  (* SOFT_HLUTNM = "soft_lutpair158" *) 
   LUT4 #(
     .INIT(16'h0040)) 
     \msg[1]_i_1 
@@ -25389,7 +25546,7 @@ module design_1_tdc_0_1_trig_arbiter
         .I2(old_is_data_mode),
         .I3(panic_reg_n_0),
         .O(\msg[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair161" *) 
+  (* SOFT_HLUTNM = "soft_lutpair158" *) 
   LUT5 #(
     .INIT(32'h10301000)) 
     \msg[2]_i_1 
@@ -25399,7 +25556,7 @@ module design_1_tdc_0_1_trig_arbiter
         .I3(\msg[8]_i_3_n_0 ),
         .I4(\msg_reg_n_0_[1] ),
         .O(\msg[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair166" *) 
+  (* SOFT_HLUTNM = "soft_lutpair163" *) 
   LUT4 #(
     .INIT(16'h1000)) 
     \msg[3]_i_1 
@@ -25408,7 +25565,7 @@ module design_1_tdc_0_1_trig_arbiter
         .I2(old_is_data_mode),
         .I3(\msg_reg_n_0_[2] ),
         .O(\msg[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair166" *) 
+  (* SOFT_HLUTNM = "soft_lutpair163" *) 
   LUT4 #(
     .INIT(16'h2220)) 
     \msg[4]_i_1 
@@ -25449,7 +25606,7 @@ module design_1_tdc_0_1_trig_arbiter
     \msg[8]_i_1 
        (.I0(\msg[8]_i_3_n_0 ),
         .I1(should_send_soft_rst_reg_n_0),
-        .I2(\slv_reg0_reg[5] ),
+        .I2(\slv_reg0_reg[1] ),
         .I3(old_is_data_mode),
         .I4(panic_reg_n_0),
         .O(\msg[8]_i_1_n_0 ));
@@ -25466,17 +25623,17 @@ module design_1_tdc_0_1_trig_arbiter
   LUT4 #(
     .INIT(16'hFFFE)) 
     \msg[8]_i_16 
-       (.I0(msgcntr3[21]),
-        .I1(msgcntr3[15]),
-        .I2(msgcntr3[22]),
-        .I3(msgcntr3[26]),
+       (.I0(msgcntr3[6]),
+        .I1(msgcntr3[19]),
+        .I2(msgcntr3[24]),
+        .I3(msgcntr3[12]),
         .O(\msg[8]_i_16_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
     \msg[8]_i_17 
-       (.I0(msgcntr3[12]),
-        .I1(msgcntr3[19]),
-        .I2(msgcntr3[29]),
+       (.I0(msgcntr3[28]),
+        .I1(msgcntr3[26]),
+        .I2(msgcntr3[25]),
         .I3(msgcntr3[7]),
         .O(\msg[8]_i_17_n_0 ));
   LUT4 #(
@@ -25490,20 +25647,20 @@ module design_1_tdc_0_1_trig_arbiter
   LUT4 #(
     .INIT(16'hFFFE)) 
     \msg[8]_i_22 
-       (.I0(msgcntr3[31]),
-        .I1(msgcntr3[30]),
-        .I2(msgcntr3[20]),
-        .I3(msgcntr3[17]),
+       (.I0(msgcntr3[22]),
+        .I1(msgcntr3[23]),
+        .I2(msgcntr3[21]),
+        .I3(msgcntr3[11]),
         .O(\msg[8]_i_22_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
     \msg[8]_i_24 
-       (.I0(msgcntr3[10]),
-        .I1(p_1_out_carry__6_n_0),
-        .I2(msgcntr3[23]),
-        .I3(msgcntr3[6]),
+       (.I0(msgcntr3[17]),
+        .I1(msgcntr3[15]),
+        .I2(msgcntr3[20]),
+        .I3(msgcntr3[13]),
         .O(\msg[8]_i_24_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair167" *) 
+  (* SOFT_HLUTNM = "soft_lutpair164" *) 
   LUT4 #(
     .INIT(16'h0001)) 
     \msg[8]_i_3 
@@ -25514,123 +25671,123 @@ module design_1_tdc_0_1_trig_arbiter
         .O(\msg[8]_i_3_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
+    \msg[8]_i_31 
+       (.I0(\l1as_received[31] ),
+        .I1(out[29]),
+        .O(\msg[8]_i_31_n_0 ));
+  LUT2 #(
+    .INIT(4'h9)) 
     \msg[8]_i_32 
-       (.I0(out[25]),
-        .I1(\l1as_received[27] ),
+       (.I0(out[28]),
+        .I1(\l1as_received[30] ),
         .O(\msg[8]_i_32_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_33 
-       (.I0(out[24]),
-        .I1(\l1as_received[26] ),
+       (.I0(out[27]),
+        .I1(\l1as_received[29] ),
         .O(\msg[8]_i_33_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_34 
-       (.I0(out[23]),
-        .I1(\l1as_received[25] ),
+       (.I0(out[26]),
+        .I1(\l1as_received[28] ),
         .O(\msg[8]_i_34_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_35 
-       (.I0(out[22]),
-        .I1(\l1as_received[24] ),
+       (.I0(out[9]),
+        .I1(\l1as_received[11] ),
         .O(\msg[8]_i_35_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_36 
-       (.I0(out[9]),
-        .I1(\l1as_received[11] ),
+       (.I0(out[8]),
+        .I1(\l1as_received[10] ),
         .O(\msg[8]_i_36_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_37 
-       (.I0(out[8]),
-        .I1(\l1as_received[10] ),
+       (.I0(out[7]),
+        .I1(\l1as_received[9] ),
         .O(\msg[8]_i_37_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_38 
-       (.I0(out[7]),
-        .I1(\l1as_received[9] ),
+       (.I0(out[6]),
+        .I1(\l1as_received[8] ),
         .O(\msg[8]_i_38_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_39 
-       (.I0(out[6]),
-        .I1(\l1as_received[8] ),
+       (.I0(out[17]),
+        .I1(\l1as_received[19] ),
         .O(\msg[8]_i_39_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_40 
-       (.I0(out[13]),
-        .I1(\l1as_received[15] ),
+       (.I0(out[16]),
+        .I1(\l1as_received[18] ),
         .O(\msg[8]_i_40_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_41 
-       (.I0(out[12]),
-        .I1(\l1as_received[14] ),
+       (.I0(out[15]),
+        .I1(\l1as_received[17] ),
         .O(\msg[8]_i_41_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_42 
-       (.I0(out[11]),
-        .I1(\l1as_received[13] ),
+       (.I0(out[14]),
+        .I1(\l1as_received[16] ),
         .O(\msg[8]_i_42_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_43 
-       (.I0(out[10]),
-        .I1(\l1as_received[12] ),
+       (.I0(out[13]),
+        .I1(\l1as_received[15] ),
         .O(\msg[8]_i_43_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_44 
-       (.I0(\l1as_received[31] ),
-        .I1(out[29]),
+       (.I0(out[12]),
+        .I1(\l1as_received[14] ),
         .O(\msg[8]_i_44_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_45 
-       (.I0(out[28]),
-        .I1(\l1as_received[30] ),
+       (.I0(out[11]),
+        .I1(\l1as_received[13] ),
         .O(\msg[8]_i_45_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_46 
-       (.I0(out[27]),
-        .I1(\l1as_received[29] ),
+       (.I0(out[10]),
+        .I1(\l1as_received[12] ),
         .O(\msg[8]_i_46_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
-    \msg[8]_i_47 
-       (.I0(out[26]),
-        .I1(\l1as_received[28] ),
-        .O(\msg[8]_i_47_n_0 ));
-  LUT2 #(
-    .INIT(4'h9)) 
     \msg[8]_i_48 
-       (.I0(out[17]),
-        .I1(\l1as_received[19] ),
+       (.I0(out[25]),
+        .I1(\l1as_received[27] ),
         .O(\msg[8]_i_48_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_49 
-       (.I0(out[16]),
-        .I1(\l1as_received[18] ),
+       (.I0(out[24]),
+        .I1(\l1as_received[26] ),
         .O(\msg[8]_i_49_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_50 
-       (.I0(out[15]),
-        .I1(\l1as_received[17] ),
+       (.I0(out[23]),
+        .I1(\l1as_received[25] ),
         .O(\msg[8]_i_50_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
     \msg[8]_i_51 
-       (.I0(out[14]),
-        .I1(\l1as_received[16] ),
+       (.I0(out[22]),
+        .I1(\l1as_received[24] ),
         .O(\msg[8]_i_51_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
@@ -25710,26 +25867,26 @@ module design_1_tdc_0_1_trig_arbiter
        (.I0(\msg[8]_i_15_n_0 ),
         .I1(\msg[8]_i_16_n_0 ),
         .I2(\msg[8]_i_17_n_0 ),
-        .I3(msgcntr3[24]),
-        .I4(msgcntr3[27]),
-        .I5(msgcntr3[11]),
+        .I3(msgcntr3[29]),
+        .I4(msgcntr3[10]),
+        .I5(msgcntr3[16]),
         .O(\expecting_l1a_reg[10]_0 ));
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     \msg[8]_i_8 
-       (.I0(msgcntr3[9]),
-        .I1(msgcntr3[25]),
-        .I2(msgcntr3[13]),
-        .I3(msgcntr3[28]),
+       (.I0(msgcntr3[14]),
+        .I1(msgcntr3[18]),
+        .I2(p_1_out_carry__6_n_0),
+        .I3(msgcntr3[9]),
         .I4(\msg[8]_i_22_n_0 ),
         .O(\expecting_l1a_reg[10]_1 ));
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     \msg[8]_i_9 
-       (.I0(msgcntr3[18]),
-        .I1(msgcntr3[8]),
-        .I2(msgcntr3[16]),
-        .I3(msgcntr3[14]),
+       (.I0(msgcntr3[8]),
+        .I1(msgcntr3[27]),
+        .I2(msgcntr3[30]),
+        .I3(msgcntr3[31]),
         .I4(\msg[8]_i_24_n_0 ),
         .O(\expecting_l1a_reg[10]_2 ));
   FDRE #(
@@ -25797,39 +25954,39 @@ module design_1_tdc_0_1_trig_arbiter
         .Q(data_mode_cmd_out),
         .R(1'b0));
   CARRY4 \msg_reg[8]_i_18 
-       (.CI(\msg_reg[8]_i_31_n_0 ),
-        .CO({\msg_reg[8]_i_18_n_0 ,\msg_reg[8]_i_18_n_1 ,\msg_reg[8]_i_18_n_2 ,\msg_reg[8]_i_18_n_3 }),
+       (.CI(\msg_reg[8]_i_23_n_0 ),
+        .CO({\NLW_msg_reg[8]_i_18_CO_UNCONNECTED [3],\msg_reg[8]_i_18_n_1 ,\msg_reg[8]_i_18_n_2 ,\msg_reg[8]_i_18_n_3 }),
         .CYINIT(1'b0),
-        .DI(out[25:22]),
-        .O(msgcntr3[27:24]),
-        .S({\msg[8]_i_32_n_0 ,\msg[8]_i_33_n_0 ,\msg[8]_i_34_n_0 ,\msg[8]_i_35_n_0 }));
+        .DI({1'b0,out[28:26]}),
+        .O(msgcntr3[31:28]),
+        .S({\msg[8]_i_31_n_0 ,\msg[8]_i_32_n_0 ,\msg[8]_i_33_n_0 ,\msg[8]_i_34_n_0 }));
   CARRY4 \msg_reg[8]_i_19 
        (.CI(\msg_reg[8]_i_29_n_0 ),
         .CO({\msg_reg[8]_i_19_n_0 ,\msg_reg[8]_i_19_n_1 ,\msg_reg[8]_i_19_n_2 ,\msg_reg[8]_i_19_n_3 }),
         .CYINIT(1'b0),
         .DI(out[9:6]),
         .O(msgcntr3[11:8]),
-        .S({\msg[8]_i_36_n_0 ,\msg[8]_i_37_n_0 ,\msg[8]_i_38_n_0 ,\msg[8]_i_39_n_0 }));
+        .S({\msg[8]_i_35_n_0 ,\msg[8]_i_36_n_0 ,\msg[8]_i_37_n_0 ,\msg[8]_i_38_n_0 }));
   CARRY4 \msg_reg[8]_i_20 
-       (.CI(\msg_reg[8]_i_19_n_0 ),
+       (.CI(\msg_reg[8]_i_21_n_0 ),
         .CO({\msg_reg[8]_i_20_n_0 ,\msg_reg[8]_i_20_n_1 ,\msg_reg[8]_i_20_n_2 ,\msg_reg[8]_i_20_n_3 }),
-        .CYINIT(1'b0),
-        .DI(out[13:10]),
-        .O(msgcntr3[15:12]),
-        .S({\msg[8]_i_40_n_0 ,\msg[8]_i_41_n_0 ,\msg[8]_i_42_n_0 ,\msg[8]_i_43_n_0 }));
-  CARRY4 \msg_reg[8]_i_21 
-       (.CI(\msg_reg[8]_i_18_n_0 ),
-        .CO({\NLW_msg_reg[8]_i_21_CO_UNCONNECTED [3],\msg_reg[8]_i_21_n_1 ,\msg_reg[8]_i_21_n_2 ,\msg_reg[8]_i_21_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,out[28:26]}),
-        .O(msgcntr3[31:28]),
-        .S({\msg[8]_i_44_n_0 ,\msg[8]_i_45_n_0 ,\msg[8]_i_46_n_0 ,\msg[8]_i_47_n_0 }));
-  CARRY4 \msg_reg[8]_i_23 
-       (.CI(\msg_reg[8]_i_20_n_0 ),
-        .CO({\msg_reg[8]_i_23_n_0 ,\msg_reg[8]_i_23_n_1 ,\msg_reg[8]_i_23_n_2 ,\msg_reg[8]_i_23_n_3 }),
         .CYINIT(1'b0),
         .DI(out[17:14]),
         .O(msgcntr3[19:16]),
+        .S({\msg[8]_i_39_n_0 ,\msg[8]_i_40_n_0 ,\msg[8]_i_41_n_0 ,\msg[8]_i_42_n_0 }));
+  CARRY4 \msg_reg[8]_i_21 
+       (.CI(\msg_reg[8]_i_19_n_0 ),
+        .CO({\msg_reg[8]_i_21_n_0 ,\msg_reg[8]_i_21_n_1 ,\msg_reg[8]_i_21_n_2 ,\msg_reg[8]_i_21_n_3 }),
+        .CYINIT(1'b0),
+        .DI(out[13:10]),
+        .O(msgcntr3[15:12]),
+        .S({\msg[8]_i_43_n_0 ,\msg[8]_i_44_n_0 ,\msg[8]_i_45_n_0 ,\msg[8]_i_46_n_0 }));
+  CARRY4 \msg_reg[8]_i_23 
+       (.CI(\msg_reg[8]_i_47_n_0 ),
+        .CO({\msg_reg[8]_i_23_n_0 ,\msg_reg[8]_i_23_n_1 ,\msg_reg[8]_i_23_n_2 ,\msg_reg[8]_i_23_n_3 }),
+        .CYINIT(1'b0),
+        .DI(out[25:22]),
+        .O(msgcntr3[27:24]),
         .S({\msg[8]_i_48_n_0 ,\msg[8]_i_49_n_0 ,\msg[8]_i_50_n_0 ,\msg[8]_i_51_n_0 }));
   CARRY4 \msg_reg[8]_i_29 
        (.CI(\msg_reg[8]_i_30_n_0 ),
@@ -25845,9 +26002,9 @@ module design_1_tdc_0_1_trig_arbiter
         .DI({out[1:0],DI[1:0]}),
         .O(msgcntr3[3:0]),
         .S({\msg[8]_i_57_n_0 ,\msg[8]_i_58_n_0 ,\msg[8]_i_59_n_0 ,\msg[8]_i_60_n_0 }));
-  CARRY4 \msg_reg[8]_i_31 
-       (.CI(\msg_reg[8]_i_23_n_0 ),
-        .CO({\msg_reg[8]_i_31_n_0 ,\msg_reg[8]_i_31_n_1 ,\msg_reg[8]_i_31_n_2 ,\msg_reg[8]_i_31_n_3 }),
+  CARRY4 \msg_reg[8]_i_47 
+       (.CI(\msg_reg[8]_i_20_n_0 ),
+        .CO({\msg_reg[8]_i_47_n_0 ,\msg_reg[8]_i_47_n_1 ,\msg_reg[8]_i_47_n_2 ,\msg_reg[8]_i_47_n_3 }),
         .CYINIT(1'b0),
         .DI(out[21:18]),
         .O(msgcntr3[23:20]),
@@ -25908,13 +26065,13 @@ module design_1_tdc_0_1_trig_arbiter
         .DI({1'b0,i__carry__6_i_1_n_0,i__carry__6_i_2_n_0,i__carry__6_i_3_n_0}),
         .O({\msgcntr2_inferred__1/i__carry__6_n_4 ,\msgcntr2_inferred__1/i__carry__6_n_5 ,\msgcntr2_inferred__1/i__carry__6_n_6 ,\msgcntr2_inferred__1/i__carry__6_n_7 }),
         .S({i__carry__6_i_4_n_0,i__carry__6_i_5_n_0,i__carry__6_i_6_n_0,i__carry__6_i_7_n_0}));
-  (* SOFT_HLUTNM = "soft_lutpair167" *) 
+  (* SOFT_HLUTNM = "soft_lutpair164" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \msgcntr[0]_i_1 
        (.I0(\msgcntr_reg_n_0_[0] ),
         .O(\msgcntr[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair158" *) 
+  (* SOFT_HLUTNM = "soft_lutpair155" *) 
   LUT5 #(
     .INIT(32'hF00FF00E)) 
     \msgcntr[1]_i_1 
@@ -25924,7 +26081,7 @@ module design_1_tdc_0_1_trig_arbiter
         .I3(\msgcntr_reg_n_0_[1] ),
         .I4(\msgcntr_reg_n_0_[3] ),
         .O(\msgcntr[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair157" *) 
+  (* SOFT_HLUTNM = "soft_lutpair154" *) 
   LUT5 #(
     .INIT(32'hCCC3CCC2)) 
     \msgcntr[2]_i_1 
@@ -25943,14 +26100,14 @@ module design_1_tdc_0_1_trig_arbiter
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFFE)) 
     \msgcntr[3]_i_2 
-       (.I0(\slv_reg0_reg[5] ),
+       (.I0(\slv_reg0_reg[1] ),
         .I1(should_send_soft_rst_reg_n_0),
         .I2(\msgcntr_reg_n_0_[2] ),
         .I3(\msgcntr_reg_n_0_[0] ),
         .I4(\msgcntr_reg_n_0_[1] ),
         .I5(\msgcntr_reg_n_0_[3] ),
         .O(\msgcntr[3]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair157" *) 
+  (* SOFT_HLUTNM = "soft_lutpair154" *) 
   LUT5 #(
     .INIT(32'hFFFC0001)) 
     \msgcntr[3]_i_3 
@@ -26810,7 +26967,7 @@ module design_1_tdc_0_1_trig_arbiter
         .I3(panic0_carry__2_n_0),
         .I4(old_is_data_mode),
         .O(panic_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair163" *) 
+  (* SOFT_HLUTNM = "soft_lutpair160" *) 
   LUT5 #(
     .INIT(32'hEAFBFFFF)) 
     panic_i_2
@@ -26828,7 +26985,7 @@ module design_1_tdc_0_1_trig_arbiter
         .D(panic_i_1_n_0),
         .Q(panic_reg_n_0),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair159" *) 
+  (* SOFT_HLUTNM = "soft_lutpair156" *) 
   LUT5 #(
     .INIT(32'hF4FFF4CC)) 
     should_send_soft_rst_i_1

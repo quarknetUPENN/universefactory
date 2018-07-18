@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1531852232">
   <File Type="PA-TCL" Name="tdc_v1_0.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="tdc_v1_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="tdc_v1_0_reports.tcl"/>
   <File Type="RDS-RDS" Name="tdc_v1_0.vds"/>
   <File Type="RDS-UTIL" Name="tdc_v1_0_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="tdc_v1_0_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="tdc_v1_0.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="tdc_v1_0_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="tdc_v1_0_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/tdc_1.0/src/dac_controller.v">

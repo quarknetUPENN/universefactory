@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Wed Jul 18 15:15:13 2018
+//Date        : Wed Jul 18 17:30:43 2018
 //Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=21,numReposBlks=15,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=2,da_clkrst_cnt=14,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=20,numReposBlks=14,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=2,da_clkrst_cnt=14,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (DDR_addr,
     DDR_ba,
@@ -84,7 +84,6 @@ module design_1
   wire DTMROC_DATA_OUT_P_1;
   wire [1:0]Net;
   wire Net2;
-  wire Net3;
   wire [20:0]axi_bram_ctrl_0_bram_addr_a;
   wire axi_bram_ctrl_0_bram_rst_a;
   wire [31:0]axi_bram_ctrl_0_bram_wrdata_a;
@@ -161,7 +160,6 @@ module design_1
   wire axi_interconnect_1_M00_AXI_WREADY;
   wire [3:0]axi_interconnect_1_M00_AXI_WSTRB;
   wire axi_interconnect_1_M00_AXI_WVALID;
-  wire [15:0]blk_mem_gen_0_douta;
   wire [31:0]blk_mem_gen_0_doutb;
   wire [15:0]bram_controller_addr_0_addrout;
   wire bram_controller_addr_0_en;
@@ -279,17 +277,16 @@ module design_1
   wire processing_system7_0_M_AXI_GP1_WREADY;
   wire [3:0]processing_system7_0_M_AXI_GP1_WSTRB;
   wire processing_system7_0_M_AXI_GP1_WVALID;
-  wire [16:0]tdc_0_bramaddr;
-  wire tdc_0_bramclk;
-  wire tdc_0_bramen;
-  wire tdc_0_bramwe;
-  wire [15:0]tdc_0_bramwrdata;
+  wire [16:0]tdc_0_BRAM_PORT_A_ADDR;
+  wire tdc_0_BRAM_PORT_A_CLK;
+  wire [15:0]tdc_0_BRAM_PORT_A_DIN;
+  wire [15:0]tdc_0_BRAM_PORT_A_DOUT;
+  wire tdc_0_BRAM_PORT_A_EN;
+  wire tdc_0_BRAM_PORT_A_RST;
+  wire tdc_0_BRAM_PORT_A_WE;
   wire [6:0]tdc_0_dac_spi;
   wire tdc_0_data_mode_cmd;
   wire tdc_0_is_data_mode;
-  wire [31:0]tdc_0_l1as_received;
-  wire [31:0]tdc_0_l1as_sent;
-  wire [6:0]tdc_0_occupied_data_spaces;
   wire [0:0]util_ds_buf_0_IBUF_OUT;
   wire [0:0]util_ds_buf_1_IBUF_OUT;
 
@@ -308,7 +305,6 @@ module design_1
   design_1_axi_bram_ctrl_0_0 axi_bram_ctrl_0
        (.bram_addr_a(axi_bram_ctrl_0_bram_addr_a),
         .bram_clk_a(Net2),
-        .bram_en_a(Net3),
         .bram_rddata_a(blk_mem_gen_0_doutb),
         .bram_rst_a(axi_bram_ctrl_0_bram_rst_a),
         .bram_wrdata_a(axi_bram_ctrl_0_bram_wrdata_a),
@@ -515,18 +511,19 @@ module design_1
         .S00_AXI_wstrb(processing_system7_0_M_AXI_GP1_WSTRB),
         .S00_AXI_wvalid(processing_system7_0_M_AXI_GP1_WVALID));
   design_1_blk_mem_gen_0_0 blk_mem_gen_0
-       (.addra(tdc_0_bramaddr),
+       (.addra(tdc_0_BRAM_PORT_A_ADDR),
         .addrb(bram_controller_addr_0_addrout),
-        .clka(tdc_0_bramclk),
+        .clka(tdc_0_BRAM_PORT_A_CLK),
         .clkb(Net2),
-        .dina(tdc_0_bramwrdata),
+        .dina(tdc_0_BRAM_PORT_A_DIN),
         .dinb(axi_bram_ctrl_0_bram_wrdata_a),
-        .douta(blk_mem_gen_0_douta),
+        .douta(tdc_0_BRAM_PORT_A_DOUT),
         .doutb(blk_mem_gen_0_doutb),
-        .ena(tdc_0_bramen),
+        .ena(tdc_0_BRAM_PORT_A_EN),
         .enb(bram_controller_addr_0_en),
+        .rsta(tdc_0_BRAM_PORT_A_RST),
         .rstb(axi_bram_ctrl_0_bram_rst_a),
-        .wea(tdc_0_bramwe),
+        .wea(tdc_0_BRAM_PORT_A_WE),
         .web(bram_controller_addr_0_we));
   design_1_bram_controller_addr_0_0 bram_controller_addr_0
        (.addrin(axi_bram_ctrl_0_bram_addr_a),
@@ -563,17 +560,6 @@ module design_1
   design_1_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(processing_system7_0_FCLK_CLK0),
         .clk_out1(clk_wiz_0_clk_out1));
-  design_1_ila_0_0 ila_0
-       (.clk(tdc_0_bramclk),
-        .probe0(tdc_0_bramaddr),
-        .probe1(tdc_0_bramwrdata),
-        .probe2(tdc_0_bramen),
-        .probe3(bram_controller_addr_0_addrout),
-        .probe4(blk_mem_gen_0_doutb),
-        .probe5(Net3),
-        .probe6(tdc_0_occupied_data_spaces),
-        .probe7(tdc_0_l1as_received),
-        .probe8(tdc_0_l1as_sent));
   design_1_main_0_0 main_0
        (.clk40(processing_system7_0_FCLK_CLK0),
         .clkbx_n(main_0_clkbx_n),
@@ -703,12 +689,13 @@ module design_1
         .PS_SRSTB(FIXED_IO_ps_srstb),
         .USB0_VBUS_PWRFAULT(1'b0));
   design_1_tdc_0_1 tdc_0
-       (.bramaddr(tdc_0_bramaddr),
-        .bramclk(tdc_0_bramclk),
-        .bramen(tdc_0_bramen),
-        .bramrddata(blk_mem_gen_0_douta),
-        .bramwe(tdc_0_bramwe),
-        .bramwrdata(tdc_0_bramwrdata),
+       (.bramaddr(tdc_0_BRAM_PORT_A_ADDR),
+        .bramclk(tdc_0_BRAM_PORT_A_CLK),
+        .bramen(tdc_0_BRAM_PORT_A_EN),
+        .bramrddata(tdc_0_BRAM_PORT_A_DOUT),
+        .bramrst(tdc_0_BRAM_PORT_A_RST),
+        .bramwe(tdc_0_BRAM_PORT_A_WE),
+        .bramwrdata(tdc_0_BRAM_PORT_A_DIN),
         .clk120(clk_wiz_0_clk_out1),
         .clk40(processing_system7_0_FCLK_CLK0),
         .comparators(comparators_0_0_1),
@@ -716,9 +703,6 @@ module design_1
         .data_mode_cmd_out(tdc_0_data_mode_cmd),
         .dtmroc_data_out(util_ds_buf_0_IBUF_OUT),
         .is_data_mode(tdc_0_is_data_mode),
-        .l1as_received(tdc_0_l1as_received),
-        .l1as_sent(tdc_0_l1as_sent),
-        .occupied_data_spaces(tdc_0_occupied_data_spaces),
         .s00_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s00_axi_araddr(axi_interconnect_0_M00_AXI_ARADDR[6:0]),
         .s00_axi_aresetn(proc_sys_reset_0_peripheral_aresetn),

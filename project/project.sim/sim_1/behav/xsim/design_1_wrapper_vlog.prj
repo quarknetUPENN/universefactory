@@ -1,0 +1,32 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../project.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../project.srcs/sources_1/bd/design_1/ipshared/02c8/hdl/verilog" --include "../../../../project.srcs/sources_1/bd/design_1/ipshared/b193/hdl" --include "../../../../project.srcs/sources_1/bd/design_1/ipshared/4903" --include "C:/Xilinx/Vivado/2018.1/data/xilinx_vip/include" \
+"../../../../project.srcs/sources_1/new/bram_controller_addr_decoder.v" \
+"../../../../project.ip_user_files/bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
+"../../../../project.ip_user_files/bd/design_1/ipshared/f44a/sources_1/new/housekeeping.v" \
+"../../../../project.ip_user_files/bd/design_1/ipshared/f44a/sources_1/new/main.v" \
+"../../../../project.ip_user_files/bd/design_1/ip/design_1_main_0_0/sim/design_1_main_0_0.v" \
+"../../../../project.ip_user_files/bd/design_1/ipshared/8a7c/hdl/cccd_v1_0_S00_AXI.v" \
+"../../../../project.ip_user_files/bd/design_1/ipshared/8a7c/hdl/cccd_v1_0.v" \
+"../../../../project.ip_user_files/bd/design_1/ip/design_1_cccd_0_0/sim/design_1_cccd_0_0.v" \
+"../../../../project.ip_user_files/bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
+"../../../../project.ip_user_files/bd/design_1/ip/design_1_blk_mem_gen_0_0/sim/design_1_blk_mem_gen_0_0.v" \
+"../../../../project.ip_user_files/bd/design_1/ipshared/d293/hdl/tdc_v1_0_S00_AXI.v" \
+"../../../../project.ip_user_files/bd/design_1/ipshared/d293/src/dac_controller.v" \
+"../../../../project.ip_user_files/bd/design_1/ipshared/d293/src/data_recorder.v" \
+"../../../../project.ip_user_files/bd/design_1/ipshared/d293/src/trig_arbiter.v" \
+"../../../../project.ip_user_files/bd/design_1/ipshared/d293/hdl/tdc_v1_0.v" \
+"../../../../project.ip_user_files/bd/design_1/ip/design_1_tdc_0_1/sim/design_1_tdc_0_1.v" \
+"../../../../project.ip_user_files/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz.v" \
+"../../../../project.ip_user_files/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v" \
+"../../../../project.ip_user_files/bd/design_1/ip/design_1_bram_controller_addr_0_0/sim/design_1_bram_controller_addr_0_0.v" \
+"../../../../project.ip_user_files/bd/design_1/ip/design_1_ila_0_0/sim/design_1_ila_0_0.v" \
+"../../../../project.ip_user_files/bd/design_1/sim/design_1.v" \
+"../../../../project.ip_user_files/bd/design_1/ip/design_1_auto_pc_1/sim/design_1_auto_pc_1.v" \
+"../../../../project.ip_user_files/bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+"../../../../project.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

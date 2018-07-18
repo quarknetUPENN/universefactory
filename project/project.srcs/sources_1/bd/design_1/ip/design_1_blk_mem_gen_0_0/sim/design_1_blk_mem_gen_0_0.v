@@ -55,6 +55,7 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_blk_mem_gen_0_0 (
   clka,
+  rsta,
   ena,
   wea,
   addra,
@@ -73,6 +74,8 @@ module design_1_blk_mem_gen_0_0 (
 
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA CLK" *)
 input wire clka;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA RST" *)
+input wire rsta;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA EN" *)
 input wire ena;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA WE" *)
@@ -123,7 +126,7 @@ output wire rstb_busy;
     .C_INIT_FILE("NONE"),
     .C_USE_DEFAULT_DATA(1),
     .C_DEFAULT_DATA("fede"),
-    .C_HAS_RSTA(0),
+    .C_HAS_RSTA(1),
     .C_RST_PRIORITY_A("CE"),
     .C_RSTRAM_A(0),
     .C_INITA_VAL("0"),
@@ -134,8 +137,8 @@ output wire rstb_busy;
     .C_WRITE_MODE_A("WRITE_FIRST"),
     .C_WRITE_WIDTH_A(16),
     .C_READ_WIDTH_A(16),
-    .C_WRITE_DEPTH_A(77000),
-    .C_READ_DEPTH_A(77000),
+    .C_WRITE_DEPTH_A(84800),
+    .C_READ_DEPTH_A(84800),
     .C_ADDRA_WIDTH(17),
     .C_HAS_RSTB(1),
     .C_RST_PRIORITY_B("CE"),
@@ -148,8 +151,8 @@ output wire rstb_busy;
     .C_WRITE_MODE_B("WRITE_FIRST"),
     .C_WRITE_WIDTH_B(32),
     .C_READ_WIDTH_B(32),
-    .C_WRITE_DEPTH_B(38500),
-    .C_READ_DEPTH_B(38500),
+    .C_WRITE_DEPTH_B(42400),
+    .C_READ_DEPTH_B(42400),
     .C_ADDRB_WIDTH(16),
     .C_HAS_MEM_OUTPUT_REGS_A(1),
     .C_HAS_MEM_OUTPUT_REGS_B(1),
@@ -173,12 +176,12 @@ output wire rstb_busy;
     .C_EN_SHUTDOWN_PIN(0),
     .C_EN_SAFETY_CKT(1),
     .C_DISABLE_WARN_BHV_RANGE(0),
-    .C_COUNT_36K_BRAM("34"),
-    .C_COUNT_18K_BRAM("4"),
-    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     35.690324 mW")
+    .C_COUNT_36K_BRAM("36"),
+    .C_COUNT_18K_BRAM("8"),
+    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     35.471648 mW")
   ) inst (
     .clka(clka),
-    .rsta(1'D0),
+    .rsta(rsta),
     .ena(ena),
     .regcea(1'D0),
     .wea(wea),

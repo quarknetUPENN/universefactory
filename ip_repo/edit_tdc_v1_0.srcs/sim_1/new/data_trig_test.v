@@ -36,7 +36,7 @@ module data_trig_test(
     // from the AXI port    
     reg [63:0] ps_data_loc_tracker_raw = 0;
     reg is_data_mode = 0;
-    reg [23:0] trig_pattern = 24'b000000_000000_000000_000000;
+    reg [23:0] trig_pattern = 24'b000000_000000_000000_000001;
  
     
     // interconnects
@@ -94,9 +94,9 @@ module data_trig_test(
             send_more_l1as <= send_more_l1as + 1;
         end
         
-        if (cmdout_hist[14:8] == 7'b1010100) begin
-            stahp <= 1;
-        end 
+//        if (cmdout_hist[14:8] == 7'b1010100) begin
+//            stahp <= 1;
+//        end 
     end
     
     initial begin
@@ -147,7 +147,7 @@ module data_trig_test(
     end
     
     initial begin
-        #11500;
+        #70000;
         ps_data_loc_tracker_raw = {{62{1'b0}},2'b01};
     end
     
