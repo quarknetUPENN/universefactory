@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Jul 17 16:14:35 2018" VIVADOVERSION="2018.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jul 18 15:15:15 2018" VIVADOVERSION="2018.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:microzed_7010:part0:1.1" DEVICE="7z010" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -666,7 +666,11 @@
             <CONNECTION INSTANCE="axi_interconnect_1" PORT="M00_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram_rst_a" SIGIS="rst"/>
+        <PORT DIR="O" NAME="bram_rst_a" SIGIS="rst" SIGNAME="axi_bram_ctrl_0_bram_rst_a">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="rstb"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="bram_clk_a" SIGIS="clk" SIGNAME="axi_bram_ctrl_0_bram_clk_a">
           <CONNECTIONS>
             <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clkb"/>
@@ -674,7 +678,6 @@
         </PORT>
         <PORT DIR="O" NAME="bram_en_a" SIGIS="undef" SIGNAME="axi_bram_ctrl_0_bram_en_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="enb"/>
             <CONNECTION INSTANCE="ila_0" PORT="probe5"/>
           </CONNECTIONS>
         </PORT>
@@ -2460,10 +2463,10 @@
         <PARAMETER NAME="C_WRITE_DEPTH_A" VALUE="77000"/>
         <PARAMETER NAME="C_READ_DEPTH_A" VALUE="77000"/>
         <PARAMETER NAME="C_ADDRA_WIDTH" VALUE="17"/>
-        <PARAMETER NAME="C_HAS_RSTB" VALUE="0"/>
+        <PARAMETER NAME="C_HAS_RSTB" VALUE="1"/>
         <PARAMETER NAME="C_RST_PRIORITY_B" VALUE="CE"/>
         <PARAMETER NAME="C_RSTRAM_B" VALUE="0"/>
-        <PARAMETER NAME="C_INITB_VAL" VALUE="0"/>
+        <PARAMETER NAME="C_INITB_VAL" VALUE="beef"/>
         <PARAMETER NAME="C_HAS_ENB" VALUE="1"/>
         <PARAMETER NAME="C_HAS_REGCEB" VALUE="0"/>
         <PARAMETER NAME="C_USE_BYTE_WEB" VALUE="0"/>
@@ -2494,7 +2497,7 @@
         <PARAMETER NAME="C_EN_RDADDRB_CHG" VALUE="0"/>
         <PARAMETER NAME="C_EN_DEEPSLEEP_PIN" VALUE="0"/>
         <PARAMETER NAME="C_EN_SHUTDOWN_PIN" VALUE="0"/>
-        <PARAMETER NAME="C_EN_SAFETY_CKT" VALUE="0"/>
+        <PARAMETER NAME="C_EN_SAFETY_CKT" VALUE="1"/>
         <PARAMETER NAME="C_DISABLE_WARN_BHV_RANGE" VALUE="0"/>
         <PARAMETER NAME="C_COUNT_36K_BRAM" VALUE="34"/>
         <PARAMETER NAME="C_COUNT_18K_BRAM" VALUE="4"/>
@@ -2550,10 +2553,10 @@
         <PARAMETER NAME="Reset_Memory_Latch_A" VALUE="false"/>
         <PARAMETER NAME="Reset_Priority_A" VALUE="CE"/>
         <PARAMETER NAME="Output_Reset_Value_A" VALUE="0"/>
-        <PARAMETER NAME="Use_RSTB_Pin" VALUE="false"/>
+        <PARAMETER NAME="Use_RSTB_Pin" VALUE="true"/>
         <PARAMETER NAME="Reset_Memory_Latch_B" VALUE="false"/>
         <PARAMETER NAME="Reset_Priority_B" VALUE="CE"/>
-        <PARAMETER NAME="Output_Reset_Value_B" VALUE="0"/>
+        <PARAMETER NAME="Output_Reset_Value_B" VALUE="beef"/>
         <PARAMETER NAME="Reset_Type" VALUE="SYNC"/>
         <PARAMETER NAME="Additional_Inputs_for_Power_Estimation" VALUE="false"/>
         <PARAMETER NAME="Port_A_Clock" VALUE="100"/>
@@ -2568,7 +2571,7 @@
         <PARAMETER NAME="use_bram_block" VALUE="Stand_Alone"/>
         <PARAMETER NAME="MEM_FILE" VALUE="NONE"/>
         <PARAMETER NAME="CTRL_ECC_ALGO" VALUE="NONE"/>
-        <PARAMETER NAME="EN_SAFETY_CKT" VALUE="false"/>
+        <PARAMETER NAME="EN_SAFETY_CKT" VALUE="true"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -2607,9 +2610,14 @@
             <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_clk_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="enb" SIGIS="undef" SIGNAME="axi_bram_ctrl_0_bram_en_a">
+        <PORT DIR="I" NAME="rstb" SIGIS="rst" SIGNAME="axi_bram_ctrl_0_bram_rst_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_en_a"/>
+            <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_rst_a"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="enb" SIGIS="undef" SIGNAME="bram_controller_addr_0_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="bram_controller_addr_0" PORT="en"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="web" RIGHT="0" SIGIS="undef" SIGNAME="bram_controller_addr_0_we">
@@ -2633,6 +2641,8 @@
             <CONNECTION INSTANCE="ila_0" PORT="probe4"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="rsta_busy" SIGIS="undef"/>
+        <PORT DIR="O" NAME="rstb_busy" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="__NOC__" NAME="BRAM_PORTA" TYPE="TARGET" VLNV="xilinx.com:interface:bram:1.0">
@@ -2662,6 +2672,7 @@
             <PORTMAP LOGICAL="DIN" PHYSICAL="dinb"/>
             <PORTMAP LOGICAL="DOUT" PHYSICAL="doutb"/>
             <PORTMAP LOGICAL="EN" PHYSICAL="enb"/>
+            <PORTMAP LOGICAL="RST" PHYSICAL="rstb"/>
             <PORTMAP LOGICAL="WE" PHYSICAL="web"/>
           </PORTMAPS>
         </BUSINTERFACE>
@@ -2688,6 +2699,11 @@
         <PORT DIR="O" NAME="we" SIGIS="undef" SIGNAME="bram_controller_addr_0_we">
           <CONNECTIONS>
             <CONNECTION INSTANCE="blk_mem_gen_0" PORT="web"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="en" SIGIS="undef" SIGNAME="bram_controller_addr_0_en">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="enb"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -6809,12 +6825,12 @@
             <CONNECTION INSTANCE="cccd_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="main_0" PORT="rst_n"/>
+            <CONNECTION INSTANCE="tdc_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="M01_ARESETN"/>
             <CONNECTION INSTANCE="axi_interconnect_1" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="axi_interconnect_1" PORT="M00_ARESETN"/>
-            <CONNECTION INSTANCE="tdc_0" PORT="s00_axi_aresetn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -8167,6 +8183,8 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP1_ACLK"/>
             <CONNECTION INSTANCE="main_0" PORT="clk40"/>
             <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1"/>
+            <CONNECTION INSTANCE="tdc_0" PORT="clk40"/>
+            <CONNECTION INSTANCE="tdc_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="ACLK"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="M00_ACLK"/>
@@ -8174,8 +8192,6 @@
             <CONNECTION INSTANCE="axi_interconnect_1" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="axi_interconnect_1" PORT="ACLK"/>
             <CONNECTION INSTANCE="axi_interconnect_1" PORT="M00_ACLK"/>
-            <CONNECTION INSTANCE="tdc_0" PORT="clk40"/>
-            <CONNECTION INSTANCE="tdc_0" PORT="s00_axi_aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">

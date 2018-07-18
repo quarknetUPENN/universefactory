@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Tue Jul 17 16:23:07 2018
+| Date             : Wed Jul 18 15:23:08 2018
 | Host             : HEP-PC running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.951        |
+| Total On-Chip Power (W)  | 1.953        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.819        |
+| Dynamic (W)              | 1.821        |
 | Device Static (W)        | 0.132        |
 | Total Off-Chip Power (W) | 0.004        |
 | Effective TJA (C/W)      | 11.5         |
@@ -53,22 +53,22 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.021 |        9 |       --- |             --- |
-| Slice Logic              |     0.005 |    13072 |       --- |             --- |
-|   LUT as Logic           |     0.004 |     4217 |     17600 |           23.96 |
-|   Register               |    <0.001 |     6288 |     35200 |           17.86 |
-|   LUT as Shift Register  |    <0.001 |      405 |      6000 |            6.75 |
+| Clocks                   |     0.022 |        9 |       --- |             --- |
+| Slice Logic              |     0.005 |    13159 |       --- |             --- |
+|   LUT as Logic           |     0.004 |     4281 |     17600 |           24.32 |
+|   Register               |    <0.001 |     6299 |     35200 |           17.89 |
+|   LUT as Shift Register  |    <0.001 |      407 |      6000 |            6.78 |
 |   CARRY4                 |    <0.001 |      164 |      4400 |            3.73 |
 |   F7/F8 Muxes            |    <0.001 |      233 |     17600 |            1.32 |
 |   LUT as Distributed RAM |    <0.001 |       24 |      6000 |            0.40 |
-|   Others                 |     0.000 |      737 |       --- |             --- |
-| Signals                  |     0.008 |     9935 |       --- |             --- |
-| Block RAM                |     0.014 |     40.5 |        60 |           67.50 |
+|   Others                 |     0.000 |      742 |       --- |             --- |
+| Signals                  |     0.008 |    10019 |       --- |             --- |
+| Block RAM                |     0.016 |     40.5 |        60 |           67.50 |
 | MMCM                     |     0.122 |        1 |         2 |           50.00 |
 | I/O                      |     0.119 |       41 |       100 |           41.00 |
 | PS7                      |     1.530 |        1 |       --- |             --- |
 | Static Power             |     0.132 |          |           |                 |
-| Total                    |     1.951 |          |           |                 |
+| Total                    |     1.953 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.057 |       0.048 |      0.009 |
+| Vccint    |       1.000 |     0.059 |       0.050 |      0.009 |
 | Vccaux    |       1.800 |     0.078 |       0.070 |      0.009 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.048 |       0.047 |      0.001 |
@@ -159,7 +159,7 @@ Table of Contents
 +------------------------------------------------------------------------------------+-----------+
 | Name                                                                               | Power (W) |
 +------------------------------------------------------------------------------------+-----------+
-| design_1_wrapper                                                                   |     1.819 |
+| design_1_wrapper                                                                   |     1.821 |
 |   dbg_hub                                                                          |     0.003 |
 |     inst                                                                           |     0.003 |
 |       BSCANID.u_xsdbm_id                                                           |     0.003 |
@@ -241,7 +241,7 @@ Table of Contents
 |           U_SYNC                                                                   |    <0.001 |
 |         SWITCH_N_EXT_BSCAN.bscan_inst                                              |    <0.001 |
 |         SWITCH_N_EXT_BSCAN.bscan_switch                                            |    <0.001 |
-|   design_1_i                                                                       |     1.816 |
+|   design_1_i                                                                       |     1.818 |
 |     axi_bram_ctrl_0                                                                |     0.001 |
 |       U0                                                                           |     0.001 |
 |         gext_inst.abcv4_0_ext_inst                                                 |     0.001 |
@@ -290,13 +290,11 @@ Table of Contents
 |       s00_couplers                                                                 |     0.000 |
 |         auto_pc                                                                    |     0.000 |
 |           inst                                                                     |     0.000 |
-|     blk_mem_gen_0                                                                  |     0.011 |
-|       U0                                                                           |     0.011 |
-|         inst_blk_mem_gen                                                           |     0.011 |
-|           gnbram.gnativebmg.native_blk_mem_gen                                     |     0.011 |
-|             valid.cstr                                                             |     0.011 |
-|               bindec_a.bindec_inst_a                                               |    <0.001 |
-|               bindec_b.bindec_inst_b                                               |    <0.001 |
+|     blk_mem_gen_0                                                                  |     0.013 |
+|       U0                                                                           |     0.013 |
+|         inst_blk_mem_gen                                                           |     0.013 |
+|           gnbram.gnativebmg.native_blk_mem_gen                                     |     0.013 |
+|             valid.cstr                                                             |     0.013 |
 |               has_mux_b.B                                                          |    <0.001 |
 |               ramloop[0].ram.r                                                     |     0.001 |
 |                 prim_init.ram                                                      |     0.001 |
@@ -380,9 +378,9 @@ Table of Contents
 |         cccd_v1_0_S00_AXI_inst                                                     |    <0.001 |
 |     clk_wiz_0                                                                      |     0.122 |
 |       inst                                                                         |     0.122 |
-|     ila_0                                                                          |     0.020 |
-|       inst                                                                         |     0.020 |
-|         ila_core_inst                                                              |     0.020 |
+|     ila_0                                                                          |     0.021 |
+|       inst                                                                         |     0.021 |
+|         ila_core_inst                                                              |     0.021 |
 |           ila_trace_memory_inst                                                    |     0.004 |
 |             SUBCORE_RAM_BLK_MEM_1.trace_block_memory                               |     0.004 |
 |               inst_blk_mem_gen                                                     |     0.004 |
@@ -829,8 +827,8 @@ Table of Contents
 |           SEQ_COUNTER                                                              |    <0.001 |
 |     processing_system7_0                                                           |     1.530 |
 |       inst                                                                         |     1.530 |
-|     tdc_0                                                                          |     0.008 |
-|       inst                                                                         |     0.008 |
+|     tdc_0                                                                          |     0.007 |
+|       inst                                                                         |     0.007 |
 |         data_recorder_inst                                                         |     0.006 |
 |         tdc_v1_0_S00_AXI_inst                                                      |     0.001 |
 |         trig_arbiter_inst                                                          |    <0.001 |

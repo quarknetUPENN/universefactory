@@ -56,16 +56,19 @@
 module design_1_bram_controller_addr_0_0 (
   addrin,
   addrout,
-  we
+  we,
+  en
 );
 
 input wire [20 : 0] addrin;
 output wire [15 : 0] addrout;
 output wire we;
+output wire en;
 
   bram_controller_addr_decoder inst (
     .addrin(addrin),
     .addrout(addrout),
-    .we(we)
+    .we(we),
+    .en(en)
   );
 endmodule

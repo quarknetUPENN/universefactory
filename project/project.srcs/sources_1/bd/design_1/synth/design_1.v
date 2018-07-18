@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Tue Jul 17 16:14:32 2018
+//Date        : Wed Jul 18 15:15:12 2018
 //Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -86,6 +86,7 @@ module design_1
   wire Net2;
   wire Net3;
   wire [20:0]axi_bram_ctrl_0_bram_addr_a;
+  wire axi_bram_ctrl_0_bram_rst_a;
   wire [31:0]axi_bram_ctrl_0_bram_wrdata_a;
   wire [31:0]axi_interconnect_0_M00_AXI_ARADDR;
   wire [2:0]axi_interconnect_0_M00_AXI_ARPROT;
@@ -163,6 +164,7 @@ module design_1
   wire [15:0]blk_mem_gen_0_douta;
   wire [31:0]blk_mem_gen_0_doutb;
   wire [15:0]bram_controller_addr_0_addrout;
+  wire bram_controller_addr_0_en;
   wire bram_controller_addr_0_we;
   wire [26:0]cccd_0_field15;
   wire [159:0]cccd_0_field6;
@@ -308,6 +310,7 @@ module design_1
         .bram_clk_a(Net2),
         .bram_en_a(Net3),
         .bram_rddata_a(blk_mem_gen_0_doutb),
+        .bram_rst_a(axi_bram_ctrl_0_bram_rst_a),
         .bram_wrdata_a(axi_bram_ctrl_0_bram_wrdata_a),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_araddr(axi_interconnect_1_M00_AXI_ARADDR[20:0]),
@@ -521,12 +524,14 @@ module design_1
         .douta(blk_mem_gen_0_douta),
         .doutb(blk_mem_gen_0_doutb),
         .ena(tdc_0_bramen),
-        .enb(Net3),
+        .enb(bram_controller_addr_0_en),
+        .rstb(axi_bram_ctrl_0_bram_rst_a),
         .wea(tdc_0_bramwe),
         .web(bram_controller_addr_0_we));
   design_1_bram_controller_addr_0_0 bram_controller_addr_0
        (.addrin(axi_bram_ctrl_0_bram_addr_a),
         .addrout(bram_controller_addr_0_addrout),
+        .en(bram_controller_addr_0_en),
         .we(bram_controller_addr_0_we));
   design_1_cccd_0_0 cccd_0
        (.done(Net),

@@ -207,22 +207,25 @@ proc create_root_design { parentCell } {
   set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0 ]
   set_property -dict [ list \
    CONFIG.Byte_Size {9} \
-   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.EN_SAFETY_CKT {true} \
    CONFIG.Enable_32bit_Address {false} \
    CONFIG.Enable_B {Use_ENB_Pin} \
    CONFIG.Fill_Remaining_Memory_Locations {true} \
    CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Output_Reset_Value_B {beef} \
    CONFIG.Port_B_Clock {100} \
    CONFIG.Port_B_Enable_Rate {100} \
    CONFIG.Port_B_Write_Rate {50} \
    CONFIG.Read_Width_A {16} \
    CONFIG.Read_Width_B {32} \
+   CONFIG.Register_PortA_Output_of_Memory_Core {false} \
    CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
    CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
    CONFIG.Remaining_Memory_Locations {fede} \
    CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_REGCEA_Pin {false} \
    CONFIG.Use_RSTA_Pin {false} \
-   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Use_RSTB_Pin {true} \
    CONFIG.Write_Depth_A {77000} \
    CONFIG.Write_Width_A {16} \
    CONFIG.Write_Width_B {32} \
@@ -782,12 +785,14 @@ proc create_root_design { parentCell } {
   connect_bd_net -net DTMROC_DATA_OUT_P_1 [get_bd_ports DTMROC_DATA_OUT_P] [get_bd_pins util_ds_buf_0/IBUF_DS_P]
   connect_bd_net -net Net [get_bd_pins cccd_0/done] [get_bd_pins main_0/done]
   connect_bd_net -net Net2 [get_bd_pins axi_bram_ctrl_0/bram_clk_a] [get_bd_pins blk_mem_gen_0/clkb]
-  connect_bd_net -net Net3 [get_bd_pins axi_bram_ctrl_0/bram_en_a] [get_bd_pins blk_mem_gen_0/enb] [get_bd_pins ila_0/probe5]
+  connect_bd_net -net Net3 [get_bd_pins axi_bram_ctrl_0/bram_en_a] [get_bd_pins ila_0/probe5]
   connect_bd_net -net axi_bram_ctrl_0_bram_addr_a [get_bd_pins axi_bram_ctrl_0/bram_addr_a] [get_bd_pins bram_controller_addr_0/addrin]
+  connect_bd_net -net axi_bram_ctrl_0_bram_rst_a [get_bd_pins axi_bram_ctrl_0/bram_rst_a] [get_bd_pins blk_mem_gen_0/rstb]
   connect_bd_net -net axi_bram_ctrl_0_bram_wrdata_a [get_bd_pins axi_bram_ctrl_0/bram_wrdata_a] [get_bd_pins blk_mem_gen_0/dinb]
   connect_bd_net -net blk_mem_gen_0_douta [get_bd_pins blk_mem_gen_0/douta] [get_bd_pins tdc_0/bramrddata]
   connect_bd_net -net blk_mem_gen_0_doutb [get_bd_pins axi_bram_ctrl_0/bram_rddata_a] [get_bd_pins blk_mem_gen_0/doutb] [get_bd_pins ila_0/probe4]
   connect_bd_net -net bram_controller_addr_0_addrout [get_bd_pins blk_mem_gen_0/addrb] [get_bd_pins bram_controller_addr_0/addrout] [get_bd_pins ila_0/probe3]
+  connect_bd_net -net bram_controller_addr_0_en [get_bd_pins blk_mem_gen_0/enb] [get_bd_pins bram_controller_addr_0/en]
   connect_bd_net -net bram_controller_addr_0_we [get_bd_pins blk_mem_gen_0/web] [get_bd_pins bram_controller_addr_0/we]
   connect_bd_net -net cccd_0_field6 [get_bd_pins cccd_0/field6] [get_bd_pins main_0/field6]
   connect_bd_net -net cccd_0_field15 [get_bd_pins cccd_0/field15] [get_bd_pins main_0/field15]

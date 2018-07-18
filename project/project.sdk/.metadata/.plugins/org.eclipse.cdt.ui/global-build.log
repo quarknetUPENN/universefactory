@@ -37540,3 +37540,2218 @@ make pre-build main-build
 a9-linaro-pre-build-step
 ' '
 make: Nothing to be done for `main-build'.
+13:20:14 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:201:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:201:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71956	   2588	  23328	  97872	  17e50	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+13:20:44 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+13:24:51 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:200:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:200:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71972	   2588	  23328	  97888	  17e60	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+13:24:52 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+13:25:07 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:200:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:200:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71972	   2588	  23328	  97888	  17e60	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+13:25:09 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+13:26:08 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+13:26:52 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:205:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:205:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72044	   2588	  23328	  97960	  17ea8	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+13:26:53 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+13:30:19 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:205:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:205:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72044	   2588	  23328	  97960	  17ea8	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+13:30:19 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+13:31:05 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:205:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:205:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72108	   2588	  23328	  98024	  17ee8	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+13:31:14 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+13:51:17 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:170:16: error: invalid suffix "S" on integer constant
+   printb(&bram[15S]);
+                ^~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:222:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:222:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+make: *** [src/helloworld.o] Error 1
+13:51:48 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:221:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:221:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72428	   2588	  23328	  98344	  18028	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+13:51:49 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+13:57:45 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:221:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:221:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72428	   2588	  23328	  98344	  18028	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+13:57:46 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:12:17 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:235:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:235:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72748	   2588	  23328	  98664	  18168	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:13:23 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:221:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:221:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72428	   2588	  23328	  98344	  18028	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:13:25 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:15:36 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:16:15 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:18:41 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:223:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:223:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71892	   2588	  23328	  97808	  17e10	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:19:23 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:20:10 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:174:1: error: expected ';' before '}' token
+ }
+ ^
+../src/helloworld.c: At top level:
+../src/helloworld.c:223:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:223:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+make: *** [src/helloworld.o] Error 1
+14:20:13 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:223:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:223:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71884	   2588	  23328	  97800	  17e08	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:20:15 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:20:27 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:21:46 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:23:02 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:145:14: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+   int blah = &bram[0];
+              ^
+../src/helloworld.c: At top level:
+../src/helloworld.c:227:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:227:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71892	   2588	  23328	  97808	  17e10	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:23:07 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:24:46 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:145:14: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+   int blah = &bram[0];
+              ^
+../src/helloworld.c:150:12: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'int *' [-Wformat=]
+   printf("%u \n", &blah);
+           ~^      ~~~~~
+           %ls
+../src/helloworld.c: At top level:
+../src/helloworld.c:227:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:227:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71892	   2588	  23328	  97808	  17e10	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:24:48 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:25:09 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:145:14: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+   int blah = &bram[0];
+              ^
+../src/helloworld.c:150:19: error: invalid type argument of unary '*' (have 'int')
+   printf("%u \n", *blah);
+                   ^~~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:227:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:227:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+make: *** [src/helloworld.o] Error 1
+14:25:11 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:145:14: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+   int blah = &bram[0];
+              ^
+../src/helloworld.c:150:19: error: invalid type argument of unary '*' (have 'int')
+   printf("%u \n", *blah);
+                   ^~~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:227:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:227:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+make: *** [src/helloworld.o] Error 1
+14:25:18 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:145:14: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+   int blah = &bram[0];
+              ^
+../src/helloworld.c:150:25: error: expected expression before ')' token
+   printf("%u \n", blah *);
+                         ^
+../src/helloworld.c: At top level:
+../src/helloworld.c:227:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:227:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+make: *** [src/helloworld.o] Error 1
+14:25:22 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:145:14: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+   int blah = &bram[0];
+              ^
+../src/helloworld.c: At top level:
+../src/helloworld.c:227:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:227:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71892	   2588	  23328	  97808	  17e10	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:25:52 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:227:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:227:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71892	   2588	  23328	  97808	  17e10	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:25:58 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:26:35 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:231:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:231:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71956	   2588	  23328	  97872	  17e50	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:26:36 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:27:23 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:146:26: error: array subscript is not an integer
+   int blah1 = (int) &bram[0.25];
+                          ^
+../src/helloworld.c: At top level:
+../src/helloworld.c:231:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:231:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+make: *** [src/helloworld.o] Error 1
+14:27:29 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:231:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:231:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71956	   2588	  23328	  97872	  17e50	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:28:29 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:146:12: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'volatile unsigned int *' [-Wformat=]
+   printf("%u \n", &bram[0]);
+           ~^
+           %ls
+../src/helloworld.c: At top level:
+../src/helloworld.c:234:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:234:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71892	   2588	  23328	  97808	  17e10	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:28:52 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:31:02 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:120:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:235:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:235:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71892	   2588	  23328	  97808	  17e10	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:31:13 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:32:50 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:33:39 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:34:30 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: At top level:
+../src/helloworld.c:235:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:235:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71892	   2588	  23328	  97808	  17e10	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:34:32 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:34:49 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:112:13: warning: unknown conversion type character ' ' in format [-Wformat=]
+   printf("%h \n", bram[0]);
+             ^
+../src/helloworld.c:112:10: warning: too many arguments for format [-Wformat-extra-args]
+   printf("%h \n", bram[0]);
+          ^~~~~~~
+../src/helloworld.c:113:13: warning: unknown conversion type character ' ' in format [-Wformat=]
+   printf("%h \n", bram[0]);
+             ^
+../src/helloworld.c:113:10: warning: too many arguments for format [-Wformat-extra-args]
+   printf("%h \n", bram[0]);
+          ^~~~~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:235:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:235:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71892	   2588	  23328	  97808	  17e10	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:34:50 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:34:57 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: At top level:
+../src/helloworld.c:235:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:235:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71892	   2588	  23328	  97808	  17e10	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:34:58 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:35:00 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:35:18 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:36:15 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:37:57 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:38:44 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:55:19 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:56:30 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:119:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:232:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:232:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71972	   2588	  23328	  97888	  17e60	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:57:19 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:119:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:232:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:232:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72108	   2588	  23328	  98024	  17ee8	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:57:21 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:57:52 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:119:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:232:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:232:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72108	   2588	  23328	  98024	  17ee8	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:57:53 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+14:58:33 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:119:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:232:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:232:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71956	   2588	  23328	  97872	  17e50	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+14:59:35 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:00:33 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:119:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:232:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:232:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71972	   2588	  23328	  97888	  17e60	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+15:00:34 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:01:43 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:119:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:233:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:233:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72036	   2588	  23328	  97952	  17ea0	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+15:01:44 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:04:12 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:119:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:234:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:234:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71980	   2588	  23328	  97896	  17e68	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+15:04:13 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:06:24 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:119:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:234:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:234:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  71980	   2588	  23328	  97896	  17e68	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+15:06:26 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:06:45 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:119:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:234:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:234:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72068	   2588	  23328	  97984	  17ec0	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+15:06:47 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:07:29 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:119:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:235:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:235:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72020	   2588	  23328	  97936	  17e90	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+15:07:30 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:07:50 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:119:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:235:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:235:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72044	   2588	  23328	  97960	  17ea8	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+15:07:51 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:09:08 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:119:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:241:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:241:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72236	   2588	  23328	  98152	  17f68	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+15:29:00 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:32:14 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:32:32 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:32:53 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:39:08 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:119:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c:242:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:242:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72236	   2588	  23328	  98152	  17f68	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+15:39:13 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:41:47 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:119:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:157:7: warning: variable 'gaaaaaabage' set but not used [-Wunused-but-set-variable]
+   int gaaaaaabage = 0;
+       ^~~~~~~~~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:226:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:226:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72100	   2588	  23328	  98016	  17ee0	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+15:41:49 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:52:08 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:119:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:157:7: warning: variable 'gaaaaaabage' set but not used [-Wunused-but-set-variable]
+   int gaaaaaabage = 0;
+       ^~~~~~~~~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:226:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:226:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72100	   2588	  23328	  98016	  17ee0	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+15:52:10 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.

@@ -110,7 +110,6 @@ int main()
 	ghjk();
 
 
-
 //	 for (int i = 0; i < 640; i++){
 //		 printf("this is %d ", i);
 //		 printb(&bram[i]);
@@ -142,12 +141,38 @@ void ghjk(){
 	 printb(&tdc[4]);
 	 print("done\n");
 
-	 for (int i = 1325; i < 2000; i++){
-		 printf("this is %d ", i);
-		 printb(&bram[i]);
+
+
+
+//	 int blah = (int) &bram[0];
+//	 int blah1 = (int) &bram[1];
+//
+//	 printb(blah);
+//	 puts("");
+//	 printf("%u \n", blah);
+//	 printb(blah1);
+//	 puts("");
+//	 printf("%u \n", blah1);
+
+	 int gaaaaaabage = 0;
+	 for (int i = 0; i < 10000; i = i + 2){
+		 gaaaaaabage = bram[i/2];
+		 printf("this is [%d,%d] %08X ", i+1, i, bram[i/2]);
+		 printb(&bram[i/2]);
 	 }
-
-
+//	 for (int i = 0; i < 6; i = i+2){
+//		 //printf("this is (%d,%d) %08X   ", i+1, i, bram[i/2]);
+//		 printf("%s", "does this fix the index error");
+//		 printb(&bram[i/2]);
+//		 printf("%s", "does this fix the index error");
+//		 printb(&bram[i/2]);
+//		 printf("%s", "does this fix the index error");
+//		 printb(&bram[i/2]);
+//		 printf("%s", "does this fix the index error");
+//		 printb(&bram[i/2]);
+//		 printf("%s", "does this fix the index error");
+//		 printb(&bram[i/2]);
+//	 }
 
 }
 void asdf(){

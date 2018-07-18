@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Tue Jul 17 15:45:03 2018
+// Date        : Wed Jul 18 15:16:41 2018
 // Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_bram_controller_addr_0_0_sim_netlist.v
@@ -17,18 +17,24 @@
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
    (addrin,
     addrout,
-    we);
+    we,
+    en);
   input [20:0]addrin;
   output [15:0]addrout;
   output we;
+  output en;
 
   wire \<const0> ;
+  wire \<const1> ;
   wire [20:0]addrin;
 
   assign addrout[15:0] = addrin[17:2];
+  assign en = \<const1> ;
   assign we = \<const0> ;
   GND GND
        (.G(\<const0> ));
+  VCC VCC
+       (.P(\<const1> ));
 endmodule
 `ifndef GLBL
 `define GLBL

@@ -19,8 +19,10 @@
       <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
     </Object>
     <Object name="design_1_i/ila_0" gui_info="">
+      <Properties Property="CONTROL.DATA_DEPTH" value="64"/>
       <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
-      <Properties Property="CONTROL.TRIGGER_POSITION" value="512"/>
+      <Properties Property="CONTROL.TRIGGER_POSITION" value="2"/>
+      <Properties Property="CONTROL.WINDOW_COUNT" value="16"/>
       <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
     </Object>
     <Object name="design_1_i/system_ila_0/inst/ila_lib" gui_info="">
@@ -34,7 +36,7 @@
   <ObjectList object_type="hw_probe" gui_info="">
     <Object name="design_1_i/Net1[15:0]" gui_info="Trigger Setup=0"/>
     <Object name="design_1_i/Net1[16:0]" gui_info=""/>
-    <Object name="design_1_i/Net3" gui_info=""/>
+    <Object name="design_1_i/Net3" gui_info="Trigger Setup=1"/>
     <Object name="design_1_i/Net3[15:0]" gui_info=""/>
     <Object name="design_1_i/Net4" gui_info="Trigger Setup=0"/>
     <Object name="design_1_i/Net[1:0]" gui_info=""/>
@@ -42,7 +44,7 @@
     <Object name="design_1_i/axi_bram_ctrl_0_bram_en_a" gui_info=""/>
     <Object name="design_1_i/axi_bram_ctrl_0_bram_we_a[63:0]" gui_info=""/>
     <Object name="design_1_i/blk_mem_gen_0_doutb[31:0]" gui_info=""/>
-    <Object name="design_1_i/bram_controller_addr_0_addrout[15:0]" gui_info=""/>
+    <Object name="design_1_i/bram_controller_addr_0_addrout[15:0]" gui_info="Trigger Setup=0"/>
     <Object name="design_1_i/cccd_0_field15[26:0]" gui_info=""/>
     <Object name="design_1_i/cccd_0_trigger" gui_info=""/>
     <Object name="design_1_i/main_0_cmd_in_tp" gui_info=""/>
@@ -56,8 +58,8 @@
     <Object name="design_1_i/system_ila_0/inst/net_slot_1_axis_tready" gui_info="Trigger Setup=0"/>
     <Object name="design_1_i/system_ila_0/inst/probe1_1" gui_info=""/>
     <Object name="design_1_i/system_ila_0/inst/probe2_1" gui_info=""/>
-    <Object name="design_1_i/tdc_0_bramaddr[16:0]" gui_info="Trigger Setup=0"/>
-    <Object name="design_1_i/tdc_0_bramen" gui_info="Trigger Setup=1"/>
+    <Object name="design_1_i/tdc_0_bramaddr[16:0]" gui_info=""/>
+    <Object name="design_1_i/tdc_0_bramen" gui_info=""/>
     <Object name="design_1_i/tdc_0_bramwrdata[15:0]" gui_info=""/>
     <Object name="design_1_i/util_ds_buf_1_IBUF_OUT" gui_info="Trigger Setup=0"/>
   </ObjectList>
@@ -10575,7 +10577,7 @@
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;b1"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="HEX"/>
@@ -10586,7 +10588,7 @@
         <Option Id="NAME.CUSTOM" value="ps_enable"/>
         <Option Id="NAME.SELECT" value="Custom"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;b1"/>
         <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>
@@ -10912,7 +10914,7 @@
         <net name="design_1_i/blk_mem_gen_0_doutb[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq16&apos;hXXXX"/>
@@ -12950,7 +12952,7 @@
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq17&apos;hX_XXXX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq17&apos;u84799"/>
+        <Option Id="COMPARE_VALUE.0" value="eq17&apos;hX_XXXX"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="UNSIGNED"/>
@@ -12961,7 +12963,7 @@
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq17&apos;u84799"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq17&apos;hX_XXXX"/>
         <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>
@@ -12987,7 +12989,7 @@
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq1&apos;b1"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="HEX"/>
@@ -12998,7 +13000,7 @@
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;b1"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
         <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>
@@ -13145,7 +13147,7 @@
         <net name="design_1_i/tdc_0_l1as_sent[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq6&apos;hXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq6&apos;hXX"/>

@@ -23,7 +23,8 @@
 module bram_controller_addr_decoder(
     input [20:0] addrin,
     output [15:0] addrout,
-    output we
+    output we,
+    output en
     );
     
     // so the bram controller addresses things as bytes.  So when C side you ask for index 1, the controller sends address 4.  Thus 
@@ -31,4 +32,5 @@ module bram_controller_addr_decoder(
     // also we don't know why the MSBs exist in the bram controller so we kill those too
     assign addrout = addrin[17:2];
     assign we = 1'b0;
+    assign en = 1'b1;
 endmodule
