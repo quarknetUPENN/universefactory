@@ -40,8 +40,11 @@ module main(
     output reg [158:0] received_data,
     
     input wire is_data_mode,
-    input wire event_trigger
+    input wire event_trigger,
+    input wire dtm_hard
     );
+    
+    reg dtm_hard_out = 0;
     
     
     // housekeeper handles making all the nessecary signals differential for output
@@ -55,7 +58,8 @@ module main(
         .hard_reset_n(dtm_hard_n),
         .dtm_cmd_in(dtm_cmd_in),
         .dtm_cmd_in_p(dtm_cmd_in_p),
-        .dtm_cmd_in_n(dtm_cmd_in_n)
+        .dtm_cmd_in_n(dtm_cmd_in_n),
+        .dtm_hard(dtm_hard_out)
     );
     
 
@@ -106,7 +110,6 @@ module main(
     reg [7:0] data_cntr = 8'b0;
     
     always @ (posedge clk40) begin
-    
         if (!rst_n) begin
             msg <= 0;
             msgcntr <= 0;
@@ -122,81 +125,95 @@ module main(
                 done <= 2'b00;
                 msg <= {event_trigger,{170{1'b0}}};
             end else begin
-                // if we aren't in the middle of a command and the ps requests, then
-                if (msgcntr == 0) begin
-                    if (ps_triggered) begin
-                        // read the command the ps wants sent
-                        msg <= {field15, field6[159:16]};
-                        // this is more than 171
-                        // needs to lock out from updating data_size or others in the event of back to back ps_triggers
-                        // we think it only nees 6 but added some margin just in case, since the time between commands is non critical
-                        msgcntr <= 180;
-                        
-                        // reset the done value
-                        done <= 2'b00;
-                        
-                        // based on the actual command, record these 3 variables
-                        expecting_data_back <= field15[5];
-                        case (field15[4:0]) 
-                            5'b00000: begin data_size <= 24;  data_cntr <= 24;  end
-                            5'b01010: begin data_size <= 16;  data_cntr <= 16;  end
-                            5'b01100: begin data_size <= 16;  data_cntr <= 16;  end
-                            5'b10010: begin data_size <= 16;  data_cntr <= 16;  end
-                            5'b10100: begin data_size <= 8;   data_cntr <= 8;   end
-                            5'b00110: begin data_size <= 6;   data_cntr <= 6;   end
-                            5'b11000: begin data_size <= 8;   data_cntr <= 8;   end
-                            5'b11110: begin data_size <= 144; data_cntr <= 144; end
-                            5'b10001: begin data_size <= 16;  data_cntr <= 16;  end
-                            5'b00011: begin data_size <= 32;  data_cntr <= 32;  end
-                            default:  begin data_size <= 144;   data_cntr <= 144;   end
-                        endcase
-                    end else begin
-                        if (!expecting_data_back) begin
-                            done <= 2'b10;
+                if (!dtm_hard) begin
+                    dtm_hard_out <= 0;
+                    // if we aren't in the middle of a command and the ps requests, then
+                    if (msgcntr == 0) begin
+                        if (ps_triggered) begin
+                            // read the command the ps wants sent
+                            msg <= {field15, field6[159:16]};
+                            // this is more than 171
+                            // needs to lock out from updating data_size or others in the event of back to back ps_triggers
+                            // we think it only nees 6 but added some margin just in case, since the time between commands is non critical
+                            msgcntr <= 180;
+                            
+                            // reset the done value
+                            done <= 2'b00;
+                            
+                            // based on the actual command, record these 3 variables
+                            expecting_data_back <= field15[5];
+                            case (field15[4:0]) 
+                                5'b00000: begin data_size <= 24;  data_cntr <= 24;  end
+                                5'b01010: begin data_size <= 16;  data_cntr <= 16;  end
+                                5'b01100: begin data_size <= 16;  data_cntr <= 16;  end
+                                5'b10010: begin data_size <= 16;  data_cntr <= 16;  end
+                                5'b10100: begin data_size <= 8;   data_cntr <= 8;   end
+                                5'b00110: begin data_size <= 6;   data_cntr <= 6;   end
+                                5'b11000: begin data_size <= 8;   data_cntr <= 8;   end
+                                5'b11110: begin data_size <= 144; data_cntr <= 144; end
+                                5'b10001: begin data_size <= 16;  data_cntr <= 16;  end
+                                5'b00011: begin data_size <= 32;  data_cntr <= 32;  end
+                                default:  begin data_size <= 144;   data_cntr <= 144;   end
+                            endcase
                         end else begin
-                            if (is_data_good & (data_size == 6 ||
-                                                data_size == 8 ||
-                                                data_size == 16 ||
-                                                data_size == 24 ||
-                                                data_size == 32 ||
-                                                data_size == 144)) 
-                            begin
-                                done <= 2'b11;
-                            end else begin
+                            if (!expecting_data_back) begin
                                 done <= 2'b10;
+                            end else begin
+                                if (is_data_good & (data_size == 6 ||
+                                                    data_size == 8 ||
+                                                    data_size == 16 ||
+                                                    data_size == 24 ||
+                                                    data_size == 32 ||
+                                                    data_size == 144)) 
+                                begin
+                                    done <= 2'b11;
+                                end else begin
+                                    done <= 2'b10;
+                                end
                             end
                         end
+                    end else begin 
+                        // the shift register to send the command
+                        msg <= {msg[169:0], 1'b0};
+                        msgcntr <= msgcntr - 1;
+                        
+                        // start counting down data_cntr at the correct time so we know when to record data
+                        if (msgcntr <= 148 && expecting_data_back) begin
+                            data_cntr <= data_cntr - 1;
+                        end 
+                        
+                        // shift the history of cmd_out
+                        cmd_out_hist <= {cmd_out_hist[142:0], dtm_cmd_out};
+                        
+                        // check to see if the preamble is properly placed
+                        if (expecting_data_back && msgcntr == 148) begin
+                            is_data_good <= (cmd_out_hist[2:0] == 3'b101);
+                        end
+                        
+                        // if it's time to record data, do so, and set the done flag
+                        if (data_cntr == 0) begin
+                            case (data_size) 
+                                6  : begin received_data <= {cmd_out_hist[5:0],{153{1'b0}}};   end
+                                8  : begin received_data <= {cmd_out_hist[7:0],{151{1'b0}}};   end
+                                16 : begin received_data <= {cmd_out_hist[15:0],{143{1'b0}}};  end
+                                24 : begin received_data <= {cmd_out_hist[23:0],{135{1'b0}}};  end
+                                32 : begin received_data <= {cmd_out_hist[31:0],{127{1'b0}}};  end
+                                144: begin received_data <= {cmd_out_hist[143:0],{15{1'b0}}};  end
+                                default: begin received_data <= {{158{1'b0}}}; end
+                            endcase
+                        end
                     end
-                end else begin 
-                    // the shift register to send the command
-                    msg <= {msg[169:0], 1'b0};
-                    msgcntr <= msgcntr - 1;
-                    
-                    // start counting down data_cntr at the correct time so we know when to record data
-                    if (msgcntr <= 148 && expecting_data_back) begin
-                        data_cntr <= data_cntr - 1;
-                    end 
-                    
-                    // shift the history of cmd_out
-                    cmd_out_hist <= {cmd_out_hist[142:0], dtm_cmd_out};
-                    
-                    // check to see if the preamble is properly placed
-                    if (expecting_data_back && msgcntr == 148) begin
-                        is_data_good <= (cmd_out_hist[2:0] == 3'b101);
-                    end
-                    
-                    // if it's time to record data, do so, and set the done flag
-                    if (data_cntr == 0) begin
-                        case (data_size) 
-                            6  : begin received_data <= {cmd_out_hist[5:0],{153{1'b0}}};   end
-                            8  : begin received_data <= {cmd_out_hist[7:0],{151{1'b0}}};   end
-                            16 : begin received_data <= {cmd_out_hist[15:0],{143{1'b0}}};  end
-                            24 : begin received_data <= {cmd_out_hist[23:0],{135{1'b0}}};  end
-                            32 : begin received_data <= {cmd_out_hist[31:0],{127{1'b0}}};  end
-                            144: begin received_data <= {cmd_out_hist[143:0],{15{1'b0}}};  end
-                            default: begin received_data <= {{158{1'b0}}}; end
-                        endcase
-                    end
+                end else begin
+                    msg <= 0;
+                    msgcntr <= 0;
+                    done <= 0;
+                    cmd_out_hist <= 0;
+                    expecting_data_back <= 0;
+                    is_data_good <= 0;
+                    data_size <= 0;
+                    data_cntr <= 0;
+                    received_data <= 0;
+                    dtm_hard_out <= 1;
                 end
             end
         end

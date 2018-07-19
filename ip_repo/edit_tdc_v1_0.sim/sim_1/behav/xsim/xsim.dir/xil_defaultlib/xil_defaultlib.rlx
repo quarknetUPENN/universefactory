@@ -3,6 +3,6 @@
 Apr  4 2018
 19:30:32
 C:/Users/HEP/Documents/universefactory/ip_repo/edit_tdc_v1_0.sim/sim_1/behav/xsim/glbl.v,1522801934,verilog,,,,glbl,,,,,,,,
-C:/Users/HEP/Documents/universefactory/ip_repo/edit_tdc_v1_0.srcs/sim_1/new/data_trig_test.v,1531948796,verilog,,,,data_trig_test,,,,,,,,
-C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/data_recorder.v,1531948505,verilog,,C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/trig_arbiter.v,,data_recorder,,,,,,,,
-C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/trig_arbiter.v,1531858388,verilog,,C:/Users/HEP/Documents/universefactory/ip_repo/edit_tdc_v1_0.srcs/sim_1/new/data_trig_test.v,,trig_arbiter,,,,,,,,
+C:/Users/HEP/Documents/universefactory/ip_repo/edit_tdc_v1_0.srcs/sim_1/new/data_trig_test.v,1532018502,verilog,,,,data_trig_test,,,,,,,,
+C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/data_recorder.v,1532018391,verilog,,C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/trig_arbiter.v,,data_recorder,,,,,,,,
+C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/trig_arbiter.v,1532013704,verilog,,C:/Users/HEP/Documents/universefactory/ip_repo/edit_tdc_v1_0.srcs/sim_1/new/data_trig_test.v,,trig_arbiter,,,,,,,,

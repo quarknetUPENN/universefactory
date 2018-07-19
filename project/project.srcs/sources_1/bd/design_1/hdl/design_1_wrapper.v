@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Wed Jul 18 17:30:43 2018
+//Date        : Thu Jul 19 12:44:10 2018
 //Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -41,8 +41,7 @@ module design_1_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    comparators_0_0,
-    dac_spi_0);
+    comparators_0_0);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -75,7 +74,6 @@ module design_1_wrapper
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
   input [23:0]comparators_0_0;
-  output [6:0]dac_spi_0;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -109,7 +107,6 @@ module design_1_wrapper
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
   wire [23:0]comparators_0_0;
-  wire [6:0]dac_spi_0;
 
   design_1 design_1_i
        (.DDR_addr(DDR_addr),
@@ -143,6 +140,5 @@ module design_1_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
-        .comparators_0_0(comparators_0_0),
-        .dac_spi_0(dac_spi_0));
+        .comparators_0_0(comparators_0_0));
 endmodule

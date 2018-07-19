@@ -55,6 +55,7 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_blk_mem_gen_0_0 (
   clka,
+  rsta,
   ena,
   wea,
   addra,
@@ -73,6 +74,8 @@ module design_1_blk_mem_gen_0_0 (
 
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA CLK" *)
 input wire clka;
+(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA RST" *)
+input wire rsta;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA EN" *)
 input wire ena;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA WE" *)
@@ -123,7 +126,7 @@ output wire rstb_busy;
     .C_INIT_FILE("NONE"),
     .C_USE_DEFAULT_DATA(1),
     .C_DEFAULT_DATA("fede"),
-    .C_HAS_RSTA(0),
+    .C_HAS_RSTA(1),
     .C_RST_PRIORITY_A("CE"),
     .C_RSTRAM_A(0),
     .C_INITA_VAL("0"),
@@ -178,7 +181,7 @@ output wire rstb_busy;
     .C_EST_POWER_SUMMARY("Estimated Power for IP     :     35.471648 mW")
   ) inst (
     .clka(clka),
-    .rsta(1'D0),
+    .rsta(rsta),
     .ena(ena),
     .regcea(1'D0),
     .wea(wea),

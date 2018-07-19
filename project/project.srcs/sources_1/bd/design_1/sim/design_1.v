@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Wed Jul 18 17:30:43 2018
+//Date        : Thu Jul 19 12:44:10 2018
 //Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -42,8 +42,7 @@ module design_1
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    comparators_0_0,
-    dac_spi_0);
+    comparators_0_0);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *) inout DDR_cas_n;
@@ -76,7 +75,6 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
   input [23:0]comparators_0_0;
-  output [6:0]dac_spi_0;
 
   wire DTMROC_CMD_OUT_N_1;
   wire DTMROC_CMD_OUT_P_1;
@@ -284,7 +282,6 @@ module design_1
   wire tdc_0_BRAM_PORT_A_EN;
   wire tdc_0_BRAM_PORT_A_RST;
   wire tdc_0_BRAM_PORT_A_WE;
-  wire [6:0]tdc_0_dac_spi;
   wire tdc_0_data_mode_cmd;
   wire tdc_0_is_data_mode;
   wire [0:0]util_ds_buf_0_IBUF_OUT;
@@ -301,7 +298,6 @@ module design_1
   assign DTMROC_HARD_N = main_0_dtm_hard_n;
   assign DTMROC_HARD_P = main_0_dtm_hard_p;
   assign comparators_0_0_1 = comparators_0_0[23:0];
-  assign dac_spi_0[6:0] = tdc_0_dac_spi;
   design_1_axi_bram_ctrl_0_0 axi_bram_ctrl_0
        (.bram_addr_a(axi_bram_ctrl_0_bram_addr_a),
         .bram_clk_a(Net2),
@@ -699,7 +695,6 @@ module design_1
         .clk120(clk_wiz_0_clk_out1),
         .clk40(processing_system7_0_FCLK_CLK0),
         .comparators(comparators_0_0_1),
-        .dac_spi(tdc_0_dac_spi),
         .data_mode_cmd_out(tdc_0_data_mode_cmd),
         .dtmroc_data_out(util_ds_buf_0_IBUF_OUT),
         .is_data_mode(tdc_0_is_data_mode),

@@ -20,6 +20,7 @@
         output wire [159:0] field6,
         input wire [1:0] done,
         input wire [158:0] received_data,
+        output wire req_hard_rst,
 		// User ports ends
 		// Do not modify the ports beyond this line
 

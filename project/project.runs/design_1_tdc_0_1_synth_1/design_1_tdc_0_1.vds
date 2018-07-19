@@ -2,8 +2,8 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Wed Jul 18 17:31:37 2018
-# Process ID: 3084
+# Start of session at: Thu Jul 19 12:44:29 2018
+# Process ID: 752
 # Current directory: C:/Users/HEP/Documents/universefactory/project/project.runs/design_1_tdc_0_1_synth_1
 # Command line: vivado.exe -log design_1_tdc_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_tdc_0_1.tcl
 # Log file: C:/Users/HEP/Documents/universefactory/project/project.runs/design_1_tdc_0_1_synth_1/design_1_tdc_0_1.vds
@@ -15,138 +15,62 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 6380 
+INFO: Helper process launched with PID 6300 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 470.305 ; gain = 104.523
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 469.852 ; gain = 104.973
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_tdc_0_1' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_tdc_0_1/synth/design_1_tdc_0_1.v:57]
-INFO: [Synth 8-6157] synthesizing module 'tdc_v1_0' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0.v:4]
+INFO: [Synth 8-6157] synthesizing module 'tdc_v1_0' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/hdl/tdc_v1_0.v:4]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 7 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'tdc_v1_0_S00_AXI' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0_S00_AXI.v:3]
+INFO: [Synth 8-6157] synthesizing module 'tdc_v1_0_S00_AXI' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/hdl/tdc_v1_0_S00_AXI.v:3]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 7 - type: integer 
 	Parameter ADDR_LSB bound to: 2 - type: integer 
 	Parameter OPT_MEM_ADDR_BITS bound to: 4 - type: integer 
-INFO: [Synth 8-226] default block is never used [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0_S00_AXI.v:290]
-INFO: [Synth 8-226] default block is never used [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0_S00_AXI.v:655]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0_S00_AXI.v:257]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0_S00_AXI.v:258]
-INFO: [Synth 8-6155] done synthesizing module 'tdc_v1_0_S00_AXI' (1#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0_S00_AXI.v:3]
-INFO: [Synth 8-6157] synthesizing module 'dac_controller' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/dac_controller.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'dac_controller' (2#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/dac_controller.v:23]
-INFO: [Synth 8-6157] synthesizing module 'data_recorder' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/data_recorder.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/data_recorder.v:138]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/data_recorder.v:153]
-INFO: [Synth 8-6155] done synthesizing module 'data_recorder' (3#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/data_recorder.v:23]
-INFO: [Synth 8-6157] synthesizing module 'trig_arbiter' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/trig_arbiter.v:23]
+INFO: [Synth 8-226] default block is never used [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/hdl/tdc_v1_0_S00_AXI.v:299]
+INFO: [Synth 8-226] default block is never used [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/hdl/tdc_v1_0_S00_AXI.v:664]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/hdl/tdc_v1_0_S00_AXI.v:266]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/hdl/tdc_v1_0_S00_AXI.v:267]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg5_reg was removed.  [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/hdl/tdc_v1_0_S00_AXI.v:268]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg6_reg was removed.  [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/hdl/tdc_v1_0_S00_AXI.v:269]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg7_reg was removed.  [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/hdl/tdc_v1_0_S00_AXI.v:270]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg8_reg was removed.  [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/hdl/tdc_v1_0_S00_AXI.v:271]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg9_reg was removed.  [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/hdl/tdc_v1_0_S00_AXI.v:272]
+INFO: [Synth 8-6155] done synthesizing module 'tdc_v1_0_S00_AXI' (1#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/hdl/tdc_v1_0_S00_AXI.v:3]
+INFO: [Synth 8-6157] synthesizing module 'data_recorder' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/src/data_recorder.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/src/data_recorder.v:143]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/src/data_recorder.v:158]
+INFO: [Synth 8-6155] done synthesizing module 'data_recorder' (2#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/src/data_recorder.v:23]
+INFO: [Synth 8-6157] synthesizing module 'trig_arbiter' [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/src/trig_arbiter.v:23]
 	Parameter L1A_PER_EVENT bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'trig_arbiter' (4#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/src/trig_arbiter.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'tdc_v1_0' (5#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/8b71/hdl/tdc_v1_0.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_tdc_0_1' (6#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_tdc_0_1/synth/design_1_tdc_0_1.v:57]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[287]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[286]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[285]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[284]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[283]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[282]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[281]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[280]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[279]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[278]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[277]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[276]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[275]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[274]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[273]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[272]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[271]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[270]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[269]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[268]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[267]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[266]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[265]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[264]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[263]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[262]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[261]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[260]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[259]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[258]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[257]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[256]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[255]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[254]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[253]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[252]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[251]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[250]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[249]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[248]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[247]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[246]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[245]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[244]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[243]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[242]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[241]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[240]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[239]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[238]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[237]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[236]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[235]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[234]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[233]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[232]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[231]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[230]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[229]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[228]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[227]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[226]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[225]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[224]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[223]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[222]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[221]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[220]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[219]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[218]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[217]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[216]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[215]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[214]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[213]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[212]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[211]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[210]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[209]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[208]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[207]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[206]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[205]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[204]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[203]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[202]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[201]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[200]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[199]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[198]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[197]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[196]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[195]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[194]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[193]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[192]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[191]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[190]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[189]
-WARNING: [Synth 8-3331] design dac_controller has unconnected port dac_threshs[188]
-INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'trig_arbiter' (3#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/src/trig_arbiter.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'tdc_v1_0' (4#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ipshared/d515/hdl/tdc_v1_0.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_tdc_0_1' (5#1) [c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_tdc_0_1/synth/design_1_tdc_0_1.v:57]
+WARNING: [Synth 8-3331] design tdc_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design tdc_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design tdc_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design tdc_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design tdc_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design tdc_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[15]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[14]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[13]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[12]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[11]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[10]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[9]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[8]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[7]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[6]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[5]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[4]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[3]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[2]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[1]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 529.918 ; gain = 164.137
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 531.602 ; gain = 166.723
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -159,10 +83,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 529.918 ; gain = 164.137
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 531.602 ; gain = 166.723
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 529.918 ; gain = 164.137
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 531.602 ; gain = 166.723
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -174,27 +98,29 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.103 . Memory (MB): peak = 859.891 ; gain = 2.613
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.093 . Memory (MB): peak = 858.887 ; gain = 2.555
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 859.891 ; gain = 494.109
+Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 858.887 ; gain = 494.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 859.891 ; gain = 494.109
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 858.887 ; gain = 494.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 859.891 ; gain = 494.109
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 858.887 ; gain = 494.008
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'inner_cntr_reg' in module 'data_recorder'
 INFO: [Synth 8-5546] ROM "pl_data_loc_tracker" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "bramwe" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "l1a_seen" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "inner_cntr" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "bram_overflows_tracker" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "l1a_cntr_sync120" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "events_received" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 ---------------------------------------------------------------------------------------------------
@@ -206,7 +132,7 @@ INFO: [Synth 8-5544] ROM "events_received" won't be mapped to Block RAM because 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'inner_cntr_reg' using encoding 'one-hot' in module 'data_recorder'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 859.891 ; gain = 494.109
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 858.887 ; gain = 494.008
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -225,26 +151,26 @@ Detailed RTL Component Info :
 	   2 Input     11 Bit       Adders := 1     
 	   2 Input      9 Bit       Adders := 1     
 	  64 Input      7 Bit       Adders := 1     
+	  24 Input      5 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
 	               96 Bit    Registers := 1     
 	               64 Bit    Registers := 3     
-	               32 Bit    Registers := 31    
+	               32 Bit    Registers := 26    
 	               16 Bit    Registers := 1     
 	               11 Bit    Registers := 1     
 	                9 Bit    Registers := 4     
 	                7 Bit    Registers := 3     
 	                6 Bit    Registers := 1     
-	                5 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
-	                3 Bit    Registers := 2     
-	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 77    
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 78    
 +---Muxes : 
-	   2 Input     64 Bit        Muxes := 3     
-	   2 Input     32 Bit        Muxes := 30    
-	  32 Input     32 Bit        Muxes := 30    
+	   2 Input     64 Bit        Muxes := 4     
+	   2 Input     32 Bit        Muxes := 25    
+	  32 Input     32 Bit        Muxes := 25    
 	  64 Input     17 Bit        Muxes := 1     
 	   3 Input     16 Bit        Muxes := 2     
 	   2 Input     16 Bit        Muxes := 1     
@@ -254,9 +180,10 @@ Detailed RTL Component Info :
 	  64 Input      6 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 2     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 98    
+	   2 Input      1 Bit        Muxes := 171   
 	   3 Input      1 Bit        Muxes := 1     
 	   8 Input      1 Bit        Muxes := 64    
+	   5 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -267,13 +194,13 @@ Hierarchical RTL Component report
 Module tdc_v1_0_S00_AXI 
 Detailed RTL Component Info : 
 +---Registers : 
-	               32 Bit    Registers := 31    
+	               32 Bit    Registers := 26    
 	                7 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 6     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 30    
-	  32 Input     32 Bit        Muxes := 30    
+	   2 Input     32 Bit        Muxes := 25    
+	  32 Input     32 Bit        Muxes := 25    
 	   2 Input      1 Bit        Muxes := 5     
 Module data_recorder 
 Detailed RTL Component Info : 
@@ -285,17 +212,17 @@ Detailed RTL Component Info :
 	               16 Bit    Registers := 1     
 	                9 Bit    Registers := 3     
 	                6 Bit    Registers := 1     
-	                5 Bit    Registers := 1     
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 67    
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 68    
 +---Muxes : 
-	   2 Input     64 Bit        Muxes := 3     
+	   2 Input     64 Bit        Muxes := 4     
 	  64 Input     17 Bit        Muxes := 1     
 	   3 Input     16 Bit        Muxes := 2     
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input      9 Bit        Muxes := 1     
 	  64 Input      6 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 68    
+	   2 Input      1 Bit        Muxes := 139   
 	   3 Input      1 Bit        Muxes := 1     
 	   8 Input      1 Bit        Muxes := 64    
 Module trig_arbiter 
@@ -306,6 +233,7 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit       Adders := 1     
 	   2 Input     11 Bit       Adders := 1     
 	  64 Input      7 Bit       Adders := 1     
+	  24 Input      5 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
@@ -321,7 +249,8 @@ Detailed RTL Component Info :
 	   2 Input      9 Bit        Muxes := 3     
 	   2 Input      4 Bit        Muxes := 2     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 25    
+	   2 Input      1 Bit        Muxes := 27    
+	   5 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -339,7 +268,30 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 INFO: [Synth 8-5546] ROM "l1a_seen" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "bramwe" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "pl_data_loc_tracker" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design tdc_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design tdc_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design tdc_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design tdc_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design tdc_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design tdc_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[15]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[14]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[13]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[12]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[11]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[10]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[9]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[8]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[7]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[6]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[5]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[4]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[3]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[2]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[1]
+WARNING: [Synth 8-3331] design tdc_v1_0 has unconnected port bramrddata[0]
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/trig_arbiter_inst/msg_reg[0] )
 INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[32]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[1]'
 INFO: [Synth 8-3886] merging instance 'inst/data_recorder_inst/dout_hist_reg[16]' (FD) to 'inst/data_recorder_inst/dout_hist_reg[1]'
@@ -447,7 +399,7 @@ WARNING: [Synth 8-3332] Sequential element (axi_araddr_reg[0]) is unused and wil
 WARNING: [Synth 8-3332] Sequential element (axi_rresp_reg[1]) is unused and will be removed from module tdc_v1_0_S00_AXI.
 INFO: [Synth 8-3332] Sequential element (inst/trig_arbiter_inst/msg_reg[0]) is unused and will be removed from module design_1_tdc_0_1.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 859.891 ; gain = 494.109
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 858.887 ; gain = 494.008
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -459,13 +411,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:15 ; elapsed = 00:01:17 . Memory (MB): peak = 875.738 ; gain = 509.957
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:07 ; elapsed = 00:01:10 . Memory (MB): peak = 877.285 ; gain = 512.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 877.680 ; gain = 511.898
+Finished Timing Optimization : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 879.449 ; gain = 514.570
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -477,7 +429,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:16 ; elapsed = 00:01:19 . Memory (MB): peak = 916.207 ; gain = 550.426
+Finished Technology Mapping : Time (s): cpu = 00:01:09 ; elapsed = 00:01:12 . Memory (MB): peak = 920.215 ; gain = 555.336
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -501,7 +453,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+Finished IO Insertion : Time (s): cpu = 00:01:10 ; elapsed = 00:01:13 . Memory (MB): peak = 920.215 ; gain = 555.336
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -514,7 +466,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:10 ; elapsed = 00:01:13 . Memory (MB): peak = 920.215 ; gain = 555.336
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -526,25 +478,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:10 ; elapsed = 00:01:13 . Memory (MB): peak = 920.215 ; gain = 555.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:10 ; elapsed = 00:01:13 . Memory (MB): peak = 920.215 ; gain = 555.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:10 ; elapsed = 00:01:13 . Memory (MB): peak = 920.215 ; gain = 555.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:10 ; elapsed = 00:01:13 . Memory (MB): peak = 920.215 ; gain = 555.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -560,15 +512,15 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |CARRY4 |    64|
-|2     |LUT1   |     9|
-|3     |LUT2   |   196|
-|4     |LUT3   |   215|
-|5     |LUT4   |   318|
-|6     |LUT5   |    98|
-|7     |LUT6   |   621|
+|1     |CARRY4 |    96|
+|2     |LUT1   |    13|
+|3     |LUT2   |   203|
+|4     |LUT3   |   220|
+|5     |LUT4   |   222|
+|6     |LUT5   |   115|
+|7     |LUT6   |   690|
 |8     |MUXF7  |   128|
-|9     |FDRE   |  1449|
+|9     |FDRE   |  1416|
 |10    |FDSE   |    29|
 |11    |FD_1   |     3|
 +------+-------+------+
@@ -577,20 +529,20 @@ Report Instance Areas:
 +------+--------------------------+-----------------+------+
 |      |Instance                  |Module           |Cells |
 +------+--------------------------+-----------------+------+
-|1     |top                       |                 |  3130|
-|2     |  inst                    |tdc_v1_0         |  3129|
-|3     |    data_recorder_inst    |data_recorder    |  1048|
-|4     |    tdc_v1_0_S00_AXI_inst |tdc_v1_0_S00_AXI |  1572|
-|5     |    trig_arbiter_inst     |trig_arbiter     |   505|
+|1     |top                       |                 |  3135|
+|2     |  inst                    |tdc_v1_0         |  3134|
+|3     |    data_recorder_inst    |data_recorder    |  1067|
+|4     |    tdc_v1_0_S00_AXI_inst |tdc_v1_0_S00_AXI |  1393|
+|5     |    trig_arbiter_inst     |trig_arbiter     |   670|
 +------+--------------------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:10 ; elapsed = 00:01:13 . Memory (MB): peak = 920.215 ; gain = 555.336
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 28 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:54 ; elapsed = 00:01:08 . Memory (MB): peak = 916.207 ; gain = 220.453
-Synthesis Optimization Complete : Time (s): cpu = 00:01:18 ; elapsed = 00:01:21 . Memory (MB): peak = 916.207 ; gain = 550.426
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:49 ; elapsed = 00:01:01 . Memory (MB): peak = 920.215 ; gain = 228.051
+Synthesis Optimization Complete : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 920.215 ; gain = 555.336
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 195 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 227 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -599,13 +551,13 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FD_1 => FDRE (inverted pins: C): 3 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-137 Infos, 108 Warnings, 0 Critical Warnings and 0 Errors encountered.
+137 Infos, 57 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:21 ; elapsed = 00:01:24 . Memory (MB): peak = 916.207 ; gain = 563.082
+synth_design: Time (s): cpu = 00:01:14 ; elapsed = 00:01:17 . Memory (MB): peak = 920.215 ; gain = 567.801
 INFO: [Common 17-1381] The checkpoint 'C:/Users/HEP/Documents/universefactory/project/project.runs/design_1_tdc_0_1_synth_1/design_1_tdc_0_1.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_tdc_0_1/design_1_tdc_0_1.xci
 INFO: [Coretcl 2-1174] Renamed 4 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/HEP/Documents/universefactory/project/project.runs/design_1_tdc_0_1_synth_1/design_1_tdc_0_1.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_tdc_0_1_utilization_synth.rpt -pb design_1_tdc_0_1_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 916.207 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Jul 18 17:33:25 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 920.215 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 19 12:46:07 2018...

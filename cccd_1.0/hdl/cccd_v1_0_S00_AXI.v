@@ -20,6 +20,7 @@
         output wire [159:0] field6,
         input wire [1:0] done,
         input wire [158:0] received_data,
+        output wire req_hard_rst,
         
 		// User ports ends
 		// Do not modify the ports beyond this line
@@ -482,6 +483,7 @@
 	// Add user logic here
     assign trigger = slv_reg0[31];
     assign field15 = slv_reg0[30:4];
+    assign req_hard_rst = slv_reg0[0];
     assign field6 = {slv_reg5,slv_reg4,slv_reg3,slv_reg2,slv_reg1};
 	// User logic ends
 

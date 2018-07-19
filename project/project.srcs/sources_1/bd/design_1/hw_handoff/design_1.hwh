@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jul 18 17:31:13 2018" VIVADOVERSION="2018.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jul 19 12:44:12 2018" VIVADOVERSION="2018.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:microzed_7010:part0:1.1" DEVICE="7z010" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -68,11 +68,6 @@
     <PORT DIR="I" LEFT="23" NAME="comparators_0_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_comparators_0_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="tdc_0" PORT="comparators"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="6" NAME="dac_spi_0" RIGHT="0" SIGIS="undef" SIGNAME="tdc_0_dac_spi">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="tdc_0" PORT="dac_spi"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="DTMROC_DATA_OUT_P" SIGIS="undef" SIGNAME="External_Ports_DTMROC_DATA_OUT_P">
@@ -5275,11 +5270,6 @@
             <CONNECTION INSTANCE="External_Ports" PORT="comparators_0_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="6" NAME="dac_spi" RIGHT="0" SIGIS="undef" SIGNAME="tdc_0_dac_spi">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="dac_spi_0"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" LEFT="0" NAME="dtmroc_data_out" RIGHT="0" SIGIS="undef" SIGNAME="util_ds_buf_0_IBUF_OUT">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_ds_buf_0" PORT="IBUF_OUT"/>
@@ -5320,9 +5310,6 @@
             <CONNECTION INSTANCE="blk_mem_gen_0" PORT="douta"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="6" NAME="occupied_data_spaces" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="31" NAME="l1as_received" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="31" NAME="l1as_sent" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="6" NAME="s00_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_interconnect_0_M00_AXI_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_interconnect_0" PORT="M00_AXI_awaddr"/>

@@ -178,7 +178,6 @@ proc create_root_design { parentCell } {
   set DTMROC_HARD_N [ create_bd_port -dir O DTMROC_HARD_N ]
   set DTMROC_HARD_P [ create_bd_port -dir O DTMROC_HARD_P ]
   set comparators_0_0 [ create_bd_port -dir I -from 23 -to 0 comparators_0_0 ]
-  set dac_spi_0 [ create_bd_port -dir O -from 6 -to 0 dac_spi_0 ]
 
   # Create instance: axi_bram_ctrl_0, and set properties
   set axi_bram_ctrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.0 axi_bram_ctrl_0 ]
@@ -783,7 +782,6 @@ proc create_root_design { parentCell } {
   connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_1/M00_ARESETN] [get_bd_pins axi_interconnect_1/S00_ARESETN] [get_bd_pins cccd_0/s00_axi_aresetn] [get_bd_pins main_0/rst_n] [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins tdc_0/s00_axi_aresetn]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_interconnect_1/ACLK] [get_bd_pins axi_interconnect_1/M00_ACLK] [get_bd_pins axi_interconnect_1/S00_ACLK] [get_bd_pins cccd_0/s00_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins main_0/clk40] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/M_AXI_GP1_ACLK] [get_bd_pins tdc_0/clk40] [get_bd_pins tdc_0/s00_axi_aclk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins proc_sys_reset_0/ext_reset_in] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
-  connect_bd_net -net tdc_0_dac_spi [get_bd_ports dac_spi_0] [get_bd_pins tdc_0/dac_spi]
   connect_bd_net -net tdc_0_data_mode_cmd [get_bd_pins main_0/event_trigger] [get_bd_pins tdc_0/data_mode_cmd_out]
   connect_bd_net -net tdc_0_is_data_mode [get_bd_pins main_0/is_data_mode] [get_bd_pins tdc_0/is_data_mode]
   connect_bd_net -net util_ds_buf_0_IBUF_OUT [get_bd_pins tdc_0/dtmroc_data_out] [get_bd_pins util_ds_buf_0/IBUF_OUT]

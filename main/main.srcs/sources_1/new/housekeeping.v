@@ -28,14 +28,13 @@ module housekeeping(
     output hard_reset_n,
     input dtm_cmd_in,
     output dtm_cmd_in_p,
-    output dtm_cmd_in_n
+    output dtm_cmd_in_n,
+    input dtm_hard
     );
-        wire dtm_hard;
-        assign dtm_hard = 1'b0;
         OBUFDS #( 
             .IOSTANDARD("LVDS_25")
         ) OBUFDS_reset (
-            .O(hard_reset_p),
+            .O(hard_reset_p), 
             .OB(hard_reset_n),
             .I(dtm_hard)
         );

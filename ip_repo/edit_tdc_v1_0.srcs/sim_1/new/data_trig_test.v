@@ -53,36 +53,54 @@ module data_trig_test(
     wire bramwe;
     wire bramrst;
     
+    wire [31:0] l1as_outstanding;            
+    wire [31:0] panics_tracker;           
+    wire [31:0] buffer_rejects_tracker;   
+    wire [31:0] derandomizer_rejects_tracker;
+    wire [31:0] bram_overflows_tracker;
+    
     data_recorder data_recorder_inst (
         .dtmroc_data_out(dtmroc_data_out),
         .clk40(clk40),
         .clk120(clk120),
         .ps_data_loc_tracker_raw(ps_data_loc_tracker_raw),
-        .eventid(eventid),
-        .l1a_seen(l1a_seen),
         .data_loc_tracker_external(data_loc_tracker),
         .is_data_mode(is_data_mode),
+        .l1a_seen(l1a_seen),
+        .eventid(eventid),
         
         .bramaddr(bramaddr),
         .bramclk(bramclk),
         .bramwrdata(bramwrdata),
         .bramen(bramen),
         .bramwe(bramwe),
-        .bramrst(bramrst)
+        .bramrst(bramrst),
+        .bram_overflows_tracker(bram_overflows_tracker)
     );
     
+    
+    reg [1:0] trig_mode = 2'b10;
+    reg [4:0] trig_threshold = 3;
      
-    trig_arbiter #(
+    trig_arbiter # (
         .L1A_PER_EVENT(3)
-    ) trig_arbiter_inst(
+    ) trig_arbiter_inst (
         .clk40(clk40),
         .raw_is_data_mode(is_data_mode),
         .comparators(comparators),
-        .data_mode_cmd_out(data_mode_cmd_out),
         .data_loc_tracker(data_loc_tracker),
-        .trig_pattern(trig_pattern),
+        .data_mode_cmd_out(data_mode_cmd_out),
         .eventid(eventid),
-        .l1a_seen(l1a_seen)
+        .l1a_seen(l1a_seen),
+        
+        .trig_mode(trig_mode),
+        .trig_threshold(trig_threshold),
+        .trig_pattern(trig_pattern),
+        
+        .l1as_outstanding(l1as_outstanding),
+        .panics_tracker(panics_tracker),
+        .buffer_rejects_tracker(buffer_rejects_tracker),
+        .derandomizer_rejects_tracker(derandomizer_rejects_tracker)
     );
     
     reg [31:0] send_more_l1as = 0;
@@ -102,6 +120,10 @@ module data_trig_test(
     initial begin
         #240;
         is_data_mode = 1;
+        #1200000;
+        is_data_mode = 0;
+        #20000;
+        is_data_mode = 1;
     end
     
     integer bits_sent = 0;
@@ -117,7 +139,7 @@ module data_trig_test(
 
                 
                 if (l1as_sent_ == 13) begin
-                    dtmroc_data_out = {{47{1'b1}},1'b0};
+                    dtmroc_data_out = {{47{1'b1}},1'b1};
                 end else begin
                     dtmroc_data_out = {{48{1'b1}}};
                 end
@@ -149,15 +171,29 @@ module data_trig_test(
     initial begin
         #70000;
         ps_data_loc_tracker_raw = {{62{1'b0}},2'b01};
+        #1200000;
+        ps_data_loc_tracker_raw = 32'h00000000;
+        #400;
+        ps_data_loc_tracker_raw = 32'hFFFFFFFF;
     end
     
+    
+    integer thang = 0;
     initial begin
         #24;
-        while (1) begin
+        while (thang < 10) begin
             comparators <= 24'b000000_000000_000000_000001;
             #30;
             comparators <= 24'b000000_000000_000000_000000;
             #50000;
+            thang <= thang + 1;
+        end
+        while (1) begin
+            comparators <= 24'b000000_100000_001000_000101;
+            #30;
+            comparators <= 24'b000000_000000_000000_000000;
+            #50000;
+            thang <= thang + 1;
         end
     end
     

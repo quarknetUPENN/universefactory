@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:tdc:1.0
-// IP Revision: 31
+// IP Revision: 36
 
 (* X_CORE_INFO = "tdc_v1_0,Vivado 2018.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_tdc_0_1,tdc_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "design_1_tdc_0_1,tdc_v1_0,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=tdc,x_ipVersion=1.0,x_ipCoreRevision=31,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=7}" *)
+(* CORE_GENERATION_INFO = "design_1_tdc_0_1,tdc_v1_0,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=tdc,x_ipVersion=1.0,x_ipCoreRevision=36,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=7}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_tdc_0_1 (
   is_data_mode,
@@ -60,7 +60,6 @@ module design_1_tdc_0_1 (
   clk40,
   clk120,
   comparators,
-  dac_spi,
   dtmroc_data_out,
   bramaddr,
   bramclk,
@@ -69,9 +68,6 @@ module design_1_tdc_0_1 (
   bramwe,
   bramrst,
   bramrddata,
-  occupied_data_spaces,
-  l1as_received,
-  l1as_sent,
   s00_axi_awaddr,
   s00_axi_awprot,
   s00_axi_awvalid,
@@ -100,7 +96,6 @@ output wire data_mode_cmd_out;
 input wire clk40;
 input wire clk120;
 input wire [23 : 0] comparators;
-output wire [6 : 0] dac_spi;
 input wire [0 : 0] dtmroc_data_out;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORT_A ADDR" *)
 output wire [16 : 0] bramaddr;
@@ -117,9 +112,6 @@ output wire bramrst;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_PORT_A, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORT_A DOUT" *)
 input wire [15 : 0] bramrddata;
-output wire [6 : 0] occupied_data_spaces;
-output wire [31 : 0] l1as_received;
-output wire [31 : 0] l1as_sent;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *)
 input wire [6 : 0] s00_axi_awaddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *)
@@ -176,7 +168,6 @@ input wire s00_axi_aresetn;
     .clk40(clk40),
     .clk120(clk120),
     .comparators(comparators),
-    .dac_spi(dac_spi),
     .dtmroc_data_out(dtmroc_data_out),
     .bramaddr(bramaddr),
     .bramclk(bramclk),
@@ -185,9 +176,6 @@ input wire s00_axi_aresetn;
     .bramwe(bramwe),
     .bramrst(bramrst),
     .bramrddata(bramrddata),
-    .occupied_data_spaces(occupied_data_spaces),
-    .l1as_received(l1as_received),
-    .l1as_sent(l1as_sent),
     .s00_axi_awaddr(s00_axi_awaddr),
     .s00_axi_awprot(s00_axi_awprot),
     .s00_axi_awvalid(s00_axi_awvalid),

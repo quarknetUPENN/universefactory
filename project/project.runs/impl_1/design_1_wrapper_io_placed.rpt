@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date                      : Wed Jul 18 17:39:57 2018
+| Date                      : Thu Jul 19 12:50:07 2018
 | Host                      : HEP-PC running 64-bit Service Pack 1  (build 7601)
 | Command                   : report_io -file design_1_wrapper_io_placed.rpt
 | Design                    : design_1_wrapper
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|           171 |
+|           164 |
 +---------------+
 
 
@@ -409,12 +409,12 @@ Table of Contents
 | W12        |                     |            | GND                     | GND           |                   |         |            |      |                      |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | W13        |                     | High Range | IO_L4N_T0_34            | User IO       |                   |      34 |            |      |                      |                      |         |            |           |          |      |                  |              |                   |              |
 | W14        |                     | High Range | IO_L8P_T1_34            | User IO       |                   |      34 |            |      |                      |                      |         |            |           |          |      |                  |              |                   |              |
-| W15        | dac_spi_0[6]        | High Range | IO_L10N_T1_34           | OUTPUT        | LVCMOS25          |      34 |         12 | SLOW |                      |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| W16        | dac_spi_0[5]        | High Range | IO_L18N_T2_34           | OUTPUT        | LVCMOS25          |      34 |         12 | SLOW |                      |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| W15        |                     | High Range | IO_L10N_T1_34           | User IO       |                   |      34 |            |      |                      |                      |         |            |           |          |      |                  |              |                   |              |
+| W16        |                     | High Range | IO_L18N_T2_34           | User IO       |                   |      34 |            |      |                      |                      |         |            |           |          |      |                  |              |                   |              |
 | W17        |                     | High Range | VCCO_34                 | VCCO          |                   |      34 |            |      |                      |                      |    2.50 |            |           |          |      |                  |              |                   |              |
-| W18        | dac_spi_0[4]        | High Range | IO_L22P_T3_34           | OUTPUT        | LVCMOS25          |      34 |         12 | SLOW |                      |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| W19        | dac_spi_0[3]        | High Range | IO_L22N_T3_34           | OUTPUT        | LVCMOS25          |      34 |         12 | SLOW |                      |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| W20        | dac_spi_0[2]        | High Range | IO_L16N_T2_34           | OUTPUT        | LVCMOS25          |      34 |         12 | SLOW |                      |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| W18        |                     | High Range | IO_L22P_T3_34           | User IO       |                   |      34 |            |      |                      |                      |         |            |           |          |      |                  |              |                   |              |
+| W19        |                     | High Range | IO_L22N_T3_34           | User IO       |                   |      34 |            |      |                      |                      |         |            |           |          |      |                  |              |                   |              |
+| W20        |                     | High Range | IO_L16N_T2_34           | User IO       |                   |      34 |            |      |                      |                      |         |            |           |          |      |                  |              |                   |              |
 | Y1         | DDR_dm[3]           |            | PS_DDR_DM3_502          | INOUT         | SSTL15_T_DCI      |         |            | FAST |            DCI SPLIT |            FP_VTT_50 |         | FIXED      |           |          |      | SPLIT            |              |                   |              |
 | Y2         | DDR_dq[28]          |            | PS_DDR_DQ28_502         | INOUT         | SSTL15_T_DCI      |         |            | FAST |            DCI SPLIT |            FP_VTT_50 |         | FIXED      |           |          |      | SPLIT            |              |                   |              |
 | Y3         | DDR_dq[25]          |            | PS_DDR_DQ25_502         | INOUT         | SSTL15_T_DCI      |         |            | FAST |            DCI SPLIT |            FP_VTT_50 |         | FIXED      |           |          |      | SPLIT            |              |                   |              |
@@ -432,8 +432,8 @@ Table of Contents
 | Y15        |                     |            | GND                     | GND           |                   |         |            |      |                      |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | Y16        | DTMROC_HARD_P       | High Range | IO_L7P_T1_34            | OUTPUT        | LVDS_25           |      34 |            |      |                      |               FD_100 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | Y17        | DTMROC_HARD_N       | High Range | IO_L7N_T1_34            | OUTPUT        | LVDS_25           |      34 |            |      |                      |               FD_100 |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| Y18        | dac_spi_0[1]        | High Range | IO_L17P_T2_34           | OUTPUT        | LVCMOS25          |      34 |         12 | SLOW |                      |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| Y19        | dac_spi_0[0]        | High Range | IO_L17N_T2_34           | OUTPUT        | LVCMOS25          |      34 |         12 | SLOW |                      |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| Y18        |                     | High Range | IO_L17P_T2_34           | User IO       |                   |      34 |            |      |                      |                      |         |            |           |          |      |                  |              |                   |              |
+| Y19        |                     | High Range | IO_L17N_T2_34           | User IO       |                   |      34 |            |      |                      |                      |         |            |           |          |      |                  |              |                   |              |
 | Y20        |                     | High Range | VCCO_34                 | VCCO          |                   |      34 |            |      |                      |                      |    2.50 |            |           |          |      |                  |              |                   |              |
 +------------+---------------------+------------+-------------------------+---------------+-------------------+---------+------------+------+----------------------+----------------------+---------+------------+-----------+----------+------+------------------+--------------+-------------------+--------------+
 * Default value
