@@ -40793,3 +40793,747 @@ make pre-build main-build
 a9-linaro-pre-build-step
 ' '
 make: Nothing to be done for `main-build'.
+14:28:14 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+15:49:27 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:03:32 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:04:36 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:04:44 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:132:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:148:7: error: redeclaration of 'i' with no linkage
+   int i = 0;
+       ^
+../src/helloworld.c:133:7: note: previous declaration of 'i' was here
+   int i;
+       ^
+../src/helloworld.c:157:7: warning: variable 'gaaaaaabage' set but not used [-Wunused-but-set-variable]
+   int gaaaaaabage = 0;
+       ^~~~~~~~~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:212:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:212:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+make: *** [src/helloworld.o] Error 1
+16:04:45 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:132:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:148:7: error: redeclaration of 'i' with no linkage
+   int i = 0;
+       ^
+../src/helloworld.c:133:7: note: previous declaration of 'i' was here
+   int i;
+       ^
+../src/helloworld.c:157:7: warning: variable 'gaaaaaabage' set but not used [-Wunused-but-set-variable]
+   int gaaaaaabage = 0;
+       ^~~~~~~~~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:212:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:212:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+make: *** [src/helloworld.o] Error 1
+16:04:50 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:132:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:157:7: warning: variable 'gaaaaaabage' set but not used [-Wunused-but-set-variable]
+   int gaaaaaabage = 0;
+       ^~~~~~~~~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:212:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:212:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72180	   2588	  23328	  98096	  17f30	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+16:04:57 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:15:45 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:27:05 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:27:49 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:132:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:157:7: warning: variable 'gaaaaaabage' set but not used [-Wunused-but-set-variable]
+   int gaaaaaabage = 0;
+       ^~~~~~~~~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:212:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:212:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72180	   2588	  23328	  98096	  17f30	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+16:27:50 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:39:43 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:40:21 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:132:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:157:7: warning: variable 'gaaaaaabage' set but not used [-Wunused-but-set-variable]
+   int gaaaaaabage = 0;
+       ^~~~~~~~~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:212:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:212:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72116	   2588	  23328	  98032	  17ef0	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+16:40:22 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:40:52 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:132:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:157:7: warning: variable 'gaaaaaabage' set but not used [-Wunused-but-set-variable]
+   int gaaaaaabage = 0;
+       ^~~~~~~~~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:212:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:212:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72116	   2588	  23328	  98032	  17ef0	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+16:40:53 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:55:35 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:56:07 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:132:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:157:7: warning: variable 'gaaaaaabage' set but not used [-Wunused-but-set-variable]
+   int gaaaaaabage = 0;
+       ^~~~~~~~~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:212:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:212:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72180	   2588	  23328	  98096	  17f30	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+16:56:08 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:57:46 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:58:13 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:00:41 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:03:33 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:06:31 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:18:58 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:19:50 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:132:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:157:7: warning: variable 'gaaaaaabage' set but not used [-Wunused-but-set-variable]
+   int gaaaaaabage = 0;
+       ^~~~~~~~~~~
+../src/helloworld.c: In function 'asdf':
+../src/helloworld.c:167:7: warning: unused variable 'blah' [-Wunused-variable]
+   int blah;
+       ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:213:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:213:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72180	   2588	  23328	  98096	  17f30	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+17:19:55 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:20:23 **** Auto Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:132:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:157:7: warning: variable 'gaaaaaabage' set but not used [-Wunused-but-set-variable]
+   int gaaaaaabage = 0;
+       ^~~~~~~~~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:213:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:213:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72180	   2588	  23328	  98096	  17f30	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+17:20:45 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:24:24 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+08:47:36 **** Build of project main_ps_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/cccd_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/cccd_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_6/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/cccd_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/cccd_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cccd..."
+cccd_selftest.c: In function 'CCCD_Reg_SelfTest':
+cccd_selftest.c:52:53: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( CCCD_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                     ^~
+cccd_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sdps"
+xsdps.c: In function 'XSdPs_FrameCmd':
+xsdps.c:1272:11: warning: this statement may fall through [-Wimplicit-fallthrough=]
+    RetVal |= RESP_R1 | (u32)XSDPS_DAT_PRESENT_SEL_MASK;
+xsdps.c:1273:3: note: here
+   case ACMD41:
+   ^~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_6/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+In file included from sleep.c:57:0:
+xtime_l.h:89:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from usleep.c:60:0:
+xtime_l.h:89:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:54:0:
+xtime_l.h:89:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xtime_l.c:53:0:
+xtime_l.h:89:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+08:48:09 **** Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'cccd':
+../src/helloworld.c:102:2: warning: implicit declaration of function 'printb'; did you mean 'print'? [-Wimplicit-function-declaration]
+  printb(&comms[0]);
+  ^~~~~~
+  print
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:110:2: warning: implicit declaration of function 'ghjk' [-Wimplicit-function-declaration]
+  ghjk();
+  ^~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:132:6: warning: conflicting types for 'ghjk'
+ void ghjk(){
+      ^~~~
+../src/helloworld.c:110:2: note: previous implicit declaration of 'ghjk' was here
+  ghjk();
+  ^~~~
+../src/helloworld.c: In function 'ghjk':
+../src/helloworld.c:157:7: warning: variable 'gaaaaaabage' set but not used [-Wunused-but-set-variable]
+   int gaaaaaabage = 0;
+       ^~~~~~~~~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:213:21: warning: type defaults to 'int' in declaration of 'ptr' [-Wimplicit-int]
+ void printb(const * ptr)
+                     ^~~
+../src/helloworld.c:213:6: warning: conflicting types for 'printb'
+ void printb(const * ptr)
+      ^~~~~~
+../src/helloworld.c:102:2: note: previous implicit declaration of 'printb' was here
+  printb(&comms[0]);
+  ^~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../main_ps_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: main_ps.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../main_ps_bsp/ps7_cortexa9_0/lib -o "main_ps.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main_ps.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size main_ps.elf  |tee "main_ps.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72180	   2588	  23328	  98096	  17f30	main_ps.elf
+'Finished building: main_ps.elf.size'
+' '
+08:49:22 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+08:50:26 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+09:05:16 **** Incremental Build of configuration Debug for project main_ps ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.

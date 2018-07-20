@@ -768,6 +768,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net bram_controller_addr_0_we [get_bd_pins blk_mem_gen_0/web] [get_bd_pins bram_controller_addr_0/we]
   connect_bd_net -net cccd_0_field6 [get_bd_pins cccd_0/field6] [get_bd_pins main_0/field6]
   connect_bd_net -net cccd_0_field15 [get_bd_pins cccd_0/field15] [get_bd_pins main_0/field15]
+  connect_bd_net -net cccd_0_req_hard_rst [get_bd_pins cccd_0/req_hard_rst] [get_bd_pins main_0/dtm_hard_in]
   connect_bd_net -net cccd_0_trigger [get_bd_pins cccd_0/trigger] [get_bd_pins main_0/command_trigger]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins tdc_0/clk120]
   connect_bd_net -net comparators_0_0_1 [get_bd_ports comparators_0_0] [get_bd_pins tdc_0/comparators]

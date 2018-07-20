@@ -164,6 +164,7 @@ void ghjk(){
 void asdf(){
 	 printf("hello world");
 	 tdc[0] = 0;
+
 //              0bT111222233333333AAAAAA555555XXXX;
 
 	 comms[5] = 0b00001111000011110000000000000000;

@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:tdc:1.0
-// IP Revision: 36
+// IP Revision: 46
 
 (* X_CORE_INFO = "tdc_v1_0,Vivado 2018.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_tdc_0_1,tdc_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "design_1_tdc_0_1,tdc_v1_0,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=tdc,x_ipVersion=1.0,x_ipCoreRevision=36,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=7}" *)
+(* CORE_GENERATION_INFO = "design_1_tdc_0_1,tdc_v1_0,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=tdc,x_ipVersion=1.0,x_ipCoreRevision=46,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=7}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_tdc_0_1 (
   is_data_mode,

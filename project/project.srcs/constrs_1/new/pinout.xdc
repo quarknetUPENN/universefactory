@@ -109,3 +109,6 @@ set_property IOSTANDARD LVCMOS25 [get_ports {dac_spi_0[0]}]
 
 set_property PACKAGE_PIN N20 [get_ports DTMROC_DATA_OUT_P]
 set_property IOSTANDARD LVDS_25 [get_ports DTMROC_DATA_OUT_P]
+
+#set_property DONT_TOUCH true [get_cells design_1_i/main_0/inst/cmd_out_hist[143]_i_1]
+

@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Thu Jul 19 12:44:10 2018
+//Date        : Thu Jul 19 16:47:16 2018
 //Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -164,6 +164,7 @@ module design_1
   wire bram_controller_addr_0_we;
   wire [26:0]cccd_0_field15;
   wire [159:0]cccd_0_field6;
+  wire cccd_0_req_hard_rst;
   wire cccd_0_trigger;
   wire clk_wiz_0_clk_out1;
   wire [23:0]comparators_0_0_1;
@@ -531,6 +532,7 @@ module design_1
         .field15(cccd_0_field15),
         .field6(cccd_0_field6),
         .received_data(main_0_received_data),
+        .req_hard_rst(cccd_0_req_hard_rst),
         .s00_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s00_axi_araddr(axi_interconnect_0_M01_AXI_ARADDR[5:0]),
         .s00_axi_aresetn(proc_sys_reset_0_peripheral_aresetn),
@@ -565,6 +567,7 @@ module design_1
         .dtm_cmd_in_n(main_0_dtm_cmd_in_n),
         .dtm_cmd_in_p(main_0_dtm_cmd_in_p),
         .dtm_cmd_out(util_ds_buf_1_IBUF_OUT),
+        .dtm_hard_in(cccd_0_req_hard_rst),
         .dtm_hard_n(main_0_dtm_hard_n),
         .dtm_hard_p(main_0_dtm_hard_p),
         .event_trigger(tdc_0_data_mode_cmd),
