@@ -52,7 +52,10 @@
 #include <string.h>
 #include <stdbool.h>
 
-#define BIT(var,pos) ((var) & (1<<(pos)))
+#define CHECK_BIT(var,pos) ((var) & (1<<(pos)))
+
+#define WR 0
+#define RD 1
 
 volatile unsigned int *comms = (volatile unsigned int *) 0x43c00000;
 volatile unsigned int *tdc = (volatile unsigned int *) 0x43c10000;
@@ -61,54 +64,89 @@ typedef enum cmd {
     L1A 		= 0b1100000,
 	SoftRst 	= 0b1010100,
 	BXRst 		= 0b1010010,
-	WrReg 		= 0b1010111,
-	RdReg 		= 0b1010111
+	Reg 		= 0b1010111
 } command;
 
 typedef enum reg {
 	Config = 0b00000, Status = 0b00011, Thresh1 = 0b01010, Thresh2 = 0b01100
 } registers;
 
-void cccd(enum cmd command, enum reg registers, bool isRead, int chipId, int payload){
-	int cmdlength = 0;
-	switch (registers) {
-		case Config:
-			cmdlength = 0b00100100;
-			comms[5] = payload << 8;
-			break;
-		case Status:
-			cmdlength = 0b00001100;
-			comms[5] = payload;
-			break;
-		case Thresh1:
-			cmdlength = 0b00011100;
-			comms[5] = payload << 16;
-			break;
-		case Thresh2:
-			cmdlength = 0b00011100;
-			comms[5] = payload << 16;
-			break;
-		default:
-			cmdlength = 0;
-			comms[5] = 0;
-			break;
+void cccd(bool isRead, enum cmd command, enum reg registers, int chipId, int payload){
+	if (chipId > 0b111111){
+		printf("Unrecognized chipId %u requested! Ignoring", chipId);
+		return;
 	}
 
+	// set field15.  if it's a broadcast command things are easy
+	int field15 = 0;
+	if (command == L1A | command == SoftRst | command == BXRst){
+		field15 = command << 24;
+	} else if (command == Reg) {
+		int cmdlength = 0;
+		if (isRead){
+			cmdlength = 0b00001100;
+			comms[5] = 0;
+		} else {
+			switch (registers) {
+				case Config:
+					cmdlength = 0b00100100;
+					comms[5] = payload << 8;
+					break;
+				case Status:
+					cmdlength = 0b00001100;
+					comms[5] = payload;
+					break;
+				case Thresh1:
+					cmdlength = 0b00011100;
+					comms[5] = payload << 16;
+					break;
+				case Thresh2:
+					cmdlength = 0b00011100;
+					comms[5] = payload << 16;
+					break;
+				default:
+					cmdlength = 0;
+					comms[5] = 0;
+					printf("Unrecognized register %u requested! Ignoring", registers);
+					return;
+			}
+		}
 
-	int field15 = (command << 24) + (cmdlength << 16) + (chipId << 10) + ((isRead ? 1 : 0) << 9) + (registers << 4);
+		field15 = (command << 24) + (cmdlength << 16) + (chipId << 10) + ((isRead ? 1 : 0) << 9) + (registers << 4);
+	} else {
+		printf("Unrecognized command %u requested! Ignoring", command);
+		return;
+	}
+
+	// send the command by toggling the trigger bit
 	comms[0] = (0 << 31) + field15;
 	comms[0] = (1 << 31) + field15;
 
-	printb(&comms[0]);
-	printb(&comms[5]);
+	int delay = 0;
+	while(CHECK_BIT(comms[6],1)){
+		printf("waiting for completion...");
+		if (delay > 10000){
+			printf("ERROR!  Timed out waiting to send field15 %H, are you in hard reset?", field15);
+			break;
+		}
+		delay++;
+	}
 }
 
 
 int main()
 {
-	cccd(WrReg, Config, false, 6, 3);
-	ghjk();
-	printf("%u",tdc[6]);
+	cccd(WR,Reg,Thresh1,0b111111,0b0001111100011111);
+	printb(&comms[0]);
+	printb(&comms[5]);
+	cccd(RD,Reg,Thresh1,1,0);
+	printb(&comms[0]);
+	printb(&comms[6]);
+	printb(&comms[10]);
+
+//	cccd(WrReg, Config, false, 0, 3);
+//	ghjk();
+//	printf("%u",tdc[6]);
 
 //	 tdc[0] = 0b00000000000000000000000000000000;
 //
