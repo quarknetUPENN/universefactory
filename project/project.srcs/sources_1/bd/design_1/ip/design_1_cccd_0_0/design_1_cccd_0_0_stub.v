@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Thu Jul 19 15:41:37 2018
+// Date        : Wed Jul 25 12:09:28 2018
 // Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
-// Command     : write_verilog -force -mode synth_stub
-//               C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_cccd_0_0/design_1_cccd_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top design_1_cccd_0_0 -prefix
+//               design_1_cccd_0_0_ design_1_cccd_0_0_stub.v
 // Design      : design_1_cccd_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1
@@ -20,12 +20,12 @@ module design_1_cccd_0_0(trigger, field15, field6, done, received_data,
   s00_axi_bvalid, s00_axi_bready, s00_axi_araddr, s00_axi_arprot, s00_axi_arvalid, 
   s00_axi_arready, s00_axi_rdata, s00_axi_rresp, s00_axi_rvalid, s00_axi_rready, 
   s00_axi_aclk, s00_axi_aresetn)
-/* synthesis syn_black_box black_box_pad_pin="trigger,field15[26:0],field6[159:0],done[1:0],received_data[158:0],req_hard_rst,s00_axi_awaddr[5:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[5:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,s00_axi_aclk,s00_axi_aresetn" */;
+/* synthesis syn_black_box black_box_pad_pin="trigger,field15[26:0],field6[143:0],done[1:0],received_data[143:0],req_hard_rst,s00_axi_awaddr[5:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[5:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,s00_axi_aclk,s00_axi_aresetn" */;
   output trigger;
   output [26:0]field15;
-  output [159:0]field6;
+  output [143:0]field6;
   input [1:0]done;
-  input [158:0]received_data;
+  input [143:0]received_data;
   output req_hard_rst;
   input [5:0]s00_axi_awaddr;
   input [2:0]s00_axi_awprot;

@@ -36,7 +36,7 @@ module data_trig_test(
     // from the AXI port    
     reg [63:0] ps_data_loc_tracker_raw = 0;
     reg is_data_mode = 0;
-    reg [23:0] trig_pattern = 24'b000000_000000_000000_000001;
+    reg [23:0] trig_pattern = 24'b000000_000000_000000_000000;
  
     
     // interconnects
@@ -79,14 +79,14 @@ module data_trig_test(
     );
     
     
-    reg [1:0] trig_mode = 2'b10;
-    reg [4:0] trig_threshold = 3;
+    reg [1:0] trig_mode = 2'b00;
+    reg [4:0] trig_threshold = 0;
      
     trig_arbiter # (
         .L1A_PER_EVENT(3)
     ) trig_arbiter_inst (
         .clk40(clk40),
-        .raw_is_data_mode(is_data_mode),
+        .is_data_mode(is_data_mode),
         .comparators(comparators),
         .data_loc_tracker(data_loc_tracker),
         .data_mode_cmd_out(data_mode_cmd_out),

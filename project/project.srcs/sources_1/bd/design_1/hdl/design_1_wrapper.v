@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Mon Jul 23 13:45:57 2018
+//Date        : Thu Jul 26 08:37:28 2018
 //Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -31,6 +31,8 @@ module design_1_wrapper
     DTMROC_CMD_IN_P,
     DTMROC_CMD_OUT_N,
     DTMROC_CMD_OUT_P,
+    DTMROC_DATA_OUT1_N,
+    DTMROC_DATA_OUT1_P,
     DTMROC_DATA_OUT_N,
     DTMROC_DATA_OUT_P,
     DTMROC_HARD_N,
@@ -63,6 +65,8 @@ module design_1_wrapper
   output DTMROC_CMD_IN_P;
   input DTMROC_CMD_OUT_N;
   input DTMROC_CMD_OUT_P;
+  input DTMROC_DATA_OUT1_N;
+  input DTMROC_DATA_OUT1_P;
   input DTMROC_DATA_OUT_N;
   input DTMROC_DATA_OUT_P;
   output DTMROC_HARD_N;
@@ -96,6 +100,8 @@ module design_1_wrapper
   wire DTMROC_CMD_IN_P;
   wire DTMROC_CMD_OUT_N;
   wire DTMROC_CMD_OUT_P;
+  wire DTMROC_DATA_OUT1_N;
+  wire DTMROC_DATA_OUT1_P;
   wire DTMROC_DATA_OUT_N;
   wire DTMROC_DATA_OUT_P;
   wire DTMROC_HARD_N;
@@ -130,6 +136,8 @@ module design_1_wrapper
         .DTMROC_CMD_IN_P(DTMROC_CMD_IN_P),
         .DTMROC_CMD_OUT_N(DTMROC_CMD_OUT_N),
         .DTMROC_CMD_OUT_P(DTMROC_CMD_OUT_P),
+        .DTMROC_DATA_OUT1_N(DTMROC_DATA_OUT1_N),
+        .DTMROC_DATA_OUT1_P(DTMROC_DATA_OUT1_P),
         .DTMROC_DATA_OUT_N(DTMROC_DATA_OUT_N),
         .DTMROC_DATA_OUT_P(DTMROC_DATA_OUT_P),
         .DTMROC_HARD_N(DTMROC_HARD_N),

@@ -56,6 +56,7 @@
 
 #define WR 0
 #define RD 1
+#define CHIPID_ALL 0b111111
 
 volatile unsigned int *comms = (volatile unsigned int *) 0x43c00000;
 volatile unsigned int *tdc = (volatile unsigned int *) 0x43c10000;
@@ -79,7 +80,7 @@ void cccd(bool isRead, enum cmd command, enum reg registers, int chipId, int pay
 
 	// set field15.  if it's a broadcast command things are easy
 	int field15 = 0;
-	if (command == L1A | command == SoftRst | command == BXRst){
+	if ((command == L1A) | (command == SoftRst) | (command == BXRst)){
 		field15 = command << 24;
 	} else if (command == Reg) {
 		int cmdlength = 0;
@@ -121,32 +122,25 @@ void cccd(bool isRead, enum cmd command, enum reg registers, int chipId, int pay
 	// send the command by toggling the trigger bit
 	comms[0] = (0 << 31) + field15;
 	comms[0] = (1 << 31) + field15;
-
-	int delay = 0;
-	while(CHECK_BIT(comms[6],1)){
-		printf("waiting for completion...");
-		if (delay > 10000){
-			printf("ERROR!  Timed out waiting to send field15 %H, are you in hard reset?", field15);
-			break;
-		}
-		delay++;
-	}
 }
 
 
 int main()
 {
-	cccd(WR,Reg,Thresh1,0b111111,0b0001111100011111);
-	printb(&comms[0]);
-	printb(&comms[5]);
-	cccd(RD,Reg,Thresh1,1,0);
-	printb(&comms[0]);
-	printb(&comms[6]);
-	printb(&comms[10]);
+//	cccd(WR,Reg,Thresh1,1,0b0001111100011111);
+//	printb(&comms[0]);
+//	printb(&comms[5]);
+//	cccd(RD,Reg,Thresh1,0,0);
+//	printb(&comms[0]);
+//	printb(&comms[6]);
+//	printb(&comms[10]);
 
-//	cccd(WrReg, Config, false, 0, 3);
-//	ghjk();
-//	printf("%u",tdc[6]);
+	cccd(WR,Reg,Config,CHIPID_ALL,3);
+	printf("sendid set");
+
+	ghjk();
+
+
 
 //	 tdc[0] = 0b00000000000000000000000000000000;
 //
@@ -193,7 +187,7 @@ void ghjk(){
 	 print("done\n");
 
 	 int gaaaaaabage = 0;
-	 for (int i = 0; i < 10000; i = i + 2){
+	 for (int i = 0; i < 6000; i = i + 2){
 		 gaaaaaabage = bram[i/2]; // DO NOT ERASE
 		 printf("this is [%d,%d] %08X ", i+1, i, bram[i/2]);
 		 printb(&bram[i/2]);

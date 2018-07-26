@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:cccd:1.0
-// IP Revision: 7
+// IP Revision: 8
 
 (* X_CORE_INFO = "cccd_v1_0,Vivado 2018.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_cccd_0_0,cccd_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "design_1_cccd_0_0,cccd_v1_0,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=cccd,x_ipVersion=1.0,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=6}" *)
+(* CORE_GENERATION_INFO = "design_1_cccd_0_0,cccd_v1_0,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=cccd,x_ipVersion=1.0,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=6}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_cccd_0_0 (
   trigger,
@@ -86,9 +86,9 @@ module design_1_cccd_0_0 (
 
 output wire trigger;
 output wire [26 : 0] field15;
-output wire [159 : 0] field6;
+output wire [143 : 0] field6;
 input wire [1 : 0] done;
-input wire [158 : 0] received_data;
+input wire [143 : 0] received_data;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME req_hard_rst, POLARITY ACTIVE_LOW" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 req_hard_rst RST" *)
 output wire req_hard_rst;

@@ -10,12 +10,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="38951fs"></ZoomEndTime>
-      <Cursor1Time time="8000fs"></Cursor1Time>
+      <ZoomEndTime time="1024001fs"></ZoomEndTime>
+      <Cursor1Time time="200000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="346"></NameColumnWidth>
-      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+      <ValueColumnWidth column_width="104"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="7" />
    <wave_markers>
@@ -38,41 +38,44 @@
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
       <obj_property name="label">ps_dout</obj_property>
    </wvobject>
-   <wvobject fp_name="design_1_i/Net3" type="logic">
+   <wvobject fp_name="design_1_i/Net3" type="array">
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">design_1_i/Net3</obj_property>
-      <obj_property name="ObjectShortName">Net3</obj_property>
+      <obj_property name="ElementShortName">design_1_i/Net3[16:0]</obj_property>
+      <obj_property name="ObjectShortName">Net3[16:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-      <obj_property name="label">ps_enable</obj_property>
-   </wvobject>
-   <wvobject fp_name="design_1_i/tdc_0_bramaddr" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/tdc_0_bramaddr[16:0]</obj_property>
-      <obj_property name="ObjectShortName">tdc_0_bramaddr[16:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="label">bramaddr</obj_property>
    </wvobject>
    <wvobject fp_name="design_1_i/tdc_0_bramwrdata" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">design_1_i/tdc_0_bramwrdata[15:0]</obj_property>
       <obj_property name="ObjectShortName">tdc_0_bramwrdata[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="label">bramwrdata</obj_property>
    </wvobject>
-   <wvobject fp_name="design_1_i/tdc_0_bramen" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/tdc_0_bramen</obj_property>
-      <obj_property name="ObjectShortName">tdc_0_bramen</obj_property>
+   <wvobject fp_name="design_1_i/Net2" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">design_1_i/Net2</obj_property>
+      <obj_property name="ObjectShortName">Net2</obj_property>
+      <obj_property name="label">clk40</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="design_1_i/tdc_0_occupied_data_spaces" type="array">
+   <wvobject fp_name="design_1_i/Net1" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">design_1_i/Net1</obj_property>
+      <obj_property name="ObjectShortName">Net1</obj_property>
+      <obj_property name="label">bramen</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="design_1_i/tdc_0_inner_cntr" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/tdc_0_occupied_data_spaces[6:0]</obj_property>
-      <obj_property name="ObjectShortName">tdc_0_occupied_data_spaces[6:0]</obj_property>
+      <obj_property name="ElementShortName">design_1_i/tdc_0_inner_cntr[2:0]</obj_property>
+      <obj_property name="ObjectShortName">tdc_0_inner_cntr[2:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>

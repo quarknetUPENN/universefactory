@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:cccd:1.0
-// IP Revision: 7
+// IP Revision: 8
 
 `timescale 1ns/1ps
 
@@ -85,9 +85,9 @@ module design_1_cccd_0_0 (
 
 output wire trigger;
 output wire [26 : 0] field15;
-output wire [159 : 0] field6;
+output wire [143 : 0] field6;
 input wire [1 : 0] done;
-input wire [158 : 0] received_data;
+input wire [143 : 0] received_data;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME req_hard_rst, POLARITY ACTIVE_LOW" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 req_hard_rst RST" *)
 output wire req_hard_rst;

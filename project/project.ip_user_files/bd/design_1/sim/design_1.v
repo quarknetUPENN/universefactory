@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Mon Jul 23 13:32:55 2018
+//Date        : Wed Jul 25 17:49:07 2018
 //Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=20,numReposBlks=14,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=2,da_clkrst_cnt=14,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=23,numReposBlks=17,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=2,da_clkrst_cnt=14,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (DDR_addr,
     DDR_ba,
@@ -32,6 +32,8 @@ module design_1
     DTMROC_CMD_IN_P,
     DTMROC_CMD_OUT_N,
     DTMROC_CMD_OUT_P,
+    DTMROC_DATA_OUT1_N,
+    DTMROC_DATA_OUT1_P,
     DTMROC_DATA_OUT_N,
     DTMROC_DATA_OUT_P,
     DTMROC_HARD_N,
@@ -64,6 +66,8 @@ module design_1
   output DTMROC_CMD_IN_P;
   input DTMROC_CMD_OUT_N;
   input DTMROC_CMD_OUT_P;
+  input DTMROC_DATA_OUT1_N;
+  input DTMROC_DATA_OUT1_P;
   input DTMROC_DATA_OUT_N;
   input DTMROC_DATA_OUT_P;
   output DTMROC_HARD_N;
@@ -78,10 +82,14 @@ module design_1
 
   wire DTMROC_CMD_OUT_N_1;
   wire DTMROC_CMD_OUT_P_1;
+  wire DTMROC_DATA_OUT1_N_1;
+  wire DTMROC_DATA_OUT1_P_1;
   wire DTMROC_DATA_OUT_N_1;
   wire DTMROC_DATA_OUT_P_1;
   wire [1:0]Net;
+  wire Net1;
   wire Net2;
+  wire [16:0]Net3;
   wire [20:0]axi_bram_ctrl_0_bram_addr_a;
   wire axi_bram_ctrl_0_bram_rst_a;
   wire [31:0]axi_bram_ctrl_0_bram_wrdata_a;
@@ -163,7 +171,7 @@ module design_1
   wire bram_controller_addr_0_en;
   wire bram_controller_addr_0_we;
   wire [26:0]cccd_0_field15;
-  wire [159:0]cccd_0_field6;
+  wire [143:0]cccd_0_field6;
   wire cccd_0_req_hard_rst;
   wire cccd_0_trigger;
   wire clk_wiz_0_clk_out1;
@@ -174,7 +182,7 @@ module design_1
   wire main_0_dtm_cmd_in_p;
   wire main_0_dtm_hard_n;
   wire main_0_dtm_hard_p;
-  wire [158:0]main_0_received_data;
+  wire [143:0]main_0_received_data;
   wire [0:0]proc_sys_reset_0_interconnect_aresetn;
   wire [0:0]proc_sys_reset_0_peripheral_aresetn;
   wire [14:0]processing_system7_0_DDR_ADDR;
@@ -276,17 +284,18 @@ module design_1
   wire processing_system7_0_M_AXI_GP1_WREADY;
   wire [3:0]processing_system7_0_M_AXI_GP1_WSTRB;
   wire processing_system7_0_M_AXI_GP1_WVALID;
-  wire [16:0]tdc_0_BRAM_PORT_A_ADDR;
   wire tdc_0_BRAM_PORT_A_CLK;
-  wire [15:0]tdc_0_BRAM_PORT_A_DIN;
   wire [15:0]tdc_0_BRAM_PORT_A_DOUT;
-  wire tdc_0_BRAM_PORT_A_EN;
   wire tdc_0_BRAM_PORT_A_RST;
   wire tdc_0_BRAM_PORT_A_WE;
+  wire [15:0]tdc_0_bramwrdata;
   wire tdc_0_data_mode_cmd;
+  wire [2:0]tdc_0_inner_cntr;
   wire tdc_0_is_data_mode;
   wire [0:0]util_ds_buf_0_IBUF_OUT;
   wire [0:0]util_ds_buf_1_IBUF_OUT;
+  wire [0:0]util_ds_buf_2_IBUF_OUT;
+  wire [1:0]xlconcat_0_dout;
 
   assign DTMROC_BX_N[0] = main_0_clkbx_n;
   assign DTMROC_BX_P[0] = main_0_clkbx_p;
@@ -294,6 +303,8 @@ module design_1
   assign DTMROC_CMD_IN_P = main_0_dtm_cmd_in_p;
   assign DTMROC_CMD_OUT_N_1 = DTMROC_CMD_OUT_N;
   assign DTMROC_CMD_OUT_P_1 = DTMROC_CMD_OUT_P;
+  assign DTMROC_DATA_OUT1_N_1 = DTMROC_DATA_OUT1_N;
+  assign DTMROC_DATA_OUT1_P_1 = DTMROC_DATA_OUT1_P;
   assign DTMROC_DATA_OUT_N_1 = DTMROC_DATA_OUT_N;
   assign DTMROC_DATA_OUT_P_1 = DTMROC_DATA_OUT_P;
   assign DTMROC_HARD_N = main_0_dtm_hard_n;
@@ -508,15 +519,15 @@ module design_1
         .S00_AXI_wstrb(processing_system7_0_M_AXI_GP1_WSTRB),
         .S00_AXI_wvalid(processing_system7_0_M_AXI_GP1_WVALID));
   design_1_blk_mem_gen_0_0 blk_mem_gen_0
-       (.addra(tdc_0_BRAM_PORT_A_ADDR),
+       (.addra(Net3),
         .addrb(bram_controller_addr_0_addrout),
         .clka(tdc_0_BRAM_PORT_A_CLK),
         .clkb(Net2),
-        .dina(tdc_0_BRAM_PORT_A_DIN),
+        .dina(tdc_0_bramwrdata),
         .dinb(axi_bram_ctrl_0_bram_wrdata_a),
         .douta(tdc_0_BRAM_PORT_A_DOUT),
         .doutb(blk_mem_gen_0_doutb),
-        .ena(tdc_0_BRAM_PORT_A_EN),
+        .ena(Net1),
         .enb(bram_controller_addr_0_en),
         .rsta(tdc_0_BRAM_PORT_A_RST),
         .rstb(axi_bram_ctrl_0_bram_rst_a),
@@ -558,6 +569,15 @@ module design_1
   design_1_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(processing_system7_0_FCLK_CLK0),
         .clk_out1(clk_wiz_0_clk_out1));
+  design_1_ila_0_0 ila_0
+       (.clk(clk_wiz_0_clk_out1),
+        .probe0(tdc_0_bramwrdata),
+        .probe1(Net1),
+        .probe2(Net3),
+        .probe3(blk_mem_gen_0_doutb),
+        .probe4(Net2),
+        .probe5(bram_controller_addr_0_addrout),
+        .probe6(tdc_0_inner_cntr));
   design_1_main_0_0 main_0
        (.clk40(processing_system7_0_FCLK_CLK0),
         .clkbx_n(main_0_clkbx_n),
@@ -688,18 +708,19 @@ module design_1
         .PS_SRSTB(FIXED_IO_ps_srstb),
         .USB0_VBUS_PWRFAULT(1'b0));
   design_1_tdc_0_1 tdc_0
-       (.bramaddr(tdc_0_BRAM_PORT_A_ADDR),
+       (.bramaddr(Net3),
         .bramclk(tdc_0_BRAM_PORT_A_CLK),
-        .bramen(tdc_0_BRAM_PORT_A_EN),
+        .bramen(Net1),
         .bramrddata(tdc_0_BRAM_PORT_A_DOUT),
         .bramrst(tdc_0_BRAM_PORT_A_RST),
         .bramwe(tdc_0_BRAM_PORT_A_WE),
-        .bramwrdata(tdc_0_BRAM_PORT_A_DIN),
+        .bramwrdata(tdc_0_bramwrdata),
         .clk120(clk_wiz_0_clk_out1),
         .clk40(processing_system7_0_FCLK_CLK0),
         .comparators(comparators_0_0_1),
         .data_mode_cmd_out(tdc_0_data_mode_cmd),
-        .dtmroc_data_out(util_ds_buf_0_IBUF_OUT),
+        .dtmroc_data_out(xlconcat_0_dout),
+        .inner_cntr(tdc_0_inner_cntr),
         .is_data_mode(tdc_0_is_data_mode),
         .s00_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s00_axi_araddr(axi_interconnect_0_M00_AXI_ARADDR[6:0]),
@@ -730,6 +751,14 @@ module design_1
        (.IBUF_DS_N(DTMROC_CMD_OUT_N_1),
         .IBUF_DS_P(DTMROC_CMD_OUT_P_1),
         .IBUF_OUT(util_ds_buf_1_IBUF_OUT));
+  design_1_util_ds_buf_2_0 util_ds_buf_2
+       (.IBUF_DS_N(DTMROC_DATA_OUT1_N_1),
+        .IBUF_DS_P(DTMROC_DATA_OUT1_P_1),
+        .IBUF_OUT(util_ds_buf_2_IBUF_OUT));
+  design_1_xlconcat_0_0 xlconcat_0
+       (.In0(util_ds_buf_0_IBUF_OUT),
+        .In1(util_ds_buf_2_IBUF_OUT),
+        .dout(xlconcat_0_dout));
 endmodule
 
 module design_1_axi_interconnect_0_0

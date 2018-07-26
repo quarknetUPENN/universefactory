@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1933422966667fs"></ZoomStartTime>
-      <ZoomEndTime time="1933717166668fs"></ZoomEndTime>
-      <Cursor1Time time="1933472000000fs"></Cursor1Time>
+      <ZoomStartTime time="793766667fs"></ZoomStartTime>
+      <ZoomEndTime time="879166668fs"></ZoomEndTime>
+      <Cursor1Time time="852000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="229"></NameColumnWidth>
-      <ValueColumnWidth column_width="124"></ValueColumnWidth>
+      <ValueColumnWidth column_width="120"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="35" />
+   <WVObjectSize size="25" />
    <wvobject fp_name="/data_trig_test/dtmroc_data_out" type="array">
       <obj_property name="ElementShortName">dtmroc_data_out[47:0]</obj_property>
       <obj_property name="ObjectShortName">dtmroc_data_out[47:0]</obj_property>
@@ -111,62 +111,16 @@
       <obj_property name="ElementShortName">panic</obj_property>
       <obj_property name="ObjectShortName">panic</obj_property>
    </wvobject>
-   <wvobject fp_name="/data_trig_test/trig_arbiter_inst/l1as_sent" type="array">
-      <obj_property name="ElementShortName">l1as_sent[31:0]</obj_property>
-      <obj_property name="ObjectShortName">l1as_sent[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/data_trig_test/data_recorder_inst/bramen_enabler" type="array">
+      <obj_property name="ElementShortName">bramen_enabler[1:0]</obj_property>
+      <obj_property name="ObjectShortName">bramen_enabler[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/data_trig_test/trig_arbiter_inst/l1as_received" type="array">
-      <obj_property name="ElementShortName">l1as_received[31:0]</obj_property>
-      <obj_property name="ObjectShortName">l1as_received[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/data_trig_test/data_recorder_inst/bramen_disabler" type="array">
+      <obj_property name="ElementShortName">bramen_disabler[3:0]</obj_property>
+      <obj_property name="ObjectShortName">bramen_disabler[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/data_trig_test/trig_arbiter_inst/events_received" type="array">
-      <obj_property name="ElementShortName">events_received[31:0]</obj_property>
-      <obj_property name="ObjectShortName">events_received[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/data_trig_test/trig_arbiter_inst/expecting_l1a" type="array">
-      <obj_property name="ElementShortName">expecting_l1a[10:0]</obj_property>
-      <obj_property name="ObjectShortName">expecting_l1a[10:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/data_trig_test/trig_arbiter_inst/old_is_data_mode" type="logic">
-      <obj_property name="ElementShortName">old_is_data_mode</obj_property>
-      <obj_property name="ObjectShortName">old_is_data_mode</obj_property>
-   </wvobject>
-   <wvobject fp_name="/data_trig_test/bram_overflows_tracker" type="array">
-      <obj_property name="ElementShortName">bram_overflows_tracker[31:0]</obj_property>
-      <obj_property name="ObjectShortName">bram_overflows_tracker[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/data_trig_test/l1as_outstanding" type="array">
-      <obj_property name="ElementShortName">l1as_outstanding[31:0]</obj_property>
-      <obj_property name="ObjectShortName">l1as_outstanding[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/data_trig_test/panics_tracker" type="array">
-      <obj_property name="ElementShortName">panics_tracker[31:0]</obj_property>
-      <obj_property name="ObjectShortName">panics_tracker[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/data_trig_test/buffer_rejects_tracker" type="array">
-      <obj_property name="ElementShortName">buffer_rejects_tracker[31:0]</obj_property>
-      <obj_property name="ObjectShortName">buffer_rejects_tracker[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/data_trig_test/derandomizer_rejects_tracker" type="array">
-      <obj_property name="ElementShortName">derandomizer_rejects_tracker[31:0]</obj_property>
-      <obj_property name="ObjectShortName">derandomizer_rejects_tracker[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/data_trig_test/trig_mode" type="array">
-      <obj_property name="ElementShortName">trig_mode[1:0]</obj_property>
-      <obj_property name="ObjectShortName">trig_mode[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/data_trig_test/trig_threshold" type="array">
-      <obj_property name="ElementShortName">trig_threshold[4:0]</obj_property>
-      <obj_property name="ObjectShortName">trig_threshold[4:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/data_trig_test/trig_arbiter_inst/num_trigs" type="array">
-      <obj_property name="ElementShortName">num_trigs[4:0]</obj_property>
-      <obj_property name="ObjectShortName">num_trigs[4:0]</obj_property>
+   <wvobject fp_name="/data_trig_test/data_recorder_inst/inner_cntr" type="array">
+      <obj_property name="ElementShortName">inner_cntr[2:0]</obj_property>
+      <obj_property name="ObjectShortName">inner_cntr[2:0]</obj_property>
    </wvobject>
 </wave_config>

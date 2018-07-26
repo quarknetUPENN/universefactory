@@ -173,6 +173,8 @@ proc create_root_design { parentCell } {
   set DTMROC_CMD_IN_P [ create_bd_port -dir O DTMROC_CMD_IN_P ]
   set DTMROC_CMD_OUT_N [ create_bd_port -dir I DTMROC_CMD_OUT_N ]
   set DTMROC_CMD_OUT_P [ create_bd_port -dir I DTMROC_CMD_OUT_P ]
+  set DTMROC_DATA_OUT1_N [ create_bd_port -dir I DTMROC_DATA_OUT1_N ]
+  set DTMROC_DATA_OUT1_P [ create_bd_port -dir I DTMROC_DATA_OUT1_P ]
   set DTMROC_DATA_OUT_N [ create_bd_port -dir I DTMROC_DATA_OUT_N ]
   set DTMROC_DATA_OUT_P [ create_bd_port -dir I DTMROC_DATA_OUT_P ]
   set DTMROC_HARD_N [ create_bd_port -dir O DTMROC_HARD_N ]
@@ -272,6 +274,27 @@ proc create_root_design { parentCell } {
    CONFIG.USE_LOCKED {false} \
    CONFIG.USE_RESET {false} \
  ] $clk_wiz_0
+
+  # Create instance: ila_0, and set properties
+  set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
+  set_property -dict [ list \
+   CONFIG.ALL_PROBE_SAME_MU_CNT {2} \
+   CONFIG.C_ENABLE_ILA_AXI_MON {false} \
+   CONFIG.C_MONITOR_TYPE {Native} \
+   CONFIG.C_NUM_OF_PROBES {7} \
+   CONFIG.C_PROBE0_MU_CNT {2} \
+   CONFIG.C_PROBE0_WIDTH {16} \
+   CONFIG.C_PROBE1_MU_CNT {2} \
+   CONFIG.C_PROBE2_MU_CNT {2} \
+   CONFIG.C_PROBE2_WIDTH {17} \
+   CONFIG.C_PROBE3_MU_CNT {2} \
+   CONFIG.C_PROBE3_WIDTH {32} \
+   CONFIG.C_PROBE4_MU_CNT {2} \
+   CONFIG.C_PROBE5_MU_CNT {2} \
+   CONFIG.C_PROBE5_WIDTH {16} \
+   CONFIG.C_PROBE6_MU_CNT {2} \
+   CONFIG.C_PROBE6_WIDTH {3} \
+ ] $ila_0
 
   # Create instance: main_0, and set properties
   set main_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:main:1.0 main_0 ]
@@ -742,6 +765,12 @@ proc create_root_design { parentCell } {
   # Create instance: util_ds_buf_1, and set properties
   set util_ds_buf_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.1 util_ds_buf_1 ]
 
+  # Create instance: util_ds_buf_2, and set properties
+  set util_ds_buf_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.1 util_ds_buf_2 ]
+
+  # Create instance: xlconcat_0, and set properties
+  set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
+
   # Create interface connections
   connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins tdc_0/S00_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins axi_interconnect_0/M01_AXI] [get_bd_intf_pins cccd_0/S00_AXI]
@@ -755,22 +784,26 @@ proc create_root_design { parentCell } {
   # Create port connections
   connect_bd_net -net DTMROC_CMD_OUT_N_1 [get_bd_ports DTMROC_CMD_OUT_N] [get_bd_pins util_ds_buf_1/IBUF_DS_N]
   connect_bd_net -net DTMROC_CMD_OUT_P_1 [get_bd_ports DTMROC_CMD_OUT_P] [get_bd_pins util_ds_buf_1/IBUF_DS_P]
+  connect_bd_net -net DTMROC_DATA_OUT1_N_1 [get_bd_ports DTMROC_DATA_OUT1_N] [get_bd_pins util_ds_buf_2/IBUF_DS_N]
+  connect_bd_net -net DTMROC_DATA_OUT1_P_1 [get_bd_ports DTMROC_DATA_OUT1_P] [get_bd_pins util_ds_buf_2/IBUF_DS_P]
   connect_bd_net -net DTMROC_DATA_OUT_N_1 [get_bd_ports DTMROC_DATA_OUT_N] [get_bd_pins util_ds_buf_0/IBUF_DS_N]
   connect_bd_net -net DTMROC_DATA_OUT_P_1 [get_bd_ports DTMROC_DATA_OUT_P] [get_bd_pins util_ds_buf_0/IBUF_DS_P]
   connect_bd_net -net Net [get_bd_pins cccd_0/done] [get_bd_pins main_0/done]
-  connect_bd_net -net Net2 [get_bd_pins axi_bram_ctrl_0/bram_clk_a] [get_bd_pins blk_mem_gen_0/clkb]
+  connect_bd_net -net Net1 [get_bd_pins blk_mem_gen_0/ena] [get_bd_pins ila_0/probe1] [get_bd_pins tdc_0/bramen]
+  connect_bd_net -net Net2 [get_bd_pins axi_bram_ctrl_0/bram_clk_a] [get_bd_pins blk_mem_gen_0/clkb] [get_bd_pins ila_0/probe4]
+  connect_bd_net -net Net3 [get_bd_pins blk_mem_gen_0/addra] [get_bd_pins ila_0/probe2] [get_bd_pins tdc_0/bramaddr]
   connect_bd_net -net axi_bram_ctrl_0_bram_addr_a [get_bd_pins axi_bram_ctrl_0/bram_addr_a] [get_bd_pins bram_controller_addr_0/addrin]
   connect_bd_net -net axi_bram_ctrl_0_bram_rst_a [get_bd_pins axi_bram_ctrl_0/bram_rst_a] [get_bd_pins blk_mem_gen_0/rstb]
   connect_bd_net -net axi_bram_ctrl_0_bram_wrdata_a [get_bd_pins axi_bram_ctrl_0/bram_wrdata_a] [get_bd_pins blk_mem_gen_0/dinb]
-  connect_bd_net -net blk_mem_gen_0_doutb [get_bd_pins axi_bram_ctrl_0/bram_rddata_a] [get_bd_pins blk_mem_gen_0/doutb]
-  connect_bd_net -net bram_controller_addr_0_addrout [get_bd_pins blk_mem_gen_0/addrb] [get_bd_pins bram_controller_addr_0/addrout]
+  connect_bd_net -net blk_mem_gen_0_doutb [get_bd_pins axi_bram_ctrl_0/bram_rddata_a] [get_bd_pins blk_mem_gen_0/doutb] [get_bd_pins ila_0/probe3]
+  connect_bd_net -net bram_controller_addr_0_addrout [get_bd_pins blk_mem_gen_0/addrb] [get_bd_pins bram_controller_addr_0/addrout] [get_bd_pins ila_0/probe5]
   connect_bd_net -net bram_controller_addr_0_en [get_bd_pins blk_mem_gen_0/enb] [get_bd_pins bram_controller_addr_0/en]
   connect_bd_net -net bram_controller_addr_0_we [get_bd_pins blk_mem_gen_0/web] [get_bd_pins bram_controller_addr_0/we]
   connect_bd_net -net cccd_0_field6 [get_bd_pins cccd_0/field6] [get_bd_pins main_0/field6]
   connect_bd_net -net cccd_0_field15 [get_bd_pins cccd_0/field15] [get_bd_pins main_0/field15]
   connect_bd_net -net cccd_0_req_hard_rst [get_bd_pins cccd_0/req_hard_rst] [get_bd_pins main_0/dtm_hard_in]
   connect_bd_net -net cccd_0_trigger [get_bd_pins cccd_0/trigger] [get_bd_pins main_0/command_trigger]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins tdc_0/clk120]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins ila_0/clk] [get_bd_pins tdc_0/clk120]
   connect_bd_net -net comparators_0_0_1 [get_bd_ports comparators_0_0] [get_bd_pins tdc_0/comparators]
   connect_bd_net -net main_0_clkbx_n [get_bd_ports DTMROC_BX_N] [get_bd_pins main_0/clkbx_n]
   connect_bd_net -net main_0_clkbx_p [get_bd_ports DTMROC_BX_P] [get_bd_pins main_0/clkbx_p]
@@ -783,10 +816,14 @@ proc create_root_design { parentCell } {
   connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_1/M00_ARESETN] [get_bd_pins axi_interconnect_1/S00_ARESETN] [get_bd_pins cccd_0/s00_axi_aresetn] [get_bd_pins main_0/rst_n] [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins tdc_0/s00_axi_aresetn]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_interconnect_1/ACLK] [get_bd_pins axi_interconnect_1/M00_ACLK] [get_bd_pins axi_interconnect_1/S00_ACLK] [get_bd_pins cccd_0/s00_axi_aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins main_0/clk40] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/M_AXI_GP1_ACLK] [get_bd_pins tdc_0/clk40] [get_bd_pins tdc_0/s00_axi_aclk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins proc_sys_reset_0/ext_reset_in] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+  connect_bd_net -net tdc_0_bramwrdata [get_bd_pins blk_mem_gen_0/dina] [get_bd_pins ila_0/probe0] [get_bd_pins tdc_0/bramwrdata]
   connect_bd_net -net tdc_0_data_mode_cmd [get_bd_pins main_0/event_trigger] [get_bd_pins tdc_0/data_mode_cmd_out]
+  connect_bd_net -net tdc_0_inner_cntr [get_bd_pins ila_0/probe6] [get_bd_pins tdc_0/inner_cntr]
   connect_bd_net -net tdc_0_is_data_mode [get_bd_pins main_0/is_data_mode] [get_bd_pins tdc_0/is_data_mode]
-  connect_bd_net -net util_ds_buf_0_IBUF_OUT [get_bd_pins tdc_0/dtmroc_data_out] [get_bd_pins util_ds_buf_0/IBUF_OUT]
+  connect_bd_net -net util_ds_buf_0_IBUF_OUT [get_bd_pins util_ds_buf_0/IBUF_OUT] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net util_ds_buf_1_IBUF_OUT [get_bd_pins main_0/dtm_cmd_out] [get_bd_pins util_ds_buf_1/IBUF_OUT]
+  connect_bd_net -net util_ds_buf_2_IBUF_OUT [get_bd_pins util_ds_buf_2/IBUF_OUT] [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net xlconcat_0_dout [get_bd_pins tdc_0/dtmroc_data_out] [get_bd_pins xlconcat_0/dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x00200000 -offset 0x80000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] SEG_axi_bram_ctrl_0_Mem0

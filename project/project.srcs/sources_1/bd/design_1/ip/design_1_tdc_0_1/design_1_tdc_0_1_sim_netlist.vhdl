@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
--- Date        : Thu Jul 19 17:12:41 2018
+-- Date        : Thu Jul 26 08:39:46 2018
 -- Host        : HEP-PC running 64-bit Service Pack 1  (build 7601)
 -- Command     : write_vhdl -force -mode funcsim
 --               C:/Users/HEP/Documents/universefactory/project/project.srcs/sources_1/bd/design_1/ip/design_1_tdc_0_1/design_1_tdc_0_1_sim_netlist.vhdl
@@ -16,54 +16,38 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_1_tdc_0_1_data_recorder is
   port (
+    \out\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
     data_loc_tracker : out STD_LOGIC_VECTOR ( 63 downto 0 );
-    bramaddr : out STD_LOGIC_VECTOR ( 16 downto 0 );
+    D : out STD_LOGIC_VECTOR ( 16 downto 0 );
     bram_overflows_tracker : out STD_LOGIC_VECTOR ( 31 downto 0 );
     l1a_seen : out STD_LOGIC;
-    DI : out STD_LOGIC_VECTOR ( 0 to 0 );
-    bramwe : out STD_LOGIC;
-    Q : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    D : out STD_LOGIC_VECTOR ( 6 downto 0 );
-    bramwrdata : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    bramen_raw : out STD_LOGIC;
+    bramwe_raw : out STD_LOGIC;
+    \occupied_data_spaces_reg[6]\ : out STD_LOGIC_VECTOR ( 6 downto 0 );
+    Q : out STD_LOGIC_VECTOR ( 15 downto 0 );
     clk40 : in STD_LOGIC;
     clk120_0 : in STD_LOGIC;
     clk120 : in STD_LOGIC;
-    dtmroc_data_out : in STD_LOGIC_VECTOR ( 0 to 0 );
     is_data_mode : in STD_LOGIC;
-    ps_data_loc_tracker : in STD_LOGIC_VECTOR ( 63 downto 0 );
-    \events_received_reg[31]\ : in STD_LOGIC;
-    \events_received_reg[30]\ : in STD_LOGIC;
-    \events_received_reg[29]\ : in STD_LOGIC;
-    \events_received_reg[28]\ : in STD_LOGIC;
-    \events_received_reg[27]\ : in STD_LOGIC;
-    \events_received_reg[26]\ : in STD_LOGIC;
-    \events_received_reg[25]\ : in STD_LOGIC;
-    \events_received_reg[24]\ : in STD_LOGIC;
-    \events_received_reg[23]\ : in STD_LOGIC;
-    \events_received_reg[22]\ : in STD_LOGIC;
-    \events_received_reg[21]\ : in STD_LOGIC;
-    \events_received_reg[20]\ : in STD_LOGIC;
-    \events_received_reg[19]\ : in STD_LOGIC;
-    \events_received_reg[18]\ : in STD_LOGIC;
-    \events_received_reg[17]\ : in STD_LOGIC;
-    \events_received_reg[16]\ : in STD_LOGIC
+    eventid : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    dtmroc_data_out : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    ps_data_loc_tracker : in STD_LOGIC_VECTOR ( 63 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of design_1_tdc_0_1_data_recorder : entity is "data_recorder";
 end design_1_tdc_0_1_data_recorder;
 
 architecture STRUCTURE of design_1_tdc_0_1_data_recorder is
-  signal \^di\ : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal \^d\ : STD_LOGIC_VECTOR ( 16 downto 0 );
   signal \FSM_onehot_inner_cntr[0]_i_1_n_0\ : STD_LOGIC;
   signal \FSM_onehot_inner_cntr[1]_i_1_n_0\ : STD_LOGIC;
   signal \FSM_onehot_inner_cntr[2]_i_1_n_0\ : STD_LOGIC;
-  signal \^q\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \^bram_overflows_tracker\ : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal \bram_overflows_tracker[0]_i_10_n_0\ : STD_LOGIC;
   signal \bram_overflows_tracker[0]_i_1_n_0\ : STD_LOGIC;
   signal \bram_overflows_tracker[0]_i_2_n_0\ : STD_LOGIC;
   signal \bram_overflows_tracker[0]_i_4_n_0\ : STD_LOGIC;
   signal \bram_overflows_tracker[0]_i_5_n_0\ : STD_LOGIC;
-  signal \bram_overflows_tracker[0]_i_6_n_0\ : STD_LOGIC;
   signal \bram_overflows_tracker[0]_i_7_n_0\ : STD_LOGIC;
   signal \bram_overflows_tracker[0]_i_8_n_0\ : STD_LOGIC;
   signal \bram_overflows_tracker[0]_i_9_n_0\ : STD_LOGIC;
@@ -130,309 +114,289 @@ architecture STRUCTURE of design_1_tdc_0_1_data_recorder is
   signal \bram_overflows_tracker_reg[8]_i_1_n_5\ : STD_LOGIC;
   signal \bram_overflows_tracker_reg[8]_i_1_n_6\ : STD_LOGIC;
   signal \bram_overflows_tracker_reg[8]_i_1_n_7\ : STD_LOGIC;
-  signal \^bramaddr\ : STD_LOGIC_VECTOR ( 16 downto 0 );
-  signal \bramaddr[11]_i_10_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_11_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_12_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_13_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_14_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_15_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_16_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_17_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_18_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_19_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_20_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_21_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_22_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_23_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_24_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_25_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_26_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_27_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_28_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_29_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_2_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_30_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_31_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_32_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_33_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_34_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_35_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_36_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_37_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_38_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_39_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_3_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_40_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_41_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_42_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_43_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_44_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_45_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_46_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_47_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_48_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_49_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_4_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_50_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_51_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_52_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_53_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_54_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_55_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_56_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_57_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_58_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_59_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_5_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_60_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_61_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_62_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_63_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_64_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_65_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_66_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_67_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_68_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_69_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_6_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_70_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_71_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_72_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_73_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_74_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_75_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_76_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_77_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_7_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_8_n_0\ : STD_LOGIC;
-  signal \bramaddr[11]_i_9_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_10_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_11_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_12_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_13_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_14_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_15_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_16_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_17_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_18_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_19_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_20_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_21_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_22_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_23_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_24_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_25_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_26_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_27_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_28_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_29_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_2_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_30_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_31_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_32_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_33_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_34_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_35_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_36_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_37_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_38_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_39_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_3_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_4_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_5_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_6_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_7_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_8_n_0\ : STD_LOGIC;
-  signal \bramaddr[15]_i_9_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_10_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_11_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_12_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_13_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_14_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_15_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_16_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_17_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_18_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_19_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_1_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_20_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_21_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_22_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_23_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_24_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_25_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_26_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_27_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_10_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_11_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_12_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_13_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_14_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_15_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_16_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_17_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_18_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_19_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_1_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_20_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_21_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_22_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_23_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_24_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_25_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_26_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_27_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_28_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_29_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_30_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_31_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_32_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_33_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_34_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_35_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_36_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_37_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_38_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_39_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_40_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_41_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_42_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_43_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_44_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_45_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_46_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_47_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_48_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_49_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_4_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_50_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_51_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_52_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_5_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_6_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_7_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_8_n_0\ : STD_LOGIC;
+  signal \bramaddr[0]_i_9_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_10_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_11_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_12_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_13_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_14_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_15_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_16_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_17_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_18_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_19_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_20_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_21_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_22_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_23_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_24_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_25_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_26_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_27_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_28_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_29_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_2_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_30_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_31_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_32_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_33_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_34_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_35_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_36_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_37_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_38_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_39_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_3_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_40_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_41_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_4_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_5_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_6_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_7_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_8_n_0\ : STD_LOGIC;
+  signal \bramaddr[12]_i_9_n_0\ : STD_LOGIC;
+  signal \bramaddr[16]_i_2_n_0\ : STD_LOGIC;
+  signal \bramaddr[16]_i_3_n_0\ : STD_LOGIC;
   signal \bramaddr[16]_i_4_n_0\ : STD_LOGIC;
   signal \bramaddr[16]_i_5_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_6_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_7_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_8_n_0\ : STD_LOGIC;
-  signal \bramaddr[16]_i_9_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_10_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_11_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_12_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_13_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_14_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_15_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_16_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_17_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_18_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_19_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_20_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_21_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_22_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_23_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_24_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_25_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_26_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_27_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_28_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_29_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_2_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_30_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_31_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_32_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_33_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_34_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_35_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_36_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_37_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_38_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_39_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_3_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_40_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_41_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_42_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_43_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_44_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_45_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_46_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_47_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_48_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_4_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_5_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_6_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_7_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_8_n_0\ : STD_LOGIC;
-  signal \bramaddr[3]_i_9_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_10_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_11_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_12_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_13_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_14_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_15_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_16_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_17_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_18_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_19_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_20_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_21_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_22_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_23_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_24_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_25_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_26_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_27_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_28_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_29_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_2_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_30_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_31_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_32_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_33_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_34_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_35_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_36_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_37_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_38_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_39_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_3_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_40_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_41_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_42_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_43_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_44_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_45_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_46_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_47_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_48_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_49_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_4_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_50_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_51_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_52_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_53_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_54_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_55_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_56_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_57_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_58_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_59_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_5_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_60_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_61_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_62_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_63_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_64_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_65_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_66_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_67_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_68_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_69_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_6_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_70_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_71_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_72_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_73_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_74_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_75_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_76_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_77_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_78_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_79_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_7_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_80_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_81_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_82_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_83_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_84_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_8_n_0\ : STD_LOGIC;
-  signal \bramaddr[7]_i_9_n_0\ : STD_LOGIC;
-  signal \bramaddr_reg[11]_i_1_n_0\ : STD_LOGIC;
-  signal \bramaddr_reg[11]_i_1_n_1\ : STD_LOGIC;
-  signal \bramaddr_reg[11]_i_1_n_2\ : STD_LOGIC;
-  signal \bramaddr_reg[11]_i_1_n_3\ : STD_LOGIC;
-  signal \bramaddr_reg[11]_i_1_n_4\ : STD_LOGIC;
-  signal \bramaddr_reg[11]_i_1_n_5\ : STD_LOGIC;
-  signal \bramaddr_reg[11]_i_1_n_6\ : STD_LOGIC;
-  signal \bramaddr_reg[11]_i_1_n_7\ : STD_LOGIC;
-  signal \bramaddr_reg[15]_i_1_n_0\ : STD_LOGIC;
-  signal \bramaddr_reg[15]_i_1_n_1\ : STD_LOGIC;
-  signal \bramaddr_reg[15]_i_1_n_2\ : STD_LOGIC;
-  signal \bramaddr_reg[15]_i_1_n_3\ : STD_LOGIC;
-  signal \bramaddr_reg[15]_i_1_n_4\ : STD_LOGIC;
-  signal \bramaddr_reg[15]_i_1_n_5\ : STD_LOGIC;
-  signal \bramaddr_reg[15]_i_1_n_6\ : STD_LOGIC;
-  signal \bramaddr_reg[15]_i_1_n_7\ : STD_LOGIC;
-  signal \bramaddr_reg[16]_i_2_n_7\ : STD_LOGIC;
-  signal \bramaddr_reg[3]_i_1_n_0\ : STD_LOGIC;
-  signal \bramaddr_reg[3]_i_1_n_1\ : STD_LOGIC;
-  signal \bramaddr_reg[3]_i_1_n_2\ : STD_LOGIC;
-  signal \bramaddr_reg[3]_i_1_n_3\ : STD_LOGIC;
-  signal \bramaddr_reg[3]_i_1_n_4\ : STD_LOGIC;
-  signal \bramaddr_reg[3]_i_1_n_5\ : STD_LOGIC;
-  signal \bramaddr_reg[3]_i_1_n_6\ : STD_LOGIC;
-  signal \bramaddr_reg[3]_i_1_n_7\ : STD_LOGIC;
-  signal \bramaddr_reg[7]_i_1_n_0\ : STD_LOGIC;
-  signal \bramaddr_reg[7]_i_1_n_1\ : STD_LOGIC;
-  signal \bramaddr_reg[7]_i_1_n_2\ : STD_LOGIC;
-  signal \bramaddr_reg[7]_i_1_n_3\ : STD_LOGIC;
-  signal \bramaddr_reg[7]_i_1_n_4\ : STD_LOGIC;
-  signal \bramaddr_reg[7]_i_1_n_5\ : STD_LOGIC;
-  signal \bramaddr_reg[7]_i_1_n_6\ : STD_LOGIC;
-  signal \bramaddr_reg[7]_i_1_n_7\ : STD_LOGIC;
+  signal \bramaddr[4]_i_10_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_11_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_12_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_13_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_14_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_15_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_16_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_17_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_18_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_19_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_20_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_21_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_22_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_23_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_24_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_25_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_26_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_27_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_28_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_29_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_2_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_30_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_31_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_32_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_33_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_34_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_35_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_36_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_37_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_38_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_39_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_3_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_40_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_41_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_42_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_43_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_44_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_45_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_46_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_47_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_48_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_49_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_4_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_50_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_51_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_52_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_53_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_54_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_55_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_56_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_57_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_58_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_59_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_5_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_60_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_61_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_62_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_63_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_64_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_65_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_66_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_67_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_68_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_69_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_6_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_70_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_71_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_72_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_73_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_74_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_75_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_76_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_77_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_78_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_79_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_7_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_80_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_81_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_82_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_83_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_84_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_85_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_86_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_8_n_0\ : STD_LOGIC;
+  signal \bramaddr[4]_i_9_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_10_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_11_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_12_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_13_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_14_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_15_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_16_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_17_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_18_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_19_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_20_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_21_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_22_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_23_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_24_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_25_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_26_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_27_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_28_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_29_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_2_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_30_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_31_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_32_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_33_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_34_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_35_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_36_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_37_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_38_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_39_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_3_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_40_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_41_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_42_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_43_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_44_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_45_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_46_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_47_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_48_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_49_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_4_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_50_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_51_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_52_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_53_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_54_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_55_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_56_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_57_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_58_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_59_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_5_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_60_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_61_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_62_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_63_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_64_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_65_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_66_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_67_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_68_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_69_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_6_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_70_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_71_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_72_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_7_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_8_n_0\ : STD_LOGIC;
+  signal \bramaddr[8]_i_9_n_0\ : STD_LOGIC;
+  signal \bramaddr_reg[0]_i_2_n_0\ : STD_LOGIC;
+  signal \bramaddr_reg[0]_i_2_n_1\ : STD_LOGIC;
+  signal \bramaddr_reg[0]_i_2_n_2\ : STD_LOGIC;
+  signal \bramaddr_reg[0]_i_2_n_3\ : STD_LOGIC;
+  signal \bramaddr_reg[0]_i_2_n_4\ : STD_LOGIC;
+  signal \bramaddr_reg[0]_i_2_n_5\ : STD_LOGIC;
+  signal \bramaddr_reg[0]_i_2_n_6\ : STD_LOGIC;
+  signal \bramaddr_reg[0]_i_2_n_7\ : STD_LOGIC;
+  signal \bramaddr_reg[12]_i_1_n_0\ : STD_LOGIC;
+  signal \bramaddr_reg[12]_i_1_n_1\ : STD_LOGIC;
+  signal \bramaddr_reg[12]_i_1_n_2\ : STD_LOGIC;
+  signal \bramaddr_reg[12]_i_1_n_3\ : STD_LOGIC;
+  signal \bramaddr_reg[12]_i_1_n_4\ : STD_LOGIC;
+  signal \bramaddr_reg[12]_i_1_n_5\ : STD_LOGIC;
+  signal \bramaddr_reg[12]_i_1_n_6\ : STD_LOGIC;
+  signal \bramaddr_reg[12]_i_1_n_7\ : STD_LOGIC;
+  signal \bramaddr_reg[16]_i_1_n_7\ : STD_LOGIC;
+  signal \bramaddr_reg[4]_i_1_n_0\ : STD_LOGIC;
+  signal \bramaddr_reg[4]_i_1_n_1\ : STD_LOGIC;
+  signal \bramaddr_reg[4]_i_1_n_2\ : STD_LOGIC;
+  signal \bramaddr_reg[4]_i_1_n_3\ : STD_LOGIC;
+  signal \bramaddr_reg[4]_i_1_n_4\ : STD_LOGIC;
+  signal \bramaddr_reg[4]_i_1_n_5\ : STD_LOGIC;
+  signal \bramaddr_reg[4]_i_1_n_6\ : STD_LOGIC;
+  signal \bramaddr_reg[4]_i_1_n_7\ : STD_LOGIC;
+  signal \bramaddr_reg[8]_i_1_n_0\ : STD_LOGIC;
+  signal \bramaddr_reg[8]_i_1_n_1\ : STD_LOGIC;
+  signal \bramaddr_reg[8]_i_1_n_2\ : STD_LOGIC;
+  signal \bramaddr_reg[8]_i_1_n_3\ : STD_LOGIC;
+  signal \bramaddr_reg[8]_i_1_n_4\ : STD_LOGIC;
+  signal \bramaddr_reg[8]_i_1_n_5\ : STD_LOGIC;
+  signal \bramaddr_reg[8]_i_1_n_6\ : STD_LOGIC;
+  signal \bramaddr_reg[8]_i_1_n_7\ : STD_LOGIC;
   signal bramen_disabler0 : STD_LOGIC;
   signal \bramen_disabler[3]_i_2_n_0\ : STD_LOGIC;
   signal \bramen_disabler[3]_i_3_n_0\ : STD_LOGIC;
@@ -440,14 +404,16 @@ architecture STRUCTURE of design_1_tdc_0_1_data_recorder is
   signal \bramen_disabler_reg_n_0_[3]\ : STD_LOGIC;
   signal bramen_enabler0 : STD_LOGIC;
   signal \bramen_enabler[0]_i_2_n_0\ : STD_LOGIC;
+  signal \bramen_enabler[0]_i_3_n_0\ : STD_LOGIC;
   signal \bramen_enabler_reg_n_0_[0]\ : STD_LOGIC;
   signal bramen_i_1_n_0 : STD_LOGIC;
-  signal \^bramwe\ : STD_LOGIC;
+  signal \^bramen_raw\ : STD_LOGIC;
+  signal bramwe4_out : STD_LOGIC;
   signal bramwe_i_1_n_0 : STD_LOGIC;
-  signal bramwe_i_2_n_0 : STD_LOGIC;
-  signal bramwe_i_3_n_0 : STD_LOGIC;
+  signal \^bramwe_raw\ : STD_LOGIC;
   signal \bramwrdata[15]_i_1_n_0\ : STD_LOGIC;
-  signal \bramwrdata[15]_i_2_n_0\ : STD_LOGIC;
+  signal \bramwrdata[15]_i_3_n_0\ : STD_LOGIC;
+  signal \bramwrdata[7]_i_2_n_0\ : STD_LOGIC;
   signal \data_loc[0]_i_10_n_0\ : STD_LOGIC;
   signal \data_loc[0]_i_11_n_0\ : STD_LOGIC;
   signal \data_loc[0]_i_12_n_0\ : STD_LOGIC;
@@ -459,6 +425,12 @@ architecture STRUCTURE of design_1_tdc_0_1_data_recorder is
   signal \data_loc[0]_i_18_n_0\ : STD_LOGIC;
   signal \data_loc[0]_i_19_n_0\ : STD_LOGIC;
   signal \data_loc[0]_i_1_n_0\ : STD_LOGIC;
+  signal \data_loc[0]_i_20_n_0\ : STD_LOGIC;
+  signal \data_loc[0]_i_21_n_0\ : STD_LOGIC;
+  signal \data_loc[0]_i_22_n_0\ : STD_LOGIC;
+  signal \data_loc[0]_i_23_n_0\ : STD_LOGIC;
+  signal \data_loc[0]_i_24_n_0\ : STD_LOGIC;
+  signal \data_loc[0]_i_25_n_0\ : STD_LOGIC;
   signal \data_loc[0]_i_2_n_0\ : STD_LOGIC;
   signal \data_loc[0]_i_3_n_0\ : STD_LOGIC;
   signal \data_loc[0]_i_4_n_0\ : STD_LOGIC;
@@ -478,6 +450,10 @@ architecture STRUCTURE of design_1_tdc_0_1_data_recorder is
   signal \data_loc[1]_i_18_n_0\ : STD_LOGIC;
   signal \data_loc[1]_i_19_n_0\ : STD_LOGIC;
   signal \data_loc[1]_i_1_n_0\ : STD_LOGIC;
+  signal \data_loc[1]_i_20_n_0\ : STD_LOGIC;
+  signal \data_loc[1]_i_21_n_0\ : STD_LOGIC;
+  signal \data_loc[1]_i_22_n_0\ : STD_LOGIC;
+  signal \data_loc[1]_i_23_n_0\ : STD_LOGIC;
   signal \data_loc[1]_i_2_n_0\ : STD_LOGIC;
   signal \data_loc[1]_i_3_n_0\ : STD_LOGIC;
   signal \data_loc[1]_i_4_n_0\ : STD_LOGIC;
@@ -501,12 +477,6 @@ architecture STRUCTURE of design_1_tdc_0_1_data_recorder is
   signal \data_loc[2]_i_7_n_0\ : STD_LOGIC;
   signal \data_loc[2]_i_8_n_0\ : STD_LOGIC;
   signal \data_loc[2]_i_9_n_0\ : STD_LOGIC;
-  signal \data_loc[3]_i_10_n_0\ : STD_LOGIC;
-  signal \data_loc[3]_i_11_n_0\ : STD_LOGIC;
-  signal \data_loc[3]_i_12_n_0\ : STD_LOGIC;
-  signal \data_loc[3]_i_13_n_0\ : STD_LOGIC;
-  signal \data_loc[3]_i_14_n_0\ : STD_LOGIC;
-  signal \data_loc[3]_i_15_n_0\ : STD_LOGIC;
   signal \data_loc[3]_i_1_n_0\ : STD_LOGIC;
   signal \data_loc[3]_i_2_n_0\ : STD_LOGIC;
   signal \data_loc[3]_i_3_n_0\ : STD_LOGIC;
@@ -514,16 +484,34 @@ architecture STRUCTURE of design_1_tdc_0_1_data_recorder is
   signal \data_loc[3]_i_5_n_0\ : STD_LOGIC;
   signal \data_loc[3]_i_6_n_0\ : STD_LOGIC;
   signal \data_loc[3]_i_7_n_0\ : STD_LOGIC;
-  signal \data_loc[3]_i_8_n_0\ : STD_LOGIC;
-  signal \data_loc[3]_i_9_n_0\ : STD_LOGIC;
   signal \data_loc[4]_i_1_n_0\ : STD_LOGIC;
   signal \data_loc[4]_i_2_n_0\ : STD_LOGIC;
   signal \data_loc[4]_i_3_n_0\ : STD_LOGIC;
+  signal \data_loc[4]_i_4_n_0\ : STD_LOGIC;
+  signal \data_loc[4]_i_5_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_10_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_11_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_12_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_13_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_14_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_15_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_16_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_17_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_18_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_19_n_0\ : STD_LOGIC;
   signal \data_loc[5]_i_1_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_20_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_21_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_22_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_23_n_0\ : STD_LOGIC;
   signal \data_loc[5]_i_2_n_0\ : STD_LOGIC;
   signal \data_loc[5]_i_3_n_0\ : STD_LOGIC;
   signal \data_loc[5]_i_4_n_0\ : STD_LOGIC;
   signal \data_loc[5]_i_5_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_6_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_7_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_8_n_0\ : STD_LOGIC;
+  signal \data_loc[5]_i_9_n_0\ : STD_LOGIC;
   signal \data_loc_reg_n_0_[0]\ : STD_LOGIC;
   signal \data_loc_reg_n_0_[1]\ : STD_LOGIC;
   signal \data_loc_reg_n_0_[2]\ : STD_LOGIC;
@@ -531,8 +519,8 @@ architecture STRUCTURE of design_1_tdc_0_1_data_recorder is
   signal \data_loc_reg_n_0_[4]\ : STD_LOGIC;
   signal \data_loc_reg_n_0_[5]\ : STD_LOGIC;
   signal \^data_loc_tracker\ : STD_LOGIC_VECTOR ( 63 downto 0 );
+  signal \dout_hist_reg_n_0_[71]\ : STD_LOGIC;
   signal \dout_hist_reg_n_0_[95]\ : STD_LOGIC;
-  signal first_clk40_rise : STD_LOGIC;
   signal \genblk1[0].data_loc_tracker[0]_i_1_n_0\ : STD_LOGIC;
   signal \genblk1[10].data_loc_tracker[10]_i_1_n_0\ : STD_LOGIC;
   signal \genblk1[11].data_loc_tracker[11]_i_1_n_0\ : STD_LOGIC;
@@ -597,13 +585,15 @@ architecture STRUCTURE of design_1_tdc_0_1_data_recorder is
   signal \genblk1[7].data_loc_tracker[7]_i_1_n_0\ : STD_LOGIC;
   signal \genblk1[8].data_loc_tracker[8]_i_1_n_0\ : STD_LOGIC;
   signal \genblk1[9].data_loc_tracker[9]_i_1_n_0\ : STD_LOGIC;
-  signal \inner_cntr__0\ : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal in4 : STD_LOGIC_VECTOR ( 15 to 15 );
+  signal \inner_cntr__0\ : STD_LOGIC_VECTOR ( 2 to 2 );
   attribute RTL_KEEP : string;
   attribute RTL_KEEP of \inner_cntr__0\ : signal is "yes";
   signal l1a_cntr : STD_LOGIC;
   signal \l1a_cntr[0]_i_1_n_0\ : STD_LOGIC;
   signal \l1a_cntr[1]_i_1_n_0\ : STD_LOGIC;
   signal \l1a_cntr[2]_i_1_n_0\ : STD_LOGIC;
+  signal \l1a_cntr[2]_i_2_n_0\ : STD_LOGIC;
   signal \l1a_cntr[3]_i_1_n_0\ : STD_LOGIC;
   signal \l1a_cntr[4]_i_1_n_0\ : STD_LOGIC;
   signal \l1a_cntr[5]_i_1_n_0\ : STD_LOGIC;
@@ -621,17 +611,7 @@ architecture STRUCTURE of design_1_tdc_0_1_data_recorder is
   signal \l1a_cntr_reg_n_0_[6]\ : STD_LOGIC;
   signal \l1a_cntr_reg_n_0_[7]\ : STD_LOGIC;
   signal \l1a_cntr_reg_n_0_[8]\ : STD_LOGIC;
-  signal l1a_cntr_sync120 : STD_LOGIC;
-  attribute RTL_KEEP of l1a_cntr_sync120 : signal is "yes";
-  signal \l1a_cntr_sync120_reg_n_0_[0]\ : STD_LOGIC;
-  signal \l1a_cntr_sync120_reg_n_0_[1]\ : STD_LOGIC;
-  signal \l1a_cntr_sync120_reg_n_0_[2]\ : STD_LOGIC;
-  signal \l1a_cntr_sync120_reg_n_0_[3]\ : STD_LOGIC;
-  signal \l1a_cntr_sync120_reg_n_0_[4]\ : STD_LOGIC;
-  signal \l1a_cntr_sync120_reg_n_0_[5]\ : STD_LOGIC;
-  signal \l1a_cntr_sync120_reg_n_0_[6]\ : STD_LOGIC;
-  signal \l1a_cntr_sync120_reg_n_0_[7]\ : STD_LOGIC;
-  signal \l1a_cntr_sync120_reg_n_0_[8]\ : STD_LOGIC;
+  signal l1a_cntr_sync120 : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal l1a_seen_i_1_n_0 : STD_LOGIC;
   signal l1a_seen_i_2_n_0 : STD_LOGIC;
   signal \occupied_data_spaces[0]_i_10_n_0\ : STD_LOGIC;
@@ -663,7 +643,6 @@ architecture STRUCTURE of design_1_tdc_0_1_data_recorder is
   signal \occupied_data_spaces[2]_i_22_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[2]_i_23_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[2]_i_24_n_0\ : STD_LOGIC;
-  signal \occupied_data_spaces[2]_i_25_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[2]_i_2_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[2]_i_3_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[2]_i_4_n_0\ : STD_LOGIC;
@@ -672,6 +651,7 @@ architecture STRUCTURE of design_1_tdc_0_1_data_recorder is
   signal \occupied_data_spaces[2]_i_7_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[2]_i_8_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[2]_i_9_n_0\ : STD_LOGIC;
+  signal \occupied_data_spaces[5]_i_2_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[6]_i_10_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[6]_i_11_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[6]_i_12_n_0\ : STD_LOGIC;
@@ -717,15 +697,20 @@ architecture STRUCTURE of design_1_tdc_0_1_data_recorder is
   signal \occupied_data_spaces[6]_i_4_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[6]_i_50_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[6]_i_51_n_0\ : STD_LOGIC;
-  signal \occupied_data_spaces[6]_i_52_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[6]_i_5_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[6]_i_6_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[6]_i_7_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[6]_i_8_n_0\ : STD_LOGIC;
   signal \occupied_data_spaces[6]_i_9_n_0\ : STD_LOGIC;
+  signal old_is_data_mode_i_1_n_0 : STD_LOGIC;
+  signal old_is_data_mode_reg_n_0 : STD_LOGIC;
   signal old_l1a_cntr : STD_LOGIC_VECTOR ( 8 downto 0 );
-  signal p_0_in4_in : STD_LOGIC;
+  signal \^out\ : STD_LOGIC_VECTOR ( 1 downto 0 );
+  attribute RTL_KEEP of \^out\ : signal is "yes";
+  signal p_0_in : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal p_0_in5_in : STD_LOGIC;
   signal \p_0_in__0\ : STD_LOGIC_VECTOR ( 63 to 63 );
+  signal p_1_in : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal \pl_data_loc_tracker[0]_i_1_n_0\ : STD_LOGIC;
   signal \pl_data_loc_tracker[10]_i_1_n_0\ : STD_LOGIC;
   signal \pl_data_loc_tracker[11]_i_1_n_0\ : STD_LOGIC;
@@ -938,354 +923,358 @@ architecture STRUCTURE of design_1_tdc_0_1_data_recorder is
   signal ps_data_loc_tracker_0 : STD_LOGIC_VECTOR ( 63 downto 0 );
   signal ps_data_loc_tracker_old : STD_LOGIC_VECTOR ( 63 downto 0 );
   signal \NLW_bram_overflows_tracker_reg[28]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
-  signal \NLW_bramaddr_reg[16]_i_2_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_bramaddr_reg[16]_i_2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
+  signal \NLW_bramaddr_reg[16]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW_bramaddr_reg[16]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
   attribute FSM_ENCODED_STATES : string;
-  attribute FSM_ENCODED_STATES of \FSM_onehot_inner_cntr_reg[0]\ : label is "iSTATE:001,iSTATE0:010,iSTATE1:100,";
+  attribute FSM_ENCODED_STATES of \FSM_onehot_inner_cntr_reg[0]\ : label is "iSTATE:100,iSTATE0:001,iSTATE1:010,";
   attribute KEEP : string;
   attribute KEEP of \FSM_onehot_inner_cntr_reg[0]\ : label is "yes";
   attribute XILINX_LEGACY_PRIM : string;
   attribute XILINX_LEGACY_PRIM of \FSM_onehot_inner_cntr_reg[0]\ : label is "FD_1";
-  attribute FSM_ENCODED_STATES of \FSM_onehot_inner_cntr_reg[1]\ : label is "iSTATE:001,iSTATE0:010,iSTATE1:100,";
+  attribute FSM_ENCODED_STATES of \FSM_onehot_inner_cntr_reg[1]\ : label is "iSTATE:100,iSTATE0:001,iSTATE1:010,";
   attribute KEEP of \FSM_onehot_inner_cntr_reg[1]\ : label is "yes";
   attribute XILINX_LEGACY_PRIM of \FSM_onehot_inner_cntr_reg[1]\ : label is "FD_1";
-  attribute FSM_ENCODED_STATES of \FSM_onehot_inner_cntr_reg[2]\ : label is "iSTATE:001,iSTATE0:010,iSTATE1:100,";
+  attribute FSM_ENCODED_STATES of \FSM_onehot_inner_cntr_reg[2]\ : label is "iSTATE:100,iSTATE0:001,iSTATE1:010,";
   attribute KEEP of \FSM_onehot_inner_cntr_reg[2]\ : label is "yes";
   attribute XILINX_LEGACY_PRIM of \FSM_onehot_inner_cntr_reg[2]\ : label is "FD_1";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \bram_overflows_tracker[0]_i_5\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \bram_overflows_tracker[0]_i_7\ : label is "soft_lutpair79";
-  attribute SOFT_HLUTNM of \bram_overflows_tracker[0]_i_8\ : label is "soft_lutpair76";
-  attribute SOFT_HLUTNM of \bram_overflows_tracker[0]_i_9\ : label is "soft_lutpair40";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_17\ : label is "soft_lutpair128";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_18\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_20\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_22\ : label is "soft_lutpair50";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_23\ : label is "soft_lutpair114";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_25\ : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_26\ : label is "soft_lutpair61";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_27\ : label is "soft_lutpair56";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_28\ : label is "soft_lutpair59";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_30\ : label is "soft_lutpair141";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_31\ : label is "soft_lutpair96";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_35\ : label is "soft_lutpair50";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_43\ : label is "soft_lutpair140";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_45\ : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_54\ : label is "soft_lutpair27";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_57\ : label is "soft_lutpair27";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_58\ : label is "soft_lutpair26";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_60\ : label is "soft_lutpair44";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_61\ : label is "soft_lutpair133";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_63\ : label is "soft_lutpair71";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_64\ : label is "soft_lutpair62";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_65\ : label is "soft_lutpair143";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_67\ : label is "soft_lutpair49";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_70\ : label is "soft_lutpair85";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_72\ : label is "soft_lutpair99";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_76\ : label is "soft_lutpair54";
-  attribute SOFT_HLUTNM of \bramaddr[11]_i_77\ : label is "soft_lutpair40";
-  attribute SOFT_HLUTNM of \bramaddr[15]_i_10\ : label is "soft_lutpair60";
-  attribute SOFT_HLUTNM of \bramaddr[15]_i_11\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \bramaddr[15]_i_14\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \bramaddr[15]_i_17\ : label is "soft_lutpair57";
-  attribute SOFT_HLUTNM of \bramaddr[15]_i_18\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \bramaddr[15]_i_20\ : label is "soft_lutpair58";
-  attribute SOFT_HLUTNM of \bramaddr[15]_i_21\ : label is "soft_lutpair103";
-  attribute SOFT_HLUTNM of \bramaddr[15]_i_24\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of \bramaddr[15]_i_26\ : label is "soft_lutpair136";
-  attribute SOFT_HLUTNM of \bramaddr[15]_i_29\ : label is "soft_lutpair88";
-  attribute SOFT_HLUTNM of \bramaddr[15]_i_31\ : label is "soft_lutpair135";
-  attribute SOFT_HLUTNM of \bramaddr[15]_i_33\ : label is "soft_lutpair80";
-  attribute SOFT_HLUTNM of \bramaddr[15]_i_34\ : label is "soft_lutpair90";
-  attribute SOFT_HLUTNM of \bramaddr[15]_i_36\ : label is "soft_lutpair119";
-  attribute SOFT_HLUTNM of \bramaddr[16]_i_14\ : label is "soft_lutpair130";
-  attribute SOFT_HLUTNM of \bramaddr[16]_i_15\ : label is "soft_lutpair116";
-  attribute SOFT_HLUTNM of \bramaddr[16]_i_16\ : label is "soft_lutpair142";
-  attribute SOFT_HLUTNM of \bramaddr[16]_i_19\ : label is "soft_lutpair84";
-  attribute SOFT_HLUTNM of \bramaddr[16]_i_20\ : label is "soft_lutpair29";
-  attribute SOFT_HLUTNM of \bramaddr[16]_i_21\ : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of \bramaddr[16]_i_24\ : label is "soft_lutpair63";
-  attribute SOFT_HLUTNM of \bramaddr[16]_i_25\ : label is "soft_lutpair48";
-  attribute SOFT_HLUTNM of \bramaddr[16]_i_26\ : label is "soft_lutpair74";
-  attribute SOFT_HLUTNM of \bramaddr[16]_i_27\ : label is "soft_lutpair55";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_10\ : label is "soft_lutpair60";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_11\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_13\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_14\ : label is "soft_lutpair107";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_16\ : label is "soft_lutpair53";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_22\ : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_23\ : label is "soft_lutpair52";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_26\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_27\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_29\ : label is "soft_lutpair29";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_31\ : label is "soft_lutpair144";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_32\ : label is "soft_lutpair44";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_38\ : label is "soft_lutpair72";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_39\ : label is "soft_lutpair36";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_43\ : label is "soft_lutpair26";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_47\ : label is "soft_lutpair68";
-  attribute SOFT_HLUTNM of \bramaddr[3]_i_7\ : label is "soft_lutpair131";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_10\ : label is "soft_lutpair70";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_12\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_27\ : label is "soft_lutpair14";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_28\ : label is "soft_lutpair132";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_30\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_31\ : label is "soft_lutpair15";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_34\ : label is "soft_lutpair110";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_35\ : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_40\ : label is "soft_lutpair61";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_42\ : label is "soft_lutpair121";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_43\ : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_46\ : label is "soft_lutpair112";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_47\ : label is "soft_lutpair102";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_50\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_52\ : label is "soft_lutpair47";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_59\ : label is "soft_lutpair74";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_63\ : label is "soft_lutpair93";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_66\ : label is "soft_lutpair115";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_68\ : label is "soft_lutpair14";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_7\ : label is "soft_lutpair122";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_70\ : label is "soft_lutpair45";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_71\ : label is "soft_lutpair54";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_72\ : label is "soft_lutpair92";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_73\ : label is "soft_lutpair108";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_74\ : label is "soft_lutpair129";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_77\ : label is "soft_lutpair82";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_81\ : label is "soft_lutpair95";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_82\ : label is "soft_lutpair78";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_83\ : label is "soft_lutpair92";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_84\ : label is "soft_lutpair36";
-  attribute SOFT_HLUTNM of \bramaddr[7]_i_9\ : label is "soft_lutpair53";
-  attribute SOFT_HLUTNM of \bramen_disabler[3]_i_3\ : label is "soft_lutpair56";
-  attribute SOFT_HLUTNM of \data_loc[0]_i_10\ : label is "soft_lutpair55";
-  attribute SOFT_HLUTNM of \data_loc[0]_i_12\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \data_loc[0]_i_13\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \data_loc[0]_i_15\ : label is "soft_lutpair133";
-  attribute SOFT_HLUTNM of \data_loc[0]_i_18\ : label is "soft_lutpair83";
-  attribute SOFT_HLUTNM of \data_loc[0]_i_3\ : label is "soft_lutpair58";
-  attribute SOFT_HLUTNM of \data_loc[0]_i_8\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \data_loc[1]_i_10\ : label is "soft_lutpair127";
-  attribute SOFT_HLUTNM of \data_loc[1]_i_11\ : label is "soft_lutpair109";
-  attribute SOFT_HLUTNM of \data_loc[1]_i_12\ : label is "soft_lutpair104";
-  attribute SOFT_HLUTNM of \data_loc[1]_i_13\ : label is "soft_lutpair105";
-  attribute SOFT_HLUTNM of \data_loc[1]_i_15\ : label is "soft_lutpair45";
-  attribute SOFT_HLUTNM of \data_loc[1]_i_17\ : label is "soft_lutpair94";
-  attribute SOFT_HLUTNM of \data_loc[1]_i_19\ : label is "soft_lutpair86";
-  attribute SOFT_HLUTNM of \data_loc[1]_i_5\ : label is "soft_lutpair100";
-  attribute SOFT_HLUTNM of \data_loc[1]_i_7\ : label is "soft_lutpair72";
-  attribute SOFT_HLUTNM of \data_loc[1]_i_9\ : label is "soft_lutpair46";
-  attribute SOFT_HLUTNM of \data_loc[2]_i_10\ : label is "soft_lutpair48";
-  attribute SOFT_HLUTNM of \data_loc[2]_i_11\ : label is "soft_lutpair49";
-  attribute SOFT_HLUTNM of \data_loc[2]_i_13\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \data_loc[2]_i_14\ : label is "soft_lutpair62";
-  attribute SOFT_HLUTNM of \data_loc[2]_i_15\ : label is "soft_lutpair57";
-  attribute SOFT_HLUTNM of \data_loc[2]_i_2\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \data_loc[2]_i_3\ : label is "soft_lutpair15";
-  attribute SOFT_HLUTNM of \data_loc[2]_i_4\ : label is "soft_lutpair59";
-  attribute SOFT_HLUTNM of \data_loc[2]_i_6\ : label is "soft_lutpair51";
-  attribute SOFT_HLUTNM of \data_loc[2]_i_7\ : label is "soft_lutpair70";
-  attribute SOFT_HLUTNM of \data_loc[2]_i_8\ : label is "soft_lutpair134";
-  attribute SOFT_HLUTNM of \data_loc[3]_i_10\ : label is "soft_lutpair46";
-  attribute SOFT_HLUTNM of \data_loc[3]_i_11\ : label is "soft_lutpair71";
-  attribute SOFT_HLUTNM of \data_loc[3]_i_12\ : label is "soft_lutpair113";
-  attribute SOFT_HLUTNM of \data_loc[3]_i_13\ : label is "soft_lutpair120";
-  attribute SOFT_HLUTNM of \data_loc[3]_i_14\ : label is "soft_lutpair51";
-  attribute SOFT_HLUTNM of \data_loc[3]_i_15\ : label is "soft_lutpair124";
-  attribute SOFT_HLUTNM of \data_loc[3]_i_4\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \data_loc[3]_i_8\ : label is "soft_lutpair97";
-  attribute SOFT_HLUTNM of \data_loc[3]_i_9\ : label is "soft_lutpair65";
-  attribute SOFT_HLUTNM of \data_loc[4]_i_1\ : label is "soft_lutpair145";
-  attribute SOFT_HLUTNM of \data_loc[4]_i_3\ : label is "soft_lutpair63";
-  attribute SOFT_HLUTNM of \data_loc[5]_i_2\ : label is "soft_lutpair145";
-  attribute SOFT_HLUTNM of \data_loc[5]_i_5\ : label is "soft_lutpair52";
-  attribute SOFT_HLUTNM of \genblk1[0].data_loc_tracker[0]_i_1\ : label is "soft_lutpair107";
-  attribute SOFT_HLUTNM of \genblk1[10].data_loc_tracker[10]_i_1\ : label is "soft_lutpair88";
-  attribute SOFT_HLUTNM of \genblk1[11].data_loc_tracker[11]_i_1\ : label is "soft_lutpair139";
-  attribute SOFT_HLUTNM of \genblk1[13].data_loc_tracker[13]_i_1\ : label is "soft_lutpair144";
-  attribute SOFT_HLUTNM of \genblk1[16].data_loc_tracker[16]_i_1\ : label is "soft_lutpair111";
-  attribute SOFT_HLUTNM of \genblk1[17].data_loc_tracker[17]_i_1\ : label is "soft_lutpair117";
-  attribute SOFT_HLUTNM of \genblk1[18].data_loc_tracker[18]_i_1\ : label is "soft_lutpair136";
-  attribute SOFT_HLUTNM of \genblk1[19].data_loc_tracker[19]_i_1\ : label is "soft_lutpair137";
-  attribute SOFT_HLUTNM of \genblk1[1].data_loc_tracker[1]_i_1\ : label is "soft_lutpair131";
-  attribute SOFT_HLUTNM of \genblk1[20].data_loc_tracker[20]_i_1\ : label is "soft_lutpair135";
-  attribute SOFT_HLUTNM of \genblk1[21].data_loc_tracker[21]_i_1\ : label is "soft_lutpair132";
-  attribute SOFT_HLUTNM of \genblk1[22].data_loc_tracker[22]_i_1\ : label is "soft_lutpair134";
-  attribute SOFT_HLUTNM of \genblk1[23].data_loc_tracker[23]_i_1\ : label is "soft_lutpair130";
-  attribute SOFT_HLUTNM of \genblk1[24].data_loc_tracker[24]_i_1\ : label is "soft_lutpair90";
-  attribute SOFT_HLUTNM of \genblk1[25].data_loc_tracker[25]_i_1\ : label is "soft_lutpair116";
-  attribute SOFT_HLUTNM of \genblk1[26].data_loc_tracker[26]_i_1\ : label is "soft_lutpair121";
-  attribute SOFT_HLUTNM of \genblk1[27].data_loc_tracker[27]_i_1\ : label is "soft_lutpair120";
-  attribute SOFT_HLUTNM of \genblk1[28].data_loc_tracker[28]_i_1\ : label is "soft_lutpair119";
-  attribute SOFT_HLUTNM of \genblk1[29].data_loc_tracker[29]_i_1\ : label is "soft_lutpair115";
-  attribute SOFT_HLUTNM of \genblk1[2].data_loc_tracker[2]_i_1\ : label is "soft_lutpair100";
-  attribute SOFT_HLUTNM of \genblk1[30].data_loc_tracker[30]_i_1\ : label is "soft_lutpair114";
-  attribute SOFT_HLUTNM of \genblk1[31].data_loc_tracker[31]_i_1\ : label is "soft_lutpair113";
-  attribute SOFT_HLUTNM of \genblk1[32].data_loc_tracker[32]_i_1\ : label is "soft_lutpair112";
-  attribute SOFT_HLUTNM of \genblk1[33].data_loc_tracker[33]_i_1\ : label is "soft_lutpair109";
-  attribute SOFT_HLUTNM of \genblk1[34].data_loc_tracker[34]_i_1\ : label is "soft_lutpair108";
-  attribute SOFT_HLUTNM of \genblk1[35].data_loc_tracker[35]_i_1\ : label is "soft_lutpair105";
-  attribute SOFT_HLUTNM of \genblk1[36].data_loc_tracker[36]_i_1\ : label is "soft_lutpair104";
-  attribute SOFT_HLUTNM of \genblk1[37].data_loc_tracker[37]_i_1\ : label is "soft_lutpair103";
-  attribute SOFT_HLUTNM of \genblk1[38].data_loc_tracker[38]_i_1\ : label is "soft_lutpair102";
-  attribute SOFT_HLUTNM of \genblk1[39].data_loc_tracker[39]_i_1\ : label is "soft_lutpair101";
-  attribute SOFT_HLUTNM of \genblk1[3].data_loc_tracker[3]_i_1\ : label is "soft_lutpair128";
-  attribute SOFT_HLUTNM of \genblk1[41].data_loc_tracker[41]_i_1\ : label is "soft_lutpair98";
-  attribute SOFT_HLUTNM of \genblk1[42].data_loc_tracker[42]_i_1\ : label is "soft_lutpair94";
-  attribute SOFT_HLUTNM of \genblk1[43].data_loc_tracker[43]_i_1\ : label is "soft_lutpair93";
-  attribute SOFT_HLUTNM of \genblk1[45].data_loc_tracker[45]_i_1\ : label is "soft_lutpair85";
-  attribute SOFT_HLUTNM of \genblk1[47].data_loc_tracker[47]_i_1\ : label is "soft_lutpair83";
-  attribute SOFT_HLUTNM of \genblk1[48].data_loc_tracker[48]_i_1\ : label is "soft_lutpair82";
-  attribute SOFT_HLUTNM of \genblk1[49].data_loc_tracker[49]_i_1\ : label is "soft_lutpair79";
-  attribute SOFT_HLUTNM of \genblk1[4].data_loc_tracker[4]_i_1\ : label is "soft_lutpair129";
-  attribute SOFT_HLUTNM of \genblk1[50].data_loc_tracker[50]_i_1\ : label is "soft_lutpair77";
-  attribute SOFT_HLUTNM of \genblk1[51].data_loc_tracker[51]_i_1\ : label is "soft_lutpair76";
-  attribute SOFT_HLUTNM of \genblk1[52].data_loc_tracker[52]_i_1\ : label is "soft_lutpair78";
-  attribute SOFT_HLUTNM of \genblk1[53].data_loc_tracker[53]_i_1\ : label is "soft_lutpair80";
-  attribute SOFT_HLUTNM of \genblk1[54].data_loc_tracker[54]_i_1\ : label is "soft_lutpair86";
-  attribute SOFT_HLUTNM of \genblk1[55].data_loc_tracker[55]_i_1\ : label is "soft_lutpair89";
-  attribute SOFT_HLUTNM of \genblk1[56].data_loc_tracker[56]_i_1\ : label is "soft_lutpair91";
-  attribute SOFT_HLUTNM of \genblk1[57].data_loc_tracker[57]_i_1\ : label is "soft_lutpair81";
-  attribute SOFT_HLUTNM of \genblk1[58].data_loc_tracker[58]_i_1\ : label is "soft_lutpair95";
-  attribute SOFT_HLUTNM of \genblk1[59].data_loc_tracker[59]_i_1\ : label is "soft_lutpair99";
-  attribute SOFT_HLUTNM of \genblk1[5].data_loc_tracker[5]_i_1\ : label is "soft_lutpair122";
-  attribute SOFT_HLUTNM of \genblk1[60].data_loc_tracker[60]_i_1\ : label is "soft_lutpair106";
-  attribute SOFT_HLUTNM of \genblk1[61].data_loc_tracker[61]_i_1\ : label is "soft_lutpair110";
-  attribute SOFT_HLUTNM of \genblk1[63].data_loc_tracker[63]_i_1\ : label is "soft_lutpair87";
-  attribute SOFT_HLUTNM of \genblk1[7].data_loc_tracker[7]_i_1\ : label is "soft_lutpair97";
-  attribute SOFT_HLUTNM of \genblk1[8].data_loc_tracker[8]_i_1\ : label is "soft_lutpair96";
-  attribute SOFT_HLUTNM of \genblk1[9].data_loc_tracker[9]_i_1\ : label is "soft_lutpair84";
-  attribute SOFT_HLUTNM of \l1a_cntr[1]_i_1\ : label is "soft_lutpair73";
-  attribute SOFT_HLUTNM of \l1a_cntr[2]_i_1\ : label is "soft_lutpair73";
-  attribute SOFT_HLUTNM of \l1a_cntr[3]_i_1\ : label is "soft_lutpair34";
-  attribute SOFT_HLUTNM of \l1a_cntr[4]_i_1\ : label is "soft_lutpair34";
-  attribute SOFT_HLUTNM of \l1a_cntr[6]_i_1\ : label is "soft_lutpair64";
-  attribute SOFT_HLUTNM of \l1a_cntr[7]_i_1\ : label is "soft_lutpair75";
-  attribute SOFT_HLUTNM of \l1a_cntr[8]_i_2\ : label is "soft_lutpair64";
-  attribute SOFT_HLUTNM of \l1a_cntr[8]_i_3\ : label is "soft_lutpair75";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_10\ : label is "soft_lutpair125";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_11\ : label is "soft_lutpair98";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_12\ : label is "soft_lutpair91";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_13\ : label is "soft_lutpair141";
+  attribute SOFT_HLUTNM of \bram_overflows_tracker[0]_i_10\ : label is "soft_lutpair47";
+  attribute SOFT_HLUTNM of \bram_overflows_tracker[0]_i_5\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \bram_overflows_tracker[0]_i_8\ : label is "soft_lutpair97";
+  attribute SOFT_HLUTNM of \bram_overflows_tracker[0]_i_9\ : label is "soft_lutpair43";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_12\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_13\ : label is "soft_lutpair26";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_15\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_16\ : label is "soft_lutpair139";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_18\ : label is "soft_lutpair68";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_24\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_25\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_27\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_28\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_29\ : label is "soft_lutpair19";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_33\ : label is "soft_lutpair136";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_34\ : label is "soft_lutpair51";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_39\ : label is "soft_lutpair32";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_41\ : label is "soft_lutpair28";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_42\ : label is "soft_lutpair147";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_48\ : label is "soft_lutpair90";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_49\ : label is "soft_lutpair67";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_51\ : label is "soft_lutpair76";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_52\ : label is "soft_lutpair89";
+  attribute SOFT_HLUTNM of \bramaddr[0]_i_9\ : label is "soft_lutpair134";
+  attribute SOFT_HLUTNM of \bramaddr[12]_i_13\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \bramaddr[12]_i_15\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \bramaddr[12]_i_19\ : label is "soft_lutpair49";
+  attribute SOFT_HLUTNM of \bramaddr[12]_i_20\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \bramaddr[12]_i_21\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \bramaddr[12]_i_25\ : label is "soft_lutpair111";
+  attribute SOFT_HLUTNM of \bramaddr[12]_i_26\ : label is "soft_lutpair96";
+  attribute SOFT_HLUTNM of \bramaddr[12]_i_31\ : label is "soft_lutpair65";
+  attribute SOFT_HLUTNM of \bramaddr[12]_i_33\ : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of \bramaddr[12]_i_34\ : label is "soft_lutpair110";
+  attribute SOFT_HLUTNM of \bramaddr[12]_i_36\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \bramaddr[12]_i_39\ : label is "soft_lutpair28";
+  attribute SOFT_HLUTNM of \bramaddr[16]_i_5\ : label is "soft_lutpair125";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_10\ : label is "soft_lutpair62";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_12\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_19\ : label is "soft_lutpair140";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_28\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_29\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_31\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_32\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_34\ : label is "soft_lutpair26";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_42\ : label is "soft_lutpair115";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_43\ : label is "soft_lutpair64";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_45\ : label is "soft_lutpair108";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_46\ : label is "soft_lutpair54";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_47\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_50\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_51\ : label is "soft_lutpair98";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_54\ : label is "soft_lutpair88";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_55\ : label is "soft_lutpair131";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_56\ : label is "soft_lutpair147";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_63\ : label is "soft_lutpair69";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_67\ : label is "soft_lutpair63";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_7\ : label is "soft_lutpair128";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_70\ : label is "soft_lutpair117";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_72\ : label is "soft_lutpair60";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_74\ : label is "soft_lutpair51";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_75\ : label is "soft_lutpair67";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_76\ : label is "soft_lutpair79";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_77\ : label is "soft_lutpair121";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_78\ : label is "soft_lutpair107";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_85\ : label is "soft_lutpair82";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_86\ : label is "soft_lutpair43";
+  attribute SOFT_HLUTNM of \bramaddr[4]_i_9\ : label is "soft_lutpair68";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_10\ : label is "soft_lutpair71";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_14\ : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_21\ : label is "soft_lutpair55";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_22\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_23\ : label is "soft_lutpair127";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_25\ : label is "soft_lutpair64";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_26\ : label is "soft_lutpair66";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_33\ : label is "soft_lutpair78";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_41\ : label is "soft_lutpair54";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_42\ : label is "soft_lutpair61";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_47\ : label is "soft_lutpair65";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_48\ : label is "soft_lutpair63";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_49\ : label is "soft_lutpair59";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_51\ : label is "soft_lutpair130";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_54\ : label is "soft_lutpair32";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_55\ : label is "soft_lutpair101";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_56\ : label is "soft_lutpair141";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_59\ : label is "soft_lutpair56";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_63\ : label is "soft_lutpair102";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_65\ : label is "soft_lutpair81";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_67\ : label is "soft_lutpair53";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_70\ : label is "soft_lutpair105";
+  attribute SOFT_HLUTNM of \bramaddr[8]_i_72\ : label is "soft_lutpair47";
+  attribute SOFT_HLUTNM of \bramen_enabler[0]_i_1\ : label is "soft_lutpair66";
+  attribute SOFT_HLUTNM of bramwe_i_1 : label is "soft_lutpair71";
+  attribute SOFT_HLUTNM of \data_loc[0]_i_11\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \data_loc[0]_i_12\ : label is "soft_lutpair58";
+  attribute SOFT_HLUTNM of \data_loc[0]_i_13\ : label is "soft_lutpair133";
+  attribute SOFT_HLUTNM of \data_loc[0]_i_14\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \data_loc[0]_i_15\ : label is "soft_lutpair141";
+  attribute SOFT_HLUTNM of \data_loc[0]_i_17\ : label is "soft_lutpair19";
+  attribute SOFT_HLUTNM of \data_loc[0]_i_18\ : label is "soft_lutpair137";
+  attribute SOFT_HLUTNM of \data_loc[0]_i_19\ : label is "soft_lutpair116";
+  attribute SOFT_HLUTNM of \data_loc[0]_i_20\ : label is "soft_lutpair50";
+  attribute SOFT_HLUTNM of \data_loc[0]_i_21\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \data_loc[0]_i_23\ : label is "soft_lutpair100";
+  attribute SOFT_HLUTNM of \data_loc[0]_i_24\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \data_loc[0]_i_3\ : label is "soft_lutpair114";
+  attribute SOFT_HLUTNM of \data_loc[0]_i_7\ : label is "soft_lutpair50";
+  attribute SOFT_HLUTNM of \data_loc[0]_i_9\ : label is "soft_lutpair56";
+  attribute SOFT_HLUTNM of \data_loc[1]_i_10\ : label is "soft_lutpair52";
+  attribute SOFT_HLUTNM of \data_loc[1]_i_11\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \data_loc[1]_i_12\ : label is "soft_lutpair144";
+  attribute SOFT_HLUTNM of \data_loc[1]_i_13\ : label is "soft_lutpair138";
+  attribute SOFT_HLUTNM of \data_loc[1]_i_14\ : label is "soft_lutpair145";
+  attribute SOFT_HLUTNM of \data_loc[1]_i_15\ : label is "soft_lutpair142";
+  attribute SOFT_HLUTNM of \data_loc[1]_i_16\ : label is "soft_lutpair112";
+  attribute SOFT_HLUTNM of \data_loc[1]_i_19\ : label is "soft_lutpair94";
+  attribute SOFT_HLUTNM of \data_loc[1]_i_21\ : label is "soft_lutpair104";
+  attribute SOFT_HLUTNM of \data_loc[1]_i_23\ : label is "soft_lutpair143";
+  attribute SOFT_HLUTNM of \data_loc[1]_i_5\ : label is "soft_lutpair132";
+  attribute SOFT_HLUTNM of \data_loc[1]_i_6\ : label is "soft_lutpair95";
+  attribute SOFT_HLUTNM of \data_loc[1]_i_8\ : label is "soft_lutpair59";
+  attribute SOFT_HLUTNM of \data_loc[2]_i_10\ : label is "soft_lutpair58";
+  attribute SOFT_HLUTNM of \data_loc[2]_i_11\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \data_loc[2]_i_13\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \data_loc[2]_i_14\ : label is "soft_lutpair53";
+  attribute SOFT_HLUTNM of \data_loc[2]_i_15\ : label is "soft_lutpair49";
+  attribute SOFT_HLUTNM of \data_loc[2]_i_2\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \data_loc[2]_i_4\ : label is "soft_lutpair87";
+  attribute SOFT_HLUTNM of \data_loc[2]_i_5\ : label is "soft_lutpair52";
+  attribute SOFT_HLUTNM of \data_loc[2]_i_6\ : label is "soft_lutpair62";
+  attribute SOFT_HLUTNM of \data_loc[2]_i_7\ : label is "soft_lutpair137";
+  attribute SOFT_HLUTNM of \data_loc[2]_i_9\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \data_loc[3]_i_2\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \data_loc[3]_i_5\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \data_loc[3]_i_6\ : label is "soft_lutpair99";
+  attribute SOFT_HLUTNM of \data_loc[3]_i_7\ : label is "soft_lutpair135";
+  attribute SOFT_HLUTNM of \data_loc[4]_i_1\ : label is "soft_lutpair146";
+  attribute SOFT_HLUTNM of \data_loc[4]_i_3\ : label is "soft_lutpair60";
+  attribute SOFT_HLUTNM of \data_loc[4]_i_4\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \data_loc[4]_i_5\ : label is "soft_lutpair61";
+  attribute SOFT_HLUTNM of \data_loc[5]_i_12\ : label is "soft_lutpair57";
+  attribute SOFT_HLUTNM of \data_loc[5]_i_15\ : label is "soft_lutpair69";
+  attribute SOFT_HLUTNM of \data_loc[5]_i_16\ : label is "soft_lutpair113";
+  attribute SOFT_HLUTNM of \data_loc[5]_i_17\ : label is "soft_lutpair55";
+  attribute SOFT_HLUTNM of \data_loc[5]_i_2\ : label is "soft_lutpair146";
+  attribute SOFT_HLUTNM of \data_loc[5]_i_20\ : label is "soft_lutpair92";
+  attribute SOFT_HLUTNM of \data_loc[5]_i_21\ : label is "soft_lutpair122";
+  attribute SOFT_HLUTNM of \data_loc[5]_i_22\ : label is "soft_lutpair57";
+  attribute SOFT_HLUTNM of \data_loc[5]_i_23\ : label is "soft_lutpair103";
+  attribute SOFT_HLUTNM of \genblk1[0].data_loc_tracker[0]_i_1\ : label is "soft_lutpair140";
+  attribute SOFT_HLUTNM of \genblk1[10].data_loc_tracker[10]_i_1\ : label is "soft_lutpair115";
+  attribute SOFT_HLUTNM of \genblk1[11].data_loc_tracker[11]_i_1\ : label is "soft_lutpair122";
+  attribute SOFT_HLUTNM of \genblk1[12].data_loc_tracker[12]_i_1\ : label is "soft_lutpair121";
+  attribute SOFT_HLUTNM of \genblk1[14].data_loc_tracker[14]_i_1\ : label is "soft_lutpair87";
+  attribute SOFT_HLUTNM of \genblk1[15].data_loc_tracker[15]_i_1\ : label is "soft_lutpair116";
+  attribute SOFT_HLUTNM of \genblk1[1].data_loc_tracker[1]_i_1\ : label is "soft_lutpair139";
+  attribute SOFT_HLUTNM of \genblk1[22].data_loc_tracker[22]_i_1\ : label is "soft_lutpair145";
+  attribute SOFT_HLUTNM of \genblk1[23].data_loc_tracker[23]_i_1\ : label is "soft_lutpair110";
+  attribute SOFT_HLUTNM of \genblk1[24].data_loc_tracker[24]_i_1\ : label is "soft_lutpair136";
+  attribute SOFT_HLUTNM of \genblk1[25].data_loc_tracker[25]_i_1\ : label is "soft_lutpair138";
+  attribute SOFT_HLUTNM of \genblk1[27].data_loc_tracker[27]_i_1\ : label is "soft_lutpair135";
+  attribute SOFT_HLUTNM of \genblk1[28].data_loc_tracker[28]_i_1\ : label is "soft_lutpair99";
+  attribute SOFT_HLUTNM of \genblk1[29].data_loc_tracker[29]_i_1\ : label is "soft_lutpair130";
+  attribute SOFT_HLUTNM of \genblk1[2].data_loc_tracker[2]_i_1\ : label is "soft_lutpair134";
+  attribute SOFT_HLUTNM of \genblk1[30].data_loc_tracker[30]_i_1\ : label is "soft_lutpair127";
+  attribute SOFT_HLUTNM of \genblk1[31].data_loc_tracker[31]_i_1\ : label is "soft_lutpair117";
+  attribute SOFT_HLUTNM of \genblk1[32].data_loc_tracker[32]_i_1\ : label is "soft_lutpair98";
+  attribute SOFT_HLUTNM of \genblk1[33].data_loc_tracker[33]_i_1\ : label is "soft_lutpair108";
+  attribute SOFT_HLUTNM of \genblk1[34].data_loc_tracker[34]_i_1\ : label is "soft_lutpair114";
+  attribute SOFT_HLUTNM of \genblk1[35].data_loc_tracker[35]_i_1\ : label is "soft_lutpair113";
+  attribute SOFT_HLUTNM of \genblk1[36].data_loc_tracker[36]_i_1\ : label is "soft_lutpair112";
+  attribute SOFT_HLUTNM of \genblk1[37].data_loc_tracker[37]_i_1\ : label is "soft_lutpair111";
+  attribute SOFT_HLUTNM of \genblk1[38].data_loc_tracker[38]_i_1\ : label is "soft_lutpair94";
+  attribute SOFT_HLUTNM of \genblk1[39].data_loc_tracker[39]_i_1\ : label is "soft_lutpair107";
+  attribute SOFT_HLUTNM of \genblk1[3].data_loc_tracker[3]_i_1\ : label is "soft_lutpair132";
+  attribute SOFT_HLUTNM of \genblk1[41].data_loc_tracker[41]_i_1\ : label is "soft_lutpair106";
+  attribute SOFT_HLUTNM of \genblk1[42].data_loc_tracker[42]_i_1\ : label is "soft_lutpair105";
+  attribute SOFT_HLUTNM of \genblk1[43].data_loc_tracker[43]_i_1\ : label is "soft_lutpair104";
+  attribute SOFT_HLUTNM of \genblk1[44].data_loc_tracker[44]_i_1\ : label is "soft_lutpair103";
+  attribute SOFT_HLUTNM of \genblk1[45].data_loc_tracker[45]_i_1\ : label is "soft_lutpair102";
+  attribute SOFT_HLUTNM of \genblk1[46].data_loc_tracker[46]_i_1\ : label is "soft_lutpair101";
+  attribute SOFT_HLUTNM of \genblk1[47].data_loc_tracker[47]_i_1\ : label is "soft_lutpair100";
+  attribute SOFT_HLUTNM of \genblk1[48].data_loc_tracker[48]_i_1\ : label is "soft_lutpair97";
+  attribute SOFT_HLUTNM of \genblk1[49].data_loc_tracker[49]_i_1\ : label is "soft_lutpair96";
+  attribute SOFT_HLUTNM of \genblk1[4].data_loc_tracker[4]_i_1\ : label is "soft_lutpair131";
+  attribute SOFT_HLUTNM of \genblk1[50].data_loc_tracker[50]_i_1\ : label is "soft_lutpair86";
+  attribute SOFT_HLUTNM of \genblk1[51].data_loc_tracker[51]_i_1\ : label is "soft_lutpair91";
+  attribute SOFT_HLUTNM of \genblk1[52].data_loc_tracker[52]_i_1\ : label is "soft_lutpair93";
+  attribute SOFT_HLUTNM of \genblk1[53].data_loc_tracker[53]_i_1\ : label is "soft_lutpair90";
+  attribute SOFT_HLUTNM of \genblk1[54].data_loc_tracker[54]_i_1\ : label is "soft_lutpair89";
+  attribute SOFT_HLUTNM of \genblk1[55].data_loc_tracker[55]_i_1\ : label is "soft_lutpair88";
+  attribute SOFT_HLUTNM of \genblk1[56].data_loc_tracker[56]_i_1\ : label is "soft_lutpair85";
+  attribute SOFT_HLUTNM of \genblk1[57].data_loc_tracker[57]_i_1\ : label is "soft_lutpair84";
+  attribute SOFT_HLUTNM of \genblk1[58].data_loc_tracker[58]_i_1\ : label is "soft_lutpair83";
+  attribute SOFT_HLUTNM of \genblk1[59].data_loc_tracker[59]_i_1\ : label is "soft_lutpair82";
+  attribute SOFT_HLUTNM of \genblk1[5].data_loc_tracker[5]_i_1\ : label is "soft_lutpair128";
+  attribute SOFT_HLUTNM of \genblk1[60].data_loc_tracker[60]_i_1\ : label is "soft_lutpair81";
+  attribute SOFT_HLUTNM of \genblk1[61].data_loc_tracker[61]_i_1\ : label is "soft_lutpair79";
+  attribute SOFT_HLUTNM of \genblk1[62].data_loc_tracker[62]_i_1\ : label is "soft_lutpair78";
+  attribute SOFT_HLUTNM of \genblk1[63].data_loc_tracker[63]_i_1\ : label is "soft_lutpair80";
+  attribute SOFT_HLUTNM of \genblk1[6].data_loc_tracker[6]_i_1\ : label is "soft_lutpair95";
+  attribute SOFT_HLUTNM of \genblk1[7].data_loc_tracker[7]_i_1\ : label is "soft_lutpair123";
+  attribute SOFT_HLUTNM of \genblk1[8].data_loc_tracker[8]_i_1\ : label is "soft_lutpair124";
+  attribute SOFT_HLUTNM of \genblk1[9].data_loc_tracker[9]_i_1\ : label is "soft_lutpair92";
+  attribute SOFT_HLUTNM of \l1a_cntr[1]_i_1\ : label is "soft_lutpair75";
+  attribute SOFT_HLUTNM of \l1a_cntr[2]_i_1\ : label is "soft_lutpair75";
+  attribute SOFT_HLUTNM of \l1a_cntr[2]_i_2\ : label is "soft_lutpair77";
+  attribute SOFT_HLUTNM of \l1a_cntr[3]_i_1\ : label is "soft_lutpair42";
+  attribute SOFT_HLUTNM of \l1a_cntr[4]_i_1\ : label is "soft_lutpair42";
+  attribute SOFT_HLUTNM of \l1a_cntr[6]_i_1\ : label is "soft_lutpair74";
+  attribute SOFT_HLUTNM of \l1a_cntr[7]_i_1\ : label is "soft_lutpair77";
+  attribute SOFT_HLUTNM of \l1a_cntr[8]_i_2\ : label is "soft_lutpair74";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_10\ : label is "soft_lutpair126";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_11\ : label is "soft_lutpair84";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_12\ : label is "soft_lutpair85";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_13\ : label is "soft_lutpair109";
   attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_14\ : label is "soft_lutpair142";
   attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_15\ : label is "soft_lutpair143";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_2\ : label is "soft_lutpair68";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_3\ : label is "soft_lutpair43";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_4\ : label is "soft_lutpair30";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_5\ : label is "soft_lutpair25";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_6\ : label is "soft_lutpair23";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_7\ : label is "soft_lutpair37";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_9\ : label is "soft_lutpair139";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_10\ : label is "soft_lutpair41";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_11\ : label is "soft_lutpair43";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_12\ : label is "soft_lutpair30";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_14\ : label is "soft_lutpair126";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_16\ : label is "soft_lutpair127";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_17\ : label is "soft_lutpair140";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_2\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_20\ : label is "soft_lutpair25";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_21\ : label is "soft_lutpair28";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_22\ : label is "soft_lutpair35";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_3\ : label is "soft_lutpair37";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_4\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_5\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_8\ : label is "soft_lutpair65";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_9\ : label is "soft_lutpair35";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_10\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_12\ : label is "soft_lutpair118";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_13\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_14\ : label is "soft_lutpair138";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_15\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_16\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_17\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_18\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_19\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_2\ : label is "soft_lutpair69";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_20\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_21\ : label is "soft_lutpair13";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_22\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_23\ : label is "soft_lutpair39";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_24\ : label is "soft_lutpair38";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_25\ : label is "soft_lutpair42";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_27\ : label is "soft_lutpair126";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_28\ : label is "soft_lutpair28";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_3\ : label is "soft_lutpair69";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_30\ : label is "soft_lutpair123";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_31\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_32\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_33\ : label is "soft_lutpair13";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_34\ : label is "soft_lutpair38";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_35\ : label is "soft_lutpair39";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_36\ : label is "soft_lutpair42";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_37\ : label is "soft_lutpair138";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_38\ : label is "soft_lutpair118";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_39\ : label is "soft_lutpair124";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_40\ : label is "soft_lutpair81";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_2\ : label is "soft_lutpair76";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_3\ : label is "soft_lutpair44";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_4\ : label is "soft_lutpair46";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_5\ : label is "soft_lutpair36";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_6\ : label is "soft_lutpair38";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_7\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[0]_i_9\ : label is "soft_lutpair83";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_10\ : label is "soft_lutpair48";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_11\ : label is "soft_lutpair44";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_12\ : label is "soft_lutpair46";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_14\ : label is "soft_lutpair119";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_15\ : label is "soft_lutpair93";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_16\ : label is "soft_lutpair144";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_17\ : label is "soft_lutpair33";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_2\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_21\ : label is "soft_lutpair36";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_22\ : label is "soft_lutpair41";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_23\ : label is "soft_lutpair27";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_24\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_3\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_4\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_5\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_8\ : label is "soft_lutpair41";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[2]_i_9\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[3]_i_1\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[5]_i_2\ : label is "soft_lutpair70";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_1\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_10\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_11\ : label is "soft_lutpair118";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_13\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_14\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_15\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_16\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_17\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_18\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_19\ : label is "soft_lutpair39";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_2\ : label is "soft_lutpair70";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_20\ : label is "soft_lutpair40";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_21\ : label is "soft_lutpair29";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_22\ : label is "soft_lutpair33";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_23\ : label is "soft_lutpair37";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_24\ : label is "soft_lutpair35";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_25\ : label is "soft_lutpair27";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_27\ : label is "soft_lutpair120";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_28\ : label is "soft_lutpair119";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_29\ : label is "soft_lutpair129";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_30\ : label is "soft_lutpair39";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_31\ : label is "soft_lutpair29";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_32\ : label is "soft_lutpair40";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_34\ : label is "soft_lutpair37";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_35\ : label is "soft_lutpair35";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_36\ : label is "soft_lutpair118";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_38\ : label is "soft_lutpair124";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_39\ : label is "soft_lutpair123";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_40\ : label is "soft_lutpair125";
   attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_41\ : label is "soft_lutpair106";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_42\ : label is "soft_lutpair125";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_43\ : label is "soft_lutpair89";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_44\ : label is "soft_lutpair101";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_45\ : label is "soft_lutpair137";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_46\ : label is "soft_lutpair77";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_47\ : label is "soft_lutpair47";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_48\ : label is "soft_lutpair41";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_49\ : label is "soft_lutpair117";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_50\ : label is "soft_lutpair111";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_51\ : label is "soft_lutpair87";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_52\ : label is "soft_lutpair23";
-  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_8\ : label is "soft_lutpair123";
-  attribute SOFT_HLUTNM of \pl_data_loc_tracker[15]_i_2\ : label is "soft_lutpair24";
-  attribute SOFT_HLUTNM of \pl_data_loc_tracker[23]_i_2\ : label is "soft_lutpair31";
-  attribute SOFT_HLUTNM of \pl_data_loc_tracker[31]_i_2\ : label is "soft_lutpair31";
-  attribute SOFT_HLUTNM of \pl_data_loc_tracker[39]_i_2\ : label is "soft_lutpair32";
-  attribute SOFT_HLUTNM of \pl_data_loc_tracker[47]_i_2\ : label is "soft_lutpair32";
-  attribute SOFT_HLUTNM of \pl_data_loc_tracker[55]_i_2\ : label is "soft_lutpair33";
-  attribute SOFT_HLUTNM of \pl_data_loc_tracker[56]_i_2\ : label is "soft_lutpair66";
-  attribute SOFT_HLUTNM of \pl_data_loc_tracker[57]_i_2\ : label is "soft_lutpair67";
-  attribute SOFT_HLUTNM of \pl_data_loc_tracker[58]_i_2\ : label is "soft_lutpair66";
-  attribute SOFT_HLUTNM of \pl_data_loc_tracker[59]_i_2\ : label is "soft_lutpair67";
-  attribute SOFT_HLUTNM of \pl_data_loc_tracker[63]_i_4\ : label is "soft_lutpair33";
-  attribute SOFT_HLUTNM of \pl_data_loc_tracker[7]_i_2\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_42\ : label is "soft_lutpair109";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_43\ : label is "soft_lutpair126";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_46\ : label is "soft_lutpair91";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_47\ : label is "soft_lutpair86";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_48\ : label is "soft_lutpair133";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_49\ : label is "soft_lutpair48";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_50\ : label is "soft_lutpair80";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_51\ : label is "soft_lutpair38";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_7\ : label is "soft_lutpair120";
+  attribute SOFT_HLUTNM of \occupied_data_spaces[6]_i_8\ : label is "soft_lutpair129";
+  attribute SOFT_HLUTNM of \pl_data_loc_tracker[15]_i_2\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of \pl_data_loc_tracker[23]_i_2\ : label is "soft_lutpair30";
+  attribute SOFT_HLUTNM of \pl_data_loc_tracker[31]_i_2\ : label is "soft_lutpair30";
+  attribute SOFT_HLUTNM of \pl_data_loc_tracker[39]_i_2\ : label is "soft_lutpair31";
+  attribute SOFT_HLUTNM of \pl_data_loc_tracker[47]_i_2\ : label is "soft_lutpair31";
+  attribute SOFT_HLUTNM of \pl_data_loc_tracker[55]_i_2\ : label is "soft_lutpair34";
+  attribute SOFT_HLUTNM of \pl_data_loc_tracker[56]_i_2\ : label is "soft_lutpair72";
+  attribute SOFT_HLUTNM of \pl_data_loc_tracker[57]_i_2\ : label is "soft_lutpair73";
+  attribute SOFT_HLUTNM of \pl_data_loc_tracker[58]_i_2\ : label is "soft_lutpair73";
+  attribute SOFT_HLUTNM of \pl_data_loc_tracker[59]_i_2\ : label is "soft_lutpair72";
+  attribute SOFT_HLUTNM of \pl_data_loc_tracker[63]_i_4\ : label is "soft_lutpair34";
+  attribute SOFT_HLUTNM of \pl_data_loc_tracker[7]_i_2\ : label is "soft_lutpair18";
 begin
-  DI(0) <= \^di\(0);
-  Q(1 downto 0) <= \^q\(1 downto 0);
+  D(16 downto 0) <= \^d\(16 downto 0);
   bram_overflows_tracker(31 downto 0) <= \^bram_overflows_tracker\(31 downto 0);
-  bramaddr(16 downto 0) <= \^bramaddr\(16 downto 0);
-  bramwe <= \^bramwe\;
+  bramen_raw <= \^bramen_raw\;
+  bramwe_raw <= \^bramwe_raw\;
   data_loc_tracker(63 downto 0) <= \^data_loc_tracker\(63 downto 0);
+  \out\(1 downto 0) <= \^out\(1 downto 0);
 \FSM_onehot_inner_cntr[0]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"DDDF8888"
+      INIT => X"CCFFCCCE"
     )
         port map (
-      I0 => first_clk40_rise,
+      I0 => \^out\(0),
       I1 => \inner_cntr__0\(2),
-      I2 => \inner_cntr__0\(0),
-      I3 => l1a_cntr_sync120,
-      I4 => \inner_cntr__0\(0),
+      I2 => \^out\(1),
+      I3 => \^out\(0),
+      I4 => clk40,
       O => \FSM_onehot_inner_cntr[0]_i_1_n_0\
     );
 \FSM_onehot_inner_cntr[1]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"F5F7A0A0"
+      INIT => X"FF00FF02"
     )
         port map (
-      I0 => first_clk40_rise,
+      I0 => \^out\(1),
       I1 => \inner_cntr__0\(2),
-      I2 => \inner_cntr__0\(0),
-      I3 => l1a_cntr_sync120,
-      I4 => l1a_cntr_sync120,
+      I2 => \^out\(1),
+      I3 => \^out\(0),
+      I4 => clk40,
       O => \FSM_onehot_inner_cntr[1]_i_1_n_0\
     );
 \FSM_onehot_inner_cntr[2]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FF57AA00"
+      INIT => X"F000F0F2"
     )
         port map (
-      I0 => first_clk40_rise,
+      I0 => \inner_cntr__0\(2),
       I1 => \inner_cntr__0\(2),
-      I2 => \inner_cntr__0\(0),
-      I3 => l1a_cntr_sync120,
-      I4 => \inner_cntr__0\(2),
+      I2 => \^out\(1),
+      I3 => \^out\(0),
+      I4 => clk40,
       O => \FSM_onehot_inner_cntr[2]_i_1_n_0\
     );
 \FSM_onehot_inner_cntr_reg[0]\: unisim.vcomponents.FDRE
@@ -1297,7 +1286,7 @@ begin
       C => clk120,
       CE => '1',
       D => \FSM_onehot_inner_cntr[0]_i_1_n_0\,
-      Q => \inner_cntr__0\(0),
+      Q => \^out\(0),
       R => '0'
     );
 \FSM_onehot_inner_cntr_reg[1]\: unisim.vcomponents.FDRE
@@ -1309,7 +1298,7 @@ begin
       C => clk120,
       CE => '1',
       D => \FSM_onehot_inner_cntr[1]_i_1_n_0\,
-      Q => l1a_cntr_sync120,
+      Q => \^out\(1),
       R => '0'
     );
 \FSM_onehot_inner_cntr_reg[2]\: unisim.vcomponents.FDRE
@@ -1324,26 +1313,40 @@ begin
       Q => \inner_cntr__0\(2),
       R => '0'
     );
-\bram_overflows_tracker[0]_i_1\: unisim.vcomponents.LUT2
+\bram_overflows_tracker[0]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"1"
+      INIT => X"00000400"
     )
         port map (
-      I0 => \inner_cntr__0\(2),
-      I1 => \^di\(0),
+      I0 => \^bramen_raw\,
+      I1 => \^out\(0),
+      I2 => \^out\(1),
+      I3 => is_data_mode,
+      I4 => old_is_data_mode_reg_n_0,
       O => \bram_overflows_tracker[0]_i_1_n_0\
+    );
+\bram_overflows_tracker[0]_i_10\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(58),
+      I1 => \^data_loc_tracker\(59),
+      I2 => \^data_loc_tracker\(60),
+      I3 => \^data_loc_tracker\(61),
+      O => \bram_overflows_tracker[0]_i_10_n_0\
     );
 \bram_overflows_tracker[0]_i_2\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000008000000000"
     )
         port map (
-      I0 => \data_loc[5]_i_3_n_0\,
-      I1 => \data_loc[5]_i_4_n_0\,
+      I0 => \data_loc[5]_i_4_n_0\,
+      I1 => \data_loc[5]_i_5_n_0\,
       I2 => \data_loc[4]_i_2_n_0\,
       I3 => \bram_overflows_tracker[0]_i_4_n_0\,
       I4 => \bram_overflows_tracker[0]_i_5_n_0\,
-      I5 => \bramen_enabler[0]_i_2_n_0\,
+      I5 => bramwe4_out,
       O => \bram_overflows_tracker[0]_i_2_n_0\
     );
 \bram_overflows_tracker[0]_i_4\: unisim.vcomponents.LUT6
@@ -1351,41 +1354,45 @@ begin
       INIT => X"7FFFFFFFFFFFFFFF"
     )
         port map (
-      I0 => \^data_loc_tracker\(53),
-      I1 => \^data_loc_tracker\(52),
-      I2 => \^data_loc_tracker\(55),
-      I3 => \^data_loc_tracker\(54),
-      I4 => \bram_overflows_tracker[0]_i_7_n_0\,
-      I5 => \bram_overflows_tracker[0]_i_8_n_0\,
+      I0 => \^data_loc_tracker\(55),
+      I1 => \^data_loc_tracker\(54),
+      I2 => \^data_loc_tracker\(53),
+      I3 => \^data_loc_tracker\(52),
+      I4 => \bram_overflows_tracker[0]_i_8_n_0\,
+      I5 => \bram_overflows_tracker[0]_i_9_n_0\,
       O => \bram_overflows_tracker[0]_i_4_n_0\
     );
 \bram_overflows_tracker[0]_i_5\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"BFFFFFFF"
+      INIT => X"7FFFFFFF"
     )
         port map (
-      I0 => \bram_overflows_tracker[0]_i_9_n_0\,
+      I0 => \bram_overflows_tracker[0]_i_10_n_0\,
       I1 => \^data_loc_tracker\(63),
       I2 => \^data_loc_tracker\(62),
       I3 => \^data_loc_tracker\(57),
       I4 => \^data_loc_tracker\(56),
       O => \bram_overflows_tracker[0]_i_5_n_0\
     );
-\bram_overflows_tracker[0]_i_6\: unisim.vcomponents.LUT1
+\bram_overflows_tracker[0]_i_6\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000040000000"
+    )
+        port map (
+      I0 => \^bramen_raw\,
+      I1 => \^out\(1),
+      I2 => l1a_cntr_sync120(5),
+      I3 => l1a_cntr_sync120(7),
+      I4 => l1a_cntr_sync120(8),
+      I5 => \bramen_enabler[0]_i_3_n_0\,
+      O => bramwe4_out
+    );
+\bram_overflows_tracker[0]_i_7\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => \^bram_overflows_tracker\(0),
-      O => \bram_overflows_tracker[0]_i_6_n_0\
-    );
-\bram_overflows_tracker[0]_i_7\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(49),
-      I1 => \^data_loc_tracker\(48),
       O => \bram_overflows_tracker[0]_i_7_n_0\
     );
 \bram_overflows_tracker[0]_i_8\: unisim.vcomponents.LUT2
@@ -1393,19 +1400,17 @@ begin
       INIT => X"8"
     )
         port map (
-      I0 => \^data_loc_tracker\(51),
-      I1 => \^data_loc_tracker\(50),
+      I0 => \^data_loc_tracker\(49),
+      I1 => \^data_loc_tracker\(48),
       O => \bram_overflows_tracker[0]_i_8_n_0\
     );
-\bram_overflows_tracker[0]_i_9\: unisim.vcomponents.LUT4
+\bram_overflows_tracker[0]_i_9\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"7FFF"
+      INIT => X"8"
     )
         port map (
-      I0 => \^data_loc_tracker\(58),
-      I1 => \^data_loc_tracker\(59),
-      I2 => \^data_loc_tracker\(60),
-      I3 => \^data_loc_tracker\(61),
+      I0 => \^data_loc_tracker\(51),
+      I1 => \^data_loc_tracker\(50),
       O => \bram_overflows_tracker[0]_i_9_n_0\
     );
 \bram_overflows_tracker_reg[0]\: unisim.vcomponents.FDRE
@@ -1433,7 +1438,7 @@ begin
       O(1) => \bram_overflows_tracker_reg[0]_i_3_n_6\,
       O(0) => \bram_overflows_tracker_reg[0]_i_3_n_7\,
       S(3 downto 1) => \^bram_overflows_tracker\(3 downto 1),
-      S(0) => \bram_overflows_tracker[0]_i_6_n_0\
+      S(0) => \bram_overflows_tracker[0]_i_7_n_0\
     );
 \bram_overflows_tracker_reg[10]\: unisim.vcomponents.FDRE
     generic map(
@@ -1881,1655 +1886,42 @@ begin
       Q => \^bram_overflows_tracker\(9),
       R => \bram_overflows_tracker[0]_i_1_n_0\
     );
-\bramaddr[11]_i_10\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BABABABAFABABABA"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_27_n_0\,
-      I1 => \^data_loc_tracker\(2),
-      I2 => \^data_loc_tracker\(1),
-      I3 => \^data_loc_tracker\(3),
-      I4 => \^data_loc_tracker\(4),
-      I5 => \^data_loc_tracker\(5),
-      O => \bramaddr[11]_i_10_n_0\
-    );
-\bramaddr[11]_i_11\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000000FBFF00FF"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_28_n_0\,
-      I1 => \^data_loc_tracker\(15),
-      I2 => \bramaddr[11]_i_29_n_0\,
-      I3 => \^data_loc_tracker\(12),
-      I4 => \bramaddr[11]_i_30_n_0\,
-      I5 => \bramaddr[11]_i_31_n_0\,
-      O => \bramaddr[11]_i_11_n_0\
-    );
-\bramaddr[11]_i_12\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFF7FFFFFFF7FFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(4),
-      I1 => \^data_loc_tracker\(3),
-      I2 => \^data_loc_tracker\(1),
-      I3 => \data_loc[3]_i_8_n_0\,
-      I4 => \^data_loc_tracker\(8),
-      I5 => \^data_loc_tracker\(9),
-      O => \bramaddr[11]_i_12_n_0\
-    );
-\bramaddr[11]_i_13\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0888FFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(8),
-      I1 => \^data_loc_tracker\(7),
-      I2 => \^data_loc_tracker\(10),
-      I3 => \^data_loc_tracker\(9),
-      I4 => \data_loc[1]_i_5_n_0\,
-      I5 => \^data_loc_tracker\(6),
-      O => \bramaddr[11]_i_13_n_0\
-    );
-\bramaddr[11]_i_14\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFF5454FF54"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_32_n_0\,
-      I1 => \bramaddr[11]_i_33_n_0\,
-      I2 => \bramaddr[11]_i_34_n_0\,
-      I3 => \^data_loc_tracker\(18),
-      I4 => \bramaddr[11]_i_35_n_0\,
-      I5 => \data_loc[1]_i_9_n_0\,
-      O => \bramaddr[11]_i_14_n_0\
-    );
-\bramaddr[11]_i_15\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7F7F7F7FFF7F7F7F"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(11),
-      I1 => \^data_loc_tracker\(8),
-      I2 => \^data_loc_tracker\(7),
-      I3 => \^data_loc_tracker\(13),
-      I4 => \^data_loc_tracker\(12),
-      I5 => \data_loc[3]_i_14_n_0\,
-      O => \bramaddr[11]_i_15_n_0\
-    );
-\bramaddr[11]_i_16\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"CF4FCFCFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(4),
-      I1 => \data_loc[1]_i_5_n_0\,
-      I2 => \^data_loc_tracker\(0),
-      I3 => \bramaddr[11]_i_36_n_0\,
-      I4 => \^data_loc_tracker\(5),
-      I5 => \^data_loc_tracker\(1),
-      O => \bramaddr[11]_i_16_n_0\
-    );
-\bramaddr[11]_i_17\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"80"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(5),
-      I1 => \^data_loc_tracker\(1),
-      I2 => \^data_loc_tracker\(3),
-      O => \bramaddr[11]_i_17_n_0\
-    );
-\bramaddr[11]_i_18\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"A0AA20AA"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(6),
-      I1 => \^data_loc_tracker\(9),
-      I2 => \^data_loc_tracker\(8),
-      I3 => \^data_loc_tracker\(7),
-      I4 => \^data_loc_tracker\(10),
-      O => \bramaddr[11]_i_18_n_0\
-    );
-\bramaddr[11]_i_19\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"000000000000AAFE"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_37_n_0\,
-      I1 => \bramaddr[11]_i_38_n_0\,
-      I2 => \bramaddr[11]_i_39_n_0\,
-      I3 => \bramaddr[11]_i_40_n_0\,
-      I4 => \bramaddr[11]_i_41_n_0\,
-      I5 => \data_loc[0]_i_12_n_0\,
-      O => \bramaddr[11]_i_19_n_0\
-    );
-\bramaddr[11]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8F8F8F8F888F8888"
-    )
-        port map (
-      I0 => \^bramaddr\(11),
-      I1 => \^di\(0),
-      I2 => \bramaddr[11]_i_6_n_0\,
-      I3 => \bramaddr[11]_i_7_n_0\,
-      I4 => \bramaddr[11]_i_8_n_0\,
-      I5 => \bramaddr[11]_i_9_n_0\,
-      O => \bramaddr[11]_i_2_n_0\
-    );
-\bramaddr[11]_i_20\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"2F0FFF0F"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(3),
-      I1 => \^data_loc_tracker\(4),
-      I2 => \^data_loc_tracker\(0),
-      I3 => \^data_loc_tracker\(1),
-      I4 => \^data_loc_tracker\(2),
-      O => \bramaddr[11]_i_20_n_0\
-    );
-\bramaddr[11]_i_21\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"40FFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(21),
-      I1 => \^data_loc_tracker\(20),
-      I2 => \^data_loc_tracker\(19),
-      I3 => \^data_loc_tracker\(15),
-      I4 => \^data_loc_tracker\(14),
-      I5 => \^data_loc_tracker\(18),
-      O => \bramaddr[11]_i_21_n_0\
-    );
-\bramaddr[11]_i_22\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7FFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(19),
-      I1 => \^data_loc_tracker\(20),
-      I2 => \^data_loc_tracker\(22),
-      I3 => \^data_loc_tracker\(23),
-      O => \bramaddr[11]_i_22_n_0\
-    );
-\bramaddr[11]_i_23\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(30),
-      I1 => \^data_loc_tracker\(27),
-      O => \bramaddr[11]_i_23_n_0\
-    );
-\bramaddr[11]_i_24\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"B000F0000000F000"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_42_n_0\,
-      I1 => \data_loc[1]_i_12_n_0\,
-      I2 => \^data_loc_tracker\(32),
-      I3 => \^data_loc_tracker\(31),
-      I4 => \bramaddr[11]_i_43_n_0\,
-      I5 => \^data_loc_tracker\(35),
-      O => \bramaddr[11]_i_24_n_0\
-    );
-\bramaddr[11]_i_25\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"70FFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(29),
-      I1 => \^data_loc_tracker\(28),
-      I2 => \^data_loc_tracker\(27),
-      I3 => \^data_loc_tracker\(25),
-      I4 => \^data_loc_tracker\(26),
-      O => \bramaddr[11]_i_25_n_0\
-    );
-\bramaddr[11]_i_26\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7FFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(5),
-      I1 => \^data_loc_tracker\(6),
-      I2 => \^data_loc_tracker\(2),
-      I3 => \^data_loc_tracker\(3),
-      O => \bramaddr[11]_i_26_n_0\
-    );
-\bramaddr[11]_i_27\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
-    )
-        port map (
-      I0 => \^di\(0),
-      I1 => \^data_loc_tracker\(0),
-      O => \bramaddr[11]_i_27_n_0\
-    );
-\bramaddr[11]_i_28\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"2A"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(16),
-      I1 => \^data_loc_tracker\(17),
-      I2 => \^data_loc_tracker\(18),
-      O => \bramaddr[11]_i_28_n_0\
-    );
-\bramaddr[11]_i_29\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000000AAFE0000"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_44_n_0\,
-      I1 => \bramaddr[11]_i_45_n_0\,
-      I2 => \bramaddr[11]_i_46_n_0\,
-      I3 => \bramaddr[11]_i_47_n_0\,
-      I4 => \^data_loc_tracker\(19),
-      I5 => \bramaddr[11]_i_48_n_0\,
-      O => \bramaddr[11]_i_29_n_0\
-    );
-\bramaddr[11]_i_3\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"8F8F8F88"
-    )
-        port map (
-      I0 => \^bramaddr\(10),
-      I1 => \^di\(0),
-      I2 => \bramaddr[11]_i_10_n_0\,
-      I3 => \bramaddr[11]_i_11_n_0\,
-      I4 => \bramaddr[11]_i_12_n_0\,
-      O => \bramaddr[11]_i_3_n_0\
-    );
-\bramaddr[11]_i_30\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(14),
-      I1 => \^data_loc_tracker\(13),
-      O => \bramaddr[11]_i_30_n_0\
-    );
-\bramaddr[11]_i_31\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"7F"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(8),
-      I1 => \^data_loc_tracker\(10),
-      I2 => \^data_loc_tracker\(11),
-      O => \bramaddr[11]_i_31_n_0\
-    );
-\bramaddr[11]_i_32\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"70FFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(25),
-      I1 => \^data_loc_tracker\(24),
-      I2 => \^data_loc_tracker\(23),
-      I3 => \^data_loc_tracker\(21),
-      I4 => \^data_loc_tracker\(22),
-      I5 => \^data_loc_tracker\(18),
-      O => \bramaddr[11]_i_32_n_0\
-    );
-\bramaddr[11]_i_33\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000000FFFF8088"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(38),
-      I1 => \^data_loc_tracker\(39),
-      I2 => \bramaddr[11]_i_49_n_0\,
-      I3 => \^data_loc_tracker\(40),
-      I4 => \bramaddr[16]_i_27_n_0\,
-      I5 => \bramaddr[11]_i_50_n_0\,
-      O => \bramaddr[11]_i_33_n_0\
-    );
-\bramaddr[11]_i_34\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFFFFFF77FF77FF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(26),
-      I1 => \^data_loc_tracker\(23),
-      I2 => \^data_loc_tracker\(29),
-      I3 => \^data_loc_tracker\(27),
-      I4 => \^data_loc_tracker\(30),
-      I5 => \^data_loc_tracker\(28),
-      O => \bramaddr[11]_i_34_n_0\
-    );
-\bramaddr[11]_i_35\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(20),
-      I1 => \^data_loc_tracker\(19),
-      O => \bramaddr[11]_i_35_n_0\
-    );
-\bramaddr[11]_i_36\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000080000000"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_51_n_0\,
-      I1 => \^data_loc_tracker\(37),
-      I2 => \^data_loc_tracker\(36),
-      I3 => \bramaddr[16]_i_19_n_0\,
-      I4 => \^data_loc_tracker\(6),
-      I5 => \bramaddr[11]_i_52_n_0\,
-      O => \bramaddr[11]_i_36_n_0\
-    );
-\bramaddr[11]_i_37\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"4FFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(20),
-      I1 => \^data_loc_tracker\(19),
-      I2 => \^data_loc_tracker\(18),
-      I3 => \^data_loc_tracker\(17),
-      I4 => \^data_loc_tracker\(15),
-      I5 => \^data_loc_tracker\(13),
-      O => \bramaddr[11]_i_37_n_0\
-    );
-\bramaddr[11]_i_38\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7500FFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(30),
-      I1 => \^data_loc_tracker\(32),
-      I2 => \^data_loc_tracker\(31),
-      I3 => \bramaddr[16]_i_21_n_0\,
-      I4 => \data_loc[2]_i_8_n_0\,
-      I5 => \data_loc[3]_i_13_n_0\,
-      O => \bramaddr[11]_i_38_n_0\
-    );
-\bramaddr[11]_i_39\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"000000000000B0FF"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_53_n_0\,
-      I1 => \bramaddr[11]_i_54_n_0\,
-      I2 => \data_loc[0]_i_10_n_0\,
-      I3 => \data_loc[1]_i_13_n_0\,
-      I4 => \bramaddr[11]_i_55_n_0\,
-      I5 => \data_loc[3]_i_12_n_0\,
-      O => \bramaddr[11]_i_39_n_0\
-    );
-\bramaddr[11]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888B8B8BBB8"
-    )
-        port map (
-      I0 => \^bramaddr\(9),
-      I1 => \^di\(0),
-      I2 => \bramaddr[11]_i_13_n_0\,
-      I3 => \bramaddr[11]_i_14_n_0\,
-      I4 => \bramaddr[11]_i_15_n_0\,
-      I5 => \bramaddr[11]_i_16_n_0\,
-      O => \bramaddr[11]_i_4_n_0\
-    );
-\bramaddr[11]_i_40\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7F77FFFF77777777"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(19),
-      I1 => \^data_loc_tracker\(21),
-      I2 => \^data_loc_tracker\(26),
-      I3 => \^data_loc_tracker\(25),
-      I4 => \^data_loc_tracker\(24),
-      I5 => \data_loc[2]_i_8_n_0\,
-      O => \bramaddr[11]_i_40_n_0\
-    );
-\bramaddr[11]_i_41\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFF7F7F7F7F7F7F"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(7),
-      I1 => \^data_loc_tracker\(11),
-      I2 => \^data_loc_tracker\(9),
-      I3 => \^data_loc_tracker\(16),
-      I4 => \^data_loc_tracker\(15),
-      I5 => \^data_loc_tracker\(13),
-      O => \bramaddr[11]_i_41_n_0\
-    );
-\bramaddr[11]_i_42\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"CC88CC88CC80CC88"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(41),
-      I1 => \^data_loc_tracker\(38),
-      I2 => \bramaddr[11]_i_56_n_0\,
-      I3 => \bramaddr[11]_i_57_n_0\,
-      I4 => \data_loc[1]_i_17_n_0\,
-      I5 => \bramaddr[11]_i_58_n_0\,
-      O => \bramaddr[11]_i_42_n_0\
-    );
-\bramaddr[11]_i_43\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(34),
-      I1 => \^data_loc_tracker\(33),
-      O => \bramaddr[11]_i_43_n_0\
-    );
-\bramaddr[11]_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BFFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_59_n_0\,
-      I1 => \^data_loc_tracker\(24),
-      I2 => \^data_loc_tracker\(20),
-      I3 => \^data_loc_tracker\(21),
-      I4 => \^data_loc_tracker\(26),
-      I5 => \^data_loc_tracker\(23),
-      O => \bramaddr[11]_i_44_n_0\
-    );
-\bramaddr[11]_i_45\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"BFBFFFBF"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_60_n_0\,
-      I1 => \^data_loc_tracker\(41),
-      I2 => \^data_loc_tracker\(34),
-      I3 => \^data_loc_tracker\(42),
-      I4 => \^data_loc_tracker\(43),
-      O => \bramaddr[11]_i_45_n_0\
-    );
-\bramaddr[11]_i_46\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000800088888888"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_61_n_0\,
-      I1 => \^data_loc_tracker\(42),
-      I2 => \^data_loc_tracker\(47),
-      I3 => \^data_loc_tracker\(48),
-      I4 => \bramaddr[11]_i_62_n_0\,
-      I5 => \^data_loc_tracker\(46),
-      O => \bramaddr[11]_i_46_n_0\
-    );
-\bramaddr[11]_i_47\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"4FFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_63_n_0\,
-      I1 => \data_loc[1]_i_13_n_0\,
-      I2 => \^data_loc_tracker\(33),
-      I3 => \bramaddr[3]_i_29_n_0\,
-      I4 => \^data_loc_tracker\(28),
-      I5 => \^data_loc_tracker\(27),
-      O => \bramaddr[11]_i_47_n_0\
-    );
-\bramaddr[11]_i_48\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"40FF00FFFFFF00FF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(25),
-      I1 => \^data_loc_tracker\(23),
-      I2 => \^data_loc_tracker\(24),
-      I3 => \^data_loc_tracker\(16),
-      I4 => \data_loc[3]_i_9_n_0\,
-      I5 => \^data_loc_tracker\(22),
-      O => \bramaddr[11]_i_48_n_0\
-    );
-\bramaddr[11]_i_49\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FF00FF00FB000000"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_64_n_0\,
-      I1 => \bramaddr[11]_i_65_n_0\,
-      I2 => \bramaddr[11]_i_66_n_0\,
-      I3 => \bramaddr[7]_i_35_n_0\,
-      I4 => \^data_loc_tracker\(45),
-      I5 => \bramaddr[16]_i_16_n_0\,
-      O => \bramaddr[11]_i_49_n_0\
-    );
-\bramaddr[11]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88888888BBBB8BBB"
-    )
-        port map (
-      I0 => \^bramaddr\(8),
-      I1 => \^di\(0),
-      I2 => \bramaddr[11]_i_17_n_0\,
-      I3 => \bramaddr[11]_i_18_n_0\,
-      I4 => \bramaddr[11]_i_19_n_0\,
-      I5 => \bramaddr[11]_i_20_n_0\,
-      O => \bramaddr[11]_i_5_n_0\
-    );
-\bramaddr[11]_i_50\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"40FFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(35),
-      I1 => \^data_loc_tracker\(34),
-      I2 => \^data_loc_tracker\(33),
-      I3 => \^data_loc_tracker\(32),
-      I4 => \^data_loc_tracker\(31),
-      I5 => \^data_loc_tracker\(28),
-      O => \bramaddr[11]_i_50_n_0\
-    );
-\bramaddr[11]_i_51\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0040000000000000"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(62),
-      I1 => \^data_loc_tracker\(61),
-      I2 => \^data_loc_tracker\(60),
-      I3 => \bramaddr[11]_i_67_n_0\,
-      I4 => \bram_overflows_tracker[0]_i_8_n_0\,
-      I5 => \bramaddr[15]_i_33_n_0\,
-      O => \bramaddr[11]_i_51_n_0\
-    );
-\bramaddr[11]_i_52\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFBFFFFFFF"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_68_n_0\,
-      I1 => \^data_loc_tracker\(27),
-      I2 => \^data_loc_tracker\(30),
-      I3 => \^data_loc_tracker\(23),
-      I4 => \^data_loc_tracker\(26),
-      I5 => \data_loc[1]_i_9_n_0\,
-      O => \bramaddr[11]_i_52_n_0\
-    );
-\bramaddr[11]_i_53\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"B000F0000000F000"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_69_n_0\,
-      I1 => \^data_loc_tracker\(47),
-      I2 => \^data_loc_tracker\(43),
-      I3 => \^data_loc_tracker\(41),
-      I4 => \^data_loc_tracker\(44),
-      I5 => \bramaddr[11]_i_70_n_0\,
-      O => \bramaddr[11]_i_53_n_0\
-    );
-\bramaddr[11]_i_54\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"80008080"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(40),
-      I1 => \^data_loc_tracker\(39),
-      I2 => \^data_loc_tracker\(37),
-      I3 => \^data_loc_tracker\(42),
-      I4 => \^data_loc_tracker\(41),
-      O => \bramaddr[11]_i_54_n_0\
-    );
-\bramaddr[11]_i_55\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(33),
-      I1 => \^data_loc_tracker\(29),
-      O => \bramaddr[11]_i_55_n_0\
-    );
-\bramaddr[11]_i_56\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00F2000000000000"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_71_n_0\,
-      I1 => \bramaddr[11]_i_72_n_0\,
-      I2 => \bramaddr[11]_i_73_n_0\,
-      I3 => \bramaddr[11]_i_64_n_0\,
-      I4 => \^data_loc_tracker\(47),
-      I5 => \^data_loc_tracker\(44),
-      O => \bramaddr[11]_i_56_n_0\
-    );
-\bramaddr[11]_i_57\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(40),
-      I1 => \^data_loc_tracker\(39),
-      O => \bramaddr[11]_i_57_n_0\
-    );
-\bramaddr[11]_i_58\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"2A"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(44),
-      I1 => \^data_loc_tracker\(45),
-      I2 => \^data_loc_tracker\(46),
-      O => \bramaddr[11]_i_58_n_0\
-    );
-\bramaddr[11]_i_59\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000800088888888"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(27),
-      I1 => \^data_loc_tracker\(28),
-      I2 => \^data_loc_tracker\(30),
-      I3 => \^data_loc_tracker\(31),
-      I4 => \^data_loc_tracker\(32),
-      I5 => \^data_loc_tracker\(29),
-      O => \bramaddr[11]_i_59_n_0\
-    );
-\bramaddr[11]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFF0800FF00"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(5),
-      I1 => \^data_loc_tracker\(6),
-      I2 => \^data_loc_tracker\(7),
-      I3 => \data_loc[1]_i_5_n_0\,
-      I4 => \^data_loc_tracker\(4),
-      I5 => \bramaddr[15]_i_10_n_0\,
-      O => \bramaddr[11]_i_6_n_0\
-    );
-\bramaddr[11]_i_60\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7FFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(38),
-      I1 => \^data_loc_tracker\(40),
-      I2 => \^data_loc_tracker\(35),
-      I3 => \^data_loc_tracker\(37),
-      O => \bramaddr[11]_i_60_n_0\
-    );
-\bramaddr[11]_i_61\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(45),
-      I1 => \^data_loc_tracker\(44),
-      O => \bramaddr[11]_i_61_n_0\
-    );
-\bramaddr[11]_i_62\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"80008080AAAAAAAA"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(49),
-      I1 => \^data_loc_tracker\(51),
-      I2 => \^data_loc_tracker\(52),
-      I3 => \bramaddr[11]_i_74_n_0\,
-      I4 => \^data_loc_tracker\(53),
-      I5 => \^data_loc_tracker\(50),
-      O => \bramaddr[11]_i_62_n_0\
-    );
-\bramaddr[11]_i_63\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"BF00"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(39),
-      I1 => \^data_loc_tracker\(38),
-      I2 => \^data_loc_tracker\(37),
-      I3 => \^data_loc_tracker\(36),
-      O => \bramaddr[11]_i_63_n_0\
-    );
-\bramaddr[11]_i_64\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0888"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(48),
-      I1 => \^data_loc_tracker\(49),
-      I2 => \^data_loc_tracker\(50),
-      I3 => \^data_loc_tracker\(51),
-      O => \bramaddr[11]_i_64_n_0\
-    );
-\bramaddr[11]_i_65\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(47),
-      I1 => \^data_loc_tracker\(46),
-      O => \bramaddr[11]_i_65_n_0\
-    );
-\bramaddr[11]_i_66\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8000A0A0A0A0A0A0"
-    )
-        port map (
-      I0 => \bram_overflows_tracker[0]_i_7_n_0\,
-      I1 => \^data_loc_tracker\(55),
-      I2 => \^data_loc_tracker\(52),
-      I3 => \bramaddr[7]_i_71_n_0\,
-      I4 => \^data_loc_tracker\(54),
-      I5 => \^data_loc_tracker\(53),
-      O => \bramaddr[11]_i_66_n_0\
-    );
-\bramaddr[11]_i_67\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7FFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(43),
-      I1 => \^data_loc_tracker\(44),
-      I2 => \^data_loc_tracker\(46),
-      I3 => \^data_loc_tracker\(47),
-      O => \bramaddr[11]_i_67_n_0\
-    );
-\bramaddr[11]_i_68\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_35_n_0\,
-      I1 => \^data_loc_tracker\(33),
-      I2 => \^data_loc_tracker\(29),
-      I3 => \^data_loc_tracker\(57),
-      I4 => \^data_loc_tracker\(40),
-      I5 => \^data_loc_tracker\(34),
-      O => \bramaddr[11]_i_68_n_0\
-    );
-\bramaddr[11]_i_69\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88A8A8A8AAAAAAAA"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(48),
-      I1 => \bramaddr[11]_i_75_n_0\,
-      I2 => \^data_loc_tracker\(50),
-      I3 => \^data_loc_tracker\(52),
-      I4 => \^data_loc_tracker\(51),
-      I5 => \^data_loc_tracker\(49),
-      O => \bramaddr[11]_i_69_n_0\
-    );
-\bramaddr[11]_i_7\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFF777777777777"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(10),
-      I1 => \^data_loc_tracker\(13),
-      I2 => \^data_loc_tracker\(17),
-      I3 => \^data_loc_tracker\(16),
-      I4 => \^data_loc_tracker\(15),
-      I5 => \^data_loc_tracker\(14),
-      O => \bramaddr[11]_i_7_n_0\
-    );
-\bramaddr[11]_i_70\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(46),
-      I1 => \^data_loc_tracker\(45),
-      O => \bramaddr[11]_i_70_n_0\
-    );
-\bramaddr[11]_i_71\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"008F8F8F00000000"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(57),
-      I1 => \^data_loc_tracker\(56),
-      I2 => \^data_loc_tracker\(55),
-      I3 => \^data_loc_tracker\(61),
-      I4 => \^data_loc_tracker\(58),
-      I5 => \bramaddr[15]_i_33_n_0\,
-      O => \bramaddr[11]_i_71_n_0\
-    );
-\bramaddr[11]_i_72\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"2A"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(58),
-      I1 => \^data_loc_tracker\(59),
-      I2 => \^data_loc_tracker\(60),
-      O => \bramaddr[11]_i_72_n_0\
-    );
-\bramaddr[11]_i_73\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"55D5FFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(52),
-      I1 => \^data_loc_tracker\(53),
-      I2 => \^data_loc_tracker\(54),
-      I3 => \^data_loc_tracker\(55),
-      I4 => \^data_loc_tracker\(48),
-      I5 => \^data_loc_tracker\(49),
-      O => \bramaddr[11]_i_73_n_0\
-    );
-\bramaddr[11]_i_74\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0040444444444444"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_76_n_0\,
-      I1 => \data_loc[1]_i_19_n_0\,
-      I2 => \^data_loc_tracker\(60),
-      I3 => \bramaddr[7]_i_34_n_0\,
-      I4 => \^data_loc_tracker\(59),
-      I5 => \^data_loc_tracker\(56),
-      O => \bramaddr[11]_i_74_n_0\
-    );
-\bramaddr[11]_i_75\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8088888880888088"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(50),
-      I1 => \^data_loc_tracker\(53),
-      I2 => \bramaddr[11]_i_77_n_0\,
-      I3 => \^data_loc_tracker\(54),
-      I4 => \bramaddr[15]_i_18_n_0\,
-      I5 => \^data_loc_tracker\(55),
-      O => \bramaddr[11]_i_75_n_0\
-    );
-\bramaddr[11]_i_76\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"70"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(57),
-      I1 => \^data_loc_tracker\(58),
-      I2 => \^data_loc_tracker\(56),
-      O => \bramaddr[11]_i_76_n_0\
-    );
-\bramaddr[11]_i_77\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00808888"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(55),
-      I1 => \^data_loc_tracker\(58),
-      I2 => \^data_loc_tracker\(60),
-      I3 => \^data_loc_tracker\(61),
-      I4 => \^data_loc_tracker\(59),
-      O => \bramaddr[11]_i_77_n_0\
-    );
-\bramaddr[11]_i_8\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"ABABABABBBBBBBAB"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_21_n_0\,
-      I1 => \bramaddr[11]_i_22_n_0\,
-      I2 => \^data_loc_tracker\(24),
-      I3 => \bramaddr[11]_i_23_n_0\,
-      I4 => \bramaddr[11]_i_24_n_0\,
-      I5 => \bramaddr[11]_i_25_n_0\,
-      O => \bramaddr[11]_i_8_n_0\
-    );
-\bramaddr[11]_i_9\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FF70FFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(12),
-      I1 => \^data_loc_tracker\(11),
-      I2 => \^data_loc_tracker\(10),
-      I3 => \bramaddr[11]_i_26_n_0\,
-      I4 => \^data_loc_tracker\(9),
-      I5 => \^data_loc_tracker\(8),
-      O => \bramaddr[11]_i_9_n_0\
-    );
-\bramaddr[15]_i_10\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"DF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(0),
-      I1 => \^di\(0),
-      I2 => \^data_loc_tracker\(1),
-      O => \bramaddr[15]_i_10_n_0\
-    );
-\bramaddr[15]_i_11\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"80"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(4),
-      I1 => \^data_loc_tracker\(5),
-      I2 => \^data_loc_tracker\(6),
-      O => \bramaddr[15]_i_11_n_0\
-    );
-\bramaddr[15]_i_12\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AAAAAAAAFFBFAAAA"
-    )
-        port map (
-      I0 => \bramaddr[15]_i_19_n_0\,
-      I1 => \bramaddr[15]_i_20_n_0\,
-      I2 => \bramaddr[15]_i_21_n_0\,
-      I3 => \bramaddr[15]_i_22_n_0\,
-      I4 => \bramaddr[15]_i_23_n_0\,
-      I5 => \bramaddr[16]_i_13_n_0\,
-      O => \bramaddr[15]_i_12_n_0\
-    );
-\bramaddr[15]_i_13\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AAAABAAAAAAAAAAA"
-    )
-        port map (
-      I0 => \bramaddr[15]_i_24_n_0\,
-      I1 => \bramaddr[15]_i_25_n_0\,
-      I2 => \bramaddr[15]_i_26_n_0\,
-      I3 => \bramaddr[15]_i_21_n_0\,
-      I4 => \bramaddr[15]_i_27_n_0\,
-      I5 => \bramaddr[15]_i_28_n_0\,
-      O => \bramaddr[15]_i_13_n_0\
-    );
-\bramaddr[15]_i_14\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"7F"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(7),
-      I1 => \^data_loc_tracker\(8),
-      I2 => \^data_loc_tracker\(9),
-      O => \bramaddr[15]_i_14_n_0\
-    );
-\bramaddr[15]_i_15\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BFBBAAAAAAAAAAAA"
-    )
-        port map (
-      I0 => \bramaddr[15]_i_29_n_0\,
-      I1 => \bramaddr[15]_i_26_n_0\,
-      I2 => \bramaddr[15]_i_30_n_0\,
-      I3 => \bramaddr[15]_i_31_n_0\,
-      I4 => \data_loc[3]_i_14_n_0\,
-      I5 => \^data_loc_tracker\(13),
-      O => \bramaddr[15]_i_15_n_0\
-    );
-\bramaddr[15]_i_16\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(21),
-      I1 => \^data_loc_tracker\(24),
-      I2 => \^data_loc_tracker\(23),
-      I3 => \^data_loc_tracker\(22),
-      I4 => \^data_loc_tracker\(20),
-      I5 => \^data_loc_tracker\(19),
-      O => \bramaddr[15]_i_16_n_0\
-    );
-\bramaddr[15]_i_17\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"8000"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(54),
-      I1 => \^data_loc_tracker\(55),
-      I2 => \^data_loc_tracker\(51),
-      I3 => \^data_loc_tracker\(52),
-      O => \bramaddr[15]_i_17_n_0\
-    );
-\bramaddr[15]_i_18\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(57),
-      I1 => \^data_loc_tracker\(56),
-      O => \bramaddr[15]_i_18_n_0\
-    );
-\bramaddr[15]_i_19\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(12),
-      I1 => \^data_loc_tracker\(11),
-      I2 => \^data_loc_tracker\(8),
-      I3 => \^data_loc_tracker\(7),
-      I4 => \^data_loc_tracker\(9),
-      I5 => \^data_loc_tracker\(10),
-      O => \bramaddr[15]_i_19_n_0\
-    );
-\bramaddr[15]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"888F8888888F888F"
-    )
-        port map (
-      I0 => \^bramaddr\(15),
-      I1 => \^di\(0),
-      I2 => \bramaddr[15]_i_6_n_0\,
-      I3 => \bramaddr[15]_i_7_n_0\,
-      I4 => \bramaddr[15]_i_8_n_0\,
-      I5 => \bramaddr[16]_i_12_n_0\,
-      O => \bramaddr[15]_i_2_n_0\
-    );
-\bramaddr[15]_i_20\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"8000"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(32),
-      I1 => \^data_loc_tracker\(33),
-      I2 => \^data_loc_tracker\(31),
-      I3 => \^data_loc_tracker\(34),
-      O => \bramaddr[15]_i_20_n_0\
-    );
-\bramaddr[15]_i_21\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"80"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(35),
-      I1 => \^data_loc_tracker\(36),
-      I2 => \^data_loc_tracker\(37),
-      O => \bramaddr[15]_i_21_n_0\
-    );
-\bramaddr[15]_i_22\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"5FFF5FFF1FFF0000"
-    )
-        port map (
-      I0 => \bramaddr[15]_i_32_n_0\,
-      I1 => \bramaddr[16]_i_6_n_0\,
-      I2 => \data_loc[2]_i_11_n_0\,
-      I3 => \bram_overflows_tracker[0]_i_7_n_0\,
-      I4 => \bramaddr[16]_i_23_n_0\,
-      I5 => \bramaddr[15]_i_16_n_0\,
-      O => \bramaddr[15]_i_22_n_0\
-    );
-\bramaddr[15]_i_23\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EAAAAAAAAAAAAAAA"
-    )
-        port map (
-      I0 => \bramaddr[15]_i_16_n_0\,
-      I1 => \^data_loc_tracker\(27),
-      I2 => \^data_loc_tracker\(30),
-      I3 => \^data_loc_tracker\(28),
-      I4 => \^data_loc_tracker\(29),
-      I5 => \bramaddr[16]_i_15_n_0\,
-      O => \bramaddr[15]_i_23_n_0\
-    );
-\bramaddr[15]_i_24\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"DFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(1),
-      I1 => \^di\(0),
-      I2 => \^data_loc_tracker\(0),
-      I3 => \^data_loc_tracker\(2),
-      I4 => \^data_loc_tracker\(3),
-      O => \bramaddr[15]_i_24_n_0\
-    );
-\bramaddr[15]_i_25\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \bramaddr[15]_i_33_n_0\,
-      I1 => \bram_overflows_tracker[0]_i_7_n_0\,
-      I2 => \^data_loc_tracker\(61),
-      I3 => \^data_loc_tracker\(60),
-      I4 => \^data_loc_tracker\(59),
-      I5 => \^data_loc_tracker\(55),
-      O => \bramaddr[15]_i_25_n_0\
-    );
-\bramaddr[15]_i_26\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"80"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(16),
-      I1 => \^data_loc_tracker\(17),
-      I2 => \^data_loc_tracker\(18),
-      O => \bramaddr[15]_i_26_n_0\
-    );
-\bramaddr[15]_i_27\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFF7FFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(41),
-      I1 => \^data_loc_tracker\(43),
-      I2 => \^data_loc_tracker\(42),
-      I3 => \^data_loc_tracker\(47),
-      I4 => \^data_loc_tracker\(22),
-      I5 => \bramaddr[16]_i_14_n_0\,
-      O => \bramaddr[15]_i_27_n_0\
-    );
-\bramaddr[15]_i_28\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8000000000000000"
-    )
-        port map (
-      I0 => \bramaddr[15]_i_11_n_0\,
-      I1 => \^data_loc_tracker\(29),
-      I2 => \^data_loc_tracker\(28),
-      I3 => \^data_loc_tracker\(30),
-      I4 => \^data_loc_tracker\(12),
-      I5 => \data_loc[3]_i_15_n_0\,
-      O => \bramaddr[15]_i_28_n_0\
-    );
-\bramaddr[15]_i_29\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"7F"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(12),
-      I1 => \^data_loc_tracker\(10),
-      I2 => \^data_loc_tracker\(11),
-      O => \bramaddr[15]_i_29_n_0\
-    );
-\bramaddr[15]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8F888F8F8F888F88"
-    )
-        port map (
-      I0 => \^bramaddr\(14),
-      I1 => \^di\(0),
-      I2 => \bramaddr[15]_i_7_n_0\,
-      I3 => \bramaddr[15]_i_6_n_0\,
-      I4 => \bramaddr[15]_i_8_n_0\,
-      I5 => \bramaddr[15]_i_9_n_0\,
-      O => \bramaddr[15]_i_3_n_0\
-    );
-\bramaddr[15]_i_30\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"2AAA2A2A2A2A2A2A"
-    )
-        port map (
-      I0 => \bramaddr[15]_i_34_n_0\,
-      I1 => \^data_loc_tracker\(27),
-      I2 => \bramaddr[16]_i_15_n_0\,
-      I3 => \bramaddr[15]_i_35_n_0\,
-      I4 => \bramaddr[15]_i_36_n_0\,
-      I5 => \^data_loc_tracker\(29),
-      O => \bramaddr[15]_i_30_n_0\
-    );
-\bramaddr[15]_i_31\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"80"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(20),
-      I1 => \^data_loc_tracker\(21),
-      I2 => \^data_loc_tracker\(19),
-      O => \bramaddr[15]_i_31_n_0\
-    );
-\bramaddr[15]_i_32\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000080000000"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(19),
-      I1 => \data_loc[2]_i_8_n_0\,
-      I2 => \bramaddr[15]_i_18_n_0\,
-      I3 => \^data_loc_tracker\(24),
-      I4 => \data_loc[3]_i_9_n_0\,
-      I5 => \bram_overflows_tracker[0]_i_9_n_0\,
-      O => \bramaddr[15]_i_32_n_0\
-    );
-\bramaddr[15]_i_33\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(54),
-      I1 => \^data_loc_tracker\(53),
-      O => \bramaddr[15]_i_33_n_0\
-    );
-\bramaddr[15]_i_34\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"80"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(22),
-      I1 => \^data_loc_tracker\(23),
-      I2 => \^data_loc_tracker\(24),
-      O => \bramaddr[15]_i_34_n_0\
-    );
-\bramaddr[15]_i_35\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00008000AAAAAAAA"
-    )
-        port map (
-      I0 => \bramaddr[15]_i_20_n_0\,
-      I1 => \^data_loc_tracker\(40),
-      I2 => \^data_loc_tracker\(38),
-      I3 => \^data_loc_tracker\(39),
-      I4 => \bramaddr[15]_i_37_n_0\,
-      I5 => \bramaddr[15]_i_21_n_0\,
-      O => \bramaddr[15]_i_35_n_0\
-    );
-\bramaddr[15]_i_36\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(30),
-      I1 => \^data_loc_tracker\(28),
-      O => \bramaddr[15]_i_36_n_0\
-    );
-\bramaddr[15]_i_37\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0888888888888888"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(41),
-      I1 => \data_loc[1]_i_17_n_0\,
-      I2 => \^data_loc_tracker\(44),
-      I3 => \^data_loc_tracker\(45),
-      I4 => \^data_loc_tracker\(46),
-      I5 => \bramaddr[15]_i_38_n_0\,
-      O => \bramaddr[15]_i_37_n_0\
-    );
-\bramaddr[15]_i_38\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7F77777777777777"
-    )
-        port map (
-      I0 => \bram_overflows_tracker[0]_i_7_n_0\,
-      I1 => \^data_loc_tracker\(47),
-      I2 => \bramaddr[15]_i_39_n_0\,
-      I3 => \^data_loc_tracker\(50),
-      I4 => \^data_loc_tracker\(51),
-      I5 => \^data_loc_tracker\(52),
-      O => \bramaddr[15]_i_38_n_0\
-    );
-\bramaddr[15]_i_39\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0080808080808080"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(55),
-      I1 => \^data_loc_tracker\(53),
-      I2 => \^data_loc_tracker\(54),
-      I3 => \^data_loc_tracker\(58),
-      I4 => \^data_loc_tracker\(57),
-      I5 => \^data_loc_tracker\(56),
-      O => \bramaddr[15]_i_39_n_0\
-    );
-\bramaddr[15]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88F8888888888888"
-    )
-        port map (
-      I0 => \^bramaddr\(13),
-      I1 => \^di\(0),
-      I2 => \data_loc[1]_i_5_n_0\,
-      I3 => \bramaddr[15]_i_10_n_0\,
-      I4 => \bramaddr[15]_i_11_n_0\,
-      I5 => \bramaddr[15]_i_12_n_0\,
-      O => \bramaddr[15]_i_4_n_0\
-    );
-\bramaddr[15]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"888F88888F8F8F8F"
-    )
-        port map (
-      I0 => \^bramaddr\(12),
-      I1 => \^di\(0),
-      I2 => \bramaddr[15]_i_13_n_0\,
-      I3 => \bramaddr[15]_i_14_n_0\,
-      I4 => \bramaddr[15]_i_15_n_0\,
-      I5 => \bramaddr[15]_i_11_n_0\,
-      O => \bramaddr[15]_i_5_n_0\
-    );
-\bramaddr[15]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFF7FFFFFFF"
-    )
-        port map (
-      I0 => \data_loc[3]_i_14_n_0\,
-      I1 => \^data_loc_tracker\(13),
-      I2 => \^data_loc_tracker\(16),
-      I3 => \^data_loc_tracker\(17),
-      I4 => \^data_loc_tracker\(18),
-      I5 => \bramaddr[15]_i_16_n_0\,
-      O => \bramaddr[15]_i_6_n_0\
-    );
-\bramaddr[15]_i_7\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"DFFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \bramaddr[16]_i_9_n_0\,
-      I1 => \bramaddr[15]_i_10_n_0\,
-      I2 => \^data_loc_tracker\(2),
-      I3 => \^data_loc_tracker\(3),
-      I4 => \^data_loc_tracker\(4),
-      I5 => \^data_loc_tracker\(5),
-      O => \bramaddr[15]_i_7_n_0\
-    );
-\bramaddr[15]_i_8\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BFFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \bramaddr[16]_i_20_n_0\,
-      I1 => \^data_loc_tracker\(26),
-      I2 => \^data_loc_tracker\(25),
-      I3 => \^data_loc_tracker\(27),
-      I4 => \^data_loc_tracker\(28),
-      I5 => \^data_loc_tracker\(29),
-      O => \bramaddr[15]_i_8_n_0\
-    );
-\bramaddr[15]_i_9\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"5D55555555555555"
-    )
-        port map (
-      I0 => \bramaddr[16]_i_12_n_0\,
-      I1 => \bramaddr[15]_i_17_n_0\,
-      I2 => \bram_overflows_tracker[0]_i_9_n_0\,
-      I3 => \^data_loc_tracker\(53),
-      I4 => \^data_loc_tracker\(50),
-      I5 => \bramaddr[15]_i_18_n_0\,
-      O => \bramaddr[15]_i_9_n_0\
-    );
-\bramaddr[16]_i_1\: unisim.vcomponents.LUT2
+\bramaddr[0]_i_1\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"E"
     )
         port map (
-      I0 => \^di\(0),
-      I1 => \bramaddr[16]_i_4_n_0\,
-      O => \bramaddr[16]_i_1_n_0\
+      I0 => \^bramen_raw\,
+      I1 => \data_loc[5]_i_3_n_0\,
+      O => \bramaddr[0]_i_1_n_0\
     );
-\bramaddr[16]_i_10\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_10\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"BFFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \bramaddr[16]_i_20_n_0\,
-      I1 => \data_loc[1]_i_5_n_0\,
-      I2 => \^data_loc_tracker\(26),
-      I3 => \^data_loc_tracker\(27),
-      I4 => \bramaddr[16]_i_21_n_0\,
-      I5 => \bramaddr[16]_i_22_n_0\,
-      O => \bramaddr[16]_i_10_n_0\
-    );
-\bramaddr[16]_i_11\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FF7FFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \data_loc[3]_i_14_n_0\,
-      I1 => \^data_loc_tracker\(12),
-      I2 => \^data_loc_tracker\(13),
-      I3 => \bramaddr[15]_i_10_n_0\,
-      I4 => \data_loc[2]_i_7_n_0\,
-      I5 => \data_loc[2]_i_3_n_0\,
-      O => \bramaddr[16]_i_11_n_0\
-    );
-\bramaddr[16]_i_12\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8000000000000000"
-    )
-        port map (
-      I0 => \bram_overflows_tracker[0]_i_7_n_0\,
-      I1 => \^data_loc_tracker\(45),
-      I2 => \^data_loc_tracker\(46),
-      I3 => \^data_loc_tracker\(44),
-      I4 => \^data_loc_tracker\(47),
-      I5 => \bramaddr[16]_i_23_n_0\,
-      O => \bramaddr[16]_i_12_n_0\
-    );
-\bramaddr[16]_i_13\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(18),
-      I1 => \^data_loc_tracker\(17),
-      I2 => \^data_loc_tracker\(16),
-      I3 => \^data_loc_tracker\(13),
-      I4 => \^data_loc_tracker\(15),
-      I5 => \^data_loc_tracker\(14),
-      O => \bramaddr[16]_i_13_n_0\
-    );
-\bramaddr[16]_i_14\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(24),
-      I1 => \^data_loc_tracker\(23),
-      O => \bramaddr[16]_i_14_n_0\
-    );
-\bramaddr[16]_i_15\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(26),
-      I1 => \^data_loc_tracker\(25),
-      O => \bramaddr[16]_i_15_n_0\
-    );
-\bramaddr[16]_i_16\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(44),
-      I1 => \^data_loc_tracker\(43),
-      O => \bramaddr[16]_i_16_n_0\
-    );
-\bramaddr[16]_i_17\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFF7FFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(47),
-      I1 => \bram_overflows_tracker[0]_i_7_n_0\,
-      I2 => \^data_loc_tracker\(42),
-      I3 => \bramaddr[16]_i_24_n_0\,
-      I4 => \data_loc[3]_i_11_n_0\,
-      I5 => \bramaddr[16]_i_25_n_0\,
-      O => \bramaddr[16]_i_17_n_0\
-    );
-\bramaddr[16]_i_18\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(5),
-      I1 => \^data_loc_tracker\(4),
-      I2 => \^data_loc_tracker\(33),
-      I3 => \^data_loc_tracker\(31),
-      I4 => \data_loc[1]_i_13_n_0\,
-      I5 => \bramaddr[16]_i_26_n_0\,
-      O => \bramaddr[16]_i_18_n_0\
-    );
-\bramaddr[16]_i_19\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(10),
-      I1 => \^data_loc_tracker\(9),
-      O => \bramaddr[16]_i_19_n_0\
-    );
-\bramaddr[16]_i_20\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"BFFFFFFF"
-    )
-        port map (
-      I0 => \bramaddr[16]_i_27_n_0\,
-      I1 => \^data_loc_tracker\(31),
-      I2 => \^data_loc_tracker\(30),
-      I3 => \^data_loc_tracker\(35),
-      I4 => \^data_loc_tracker\(32),
-      O => \bramaddr[16]_i_20_n_0\
-    );
-\bramaddr[16]_i_21\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(29),
-      I1 => \^data_loc_tracker\(28),
-      O => \bramaddr[16]_i_21_n_0\
-    );
-\bramaddr[16]_i_22\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(25),
-      I1 => \^data_loc_tracker\(24),
-      O => \bramaddr[16]_i_22_n_0\
-    );
-\bramaddr[16]_i_23\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8000000000000000"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(38),
-      I1 => \^data_loc_tracker\(39),
-      I2 => \^data_loc_tracker\(43),
-      I3 => \^data_loc_tracker\(42),
-      I4 => \^data_loc_tracker\(41),
-      I5 => \^data_loc_tracker\(40),
-      O => \bramaddr[16]_i_23_n_0\
-    );
-\bramaddr[16]_i_24\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(41),
-      I1 => \^data_loc_tracker\(40),
-      O => \bramaddr[16]_i_24_n_0\
-    );
-\bramaddr[16]_i_25\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7FFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(27),
-      I1 => \^data_loc_tracker\(30),
-      I2 => \^data_loc_tracker\(28),
-      I3 => \^data_loc_tracker\(29),
-      O => \bramaddr[16]_i_25_n_0\
-    );
-\bramaddr[16]_i_26\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(22),
-      I1 => \^data_loc_tracker\(21),
-      O => \bramaddr[16]_i_26_n_0\
-    );
-\bramaddr[16]_i_27\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7FFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(36),
-      I1 => \^data_loc_tracker\(37),
-      I2 => \^data_loc_tracker\(33),
-      I3 => \^data_loc_tracker\(34),
-      O => \bramaddr[16]_i_27_n_0\
-    );
-\bramaddr[16]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"5555555455555555"
-    )
-        port map (
-      I0 => bramwe_i_2_n_0,
-      I1 => \bramaddr[16]_i_6_n_0\,
-      I2 => \bram_overflows_tracker[0]_i_5_n_0\,
-      I3 => \bramaddr[16]_i_7_n_0\,
-      I4 => \bramaddr[16]_i_8_n_0\,
-      I5 => \bramaddr[16]_i_9_n_0\,
-      O => \bramaddr[16]_i_4_n_0\
-    );
-\bramaddr[16]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"888888F888888888"
-    )
-        port map (
-      I0 => \^bramaddr\(16),
-      I1 => \^di\(0),
-      I2 => \data_loc[3]_i_3_n_0\,
-      I3 => \bramaddr[16]_i_10_n_0\,
-      I4 => \bramaddr[16]_i_11_n_0\,
-      I5 => \bramaddr[16]_i_12_n_0\,
-      O => \bramaddr[16]_i_5_n_0\
-    );
-\bramaddr[16]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(55),
-      I1 => \^data_loc_tracker\(53),
-      I2 => \^data_loc_tracker\(54),
-      I3 => \^data_loc_tracker\(52),
-      I4 => \^data_loc_tracker\(51),
-      I5 => \^data_loc_tracker\(50),
-      O => \bramaddr[16]_i_6_n_0\
-    );
-\bramaddr[16]_i_7\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFEFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \bramaddr[16]_i_13_n_0\,
-      I1 => \bramaddr[16]_i_14_n_0\,
-      I2 => \bramaddr[16]_i_15_n_0\,
-      I3 => \bramaddr[16]_i_16_n_0\,
-      I4 => \^data_loc_tracker\(19),
-      I5 => \^data_loc_tracker\(20),
-      O => \bramaddr[16]_i_7_n_0\
-    );
-\bramaddr[16]_i_8\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFBFFFFFFF"
-    )
-        port map (
-      I0 => \bramaddr[16]_i_17_n_0\,
-      I1 => \data_loc[2]_i_2_n_0\,
-      I2 => \^data_loc_tracker\(32),
-      I3 => \^data_loc_tracker\(46),
-      I4 => \^data_loc_tracker\(45),
-      I5 => \bramaddr[16]_i_18_n_0\,
-      O => \bramaddr[16]_i_8_n_0\
-    );
-\bramaddr[16]_i_9\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8000000000000000"
+      INIT => X"FFFFFFFF2A000000"
     )
         port map (
       I0 => \^data_loc_tracker\(6),
-      I1 => \bramaddr[16]_i_19_n_0\,
-      I2 => \^data_loc_tracker\(7),
-      I3 => \^data_loc_tracker\(8),
-      I4 => \^data_loc_tracker\(11),
-      I5 => \^data_loc_tracker\(12),
-      O => \bramaddr[16]_i_9_n_0\
+      I1 => \^data_loc_tracker\(9),
+      I2 => \^data_loc_tracker\(10),
+      I3 => \^data_loc_tracker\(7),
+      I4 => \^data_loc_tracker\(8),
+      I5 => \bramaddr[4]_i_7_n_0\,
+      O => \bramaddr[0]_i_10_n_0\
     );
-\bramaddr[3]_i_10\: unisim.vcomponents.LUT4
+\bramaddr[0]_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EEFEFEFEEEEEEEEE"
+    )
+        port map (
+      I0 => \bramaddr[0]_i_22_n_0\,
+      I1 => \bramaddr[0]_i_23_n_0\,
+      I2 => \data_loc[2]_i_4_n_0\,
+      I3 => \^data_loc_tracker\(18),
+      I4 => \^data_loc_tracker\(17),
+      I5 => \^data_loc_tracker\(16),
+      O => \bramaddr[0]_i_11_n_0\
+    );
+\bramaddr[0]_i_12\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"FF4F"
     )
@@ -3537,10 +1929,10 @@ begin
       I0 => \^data_loc_tracker\(2),
       I1 => \^data_loc_tracker\(1),
       I2 => \^data_loc_tracker\(0),
-      I3 => \^di\(0),
-      O => \bramaddr[3]_i_10_n_0\
+      I3 => \^bramen_raw\,
+      O => \bramaddr[0]_i_12_n_0\
     );
-\bramaddr[3]_i_11\: unisim.vcomponents.LUT5
+\bramaddr[0]_i_13\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"7F7FFF7F"
     )
@@ -3550,22 +1942,22 @@ begin
       I2 => \^data_loc_tracker\(8),
       I3 => \^data_loc_tracker\(9),
       I4 => \^data_loc_tracker\(10),
-      O => \bramaddr[3]_i_11_n_0\
+      O => \bramaddr[0]_i_13_n_0\
     );
-\bramaddr[3]_i_12\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_14\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFFFF55551000"
+      INIT => X"FFFFFFFF55551110"
     )
         port map (
-      I0 => \bramaddr[3]_i_22_n_0\,
-      I1 => \bramaddr[3]_i_23_n_0\,
-      I2 => \bramaddr[3]_i_24_n_0\,
-      I3 => \bramaddr[3]_i_25_n_0\,
-      I4 => \bramaddr[3]_i_26_n_0\,
-      I5 => \bramaddr[3]_i_27_n_0\,
-      O => \bramaddr[3]_i_12_n_0\
+      I0 => \bramaddr[0]_i_24_n_0\,
+      I1 => \bramaddr[0]_i_25_n_0\,
+      I2 => \bramaddr[0]_i_26_n_0\,
+      I3 => \bramaddr[0]_i_27_n_0\,
+      I4 => \bramaddr[0]_i_28_n_0\,
+      I5 => \bramaddr[0]_i_29_n_0\,
+      O => \bramaddr[0]_i_14_n_0\
     );
-\bramaddr[3]_i_13\: unisim.vcomponents.LUT5
+\bramaddr[0]_i_15\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"4FFFFFFF"
     )
@@ -3575,31 +1967,31 @@ begin
       I2 => \^data_loc_tracker\(4),
       I3 => \^data_loc_tracker\(3),
       I4 => \^data_loc_tracker\(1),
-      O => \bramaddr[3]_i_13_n_0\
+      O => \bramaddr[0]_i_15_n_0\
     );
-\bramaddr[3]_i_14\: unisim.vcomponents.LUT2
+\bramaddr[0]_i_16\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"7"
+      INIT => X"8"
     )
         port map (
       I0 => \^data_loc_tracker\(1),
       I1 => \^data_loc_tracker\(0),
-      O => \bramaddr[3]_i_14_n_0\
+      O => \bramaddr[0]_i_16_n_0\
     );
-\bramaddr[3]_i_15\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_17\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFFFFF55555100"
     )
         port map (
-      I0 => \bramaddr[3]_i_28_n_0\,
-      I1 => \bramaddr[3]_i_29_n_0\,
-      I2 => \bramaddr[3]_i_30_n_0\,
-      I3 => \data_loc[1]_i_7_n_0\,
-      I4 => \data_loc[1]_i_6_n_0\,
+      I0 => \bramaddr[0]_i_30_n_0\,
+      I1 => \data_loc[1]_i_15_n_0\,
+      I2 => \bramaddr[0]_i_31_n_0\,
+      I3 => \data_loc[1]_i_8_n_0\,
+      I4 => \data_loc[1]_i_7_n_0\,
       I5 => \data_loc[1]_i_2_n_0\,
-      O => \bramaddr[3]_i_15_n_0\
+      O => \bramaddr[0]_i_17_n_0\
     );
-\bramaddr[3]_i_16\: unisim.vcomponents.LUT4
+\bramaddr[0]_i_18\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"7FFF"
     )
@@ -3608,73 +2000,60 @@ begin
       I1 => \^data_loc_tracker\(8),
       I2 => \^data_loc_tracker\(11),
       I3 => \^data_loc_tracker\(12),
-      O => \bramaddr[3]_i_16_n_0\
+      O => \bramaddr[0]_i_18_n_0\
     );
-\bramaddr[3]_i_17\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_19\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"DFFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \bramaddr[0]_i_32_n_0\,
+      I1 => \bramaddr[0]_i_33_n_0\,
+      I2 => \^data_loc_tracker\(50),
+      I3 => \^data_loc_tracker\(49),
+      I4 => \^data_loc_tracker\(29),
+      I5 => \^data_loc_tracker\(13),
+      O => \bramaddr[0]_i_19_n_0\
+    );
+\bramaddr[0]_i_20\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFFFFFFFFF7FFF"
     )
         port map (
-      I0 => \^data_loc_tracker\(60),
-      I1 => \^data_loc_tracker\(56),
-      I2 => \^data_loc_tracker\(22),
-      I3 => \^data_loc_tracker\(18),
-      I4 => \bramaddr[3]_i_31_n_0\,
-      I5 => \bramaddr[16]_i_14_n_0\,
-      O => \bramaddr[3]_i_17_n_0\
-    );
-\bramaddr[3]_i_18\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFF7FFFFFF"
-    )
-        port map (
       I0 => \^data_loc_tracker\(39),
       I1 => \^data_loc_tracker\(34),
-      I2 => \bramaddr[16]_i_16_n_0\,
-      I3 => \^data_loc_tracker\(59),
-      I4 => \^data_loc_tracker\(55),
-      I5 => \bramaddr[3]_i_32_n_0\,
-      O => \bramaddr[3]_i_18_n_0\
+      I2 => \^data_loc_tracker\(22),
+      I3 => \^data_loc_tracker\(18),
+      I4 => \bramaddr[0]_i_34_n_0\,
+      I5 => \data_loc[5]_i_23_n_0\,
+      O => \bramaddr[0]_i_20_n_0\
     );
-\bramaddr[3]_i_19\: unisim.vcomponents.LUT5
+\bramaddr[0]_i_21\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"00008000"
     )
         port map (
-      I0 => \^data_loc_tracker\(61),
-      I1 => \^data_loc_tracker\(45),
-      I2 => \^data_loc_tracker\(54),
+      I0 => \^data_loc_tracker\(45),
+      I1 => \^data_loc_tracker\(33),
+      I2 => \^data_loc_tracker\(17),
       I3 => \^data_loc_tracker\(6),
-      I4 => \bramaddr[3]_i_33_n_0\,
-      O => \bramaddr[3]_i_19_n_0\
+      I4 => \bramaddr[0]_i_35_n_0\,
+      O => \bramaddr[0]_i_21_n_0\
     );
-\bramaddr[3]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8F888F8F8F888F88"
-    )
-        port map (
-      I0 => \^bramaddr\(3),
-      I1 => \^di\(0),
-      I2 => \bramaddr[3]_i_6_n_0\,
-      I3 => \bramaddr[3]_i_7_n_0\,
-      I4 => \bramaddr[3]_i_8_n_0\,
-      I5 => \bramaddr[3]_i_9_n_0\,
-      O => \bramaddr[3]_i_2_n_0\
-    );
-\bramaddr[3]_i_20\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_22\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"00000000EAAAAAAA"
     )
         port map (
-      I0 => \bramaddr[3]_i_34_n_0\,
-      I1 => \bramaddr[3]_i_35_n_0\,
-      I2 => \bramaddr[3]_i_29_n_0\,
+      I0 => \bramaddr[0]_i_36_n_0\,
+      I1 => \bramaddr[0]_i_37_n_0\,
+      I2 => \data_loc[1]_i_15_n_0\,
       I3 => \^data_loc_tracker\(32),
-      I4 => \bramaddr[15]_i_21_n_0\,
-      I5 => \bramaddr[3]_i_36_n_0\,
-      O => \bramaddr[3]_i_20_n_0\
+      I4 => \bramaddr[12]_i_25_n_0\,
+      I5 => \bramaddr[0]_i_38_n_0\,
+      O => \bramaddr[0]_i_22_n_0\
     );
-\bramaddr[3]_i_21\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_23\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"7FFFFFFFFFFFFFFF"
     )
@@ -3685,9 +2064,9 @@ begin
       I3 => \^data_loc_tracker\(13),
       I4 => \^data_loc_tracker\(12),
       I5 => \^data_loc_tracker\(11),
-      O => \bramaddr[3]_i_21_n_0\
+      O => \bramaddr[0]_i_23_n_0\
     );
-\bramaddr[3]_i_22\: unisim.vcomponents.LUT5
+\bramaddr[0]_i_24\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"77F7FFFF"
     )
@@ -3697,41 +2076,46 @@ begin
       I2 => \^data_loc_tracker\(17),
       I3 => \^data_loc_tracker\(18),
       I4 => \^data_loc_tracker\(16),
-      O => \bramaddr[3]_i_22_n_0\
+      O => \bramaddr[0]_i_24_n_0\
     );
-\bramaddr[3]_i_23\: unisim.vcomponents.LUT3
+\bramaddr[0]_i_25\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"4F"
+      INIT => X"5DFFFFFF"
     )
         port map (
-      I0 => \^data_loc_tracker\(26),
+      I0 => \^data_loc_tracker\(24),
       I1 => \^data_loc_tracker\(25),
-      I2 => \^data_loc_tracker\(24),
-      O => \bramaddr[3]_i_23_n_0\
+      I2 => \^data_loc_tracker\(26),
+      I3 => \^data_loc_tracker\(21),
+      I4 => \^data_loc_tracker\(23),
+      O => \bramaddr[0]_i_25_n_0\
     );
-\bramaddr[3]_i_24\: unisim.vcomponents.LUT2
+\bramaddr[0]_i_26\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"8"
+      INIT => X"000000007F7FFF7F"
     )
         port map (
-      I0 => \^data_loc_tracker\(23),
-      I1 => \^data_loc_tracker\(21),
-      O => \bramaddr[3]_i_24_n_0\
+      I0 => \^data_loc_tracker\(33),
+      I1 => \^data_loc_tracker\(35),
+      I2 => \data_loc[0]_i_9_n_0\,
+      I3 => \bramaddr[0]_i_39_n_0\,
+      I4 => \bramaddr[0]_i_40_n_0\,
+      I5 => \bramaddr[0]_i_41_n_0\,
+      O => \bramaddr[0]_i_26_n_0\
     );
-\bramaddr[3]_i_25\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_27\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFFFFFFF8000FFFF"
+      INIT => X"7F7FFF7F"
     )
         port map (
-      I0 => \^data_loc_tracker\(29),
-      I1 => \^data_loc_tracker\(31),
-      I2 => \data_loc[0]_i_3_n_0\,
-      I3 => \bramaddr[3]_i_37_n_0\,
-      I4 => \data_loc[3]_i_13_n_0\,
-      I5 => \bramaddr[3]_i_38_n_0\,
-      O => \bramaddr[3]_i_25_n_0\
+      I0 => \^data_loc_tracker\(25),
+      I1 => \^data_loc_tracker\(27),
+      I2 => \^data_loc_tracker\(28),
+      I3 => \^data_loc_tracker\(29),
+      I4 => \^data_loc_tracker\(30),
+      O => \bramaddr[0]_i_27_n_0\
     );
-\bramaddr[3]_i_26\: unisim.vcomponents.LUT5
+\bramaddr[0]_i_28\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"77F7FFFF"
     )
@@ -3741,9 +2125,9 @@ begin
       I2 => \^data_loc_tracker\(21),
       I3 => \^data_loc_tracker\(22),
       I4 => \^data_loc_tracker\(20),
-      O => \bramaddr[3]_i_26_n_0\
+      O => \bramaddr[0]_i_28_n_0\
     );
-\bramaddr[3]_i_27\: unisim.vcomponents.LUT5
+\bramaddr[0]_i_29\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"7F7FFF7F"
     )
@@ -3753,88 +2137,75 @@ begin
       I2 => \^data_loc_tracker\(12),
       I3 => \^data_loc_tracker\(13),
       I4 => \^data_loc_tracker\(14),
-      O => \bramaddr[3]_i_27_n_0\
+      O => \bramaddr[0]_i_29_n_0\
     );
-\bramaddr[3]_i_28\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_30\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"08FFFFFFFFFFFFFF"
     )
         port map (
       I0 => \^data_loc_tracker\(19),
       I1 => \^data_loc_tracker\(18),
-      I2 => \data_loc[3]_i_9_n_0\,
-      I3 => \data_loc[3]_i_10_n_0\,
+      I2 => \data_loc[1]_i_11_n_0\,
+      I3 => \data_loc[2]_i_7_n_0\,
       I4 => \^data_loc_tracker\(13),
       I5 => \^data_loc_tracker\(12),
-      O => \bramaddr[3]_i_28_n_0\
+      O => \bramaddr[0]_i_30_n_0\
     );
-\bramaddr[3]_i_29\: unisim.vcomponents.LUT2
+\bramaddr[0]_i_31\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(31),
-      I1 => \^data_loc_tracker\(30),
-      O => \bramaddr[3]_i_29_n_0\
-    );
-\bramaddr[3]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFF551055105510"
-    )
-        port map (
-      I0 => \bramaddr[3]_i_10_n_0\,
-      I1 => \bramaddr[3]_i_11_n_0\,
-      I2 => \bramaddr[3]_i_12_n_0\,
-      I3 => \bramaddr[3]_i_13_n_0\,
-      I4 => \^bramaddr\(2),
-      I5 => \^di\(0),
-      O => \bramaddr[3]_i_3_n_0\
-    );
-\bramaddr[3]_i_30\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000000F7FF00FF"
+      INIT => X"F700FF000000FF00"
     )
         port map (
       I0 => \^data_loc_tracker\(38),
       I1 => \^data_loc_tracker\(39),
-      I2 => \data_loc[1]_i_14_n_0\,
-      I3 => \data_loc[1]_i_13_n_0\,
-      I4 => \data_loc[1]_i_12_n_0\,
-      I5 => \data_loc[1]_i_11_n_0\,
-      O => \bramaddr[3]_i_30_n_0\
+      I2 => \data_loc[1]_i_18_n_0\,
+      I3 => \data_loc[1]_i_17_n_0\,
+      I4 => \data_loc[5]_i_16_n_0\,
+      I5 => \data_loc[1]_i_16_n_0\,
+      O => \bramaddr[0]_i_31_n_0\
     );
-\bramaddr[3]_i_31\: unisim.vcomponents.LUT2
+\bramaddr[0]_i_32\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(28),
+      I1 => \^data_loc_tracker\(27),
+      O => \bramaddr[0]_i_32_n_0\
+    );
+\bramaddr[0]_i_33\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"7"
     )
         port map (
-      I0 => \^data_loc_tracker\(29),
-      I1 => \^data_loc_tracker\(13),
-      O => \bramaddr[3]_i_31_n_0\
+      I0 => \^data_loc_tracker\(24),
+      I1 => \^data_loc_tracker\(23),
+      O => \bramaddr[0]_i_33_n_0\
     );
-\bramaddr[3]_i_32\: unisim.vcomponents.LUT2
+\bramaddr[0]_i_34\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"7"
     )
         port map (
       I0 => \^data_loc_tracker\(40),
       I1 => \^data_loc_tracker\(38),
-      O => \bramaddr[3]_i_32_n_0\
+      O => \bramaddr[0]_i_34_n_0\
     );
-\bramaddr[3]_i_33\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_35\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"7FFFFFFFFFFFFFFF"
+      INIT => X"FFFFFFFF7FFFFFFF"
     )
         port map (
-      I0 => \^data_loc_tracker\(33),
-      I1 => \^data_loc_tracker\(17),
+      I0 => \^data_loc_tracker\(60),
+      I1 => \^data_loc_tracker\(56),
       I2 => \^data_loc_tracker\(2),
       I3 => \^data_loc_tracker\(1),
-      I4 => \bramaddr[3]_i_39_n_0\,
-      I5 => \bramaddr[7]_i_68_n_0\,
-      O => \bramaddr[3]_i_33_n_0\
+      I4 => \bramaddr[4]_i_54_n_0\,
+      I5 => \bramaddr[0]_i_42_n_0\,
+      O => \bramaddr[0]_i_35_n_0\
     );
-\bramaddr[3]_i_34\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_36\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFFFFF0800FFFF"
     )
@@ -3843,11 +2214,11 @@ begin
       I1 => \^data_loc_tracker\(31),
       I2 => \^data_loc_tracker\(34),
       I3 => \^data_loc_tracker\(32),
-      I4 => \bramaddr[15]_i_34_n_0\,
-      I5 => \bramaddr[3]_i_40_n_0\,
-      O => \bramaddr[3]_i_34_n_0\
+      I4 => \bramaddr[12]_i_34_n_0\,
+      I5 => \bramaddr[0]_i_43_n_0\,
+      O => \bramaddr[0]_i_36_n_0\
     );
-\bramaddr[3]_i_35\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_37\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"7F7F7F7FFF7F7F7F"
     )
@@ -3857,68 +2228,82 @@ begin
       I2 => \^data_loc_tracker\(39),
       I3 => \^data_loc_tracker\(42),
       I4 => \^data_loc_tracker\(41),
-      I5 => \bramaddr[3]_i_41_n_0\,
-      O => \bramaddr[3]_i_35_n_0\
+      I5 => \bramaddr[0]_i_44_n_0\,
+      O => \bramaddr[0]_i_37_n_0\
     );
-\bramaddr[3]_i_36\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_38\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"4FFFFFFFFFFFFFFF"
+      INIT => X"8FFFFFFFFFFFFFFF"
     )
         port map (
-      I0 => \bramaddr[16]_i_15_n_0\,
-      I1 => \bramaddr[15]_i_34_n_0\,
-      I2 => \data_loc[3]_i_14_n_0\,
+      I0 => \bramaddr[12]_i_34_n_0\,
+      I1 => \data_loc[5]_i_22_n_0\,
+      I2 => \data_loc[2]_i_4_n_0\,
       I3 => \^data_loc_tracker\(16),
-      I4 => \data_loc[3]_i_9_n_0\,
+      I4 => \data_loc[1]_i_11_n_0\,
       I5 => \^data_loc_tracker\(19),
-      O => \bramaddr[3]_i_36_n_0\
+      O => \bramaddr[0]_i_38_n_0\
     );
-\bramaddr[3]_i_37\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_39\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"D0FFFFFFFFFFFFFF"
+      INIT => X"80008080"
     )
         port map (
-      I0 => \bramaddr[3]_i_42_n_0\,
-      I1 => \bramaddr[3]_i_43_n_0\,
-      I2 => \bramaddr[11]_i_54_n_0\,
-      I3 => \data_loc[0]_i_10_n_0\,
-      I4 => \^data_loc_tracker\(35),
-      I5 => \^data_loc_tracker\(33),
-      O => \bramaddr[3]_i_37_n_0\
+      I0 => \^data_loc_tracker\(40),
+      I1 => \^data_loc_tracker\(39),
+      I2 => \^data_loc_tracker\(37),
+      I3 => \^data_loc_tracker\(42),
+      I4 => \^data_loc_tracker\(41),
+      O => \bramaddr[0]_i_39_n_0\
     );
-\bramaddr[3]_i_38\: unisim.vcomponents.LUT3
+\bramaddr[0]_i_4\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"4F"
+      INIT => X"8F888F8F8F888F88"
     )
         port map (
-      I0 => \^data_loc_tracker\(30),
-      I1 => \^data_loc_tracker\(29),
-      I2 => \^data_loc_tracker\(28),
-      O => \bramaddr[3]_i_38_n_0\
+      I0 => \^d\(3),
+      I1 => \^bramen_raw\,
+      I2 => \bramaddr[0]_i_8_n_0\,
+      I3 => \bramaddr[0]_i_9_n_0\,
+      I4 => \bramaddr[0]_i_10_n_0\,
+      I5 => \bramaddr[0]_i_11_n_0\,
+      O => \bramaddr[0]_i_4_n_0\
     );
-\bramaddr[3]_i_39\: unisim.vcomponents.LUT2
+\bramaddr[0]_i_40\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"8"
+      INIT => X"8000808000000000"
     )
         port map (
-      I0 => \^data_loc_tracker\(50),
-      I1 => \^data_loc_tracker\(49),
-      O => \bramaddr[3]_i_39_n_0\
+      I0 => \bramaddr[0]_i_45_n_0\,
+      I1 => \^data_loc_tracker\(43),
+      I2 => \^data_loc_tracker\(41),
+      I3 => \^data_loc_tracker\(46),
+      I4 => \^data_loc_tracker\(45),
+      I5 => \^data_loc_tracker\(44),
+      O => \bramaddr[0]_i_40_n_0\
     );
-\bramaddr[3]_i_4\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_41\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"88888B888B8B8B8B"
+      INIT => X"77F7FFFF"
     )
         port map (
-      I0 => \^bramaddr\(1),
-      I1 => \^di\(0),
-      I2 => \bramaddr[3]_i_14_n_0\,
-      I3 => \bramaddr[3]_i_15_n_0\,
-      I4 => \data_loc[1]_i_4_n_0\,
-      I5 => \data_loc[1]_i_5_n_0\,
-      O => \bramaddr[3]_i_4_n_0\
+      I0 => \^data_loc_tracker\(29),
+      I1 => \^data_loc_tracker\(31),
+      I2 => \^data_loc_tracker\(33),
+      I3 => \^data_loc_tracker\(34),
+      I4 => \^data_loc_tracker\(32),
+      O => \bramaddr[0]_i_41_n_0\
     );
-\bramaddr[3]_i_40\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_42\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(61),
+      I1 => \^data_loc_tracker\(59),
+      O => \bramaddr[0]_i_42_n_0\
+    );
+\bramaddr[0]_i_43\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"4000FFFFFFFFFFFF"
     )
@@ -3927,75 +2312,95 @@ begin
       I1 => \^data_loc_tracker\(30),
       I2 => \^data_loc_tracker\(32),
       I3 => \^data_loc_tracker\(31),
-      I4 => \bramaddr[16]_i_21_n_0\,
+      I4 => \bramaddr[8]_i_49_n_0\,
       I5 => \^data_loc_tracker\(27),
-      O => \bramaddr[3]_i_40_n_0\
+      O => \bramaddr[0]_i_43_n_0\
     );
-\bramaddr[3]_i_41\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_44\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0080AAAAAAAAAAAA"
+      INIT => X"4044444444444444"
     )
         port map (
-      I0 => \bramaddr[7]_i_63_n_0\,
-      I1 => \^data_loc_tracker\(49),
-      I2 => \^data_loc_tracker\(50),
-      I3 => \bramaddr[3]_i_44_n_0\,
-      I4 => \bramaddr[11]_i_65_n_0\,
+      I0 => \data_loc[5]_i_23_n_0\,
+      I1 => \^data_loc_tracker\(45),
+      I2 => \bramaddr[0]_i_46_n_0\,
+      I3 => \^data_loc_tracker\(46),
+      I4 => \^data_loc_tracker\(47),
       I5 => \^data_loc_tracker\(48),
-      O => \bramaddr[3]_i_41_n_0\
+      O => \bramaddr[0]_i_44_n_0\
     );
-\bramaddr[3]_i_42\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_45\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"BFFFBFBFFFFFFFFF"
     )
         port map (
-      I0 => \bramaddr[3]_i_45_n_0\,
+      I0 => \bramaddr[0]_i_47_n_0\,
       I1 => \^data_loc_tracker\(47),
       I2 => \^data_loc_tracker\(45),
       I3 => \^data_loc_tracker\(50),
       I4 => \^data_loc_tracker\(49),
       I5 => \^data_loc_tracker\(48),
-      O => \bramaddr[3]_i_42_n_0\
+      O => \bramaddr[0]_i_45_n_0\
     );
-\bramaddr[3]_i_43\: unisim.vcomponents.LUT5
+\bramaddr[0]_i_46\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"77F7FFFF"
+      INIT => X"8888808880888088"
     )
         port map (
-      I0 => \^data_loc_tracker\(41),
-      I1 => \^data_loc_tracker\(43),
-      I2 => \^data_loc_tracker\(45),
-      I3 => \^data_loc_tracker\(46),
-      I4 => \^data_loc_tracker\(44),
-      O => \bramaddr[3]_i_43_n_0\
-    );
-\bramaddr[3]_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7F00000000000000"
-    )
-        port map (
-      I0 => \bramaddr[11]_i_76_n_0\,
-      I1 => \^data_loc_tracker\(55),
-      I2 => \^data_loc_tracker\(54),
+      I0 => \^data_loc_tracker\(49),
+      I1 => \^data_loc_tracker\(50),
+      I2 => \bramaddr[0]_i_48_n_0\,
       I3 => \^data_loc_tracker\(51),
-      I4 => \^data_loc_tracker\(53),
-      I5 => \^data_loc_tracker\(52),
-      O => \bramaddr[3]_i_44_n_0\
+      I4 => \bramaddr[4]_i_54_n_0\,
+      I5 => \bramaddr[0]_i_49_n_0\,
+      O => \bramaddr[0]_i_46_n_0\
     );
-\bramaddr[3]_i_45\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_47\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"00000000EF000000"
     )
         port map (
-      I0 => \bramaddr[3]_i_46_n_0\,
-      I1 => \bramaddr[3]_i_47_n_0\,
+      I0 => \bramaddr[0]_i_50_n_0\,
+      I1 => \bramaddr[0]_i_51_n_0\,
       I2 => \^data_loc_tracker\(56),
       I3 => \^data_loc_tracker\(51),
       I4 => \^data_loc_tracker\(49),
-      I5 => \bramaddr[3]_i_48_n_0\,
-      O => \bramaddr[3]_i_45_n_0\
+      I5 => \bramaddr[0]_i_52_n_0\,
+      O => \bramaddr[0]_i_47_n_0\
     );
-\bramaddr[3]_i_46\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_48\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(53),
+      I1 => \^data_loc_tracker\(52),
+      O => \bramaddr[0]_i_48_n_0\
+    );
+\bramaddr[0]_i_49\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"70"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(57),
+      I1 => \^data_loc_tracker\(58),
+      I2 => \^data_loc_tracker\(56),
+      O => \bramaddr[0]_i_49_n_0\
+    );
+\bramaddr[0]_i_5\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8F8F8F8F888F8888"
+    )
+        port map (
+      I0 => \^d\(2),
+      I1 => \^bramen_raw\,
+      I2 => \bramaddr[0]_i_12_n_0\,
+      I3 => \bramaddr[0]_i_13_n_0\,
+      I4 => \bramaddr[0]_i_14_n_0\,
+      I5 => \bramaddr[0]_i_15_n_0\,
+      O => \bramaddr[0]_i_5_n_0\
+    );
+\bramaddr[0]_i_50\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"D0F000F000F000F0"
     )
@@ -4006,18 +2411,18 @@ begin
       I3 => \^data_loc_tracker\(58),
       I4 => \^data_loc_tracker\(59),
       I5 => \^data_loc_tracker\(60),
-      O => \bramaddr[3]_i_46_n_0\
+      O => \bramaddr[0]_i_50_n_0\
     );
-\bramaddr[3]_i_47\: unisim.vcomponents.LUT2
+\bramaddr[0]_i_51\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"7"
     )
         port map (
       I0 => \^data_loc_tracker\(55),
       I1 => \^data_loc_tracker\(53),
-      O => \bramaddr[3]_i_47_n_0\
+      O => \bramaddr[0]_i_51_n_0\
     );
-\bramaddr[3]_i_48\: unisim.vcomponents.LUT3
+\bramaddr[0]_i_52\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"4F"
     )
@@ -4025,67 +2430,587 @@ begin
       I0 => \^data_loc_tracker\(54),
       I1 => \^data_loc_tracker\(53),
       I2 => \^data_loc_tracker\(52),
-      O => \bramaddr[3]_i_48_n_0\
+      O => \bramaddr[0]_i_52_n_0\
     );
-\bramaddr[3]_i_5\: unisim.vcomponents.LUT3
+\bramaddr[0]_i_6\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8888B888B8B8B8B8"
+    )
+        port map (
+      I0 => \^d\(1),
+      I1 => \^bramen_raw\,
+      I2 => \bramaddr[0]_i_16_n_0\,
+      I3 => \bramaddr[0]_i_17_n_0\,
+      I4 => \data_loc[1]_i_4_n_0\,
+      I5 => \data_loc[1]_i_5_n_0\,
+      O => \bramaddr[0]_i_6_n_0\
+    );
+\bramaddr[0]_i_7\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"3A"
     )
         port map (
       I0 => \data_loc[0]_i_1_n_0\,
-      I1 => \^bramaddr\(0),
-      I2 => \^di\(0),
-      O => \bramaddr[3]_i_5_n_0\
+      I1 => \^d\(0),
+      I2 => \^bramen_raw\,
+      O => \bramaddr[0]_i_7_n_0\
     );
-\bramaddr[3]_i_6\: unisim.vcomponents.LUT6
+\bramaddr[0]_i_8\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"DDDDDDDFDDDDDDDD"
     )
         port map (
       I0 => \^data_loc_tracker\(0),
-      I1 => \^di\(0),
-      I2 => \bramaddr[3]_i_16_n_0\,
-      I3 => \bramaddr[3]_i_17_n_0\,
-      I4 => \bramaddr[3]_i_18_n_0\,
-      I5 => \bramaddr[3]_i_19_n_0\,
-      O => \bramaddr[3]_i_6_n_0\
+      I1 => \^bramen_raw\,
+      I2 => \bramaddr[0]_i_18_n_0\,
+      I3 => \bramaddr[0]_i_19_n_0\,
+      I4 => \bramaddr[0]_i_20_n_0\,
+      I5 => \bramaddr[0]_i_21_n_0\,
+      O => \bramaddr[0]_i_8_n_0\
     );
-\bramaddr[3]_i_7\: unisim.vcomponents.LUT2
+\bramaddr[0]_i_9\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"7"
     )
         port map (
       I0 => \^data_loc_tracker\(2),
       I1 => \^data_loc_tracker\(1),
-      O => \bramaddr[3]_i_7_n_0\
+      O => \bramaddr[0]_i_9_n_0\
     );
-\bramaddr[3]_i_8\: unisim.vcomponents.LUT6
+\bramaddr[12]_i_10\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFFFF2A000000"
+      INIT => X"D555555555555555"
     )
         port map (
-      I0 => \^data_loc_tracker\(6),
-      I1 => \^data_loc_tracker\(9),
-      I2 => \^data_loc_tracker\(10),
+      I0 => \bramaddr[12]_i_9_n_0\,
+      I1 => \bramaddr[12]_i_19_n_0\,
+      I2 => \bram_overflows_tracker[0]_i_10_n_0\,
+      I3 => \^data_loc_tracker\(53),
+      I4 => \^data_loc_tracker\(50),
+      I5 => \bramaddr[12]_i_20_n_0\,
+      O => \bramaddr[12]_i_10_n_0\
+    );
+\bramaddr[12]_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000054444444"
+    )
+        port map (
+      I0 => \data_loc[5]_i_8_n_0\,
+      I1 => \bramaddr[12]_i_17_n_0\,
+      I2 => \^data_loc_tracker\(26),
+      I3 => \^data_loc_tracker\(25),
+      I4 => \bramaddr[12]_i_21_n_0\,
+      I5 => \bramaddr[12]_i_22_n_0\,
+      O => \bramaddr[12]_i_11_n_0\
+    );
+\bramaddr[12]_i_12\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"7FFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(12),
+      I1 => \^data_loc_tracker\(11),
+      I2 => \^data_loc_tracker\(8),
       I3 => \^data_loc_tracker\(7),
-      I4 => \^data_loc_tracker\(8),
-      I5 => \bramaddr[7]_i_7_n_0\,
-      O => \bramaddr[3]_i_8_n_0\
+      I4 => \^data_loc_tracker\(9),
+      I5 => \^data_loc_tracker\(10),
+      O => \bramaddr[12]_i_12_n_0\
     );
-\bramaddr[3]_i_9\: unisim.vcomponents.LUT6
+\bramaddr[12]_i_13\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"EEFEFEFEEEEEEEEE"
+      INIT => X"7F"
     )
         port map (
-      I0 => \bramaddr[3]_i_20_n_0\,
-      I1 => \bramaddr[3]_i_21_n_0\,
-      I2 => \data_loc[3]_i_14_n_0\,
-      I3 => \^data_loc_tracker\(18),
-      I4 => \^data_loc_tracker\(17),
-      I5 => \^data_loc_tracker\(16),
-      O => \bramaddr[3]_i_9_n_0\
+      I0 => \^data_loc_tracker\(5),
+      I1 => \^data_loc_tracker\(6),
+      I2 => \^data_loc_tracker\(4),
+      O => \bramaddr[12]_i_13_n_0\
     );
-\bramaddr[7]_i_10\: unisim.vcomponents.LUT4
+\bramaddr[12]_i_14\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"DDDDDDDDDFDDDDDD"
+    )
+        port map (
+      I0 => \data_loc[1]_i_5_n_0\,
+      I1 => \bramaddr[4]_i_19_n_0\,
+      I2 => \bramaddr[12]_i_23_n_0\,
+      I3 => \bramaddr[12]_i_24_n_0\,
+      I4 => \bramaddr[12]_i_25_n_0\,
+      I5 => \bramaddr[12]_i_26_n_0\,
+      O => \bramaddr[12]_i_14_n_0\
+    );
+\bramaddr[12]_i_15\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"7F"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(7),
+      I1 => \^data_loc_tracker\(8),
+      I2 => \^data_loc_tracker\(9),
+      O => \bramaddr[12]_i_15_n_0\
+    );
+\bramaddr[12]_i_16\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"40FFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \bramaddr[12]_i_27_n_0\,
+      I1 => \data_loc[2]_i_4_n_0\,
+      I2 => \^data_loc_tracker\(13),
+      I3 => \^data_loc_tracker\(11),
+      I4 => \^data_loc_tracker\(10),
+      I5 => \^data_loc_tracker\(12),
+      O => \bramaddr[12]_i_16_n_0\
+    );
+\bramaddr[12]_i_17\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"7FFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(21),
+      I1 => \^data_loc_tracker\(24),
+      I2 => \^data_loc_tracker\(23),
+      I3 => \^data_loc_tracker\(22),
+      I4 => \^data_loc_tracker\(20),
+      I5 => \^data_loc_tracker\(19),
+      O => \bramaddr[12]_i_17_n_0\
+    );
+\bramaddr[12]_i_18\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000000000000000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(38),
+      I1 => \^data_loc_tracker\(39),
+      I2 => \^data_loc_tracker\(43),
+      I3 => \^data_loc_tracker\(42),
+      I4 => \^data_loc_tracker\(41),
+      I5 => \^data_loc_tracker\(40),
+      O => \bramaddr[12]_i_18_n_0\
+    );
+\bramaddr[12]_i_19\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(54),
+      I1 => \^data_loc_tracker\(55),
+      I2 => \^data_loc_tracker\(51),
+      I3 => \^data_loc_tracker\(52),
+      O => \bramaddr[12]_i_19_n_0\
+    );
+\bramaddr[12]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"888F8888888F888F"
+    )
+        port map (
+      I0 => \^d\(15),
+      I1 => \^bramen_raw\,
+      I2 => \bramaddr[12]_i_6_n_0\,
+      I3 => \bramaddr[12]_i_7_n_0\,
+      I4 => \bramaddr[12]_i_8_n_0\,
+      I5 => \bramaddr[12]_i_9_n_0\,
+      O => \bramaddr[12]_i_2_n_0\
+    );
+\bramaddr[12]_i_20\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(57),
+      I1 => \^data_loc_tracker\(56),
+      O => \bramaddr[12]_i_20_n_0\
+    );
+\bramaddr[12]_i_21\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(28),
+      I1 => \^data_loc_tracker\(29),
+      I2 => \^data_loc_tracker\(27),
+      I3 => \^data_loc_tracker\(30),
+      O => \bramaddr[12]_i_21_n_0\
+    );
+\bramaddr[12]_i_22\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AA02AA0222020202"
+    )
+        port map (
+      I0 => \bramaddr[12]_i_28_n_0\,
+      I1 => \bramaddr[12]_i_17_n_0\,
+      I2 => \bramaddr[12]_i_18_n_0\,
+      I3 => \bramaddr[12]_i_29_n_0\,
+      I4 => \data_loc[5]_i_7_n_0\,
+      I5 => \bramaddr[12]_i_30_n_0\,
+      O => \bramaddr[12]_i_22_n_0\
+    );
+\bramaddr[12]_i_23\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFF7FFFFFFF"
+    )
+        port map (
+      I0 => \bramaddr[12]_i_31_n_0\,
+      I1 => \^data_loc_tracker\(23),
+      I2 => \^data_loc_tracker\(24),
+      I3 => \^data_loc_tracker\(61),
+      I4 => \^data_loc_tracker\(60),
+      I5 => \bramaddr[12]_i_32_n_0\,
+      O => \bramaddr[12]_i_23_n_0\
+    );
+\bramaddr[12]_i_24\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000000000000000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(17),
+      I1 => \^data_loc_tracker\(16),
+      I2 => \^data_loc_tracker\(18),
+      I3 => \^data_loc_tracker\(11),
+      I4 => \^data_loc_tracker\(10),
+      I5 => \^data_loc_tracker\(12),
+      O => \bramaddr[12]_i_24_n_0\
+    );
+\bramaddr[12]_i_25\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"80"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(35),
+      I1 => \^data_loc_tracker\(36),
+      I2 => \^data_loc_tracker\(37),
+      O => \bramaddr[12]_i_25_n_0\
+    );
+\bramaddr[12]_i_26\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"7F"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(47),
+      I1 => \^data_loc_tracker\(48),
+      I2 => \^data_loc_tracker\(49),
+      O => \bramaddr[12]_i_26_n_0\
+    );
+\bramaddr[12]_i_27\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"80888888AAAAAAAA"
+    )
+        port map (
+      I0 => \bramaddr[12]_i_33_n_0\,
+      I1 => \bramaddr[12]_i_34_n_0\,
+      I2 => \data_loc[5]_i_22_n_0\,
+      I3 => \^data_loc_tracker\(27),
+      I4 => \bramaddr[12]_i_35_n_0\,
+      I5 => \bramaddr[12]_i_36_n_0\,
+      O => \bramaddr[12]_i_27_n_0\
+    );
+\bramaddr[12]_i_28\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000000000000000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(37),
+      I1 => \^data_loc_tracker\(36),
+      I2 => \^data_loc_tracker\(35),
+      I3 => \^data_loc_tracker\(34),
+      I4 => \^data_loc_tracker\(31),
+      I5 => \data_loc[1]_i_17_n_0\,
+      O => \bramaddr[12]_i_28_n_0\
+    );
+\bramaddr[12]_i_29\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000000000000000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(47),
+      I1 => \^data_loc_tracker\(44),
+      I2 => \^data_loc_tracker\(46),
+      I3 => \^data_loc_tracker\(45),
+      I4 => \^data_loc_tracker\(48),
+      I5 => \^data_loc_tracker\(49),
+      O => \bramaddr[12]_i_29_n_0\
+    );
+\bramaddr[12]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8F888F8F8F888F88"
+    )
+        port map (
+      I0 => \^d\(14),
+      I1 => \^bramen_raw\,
+      I2 => \bramaddr[12]_i_7_n_0\,
+      I3 => \bramaddr[12]_i_6_n_0\,
+      I4 => \bramaddr[12]_i_8_n_0\,
+      I5 => \bramaddr[12]_i_10_n_0\,
+      O => \bramaddr[12]_i_3_n_0\
+    );
+\bramaddr[12]_i_30\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000000000000000"
+    )
+        port map (
+      I0 => \data_loc[1]_i_14_n_0\,
+      I1 => \data_loc[1]_i_11_n_0\,
+      I2 => \^data_loc_tracker\(19),
+      I3 => \bramaddr[12]_i_20_n_0\,
+      I4 => \^data_loc_tracker\(24),
+      I5 => \bram_overflows_tracker[0]_i_10_n_0\,
+      O => \bramaddr[12]_i_30_n_0\
+    );
+\bramaddr[12]_i_31\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(54),
+      I1 => \^data_loc_tracker\(53),
+      O => \bramaddr[12]_i_31_n_0\
+    );
+\bramaddr[12]_i_32\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFF7FFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(55),
+      I1 => \^data_loc_tracker\(22),
+      I2 => \^data_loc_tracker\(59),
+      I3 => \^data_loc_tracker\(30),
+      I4 => \bramaddr[8]_i_49_n_0\,
+      I5 => \bramaddr[12]_i_37_n_0\,
+      O => \bramaddr[12]_i_32_n_0\
+    );
+\bramaddr[12]_i_33\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"80"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(18),
+      I1 => \^data_loc_tracker\(16),
+      I2 => \^data_loc_tracker\(17),
+      O => \bramaddr[12]_i_33_n_0\
+    );
+\bramaddr[12]_i_34\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"80"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(22),
+      I1 => \^data_loc_tracker\(23),
+      I2 => \^data_loc_tracker\(24),
+      O => \bramaddr[12]_i_34_n_0\
+    );
+\bramaddr[12]_i_35\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"D0FFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \bramaddr[12]_i_25_n_0\,
+      I1 => \bramaddr[12]_i_38_n_0\,
+      I2 => \bramaddr[12]_i_39_n_0\,
+      I3 => \^data_loc_tracker\(29),
+      I4 => \^data_loc_tracker\(28),
+      I5 => \^data_loc_tracker\(30),
+      O => \bramaddr[12]_i_35_n_0\
+    );
+\bramaddr[12]_i_36\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"80"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(20),
+      I1 => \^data_loc_tracker\(21),
+      I2 => \^data_loc_tracker\(19),
+      O => \bramaddr[12]_i_36_n_0\
+    );
+\bramaddr[12]_i_37\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"7FFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(4),
+      I1 => \^data_loc_tracker\(6),
+      I2 => \^data_loc_tracker\(5),
+      I3 => \^data_loc_tracker\(41),
+      I4 => \^data_loc_tracker\(43),
+      I5 => \^data_loc_tracker\(42),
+      O => \bramaddr[12]_i_37_n_0\
+    );
+\bramaddr[12]_i_38\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000808080808080"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(40),
+      I1 => \^data_loc_tracker\(38),
+      I2 => \^data_loc_tracker\(39),
+      I3 => \bramaddr[12]_i_40_n_0\,
+      I4 => \data_loc[1]_i_21_n_0\,
+      I5 => \^data_loc_tracker\(41),
+      O => \bramaddr[12]_i_38_n_0\
+    );
+\bramaddr[12]_i_39\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(32),
+      I1 => \^data_loc_tracker\(33),
+      I2 => \^data_loc_tracker\(31),
+      I3 => \^data_loc_tracker\(34),
+      O => \bramaddr[12]_i_39_n_0\
+    );
+\bramaddr[12]_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"88888888BBB88888"
+    )
+        port map (
+      I0 => \^d\(13),
+      I1 => \^bramen_raw\,
+      I2 => \bramaddr[12]_i_11_n_0\,
+      I3 => \bramaddr[12]_i_12_n_0\,
+      I4 => \data_loc[3]_i_2_n_0\,
+      I5 => \bramaddr[12]_i_13_n_0\,
+      O => \bramaddr[12]_i_4_n_0\
+    );
+\bramaddr[12]_i_40\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FF08000000000000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(52),
+      I1 => \bram_overflows_tracker[0]_i_9_n_0\,
+      I2 => \bramaddr[12]_i_41_n_0\,
+      I3 => \bramaddr[12]_i_26_n_0\,
+      I4 => \bramaddr[8]_i_63_n_0\,
+      I5 => \^data_loc_tracker\(44),
+      O => \bramaddr[12]_i_40_n_0\
+    );
+\bramaddr[12]_i_41\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0080808080808080"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(55),
+      I1 => \^data_loc_tracker\(53),
+      I2 => \^data_loc_tracker\(54),
+      I3 => \^data_loc_tracker\(58),
+      I4 => \^data_loc_tracker\(57),
+      I5 => \^data_loc_tracker\(56),
+      O => \bramaddr[12]_i_41_n_0\
+    );
+\bramaddr[12]_i_5\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8F888F8F8F888F88"
+    )
+        port map (
+      I0 => \^d\(12),
+      I1 => \^bramen_raw\,
+      I2 => \bramaddr[12]_i_14_n_0\,
+      I3 => \bramaddr[12]_i_13_n_0\,
+      I4 => \bramaddr[12]_i_15_n_0\,
+      I5 => \bramaddr[12]_i_16_n_0\,
+      O => \bramaddr[12]_i_5_n_0\
+    );
+\bramaddr[12]_i_6\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFF7FFFFFFF"
+    )
+        port map (
+      I0 => \data_loc[2]_i_4_n_0\,
+      I1 => \^data_loc_tracker\(13),
+      I2 => \^data_loc_tracker\(18),
+      I3 => \^data_loc_tracker\(16),
+      I4 => \^data_loc_tracker\(17),
+      I5 => \bramaddr[12]_i_17_n_0\,
+      O => \bramaddr[12]_i_6_n_0\
+    );
+\bramaddr[12]_i_7\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"DFFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \data_loc[5]_i_11_n_0\,
+      I1 => \bramaddr[4]_i_19_n_0\,
+      I2 => \^data_loc_tracker\(2),
+      I3 => \^data_loc_tracker\(3),
+      I4 => \^data_loc_tracker\(4),
+      I5 => \^data_loc_tracker\(5),
+      O => \bramaddr[12]_i_7_n_0\
+    );
+\bramaddr[12]_i_8\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"BFFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \bramaddr[16]_i_4_n_0\,
+      I1 => \^data_loc_tracker\(27),
+      I2 => \^data_loc_tracker\(28),
+      I3 => \^data_loc_tracker\(29),
+      I4 => \^data_loc_tracker\(26),
+      I5 => \^data_loc_tracker\(25),
+      O => \bramaddr[12]_i_8_n_0\
+    );
+\bramaddr[12]_i_9\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000000000000000"
+    )
+        port map (
+      I0 => \bram_overflows_tracker[0]_i_8_n_0\,
+      I1 => \^data_loc_tracker\(45),
+      I2 => \^data_loc_tracker\(46),
+      I3 => \^data_loc_tracker\(44),
+      I4 => \^data_loc_tracker\(47),
+      I5 => \bramaddr[12]_i_18_n_0\,
+      O => \bramaddr[12]_i_9_n_0\
+    );
+\bramaddr[16]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"88888F8888888888"
+    )
+        port map (
+      I0 => \^d\(16),
+      I1 => \^bramen_raw\,
+      I2 => \bramaddr[16]_i_3_n_0\,
+      I3 => \data_loc[5]_i_13_n_0\,
+      I4 => \bramaddr[16]_i_4_n_0\,
+      I5 => \bramaddr[12]_i_9_n_0\,
+      O => \bramaddr[16]_i_2_n_0\
+    );
+\bramaddr[16]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFF7FFFFFFFFFFF"
+    )
+        port map (
+      I0 => \data_loc[1]_i_5_n_0\,
+      I1 => \bramaddr[16]_i_5_n_0\,
+      I2 => \data_loc[2]_i_6_n_0\,
+      I3 => \data_loc[1]_i_8_n_0\,
+      I4 => \bramaddr[4]_i_19_n_0\,
+      I5 => \data_loc[5]_i_14_n_0\,
+      O => \bramaddr[16]_i_3_n_0\
+    );
+\bramaddr[16]_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"7FFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(37),
+      I1 => \^data_loc_tracker\(36),
+      I2 => \data_loc[5]_i_16_n_0\,
+      I3 => \^data_loc_tracker\(33),
+      I4 => \^data_loc_tracker\(32),
+      I5 => \data_loc[1]_i_15_n_0\,
+      O => \bramaddr[16]_i_4_n_0\
+    );
+\bramaddr[16]_i_5\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(27),
+      I1 => \^data_loc_tracker\(26),
+      O => \bramaddr[16]_i_5_n_0\
+    );
+\bramaddr[4]_i_10\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"70FF"
     )
@@ -4094,112 +3019,135 @@ begin
       I1 => \^data_loc_tracker\(6),
       I2 => \^data_loc_tracker\(5),
       I3 => \^data_loc_tracker\(4),
-      O => \bramaddr[7]_i_10_n_0\
+      O => \bramaddr[4]_i_10_n_0\
     );
-\bramaddr[7]_i_11\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_11\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFFFFF55550100"
     )
         port map (
-      I0 => \bramaddr[7]_i_26_n_0\,
-      I1 => \bramaddr[7]_i_27_n_0\,
-      I2 => \bramaddr[7]_i_28_n_0\,
-      I3 => \bramaddr[7]_i_29_n_0\,
-      I4 => \bramaddr[7]_i_30_n_0\,
-      I5 => \bramaddr[7]_i_31_n_0\,
-      O => \bramaddr[7]_i_11_n_0\
+      I0 => \bramaddr[4]_i_27_n_0\,
+      I1 => \bramaddr[4]_i_28_n_0\,
+      I2 => \bramaddr[4]_i_29_n_0\,
+      I3 => \bramaddr[4]_i_30_n_0\,
+      I4 => \bramaddr[4]_i_31_n_0\,
+      I5 => \bramaddr[4]_i_32_n_0\,
+      O => \bramaddr[4]_i_11_n_0\
     );
-\bramaddr[7]_i_12\: unisim.vcomponents.LUT5
+\bramaddr[4]_i_12\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"00B00000"
+      INIT => X"20200020"
     )
         port map (
-      I0 => \^data_loc_tracker\(3),
-      I1 => \^data_loc_tracker\(2),
+      I0 => \^data_loc_tracker\(0),
+      I1 => \^bramen_raw\,
       I2 => \^data_loc_tracker\(1),
-      I3 => \^di\(0),
-      I4 => \^data_loc_tracker\(0),
-      O => \bramaddr[7]_i_12_n_0\
+      I3 => \^data_loc_tracker\(2),
+      I4 => \^data_loc_tracker\(3),
+      O => \bramaddr[4]_i_12_n_0\
     );
-\bramaddr[7]_i_13\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_13\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"2000000000000000"
+      INIT => X"0000000000000004"
     )
         port map (
-      I0 => \bramaddr[7]_i_32_n_0\,
-      I1 => \bramaddr[7]_i_33_n_0\,
-      I2 => \^data_loc_tracker\(44),
-      I3 => \^data_loc_tracker\(45),
-      I4 => \bramaddr[7]_i_34_n_0\,
-      I5 => \bramaddr[7]_i_35_n_0\,
-      O => \bramaddr[7]_i_13_n_0\
+      I0 => \bramaddr[4]_i_33_n_0\,
+      I1 => \^data_loc_tracker\(11),
+      I2 => \bramaddr[4]_i_34_n_0\,
+      I3 => \bramaddr[4]_i_35_n_0\,
+      I4 => \bramaddr[4]_i_36_n_0\,
+      I5 => \bramaddr[4]_i_37_n_0\,
+      O => \bramaddr[4]_i_13_n_0\
     );
-\bramaddr[7]_i_14\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_14\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"E000E0E0E0E0E0E0"
     )
         port map (
-      I0 => \bramaddr[7]_i_36_n_0\,
-      I1 => \bramaddr[7]_i_37_n_0\,
+      I0 => \bramaddr[4]_i_38_n_0\,
+      I1 => \bramaddr[4]_i_39_n_0\,
       I2 => \data_loc[1]_i_5_n_0\,
       I3 => \^data_loc_tracker\(6),
       I4 => \^data_loc_tracker\(5),
       I5 => \^data_loc_tracker\(4),
-      O => \bramaddr[7]_i_14_n_0\
+      O => \bramaddr[4]_i_14_n_0\
     );
-\bramaddr[7]_i_15\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_15\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"55555555FFFF77F7"
     )
         port map (
-      I0 => \bramaddr[7]_i_12_n_0\,
+      I0 => \bramaddr[4]_i_12_n_0\,
       I1 => \^data_loc_tracker\(45),
       I2 => \^data_loc_tracker\(46),
       I3 => \^data_loc_tracker\(47),
-      I4 => \bramaddr[7]_i_38_n_0\,
-      I5 => \bramaddr[7]_i_39_n_0\,
-      O => \bramaddr[7]_i_15_n_0\
+      I4 => \bramaddr[4]_i_40_n_0\,
+      I5 => \bramaddr[4]_i_41_n_0\,
+      O => \bramaddr[4]_i_15_n_0\
     );
-\bramaddr[7]_i_16\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_16\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFBAFFBAFFFAFFBA"
+      INIT => X"FFFFFFFFFFFF40CC"
     )
         port map (
-      I0 => \bramaddr[11]_i_31_n_0\,
-      I1 => \^data_loc_tracker\(13),
-      I2 => \^data_loc_tracker\(12),
-      I3 => \bramaddr[7]_i_40_n_0\,
-      I4 => \^data_loc_tracker\(14),
-      I5 => \^data_loc_tracker\(15),
-      O => \bramaddr[7]_i_16_n_0\
-    );
-\bramaddr[7]_i_17\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BFBFFFBFFFFFFFFF"
-    )
-        port map (
-      I0 => \bramaddr[7]_i_41_n_0\,
+      I0 => \^data_loc_tracker\(15),
       I1 => \^data_loc_tracker\(12),
       I2 => \^data_loc_tracker\(14),
-      I3 => \^data_loc_tracker\(18),
-      I4 => \^data_loc_tracker\(19),
-      I5 => \data_loc[3]_i_10_n_0\,
-      O => \bramaddr[7]_i_17_n_0\
+      I3 => \^data_loc_tracker\(13),
+      I4 => \bramaddr[4]_i_42_n_0\,
+      I5 => \bramaddr[4]_i_43_n_0\,
+      O => \bramaddr[4]_i_16_n_0\
     );
-\bramaddr[7]_i_18\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_17\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"777F77777F7F7F7F"
+      INIT => X"BFFFBFBFFFFFFFFF"
     )
         port map (
-      I0 => \^data_loc_tracker\(2),
-      I1 => \^data_loc_tracker\(4),
-      I2 => \bramaddr[7]_i_40_n_0\,
-      I3 => \^data_loc_tracker\(9),
-      I4 => \^data_loc_tracker\(8),
-      I5 => \^data_loc_tracker\(7),
-      O => \bramaddr[7]_i_18_n_0\
+      I0 => \bramaddr[4]_i_44_n_0\,
+      I1 => \^data_loc_tracker\(12),
+      I2 => \^data_loc_tracker\(14),
+      I3 => \^data_loc_tracker\(19),
+      I4 => \^data_loc_tracker\(18),
+      I5 => \data_loc[2]_i_7_n_0\,
+      O => \bramaddr[4]_i_17_n_0\
     );
-\bramaddr[7]_i_19\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_18\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"1055FFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \bramaddr[4]_i_43_n_0\,
+      I1 => \^data_loc_tracker\(9),
+      I2 => \^data_loc_tracker\(8),
+      I3 => \^data_loc_tracker\(7),
+      I4 => \^data_loc_tracker\(2),
+      I5 => \^data_loc_tracker\(4),
+      O => \bramaddr[4]_i_18_n_0\
+    );
+\bramaddr[4]_i_19\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"DF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(0),
+      I1 => \^bramen_raw\,
+      I2 => \^data_loc_tracker\(1),
+      O => \bramaddr[4]_i_19_n_0\
+    );
+\bramaddr[4]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8F888F8F8F888F88"
+    )
+        port map (
+      I0 => \^d\(7),
+      I1 => \^bramen_raw\,
+      I2 => \bramaddr[4]_i_6_n_0\,
+      I3 => \bramaddr[4]_i_7_n_0\,
+      I4 => \bramaddr[4]_i_8_n_0\,
+      I5 => \bramaddr[4]_i_9_n_0\,
+      O => \bramaddr[4]_i_2_n_0\
+    );
+\bramaddr[4]_i_20\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFFFFF7FFFFFFF"
     )
@@ -4208,89 +3156,76 @@ begin
       I1 => \^data_loc_tracker\(51),
       I2 => \^data_loc_tracker\(50),
       I3 => \^data_loc_tracker\(15),
-      I4 => \data_loc[3]_i_10_n_0\,
-      I5 => \bramaddr[7]_i_7_n_0\,
-      O => \bramaddr[7]_i_19_n_0\
+      I4 => \data_loc[2]_i_7_n_0\,
+      I5 => \bramaddr[4]_i_7_n_0\,
+      O => \bramaddr[4]_i_20_n_0\
     );
-\bramaddr[7]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8F888F8F8F888F88"
-    )
-        port map (
-      I0 => \^bramaddr\(7),
-      I1 => \^di\(0),
-      I2 => \bramaddr[7]_i_6_n_0\,
-      I3 => \bramaddr[7]_i_7_n_0\,
-      I4 => \bramaddr[7]_i_8_n_0\,
-      I5 => \bramaddr[7]_i_9_n_0\,
-      O => \bramaddr[7]_i_2_n_0\
-    );
-\bramaddr[7]_i_20\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_21\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"8000000000000000"
     )
         port map (
-      I0 => \bramaddr[11]_i_43_n_0\,
-      I1 => \^data_loc_tracker\(38),
-      I2 => \^data_loc_tracker\(37),
-      I3 => \^data_loc_tracker\(62),
-      I4 => \^data_loc_tracker\(61),
-      I5 => \bramaddr[7]_i_42_n_0\,
-      O => \bramaddr[7]_i_20_n_0\
+      I0 => \bramaddr[4]_i_45_n_0\,
+      I1 => \bramaddr[4]_i_46_n_0\,
+      I2 => \^data_loc_tracker\(62),
+      I3 => \^data_loc_tracker\(61),
+      I4 => \^data_loc_tracker\(27),
+      I5 => \^data_loc_tracker\(26),
+      O => \bramaddr[4]_i_21_n_0\
     );
-\bramaddr[7]_i_21\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_22\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"BFFFFFFFFFFFFFFF"
     )
         port map (
-      I0 => \bramaddr[16]_i_16_n_0\,
+      I0 => \data_loc[5]_i_23_n_0\,
       I1 => \^data_loc_tracker\(45),
       I2 => \^data_loc_tracker\(55),
       I3 => \^data_loc_tracker\(9),
       I4 => \^data_loc_tracker\(39),
       I5 => \^data_loc_tracker\(28),
-      O => \bramaddr[7]_i_21_n_0\
+      O => \bramaddr[4]_i_22_n_0\
     );
-\bramaddr[7]_i_22\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_23\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"7FFFFFFFFFFFFFFF"
     )
         port map (
       I0 => \^data_loc_tracker\(32),
       I1 => \^data_loc_tracker\(20),
-      I2 => \bramaddr[16]_i_26_n_0\,
-      I3 => \data_loc[3]_i_15_n_0\,
+      I2 => \data_loc[5]_i_15_n_0\,
+      I3 => \data_loc[5]_i_21_n_0\,
       I4 => \^data_loc_tracker\(60),
       I5 => \^data_loc_tracker\(56),
-      O => \bramaddr[7]_i_22_n_0\
+      O => \bramaddr[4]_i_23_n_0\
     );
-\bramaddr[7]_i_23\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_24\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"15FFFFFFFFFFFFFF"
     )
         port map (
-      I0 => \bramaddr[7]_i_43_n_0\,
+      I0 => \bramaddr[4]_i_47_n_0\,
       I1 => \^data_loc_tracker\(19),
       I2 => \^data_loc_tracker\(18),
       I3 => \^data_loc_tracker\(14),
       I4 => \^data_loc_tracker\(13),
       I5 => \^data_loc_tracker\(12),
-      O => \bramaddr[7]_i_23_n_0\
+      O => \bramaddr[4]_i_24_n_0\
     );
-\bramaddr[7]_i_24\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_25\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"8880FFFFFFFFFFFF"
     )
         port map (
-      I0 => \^data_loc_tracker\(28),
-      I1 => \bramaddr[7]_i_42_n_0\,
-      I2 => \bramaddr[7]_i_44_n_0\,
-      I3 => \bramaddr[7]_i_45_n_0\,
-      I4 => \bramaddr[16]_i_22_n_0\,
+      I0 => \^data_loc_tracker\(26),
+      I1 => \bramaddr[0]_i_32_n_0\,
+      I2 => \bramaddr[4]_i_48_n_0\,
+      I3 => \bramaddr[4]_i_49_n_0\,
+      I4 => \data_loc[1]_i_13_n_0\,
       I5 => \^data_loc_tracker\(23),
-      O => \bramaddr[7]_i_24_n_0\
+      O => \bramaddr[4]_i_25_n_0\
     );
-\bramaddr[7]_i_25\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_26\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"7FFFFFFFFFFFFFFF"
     )
@@ -4301,9 +3236,9 @@ begin
       I3 => \^data_loc_tracker\(22),
       I4 => \^data_loc_tracker\(21),
       I5 => \^data_loc_tracker\(20),
-      O => \bramaddr[7]_i_25_n_0\
+      O => \bramaddr[4]_i_26_n_0\
     );
-\bramaddr[7]_i_26\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_27\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"7FFF7F7F77777777"
     )
@@ -4312,71 +3247,71 @@ begin
       I1 => \^data_loc_tracker\(12),
       I2 => \^data_loc_tracker\(15),
       I3 => \^data_loc_tracker\(18),
-      I4 => \data_loc[3]_i_10_n_0\,
-      I5 => \bramaddr[11]_i_30_n_0\,
-      O => \bramaddr[7]_i_26_n_0\
+      I4 => \data_loc[2]_i_7_n_0\,
+      I5 => \bramaddr[4]_i_50_n_0\,
+      O => \bramaddr[4]_i_27_n_0\
     );
-\bramaddr[7]_i_27\: unisim.vcomponents.LUT5
+\bramaddr[4]_i_28\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"5DFFFFFF"
+      INIT => X"4F"
     )
         port map (
-      I0 => \^data_loc_tracker\(27),
+      I0 => \^data_loc_tracker\(29),
       I1 => \^data_loc_tracker\(28),
-      I2 => \^data_loc_tracker\(29),
-      I3 => \^data_loc_tracker\(23),
-      I4 => \^data_loc_tracker\(26),
-      O => \bramaddr[7]_i_27_n_0\
+      I2 => \^data_loc_tracker\(27),
+      O => \bramaddr[4]_i_28_n_0\
     );
-\bramaddr[7]_i_28\: unisim.vcomponents.LUT3
+\bramaddr[4]_i_29\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"7F"
+      INIT => X"7FFFFFFF"
     )
         port map (
-      I0 => \^data_loc_tracker\(24),
-      I1 => \^data_loc_tracker\(20),
+      I0 => \^data_loc_tracker\(23),
+      I1 => \^data_loc_tracker\(26),
       I2 => \^data_loc_tracker\(21),
-      O => \bramaddr[7]_i_28_n_0\
+      I3 => \^data_loc_tracker\(20),
+      I4 => \^data_loc_tracker\(24),
+      O => \bramaddr[4]_i_29_n_0\
     );
-\bramaddr[7]_i_29\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8FFF8F8F88888888"
+    )
+        port map (
+      I0 => \^d\(6),
+      I1 => \^bramen_raw\,
+      I2 => \^data_loc_tracker\(2),
+      I3 => \bramaddr[4]_i_10_n_0\,
+      I4 => \bramaddr[4]_i_11_n_0\,
+      I5 => \bramaddr[4]_i_12_n_0\,
+      O => \bramaddr[4]_i_3_n_0\
+    );
+\bramaddr[4]_i_30\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFFFFF05454545"
     )
         port map (
-      I0 => \bramaddr[7]_i_46_n_0\,
-      I1 => \bramaddr[7]_i_47_n_0\,
+      I0 => \bramaddr[4]_i_51_n_0\,
+      I1 => \bramaddr[4]_i_46_n_0\,
       I2 => \^data_loc_tracker\(36),
       I3 => \^data_loc_tracker\(39),
-      I4 => \bramaddr[7]_i_48_n_0\,
-      I5 => \bramaddr[7]_i_49_n_0\,
-      O => \bramaddr[7]_i_29_n_0\
+      I4 => \bramaddr[4]_i_52_n_0\,
+      I5 => \bramaddr[4]_i_53_n_0\,
+      O => \bramaddr[4]_i_30_n_0\
     );
-\bramaddr[7]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFF750075007500"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(2),
-      I1 => \bramaddr[7]_i_10_n_0\,
-      I2 => \bramaddr[7]_i_11_n_0\,
-      I3 => \bramaddr[7]_i_12_n_0\,
-      I4 => \^bramaddr\(6),
-      I5 => \^di\(0),
-      O => \bramaddr[7]_i_3_n_0\
-    );
-\bramaddr[7]_i_30\: unisim.vcomponents.LUT5
+\bramaddr[4]_i_31\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"BFFFFFFF"
     )
         port map (
-      I0 => \bramaddr[11]_i_48_n_0\,
-      I1 => \^data_loc_tracker\(19),
-      I2 => \^data_loc_tracker\(17),
-      I3 => \^data_loc_tracker\(14),
-      I4 => \^data_loc_tracker\(13),
-      O => \bramaddr[7]_i_30_n_0\
+      I0 => \bramaddr[8]_i_30_n_0\,
+      I1 => \^data_loc_tracker\(14),
+      I2 => \^data_loc_tracker\(13),
+      I3 => \^data_loc_tracker\(19),
+      I4 => \^data_loc_tracker\(17),
+      O => \bramaddr[4]_i_31_n_0\
     );
-\bramaddr[7]_i_31\: unisim.vcomponents.LUT5
+\bramaddr[4]_i_32\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"5DDDFFFF"
     )
@@ -4386,149 +3321,185 @@ begin
       I2 => \^data_loc_tracker\(10),
       I3 => \^data_loc_tracker\(11),
       I4 => \^data_loc_tracker\(5),
-      O => \bramaddr[7]_i_31_n_0\
+      O => \bramaddr[4]_i_32_n_0\
     );
-\bramaddr[7]_i_32\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_33\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000800000000000"
+      INIT => X"7FFFFFFFFFFFFFFF"
     )
         port map (
-      I0 => \bramaddr[15]_i_17_n_0\,
-      I1 => \^data_loc_tracker\(24),
-      I2 => \^data_loc_tracker\(58),
+      I0 => \^data_loc_tracker\(52),
+      I1 => \^data_loc_tracker\(51),
+      I2 => \bramaddr[4]_i_54_n_0\,
       I3 => \^data_loc_tracker\(48),
-      I4 => \bramaddr[7]_i_50_n_0\,
-      I5 => \^data_loc_tracker\(11),
-      O => \bramaddr[7]_i_32_n_0\
+      I4 => \^data_loc_tracker\(38),
+      I5 => \^data_loc_tracker\(58),
+      O => \bramaddr[4]_i_33_n_0\
     );
-\bramaddr[7]_i_33\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_34\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"EFFFFFFFFFFFFFFF"
+      INIT => X"7"
     )
         port map (
-      I0 => \bramaddr[7]_i_51_n_0\,
-      I1 => \bramaddr[7]_i_52_n_0\,
-      I2 => \^data_loc_tracker\(4),
-      I3 => \^data_loc_tracker\(34),
-      I4 => \^data_loc_tracker\(1),
-      I5 => \^data_loc_tracker\(38),
-      O => \bramaddr[7]_i_33_n_0\
+      I0 => \^data_loc_tracker\(8),
+      I1 => \^data_loc_tracker\(7),
+      O => \bramaddr[4]_i_34_n_0\
     );
-\bramaddr[7]_i_34\: unisim.vcomponents.LUT2
+\bramaddr[4]_i_35\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"8"
+      INIT => X"7FFFFFFFFFFFFFFF"
     )
         port map (
-      I0 => \^data_loc_tracker\(62),
-      I1 => \^data_loc_tracker\(61),
-      O => \bramaddr[7]_i_34_n_0\
+      I0 => \bramaddr[4]_i_55_n_0\,
+      I1 => \data_loc[2]_i_4_n_0\,
+      I2 => \^data_loc_tracker\(42),
+      I3 => \^data_loc_tracker\(41),
+      I4 => \^data_loc_tracker\(24),
+      I5 => \^data_loc_tracker\(21),
+      O => \bramaddr[4]_i_35_n_0\
     );
-\bramaddr[7]_i_35\: unisim.vcomponents.LUT2
+\bramaddr[4]_i_36\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"8"
+      INIT => X"F7FFFFFFFFFFFFFF"
     )
         port map (
-      I0 => \^data_loc_tracker\(42),
-      I1 => \^data_loc_tracker\(41),
-      O => \bramaddr[7]_i_35_n_0\
+      I0 => \^data_loc_tracker\(34),
+      I1 => \^data_loc_tracker\(1),
+      I2 => \data_loc[3]_i_6_n_0\,
+      I3 => \bramaddr[4]_i_56_n_0\,
+      I4 => \^data_loc_tracker\(18),
+      I5 => \^data_loc_tracker\(17),
+      O => \bramaddr[4]_i_36_n_0\
     );
-\bramaddr[7]_i_36\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_37\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFFFF40FFFFFF"
+      INIT => X"7FFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(44),
+      I1 => \^data_loc_tracker\(45),
+      I2 => \^data_loc_tracker\(35),
+      I3 => \^data_loc_tracker\(32),
+      I4 => \^data_loc_tracker\(27),
+      I5 => \^data_loc_tracker\(25),
+      O => \bramaddr[4]_i_37_n_0\
+    );
+\bramaddr[4]_i_38\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"40FFFFFFFFFFFFFF"
     )
         port map (
       I0 => \^data_loc_tracker\(11),
       I1 => \^data_loc_tracker\(10),
       I2 => \^data_loc_tracker\(9),
-      I3 => \^data_loc_tracker\(5),
-      I4 => \^data_loc_tracker\(4),
-      I5 => \bramaddr[7]_i_50_n_0\,
-      O => \bramaddr[7]_i_36_n_0\
+      I3 => \bramaddr[4]_i_55_n_0\,
+      I4 => \^data_loc_tracker\(8),
+      I5 => \^data_loc_tracker\(7),
+      O => \bramaddr[4]_i_38_n_0\
     );
-\bramaddr[7]_i_37\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_39\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"00000000BBBBFFFB"
     )
         port map (
-      I0 => \bramaddr[11]_i_21_n_0\,
+      I0 => \bramaddr[8]_i_20_n_0\,
       I1 => \^data_loc_tracker\(17),
-      I2 => \bramaddr[7]_i_53_n_0\,
-      I3 => \bramaddr[7]_i_54_n_0\,
-      I4 => \bramaddr[7]_i_55_n_0\,
-      I5 => \bramaddr[7]_i_56_n_0\,
-      O => \bramaddr[7]_i_37_n_0\
+      I2 => \bramaddr[4]_i_57_n_0\,
+      I3 => \bramaddr[4]_i_58_n_0\,
+      I4 => \bramaddr[4]_i_59_n_0\,
+      I5 => \bramaddr[4]_i_60_n_0\,
+      O => \bramaddr[4]_i_39_n_0\
     );
-\bramaddr[7]_i_38\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"A0ACA0A0A0ACA0AC"
+    )
+        port map (
+      I0 => \^d\(5),
+      I1 => \^data_loc_tracker\(0),
+      I2 => \^bramen_raw\,
+      I3 => \bramaddr[4]_i_13_n_0\,
+      I4 => \bramaddr[4]_i_14_n_0\,
+      I5 => \^data_loc_tracker\(1),
+      O => \bramaddr[4]_i_4_n_0\
+    );
+\bramaddr[4]_i_40\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"4F00000000000000"
     )
         port map (
-      I0 => \bramaddr[7]_i_57_n_0\,
+      I0 => \bramaddr[4]_i_61_n_0\,
       I1 => \^data_loc_tracker\(51),
       I2 => \^data_loc_tracker\(50),
       I3 => \^data_loc_tracker\(49),
       I4 => \^data_loc_tracker\(48),
       I5 => \^data_loc_tracker\(46),
-      O => \bramaddr[7]_i_38_n_0\
+      O => \bramaddr[4]_i_40_n_0\
     );
-\bramaddr[7]_i_39\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_41\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFFFFFEFFFFFFF"
     )
         port map (
-      I0 => \bramaddr[7]_i_58_n_0\,
-      I1 => \bramaddr[7]_i_59_n_0\,
+      I0 => \bramaddr[4]_i_62_n_0\,
+      I1 => \bramaddr[4]_i_63_n_0\,
       I2 => \^data_loc_tracker\(41),
-      I3 => \^data_loc_tracker\(16),
-      I4 => \^data_loc_tracker\(9),
-      I5 => \bramaddr[7]_i_60_n_0\,
-      O => \bramaddr[7]_i_39_n_0\
+      I3 => \^data_loc_tracker\(29),
+      I4 => \^data_loc_tracker\(27),
+      I5 => \bramaddr[4]_i_64_n_0\,
+      O => \bramaddr[4]_i_41_n_0\
     );
-\bramaddr[7]_i_4\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_42\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"A0ACA0A0A0ACA0AC"
+      INIT => X"7F"
     )
         port map (
-      I0 => \^bramaddr\(5),
-      I1 => \^data_loc_tracker\(0),
-      I2 => \^di\(0),
-      I3 => \bramaddr[7]_i_13_n_0\,
-      I4 => \bramaddr[7]_i_14_n_0\,
-      I5 => \^data_loc_tracker\(1),
-      O => \bramaddr[7]_i_4_n_0\
+      I0 => \^data_loc_tracker\(8),
+      I1 => \^data_loc_tracker\(10),
+      I2 => \^data_loc_tracker\(11),
+      O => \bramaddr[4]_i_42_n_0\
     );
-\bramaddr[7]_i_40\: unisim.vcomponents.LUT2
+\bramaddr[4]_i_43\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"7"
     )
         port map (
       I0 => \^data_loc_tracker\(6),
       I1 => \^data_loc_tracker\(5),
-      O => \bramaddr[7]_i_40_n_0\
+      O => \bramaddr[4]_i_43_n_0\
     );
-\bramaddr[7]_i_41\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_44\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"00000000FFFFBBFB"
     )
         port map (
-      I0 => \bramaddr[7]_i_59_n_0\,
+      I0 => \bramaddr[4]_i_63_n_0\,
       I1 => \^data_loc_tracker\(27),
       I2 => \^data_loc_tracker\(28),
       I3 => \^data_loc_tracker\(29),
-      I4 => \bramaddr[7]_i_61_n_0\,
-      I5 => \bramaddr[7]_i_62_n_0\,
-      O => \bramaddr[7]_i_41_n_0\
+      I4 => \bramaddr[4]_i_65_n_0\,
+      I5 => \bramaddr[4]_i_66_n_0\,
+      O => \bramaddr[4]_i_44_n_0\
     );
-\bramaddr[7]_i_42\: unisim.vcomponents.LUT2
+\bramaddr[4]_i_45\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => \^data_loc_tracker\(27),
-      I1 => \^data_loc_tracker\(26),
-      O => \bramaddr[7]_i_42_n_0\
+      I0 => \^data_loc_tracker\(34),
+      I1 => \^data_loc_tracker\(33),
+      O => \bramaddr[4]_i_45_n_0\
     );
-\bramaddr[7]_i_43\: unisim.vcomponents.LUT3
+\bramaddr[4]_i_46\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(38),
+      I1 => \^data_loc_tracker\(37),
+      O => \bramaddr[4]_i_46_n_0\
+    );
+\bramaddr[4]_i_47\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"7F"
     )
@@ -4536,125 +3507,119 @@ begin
       I0 => \^data_loc_tracker\(15),
       I1 => \^data_loc_tracker\(16),
       I2 => \^data_loc_tracker\(17),
-      O => \bramaddr[7]_i_43_n_0\
+      O => \bramaddr[4]_i_47_n_0\
     );
-\bramaddr[7]_i_44\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_48\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"000000002FFFFFFF"
     )
         port map (
-      I0 => \bramaddr[7]_i_63_n_0\,
-      I1 => \bramaddr[7]_i_64_n_0\,
+      I0 => \bramaddr[4]_i_67_n_0\,
+      I1 => \bramaddr[4]_i_68_n_0\,
       I2 => \^data_loc_tracker\(42),
       I3 => \^data_loc_tracker\(40),
       I4 => \^data_loc_tracker\(41),
-      I5 => \bramaddr[7]_i_65_n_0\,
-      O => \bramaddr[7]_i_44_n_0\
+      I5 => \bramaddr[4]_i_69_n_0\,
+      O => \bramaddr[4]_i_48_n_0\
     );
-\bramaddr[7]_i_45\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_49\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"DFFFDDDDDDDDDDDD"
+      INIT => X"DCCCCCCCFCCCCCCC"
     )
         port map (
-      I0 => \^data_loc_tracker\(30),
-      I1 => \bramaddr[7]_i_66_n_0\,
-      I2 => \^data_loc_tracker\(35),
-      I3 => \^data_loc_tracker\(36),
-      I4 => \^data_loc_tracker\(32),
-      I5 => \bramaddr[11]_i_43_n_0\,
-      O => \bramaddr[7]_i_45_n_0\
+      I0 => \^data_loc_tracker\(35),
+      I1 => \bramaddr[4]_i_70_n_0\,
+      I2 => \^data_loc_tracker\(32),
+      I3 => \^data_loc_tracker\(33),
+      I4 => \^data_loc_tracker\(34),
+      I5 => \^data_loc_tracker\(36),
+      O => \bramaddr[4]_i_49_n_0\
     );
-\bramaddr[7]_i_46\: unisim.vcomponents.LUT2
+\bramaddr[4]_i_5\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8F8F8F8F888F8888"
+    )
+        port map (
+      I0 => \^d\(4),
+      I1 => \^bramen_raw\,
+      I2 => \bramaddr[4]_i_15_n_0\,
+      I3 => \bramaddr[4]_i_16_n_0\,
+      I4 => \bramaddr[4]_i_17_n_0\,
+      I5 => \bramaddr[4]_i_18_n_0\,
+      O => \bramaddr[4]_i_5_n_0\
+    );
+\bramaddr[4]_i_50\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(14),
+      I1 => \^data_loc_tracker\(13),
+      O => \bramaddr[4]_i_50_n_0\
+    );
+\bramaddr[4]_i_51\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"7"
     )
         port map (
       I0 => \^data_loc_tracker\(35),
       I1 => \^data_loc_tracker\(32),
-      O => \bramaddr[7]_i_46_n_0\
+      O => \bramaddr[4]_i_51_n_0\
     );
-\bramaddr[7]_i_47\: unisim.vcomponents.LUT2
+\bramaddr[4]_i_52\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"F700F000FFFFFFFF"
+    )
+        port map (
+      I0 => \bramaddr[4]_i_71_n_0\,
+      I1 => \^data_loc_tracker\(46),
+      I2 => \data_loc[5]_i_23_n_0\,
+      I3 => \^data_loc_tracker\(42),
+      I4 => \^data_loc_tracker\(45),
+      I5 => \bramaddr[4]_i_72_n_0\,
+      O => \bramaddr[4]_i_52_n_0\
+    );
+\bramaddr[4]_i_53\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"4FCFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(33),
+      I1 => \^data_loc_tracker\(32),
+      I2 => \^data_loc_tracker\(31),
+      I3 => \^data_loc_tracker\(34),
+      I4 => \^data_loc_tracker\(28),
+      I5 => \^data_loc_tracker\(30),
+      O => \bramaddr[4]_i_53_n_0\
+    );
+\bramaddr[4]_i_54\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => \^data_loc_tracker\(38),
-      I1 => \^data_loc_tracker\(37),
-      O => \bramaddr[7]_i_47_n_0\
+      I0 => \^data_loc_tracker\(55),
+      I1 => \^data_loc_tracker\(54),
+      O => \bramaddr[4]_i_54_n_0\
     );
-\bramaddr[7]_i_48\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_55\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"F7FF5555F5F55555"
-    )
-        port map (
-      I0 => \bramaddr[16]_i_24_n_0\,
-      I1 => \bramaddr[7]_i_67_n_0\,
-      I2 => \bramaddr[16]_i_16_n_0\,
-      I3 => \^data_loc_tracker\(46),
-      I4 => \^data_loc_tracker\(42),
-      I5 => \^data_loc_tracker\(45),
-      O => \bramaddr[7]_i_48_n_0\
-    );
-\bramaddr[7]_i_49\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"5DDDFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(31),
-      I1 => \^data_loc_tracker\(32),
-      I2 => \^data_loc_tracker\(34),
-      I3 => \^data_loc_tracker\(33),
-      I4 => \^data_loc_tracker\(28),
-      I5 => \^data_loc_tracker\(30),
-      O => \bramaddr[7]_i_49_n_0\
-    );
-\bramaddr[7]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8F8F8F8F888F8888"
-    )
-        port map (
-      I0 => \^bramaddr\(4),
-      I1 => \^di\(0),
-      I2 => \bramaddr[7]_i_15_n_0\,
-      I3 => \bramaddr[7]_i_16_n_0\,
-      I4 => \bramaddr[7]_i_17_n_0\,
-      I5 => \bramaddr[7]_i_18_n_0\,
-      O => \bramaddr[7]_i_5_n_0\
-    );
-\bramaddr[7]_i_50\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(8),
-      I1 => \^data_loc_tracker\(7),
-      O => \bramaddr[7]_i_50_n_0\
-    );
-\bramaddr[7]_i_51\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \data_loc[3]_i_13_n_0\,
-      I1 => \^data_loc_tracker\(31),
-      I2 => \^data_loc_tracker\(28),
-      I3 => \data_loc[3]_i_14_n_0\,
-      I4 => \^data_loc_tracker\(35),
-      I5 => \^data_loc_tracker\(32),
-      O => \bramaddr[7]_i_51_n_0\
-    );
-\bramaddr[7]_i_52\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7FFF"
+      INIT => X"8"
     )
         port map (
       I0 => \^data_loc_tracker\(5),
-      I1 => \^data_loc_tracker\(21),
-      I2 => \^data_loc_tracker\(17),
-      I3 => \^data_loc_tracker\(18),
-      O => \bramaddr[7]_i_52_n_0\
+      I1 => \^data_loc_tracker\(4),
+      O => \bramaddr[4]_i_55_n_0\
     );
-\bramaddr[7]_i_53\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_56\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(62),
+      I1 => \^data_loc_tracker\(61),
+      O => \bramaddr[4]_i_56_n_0\
+    );
+\bramaddr[4]_i_57\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"7000FFFFFFFFFFFF"
     )
@@ -4663,24 +3628,24 @@ begin
       I1 => \^data_loc_tracker\(31),
       I2 => \^data_loc_tracker\(30),
       I3 => \^data_loc_tracker\(29),
-      I4 => \bramaddr[16]_i_22_n_0\,
-      I5 => \bramaddr[7]_i_68_n_0\,
-      O => \bramaddr[7]_i_53_n_0\
+      I4 => \data_loc[1]_i_13_n_0\,
+      I5 => \bramaddr[0]_i_32_n_0\,
+      O => \bramaddr[4]_i_57_n_0\
     );
-\bramaddr[7]_i_54\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_58\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0B000F0000000F00"
     )
         port map (
-      I0 => \bramaddr[7]_i_69_n_0\,
-      I1 => \bramaddr[7]_i_70_n_0\,
-      I2 => \bramaddr[11]_i_55_n_0\,
+      I0 => \bramaddr[4]_i_73_n_0\,
+      I1 => \bramaddr[4]_i_74_n_0\,
+      I2 => \bramaddr[8]_i_51_n_0\,
       I3 => \^data_loc_tracker\(30),
-      I4 => \data_loc[1]_i_13_n_0\,
-      I5 => \data_loc[1]_i_12_n_0\,
-      O => \bramaddr[7]_i_54_n_0\
+      I4 => \data_loc[5]_i_16_n_0\,
+      I5 => \data_loc[1]_i_16_n_0\,
+      O => \bramaddr[4]_i_58_n_0\
     );
-\bramaddr[7]_i_55\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_59\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"40FFFFFFFFFFFFFF"
     )
@@ -4688,51 +3653,64 @@ begin
       I0 => \^data_loc_tracker\(26),
       I1 => \^data_loc_tracker\(25),
       I2 => \^data_loc_tracker\(24),
-      I3 => \data_loc[2]_i_8_n_0\,
+      I3 => \data_loc[1]_i_14_n_0\,
       I4 => \^data_loc_tracker\(20),
       I5 => \^data_loc_tracker\(19),
-      O => \bramaddr[7]_i_55_n_0\
+      O => \bramaddr[4]_i_59_n_0\
     );
-\bramaddr[7]_i_56\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_6\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"DDDDDDDDDDDDDFDD"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(2),
+      I1 => \bramaddr[4]_i_19_n_0\,
+      I2 => \bramaddr[4]_i_20_n_0\,
+      I3 => \bramaddr[4]_i_21_n_0\,
+      I4 => \bramaddr[4]_i_22_n_0\,
+      I5 => \bramaddr[4]_i_23_n_0\,
+      O => \bramaddr[4]_i_6_n_0\
+    );
+\bramaddr[4]_i_60\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"4FFFFFFFFFFFFFFF"
     )
         port map (
       I0 => \^data_loc_tracker\(16),
-      I1 => \data_loc[3]_i_14_n_0\,
+      I1 => \data_loc[2]_i_4_n_0\,
       I2 => \^data_loc_tracker\(10),
       I3 => \^data_loc_tracker\(9),
       I4 => \^data_loc_tracker\(13),
       I5 => \^data_loc_tracker\(12),
-      O => \bramaddr[7]_i_56_n_0\
+      O => \bramaddr[4]_i_60_n_0\
     );
-\bramaddr[7]_i_57\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_61\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"D500FF000000FF00"
     )
         port map (
-      I0 => \bramaddr[7]_i_71_n_0\,
-      I1 => \bramaddr[7]_i_72_n_0\,
+      I0 => \bramaddr[4]_i_75_n_0\,
+      I1 => \bramaddr[4]_i_76_n_0\,
       I2 => \^data_loc_tracker\(57),
       I3 => \^data_loc_tracker\(52),
-      I4 => \bramaddr[15]_i_33_n_0\,
+      I4 => \bramaddr[12]_i_31_n_0\,
       I5 => \^data_loc_tracker\(55),
-      O => \bramaddr[7]_i_57_n_0\
+      O => \bramaddr[4]_i_61_n_0\
     );
-\bramaddr[7]_i_58\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_62\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"7FFFFFFFFFFFFFFF"
     )
         port map (
-      I0 => \^data_loc_tracker\(12),
-      I1 => \^data_loc_tracker\(14),
-      I2 => \^data_loc_tracker\(19),
-      I3 => \^data_loc_tracker\(17),
-      I4 => \^data_loc_tracker\(39),
-      I5 => \^data_loc_tracker\(36),
-      O => \bramaddr[7]_i_58_n_0\
+      I0 => \^data_loc_tracker\(2),
+      I1 => \^data_loc_tracker\(4),
+      I2 => \^data_loc_tracker\(34),
+      I3 => \^data_loc_tracker\(31),
+      I4 => \^data_loc_tracker\(19),
+      I5 => \^data_loc_tracker\(17),
+      O => \bramaddr[4]_i_62_n_0\
     );
-\bramaddr[7]_i_59\: unisim.vcomponents.LUT4
+\bramaddr[4]_i_63\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"7FFF"
     )
@@ -4741,48 +3719,35 @@ begin
       I1 => \^data_loc_tracker\(22),
       I2 => \^data_loc_tracker\(24),
       I3 => \^data_loc_tracker\(26),
-      O => \bramaddr[7]_i_59_n_0\
+      O => \bramaddr[4]_i_63_n_0\
     );
-\bramaddr[7]_i_6\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_64\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"DDDDDDDDDDDDDFDD"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(2),
-      I1 => \bramaddr[15]_i_10_n_0\,
-      I2 => \bramaddr[7]_i_19_n_0\,
-      I3 => \bramaddr[7]_i_20_n_0\,
-      I4 => \bramaddr[7]_i_21_n_0\,
-      I5 => \bramaddr[7]_i_22_n_0\,
-      O => \bramaddr[7]_i_6_n_0\
-    );
-\bramaddr[7]_i_60\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFF7FFF"
+      INIT => X"F7FFFFFFFFFFFFFF"
     )
         port map (
       I0 => \^data_loc_tracker\(44),
-      I1 => \^data_loc_tracker\(7),
-      I2 => \^data_loc_tracker\(29),
-      I3 => \^data_loc_tracker\(27),
-      I4 => \bramaddr[7]_i_73_n_0\,
-      I5 => \bramaddr[7]_i_74_n_0\,
-      O => \bramaddr[7]_i_60_n_0\
+      I1 => \^data_loc_tracker\(16),
+      I2 => \bramaddr[4]_i_77_n_0\,
+      I3 => \^data_loc_tracker\(9),
+      I4 => \^data_loc_tracker\(7),
+      I5 => \bramaddr[4]_i_78_n_0\,
+      O => \bramaddr[4]_i_64_n_0\
     );
-\bramaddr[7]_i_61\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_65\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"8000000080808080"
     )
         port map (
-      I0 => \bramaddr[7]_i_75_n_0\,
+      I0 => \bramaddr[4]_i_79_n_0\,
       I1 => \^data_loc_tracker\(30),
       I2 => \^data_loc_tracker\(28),
       I3 => \^data_loc_tracker\(33),
       I4 => \^data_loc_tracker\(32),
       I5 => \^data_loc_tracker\(31),
-      O => \bramaddr[7]_i_61_n_0\
+      O => \bramaddr[4]_i_65_n_0\
     );
-\bramaddr[7]_i_62\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_66\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"7500FFFFFFFFFFFF"
     )
@@ -4790,12 +3755,12 @@ begin
       I0 => \^data_loc_tracker\(23),
       I1 => \^data_loc_tracker\(25),
       I2 => \^data_loc_tracker\(24),
-      I3 => \bramaddr[16]_i_26_n_0\,
+      I3 => \data_loc[5]_i_15_n_0\,
       I4 => \^data_loc_tracker\(18),
       I5 => \^data_loc_tracker\(20),
-      O => \bramaddr[7]_i_62_n_0\
+      O => \bramaddr[4]_i_66_n_0\
     );
-\bramaddr[7]_i_63\: unisim.vcomponents.LUT3
+\bramaddr[4]_i_67\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"80"
     )
@@ -4803,9 +3768,9 @@ begin
       I0 => \^data_loc_tracker\(45),
       I1 => \^data_loc_tracker\(43),
       I2 => \^data_loc_tracker\(44),
-      O => \bramaddr[7]_i_63_n_0\
+      O => \bramaddr[4]_i_67_n_0\
     );
-\bramaddr[7]_i_64\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_68\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"8000808080808080"
     )
@@ -4813,69 +3778,25 @@ begin
       I0 => \^data_loc_tracker\(48),
       I1 => \^data_loc_tracker\(47),
       I2 => \^data_loc_tracker\(46),
-      I3 => \bramaddr[7]_i_76_n_0\,
-      I4 => \bram_overflows_tracker[0]_i_8_n_0\,
+      I3 => \bramaddr[4]_i_80_n_0\,
+      I4 => \bram_overflows_tracker[0]_i_9_n_0\,
       I5 => \^data_loc_tracker\(49),
-      O => \bramaddr[7]_i_64_n_0\
+      O => \bramaddr[4]_i_68_n_0\
     );
-\bramaddr[7]_i_65\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_69\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"7FFFFFFFFFFFFFFF"
     )
         port map (
-      I0 => \^data_loc_tracker\(32),
-      I1 => \^data_loc_tracker\(33),
-      I2 => \^data_loc_tracker\(38),
-      I3 => \^data_loc_tracker\(37),
-      I4 => \^data_loc_tracker\(39),
-      I5 => \^data_loc_tracker\(34),
-      O => \bramaddr[7]_i_65_n_0\
+      I0 => \^data_loc_tracker\(38),
+      I1 => \^data_loc_tracker\(37),
+      I2 => \^data_loc_tracker\(39),
+      I3 => \^data_loc_tracker\(34),
+      I4 => \^data_loc_tracker\(32),
+      I5 => \^data_loc_tracker\(33),
+      O => \bramaddr[4]_i_69_n_0\
     );
-\bramaddr[7]_i_66\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(31),
-      I1 => \^data_loc_tracker\(29),
-      O => \bramaddr[7]_i_66_n_0\
-    );
-\bramaddr[7]_i_67\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FF7F5F5F55555555"
-    )
-        port map (
-      I0 => \bramaddr[7]_i_77_n_0\,
-      I1 => \bramaddr[15]_i_33_n_0\,
-      I2 => \bram_overflows_tracker[0]_i_8_n_0\,
-      I3 => \bramaddr[7]_i_78_n_0\,
-      I4 => \^data_loc_tracker\(52),
-      I5 => \^data_loc_tracker\(49),
-      O => \bramaddr[7]_i_67_n_0\
-    );
-\bramaddr[7]_i_68\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(28),
-      I1 => \^data_loc_tracker\(27),
-      O => \bramaddr[7]_i_68_n_0\
-    );
-\bramaddr[7]_i_69\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"000000007FFF00FF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(44),
-      I1 => \^data_loc_tracker\(45),
-      I2 => \bramaddr[7]_i_79_n_0\,
-      I3 => \^data_loc_tracker\(42),
-      I4 => \^data_loc_tracker\(43),
-      I5 => \bramaddr[11]_i_57_n_0\,
-      O => \bramaddr[7]_i_69_n_0\
-    );
-\bramaddr[7]_i_7\: unisim.vcomponents.LUT3
+\bramaddr[4]_i_7\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"7F"
     )
@@ -4883,9 +3804,54 @@ begin
       I0 => \^data_loc_tracker\(3),
       I1 => \^data_loc_tracker\(4),
       I2 => \^data_loc_tracker\(5),
-      O => \bramaddr[7]_i_7_n_0\
+      O => \bramaddr[4]_i_7_n_0\
     );
-\bramaddr[7]_i_70\: unisim.vcomponents.LUT4
+\bramaddr[4]_i_70\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"7F"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(31),
+      I1 => \^data_loc_tracker\(29),
+      I2 => \^data_loc_tracker\(30),
+      O => \bramaddr[4]_i_70_n_0\
+    );
+\bramaddr[4]_i_71\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FF7F5F5F55555555"
+    )
+        port map (
+      I0 => \bramaddr[4]_i_81_n_0\,
+      I1 => \bramaddr[12]_i_31_n_0\,
+      I2 => \bram_overflows_tracker[0]_i_9_n_0\,
+      I3 => \bramaddr[4]_i_82_n_0\,
+      I4 => \^data_loc_tracker\(52),
+      I5 => \^data_loc_tracker\(49),
+      O => \bramaddr[4]_i_71_n_0\
+    );
+\bramaddr[4]_i_72\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(41),
+      I1 => \^data_loc_tracker\(40),
+      O => \bramaddr[4]_i_72_n_0\
+    );
+\bramaddr[4]_i_73\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"000000007FFF00FF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(44),
+      I1 => \^data_loc_tracker\(45),
+      I2 => \bramaddr[4]_i_83_n_0\,
+      I3 => \^data_loc_tracker\(42),
+      I4 => \^data_loc_tracker\(43),
+      I5 => \bramaddr[8]_i_54_n_0\,
+      O => \bramaddr[4]_i_73_n_0\
+    );
+\bramaddr[4]_i_74\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"AA2A"
     )
@@ -4894,9 +3860,9 @@ begin
       I1 => \^data_loc_tracker\(40),
       I2 => \^data_loc_tracker\(39),
       I3 => \^data_loc_tracker\(41),
-      O => \bramaddr[7]_i_70_n_0\
+      O => \bramaddr[4]_i_74_n_0\
     );
-\bramaddr[7]_i_71\: unisim.vcomponents.LUT4
+\bramaddr[4]_i_75\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"80AA"
     )
@@ -4905,9 +3871,9 @@ begin
       I1 => \^data_loc_tracker\(59),
       I2 => \^data_loc_tracker\(58),
       I3 => \^data_loc_tracker\(57),
-      O => \bramaddr[7]_i_71_n_0\
+      O => \bramaddr[4]_i_75_n_0\
     );
-\bramaddr[7]_i_72\: unisim.vcomponents.LUT3
+\bramaddr[4]_i_76\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"8A"
     )
@@ -4915,27 +3881,27 @@ begin
       I0 => \^data_loc_tracker\(60),
       I1 => \^data_loc_tracker\(62),
       I2 => \^data_loc_tracker\(61),
-      O => \bramaddr[7]_i_72_n_0\
+      O => \bramaddr[4]_i_76_n_0\
     );
-\bramaddr[7]_i_73\: unisim.vcomponents.LUT2
+\bramaddr[4]_i_77\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"7"
     )
         port map (
-      I0 => \^data_loc_tracker\(34),
-      I1 => \^data_loc_tracker\(31),
-      O => \bramaddr[7]_i_73_n_0\
+      I0 => \^data_loc_tracker\(14),
+      I1 => \^data_loc_tracker\(12),
+      O => \bramaddr[4]_i_77_n_0\
     );
-\bramaddr[7]_i_74\: unisim.vcomponents.LUT2
+\bramaddr[4]_i_78\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"7"
+      INIT => X"8"
     )
         port map (
-      I0 => \^data_loc_tracker\(4),
-      I1 => \^data_loc_tracker\(2),
-      O => \bramaddr[7]_i_74_n_0\
+      I0 => \^data_loc_tracker\(39),
+      I1 => \^data_loc_tracker\(36),
+      O => \bramaddr[4]_i_78_n_0\
     );
-\bramaddr[7]_i_75\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_79\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFFFFF40FF0000"
     )
@@ -4945,112 +3911,93 @@ begin
       I2 => \^data_loc_tracker\(37),
       I3 => \^data_loc_tracker\(36),
       I4 => \^data_loc_tracker\(35),
-      I5 => \bramaddr[7]_i_80_n_0\,
-      O => \bramaddr[7]_i_75_n_0\
+      I5 => \bramaddr[4]_i_84_n_0\,
+      O => \bramaddr[4]_i_79_n_0\
     );
-\bramaddr[7]_i_76\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_8\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AE00000000000000"
+    )
+        port map (
+      I0 => \bramaddr[4]_i_24_n_0\,
+      I1 => \bramaddr[4]_i_25_n_0\,
+      I2 => \bramaddr[4]_i_26_n_0\,
+      I3 => \^data_loc_tracker\(10),
+      I4 => \^data_loc_tracker\(9),
+      I5 => \^data_loc_tracker\(11),
+      O => \bramaddr[4]_i_8_n_0\
+    );
+\bramaddr[4]_i_80\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"000000008FFF0000"
     )
         port map (
-      I0 => \bramaddr[7]_i_81_n_0\,
+      I0 => \bramaddr[4]_i_85_n_0\,
       I1 => \^data_loc_tracker\(57),
       I2 => \^data_loc_tracker\(56),
       I3 => \^data_loc_tracker\(55),
       I4 => \^data_loc_tracker\(54),
-      I5 => \bramaddr[7]_i_82_n_0\,
-      O => \bramaddr[7]_i_76_n_0\
+      I5 => \bramaddr[0]_i_48_n_0\,
+      O => \bramaddr[4]_i_80_n_0\
     );
-\bramaddr[7]_i_77\: unisim.vcomponents.LUT2
+\bramaddr[4]_i_81\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
       I0 => \^data_loc_tracker\(48),
       I1 => \^data_loc_tracker\(47),
-      O => \bramaddr[7]_i_77_n_0\
+      O => \bramaddr[4]_i_81_n_0\
     );
-\bramaddr[7]_i_78\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_82\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"D0000000F0F0F0F0"
     )
         port map (
       I0 => \^data_loc_tracker\(59),
-      I1 => \bramaddr[7]_i_83_n_0\,
+      I1 => \bramaddr[8]_i_33_n_0\,
       I2 => \^data_loc_tracker\(55),
       I3 => \^data_loc_tracker\(57),
       I4 => \^data_loc_tracker\(58),
       I5 => \^data_loc_tracker\(56),
-      O => \bramaddr[7]_i_78_n_0\
+      O => \bramaddr[4]_i_82_n_0\
     );
-\bramaddr[7]_i_79\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_83\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FF8A0000FFFFFFFF"
+      INIT => X"FFA20000FFFFFFFF"
     )
         port map (
-      I0 => \bramaddr[15]_i_17_n_0\,
-      I1 => \bramaddr[11]_i_72_n_0\,
-      I2 => \bramaddr[15]_i_18_n_0\,
-      I3 => \bramaddr[7]_i_84_n_0\,
+      I0 => \bramaddr[12]_i_19_n_0\,
+      I1 => \bramaddr[12]_i_20_n_0\,
+      I2 => \bramaddr[8]_i_65_n_0\,
+      I3 => \bramaddr[4]_i_86_n_0\,
       I4 => \^data_loc_tracker\(48),
-      I5 => \bramaddr[11]_i_65_n_0\,
-      O => \bramaddr[7]_i_79_n_0\
+      I5 => \data_loc[1]_i_23_n_0\,
+      O => \bramaddr[4]_i_83_n_0\
     );
-\bramaddr[7]_i_8\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AE00000000000000"
-    )
-        port map (
-      I0 => \bramaddr[7]_i_23_n_0\,
-      I1 => \bramaddr[7]_i_24_n_0\,
-      I2 => \bramaddr[7]_i_25_n_0\,
-      I3 => \^data_loc_tracker\(10),
-      I4 => \^data_loc_tracker\(9),
-      I5 => \^data_loc_tracker\(11),
-      O => \bramaddr[7]_i_8_n_0\
-    );
-\bramaddr[7]_i_80\: unisim.vcomponents.LUT6
+\bramaddr[4]_i_84\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"4055FFFFFFFFFFFF"
     )
         port map (
-      I0 => \bramaddr[11]_i_60_n_0\,
+      I0 => \bramaddr[8]_i_41_n_0\,
       I1 => \^data_loc_tracker\(42),
       I2 => \^data_loc_tracker\(43),
       I3 => \^data_loc_tracker\(41),
       I4 => \^data_loc_tracker\(31),
       I5 => \^data_loc_tracker\(34),
-      O => \bramaddr[7]_i_80_n_0\
+      O => \bramaddr[4]_i_84_n_0\
     );
-\bramaddr[7]_i_81\: unisim.vcomponents.LUT2
+\bramaddr[4]_i_85\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
       I0 => \^data_loc_tracker\(59),
       I1 => \^data_loc_tracker\(58),
-      O => \bramaddr[7]_i_81_n_0\
+      O => \bramaddr[4]_i_85_n_0\
     );
-\bramaddr[7]_i_82\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(53),
-      I1 => \^data_loc_tracker\(52),
-      O => \bramaddr[7]_i_82_n_0\
-    );
-\bramaddr[7]_i_83\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"08"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(60),
-      I1 => \^data_loc_tracker\(61),
-      I2 => \^data_loc_tracker\(62),
-      O => \bramaddr[7]_i_83_n_0\
-    );
-\bramaddr[7]_i_84\: unisim.vcomponents.LUT5
+\bramaddr[4]_i_86\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"7777F777"
     )
@@ -5060,9 +4007,9 @@ begin
       I2 => \^data_loc_tracker\(52),
       I3 => \^data_loc_tracker\(51),
       I4 => \^data_loc_tracker\(53),
-      O => \bramaddr[7]_i_84_n_0\
+      O => \bramaddr[4]_i_86_n_0\
     );
-\bramaddr[7]_i_9\: unisim.vcomponents.LUT3
+\bramaddr[4]_i_9\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"80"
     )
@@ -5070,226 +4017,1081 @@ begin
       I0 => \^data_loc_tracker\(6),
       I1 => \^data_loc_tracker\(7),
       I2 => \^data_loc_tracker\(8),
-      O => \bramaddr[7]_i_9_n_0\
+      O => \bramaddr[4]_i_9_n_0\
+    );
+\bramaddr[8]_i_10\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^bramen_raw\,
+      I1 => \^d\(10),
+      O => \bramaddr[8]_i_10_n_0\
+    );
+\bramaddr[8]_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"BABABABAFABABABA"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_26_n_0\,
+      I1 => \^data_loc_tracker\(2),
+      I2 => \^data_loc_tracker\(1),
+      I3 => \^data_loc_tracker\(3),
+      I4 => \^data_loc_tracker\(4),
+      I5 => \^data_loc_tracker\(5),
+      O => \bramaddr[8]_i_11_n_0\
+    );
+\bramaddr[8]_i_12\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"7FFFFFFF7F7F7F7F"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(11),
+      I1 => \^data_loc_tracker\(10),
+      I2 => \^data_loc_tracker\(8),
+      I3 => \^data_loc_tracker\(14),
+      I4 => \^data_loc_tracker\(13),
+      I5 => \^data_loc_tracker\(12),
+      O => \bramaddr[8]_i_12_n_0\
+    );
+\bramaddr[8]_i_13\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"00000000EEFE0000"
+    )
+        port map (
+      I0 => \bramaddr[4]_i_29_n_0\,
+      I1 => \bramaddr[8]_i_27_n_0\,
+      I2 => \bramaddr[8]_i_28_n_0\,
+      I3 => \bramaddr[8]_i_29_n_0\,
+      I4 => \^data_loc_tracker\(19),
+      I5 => \bramaddr[8]_i_30_n_0\,
+      O => \bramaddr[8]_i_13_n_0\
+    );
+\bramaddr[8]_i_14\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"70FFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(18),
+      I1 => \^data_loc_tracker\(17),
+      I2 => \^data_loc_tracker\(16),
+      I3 => \^data_loc_tracker\(12),
+      I4 => \^data_loc_tracker\(15),
+      O => \bramaddr[8]_i_14_n_0\
+    );
+\bramaddr[8]_i_15\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"7FFF7FFFFFFF7FFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(4),
+      I1 => \^data_loc_tracker\(3),
+      I2 => \^data_loc_tracker\(1),
+      I3 => \data_loc[1]_i_6_n_0\,
+      I4 => \^data_loc_tracker\(8),
+      I5 => \^data_loc_tracker\(9),
+      O => \bramaddr[8]_i_15_n_0\
+    );
+\bramaddr[8]_i_16\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0888FFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(8),
+      I1 => \^data_loc_tracker\(7),
+      I2 => \^data_loc_tracker\(10),
+      I3 => \^data_loc_tracker\(9),
+      I4 => \data_loc[1]_i_5_n_0\,
+      I5 => \^data_loc_tracker\(6),
+      O => \bramaddr[8]_i_16_n_0\
+    );
+\bramaddr[8]_i_17\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0800080808080808"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_31_n_0\,
+      I1 => \^data_loc_tracker\(11),
+      I2 => \bramaddr[4]_i_34_n_0\,
+      I3 => \data_loc[2]_i_4_n_0\,
+      I4 => \^data_loc_tracker\(12),
+      I5 => \^data_loc_tracker\(13),
+      O => \bramaddr[8]_i_17_n_0\
+    );
+\bramaddr[8]_i_18\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"75FF00FFFFFF00FF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(5),
+      I1 => \bramaddr[8]_i_32_n_0\,
+      I2 => \bramaddr[8]_i_33_n_0\,
+      I3 => \^data_loc_tracker\(0),
+      I4 => \data_loc[1]_i_5_n_0\,
+      I5 => \^data_loc_tracker\(4),
+      O => \bramaddr[8]_i_18_n_0\
+    );
+\bramaddr[8]_i_19\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"0000AAFE"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_34_n_0\,
+      I1 => \bramaddr[8]_i_35_n_0\,
+      I2 => \bramaddr[8]_i_36_n_0\,
+      I3 => \bramaddr[8]_i_37_n_0\,
+      I4 => \bramaddr[8]_i_38_n_0\,
+      O => \bramaddr[8]_i_19_n_0\
+    );
+\bramaddr[8]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8F8F8F8F888F8888"
+    )
+        port map (
+      I0 => \^d\(11),
+      I1 => \^bramen_raw\,
+      I2 => \bramaddr[8]_i_6_n_0\,
+      I3 => \bramaddr[8]_i_7_n_0\,
+      I4 => \bramaddr[8]_i_8_n_0\,
+      I5 => \bramaddr[8]_i_9_n_0\,
+      O => \bramaddr[8]_i_2_n_0\
+    );
+\bramaddr[8]_i_20\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"40FFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(21),
+      I1 => \^data_loc_tracker\(20),
+      I2 => \^data_loc_tracker\(19),
+      I3 => \^data_loc_tracker\(15),
+      I4 => \^data_loc_tracker\(14),
+      I5 => \^data_loc_tracker\(18),
+      O => \bramaddr[8]_i_20_n_0\
+    );
+\bramaddr[8]_i_21\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7FFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(19),
+      I1 => \^data_loc_tracker\(20),
+      I2 => \^data_loc_tracker\(22),
+      I3 => \^data_loc_tracker\(23),
+      O => \bramaddr[8]_i_21_n_0\
+    );
+\bramaddr[8]_i_22\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"7FFF7777"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(25),
+      I1 => \^data_loc_tracker\(26),
+      I2 => \^data_loc_tracker\(29),
+      I3 => \^data_loc_tracker\(28),
+      I4 => \^data_loc_tracker\(27),
+      O => \bramaddr[8]_i_22_n_0\
+    );
+\bramaddr[8]_i_23\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(30),
+      I1 => \^data_loc_tracker\(27),
+      O => \bramaddr[8]_i_23_n_0\
+    );
+\bramaddr[8]_i_24\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"B000F0000000F000"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_39_n_0\,
+      I1 => \data_loc[1]_i_16_n_0\,
+      I2 => \^data_loc_tracker\(32),
+      I3 => \^data_loc_tracker\(31),
+      I4 => \bramaddr[4]_i_45_n_0\,
+      I5 => \^data_loc_tracker\(35),
+      O => \bramaddr[8]_i_24_n_0\
+    );
+\bramaddr[8]_i_25\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7FFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(5),
+      I1 => \^data_loc_tracker\(6),
+      I2 => \^data_loc_tracker\(2),
+      I3 => \^data_loc_tracker\(3),
+      O => \bramaddr[8]_i_25_n_0\
+    );
+\bramaddr[8]_i_26\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"B"
+    )
+        port map (
+      I0 => \^bramen_raw\,
+      I1 => \^data_loc_tracker\(0),
+      O => \bramaddr[8]_i_26_n_0\
+    );
+\bramaddr[8]_i_27\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000800088888888"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(27),
+      I1 => \^data_loc_tracker\(28),
+      I2 => \^data_loc_tracker\(30),
+      I3 => \^data_loc_tracker\(31),
+      I4 => \^data_loc_tracker\(32),
+      I5 => \^data_loc_tracker\(29),
+      O => \bramaddr[8]_i_27_n_0\
+    );
+\bramaddr[8]_i_28\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFBAFFFFFF"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_40_n_0\,
+      I1 => \^data_loc_tracker\(43),
+      I2 => \^data_loc_tracker\(42),
+      I3 => \^data_loc_tracker\(34),
+      I4 => \^data_loc_tracker\(41),
+      I5 => \bramaddr[8]_i_41_n_0\,
+      O => \bramaddr[8]_i_28_n_0\
+    );
+\bramaddr[8]_i_29\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"4FFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_42_n_0\,
+      I1 => \data_loc[5]_i_16_n_0\,
+      I2 => \^data_loc_tracker\(33),
+      I3 => \data_loc[1]_i_15_n_0\,
+      I4 => \^data_loc_tracker\(28),
+      I5 => \^data_loc_tracker\(27),
+      O => \bramaddr[8]_i_29_n_0\
+    );
+\bramaddr[8]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"BBBBBBBBABABABAA"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_10_n_0\,
+      I1 => \bramaddr[8]_i_11_n_0\,
+      I2 => \bramaddr[8]_i_12_n_0\,
+      I3 => \bramaddr[8]_i_13_n_0\,
+      I4 => \bramaddr[8]_i_14_n_0\,
+      I5 => \bramaddr[8]_i_15_n_0\,
+      O => \bramaddr[8]_i_3_n_0\
+    );
+\bramaddr[8]_i_30\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"40FF00FFFFFF00FF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(25),
+      I1 => \^data_loc_tracker\(23),
+      I2 => \^data_loc_tracker\(24),
+      I3 => \^data_loc_tracker\(16),
+      I4 => \data_loc[1]_i_11_n_0\,
+      I5 => \^data_loc_tracker\(22),
+      O => \bramaddr[8]_i_30_n_0\
+    );
+\bramaddr[8]_i_31\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFF5454FF54"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_43_n_0\,
+      I1 => \bramaddr[8]_i_44_n_0\,
+      I2 => \bramaddr[8]_i_45_n_0\,
+      I3 => \^data_loc_tracker\(18),
+      I4 => \data_loc[5]_i_17_n_0\,
+      I5 => \data_loc[1]_i_10_n_0\,
+      O => \bramaddr[8]_i_31_n_0\
+    );
+\bramaddr[8]_i_32\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFFFFFBFFF"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_46_n_0\,
+      I1 => \data_loc[1]_i_16_n_0\,
+      I2 => \data_loc[5]_i_20_n_0\,
+      I3 => \^data_loc_tracker\(6),
+      I4 => \bramaddr[8]_i_47_n_0\,
+      I5 => \bramaddr[8]_i_48_n_0\,
+      O => \bramaddr[8]_i_32_n_0\
+    );
+\bramaddr[8]_i_33\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"08"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(60),
+      I1 => \^data_loc_tracker\(61),
+      I2 => \^data_loc_tracker\(62),
+      O => \bramaddr[8]_i_33_n_0\
+    );
+\bramaddr[8]_i_34\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"4FFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(20),
+      I1 => \^data_loc_tracker\(19),
+      I2 => \^data_loc_tracker\(18),
+      I3 => \^data_loc_tracker\(17),
+      I4 => \^data_loc_tracker\(15),
+      I5 => \^data_loc_tracker\(13),
+      O => \bramaddr[8]_i_34_n_0\
+    );
+\bramaddr[8]_i_35\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFF7500FFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(30),
+      I1 => \^data_loc_tracker\(32),
+      I2 => \^data_loc_tracker\(31),
+      I3 => \bramaddr[8]_i_49_n_0\,
+      I4 => \data_loc[1]_i_14_n_0\,
+      I5 => \data_loc[3]_i_7_n_0\,
+      O => \bramaddr[8]_i_35_n_0\
+    );
+\bramaddr[8]_i_36\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"000000000000B0FF"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_50_n_0\,
+      I1 => \bramaddr[0]_i_39_n_0\,
+      I2 => \data_loc[0]_i_9_n_0\,
+      I3 => \data_loc[5]_i_16_n_0\,
+      I4 => \bramaddr[8]_i_51_n_0\,
+      I5 => \data_loc[3]_i_6_n_0\,
+      O => \bramaddr[8]_i_36_n_0\
+    );
+\bramaddr[8]_i_37\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"77F77777F7F7F7F7"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(19),
+      I1 => \^data_loc_tracker\(21),
+      I2 => \data_loc[1]_i_14_n_0\,
+      I3 => \^data_loc_tracker\(26),
+      I4 => \^data_loc_tracker\(25),
+      I5 => \^data_loc_tracker\(24),
+      O => \bramaddr[8]_i_37_n_0\
+    );
+\bramaddr[8]_i_38\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFF4F00FFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(16),
+      I1 => \^data_loc_tracker\(15),
+      I2 => \^data_loc_tracker\(14),
+      I3 => \^data_loc_tracker\(13),
+      I4 => \^data_loc_tracker\(12),
+      I5 => \bramaddr[8]_i_52_n_0\,
+      O => \bramaddr[8]_i_38_n_0\
+    );
+\bramaddr[8]_i_39\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"CC88CC88CC80CC88"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(41),
+      I1 => \^data_loc_tracker\(38),
+      I2 => \bramaddr[8]_i_53_n_0\,
+      I3 => \bramaddr[8]_i_54_n_0\,
+      I4 => \data_loc[1]_i_21_n_0\,
+      I5 => \bramaddr[8]_i_55_n_0\,
+      O => \bramaddr[8]_i_39_n_0\
+    );
+\bramaddr[8]_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"88888888BBB88888"
+    )
+        port map (
+      I0 => \^d\(9),
+      I1 => \^bramen_raw\,
+      I2 => \bramaddr[8]_i_16_n_0\,
+      I3 => \bramaddr[8]_i_17_n_0\,
+      I4 => \^data_loc_tracker\(1),
+      I5 => \bramaddr[8]_i_18_n_0\,
+      O => \bramaddr[8]_i_4_n_0\
+    );
+\bramaddr[8]_i_40\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000800088888888"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_56_n_0\,
+      I1 => \^data_loc_tracker\(42),
+      I2 => \^data_loc_tracker\(47),
+      I3 => \^data_loc_tracker\(48),
+      I4 => \bramaddr[8]_i_57_n_0\,
+      I5 => \^data_loc_tracker\(46),
+      O => \bramaddr[8]_i_40_n_0\
+    );
+\bramaddr[8]_i_41\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7FFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(38),
+      I1 => \^data_loc_tracker\(40),
+      I2 => \^data_loc_tracker\(35),
+      I3 => \^data_loc_tracker\(37),
+      O => \bramaddr[8]_i_41_n_0\
+    );
+\bramaddr[8]_i_42\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"BF00"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(39),
+      I1 => \^data_loc_tracker\(38),
+      I2 => \^data_loc_tracker\(37),
+      I3 => \^data_loc_tracker\(36),
+      O => \bramaddr[8]_i_42_n_0\
+    );
+\bramaddr[8]_i_43\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"70FFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(25),
+      I1 => \^data_loc_tracker\(24),
+      I2 => \^data_loc_tracker\(23),
+      I3 => \^data_loc_tracker\(21),
+      I4 => \^data_loc_tracker\(22),
+      I5 => \^data_loc_tracker\(18),
+      O => \bramaddr[8]_i_43_n_0\
+    );
+\bramaddr[8]_i_44\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"00000000FFFF8088"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(38),
+      I1 => \^data_loc_tracker\(39),
+      I2 => \bramaddr[8]_i_58_n_0\,
+      I3 => \^data_loc_tracker\(40),
+      I4 => \bramaddr[8]_i_59_n_0\,
+      I5 => \bramaddr[8]_i_60_n_0\,
+      O => \bramaddr[8]_i_44_n_0\
+    );
+\bramaddr[8]_i_45\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"70FFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(30),
+      I1 => \^data_loc_tracker\(29),
+      I2 => \^data_loc_tracker\(28),
+      I3 => \^data_loc_tracker\(27),
+      I4 => \^data_loc_tracker\(26),
+      I5 => \^data_loc_tracker\(23),
+      O => \bramaddr[8]_i_45_n_0\
+    );
+\bramaddr[8]_i_46\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFBFFFFFFF"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_61_n_0\,
+      I1 => \^data_loc_tracker\(27),
+      I2 => \^data_loc_tracker\(30),
+      I3 => \^data_loc_tracker\(23),
+      I4 => \^data_loc_tracker\(26),
+      I5 => \data_loc[1]_i_10_n_0\,
+      O => \bramaddr[8]_i_46_n_0\
+    );
+\bramaddr[8]_i_47\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7FFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(50),
+      I1 => \^data_loc_tracker\(51),
+      I2 => \^data_loc_tracker\(53),
+      I3 => \^data_loc_tracker\(54),
+      O => \bramaddr[8]_i_47_n_0\
+    );
+\bramaddr[8]_i_48\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7FFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(43),
+      I1 => \^data_loc_tracker\(44),
+      I2 => \^data_loc_tracker\(46),
+      I3 => \^data_loc_tracker\(47),
+      O => \bramaddr[8]_i_48_n_0\
+    );
+\bramaddr[8]_i_49\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(29),
+      I1 => \^data_loc_tracker\(28),
+      O => \bramaddr[8]_i_49_n_0\
+    );
+\bramaddr[8]_i_5\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"88888888BBBB8BBB"
+    )
+        port map (
+      I0 => \^d\(8),
+      I1 => \^bramen_raw\,
+      I2 => \data_loc[0]_i_13_n_0\,
+      I3 => \data_loc[0]_i_14_n_0\,
+      I4 => \bramaddr[8]_i_19_n_0\,
+      I5 => \data_loc[0]_i_11_n_0\,
+      O => \bramaddr[8]_i_5_n_0\
+    );
+\bramaddr[8]_i_50\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"B000F0000000F000"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_62_n_0\,
+      I1 => \^data_loc_tracker\(47),
+      I2 => \^data_loc_tracker\(43),
+      I3 => \^data_loc_tracker\(41),
+      I4 => \^data_loc_tracker\(44),
+      I5 => \bramaddr[8]_i_63_n_0\,
+      O => \bramaddr[8]_i_50_n_0\
+    );
+\bramaddr[8]_i_51\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(33),
+      I1 => \^data_loc_tracker\(29),
+      O => \bramaddr[8]_i_51_n_0\
+    );
+\bramaddr[8]_i_52\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"7F"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(9),
+      I1 => \^data_loc_tracker\(11),
+      I2 => \^data_loc_tracker\(7),
+      O => \bramaddr[8]_i_52_n_0\
+    );
+\bramaddr[8]_i_53\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"00F2000000000000"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_64_n_0\,
+      I1 => \bramaddr[8]_i_65_n_0\,
+      I2 => \bramaddr[8]_i_66_n_0\,
+      I3 => \bramaddr[8]_i_67_n_0\,
+      I4 => \^data_loc_tracker\(47),
+      I5 => \^data_loc_tracker\(44),
+      O => \bramaddr[8]_i_53_n_0\
+    );
+\bramaddr[8]_i_54\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(40),
+      I1 => \^data_loc_tracker\(39),
+      O => \bramaddr[8]_i_54_n_0\
+    );
+\bramaddr[8]_i_55\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"2A"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(44),
+      I1 => \^data_loc_tracker\(45),
+      I2 => \^data_loc_tracker\(46),
+      O => \bramaddr[8]_i_55_n_0\
+    );
+\bramaddr[8]_i_56\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(45),
+      I1 => \^data_loc_tracker\(44),
+      O => \bramaddr[8]_i_56_n_0\
+    );
+\bramaddr[8]_i_57\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"80008080AAAAAAAA"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(49),
+      I1 => \^data_loc_tracker\(51),
+      I2 => \^data_loc_tracker\(52),
+      I3 => \bramaddr[8]_i_68_n_0\,
+      I4 => \^data_loc_tracker\(53),
+      I5 => \^data_loc_tracker\(50),
+      O => \bramaddr[8]_i_57_n_0\
+    );
+\bramaddr[8]_i_58\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FF00FF00FB000000"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_67_n_0\,
+      I1 => \data_loc[1]_i_23_n_0\,
+      I2 => \bramaddr[8]_i_69_n_0\,
+      I3 => \bramaddr[8]_i_70_n_0\,
+      I4 => \^data_loc_tracker\(45),
+      I5 => \data_loc[5]_i_23_n_0\,
+      O => \bramaddr[8]_i_58_n_0\
+    );
+\bramaddr[8]_i_59\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7FFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(36),
+      I1 => \^data_loc_tracker\(37),
+      I2 => \^data_loc_tracker\(33),
+      I3 => \^data_loc_tracker\(34),
+      O => \bramaddr[8]_i_59_n_0\
+    );
+\bramaddr[8]_i_6\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFF0800FF00"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(5),
+      I1 => \^data_loc_tracker\(6),
+      I2 => \^data_loc_tracker\(7),
+      I3 => \data_loc[1]_i_5_n_0\,
+      I4 => \^data_loc_tracker\(4),
+      I5 => \bramaddr[4]_i_19_n_0\,
+      O => \bramaddr[8]_i_6_n_0\
+    );
+\bramaddr[8]_i_60\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"40FFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(35),
+      I1 => \^data_loc_tracker\(34),
+      I2 => \^data_loc_tracker\(33),
+      I3 => \^data_loc_tracker\(32),
+      I4 => \^data_loc_tracker\(31),
+      I5 => \^data_loc_tracker\(28),
+      O => \bramaddr[8]_i_60_n_0\
+    );
+\bramaddr[8]_i_61\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"7FFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \data_loc[5]_i_17_n_0\,
+      I1 => \^data_loc_tracker\(33),
+      I2 => \^data_loc_tracker\(29),
+      I3 => \^data_loc_tracker\(57),
+      I4 => \^data_loc_tracker\(40),
+      I5 => \^data_loc_tracker\(34),
+      O => \bramaddr[8]_i_61_n_0\
+    );
+\bramaddr[8]_i_62\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"88A8A8A8AAAAAAAA"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(48),
+      I1 => \bramaddr[8]_i_71_n_0\,
+      I2 => \^data_loc_tracker\(50),
+      I3 => \^data_loc_tracker\(52),
+      I4 => \^data_loc_tracker\(51),
+      I5 => \^data_loc_tracker\(49),
+      O => \bramaddr[8]_i_62_n_0\
+    );
+\bramaddr[8]_i_63\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(46),
+      I1 => \^data_loc_tracker\(45),
+      O => \bramaddr[8]_i_63_n_0\
+    );
+\bramaddr[8]_i_64\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"008F8F8F00000000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(57),
+      I1 => \^data_loc_tracker\(56),
+      I2 => \^data_loc_tracker\(55),
+      I3 => \^data_loc_tracker\(61),
+      I4 => \^data_loc_tracker\(58),
+      I5 => \bramaddr[12]_i_31_n_0\,
+      O => \bramaddr[8]_i_64_n_0\
+    );
+\bramaddr[8]_i_65\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"2A"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(58),
+      I1 => \^data_loc_tracker\(59),
+      I2 => \^data_loc_tracker\(60),
+      O => \bramaddr[8]_i_65_n_0\
+    );
+\bramaddr[8]_i_66\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"55D5FFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(52),
+      I1 => \^data_loc_tracker\(53),
+      I2 => \^data_loc_tracker\(54),
+      I3 => \^data_loc_tracker\(55),
+      I4 => \^data_loc_tracker\(48),
+      I5 => \^data_loc_tracker\(49),
+      O => \bramaddr[8]_i_66_n_0\
+    );
+\bramaddr[8]_i_67\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"0888"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(48),
+      I1 => \^data_loc_tracker\(49),
+      I2 => \^data_loc_tracker\(50),
+      I3 => \^data_loc_tracker\(51),
+      O => \bramaddr[8]_i_67_n_0\
+    );
+\bramaddr[8]_i_68\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0040444444444444"
+    )
+        port map (
+      I0 => \bramaddr[0]_i_49_n_0\,
+      I1 => \bramaddr[4]_i_54_n_0\,
+      I2 => \^data_loc_tracker\(60),
+      I3 => \bramaddr[4]_i_56_n_0\,
+      I4 => \^data_loc_tracker\(59),
+      I5 => \^data_loc_tracker\(56),
+      O => \bramaddr[8]_i_68_n_0\
+    );
+\bramaddr[8]_i_69\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000A0A0A0A0A0A0"
+    )
+        port map (
+      I0 => \bram_overflows_tracker[0]_i_8_n_0\,
+      I1 => \^data_loc_tracker\(55),
+      I2 => \^data_loc_tracker\(52),
+      I3 => \bramaddr[4]_i_75_n_0\,
+      I4 => \^data_loc_tracker\(54),
+      I5 => \^data_loc_tracker\(53),
+      O => \bramaddr[8]_i_69_n_0\
+    );
+\bramaddr[8]_i_7\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"7FFF777777777777"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(10),
+      I1 => \^data_loc_tracker\(13),
+      I2 => \^data_loc_tracker\(17),
+      I3 => \^data_loc_tracker\(16),
+      I4 => \^data_loc_tracker\(15),
+      I5 => \^data_loc_tracker\(14),
+      O => \bramaddr[8]_i_7_n_0\
+    );
+\bramaddr[8]_i_70\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(42),
+      I1 => \^data_loc_tracker\(41),
+      O => \bramaddr[8]_i_70_n_0\
+    );
+\bramaddr[8]_i_71\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8088888880888088"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(50),
+      I1 => \^data_loc_tracker\(53),
+      I2 => \bramaddr[8]_i_72_n_0\,
+      I3 => \^data_loc_tracker\(54),
+      I4 => \bramaddr[12]_i_20_n_0\,
+      I5 => \^data_loc_tracker\(55),
+      O => \bramaddr[8]_i_71_n_0\
+    );
+\bramaddr[8]_i_72\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"73000000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(61),
+      I1 => \^data_loc_tracker\(59),
+      I2 => \^data_loc_tracker\(60),
+      I3 => \^data_loc_tracker\(58),
+      I4 => \^data_loc_tracker\(55),
+      O => \bramaddr[8]_i_72_n_0\
+    );
+\bramaddr[8]_i_8\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"ABABABAABBBBBBBB"
+    )
+        port map (
+      I0 => \bramaddr[8]_i_20_n_0\,
+      I1 => \bramaddr[8]_i_21_n_0\,
+      I2 => \bramaddr[8]_i_22_n_0\,
+      I3 => \bramaddr[8]_i_23_n_0\,
+      I4 => \bramaddr[8]_i_24_n_0\,
+      I5 => \^data_loc_tracker\(24),
+      O => \bramaddr[8]_i_8_n_0\
+    );
+\bramaddr[8]_i_9\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FF70FFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(12),
+      I1 => \^data_loc_tracker\(11),
+      I2 => \^data_loc_tracker\(10),
+      I3 => \bramaddr[8]_i_25_n_0\,
+      I4 => \^data_loc_tracker\(9),
+      I5 => \^data_loc_tracker\(8),
+      O => \bramaddr[8]_i_9_n_0\
     );
 \bramaddr_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[3]_i_1_n_7\,
-      Q => \^bramaddr\(0),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[0]_i_2_n_7\,
+      Q => \^d\(0),
       R => '0'
+    );
+\bramaddr_reg[0]_i_2\: unisim.vcomponents.CARRY4
+     port map (
+      CI => '0',
+      CO(3) => \bramaddr_reg[0]_i_2_n_0\,
+      CO(2) => \bramaddr_reg[0]_i_2_n_1\,
+      CO(1) => \bramaddr_reg[0]_i_2_n_2\,
+      CO(0) => \bramaddr_reg[0]_i_2_n_3\,
+      CYINIT => '0',
+      DI(3 downto 1) => B"000",
+      DI(0) => \^bramen_raw\,
+      O(3) => \bramaddr_reg[0]_i_2_n_4\,
+      O(2) => \bramaddr_reg[0]_i_2_n_5\,
+      O(1) => \bramaddr_reg[0]_i_2_n_6\,
+      O(0) => \bramaddr_reg[0]_i_2_n_7\,
+      S(3) => \bramaddr[0]_i_4_n_0\,
+      S(2) => \bramaddr[0]_i_5_n_0\,
+      S(1) => \bramaddr[0]_i_6_n_0\,
+      S(0) => \bramaddr[0]_i_7_n_0\
     );
 \bramaddr_reg[10]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[11]_i_1_n_5\,
-      Q => \^bramaddr\(10),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[8]_i_1_n_5\,
+      Q => \^d\(10),
       R => '0'
     );
 \bramaddr_reg[11]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[11]_i_1_n_4\,
-      Q => \^bramaddr\(11),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[8]_i_1_n_4\,
+      Q => \^d\(11),
       R => '0'
-    );
-\bramaddr_reg[11]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \bramaddr_reg[7]_i_1_n_0\,
-      CO(3) => \bramaddr_reg[11]_i_1_n_0\,
-      CO(2) => \bramaddr_reg[11]_i_1_n_1\,
-      CO(1) => \bramaddr_reg[11]_i_1_n_2\,
-      CO(0) => \bramaddr_reg[11]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3) => \bramaddr_reg[11]_i_1_n_4\,
-      O(2) => \bramaddr_reg[11]_i_1_n_5\,
-      O(1) => \bramaddr_reg[11]_i_1_n_6\,
-      O(0) => \bramaddr_reg[11]_i_1_n_7\,
-      S(3) => \bramaddr[11]_i_2_n_0\,
-      S(2) => \bramaddr[11]_i_3_n_0\,
-      S(1) => \bramaddr[11]_i_4_n_0\,
-      S(0) => \bramaddr[11]_i_5_n_0\
     );
 \bramaddr_reg[12]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[15]_i_1_n_7\,
-      Q => \^bramaddr\(12),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[12]_i_1_n_7\,
+      Q => \^d\(12),
       R => '0'
+    );
+\bramaddr_reg[12]_i_1\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \bramaddr_reg[8]_i_1_n_0\,
+      CO(3) => \bramaddr_reg[12]_i_1_n_0\,
+      CO(2) => \bramaddr_reg[12]_i_1_n_1\,
+      CO(1) => \bramaddr_reg[12]_i_1_n_2\,
+      CO(0) => \bramaddr_reg[12]_i_1_n_3\,
+      CYINIT => '0',
+      DI(3 downto 0) => B"0000",
+      O(3) => \bramaddr_reg[12]_i_1_n_4\,
+      O(2) => \bramaddr_reg[12]_i_1_n_5\,
+      O(1) => \bramaddr_reg[12]_i_1_n_6\,
+      O(0) => \bramaddr_reg[12]_i_1_n_7\,
+      S(3) => \bramaddr[12]_i_2_n_0\,
+      S(2) => \bramaddr[12]_i_3_n_0\,
+      S(1) => \bramaddr[12]_i_4_n_0\,
+      S(0) => \bramaddr[12]_i_5_n_0\
     );
 \bramaddr_reg[13]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[15]_i_1_n_6\,
-      Q => \^bramaddr\(13),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[12]_i_1_n_6\,
+      Q => \^d\(13),
       R => '0'
     );
 \bramaddr_reg[14]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[15]_i_1_n_5\,
-      Q => \^bramaddr\(14),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[12]_i_1_n_5\,
+      Q => \^d\(14),
       R => '0'
     );
 \bramaddr_reg[15]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[15]_i_1_n_4\,
-      Q => \^bramaddr\(15),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[12]_i_1_n_4\,
+      Q => \^d\(15),
       R => '0'
-    );
-\bramaddr_reg[15]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \bramaddr_reg[11]_i_1_n_0\,
-      CO(3) => \bramaddr_reg[15]_i_1_n_0\,
-      CO(2) => \bramaddr_reg[15]_i_1_n_1\,
-      CO(1) => \bramaddr_reg[15]_i_1_n_2\,
-      CO(0) => \bramaddr_reg[15]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3) => \bramaddr_reg[15]_i_1_n_4\,
-      O(2) => \bramaddr_reg[15]_i_1_n_5\,
-      O(1) => \bramaddr_reg[15]_i_1_n_6\,
-      O(0) => \bramaddr_reg[15]_i_1_n_7\,
-      S(3) => \bramaddr[15]_i_2_n_0\,
-      S(2) => \bramaddr[15]_i_3_n_0\,
-      S(1) => \bramaddr[15]_i_4_n_0\,
-      S(0) => \bramaddr[15]_i_5_n_0\
     );
 \bramaddr_reg[16]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[16]_i_2_n_7\,
-      Q => \^bramaddr\(16),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[16]_i_1_n_7\,
+      Q => \^d\(16),
       R => '0'
     );
-\bramaddr_reg[16]_i_2\: unisim.vcomponents.CARRY4
+\bramaddr_reg[16]_i_1\: unisim.vcomponents.CARRY4
      port map (
-      CI => \bramaddr_reg[15]_i_1_n_0\,
-      CO(3 downto 0) => \NLW_bramaddr_reg[16]_i_2_CO_UNCONNECTED\(3 downto 0),
+      CI => \bramaddr_reg[12]_i_1_n_0\,
+      CO(3 downto 0) => \NLW_bramaddr_reg[16]_i_1_CO_UNCONNECTED\(3 downto 0),
       CYINIT => '0',
       DI(3 downto 0) => B"0000",
-      O(3 downto 1) => \NLW_bramaddr_reg[16]_i_2_O_UNCONNECTED\(3 downto 1),
-      O(0) => \bramaddr_reg[16]_i_2_n_7\,
+      O(3 downto 1) => \NLW_bramaddr_reg[16]_i_1_O_UNCONNECTED\(3 downto 1),
+      O(0) => \bramaddr_reg[16]_i_1_n_7\,
       S(3 downto 1) => B"000",
-      S(0) => \bramaddr[16]_i_5_n_0\
+      S(0) => \bramaddr[16]_i_2_n_0\
     );
 \bramaddr_reg[1]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[3]_i_1_n_6\,
-      Q => \^bramaddr\(1),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[0]_i_2_n_6\,
+      Q => \^d\(1),
       R => '0'
     );
 \bramaddr_reg[2]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[3]_i_1_n_5\,
-      Q => \^bramaddr\(2),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[0]_i_2_n_5\,
+      Q => \^d\(2),
       R => '0'
     );
 \bramaddr_reg[3]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[3]_i_1_n_4\,
-      Q => \^bramaddr\(3),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[0]_i_2_n_4\,
+      Q => \^d\(3),
       R => '0'
-    );
-\bramaddr_reg[3]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => '0',
-      CO(3) => \bramaddr_reg[3]_i_1_n_0\,
-      CO(2) => \bramaddr_reg[3]_i_1_n_1\,
-      CO(1) => \bramaddr_reg[3]_i_1_n_2\,
-      CO(0) => \bramaddr_reg[3]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 1) => B"000",
-      DI(0) => \^di\(0),
-      O(3) => \bramaddr_reg[3]_i_1_n_4\,
-      O(2) => \bramaddr_reg[3]_i_1_n_5\,
-      O(1) => \bramaddr_reg[3]_i_1_n_6\,
-      O(0) => \bramaddr_reg[3]_i_1_n_7\,
-      S(3) => \bramaddr[3]_i_2_n_0\,
-      S(2) => \bramaddr[3]_i_3_n_0\,
-      S(1) => \bramaddr[3]_i_4_n_0\,
-      S(0) => \bramaddr[3]_i_5_n_0\
     );
 \bramaddr_reg[4]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[7]_i_1_n_7\,
-      Q => \^bramaddr\(4),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[4]_i_1_n_7\,
+      Q => \^d\(4),
       R => '0'
+    );
+\bramaddr_reg[4]_i_1\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \bramaddr_reg[0]_i_2_n_0\,
+      CO(3) => \bramaddr_reg[4]_i_1_n_0\,
+      CO(2) => \bramaddr_reg[4]_i_1_n_1\,
+      CO(1) => \bramaddr_reg[4]_i_1_n_2\,
+      CO(0) => \bramaddr_reg[4]_i_1_n_3\,
+      CYINIT => '0',
+      DI(3 downto 0) => B"0000",
+      O(3) => \bramaddr_reg[4]_i_1_n_4\,
+      O(2) => \bramaddr_reg[4]_i_1_n_5\,
+      O(1) => \bramaddr_reg[4]_i_1_n_6\,
+      O(0) => \bramaddr_reg[4]_i_1_n_7\,
+      S(3) => \bramaddr[4]_i_2_n_0\,
+      S(2) => \bramaddr[4]_i_3_n_0\,
+      S(1) => \bramaddr[4]_i_4_n_0\,
+      S(0) => \bramaddr[4]_i_5_n_0\
     );
 \bramaddr_reg[5]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[7]_i_1_n_6\,
-      Q => \^bramaddr\(5),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[4]_i_1_n_6\,
+      Q => \^d\(5),
       R => '0'
     );
 \bramaddr_reg[6]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[7]_i_1_n_5\,
-      Q => \^bramaddr\(6),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[4]_i_1_n_5\,
+      Q => \^d\(6),
       R => '0'
     );
 \bramaddr_reg[7]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[7]_i_1_n_4\,
-      Q => \^bramaddr\(7),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[4]_i_1_n_4\,
+      Q => \^d\(7),
       R => '0'
-    );
-\bramaddr_reg[7]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \bramaddr_reg[3]_i_1_n_0\,
-      CO(3) => \bramaddr_reg[7]_i_1_n_0\,
-      CO(2) => \bramaddr_reg[7]_i_1_n_1\,
-      CO(1) => \bramaddr_reg[7]_i_1_n_2\,
-      CO(0) => \bramaddr_reg[7]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3) => \bramaddr_reg[7]_i_1_n_4\,
-      O(2) => \bramaddr_reg[7]_i_1_n_5\,
-      O(1) => \bramaddr_reg[7]_i_1_n_6\,
-      O(0) => \bramaddr_reg[7]_i_1_n_7\,
-      S(3) => \bramaddr[7]_i_2_n_0\,
-      S(2) => \bramaddr[7]_i_3_n_0\,
-      S(1) => \bramaddr[7]_i_4_n_0\,
-      S(0) => \bramaddr[7]_i_5_n_0\
     );
 \bramaddr_reg[8]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[11]_i_1_n_7\,
-      Q => \^bramaddr\(8),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[8]_i_1_n_7\,
+      Q => \^d\(8),
       R => '0'
+    );
+\bramaddr_reg[8]_i_1\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \bramaddr_reg[4]_i_1_n_0\,
+      CO(3) => \bramaddr_reg[8]_i_1_n_0\,
+      CO(2) => \bramaddr_reg[8]_i_1_n_1\,
+      CO(1) => \bramaddr_reg[8]_i_1_n_2\,
+      CO(0) => \bramaddr_reg[8]_i_1_n_3\,
+      CYINIT => '0',
+      DI(3 downto 0) => B"0000",
+      O(3) => \bramaddr_reg[8]_i_1_n_4\,
+      O(2) => \bramaddr_reg[8]_i_1_n_5\,
+      O(1) => \bramaddr_reg[8]_i_1_n_6\,
+      O(0) => \bramaddr_reg[8]_i_1_n_7\,
+      S(3) => \bramaddr[8]_i_2_n_0\,
+      S(2) => \bramaddr[8]_i_3_n_0\,
+      S(1) => \bramaddr[8]_i_4_n_0\,
+      S(0) => \bramaddr[8]_i_5_n_0\
     );
 \bramaddr_reg[9]\: unisim.vcomponents.FDRE
      port map (
       C => clk120_0,
-      CE => \bramaddr[16]_i_1_n_0\,
-      D => \bramaddr_reg[11]_i_1_n_6\,
-      Q => \^bramaddr\(9),
+      CE => \bramaddr[0]_i_1_n_0\,
+      D => \bramaddr_reg[8]_i_1_n_6\,
+      Q => \^d\(9),
       R => '0'
     );
 \bramen_disabler[3]_i_1\: unisim.vcomponents.LUT6
@@ -5299,34 +5101,34 @@ begin
         port map (
       I0 => \bramen_disabler[3]_i_2_n_0\,
       I1 => \bramen_disabler[3]_i_3_n_0\,
-      I2 => \bramen_disabler_reg_n_0_[0]\,
-      I3 => \l1a_cntr_sync120_reg_n_0_[5]\,
-      I4 => \l1a_cntr_sync120_reg_n_0_[4]\,
-      I5 => \l1a_cntr_sync120_reg_n_0_[0]\,
+      I2 => l1a_cntr_sync120(7),
+      I3 => l1a_cntr_sync120(4),
+      I4 => l1a_cntr_sync120(5),
+      I5 => \bramen_disabler_reg_n_0_[3]\,
       O => bramen_disabler0
     );
 \bramen_disabler[3]_i_2\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000000000000100"
+      INIT => X"0000010000000000"
     )
         port map (
-      I0 => \^q\(0),
-      I1 => \^q\(1),
-      I2 => \l1a_cntr_sync120_reg_n_0_[7]\,
-      I3 => \l1a_cntr_sync120_reg_n_0_[1]\,
-      I4 => \l1a_cntr_sync120_reg_n_0_[2]\,
-      I5 => \l1a_cntr_sync120_reg_n_0_[6]\,
+      I0 => p_0_in(0),
+      I1 => p_0_in(1),
+      I2 => l1a_cntr_sync120(6),
+      I3 => l1a_cntr_sync120(1),
+      I4 => \bramen_disabler_reg_n_0_[0]\,
+      I5 => \^bramen_raw\,
       O => \bramen_disabler[3]_i_2_n_0\
     );
 \bramen_disabler[3]_i_3\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"FFFD"
+      INIT => X"FFFE"
     )
         port map (
-      I0 => \^di\(0),
-      I1 => \l1a_cntr_sync120_reg_n_0_[8]\,
-      I2 => \l1a_cntr_sync120_reg_n_0_[3]\,
-      I3 => \bramen_disabler_reg_n_0_[3]\,
+      I0 => l1a_cntr_sync120(2),
+      I1 => l1a_cntr_sync120(0),
+      I2 => l1a_cntr_sync120(8),
+      I3 => l1a_cntr_sync120(3),
       O => \bramen_disabler[3]_i_3_n_0\
     );
 \bramen_disabler_reg[0]\: unisim.vcomponents.FDSE
@@ -5350,7 +5152,7 @@ begin
       C => clk120,
       CE => '1',
       D => \bramen_disabler_reg_n_0_[0]\,
-      Q => \^q\(0),
+      Q => p_0_in(0),
       R => bramen_disabler0
     );
 \bramen_disabler_reg[2]\: unisim.vcomponents.FDRE
@@ -5361,8 +5163,8 @@ begin
         port map (
       C => clk120,
       CE => '1',
-      D => \^q\(0),
-      Q => \^q\(1),
+      D => p_0_in(0),
+      Q => p_0_in(1),
       R => bramen_disabler0
     );
 \bramen_disabler_reg[3]\: unisim.vcomponents.FDRE
@@ -5373,31 +5175,44 @@ begin
         port map (
       C => clk120,
       CE => '1',
-      D => \^q\(1),
+      D => p_0_in(1),
       Q => \bramen_disabler_reg_n_0_[3]\,
       R => bramen_disabler0
     );
-\bramen_enabler[0]_i_1\: unisim.vcomponents.LUT3
+\bramen_enabler[0]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"02"
+      INIT => X"0001"
     )
         port map (
       I0 => \bramen_enabler[0]_i_2_n_0\,
-      I1 => \bramen_enabler_reg_n_0_[0]\,
-      I2 => p_0_in4_in,
+      I1 => p_0_in5_in,
+      I2 => \^bramen_raw\,
+      I3 => \bramen_enabler_reg_n_0_[0]\,
       O => bramen_enabler0
     );
-\bramen_enabler[0]_i_2\: unisim.vcomponents.LUT5
+\bramen_enabler[0]_i_2\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"10000000"
+      INIT => X"FF7F"
     )
         port map (
-      I0 => \^di\(0),
-      I1 => bramwe_i_3_n_0,
-      I2 => \l1a_cntr_sync120_reg_n_0_[5]\,
-      I3 => \l1a_cntr_sync120_reg_n_0_[7]\,
-      I4 => \l1a_cntr_sync120_reg_n_0_[0]\,
+      I0 => l1a_cntr_sync120(5),
+      I1 => l1a_cntr_sync120(7),
+      I2 => l1a_cntr_sync120(8),
+      I3 => \bramen_enabler[0]_i_3_n_0\,
       O => \bramen_enabler[0]_i_2_n_0\
+    );
+\bramen_enabler[0]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFDFFFFFFFFFFF"
+    )
+        port map (
+      I0 => l1a_cntr_sync120(4),
+      I1 => l1a_cntr_sync120(6),
+      I2 => l1a_cntr_sync120(0),
+      I3 => l1a_cntr_sync120(1),
+      I4 => l1a_cntr_sync120(2),
+      I5 => l1a_cntr_sync120(3),
+      O => \bramen_enabler[0]_i_3_n_0\
     );
 \bramen_enabler_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -5420,7 +5235,7 @@ begin
       C => clk120,
       CE => '1',
       D => \bramen_enabler_reg_n_0_[0]\,
-      Q => p_0_in4_in,
+      Q => p_0_in5_in,
       R => '0'
     );
 bramen_i_1: unisim.vcomponents.LUT4
@@ -5430,8 +5245,8 @@ bramen_i_1: unisim.vcomponents.LUT4
         port map (
       I0 => is_data_mode,
       I1 => \bramen_disabler_reg_n_0_[3]\,
-      I2 => p_0_in4_in,
-      I3 => \^di\(0),
+      I2 => p_0_in5_in,
+      I3 => \^bramen_raw\,
       O => bramen_i_1_n_0
     );
 bramen_reg: unisim.vcomponents.FDRE
@@ -5443,44 +5258,19 @@ bramen_reg: unisim.vcomponents.FDRE
       C => clk120,
       CE => '1',
       D => bramen_i_1_n_0,
-      Q => \^di\(0),
+      Q => \^bramen_raw\,
       R => '0'
     );
 bramwe_i_1: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"FE22"
+      INIT => X"2F22"
     )
         port map (
-      I0 => \bramaddr[16]_i_4_n_0\,
-      I1 => \^di\(0),
-      I2 => bramwe_i_2_n_0,
-      I3 => \^bramwe\,
+      I0 => \data_loc[5]_i_3_n_0\,
+      I1 => \^bramen_raw\,
+      I2 => bramwe4_out,
+      I3 => \^bramwe_raw\,
       O => bramwe_i_1_n_0
-    );
-bramwe_i_2: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"BFFFFFFF"
-    )
-        port map (
-      I0 => bramwe_i_3_n_0,
-      I1 => \l1a_cntr_sync120_reg_n_0_[5]\,
-      I2 => \l1a_cntr_sync120_reg_n_0_[7]\,
-      I3 => \l1a_cntr_sync120_reg_n_0_[0]\,
-      I4 => \inner_cntr__0\(2),
-      O => bramwe_i_2_n_0
-    );
-bramwe_i_3: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EFFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \l1a_cntr_sync120_reg_n_0_[6]\,
-      I1 => \l1a_cntr_sync120_reg_n_0_[2]\,
-      I2 => \l1a_cntr_sync120_reg_n_0_[1]\,
-      I3 => \l1a_cntr_sync120_reg_n_0_[4]\,
-      I4 => \l1a_cntr_sync120_reg_n_0_[3]\,
-      I5 => \l1a_cntr_sync120_reg_n_0_[8]\,
-      O => bramwe_i_3_n_0
     );
 bramwe_reg: unisim.vcomponents.FDRE
     generic map(
@@ -5491,244 +5281,449 @@ bramwe_reg: unisim.vcomponents.FDRE
       C => clk120,
       CE => '1',
       D => bramwe_i_1_n_0,
-      Q => \^bramwe\,
+      Q => \^bramwe_raw\,
       R => '0'
     );
-\bramwrdata[15]_i_1\: unisim.vcomponents.LUT6
+\bramwrdata[0]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0202020202020200"
+      INIT => X"3E0E3202"
     )
         port map (
-      I0 => \p_0_in__0\(63),
-      I1 => \^q\(1),
-      I2 => \^q\(0),
-      I3 => l1a_cntr_sync120,
-      I4 => \inner_cntr__0\(0),
-      I5 => \inner_cntr__0\(2),
-      O => \bramwrdata[15]_i_1_n_0\
+      I0 => \bramwrdata[7]_i_2_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(16),
+      I4 => eventid(0),
+      O => p_1_in(0)
     );
-\bramwrdata[15]_i_2\: unisim.vcomponents.LUT5
+\bramwrdata[10]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"3E0E3202"
+    )
+        port map (
+      I0 => \bramwrdata[15]_i_3_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(26),
+      I4 => eventid(10),
+      O => p_1_in(10)
+    );
+\bramwrdata[11]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"3E0E3202"
+    )
+        port map (
+      I0 => \bramwrdata[15]_i_3_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(27),
+      I4 => eventid(11),
+      O => p_1_in(11)
+    );
+\bramwrdata[12]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"3E0E3202"
+    )
+        port map (
+      I0 => \bramwrdata[15]_i_3_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(28),
+      I4 => eventid(12),
+      O => p_1_in(12)
+    );
+\bramwrdata[13]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"3E0E3202"
+    )
+        port map (
+      I0 => \bramwrdata[15]_i_3_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(29),
+      I4 => eventid(13),
+      O => p_1_in(13)
+    );
+\bramwrdata[14]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"3E0E3202"
+    )
+        port map (
+      I0 => \bramwrdata[15]_i_3_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(30),
+      I4 => eventid(14),
+      O => p_1_in(14)
+    );
+\bramwrdata[15]_i_1\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"FFFFFFFE"
     )
         port map (
-      I0 => \inner_cntr__0\(2),
-      I1 => \inner_cntr__0\(0),
-      I2 => l1a_cntr_sync120,
-      I3 => \^q\(0),
-      I4 => \^q\(1),
-      O => \bramwrdata[15]_i_2_n_0\
+      I0 => \^out\(0),
+      I1 => \inner_cntr__0\(2),
+      I2 => \^out\(1),
+      I3 => p_0_in(0),
+      I4 => p_0_in(1),
+      O => \bramwrdata[15]_i_1_n_0\
     );
-\bramwrdata_reg[0]\: unisim.vcomponents.FDSE
+\bramwrdata[15]_i_2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"3E0E3202"
+    )
+        port map (
+      I0 => \bramwrdata[15]_i_3_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(31),
+      I4 => eventid(15),
+      O => p_1_in(15)
+    );
+\bramwrdata[15]_i_3\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"FFF88888"
+    )
+        port map (
+      I0 => \p_0_in__0\(63),
+      I1 => \^out\(1),
+      I2 => \^out\(0),
+      I3 => \inner_cntr__0\(2),
+      I4 => in4(15),
+      O => \bramwrdata[15]_i_3_n_0\
+    );
+\bramwrdata[1]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"3E0E3202"
+    )
+        port map (
+      I0 => \bramwrdata[7]_i_2_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(17),
+      I4 => eventid(1),
+      O => p_1_in(1)
+    );
+\bramwrdata[2]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"3E0E3202"
+    )
+        port map (
+      I0 => \bramwrdata[7]_i_2_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(18),
+      I4 => eventid(2),
+      O => p_1_in(2)
+    );
+\bramwrdata[3]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"3E0E3202"
+    )
+        port map (
+      I0 => \bramwrdata[7]_i_2_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(19),
+      I4 => eventid(3),
+      O => p_1_in(3)
+    );
+\bramwrdata[4]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"3E0E3202"
+    )
+        port map (
+      I0 => \bramwrdata[7]_i_2_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(20),
+      I4 => eventid(4),
+      O => p_1_in(4)
+    );
+\bramwrdata[5]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"3E0E3202"
+    )
+        port map (
+      I0 => \bramwrdata[7]_i_2_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(21),
+      I4 => eventid(5),
+      O => p_1_in(5)
+    );
+\bramwrdata[6]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"3E0E3202"
+    )
+        port map (
+      I0 => \bramwrdata[7]_i_2_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(22),
+      I4 => eventid(6),
+      O => p_1_in(6)
+    );
+\bramwrdata[7]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"3E0E3202"
+    )
+        port map (
+      I0 => \bramwrdata[7]_i_2_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(23),
+      I4 => eventid(7),
+      O => p_1_in(7)
+    );
+\bramwrdata[7]_i_2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"FFEAC0C0"
+    )
+        port map (
+      I0 => \^out\(0),
+      I1 => \inner_cntr__0\(2),
+      I2 => in4(15),
+      I3 => \^out\(1),
+      I4 => \p_0_in__0\(63),
+      O => \bramwrdata[7]_i_2_n_0\
+    );
+\bramwrdata[8]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"3E0E3202"
+    )
+        port map (
+      I0 => \bramwrdata[15]_i_3_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(24),
+      I4 => eventid(8),
+      O => p_1_in(8)
+    );
+\bramwrdata[9]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"3E0E3202"
+    )
+        port map (
+      I0 => \bramwrdata[15]_i_3_n_0\,
+      I1 => p_0_in(1),
+      I2 => p_0_in(0),
+      I3 => eventid(25),
+      I4 => eventid(9),
+      O => p_1_in(9)
+    );
+\bramwrdata_reg[0]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[16]\,
-      Q => bramwrdata(0),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(0),
+      Q => Q(0),
+      R => '0'
     );
-\bramwrdata_reg[10]\: unisim.vcomponents.FDSE
+\bramwrdata_reg[10]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[26]\,
-      Q => bramwrdata(10),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(10),
+      Q => Q(10),
+      R => '0'
     );
-\bramwrdata_reg[11]\: unisim.vcomponents.FDSE
+\bramwrdata_reg[11]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[27]\,
-      Q => bramwrdata(11),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(11),
+      Q => Q(11),
+      R => '0'
     );
-\bramwrdata_reg[12]\: unisim.vcomponents.FDSE
+\bramwrdata_reg[12]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[28]\,
-      Q => bramwrdata(12),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(12),
+      Q => Q(12),
+      R => '0'
     );
-\bramwrdata_reg[13]\: unisim.vcomponents.FDSE
+\bramwrdata_reg[13]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[29]\,
-      Q => bramwrdata(13),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(13),
+      Q => Q(13),
+      R => '0'
     );
-\bramwrdata_reg[14]\: unisim.vcomponents.FDSE
+\bramwrdata_reg[14]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[30]\,
-      Q => bramwrdata(14),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(14),
+      Q => Q(14),
+      R => '0'
     );
-\bramwrdata_reg[15]\: unisim.vcomponents.FDSE
+\bramwrdata_reg[15]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[31]\,
-      Q => bramwrdata(15),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(15),
+      Q => Q(15),
+      R => '0'
     );
-\bramwrdata_reg[1]\: unisim.vcomponents.FDSE
+\bramwrdata_reg[1]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[17]\,
-      Q => bramwrdata(1),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(1),
+      Q => Q(1),
+      R => '0'
     );
-\bramwrdata_reg[2]\: unisim.vcomponents.FDSE
+\bramwrdata_reg[2]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[18]\,
-      Q => bramwrdata(2),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(2),
+      Q => Q(2),
+      R => '0'
     );
-\bramwrdata_reg[3]\: unisim.vcomponents.FDSE
+\bramwrdata_reg[3]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[19]\,
-      Q => bramwrdata(3),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(3),
+      Q => Q(3),
+      R => '0'
     );
-\bramwrdata_reg[4]\: unisim.vcomponents.FDSE
+\bramwrdata_reg[4]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[20]\,
-      Q => bramwrdata(4),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(4),
+      Q => Q(4),
+      R => '0'
     );
-\bramwrdata_reg[5]\: unisim.vcomponents.FDSE
+\bramwrdata_reg[5]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[21]\,
-      Q => bramwrdata(5),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(5),
+      Q => Q(5),
+      R => '0'
     );
-\bramwrdata_reg[6]\: unisim.vcomponents.FDSE
+\bramwrdata_reg[6]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[22]\,
-      Q => bramwrdata(6),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(6),
+      Q => Q(6),
+      R => '0'
     );
-\bramwrdata_reg[7]\: unisim.vcomponents.FDSE
+\bramwrdata_reg[7]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[23]\,
-      Q => bramwrdata(7),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(7),
+      Q => Q(7),
+      R => '0'
     );
-\bramwrdata_reg[8]\: unisim.vcomponents.FDSE
+\bramwrdata_reg[8]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[24]\,
-      Q => bramwrdata(8),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(8),
+      Q => Q(8),
+      R => '0'
     );
-\bramwrdata_reg[9]\: unisim.vcomponents.FDSE
+\bramwrdata_reg[9]\: unisim.vcomponents.FDRE
     generic map(
       IS_C_INVERTED => '1'
     )
         port map (
       C => clk120,
-      CE => \bramwrdata[15]_i_2_n_0\,
-      D => \events_received_reg[25]\,
-      Q => bramwrdata(9),
-      S => \bramwrdata[15]_i_1_n_0\
+      CE => \bramwrdata[15]_i_1_n_0\,
+      D => p_1_in(9),
+      Q => Q(9),
+      R => '0'
     );
 \data_loc[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"005D00FF000000FF"
+      INIT => X"000000007F7FFF7F"
     )
         port map (
-      I0 => \data_loc[0]_i_2_n_0\,
-      I1 => \data_loc[0]_i_3_n_0\,
-      I2 => \data_loc[0]_i_4_n_0\,
-      I3 => \data_loc[0]_i_5_n_0\,
-      I4 => \data_loc[0]_i_6_n_0\,
-      I5 => \data_loc[0]_i_7_n_0\,
+      I0 => \^data_loc_tracker\(29),
+      I1 => \^data_loc_tracker\(31),
+      I2 => \data_loc[0]_i_2_n_0\,
+      I3 => \data_loc[0]_i_3_n_0\,
+      I4 => \data_loc[0]_i_4_n_0\,
+      I5 => \data_loc[0]_i_5_n_0\,
       O => \data_loc[0]_i_1_n_0\
     );
-\data_loc[0]_i_10\: unisim.vcomponents.LUT3
+\data_loc[0]_i_10\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"8A"
+      INIT => X"8A888A888A88AA88"
     )
         port map (
-      I0 => \^data_loc_tracker\(36),
-      I1 => \^data_loc_tracker\(38),
-      I2 => \^data_loc_tracker\(37),
+      I0 => \data_loc[0]_i_6_n_0\,
+      I1 => \data_loc[0]_i_17_n_0\,
+      I2 => \data_loc[0]_i_18_n_0\,
+      I3 => \data_loc[0]_i_19_n_0\,
+      I4 => \data_loc[0]_i_20_n_0\,
+      I5 => \data_loc[0]_i_21_n_0\,
       O => \data_loc[0]_i_10_n_0\
     );
-\data_loc[0]_i_11\: unisim.vcomponents.LUT6
+\data_loc[0]_i_11\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"8000000000000000"
+      INIT => X"7755F755"
     )
         port map (
-      I0 => \^data_loc_tracker\(3),
-      I1 => \^data_loc_tracker\(1),
-      I2 => \^data_loc_tracker\(5),
-      I3 => \^data_loc_tracker\(7),
-      I4 => \^data_loc_tracker\(11),
-      I5 => \^data_loc_tracker\(9),
+      I0 => \^data_loc_tracker\(0),
+      I1 => \^data_loc_tracker\(2),
+      I2 => \^data_loc_tracker\(3),
+      I3 => \^data_loc_tracker\(1),
+      I4 => \^data_loc_tracker\(4),
       O => \data_loc[0]_i_11_n_0\
     );
 \data_loc[0]_i_12\: unisim.vcomponents.LUT3
@@ -5736,42 +5731,41 @@ bramwe_reg: unisim.vcomponents.FDRE
       INIT => X"4F"
     )
         port map (
-      I0 => \^data_loc_tracker\(14),
-      I1 => \^data_loc_tracker\(13),
-      I2 => \^data_loc_tracker\(12),
+      I0 => \^data_loc_tracker\(30),
+      I1 => \^data_loc_tracker\(29),
+      I2 => \^data_loc_tracker\(28),
       O => \data_loc[0]_i_12_n_0\
     );
 \data_loc[0]_i_13\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"8A"
+      INIT => X"80"
     )
         port map (
-      I0 => \^data_loc_tracker\(20),
-      I1 => \^data_loc_tracker\(22),
-      I2 => \^data_loc_tracker\(21),
+      I0 => \^data_loc_tracker\(5),
+      I1 => \^data_loc_tracker\(1),
+      I2 => \^data_loc_tracker\(3),
       O => \data_loc[0]_i_13_n_0\
     );
-\data_loc[0]_i_14\: unisim.vcomponents.LUT6
+\data_loc[0]_i_14\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"88A888A8A8A888A8"
+      INIT => X"A0AA20AA"
     )
         port map (
-      I0 => \bramaddr[3]_i_24_n_0\,
-      I1 => \bramaddr[3]_i_23_n_0\,
-      I2 => \data_loc[3]_i_13_n_0\,
-      I3 => \^data_loc_tracker\(28),
-      I4 => \^data_loc_tracker\(29),
-      I5 => \^data_loc_tracker\(30),
+      I0 => \^data_loc_tracker\(6),
+      I1 => \^data_loc_tracker\(9),
+      I2 => \^data_loc_tracker\(8),
+      I3 => \^data_loc_tracker\(7),
+      I4 => \^data_loc_tracker\(10),
       O => \data_loc[0]_i_14_n_0\
     );
 \data_loc[0]_i_15\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"8A"
+      INIT => X"4F"
     )
         port map (
-      I0 => \^data_loc_tracker\(44),
-      I1 => \^data_loc_tracker\(46),
-      I2 => \^data_loc_tracker\(45),
+      I0 => \^data_loc_tracker\(46),
+      I1 => \^data_loc_tracker\(45),
+      I2 => \^data_loc_tracker\(44),
       O => \data_loc[0]_i_15_n_0\
     );
 \data_loc[0]_i_16\: unisim.vcomponents.LUT6
@@ -5781,35 +5775,108 @@ bramwe_reg: unisim.vcomponents.FDRE
         port map (
       I0 => \^data_loc_tracker\(49),
       I1 => \^data_loc_tracker\(51),
-      I2 => \data_loc[0]_i_17_n_0\,
+      I2 => \data_loc[0]_i_22_n_0\,
       I3 => \^data_loc_tracker\(50),
       I4 => \^data_loc_tracker\(48),
-      I5 => \data_loc[0]_i_18_n_0\,
+      I5 => \data_loc[0]_i_23_n_0\,
       O => \data_loc[0]_i_16_n_0\
     );
-\data_loc[0]_i_17\: unisim.vcomponents.LUT6
+\data_loc[0]_i_17\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"4F"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(14),
+      I1 => \^data_loc_tracker\(13),
+      I2 => \^data_loc_tracker\(12),
+      O => \data_loc[0]_i_17_n_0\
+    );
+\data_loc[0]_i_18\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"8A"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(16),
+      I1 => \^data_loc_tracker\(18),
+      I2 => \^data_loc_tracker\(17),
+      O => \data_loc[0]_i_18_n_0\
+    );
+\data_loc[0]_i_19\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(15),
+      I1 => \^data_loc_tracker\(13),
+      O => \data_loc[0]_i_19_n_0\
+    );
+\data_loc[0]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000080000000"
+    )
+        port map (
+      I0 => \data_loc[0]_i_6_n_0\,
+      I1 => \^data_loc_tracker\(25),
+      I2 => \^data_loc_tracker\(27),
+      I3 => \^data_loc_tracker\(21),
+      I4 => \^data_loc_tracker\(23),
+      I5 => \data_loc[0]_i_7_n_0\,
+      O => \data_loc[0]_i_2_n_0\
+    );
+\data_loc[0]_i_20\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(19),
+      I1 => \^data_loc_tracker\(17),
+      O => \data_loc[0]_i_20_n_0\
+    );
+\data_loc[0]_i_21\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"08CC88CC"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(22),
+      I1 => \^data_loc_tracker\(20),
+      I2 => \^data_loc_tracker\(23),
+      I3 => \^data_loc_tracker\(21),
+      I4 => \data_loc[0]_i_24_n_0\,
+      O => \data_loc[0]_i_21_n_0\
+    );
+\data_loc[0]_i_22\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"2F00FF000000FF00"
     )
         port map (
       I0 => \^data_loc_tracker\(56),
-      I1 => \data_loc[0]_i_19_n_0\,
+      I1 => \data_loc[0]_i_25_n_0\,
       I2 => \^data_loc_tracker\(55),
       I3 => \^data_loc_tracker\(52),
       I4 => \^data_loc_tracker\(53),
       I5 => \^data_loc_tracker\(54),
-      O => \data_loc[0]_i_17_n_0\
+      O => \data_loc[0]_i_22_n_0\
     );
-\data_loc[0]_i_18\: unisim.vcomponents.LUT2
+\data_loc[0]_i_23\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"7"
     )
         port map (
       I0 => \^data_loc_tracker\(47),
       I1 => \^data_loc_tracker\(45),
-      O => \data_loc[0]_i_18_n_0\
+      O => \data_loc[0]_i_23_n_0\
     );
-\data_loc[0]_i_19\: unisim.vcomponents.LUT6
+\data_loc[0]_i_24\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"4F"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(26),
+      I1 => \^data_loc_tracker\(25),
+      I2 => \^data_loc_tracker\(24),
+      O => \data_loc[0]_i_24_n_0\
+    );
+\data_loc[0]_i_25\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"00808888AAAAAAAA"
     )
@@ -5820,20 +5887,7 @@ bramwe_reg: unisim.vcomponents.FDRE
       I3 => \^data_loc_tracker\(62),
       I4 => \^data_loc_tracker\(60),
       I5 => \^data_loc_tracker\(58),
-      O => \data_loc[0]_i_19_n_0\
-    );
-\data_loc[0]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8000000000000000"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(23),
-      I1 => \^data_loc_tracker\(21),
-      I2 => \data_loc[0]_i_8_n_0\,
-      I3 => \data_loc[3]_i_13_n_0\,
-      I4 => \^data_loc_tracker\(31),
-      I5 => \^data_loc_tracker\(29),
-      O => \data_loc[0]_i_2_n_0\
+      O => \data_loc[0]_i_25_n_0\
     );
 \data_loc[0]_i_3\: unisim.vcomponents.LUT3
     generic map(
@@ -5852,22 +5906,23 @@ bramwe_reg: unisim.vcomponents.FDRE
         port map (
       I0 => \^data_loc_tracker\(37),
       I1 => \^data_loc_tracker\(39),
-      I2 => \data_loc[0]_i_9_n_0\,
-      I3 => \data_loc[0]_i_10_n_0\,
+      I2 => \data_loc[0]_i_8_n_0\,
+      I3 => \data_loc[0]_i_9_n_0\,
       I4 => \^data_loc_tracker\(33),
       I5 => \^data_loc_tracker\(35),
       O => \data_loc[0]_i_4_n_0\
     );
-\data_loc[0]_i_5\: unisim.vcomponents.LUT5
+\data_loc[0]_i_5\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFF4F4F4"
+      INIT => X"FEEEFEEEFFFFFEEE"
     )
         port map (
-      I0 => \bramaddr[11]_i_18_n_0\,
-      I1 => \bramaddr[11]_i_17_n_0\,
-      I2 => \bramaddr[11]_i_20_n_0\,
-      I3 => \data_loc[0]_i_11_n_0\,
-      I4 => \data_loc[0]_i_12_n_0\,
+      I0 => \data_loc[0]_i_10_n_0\,
+      I1 => \data_loc[0]_i_11_n_0\,
+      I2 => \data_loc[0]_i_12_n_0\,
+      I3 => \data_loc[0]_i_2_n_0\,
+      I4 => \data_loc[0]_i_13_n_0\,
+      I5 => \data_loc[0]_i_14_n_0\,
       O => \data_loc[0]_i_5_n_0\
     );
 \data_loc[0]_i_6\: unisim.vcomponents.LUT6
@@ -5875,47 +5930,46 @@ bramwe_reg: unisim.vcomponents.FDRE
       INIT => X"8000000000000000"
     )
         port map (
-      I0 => \^data_loc_tracker\(13),
-      I1 => \^data_loc_tracker\(15),
-      I2 => \^data_loc_tracker\(9),
-      I3 => \^data_loc_tracker\(11),
-      I4 => \^data_loc_tracker\(7),
-      I5 => \bramaddr[11]_i_17_n_0\,
+      I0 => \^data_loc_tracker\(3),
+      I1 => \^data_loc_tracker\(1),
+      I2 => \^data_loc_tracker\(5),
+      I3 => \^data_loc_tracker\(7),
+      I4 => \^data_loc_tracker\(11),
+      I5 => \^data_loc_tracker\(9),
       O => \data_loc[0]_i_6_n_0\
     );
-\data_loc[0]_i_7\: unisim.vcomponents.LUT6
+\data_loc[0]_i_7\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"00808888CCCCCCCC"
+      INIT => X"7FFF"
     )
         port map (
-      I0 => \^data_loc_tracker\(18),
-      I1 => \^data_loc_tracker\(16),
-      I2 => \data_loc[0]_i_13_n_0\,
-      I3 => \data_loc[0]_i_14_n_0\,
-      I4 => \^data_loc_tracker\(19),
-      I5 => \^data_loc_tracker\(17),
+      I0 => \^data_loc_tracker\(17),
+      I1 => \^data_loc_tracker\(19),
+      I2 => \^data_loc_tracker\(13),
+      I3 => \^data_loc_tracker\(15),
       O => \data_loc[0]_i_7_n_0\
     );
-\data_loc[0]_i_8\: unisim.vcomponents.LUT2
+\data_loc[0]_i_8\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(19),
-      I1 => \^data_loc_tracker\(17),
-      O => \data_loc[0]_i_8_n_0\
-    );
-\data_loc[0]_i_9\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FF7F777755555555"
+      INIT => X"F755F755F7557755"
     )
         port map (
       I0 => \^data_loc_tracker\(40),
       I1 => \^data_loc_tracker\(42),
-      I2 => \data_loc[0]_i_15_n_0\,
-      I3 => \data_loc[0]_i_16_n_0\,
-      I4 => \^data_loc_tracker\(43),
-      I5 => \^data_loc_tracker\(41),
+      I2 => \^data_loc_tracker\(43),
+      I3 => \^data_loc_tracker\(41),
+      I4 => \data_loc[0]_i_15_n_0\,
+      I5 => \data_loc[0]_i_16_n_0\,
+      O => \data_loc[0]_i_8_n_0\
+    );
+\data_loc[0]_i_9\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"8A"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(36),
+      I1 => \^data_loc_tracker\(38),
+      I2 => \^data_loc_tracker\(37),
       O => \data_loc[0]_i_9_n_0\
     );
 \data_loc[1]_i_1\: unisim.vcomponents.LUT6
@@ -5931,31 +5985,33 @@ bramwe_reg: unisim.vcomponents.FDRE
       I5 => \data_loc[1]_i_5_n_0\,
       O => \data_loc[1]_i_1_n_0\
     );
-\data_loc[1]_i_10\: unisim.vcomponents.LUT2
+\data_loc[1]_i_10\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7FFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(12),
+      I1 => \^data_loc_tracker\(13),
+      I2 => \^data_loc_tracker\(16),
+      I3 => \^data_loc_tracker\(17),
+      O => \data_loc[1]_i_10_n_0\
+    );
+\data_loc[1]_i_11\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(21),
+      I1 => \^data_loc_tracker\(20),
+      O => \data_loc[1]_i_11_n_0\
+    );
+\data_loc[1]_i_12\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"7"
     )
         port map (
       I0 => \^data_loc_tracker\(19),
       I1 => \^data_loc_tracker\(18),
-      O => \data_loc[1]_i_10_n_0\
-    );
-\data_loc[1]_i_11\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(33),
-      I1 => \^data_loc_tracker\(32),
-      O => \data_loc[1]_i_11_n_0\
-    );
-\data_loc[1]_i_12\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(37),
-      I1 => \^data_loc_tracker\(36),
       O => \data_loc[1]_i_12_n_0\
     );
 \data_loc[1]_i_13\: unisim.vcomponents.LUT2
@@ -5963,21 +6019,17 @@ bramwe_reg: unisim.vcomponents.FDRE
       INIT => X"8"
     )
         port map (
-      I0 => \^data_loc_tracker\(35),
-      I1 => \^data_loc_tracker\(34),
+      I0 => \^data_loc_tracker\(25),
+      I1 => \^data_loc_tracker\(24),
       O => \data_loc[1]_i_13_n_0\
     );
-\data_loc[1]_i_14\: unisim.vcomponents.LUT6
+\data_loc[1]_i_14\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"0000800088888888"
+      INIT => X"8"
     )
         port map (
-      I0 => \^data_loc_tracker\(40),
-      I1 => \^data_loc_tracker\(41),
-      I2 => \^data_loc_tracker\(44),
-      I3 => \^data_loc_tracker\(45),
-      I4 => \data_loc[1]_i_16_n_0\,
-      I5 => \data_loc[1]_i_17_n_0\,
+      I0 => \^data_loc_tracker\(23),
+      I1 => \^data_loc_tracker\(22),
       O => \data_loc[1]_i_14_n_0\
     );
 \data_loc[1]_i_15\: unisim.vcomponents.LUT2
@@ -5985,21 +6037,17 @@ bramwe_reg: unisim.vcomponents.FDRE
       INIT => X"8"
     )
         port map (
-      I0 => \^data_loc_tracker\(39),
-      I1 => \^data_loc_tracker\(38),
+      I0 => \^data_loc_tracker\(31),
+      I1 => \^data_loc_tracker\(30),
       O => \data_loc[1]_i_15_n_0\
     );
-\data_loc[1]_i_16\: unisim.vcomponents.LUT6
+\data_loc[1]_i_16\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"BF00FF000000FF00"
+      INIT => X"8"
     )
         port map (
-      I0 => \data_loc[1]_i_18_n_0\,
-      I1 => \^data_loc_tracker\(52),
-      I2 => \^data_loc_tracker\(53),
-      I3 => \bramaddr[11]_i_65_n_0\,
-      I4 => \bram_overflows_tracker[0]_i_7_n_0\,
-      I5 => \bram_overflows_tracker[0]_i_8_n_0\,
+      I0 => \^data_loc_tracker\(37),
+      I1 => \^data_loc_tracker\(36),
       O => \data_loc[1]_i_16_n_0\
     );
 \data_loc[1]_i_17\: unisim.vcomponents.LUT2
@@ -6007,21 +6055,21 @@ bramwe_reg: unisim.vcomponents.FDRE
       INIT => X"8"
     )
         port map (
-      I0 => \^data_loc_tracker\(43),
-      I1 => \^data_loc_tracker\(42),
+      I0 => \^data_loc_tracker\(33),
+      I1 => \^data_loc_tracker\(32),
       O => \data_loc[1]_i_17_n_0\
     );
 \data_loc[1]_i_18\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00808080AAAAAAAA"
+      INIT => X"40FF000000000000"
     )
         port map (
-      I0 => \data_loc[1]_i_19_n_0\,
-      I1 => \^data_loc_tracker\(58),
-      I2 => \^data_loc_tracker\(59),
-      I3 => \^data_loc_tracker\(60),
-      I4 => \^data_loc_tracker\(61),
-      I5 => \bramaddr[15]_i_18_n_0\,
+      I0 => \data_loc[1]_i_20_n_0\,
+      I1 => \^data_loc_tracker\(44),
+      I2 => \^data_loc_tracker\(45),
+      I3 => \data_loc[1]_i_21_n_0\,
+      I4 => \^data_loc_tracker\(40),
+      I5 => \^data_loc_tracker\(41),
       O => \data_loc[1]_i_18_n_0\
     );
 \data_loc[1]_i_19\: unisim.vcomponents.LUT2
@@ -6029,8 +6077,8 @@ bramwe_reg: unisim.vcomponents.FDRE
       INIT => X"8"
     )
         port map (
-      I0 => \^data_loc_tracker\(55),
-      I1 => \^data_loc_tracker\(54),
+      I0 => \^data_loc_tracker\(39),
+      I1 => \^data_loc_tracker\(38),
       O => \data_loc[1]_i_19_n_0\
     );
 \data_loc[1]_i_2\: unisim.vcomponents.LUT6
@@ -6040,23 +6088,67 @@ bramwe_reg: unisim.vcomponents.FDRE
         port map (
       I0 => \^data_loc_tracker\(13),
       I1 => \^data_loc_tracker\(12),
-      I2 => \data_loc[3]_i_14_n_0\,
-      I3 => \data_loc[3]_i_8_n_0\,
+      I2 => \data_loc[2]_i_4_n_0\,
+      I3 => \data_loc[1]_i_6_n_0\,
       I4 => \^data_loc_tracker\(11),
       I5 => \^data_loc_tracker\(10),
       O => \data_loc[1]_i_2_n_0\
+    );
+\data_loc[1]_i_20\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"F700FF000000FF00"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(52),
+      I1 => \^data_loc_tracker\(53),
+      I2 => \data_loc[1]_i_22_n_0\,
+      I3 => \data_loc[1]_i_23_n_0\,
+      I4 => \bram_overflows_tracker[0]_i_8_n_0\,
+      I5 => \bram_overflows_tracker[0]_i_9_n_0\,
+      O => \data_loc[1]_i_20_n_0\
+    );
+\data_loc[1]_i_21\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(43),
+      I1 => \^data_loc_tracker\(42),
+      O => \data_loc[1]_i_21_n_0\
+    );
+\data_loc[1]_i_22\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"00808080AAAAAAAA"
+    )
+        port map (
+      I0 => \bramaddr[4]_i_54_n_0\,
+      I1 => \^data_loc_tracker\(58),
+      I2 => \^data_loc_tracker\(59),
+      I3 => \^data_loc_tracker\(60),
+      I4 => \^data_loc_tracker\(61),
+      I5 => \bramaddr[12]_i_20_n_0\,
+      O => \data_loc[1]_i_22_n_0\
+    );
+\data_loc[1]_i_23\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(47),
+      I1 => \^data_loc_tracker\(46),
+      O => \data_loc[1]_i_23_n_0\
     );
 \data_loc[1]_i_3\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"00AE00AE00AE0000"
     )
         port map (
-      I0 => \data_loc[1]_i_6_n_0\,
-      I1 => \data_loc[1]_i_7_n_0\,
-      I2 => \data_loc[1]_i_8_n_0\,
-      I3 => \data_loc[1]_i_9_n_0\,
-      I4 => \data_loc[3]_i_9_n_0\,
-      I5 => \data_loc[1]_i_10_n_0\,
+      I0 => \data_loc[1]_i_7_n_0\,
+      I1 => \data_loc[1]_i_8_n_0\,
+      I2 => \data_loc[1]_i_9_n_0\,
+      I3 => \data_loc[1]_i_10_n_0\,
+      I4 => \data_loc[1]_i_11_n_0\,
+      I5 => \data_loc[1]_i_12_n_0\,
       O => \data_loc[1]_i_3_n_0\
     );
 \data_loc[1]_i_4\: unisim.vcomponents.LUT6
@@ -6081,20 +6173,29 @@ bramwe_reg: unisim.vcomponents.FDRE
       I1 => \^data_loc_tracker\(2),
       O => \data_loc[1]_i_5_n_0\
     );
-\data_loc[1]_i_6\: unisim.vcomponents.LUT6
+\data_loc[1]_i_6\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(7),
+      I1 => \^data_loc_tracker\(6),
+      O => \data_loc[1]_i_6_n_0\
+    );
+\data_loc[1]_i_7\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"70FFFFFFFFFFFFFF"
     )
         port map (
       I0 => \^data_loc_tracker\(27),
       I1 => \^data_loc_tracker\(26),
-      I2 => \bramaddr[16]_i_22_n_0\,
-      I3 => \data_loc[2]_i_8_n_0\,
+      I2 => \data_loc[1]_i_13_n_0\,
+      I3 => \data_loc[1]_i_14_n_0\,
       I4 => \^data_loc_tracker\(19),
       I5 => \^data_loc_tracker\(18),
-      O => \data_loc[1]_i_6_n_0\
+      O => \data_loc[1]_i_7_n_0\
     );
-\data_loc[1]_i_7\: unisim.vcomponents.LUT4
+\data_loc[1]_i_8\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"8000"
     )
@@ -6103,43 +6204,32 @@ bramwe_reg: unisim.vcomponents.FDRE
       I1 => \^data_loc_tracker\(29),
       I2 => \^data_loc_tracker\(24),
       I3 => \^data_loc_tracker\(25),
-      O => \data_loc[1]_i_7_n_0\
-    );
-\data_loc[1]_i_8\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8A88AA888A888A88"
-    )
-        port map (
-      I0 => \bramaddr[3]_i_29_n_0\,
-      I1 => \data_loc[1]_i_11_n_0\,
-      I2 => \data_loc[1]_i_12_n_0\,
-      I3 => \data_loc[1]_i_13_n_0\,
-      I4 => \data_loc[1]_i_14_n_0\,
-      I5 => \data_loc[1]_i_15_n_0\,
       O => \data_loc[1]_i_8_n_0\
     );
-\data_loc[1]_i_9\: unisim.vcomponents.LUT4
+\data_loc[1]_i_9\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"7FFF"
+      INIT => X"20AAA0AA20AA20AA"
     )
         port map (
-      I0 => \^data_loc_tracker\(12),
-      I1 => \^data_loc_tracker\(13),
-      I2 => \^data_loc_tracker\(16),
-      I3 => \^data_loc_tracker\(17),
+      I0 => \data_loc[1]_i_15_n_0\,
+      I1 => \data_loc[1]_i_16_n_0\,
+      I2 => \data_loc[5]_i_16_n_0\,
+      I3 => \data_loc[1]_i_17_n_0\,
+      I4 => \data_loc[1]_i_18_n_0\,
+      I5 => \data_loc[1]_i_19_n_0\,
       O => \data_loc[1]_i_9_n_0\
     );
 \data_loc[2]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00808888AAAAAAAA"
+      INIT => X"88888088AAAAAAAA"
     )
         port map (
-      I0 => \data_loc[2]_i_2_n_0\,
-      I1 => \data_loc[2]_i_3_n_0\,
-      I2 => \data_loc[2]_i_4_n_0\,
-      I3 => \data_loc[2]_i_5_n_0\,
-      I4 => \data_loc[2]_i_6_n_0\,
-      I5 => \data_loc[2]_i_7_n_0\,
+      I0 => \data_loc[3]_i_2_n_0\,
+      I1 => \data_loc[2]_i_2_n_0\,
+      I2 => \data_loc[2]_i_3_n_0\,
+      I3 => \data_loc[2]_i_4_n_0\,
+      I4 => \data_loc[2]_i_5_n_0\,
+      I5 => \data_loc[2]_i_6_n_0\,
       O => \data_loc[2]_i_1_n_0\
     );
 \data_loc[2]_i_10\: unisim.vcomponents.LUT4
@@ -6166,15 +6256,15 @@ bramwe_reg: unisim.vcomponents.FDRE
     );
 \data_loc[2]_i_12\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"80000000AAAAAAAA"
+      INIT => X"A888888888888888"
     )
         port map (
       I0 => \data_loc[2]_i_14_n_0\,
-      I1 => \^data_loc_tracker\(56),
-      I2 => \^data_loc_tracker\(59),
-      I3 => \^data_loc_tracker\(57),
-      I4 => \^data_loc_tracker\(58),
-      I5 => \data_loc[2]_i_15_n_0\,
+      I1 => \data_loc[2]_i_15_n_0\,
+      I2 => \^data_loc_tracker\(57),
+      I3 => \^data_loc_tracker\(58),
+      I4 => \^data_loc_tracker\(56),
+      I5 => \^data_loc_tracker\(59),
       O => \data_loc[2]_i_12_n_0\
     );
 \data_loc[2]_i_13\: unisim.vcomponents.LUT4
@@ -6182,10 +6272,10 @@ bramwe_reg: unisim.vcomponents.FDRE
       INIT => X"8000"
     )
         port map (
-      I0 => \^data_loc_tracker\(34),
-      I1 => \^data_loc_tracker\(35),
+      I0 => \^data_loc_tracker\(33),
+      I1 => \^data_loc_tracker\(34),
       I2 => \^data_loc_tracker\(32),
-      I3 => \^data_loc_tracker\(33),
+      I3 => \^data_loc_tracker\(35),
       O => \data_loc[2]_i_13_n_0\
     );
 \data_loc[2]_i_14\: unisim.vcomponents.LUT4
@@ -6201,27 +6291,16 @@ bramwe_reg: unisim.vcomponents.FDRE
     );
 \data_loc[2]_i_15\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"8000"
+      INIT => X"7FFF"
     )
         port map (
-      I0 => \^data_loc_tracker\(54),
-      I1 => \^data_loc_tracker\(55),
-      I2 => \^data_loc_tracker\(52),
-      I3 => \^data_loc_tracker\(53),
+      I0 => \^data_loc_tracker\(52),
+      I1 => \^data_loc_tracker\(53),
+      I2 => \^data_loc_tracker\(54),
+      I3 => \^data_loc_tracker\(55),
       O => \data_loc[2]_i_15_n_0\
     );
 \data_loc[2]_i_2\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"8000"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(2),
-      I1 => \^data_loc_tracker\(3),
-      I2 => \^data_loc_tracker\(0),
-      I3 => \^data_loc_tracker\(1),
-      O => \data_loc[2]_i_2_n_0\
-    );
-\data_loc[2]_i_3\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"8000"
     )
@@ -6230,44 +6309,40 @@ bramwe_reg: unisim.vcomponents.FDRE
       I1 => \^data_loc_tracker\(11),
       I2 => \^data_loc_tracker\(8),
       I3 => \^data_loc_tracker\(9),
+      O => \data_loc[2]_i_2_n_0\
+    );
+\data_loc[2]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000800080808080"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(19),
+      I1 => \^data_loc_tracker\(18),
+      I2 => \data_loc[2]_i_7_n_0\,
+      I3 => \data_loc[5]_i_12_n_0\,
+      I4 => \data_loc[2]_i_8_n_0\,
+      I5 => \data_loc[2]_i_9_n_0\,
       O => \data_loc[2]_i_3_n_0\
     );
-\data_loc[2]_i_4\: unisim.vcomponents.LUT4
+\data_loc[2]_i_4\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"8000"
+      INIT => X"8"
     )
         port map (
-      I0 => \^data_loc_tracker\(16),
-      I1 => \^data_loc_tracker\(17),
-      I2 => \^data_loc_tracker\(18),
-      I3 => \^data_loc_tracker\(19),
+      I0 => \^data_loc_tracker\(15),
+      I1 => \^data_loc_tracker\(14),
       O => \data_loc[2]_i_4_n_0\
     );
-\data_loc[2]_i_5\: unisim.vcomponents.LUT6
+\data_loc[2]_i_5\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"8088888888888888"
+      INIT => X"7"
     )
         port map (
-      I0 => \data_loc[3]_i_9_n_0\,
-      I1 => \data_loc[2]_i_8_n_0\,
-      I2 => \data_loc[2]_i_9_n_0\,
-      I3 => \^data_loc_tracker\(24),
-      I4 => \^data_loc_tracker\(26),
-      I5 => \data_loc[3]_i_13_n_0\,
+      I0 => \^data_loc_tracker\(13),
+      I1 => \^data_loc_tracker\(12),
       O => \data_loc[2]_i_5_n_0\
     );
 \data_loc[2]_i_6\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"8000"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(14),
-      I1 => \^data_loc_tracker\(15),
-      I2 => \^data_loc_tracker\(12),
-      I3 => \^data_loc_tracker\(13),
-      O => \data_loc[2]_i_6_n_0\
-    );
-\data_loc[2]_i_7\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"8000"
     )
@@ -6276,202 +6351,129 @@ bramwe_reg: unisim.vcomponents.FDRE
       I1 => \^data_loc_tracker\(5),
       I2 => \^data_loc_tracker\(6),
       I3 => \^data_loc_tracker\(7),
-      O => \data_loc[2]_i_7_n_0\
+      O => \data_loc[2]_i_6_n_0\
     );
-\data_loc[2]_i_8\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(23),
-      I1 => \^data_loc_tracker\(22),
-      O => \data_loc[2]_i_8_n_0\
-    );
-\data_loc[2]_i_9\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"88880080AAAAAAAA"
-    )
-        port map (
-      I0 => \data_loc[2]_i_10_n_0\,
-      I1 => \data_loc[3]_i_11_n_0\,
-      I2 => \data_loc[2]_i_11_n_0\,
-      I3 => \data_loc[2]_i_12_n_0\,
-      I4 => \data_loc[4]_i_3_n_0\,
-      I5 => \data_loc[2]_i_13_n_0\,
-      O => \data_loc[2]_i_9_n_0\
-    );
-\data_loc[3]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0004444455555555"
-    )
-        port map (
-      I0 => \data_loc[3]_i_2_n_0\,
-      I1 => \data_loc[3]_i_3_n_0\,
-      I2 => \data_loc[3]_i_4_n_0\,
-      I3 => \data_loc[3]_i_5_n_0\,
-      I4 => \data_loc[3]_i_6_n_0\,
-      I5 => \data_loc[3]_i_7_n_0\,
-      O => \data_loc[3]_i_1_n_0\
-    );
-\data_loc[3]_i_10\: unisim.vcomponents.LUT2
+\data_loc[2]_i_7\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
       I0 => \^data_loc_tracker\(17),
       I1 => \^data_loc_tracker\(16),
-      O => \data_loc[3]_i_10_n_0\
+      O => \data_loc[2]_i_7_n_0\
     );
-\data_loc[3]_i_11\: unisim.vcomponents.LUT4
+\data_loc[2]_i_8\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"88880080AAAAAAAA"
+    )
+        port map (
+      I0 => \data_loc[2]_i_10_n_0\,
+      I1 => \data_loc[4]_i_5_n_0\,
+      I2 => \data_loc[2]_i_11_n_0\,
+      I3 => \data_loc[2]_i_12_n_0\,
+      I4 => \data_loc[4]_i_3_n_0\,
+      I5 => \data_loc[2]_i_13_n_0\,
+      O => \data_loc[2]_i_8_n_0\
+    );
+\data_loc[2]_i_9\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"8000"
     )
         port map (
-      I0 => \^data_loc_tracker\(36),
-      I1 => \^data_loc_tracker\(39),
-      I2 => \^data_loc_tracker\(37),
-      I3 => \^data_loc_tracker\(38),
-      O => \data_loc[3]_i_11_n_0\
+      I0 => \^data_loc_tracker\(22),
+      I1 => \^data_loc_tracker\(23),
+      I2 => \^data_loc_tracker\(20),
+      I3 => \^data_loc_tracker\(21),
+      O => \data_loc[2]_i_9_n_0\
     );
-\data_loc[3]_i_12\: unisim.vcomponents.LUT2
+\data_loc[3]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000080000000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(4),
+      I1 => \^data_loc_tracker\(5),
+      I2 => \^data_loc_tracker\(6),
+      I3 => \^data_loc_tracker\(7),
+      I4 => \data_loc[3]_i_2_n_0\,
+      I5 => \data_loc[3]_i_3_n_0\,
+      O => \data_loc[3]_i_1_n_0\
+    );
+\data_loc[3]_i_2\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(2),
+      I1 => \^data_loc_tracker\(3),
+      I2 => \^data_loc_tracker\(0),
+      I3 => \^data_loc_tracker\(1),
+      O => \data_loc[3]_i_2_n_0\
+    );
+\data_loc[3]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"88888000AAAAAAAA"
+    )
+        port map (
+      I0 => \data_loc[5]_i_14_n_0\,
+      I1 => \data_loc[3]_i_4_n_0\,
+      I2 => \data_loc[3]_i_5_n_0\,
+      I3 => \bram_overflows_tracker[0]_i_4_n_0\,
+      I4 => \data_loc[4]_i_4_n_0\,
+      I5 => \data_loc[5]_i_13_n_0\,
+      O => \data_loc[3]_i_3_n_0\
+    );
+\data_loc[3]_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0040000000000000"
+    )
+        port map (
+      I0 => \data_loc[3]_i_6_n_0\,
+      I1 => \^data_loc_tracker\(30),
+      I2 => \^data_loc_tracker\(29),
+      I3 => \data_loc[3]_i_7_n_0\,
+      I4 => \^data_loc_tracker\(26),
+      I5 => \^data_loc_tracker\(24),
+      O => \data_loc[3]_i_4_n_0\
+    );
+\data_loc[3]_i_5\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"00008000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(47),
+      I1 => \^data_loc_tracker\(44),
+      I2 => \^data_loc_tracker\(46),
+      I3 => \^data_loc_tracker\(45),
+      I4 => \data_loc[4]_i_3_n_0\,
+      O => \data_loc[3]_i_5_n_0\
+    );
+\data_loc[3]_i_6\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"7"
     )
         port map (
       I0 => \^data_loc_tracker\(31),
       I1 => \^data_loc_tracker\(28),
-      O => \data_loc[3]_i_12_n_0\
+      O => \data_loc[3]_i_6_n_0\
     );
-\data_loc[3]_i_13\: unisim.vcomponents.LUT2
+\data_loc[3]_i_7\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"8"
+      INIT => X"7"
     )
         port map (
       I0 => \^data_loc_tracker\(27),
       I1 => \^data_loc_tracker\(25),
-      O => \data_loc[3]_i_13_n_0\
-    );
-\data_loc[3]_i_14\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(15),
-      I1 => \^data_loc_tracker\(14),
-      O => \data_loc[3]_i_14_n_0\
-    );
-\data_loc[3]_i_15\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(11),
-      I1 => \^data_loc_tracker\(10),
-      O => \data_loc[3]_i_15_n_0\
-    );
-\data_loc[3]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(1),
-      I1 => \^data_loc_tracker\(0),
-      I2 => \data_loc[1]_i_5_n_0\,
-      I3 => \data_loc[3]_i_8_n_0\,
-      I4 => \^data_loc_tracker\(5),
-      I5 => \^data_loc_tracker\(4),
-      O => \data_loc[3]_i_2_n_0\
-    );
-\data_loc[3]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8000000000000000"
-    )
-        port map (
-      I0 => \data_loc[3]_i_9_n_0\,
-      I1 => \^data_loc_tracker\(23),
-      I2 => \^data_loc_tracker\(22),
-      I3 => \^data_loc_tracker\(19),
-      I4 => \^data_loc_tracker\(18),
-      I5 => \data_loc[3]_i_10_n_0\,
-      O => \data_loc[3]_i_3_n_0\
-    );
-\data_loc[3]_i_4\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"7FFFFFFF"
-    )
-        port map (
-      I0 => \data_loc[3]_i_11_n_0\,
-      I1 => \^data_loc_tracker\(33),
-      I2 => \^data_loc_tracker\(32),
-      I3 => \^data_loc_tracker\(35),
-      I4 => \^data_loc_tracker\(34),
-      O => \data_loc[3]_i_4_n_0\
-    );
-\data_loc[3]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"4000000000000000"
-    )
-        port map (
-      I0 => \data_loc[4]_i_3_n_0\,
-      I1 => \^data_loc_tracker\(45),
-      I2 => \^data_loc_tracker\(46),
-      I3 => \^data_loc_tracker\(44),
-      I4 => \^data_loc_tracker\(47),
-      I5 => \bram_overflows_tracker[0]_i_4_n_0\,
-      O => \data_loc[3]_i_5_n_0\
-    );
-\data_loc[3]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"4000000000000000"
-    )
-        port map (
-      I0 => \data_loc[3]_i_12_n_0\,
-      I1 => \^data_loc_tracker\(30),
-      I2 => \^data_loc_tracker\(29),
-      I3 => \data_loc[3]_i_13_n_0\,
-      I4 => \^data_loc_tracker\(26),
-      I5 => \^data_loc_tracker\(24),
-      O => \data_loc[3]_i_6_n_0\
-    );
-\data_loc[3]_i_7\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8000000000000000"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(13),
-      I1 => \^data_loc_tracker\(12),
-      I2 => \data_loc[3]_i_14_n_0\,
-      I3 => \^data_loc_tracker\(9),
-      I4 => \^data_loc_tracker\(8),
-      I5 => \data_loc[3]_i_15_n_0\,
       O => \data_loc[3]_i_7_n_0\
-    );
-\data_loc[3]_i_8\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(7),
-      I1 => \^data_loc_tracker\(6),
-      O => \data_loc[3]_i_8_n_0\
-    );
-\data_loc[3]_i_9\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(21),
-      I1 => \^data_loc_tracker\(20),
-      O => \data_loc[3]_i_9_n_0\
     );
 \data_loc[4]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"8A"
     )
         port map (
-      I0 => \data_loc[5]_i_4_n_0\,
+      I0 => \data_loc[5]_i_5_n_0\,
       I1 => \data_loc[4]_i_2_n_0\,
-      I2 => \data_loc[5]_i_3_n_0\,
+      I2 => \data_loc[5]_i_4_n_0\,
       O => \data_loc[4]_i_1_n_0\
     );
 \data_loc[4]_i_2\: unisim.vcomponents.LUT6
@@ -6484,7 +6486,7 @@ bramwe_reg: unisim.vcomponents.FDRE
       I2 => \^data_loc_tracker\(46),
       I3 => \^data_loc_tracker\(44),
       I4 => \^data_loc_tracker\(47),
-      I5 => \data_loc[3]_i_4_n_0\,
+      I5 => \data_loc[4]_i_4_n_0\,
       O => \data_loc[4]_i_2_n_0\
     );
 \data_loc[4]_i_3\: unisim.vcomponents.LUT4
@@ -6498,51 +6500,65 @@ bramwe_reg: unisim.vcomponents.FDRE
       I3 => \^data_loc_tracker\(43),
       O => \data_loc[4]_i_3_n_0\
     );
+\data_loc[4]_i_4\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"7FFFFFFF"
+    )
+        port map (
+      I0 => \data_loc[4]_i_5_n_0\,
+      I1 => \^data_loc_tracker\(35),
+      I2 => \^data_loc_tracker\(32),
+      I3 => \^data_loc_tracker\(34),
+      I4 => \^data_loc_tracker\(33),
+      O => \data_loc[4]_i_4_n_0\
+    );
+\data_loc[4]_i_5\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(36),
+      I1 => \^data_loc_tracker\(39),
+      I2 => \^data_loc_tracker\(37),
+      I3 => \^data_loc_tracker\(38),
+      O => \data_loc[4]_i_5_n_0\
+    );
 \data_loc[5]_i_1\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"2"
     )
         port map (
-      I0 => \bramaddr[16]_i_4_n_0\,
-      I1 => \^di\(0),
+      I0 => \data_loc[5]_i_3_n_0\,
+      I1 => \^bramen_raw\,
       O => \data_loc[5]_i_1_n_0\
     );
-\data_loc[5]_i_2\: unisim.vcomponents.LUT2
+\data_loc[5]_i_10\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"8"
+      INIT => X"FFFFFFFFBFFFFFFF"
     )
         port map (
-      I0 => \data_loc[5]_i_3_n_0\,
-      I1 => \data_loc[5]_i_4_n_0\,
-      O => \data_loc[5]_i_2_n_0\
+      I0 => \data_loc[5]_i_18_n_0\,
+      I1 => \data_loc[3]_i_2_n_0\,
+      I2 => \^data_loc_tracker\(32),
+      I3 => \^data_loc_tracker\(5),
+      I4 => \^data_loc_tracker\(4),
+      I5 => \data_loc[5]_i_19_n_0\,
+      O => \data_loc[5]_i_10_n_0\
     );
-\data_loc[5]_i_3\: unisim.vcomponents.LUT6
+\data_loc[5]_i_11\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"8000000000000000"
     )
         port map (
-      I0 => \data_loc[5]_i_5_n_0\,
-      I1 => \^data_loc_tracker\(29),
-      I2 => \^data_loc_tracker\(30),
-      I3 => \^data_loc_tracker\(28),
-      I4 => \^data_loc_tracker\(31),
-      I5 => \data_loc[3]_i_3_n_0\,
-      O => \data_loc[5]_i_3_n_0\
+      I0 => \^data_loc_tracker\(6),
+      I1 => \data_loc[5]_i_20_n_0\,
+      I2 => \^data_loc_tracker\(7),
+      I3 => \^data_loc_tracker\(8),
+      I4 => \^data_loc_tracker\(11),
+      I5 => \^data_loc_tracker\(12),
+      O => \data_loc[5]_i_11_n_0\
     );
-\data_loc[5]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000080000000"
-    )
-        port map (
-      I0 => \data_loc[2]_i_3_n_0\,
-      I1 => \^data_loc_tracker\(14),
-      I2 => \^data_loc_tracker\(15),
-      I3 => \^data_loc_tracker\(12),
-      I4 => \^data_loc_tracker\(13),
-      I5 => \data_loc[3]_i_2_n_0\,
-      O => \data_loc[5]_i_4_n_0\
-    );
-\data_loc[5]_i_5\: unisim.vcomponents.LUT4
+\data_loc[5]_i_12\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"8000"
     )
@@ -6551,7 +6567,221 @@ bramwe_reg: unisim.vcomponents.FDRE
       I1 => \^data_loc_tracker\(26),
       I2 => \^data_loc_tracker\(25),
       I3 => \^data_loc_tracker\(27),
+      O => \data_loc[5]_i_12_n_0\
+    );
+\data_loc[5]_i_13\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000000000000000"
+    )
+        port map (
+      I0 => \data_loc[1]_i_11_n_0\,
+      I1 => \^data_loc_tracker\(23),
+      I2 => \^data_loc_tracker\(22),
+      I3 => \^data_loc_tracker\(19),
+      I4 => \^data_loc_tracker\(18),
+      I5 => \data_loc[2]_i_7_n_0\,
+      O => \data_loc[5]_i_13_n_0\
+    );
+\data_loc[5]_i_14\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000000000000000"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(13),
+      I1 => \^data_loc_tracker\(12),
+      I2 => \data_loc[2]_i_4_n_0\,
+      I3 => \^data_loc_tracker\(9),
+      I4 => \^data_loc_tracker\(8),
+      I5 => \data_loc[5]_i_21_n_0\,
+      O => \data_loc[5]_i_14_n_0\
+    );
+\data_loc[5]_i_15\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(22),
+      I1 => \^data_loc_tracker\(21),
+      O => \data_loc[5]_i_15_n_0\
+    );
+\data_loc[5]_i_16\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(35),
+      I1 => \^data_loc_tracker\(34),
+      O => \data_loc[5]_i_16_n_0\
+    );
+\data_loc[5]_i_17\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(20),
+      I1 => \^data_loc_tracker\(19),
+      O => \data_loc[5]_i_17_n_0\
+    );
+\data_loc[5]_i_18\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"DFFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \bramaddr[12]_i_21_n_0\,
+      I1 => \bramaddr[12]_i_26_n_0\,
+      I2 => \data_loc[4]_i_5_n_0\,
+      I3 => \^data_loc_tracker\(42),
+      I4 => \^data_loc_tracker\(40),
+      I5 => \^data_loc_tracker\(41),
+      O => \data_loc[5]_i_18_n_0\
+    );
+\data_loc[5]_i_19\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFFFFF7FFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(24),
+      I1 => \^data_loc_tracker\(23),
+      I2 => \^data_loc_tracker\(33),
+      I3 => \^data_loc_tracker\(31),
+      I4 => \data_loc[5]_i_22_n_0\,
+      I5 => \data_loc[5]_i_23_n_0\,
+      O => \data_loc[5]_i_19_n_0\
+    );
+\data_loc[5]_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \data_loc[5]_i_4_n_0\,
+      I1 => \data_loc[5]_i_5_n_0\,
+      O => \data_loc[5]_i_2_n_0\
+    );
+\data_loc[5]_i_20\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(10),
+      I1 => \^data_loc_tracker\(9),
+      O => \data_loc[5]_i_20_n_0\
+    );
+\data_loc[5]_i_21\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(11),
+      I1 => \^data_loc_tracker\(10),
+      O => \data_loc[5]_i_21_n_0\
+    );
+\data_loc[5]_i_22\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(26),
+      I1 => \^data_loc_tracker\(25),
+      O => \data_loc[5]_i_22_n_0\
+    );
+\data_loc[5]_i_23\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(44),
+      I1 => \^data_loc_tracker\(43),
+      O => \data_loc[5]_i_23_n_0\
+    );
+\data_loc[5]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"5555555455555555"
+    )
+        port map (
+      I0 => \data_loc[5]_i_6_n_0\,
+      I1 => \data_loc[5]_i_7_n_0\,
+      I2 => \data_loc[5]_i_8_n_0\,
+      I3 => \data_loc[5]_i_9_n_0\,
+      I4 => \data_loc[5]_i_10_n_0\,
+      I5 => \data_loc[5]_i_11_n_0\,
+      O => \data_loc[5]_i_3_n_0\
+    );
+\data_loc[5]_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000000000000000"
+    )
+        port map (
+      I0 => \data_loc[5]_i_12_n_0\,
+      I1 => \^data_loc_tracker\(29),
+      I2 => \^data_loc_tracker\(30),
+      I3 => \^data_loc_tracker\(28),
+      I4 => \^data_loc_tracker\(31),
+      I5 => \data_loc[5]_i_13_n_0\,
+      O => \data_loc[5]_i_4_n_0\
+    );
+\data_loc[5]_i_5\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000000000000000"
+    )
+        port map (
+      I0 => \data_loc[5]_i_14_n_0\,
+      I1 => \^data_loc_tracker\(4),
+      I2 => \^data_loc_tracker\(5),
+      I3 => \^data_loc_tracker\(6),
+      I4 => \^data_loc_tracker\(7),
+      I5 => \data_loc[3]_i_2_n_0\,
       O => \data_loc[5]_i_5_n_0\
+    );
+\data_loc[5]_i_6\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"BFFFFFFF"
+    )
+        port map (
+      I0 => \bramen_enabler[0]_i_3_n_0\,
+      I1 => l1a_cntr_sync120(8),
+      I2 => l1a_cntr_sync120(7),
+      I3 => l1a_cntr_sync120(5),
+      I4 => \^out\(1),
+      O => \data_loc[5]_i_6_n_0\
+    );
+\data_loc[5]_i_7\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"7FFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(55),
+      I1 => \^data_loc_tracker\(53),
+      I2 => \^data_loc_tracker\(54),
+      I3 => \^data_loc_tracker\(52),
+      I4 => \^data_loc_tracker\(51),
+      I5 => \^data_loc_tracker\(50),
+      O => \data_loc[5]_i_7_n_0\
+    );
+\data_loc[5]_i_8\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"7FFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(17),
+      I1 => \^data_loc_tracker\(16),
+      I2 => \^data_loc_tracker\(18),
+      I3 => \^data_loc_tracker\(13),
+      I4 => \^data_loc_tracker\(15),
+      I5 => \^data_loc_tracker\(14),
+      O => \data_loc[5]_i_8_n_0\
+    );
+\data_loc[5]_i_9\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"BFFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => \bram_overflows_tracker[0]_i_5_n_0\,
+      I1 => \data_loc[5]_i_15_n_0\,
+      I2 => \data_loc[5]_i_16_n_0\,
+      I3 => \^data_loc_tracker\(45),
+      I4 => \^data_loc_tracker\(46),
+      I5 => \data_loc[5]_i_17_n_0\,
+      O => \data_loc[5]_i_9_n_0\
     );
 \data_loc_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -6636,7 +6866,18 @@ bramwe_reg: unisim.vcomponents.FDRE
       Q => \p_0_in__0\(63),
       R => '0'
     );
-\dout_hist_reg[95]\: unisim.vcomponents.FDRE
+\dout_hist_reg[31]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk40,
+      CE => '1',
+      D => dtmroc_data_out(1),
+      Q => in4(15),
+      R => '0'
+    );
+\dout_hist_reg[71]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -6644,18 +6885,18 @@ bramwe_reg: unisim.vcomponents.FDRE
       C => clk40,
       CE => '1',
       D => \p_0_in__0\(63),
-      Q => \dout_hist_reg_n_0_[95]\,
+      Q => \dout_hist_reg_n_0_[71]\,
       R => '0'
     );
-first_clk40_rise_reg: unisim.vcomponents.FDRE
+\dout_hist_reg[95]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
         port map (
       C => clk40,
       CE => '1',
-      D => '1',
-      Q => first_clk40_rise,
+      D => in4(15),
+      Q => \dout_hist_reg_n_0_[95]\,
       R => '0'
     );
 \genblk1[0].data_loc_tracker[0]_i_1\: unisim.vcomponents.LUT3
@@ -8091,8 +8332,19 @@ first_clk40_rise_reg: unisim.vcomponents.FDRE
       I0 => \l1a_cntr_reg_n_0_[0]\,
       I1 => \l1a_cntr_reg_n_0_[1]\,
       I2 => \l1a_cntr_reg_n_0_[2]\,
-      I3 => \l1a_cntr[8]_i_3_n_0\,
+      I3 => \l1a_cntr[2]_i_2_n_0\,
       O => \l1a_cntr[2]_i_1_n_0\
+    );
+\l1a_cntr[2]_i_2\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"0002"
+    )
+        port map (
+      I0 => \l1a_cntr[8]_i_4_n_0\,
+      I1 => \l1a_cntr_reg_n_0_[8]\,
+      I2 => \l1a_cntr_reg_n_0_[7]\,
+      I3 => \l1a_cntr_reg_n_0_[6]\,
+      O => \l1a_cntr[2]_i_2_n_0\
     );
 \l1a_cntr[3]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -8151,15 +8403,16 @@ first_clk40_rise_reg: unisim.vcomponents.FDRE
       I2 => \l1a_cntr_reg_n_0_[6]\,
       O => \l1a_cntr[7]_i_1_n_0\
     );
-\l1a_cntr[8]_i_1\: unisim.vcomponents.LUT4
+\l1a_cntr[8]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"08FF"
+      INIT => X"FFFDFFFF"
     )
         port map (
-      I0 => \dout_hist_reg_n_0_[95]\,
-      I1 => dtmroc_data_out(0),
-      I2 => \p_0_in__0\(63),
-      I3 => \l1a_cntr[8]_i_3_n_0\,
+      I0 => \l1a_cntr[8]_i_3_n_0\,
+      I1 => \l1a_cntr_reg_n_0_[6]\,
+      I2 => \l1a_cntr_reg_n_0_[7]\,
+      I3 => \l1a_cntr_reg_n_0_[8]\,
+      I4 => \l1a_cntr[8]_i_4_n_0\,
       O => l1a_cntr
     );
 \l1a_cntr[8]_i_2\: unisim.vcomponents.LUT4
@@ -8173,15 +8426,17 @@ first_clk40_rise_reg: unisim.vcomponents.FDRE
       I3 => \l1a_cntr_reg_n_0_[7]\,
       O => \l1a_cntr[8]_i_2_n_0\
     );
-\l1a_cntr[8]_i_3\: unisim.vcomponents.LUT4
+\l1a_cntr[8]_i_3\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0002"
+      INIT => X"FFFFF7FFFFFFFFFF"
     )
         port map (
-      I0 => \l1a_cntr[8]_i_4_n_0\,
-      I1 => \l1a_cntr_reg_n_0_[8]\,
-      I2 => \l1a_cntr_reg_n_0_[7]\,
-      I3 => \l1a_cntr_reg_n_0_[6]\,
+      I0 => dtmroc_data_out(1),
+      I1 => \dout_hist_reg_n_0_[95]\,
+      I2 => in4(15),
+      I3 => dtmroc_data_out(0),
+      I4 => \p_0_in__0\(63),
+      I5 => \dout_hist_reg_n_0_[71]\,
       O => \l1a_cntr[8]_i_3_n_0\
     );
 \l1a_cntr[8]_i_4\: unisim.vcomponents.LUT6
@@ -8302,9 +8557,9 @@ first_clk40_rise_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => clk120,
-      CE => l1a_cntr_sync120,
+      CE => \^out\(0),
       D => \l1a_cntr_reg_n_0_[0]\,
-      Q => \l1a_cntr_sync120_reg_n_0_[0]\,
+      Q => l1a_cntr_sync120(0),
       R => '0'
     );
 \l1a_cntr_sync120_reg[1]\: unisim.vcomponents.FDRE
@@ -8313,9 +8568,9 @@ first_clk40_rise_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => clk120,
-      CE => l1a_cntr_sync120,
+      CE => \^out\(0),
       D => \l1a_cntr_reg_n_0_[1]\,
-      Q => \l1a_cntr_sync120_reg_n_0_[1]\,
+      Q => l1a_cntr_sync120(1),
       R => '0'
     );
 \l1a_cntr_sync120_reg[2]\: unisim.vcomponents.FDRE
@@ -8324,9 +8579,9 @@ first_clk40_rise_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => clk120,
-      CE => l1a_cntr_sync120,
+      CE => \^out\(0),
       D => \l1a_cntr_reg_n_0_[2]\,
-      Q => \l1a_cntr_sync120_reg_n_0_[2]\,
+      Q => l1a_cntr_sync120(2),
       R => '0'
     );
 \l1a_cntr_sync120_reg[3]\: unisim.vcomponents.FDRE
@@ -8335,9 +8590,9 @@ first_clk40_rise_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => clk120,
-      CE => l1a_cntr_sync120,
+      CE => \^out\(0),
       D => \l1a_cntr_reg_n_0_[3]\,
-      Q => \l1a_cntr_sync120_reg_n_0_[3]\,
+      Q => l1a_cntr_sync120(3),
       R => '0'
     );
 \l1a_cntr_sync120_reg[4]\: unisim.vcomponents.FDRE
@@ -8346,9 +8601,9 @@ first_clk40_rise_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => clk120,
-      CE => l1a_cntr_sync120,
+      CE => \^out\(0),
       D => \l1a_cntr_reg_n_0_[4]\,
-      Q => \l1a_cntr_sync120_reg_n_0_[4]\,
+      Q => l1a_cntr_sync120(4),
       R => '0'
     );
 \l1a_cntr_sync120_reg[5]\: unisim.vcomponents.FDRE
@@ -8357,9 +8612,9 @@ first_clk40_rise_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => clk120,
-      CE => l1a_cntr_sync120,
+      CE => \^out\(0),
       D => \l1a_cntr_reg_n_0_[5]\,
-      Q => \l1a_cntr_sync120_reg_n_0_[5]\,
+      Q => l1a_cntr_sync120(5),
       R => '0'
     );
 \l1a_cntr_sync120_reg[6]\: unisim.vcomponents.FDRE
@@ -8368,9 +8623,9 @@ first_clk40_rise_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => clk120,
-      CE => l1a_cntr_sync120,
+      CE => \^out\(0),
       D => \l1a_cntr_reg_n_0_[6]\,
-      Q => \l1a_cntr_sync120_reg_n_0_[6]\,
+      Q => l1a_cntr_sync120(6),
       R => '0'
     );
 \l1a_cntr_sync120_reg[7]\: unisim.vcomponents.FDRE
@@ -8379,9 +8634,9 @@ first_clk40_rise_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => clk120,
-      CE => l1a_cntr_sync120,
+      CE => \^out\(0),
       D => \l1a_cntr_reg_n_0_[7]\,
-      Q => \l1a_cntr_sync120_reg_n_0_[7]\,
+      Q => l1a_cntr_sync120(7),
       R => '0'
     );
 \l1a_cntr_sync120_reg[8]\: unisim.vcomponents.FDRE
@@ -8390,9 +8645,9 @@ first_clk40_rise_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => clk120,
-      CE => l1a_cntr_sync120,
+      CE => \^out\(0),
       D => \l1a_cntr_reg_n_0_[8]\,
-      Q => \l1a_cntr_sync120_reg_n_0_[8]\,
+      Q => l1a_cntr_sync120(8),
       R => '0'
     );
 l1a_seen_i_1: unisim.vcomponents.LUT4
@@ -8401,7 +8656,7 @@ l1a_seen_i_1: unisim.vcomponents.LUT4
     )
         port map (
       I0 => \l1a_cntr_reg_n_0_[2]\,
-      I1 => \l1a_cntr_reg_n_0_[5]\,
+      I1 => \l1a_cntr_reg_n_0_[8]\,
       I2 => \l1a_cntr_reg_n_0_[6]\,
       I3 => l1a_seen_i_2_n_0,
       O => l1a_seen_i_1_n_0
@@ -8413,10 +8668,10 @@ l1a_seen_i_2: unisim.vcomponents.LUT6
         port map (
       I0 => \l1a_cntr_reg_n_0_[1]\,
       I1 => \l1a_cntr_reg_n_0_[0]\,
-      I2 => \l1a_cntr_reg_n_0_[8]\,
-      I3 => \l1a_cntr_reg_n_0_[7]\,
+      I2 => \l1a_cntr_reg_n_0_[7]\,
+      I3 => \l1a_cntr_reg_n_0_[4]\,
       I4 => \l1a_cntr_reg_n_0_[3]\,
-      I5 => \l1a_cntr_reg_n_0_[4]\,
+      I5 => \l1a_cntr_reg_n_0_[5]\,
       O => l1a_seen_i_2_n_0
     );
 l1a_seen_reg: unisim.vcomponents.FDRE
@@ -8432,7 +8687,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
     );
 \occupied_data_spaces[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"6996966996696996"
+      INIT => X"9669699669969669"
     )
         port map (
       I0 => \occupied_data_spaces[0]_i_2_n_0\,
@@ -8441,7 +8696,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I3 => \occupied_data_spaces[0]_i_5_n_0\,
       I4 => \occupied_data_spaces[0]_i_6_n_0\,
       I5 => \occupied_data_spaces[0]_i_7_n_0\,
-      O => D(0)
+      O => \occupied_data_spaces_reg[6]\(0)
     );
 \occupied_data_spaces[0]_i_10\: unisim.vcomponents.LUT3
     generic map(
@@ -8455,7 +8710,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
     );
 \occupied_data_spaces[0]_i_11\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"69"
+      INIT => X"96"
     )
         port map (
       I0 => \^data_loc_tracker\(57),
@@ -8478,9 +8733,9 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       INIT => X"69"
     )
         port map (
-      I0 => \^data_loc_tracker\(30),
-      I1 => \^data_loc_tracker\(14),
-      I2 => \^data_loc_tracker\(61),
+      I0 => \^data_loc_tracker\(60),
+      I1 => \^data_loc_tracker\(28),
+      I2 => \^data_loc_tracker\(44),
       O => \occupied_data_spaces[0]_i_13_n_0\
     );
 \occupied_data_spaces[0]_i_14\: unisim.vcomponents.LUT3
@@ -8488,9 +8743,9 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       INIT => X"69"
     )
         port map (
-      I0 => \^data_loc_tracker\(60),
-      I1 => \^data_loc_tracker\(28),
-      I2 => \^data_loc_tracker\(44),
+      I0 => \^data_loc_tracker\(30),
+      I1 => \^data_loc_tracker\(14),
+      I2 => \^data_loc_tracker\(61),
       O => \occupied_data_spaces[0]_i_14_n_0\
     );
 \occupied_data_spaces[0]_i_15\: unisim.vcomponents.LUT3
@@ -8528,7 +8783,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
     );
 \occupied_data_spaces[0]_i_4\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"96696996"
+      INIT => X"69969669"
     )
         port map (
       I0 => \^data_loc_tracker\(55),
@@ -8540,13 +8795,13 @@ l1a_seen_reg: unisim.vcomponents.FDRE
     );
 \occupied_data_spaces[0]_i_5\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"69969669"
+      INIT => X"96696996"
     )
         port map (
-      I0 => \^data_loc_tracker\(29),
-      I1 => \^data_loc_tracker\(13),
-      I2 => \^data_loc_tracker\(45),
-      I3 => \occupied_data_spaces[0]_i_13_n_0\,
+      I0 => \occupied_data_spaces[0]_i_13_n_0\,
+      I1 => \^data_loc_tracker\(45),
+      I2 => \^data_loc_tracker\(13),
+      I3 => \^data_loc_tracker\(29),
       I4 => \occupied_data_spaces[0]_i_14_n_0\,
       O => \occupied_data_spaces[0]_i_5_n_0\
     );
@@ -8564,7 +8819,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
     );
 \occupied_data_spaces[0]_i_7\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"96696996"
+      INIT => X"69969669"
     )
         port map (
       I0 => \^data_loc_tracker\(32),
@@ -8607,11 +8862,11 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I2 => \occupied_data_spaces[2]_i_5_n_0\,
       I3 => \occupied_data_spaces[2]_i_6_n_0\,
       I4 => \occupied_data_spaces[2]_i_2_n_0\,
-      O => D(1)
+      O => \occupied_data_spaces_reg[6]\(1)
     );
 \occupied_data_spaces[2]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"2BBDBDD4D442422B"
+      INIT => X"DBB24DDB244DB224"
     )
         port map (
       I0 => \occupied_data_spaces[2]_i_2_n_0\,
@@ -8620,18 +8875,18 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I3 => \occupied_data_spaces[2]_i_5_n_0\,
       I4 => \occupied_data_spaces[2]_i_6_n_0\,
       I5 => \occupied_data_spaces[2]_i_7_n_0\,
-      O => D(2)
+      O => \occupied_data_spaces_reg[6]\(2)
     );
 \occupied_data_spaces[2]_i_10\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"2882AAAA"
     )
         port map (
-      I0 => \occupied_data_spaces[2]_i_18_n_0\,
+      I0 => \occupied_data_spaces[2]_i_19_n_0\,
       I1 => \^data_loc_tracker\(37),
       I2 => \^data_loc_tracker\(6),
       I3 => \^data_loc_tracker\(53),
-      I4 => \occupied_data_spaces[2]_i_19_n_0\,
+      I4 => \occupied_data_spaces[2]_i_20_n_0\,
       O => \occupied_data_spaces[2]_i_10_n_0\
     );
 \occupied_data_spaces[2]_i_11\: unisim.vcomponents.LUT5
@@ -8648,11 +8903,11 @@ l1a_seen_reg: unisim.vcomponents.FDRE
     );
 \occupied_data_spaces[2]_i_12\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"8EE8E88E"
+      INIT => X"4DD4D44D"
     )
         port map (
-      I0 => \occupied_data_spaces[0]_i_12_n_0\,
-      I1 => \occupied_data_spaces[0]_i_11_n_0\,
+      I0 => \occupied_data_spaces[0]_i_11_n_0\,
+      I1 => \occupied_data_spaces[0]_i_12_n_0\,
       I2 => \^data_loc_tracker\(24),
       I3 => \^data_loc_tracker\(8),
       I4 => \^data_loc_tracker\(55),
@@ -8660,7 +8915,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
     );
 \occupied_data_spaces[2]_i_13\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"69FF00699600FF96"
+      INIT => X"9600FF9669FF0069"
     )
         port map (
       I0 => \^data_loc_tracker\(62),
@@ -8668,33 +8923,40 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I2 => \^data_loc_tracker\(46),
       I3 => \^data_loc_tracker\(0),
       I4 => \occupied_data_spaces[0]_i_15_n_0\,
-      I5 => \occupied_data_spaces[2]_i_20_n_0\,
+      I5 => \occupied_data_spaces[2]_i_21_n_0\,
       O => \occupied_data_spaces[2]_i_13_n_0\
     );
 \occupied_data_spaces[2]_i_14\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"96"
+      INIT => X"69"
     )
         port map (
-      I0 => \occupied_data_spaces[2]_i_21_n_0\,
-      I1 => \occupied_data_spaces[2]_i_22_n_0\,
-      I2 => \occupied_data_spaces[2]_i_23_n_0\,
+      I0 => \occupied_data_spaces[2]_i_22_n_0\,
+      I1 => \occupied_data_spaces[2]_i_23_n_0\,
+      I2 => \occupied_data_spaces[2]_i_24_n_0\,
       O => \occupied_data_spaces[2]_i_14_n_0\
     );
-\occupied_data_spaces[2]_i_15\: unisim.vcomponents.LUT6
+\occupied_data_spaces[2]_i_15\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"6996966996696996"
+      INIT => X"96"
     )
         port map (
       I0 => \^data_loc_tracker\(21),
       I1 => \^data_loc_tracker\(5),
       I2 => \^data_loc_tracker\(52),
-      I3 => \^data_loc_tracker\(51),
-      I4 => \^data_loc_tracker\(19),
-      I5 => \^data_loc_tracker\(35),
       O => \occupied_data_spaces[2]_i_15_n_0\
     );
 \occupied_data_spaces[2]_i_16\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"69"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(51),
+      I1 => \^data_loc_tracker\(19),
+      I2 => \^data_loc_tracker\(35),
+      O => \occupied_data_spaces[2]_i_16_n_0\
+    );
+\occupied_data_spaces[2]_i_17\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"96"
     )
@@ -8702,9 +8964,9 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I0 => \^data_loc_tracker\(18),
       I1 => \^data_loc_tracker\(2),
       I2 => \^data_loc_tracker\(49),
-      O => \occupied_data_spaces[2]_i_16_n_0\
+      O => \occupied_data_spaces[2]_i_17_n_0\
     );
-\occupied_data_spaces[2]_i_17\: unisim.vcomponents.LUT3
+\occupied_data_spaces[2]_i_18\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"69"
     )
@@ -8712,24 +8974,11 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I0 => \^data_loc_tracker\(34),
       I1 => \^data_loc_tracker\(3),
       I2 => \^data_loc_tracker\(50),
-      O => \occupied_data_spaces[2]_i_17_n_0\
-    );
-\occupied_data_spaces[2]_i_18\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"69FFFF69FF6969FF"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(38),
-      I1 => \^data_loc_tracker\(22),
-      I2 => \^data_loc_tracker\(54),
-      I3 => \^data_loc_tracker\(23),
-      I4 => \^data_loc_tracker\(7),
-      I5 => \^data_loc_tracker\(39),
       O => \occupied_data_spaces[2]_i_18_n_0\
     );
 \occupied_data_spaces[2]_i_19\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FF9696FF96FFFF96"
+      INIT => X"69FFFF69FF6969FF"
     )
         port map (
       I0 => \^data_loc_tracker\(38),
@@ -8742,7 +8991,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
     );
 \occupied_data_spaces[2]_i_2\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"96FF0096"
+      INIT => X"FF969600"
     )
         port map (
       I0 => \occupied_data_spaces[0]_i_2_n_0\,
@@ -8752,28 +9001,29 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I4 => \occupied_data_spaces[0]_i_6_n_0\,
       O => \occupied_data_spaces[2]_i_2_n_0\
     );
-\occupied_data_spaces[2]_i_20\: unisim.vcomponents.LUT5
+\occupied_data_spaces[2]_i_20\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FF696900"
+      INIT => X"FF9696FF96FFFF96"
     )
         port map (
-      I0 => \^data_loc_tracker\(45),
-      I1 => \^data_loc_tracker\(13),
-      I2 => \^data_loc_tracker\(29),
-      I3 => \occupied_data_spaces[0]_i_14_n_0\,
-      I4 => \occupied_data_spaces[0]_i_13_n_0\,
+      I0 => \^data_loc_tracker\(38),
+      I1 => \^data_loc_tracker\(22),
+      I2 => \^data_loc_tracker\(54),
+      I3 => \^data_loc_tracker\(23),
+      I4 => \^data_loc_tracker\(7),
+      I5 => \^data_loc_tracker\(39),
       O => \occupied_data_spaces[2]_i_20_n_0\
     );
 \occupied_data_spaces[2]_i_21\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"66696999"
+      INIT => X"8EE8E88E"
     )
         port map (
-      I0 => \occupied_data_spaces[6]_i_52_n_0\,
-      I1 => \occupied_data_spaces[6]_i_51_n_0\,
-      I2 => \^data_loc_tracker\(61),
-      I3 => \^data_loc_tracker\(14),
-      I4 => \^data_loc_tracker\(30),
+      I0 => \occupied_data_spaces[0]_i_13_n_0\,
+      I1 => \occupied_data_spaces[0]_i_14_n_0\,
+      I2 => \^data_loc_tracker\(45),
+      I3 => \^data_loc_tracker\(13),
+      I4 => \^data_loc_tracker\(29),
       O => \occupied_data_spaces[2]_i_21_n_0\
     );
 \occupied_data_spaces[2]_i_22\: unisim.vcomponents.LUT5
@@ -8781,54 +9031,40 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       INIT => X"2BB2B22B"
     )
         port map (
-      I0 => \occupied_data_spaces[2]_i_17_n_0\,
-      I1 => \occupied_data_spaces[2]_i_16_n_0\,
-      I2 => \^data_loc_tracker\(33),
-      I3 => \^data_loc_tracker\(1),
-      I4 => \^data_loc_tracker\(17),
+      I0 => \occupied_data_spaces[2]_i_16_n_0\,
+      I1 => \occupied_data_spaces[2]_i_15_n_0\,
+      I2 => \^data_loc_tracker\(36),
+      I3 => \^data_loc_tracker\(4),
+      I4 => \^data_loc_tracker\(20),
       O => \occupied_data_spaces[2]_i_22_n_0\
     );
 \occupied_data_spaces[2]_i_23\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"8AA8A88A"
+      INIT => X"17E8E817"
     )
         port map (
-      I0 => \occupied_data_spaces[2]_i_24_n_0\,
-      I1 => \occupied_data_spaces[2]_i_25_n_0\,
-      I2 => \^data_loc_tracker\(36),
-      I3 => \^data_loc_tracker\(4),
-      I4 => \^data_loc_tracker\(20),
+      I0 => \^data_loc_tracker\(61),
+      I1 => \^data_loc_tracker\(14),
+      I2 => \^data_loc_tracker\(30),
+      I3 => \occupied_data_spaces[6]_i_51_n_0\,
+      I4 => \occupied_data_spaces[6]_i_50_n_0\,
       O => \occupied_data_spaces[2]_i_23_n_0\
     );
-\occupied_data_spaces[2]_i_24\: unisim.vcomponents.LUT6
+\occupied_data_spaces[2]_i_24\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"69FFFF69FF6969FF"
+      INIT => X"D44D4DD4"
     )
         port map (
-      I0 => \^data_loc_tracker\(35),
-      I1 => \^data_loc_tracker\(19),
-      I2 => \^data_loc_tracker\(51),
-      I3 => \^data_loc_tracker\(52),
-      I4 => \^data_loc_tracker\(5),
-      I5 => \^data_loc_tracker\(21),
+      I0 => \occupied_data_spaces[2]_i_18_n_0\,
+      I1 => \occupied_data_spaces[2]_i_17_n_0\,
+      I2 => \^data_loc_tracker\(33),
+      I3 => \^data_loc_tracker\(1),
+      I4 => \^data_loc_tracker\(17),
       O => \occupied_data_spaces[2]_i_24_n_0\
-    );
-\occupied_data_spaces[2]_i_25\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0069690069000069"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(35),
-      I1 => \^data_loc_tracker\(19),
-      I2 => \^data_loc_tracker\(51),
-      I3 => \^data_loc_tracker\(52),
-      I4 => \^data_loc_tracker\(5),
-      I5 => \^data_loc_tracker\(21),
-      O => \occupied_data_spaces[2]_i_25_n_0\
     );
 \occupied_data_spaces[2]_i_3\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"4DD4D44D"
+      INIT => X"8EE8E88E"
     )
         port map (
       I0 => \occupied_data_spaces[2]_i_8_n_0\,
@@ -8840,11 +9076,11 @@ l1a_seen_reg: unisim.vcomponents.FDRE
     );
 \occupied_data_spaces[2]_i_4\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"96"
+      INIT => X"69"
     )
         port map (
-      I0 => \occupied_data_spaces[6]_i_12_n_0\,
-      I1 => \occupied_data_spaces[6]_i_14_n_0\,
+      I0 => \occupied_data_spaces[6]_i_11_n_0\,
+      I1 => \occupied_data_spaces[6]_i_12_n_0\,
       I2 => \occupied_data_spaces[6]_i_13_n_0\,
       O => \occupied_data_spaces[2]_i_4_n_0\
     );
@@ -8862,7 +9098,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
     );
 \occupied_data_spaces[2]_i_6\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FF96FF69FF69FF96"
+      INIT => X"FF69FF96FF96FF69"
     )
         port map (
       I0 => \occupied_data_spaces[0]_i_2_n_0\,
@@ -8875,26 +9111,27 @@ l1a_seen_reg: unisim.vcomponents.FDRE
     );
 \occupied_data_spaces[2]_i_7\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"17E8E817E81717E8"
+      INIT => X"2BD4D42BD42B2BD4"
     )
         port map (
-      I0 => \occupied_data_spaces[6]_i_12_n_0\,
-      I1 => \occupied_data_spaces[6]_i_13_n_0\,
-      I2 => \occupied_data_spaces[6]_i_14_n_0\,
-      I3 => \occupied_data_spaces[6]_i_16_n_0\,
-      I4 => \occupied_data_spaces[6]_i_15_n_0\,
-      I5 => \occupied_data_spaces[6]_i_17_n_0\,
+      I0 => \occupied_data_spaces[6]_i_11_n_0\,
+      I1 => \occupied_data_spaces[6]_i_12_n_0\,
+      I2 => \occupied_data_spaces[6]_i_13_n_0\,
+      I3 => \occupied_data_spaces[6]_i_15_n_0\,
+      I4 => \occupied_data_spaces[6]_i_14_n_0\,
+      I5 => \occupied_data_spaces[6]_i_16_n_0\,
       O => \occupied_data_spaces[2]_i_7_n_0\
     );
-\occupied_data_spaces[2]_i_8\: unisim.vcomponents.LUT4
+\occupied_data_spaces[2]_i_8\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"6996"
+      INIT => X"96696996"
     )
         port map (
       I0 => \^data_loc_tracker\(20),
       I1 => \^data_loc_tracker\(4),
       I2 => \^data_loc_tracker\(36),
       I3 => \occupied_data_spaces[2]_i_15_n_0\,
+      I4 => \occupied_data_spaces[2]_i_16_n_0\,
       O => \occupied_data_spaces[2]_i_8_n_0\
     );
 \occupied_data_spaces[2]_i_9\: unisim.vcomponents.LUT5
@@ -8905,49 +9142,59 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I0 => \^data_loc_tracker\(17),
       I1 => \^data_loc_tracker\(1),
       I2 => \^data_loc_tracker\(33),
-      I3 => \occupied_data_spaces[2]_i_16_n_0\,
-      I4 => \occupied_data_spaces[2]_i_17_n_0\,
+      I3 => \occupied_data_spaces[2]_i_17_n_0\,
+      I4 => \occupied_data_spaces[2]_i_18_n_0\,
       O => \occupied_data_spaces[2]_i_9_n_0\
     );
 \occupied_data_spaces[3]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"69"
+      INIT => X"96"
+    )
+        port map (
+      I0 => \occupied_data_spaces[6]_i_4_n_0\,
+      I1 => \occupied_data_spaces[6]_i_5_n_0\,
+      I2 => \occupied_data_spaces[6]_i_3_n_0\,
+      O => \occupied_data_spaces_reg[6]\(3)
+    );
+\occupied_data_spaces[4]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"8E71718E"
     )
         port map (
       I0 => \occupied_data_spaces[6]_i_5_n_0\,
       I1 => \occupied_data_spaces[6]_i_4_n_0\,
-      I2 => \occupied_data_spaces[6]_i_6_n_0\,
-      O => D(3)
-    );
-\occupied_data_spaces[4]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"6966996996996696"
-    )
-        port map (
-      I0 => \occupied_data_spaces[6]_i_3_n_0\,
-      I1 => \occupied_data_spaces[6]_i_2_n_0\,
-      I2 => \occupied_data_spaces[6]_i_6_n_0\,
-      I3 => \occupied_data_spaces[6]_i_5_n_0\,
-      I4 => \occupied_data_spaces[6]_i_4_n_0\,
-      I5 => \occupied_data_spaces[6]_i_7_n_0\,
-      O => D(4)
+      I2 => \occupied_data_spaces[6]_i_3_n_0\,
+      I3 => \occupied_data_spaces[5]_i_2_n_0\,
+      I4 => \occupied_data_spaces[6]_i_6_n_0\,
+      O => \occupied_data_spaces_reg[6]\(4)
     );
 \occupied_data_spaces[5]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"7EE87E7EE8E87EE8"
+      INIT => X"A6A665A665A66565"
+    )
+        port map (
+      I0 => \occupied_data_spaces[6]_i_2_n_0\,
+      I1 => \occupied_data_spaces[6]_i_6_n_0\,
+      I2 => \occupied_data_spaces[5]_i_2_n_0\,
+      I3 => \occupied_data_spaces[6]_i_3_n_0\,
+      I4 => \occupied_data_spaces[6]_i_4_n_0\,
+      I5 => \occupied_data_spaces[6]_i_5_n_0\,
+      O => \occupied_data_spaces_reg[6]\(5)
+    );
+\occupied_data_spaces[5]_i_2\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7118"
     )
         port map (
       I0 => \occupied_data_spaces[6]_i_7_n_0\,
-      I1 => \occupied_data_spaces[6]_i_3_n_0\,
-      I2 => \occupied_data_spaces[6]_i_2_n_0\,
-      I3 => \occupied_data_spaces[6]_i_4_n_0\,
-      I4 => \occupied_data_spaces[6]_i_5_n_0\,
-      I5 => \occupied_data_spaces[6]_i_6_n_0\,
-      O => D(5)
+      I1 => \occupied_data_spaces[6]_i_8_n_0\,
+      I2 => \occupied_data_spaces[6]_i_9_n_0\,
+      I3 => \occupied_data_spaces[6]_i_10_n_0\,
+      O => \occupied_data_spaces[5]_i_2_n_0\
     );
-\occupied_data_spaces[6]_i_1\: unisim.vcomponents.LUT6
+\occupied_data_spaces[6]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"8088008000000000"
+      INIT => X"088A0000"
     )
         port map (
       I0 => \occupied_data_spaces[6]_i_2_n_0\,
@@ -8955,130 +9202,134 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I2 => \occupied_data_spaces[6]_i_4_n_0\,
       I3 => \occupied_data_spaces[6]_i_5_n_0\,
       I4 => \occupied_data_spaces[6]_i_6_n_0\,
-      I5 => \occupied_data_spaces[6]_i_7_n_0\,
-      O => D(6)
+      O => \occupied_data_spaces_reg[6]\(6)
     );
 \occupied_data_spaces[6]_i_10\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"6900FF69"
-    )
-        port map (
-      I0 => \occupied_data_spaces[6]_i_25_n_0\,
-      I1 => \occupied_data_spaces[6]_i_24_n_0\,
-      I2 => \occupied_data_spaces[6]_i_23_n_0\,
-      I3 => \occupied_data_spaces[6]_i_26_n_0\,
-      I4 => \occupied_data_spaces[6]_i_27_n_0\,
-      O => \occupied_data_spaces[6]_i_10_n_0\
-    );
-\occupied_data_spaces[6]_i_11\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"D4"
-    )
-        port map (
-      I0 => \occupied_data_spaces[6]_i_28_n_0\,
-      I1 => \occupied_data_spaces[6]_i_29_n_0\,
-      I2 => \occupied_data_spaces[6]_i_30_n_0\,
-      O => \occupied_data_spaces[6]_i_11_n_0\
-    );
-\occupied_data_spaces[6]_i_12\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"96"
-    )
-        port map (
-      I0 => \occupied_data_spaces[6]_i_31_n_0\,
-      I1 => \occupied_data_spaces[6]_i_32_n_0\,
-      I2 => \occupied_data_spaces[6]_i_33_n_0\,
-      O => \occupied_data_spaces[6]_i_12_n_0\
-    );
-\occupied_data_spaces[6]_i_13\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"17"
-    )
-        port map (
-      I0 => \occupied_data_spaces[0]_i_2_n_0\,
-      I1 => \occupied_data_spaces[0]_i_3_n_0\,
-      I2 => \occupied_data_spaces[0]_i_4_n_0\,
-      O => \occupied_data_spaces[6]_i_13_n_0\
-    );
-\occupied_data_spaces[6]_i_14\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"69"
-    )
-        port map (
-      I0 => \occupied_data_spaces[6]_i_34_n_0\,
-      I1 => \occupied_data_spaces[6]_i_35_n_0\,
-      I2 => \occupied_data_spaces[6]_i_36_n_0\,
-      O => \occupied_data_spaces[6]_i_14_n_0\
-    );
-\occupied_data_spaces[6]_i_15\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"96696996"
-    )
-        port map (
-      I0 => \occupied_data_spaces[6]_i_30_n_0\,
-      I1 => \occupied_data_spaces[6]_i_28_n_0\,
-      I2 => \occupied_data_spaces[6]_i_29_n_0\,
-      I3 => \occupied_data_spaces[6]_i_37_n_0\,
-      I4 => \occupied_data_spaces[6]_i_38_n_0\,
-      O => \occupied_data_spaces[6]_i_15_n_0\
-    );
-\occupied_data_spaces[6]_i_16\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"69969669"
-    )
-        port map (
-      I0 => \occupied_data_spaces[6]_i_25_n_0\,
-      I1 => \occupied_data_spaces[6]_i_24_n_0\,
-      I2 => \occupied_data_spaces[6]_i_23_n_0\,
-      I3 => \occupied_data_spaces[6]_i_26_n_0\,
-      I4 => \occupied_data_spaces[6]_i_27_n_0\,
-      O => \occupied_data_spaces[6]_i_16_n_0\
-    );
-\occupied_data_spaces[6]_i_17\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"006969FF"
+      INIT => X"FFE8E800"
     )
         port map (
       I0 => \occupied_data_spaces[2]_i_10_n_0\,
       I1 => \occupied_data_spaces[2]_i_11_n_0\,
       I2 => \occupied_data_spaces[2]_i_12_n_0\,
-      I3 => \occupied_data_spaces[2]_i_14_n_0\,
-      I4 => \occupied_data_spaces[2]_i_13_n_0\,
+      I3 => \occupied_data_spaces[6]_i_28_n_0\,
+      I4 => \occupied_data_spaces[6]_i_29_n_0\,
+      O => \occupied_data_spaces[6]_i_10_n_0\
+    );
+\occupied_data_spaces[6]_i_11\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"69"
+    )
+        port map (
+      I0 => \occupied_data_spaces[6]_i_30_n_0\,
+      I1 => \occupied_data_spaces[6]_i_31_n_0\,
+      I2 => \occupied_data_spaces[6]_i_32_n_0\,
+      O => \occupied_data_spaces[6]_i_11_n_0\
+    );
+\occupied_data_spaces[6]_i_12\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"17E8E817E81717E8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(49),
+      I1 => \^data_loc_tracker\(2),
+      I2 => \^data_loc_tracker\(18),
+      I3 => \occupied_data_spaces[6]_i_33_n_0\,
+      I4 => \occupied_data_spaces[6]_i_34_n_0\,
+      I5 => \occupied_data_spaces[6]_i_35_n_0\,
+      O => \occupied_data_spaces[6]_i_12_n_0\
+    );
+\occupied_data_spaces[6]_i_13\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"E8"
+    )
+        port map (
+      I0 => \occupied_data_spaces[0]_i_2_n_0\,
+      I1 => \occupied_data_spaces[0]_i_4_n_0\,
+      I2 => \occupied_data_spaces[0]_i_3_n_0\,
+      O => \occupied_data_spaces[6]_i_13_n_0\
+    );
+\occupied_data_spaces[6]_i_14\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"96696996"
+    )
+        port map (
+      I0 => \occupied_data_spaces[6]_i_26_n_0\,
+      I1 => \occupied_data_spaces[6]_i_25_n_0\,
+      I2 => \occupied_data_spaces[6]_i_27_n_0\,
+      I3 => \occupied_data_spaces[6]_i_36_n_0\,
+      I4 => \occupied_data_spaces[6]_i_37_n_0\,
+      O => \occupied_data_spaces[6]_i_14_n_0\
+    );
+\occupied_data_spaces[6]_i_15\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"E81717E8"
+    )
+        port map (
+      I0 => \occupied_data_spaces[2]_i_10_n_0\,
+      I1 => \occupied_data_spaces[2]_i_11_n_0\,
+      I2 => \occupied_data_spaces[2]_i_12_n_0\,
+      I3 => \occupied_data_spaces[6]_i_28_n_0\,
+      I4 => \occupied_data_spaces[6]_i_29_n_0\,
+      O => \occupied_data_spaces[6]_i_15_n_0\
+    );
+\occupied_data_spaces[6]_i_16\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"6900FF69"
+    )
+        port map (
+      I0 => \occupied_data_spaces[2]_i_10_n_0\,
+      I1 => \occupied_data_spaces[2]_i_11_n_0\,
+      I2 => \occupied_data_spaces[2]_i_12_n_0\,
+      I3 => \occupied_data_spaces[2]_i_13_n_0\,
+      I4 => \occupied_data_spaces[2]_i_14_n_0\,
+      O => \occupied_data_spaces[6]_i_16_n_0\
+    );
+\occupied_data_spaces[6]_i_17\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"6900FF69"
+    )
+        port map (
+      I0 => \occupied_data_spaces[6]_i_27_n_0\,
+      I1 => \occupied_data_spaces[6]_i_25_n_0\,
+      I2 => \occupied_data_spaces[6]_i_26_n_0\,
+      I3 => \occupied_data_spaces[6]_i_37_n_0\,
+      I4 => \occupied_data_spaces[6]_i_36_n_0\,
       O => \occupied_data_spaces[6]_i_17_n_0\
     );
 \occupied_data_spaces[6]_i_18\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"9600FF96"
+      INIT => X"2B00FF2B"
     )
         port map (
-      I0 => \occupied_data_spaces[6]_i_30_n_0\,
-      I1 => \occupied_data_spaces[6]_i_28_n_0\,
-      I2 => \occupied_data_spaces[6]_i_29_n_0\,
-      I3 => \occupied_data_spaces[6]_i_37_n_0\,
-      I4 => \occupied_data_spaces[6]_i_38_n_0\,
+      I0 => \occupied_data_spaces[6]_i_11_n_0\,
+      I1 => \occupied_data_spaces[6]_i_12_n_0\,
+      I2 => \occupied_data_spaces[6]_i_13_n_0\,
+      I3 => \occupied_data_spaces[6]_i_15_n_0\,
+      I4 => \occupied_data_spaces[6]_i_14_n_0\,
       O => \occupied_data_spaces[6]_i_18_n_0\
     );
 \occupied_data_spaces[6]_i_19\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFE8E800"
+      INIT => X"00E8E8FF"
     )
         port map (
-      I0 => \occupied_data_spaces[6]_i_12_n_0\,
-      I1 => \occupied_data_spaces[6]_i_13_n_0\,
-      I2 => \occupied_data_spaces[6]_i_14_n_0\,
-      I3 => \occupied_data_spaces[6]_i_15_n_0\,
-      I4 => \occupied_data_spaces[6]_i_16_n_0\,
+      I0 => \^data_loc_tracker\(56),
+      I1 => \^data_loc_tracker\(9),
+      I2 => \^data_loc_tracker\(40),
+      I3 => \occupied_data_spaces[6]_i_38_n_0\,
+      I4 => \occupied_data_spaces[6]_i_39_n_0\,
       O => \occupied_data_spaces[6]_i_19_n_0\
     );
 \occupied_data_spaces[6]_i_2\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"60F6"
+      INIT => X"0008"
     )
         port map (
-      I0 => \occupied_data_spaces[6]_i_8_n_0\,
-      I1 => \occupied_data_spaces[6]_i_9_n_0\,
-      I2 => \occupied_data_spaces[6]_i_10_n_0\,
-      I3 => \occupied_data_spaces[6]_i_11_n_0\,
+      I0 => \occupied_data_spaces[6]_i_7_n_0\,
+      I1 => \occupied_data_spaces[6]_i_8_n_0\,
+      I2 => \occupied_data_spaces[6]_i_9_n_0\,
+      I3 => \occupied_data_spaces[6]_i_10_n_0\,
       O => \occupied_data_spaces[6]_i_2_n_0\
     );
 \occupied_data_spaces[6]_i_20\: unisim.vcomponents.LUT5
@@ -9086,8 +9337,8 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       INIT => X"77717111"
     )
         port map (
-      I0 => \occupied_data_spaces[6]_i_39_n_0\,
-      I1 => \occupied_data_spaces[6]_i_40_n_0\,
+      I0 => \occupied_data_spaces[6]_i_40_n_0\,
+      I1 => \occupied_data_spaces[6]_i_41_n_0\,
       I2 => \^data_loc_tracker\(27),
       I3 => \^data_loc_tracker\(11),
       I4 => \^data_loc_tracker\(58),
@@ -9098,8 +9349,8 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       INIT => X"EEE8E888"
     )
         port map (
-      I0 => \occupied_data_spaces[6]_i_41_n_0\,
-      I1 => \occupied_data_spaces[6]_i_42_n_0\,
+      I0 => \occupied_data_spaces[6]_i_42_n_0\,
+      I1 => \occupied_data_spaces[6]_i_43_n_0\,
       I2 => \^data_loc_tracker\(29),
       I3 => \^data_loc_tracker\(13),
       I4 => \^data_loc_tracker\(45),
@@ -9107,14 +9358,14 @@ l1a_seen_reg: unisim.vcomponents.FDRE
     );
 \occupied_data_spaces[6]_i_22\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FF171700"
+      INIT => X"54405555"
     )
         port map (
-      I0 => \^data_loc_tracker\(56),
-      I1 => \^data_loc_tracker\(9),
-      I2 => \^data_loc_tracker\(40),
-      I3 => \occupied_data_spaces[6]_i_43_n_0\,
-      I4 => \occupied_data_spaces[6]_i_44_n_0\,
+      I0 => \occupied_data_spaces[6]_i_44_n_0\,
+      I1 => \^data_loc_tracker\(18),
+      I2 => \^data_loc_tracker\(2),
+      I3 => \^data_loc_tracker\(49),
+      I4 => \occupied_data_spaces[6]_i_45_n_0\,
       O => \occupied_data_spaces[6]_i_22_n_0\
     );
 \occupied_data_spaces[6]_i_23\: unisim.vcomponents.LUT5
@@ -9125,8 +9376,8 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I0 => \^data_loc_tracker\(20),
       I1 => \^data_loc_tracker\(4),
       I2 => \^data_loc_tracker\(36),
-      I3 => \occupied_data_spaces[6]_i_45_n_0\,
-      I4 => \occupied_data_spaces[6]_i_46_n_0\,
+      I3 => \occupied_data_spaces[6]_i_46_n_0\,
+      I4 => \occupied_data_spaces[6]_i_47_n_0\,
       O => \occupied_data_spaces[6]_i_23_n_0\
     );
 \occupied_data_spaces[6]_i_24\: unisim.vcomponents.LUT5
@@ -9134,58 +9385,26 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       INIT => X"FFE8E800"
     )
         port map (
-      I0 => \^data_loc_tracker\(38),
+      I0 => \^data_loc_tracker\(54),
       I1 => \^data_loc_tracker\(22),
-      I2 => \^data_loc_tracker\(54),
-      I3 => \occupied_data_spaces[6]_i_47_n_0\,
-      I4 => \occupied_data_spaces[6]_i_48_n_0\,
+      I2 => \^data_loc_tracker\(38),
+      I3 => \occupied_data_spaces[6]_i_48_n_0\,
+      I4 => \occupied_data_spaces[6]_i_49_n_0\,
       O => \occupied_data_spaces[6]_i_24_n_0\
     );
 \occupied_data_spaces[6]_i_25\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FF171700"
+      INIT => X"EEE8E888"
     )
         port map (
-      I0 => \^data_loc_tracker\(18),
-      I1 => \^data_loc_tracker\(2),
-      I2 => \^data_loc_tracker\(49),
-      I3 => \occupied_data_spaces[6]_i_49_n_0\,
-      I4 => \occupied_data_spaces[6]_i_50_n_0\,
+      I0 => \occupied_data_spaces[6]_i_50_n_0\,
+      I1 => \occupied_data_spaces[6]_i_51_n_0\,
+      I2 => \^data_loc_tracker\(30),
+      I3 => \^data_loc_tracker\(14),
+      I4 => \^data_loc_tracker\(61),
       O => \occupied_data_spaces[6]_i_25_n_0\
     );
-\occupied_data_spaces[6]_i_26\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"17"
-    )
-        port map (
-      I0 => \occupied_data_spaces[2]_i_12_n_0\,
-      I1 => \occupied_data_spaces[2]_i_11_n_0\,
-      I2 => \occupied_data_spaces[2]_i_10_n_0\,
-      O => \occupied_data_spaces[6]_i_26_n_0\
-    );
-\occupied_data_spaces[6]_i_27\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"E8"
-    )
-        port map (
-      I0 => \occupied_data_spaces[2]_i_21_n_0\,
-      I1 => \occupied_data_spaces[2]_i_23_n_0\,
-      I2 => \occupied_data_spaces[2]_i_22_n_0\,
-      O => \occupied_data_spaces[6]_i_27_n_0\
-    );
-\occupied_data_spaces[6]_i_28\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FFE8E800"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(30),
-      I1 => \^data_loc_tracker\(14),
-      I2 => \^data_loc_tracker\(61),
-      I3 => \occupied_data_spaces[6]_i_51_n_0\,
-      I4 => \occupied_data_spaces[6]_i_52_n_0\,
-      O => \occupied_data_spaces[6]_i_28_n_0\
-    );
-\occupied_data_spaces[6]_i_29\: unisim.vcomponents.LUT6
+\occupied_data_spaces[6]_i_26\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFFFFF69FF0069"
     )
@@ -9195,26 +9414,62 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I2 => \^data_loc_tracker\(46),
       I3 => \^data_loc_tracker\(0),
       I4 => \occupied_data_spaces[0]_i_15_n_0\,
-      I5 => \occupied_data_spaces[2]_i_20_n_0\,
-      O => \occupied_data_spaces[6]_i_29_n_0\
+      I5 => \occupied_data_spaces[2]_i_21_n_0\,
+      O => \occupied_data_spaces[6]_i_26_n_0\
     );
-\occupied_data_spaces[6]_i_3\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => \occupied_data_spaces[6]_i_8_n_0\,
-      I1 => \occupied_data_spaces[6]_i_9_n_0\,
-      O => \occupied_data_spaces[6]_i_3_n_0\
-    );
-\occupied_data_spaces[6]_i_30\: unisim.vcomponents.LUT3
+\occupied_data_spaces[6]_i_27\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"96"
     )
         port map (
-      I0 => \occupied_data_spaces[6]_i_22_n_0\,
+      I0 => \occupied_data_spaces[6]_i_19_n_0\,
       I1 => \occupied_data_spaces[6]_i_21_n_0\,
       I2 => \occupied_data_spaces[6]_i_20_n_0\,
+      O => \occupied_data_spaces[6]_i_27_n_0\
+    );
+\occupied_data_spaces[6]_i_28\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"B2"
+    )
+        port map (
+      I0 => \occupied_data_spaces[2]_i_23_n_0\,
+      I1 => \occupied_data_spaces[2]_i_24_n_0\,
+      I2 => \occupied_data_spaces[2]_i_22_n_0\,
+      O => \occupied_data_spaces[6]_i_28_n_0\
+    );
+\occupied_data_spaces[6]_i_29\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"69"
+    )
+        port map (
+      I0 => \occupied_data_spaces[6]_i_22_n_0\,
+      I1 => \occupied_data_spaces[6]_i_23_n_0\,
+      I2 => \occupied_data_spaces[6]_i_24_n_0\,
+      O => \occupied_data_spaces[6]_i_29_n_0\
+    );
+\occupied_data_spaces[6]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"2BD4D42B00000000"
+    )
+        port map (
+      I0 => \occupied_data_spaces[6]_i_11_n_0\,
+      I1 => \occupied_data_spaces[6]_i_12_n_0\,
+      I2 => \occupied_data_spaces[6]_i_13_n_0\,
+      I3 => \occupied_data_spaces[6]_i_14_n_0\,
+      I4 => \occupied_data_spaces[6]_i_15_n_0\,
+      I5 => \occupied_data_spaces[6]_i_16_n_0\,
+      O => \occupied_data_spaces[6]_i_3_n_0\
+    );
+\occupied_data_spaces[6]_i_30\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"E81717E8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(40),
+      I1 => \^data_loc_tracker\(9),
+      I2 => \^data_loc_tracker\(56),
+      I3 => \occupied_data_spaces[6]_i_39_n_0\,
+      I4 => \occupied_data_spaces[6]_i_38_n_0\,
       O => \occupied_data_spaces[6]_i_30_n_0\
     );
 \occupied_data_spaces[6]_i_31\: unisim.vcomponents.LUT5
@@ -9222,11 +9477,11 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       INIT => X"17E8E817"
     )
         port map (
-      I0 => \^data_loc_tracker\(40),
-      I1 => \^data_loc_tracker\(9),
-      I2 => \^data_loc_tracker\(56),
-      I3 => \occupied_data_spaces[6]_i_44_n_0\,
-      I4 => \occupied_data_spaces[6]_i_43_n_0\,
+      I0 => \^data_loc_tracker\(45),
+      I1 => \^data_loc_tracker\(13),
+      I2 => \^data_loc_tracker\(29),
+      I3 => \occupied_data_spaces[6]_i_43_n_0\,
+      I4 => \occupied_data_spaces[6]_i_42_n_0\,
       O => \occupied_data_spaces[6]_i_31_n_0\
     );
 \occupied_data_spaces[6]_i_32\: unisim.vcomponents.LUT5
@@ -9237,20 +9492,21 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I0 => \^data_loc_tracker\(58),
       I1 => \^data_loc_tracker\(11),
       I2 => \^data_loc_tracker\(27),
-      I3 => \occupied_data_spaces[6]_i_40_n_0\,
-      I4 => \occupied_data_spaces[6]_i_39_n_0\,
+      I3 => \occupied_data_spaces[6]_i_41_n_0\,
+      I4 => \occupied_data_spaces[6]_i_40_n_0\,
       O => \occupied_data_spaces[6]_i_32_n_0\
     );
-\occupied_data_spaces[6]_i_33\: unisim.vcomponents.LUT5
+\occupied_data_spaces[6]_i_33\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"17E8E817"
+      INIT => X"E8E8E817E8171717"
     )
         port map (
-      I0 => \^data_loc_tracker\(45),
-      I1 => \^data_loc_tracker\(13),
-      I2 => \^data_loc_tracker\(29),
-      I3 => \occupied_data_spaces[6]_i_42_n_0\,
-      I4 => \occupied_data_spaces[6]_i_41_n_0\,
+      I0 => \^data_loc_tracker\(32),
+      I1 => \^data_loc_tracker\(16),
+      I2 => \^data_loc_tracker\(48),
+      I3 => \^data_loc_tracker\(17),
+      I4 => \^data_loc_tracker\(1),
+      I5 => \^data_loc_tracker\(33),
       O => \occupied_data_spaces[6]_i_33_n_0\
     );
 \occupied_data_spaces[6]_i_34\: unisim.vcomponents.LUT5
@@ -9258,111 +9514,49 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       INIT => X"17E8E817"
     )
         port map (
-      I0 => \^data_loc_tracker\(54),
-      I1 => \^data_loc_tracker\(22),
-      I2 => \^data_loc_tracker\(38),
-      I3 => \occupied_data_spaces[6]_i_48_n_0\,
-      I4 => \occupied_data_spaces[6]_i_47_n_0\,
+      I0 => \^data_loc_tracker\(36),
+      I1 => \^data_loc_tracker\(4),
+      I2 => \^data_loc_tracker\(20),
+      I3 => \occupied_data_spaces[6]_i_47_n_0\,
+      I4 => \occupied_data_spaces[6]_i_46_n_0\,
       O => \occupied_data_spaces[6]_i_34_n_0\
     );
 \occupied_data_spaces[6]_i_35\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"17E8E817"
+      INIT => X"E81717E8"
     )
         port map (
-      I0 => \^data_loc_tracker\(36),
-      I1 => \^data_loc_tracker\(4),
-      I2 => \^data_loc_tracker\(20),
-      I3 => \occupied_data_spaces[6]_i_46_n_0\,
-      I4 => \occupied_data_spaces[6]_i_45_n_0\,
+      I0 => \^data_loc_tracker\(38),
+      I1 => \^data_loc_tracker\(22),
+      I2 => \^data_loc_tracker\(54),
+      I3 => \occupied_data_spaces[6]_i_49_n_0\,
+      I4 => \occupied_data_spaces[6]_i_48_n_0\,
       O => \occupied_data_spaces[6]_i_35_n_0\
     );
-\occupied_data_spaces[6]_i_36\: unisim.vcomponents.LUT5
+\occupied_data_spaces[6]_i_36\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"E81717E8"
+      INIT => X"8E"
+    )
+        port map (
+      I0 => \occupied_data_spaces[6]_i_31_n_0\,
+      I1 => \occupied_data_spaces[6]_i_32_n_0\,
+      I2 => \occupied_data_spaces[6]_i_30_n_0\,
+      O => \occupied_data_spaces[6]_i_36_n_0\
+    );
+\occupied_data_spaces[6]_i_37\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"E8170000FFFFE817"
     )
         port map (
       I0 => \^data_loc_tracker\(49),
       I1 => \^data_loc_tracker\(2),
       I2 => \^data_loc_tracker\(18),
-      I3 => \occupied_data_spaces[6]_i_50_n_0\,
-      I4 => \occupied_data_spaces[6]_i_49_n_0\,
-      O => \occupied_data_spaces[6]_i_36_n_0\
-    );
-\occupied_data_spaces[6]_i_37\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"2B"
-    )
-        port map (
-      I0 => \occupied_data_spaces[6]_i_36_n_0\,
-      I1 => \occupied_data_spaces[6]_i_35_n_0\,
-      I2 => \occupied_data_spaces[6]_i_34_n_0\,
+      I3 => \occupied_data_spaces[6]_i_33_n_0\,
+      I4 => \occupied_data_spaces[6]_i_35_n_0\,
+      I5 => \occupied_data_spaces[6]_i_34_n_0\,
       O => \occupied_data_spaces[6]_i_37_n_0\
     );
 \occupied_data_spaces[6]_i_38\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"E8"
-    )
-        port map (
-      I0 => \occupied_data_spaces[6]_i_31_n_0\,
-      I1 => \occupied_data_spaces[6]_i_33_n_0\,
-      I2 => \occupied_data_spaces[6]_i_32_n_0\,
-      O => \occupied_data_spaces[6]_i_38_n_0\
-    );
-\occupied_data_spaces[6]_i_39\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"17"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(26),
-      I1 => \^data_loc_tracker\(10),
-      I2 => \^data_loc_tracker\(42),
-      O => \occupied_data_spaces[6]_i_39_n_0\
-    );
-\occupied_data_spaces[6]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"17E8E81700000000"
-    )
-        port map (
-      I0 => \occupied_data_spaces[6]_i_12_n_0\,
-      I1 => \occupied_data_spaces[6]_i_13_n_0\,
-      I2 => \occupied_data_spaces[6]_i_14_n_0\,
-      I3 => \occupied_data_spaces[6]_i_15_n_0\,
-      I4 => \occupied_data_spaces[6]_i_16_n_0\,
-      I5 => \occupied_data_spaces[6]_i_17_n_0\,
-      O => \occupied_data_spaces[6]_i_4_n_0\
-    );
-\occupied_data_spaces[6]_i_40\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"17"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(41),
-      I1 => \^data_loc_tracker\(25),
-      I2 => \^data_loc_tracker\(57),
-      O => \occupied_data_spaces[6]_i_40_n_0\
-    );
-\occupied_data_spaces[6]_i_41\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"E8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(60),
-      I1 => \^data_loc_tracker\(28),
-      I2 => \^data_loc_tracker\(44),
-      O => \occupied_data_spaces[6]_i_41_n_0\
-    );
-\occupied_data_spaces[6]_i_42\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"E8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(59),
-      I1 => \^data_loc_tracker\(12),
-      I2 => \^data_loc_tracker\(43),
-      O => \occupied_data_spaces[6]_i_42_n_0\
-    );
-\occupied_data_spaces[6]_i_43\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"17"
     )
@@ -9370,9 +9564,9 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I0 => \^data_loc_tracker\(24),
       I1 => \^data_loc_tracker\(8),
       I2 => \^data_loc_tracker\(55),
-      O => \occupied_data_spaces[6]_i_43_n_0\
+      O => \occupied_data_spaces[6]_i_38_n_0\
     );
-\occupied_data_spaces[6]_i_44\: unisim.vcomponents.LUT3
+\occupied_data_spaces[6]_i_39\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"17"
     )
@@ -9380,61 +9574,11 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I0 => \^data_loc_tracker\(23),
       I1 => \^data_loc_tracker\(7),
       I2 => \^data_loc_tracker\(39),
-      O => \occupied_data_spaces[6]_i_44_n_0\
+      O => \occupied_data_spaces[6]_i_39_n_0\
     );
-\occupied_data_spaces[6]_i_45\: unisim.vcomponents.LUT3
+\occupied_data_spaces[6]_i_4\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"E8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(51),
-      I1 => \^data_loc_tracker\(19),
-      I2 => \^data_loc_tracker\(35),
-      O => \occupied_data_spaces[6]_i_45_n_0\
-    );
-\occupied_data_spaces[6]_i_46\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"E8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(50),
-      I1 => \^data_loc_tracker\(3),
-      I2 => \^data_loc_tracker\(34),
-      O => \occupied_data_spaces[6]_i_46_n_0\
-    );
-\occupied_data_spaces[6]_i_47\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"E8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(52),
-      I1 => \^data_loc_tracker\(5),
-      I2 => \^data_loc_tracker\(21),
-      O => \occupied_data_spaces[6]_i_47_n_0\
-    );
-\occupied_data_spaces[6]_i_48\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"E8"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(53),
-      I1 => \^data_loc_tracker\(6),
-      I2 => \^data_loc_tracker\(37),
-      O => \occupied_data_spaces[6]_i_48_n_0\
-    );
-\occupied_data_spaces[6]_i_49\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"17"
-    )
-        port map (
-      I0 => \^data_loc_tracker\(17),
-      I1 => \^data_loc_tracker\(1),
-      I2 => \^data_loc_tracker\(33),
-      O => \occupied_data_spaces[6]_i_49_n_0\
-    );
-\occupied_data_spaces[6]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFDFDD4D4404000"
+      INIT => X"DFFF4DDF044D0004"
     )
         port map (
       I0 => \occupied_data_spaces[2]_i_2_n_0\,
@@ -9443,19 +9587,128 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I3 => \occupied_data_spaces[2]_i_5_n_0\,
       I4 => \occupied_data_spaces[2]_i_6_n_0\,
       I5 => \occupied_data_spaces[2]_i_7_n_0\,
-      O => \occupied_data_spaces[6]_i_5_n_0\
+      O => \occupied_data_spaces[6]_i_4_n_0\
     );
-\occupied_data_spaces[6]_i_50\: unisim.vcomponents.LUT3
+\occupied_data_spaces[6]_i_40\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"17"
     )
         port map (
-      I0 => \^data_loc_tracker\(32),
-      I1 => \^data_loc_tracker\(16),
-      I2 => \^data_loc_tracker\(48),
-      O => \occupied_data_spaces[6]_i_50_n_0\
+      I0 => \^data_loc_tracker\(26),
+      I1 => \^data_loc_tracker\(10),
+      I2 => \^data_loc_tracker\(42),
+      O => \occupied_data_spaces[6]_i_40_n_0\
     );
-\occupied_data_spaces[6]_i_51\: unisim.vcomponents.LUT3
+\occupied_data_spaces[6]_i_41\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"17"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(41),
+      I1 => \^data_loc_tracker\(25),
+      I2 => \^data_loc_tracker\(57),
+      O => \occupied_data_spaces[6]_i_41_n_0\
+    );
+\occupied_data_spaces[6]_i_42\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"E8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(60),
+      I1 => \^data_loc_tracker\(28),
+      I2 => \^data_loc_tracker\(44),
+      O => \occupied_data_spaces[6]_i_42_n_0\
+    );
+\occupied_data_spaces[6]_i_43\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"E8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(59),
+      I1 => \^data_loc_tracker\(12),
+      I2 => \^data_loc_tracker\(43),
+      O => \occupied_data_spaces[6]_i_43_n_0\
+    );
+\occupied_data_spaces[6]_i_44\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000001700171717"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(33),
+      I1 => \^data_loc_tracker\(1),
+      I2 => \^data_loc_tracker\(17),
+      I3 => \^data_loc_tracker\(48),
+      I4 => \^data_loc_tracker\(16),
+      I5 => \^data_loc_tracker\(32),
+      O => \occupied_data_spaces[6]_i_44_n_0\
+    );
+\occupied_data_spaces[6]_i_45\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"171717FF17FFFFFF"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(33),
+      I1 => \^data_loc_tracker\(1),
+      I2 => \^data_loc_tracker\(17),
+      I3 => \^data_loc_tracker\(48),
+      I4 => \^data_loc_tracker\(16),
+      I5 => \^data_loc_tracker\(32),
+      O => \occupied_data_spaces[6]_i_45_n_0\
+    );
+\occupied_data_spaces[6]_i_46\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"E8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(51),
+      I1 => \^data_loc_tracker\(19),
+      I2 => \^data_loc_tracker\(35),
+      O => \occupied_data_spaces[6]_i_46_n_0\
+    );
+\occupied_data_spaces[6]_i_47\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"E8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(50),
+      I1 => \^data_loc_tracker\(3),
+      I2 => \^data_loc_tracker\(34),
+      O => \occupied_data_spaces[6]_i_47_n_0\
+    );
+\occupied_data_spaces[6]_i_48\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"E8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(52),
+      I1 => \^data_loc_tracker\(5),
+      I2 => \^data_loc_tracker\(21),
+      O => \occupied_data_spaces[6]_i_48_n_0\
+    );
+\occupied_data_spaces[6]_i_49\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"E8"
+    )
+        port map (
+      I0 => \^data_loc_tracker\(53),
+      I1 => \^data_loc_tracker\(6),
+      I2 => \^data_loc_tracker\(37),
+      O => \occupied_data_spaces[6]_i_49_n_0\
+    );
+\occupied_data_spaces[6]_i_5\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"6996966996696996"
+    )
+        port map (
+      I0 => \occupied_data_spaces[6]_i_7_n_0\,
+      I1 => \occupied_data_spaces[6]_i_8_n_0\,
+      I2 => \occupied_data_spaces[6]_i_9_n_0\,
+      I3 => \occupied_data_spaces[6]_i_10_n_0\,
+      I4 => \occupied_data_spaces[6]_i_17_n_0\,
+      I5 => \occupied_data_spaces[6]_i_18_n_0\,
+      O => \occupied_data_spaces[6]_i_5_n_0\
+    );
+\occupied_data_spaces[6]_i_50\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"E8"
     )
@@ -9463,63 +9716,84 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I0 => \^data_loc_tracker\(47),
       I1 => \^data_loc_tracker\(31),
       I2 => \^data_loc_tracker\(63),
-      O => \occupied_data_spaces[6]_i_51_n_0\
+      O => \occupied_data_spaces[6]_i_50_n_0\
     );
-\occupied_data_spaces[6]_i_52\: unisim.vcomponents.LUT3
+\occupied_data_spaces[6]_i_51\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"E8"
     )
         port map (
-      I0 => \^data_loc_tracker\(46),
-      I1 => \^data_loc_tracker\(62),
-      I2 => \^data_loc_tracker\(15),
-      O => \occupied_data_spaces[6]_i_52_n_0\
+      I0 => \^data_loc_tracker\(62),
+      I1 => \^data_loc_tracker\(15),
+      I2 => \^data_loc_tracker\(46),
+      O => \occupied_data_spaces[6]_i_51_n_0\
     );
 \occupied_data_spaces[6]_i_6\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"6996966996696996"
+      INIT => X"69960000FFFF6996"
     )
         port map (
-      I0 => \occupied_data_spaces[6]_i_8_n_0\,
-      I1 => \occupied_data_spaces[6]_i_9_n_0\,
-      I2 => \occupied_data_spaces[6]_i_11_n_0\,
+      I0 => \occupied_data_spaces[6]_i_7_n_0\,
+      I1 => \occupied_data_spaces[6]_i_8_n_0\,
+      I2 => \occupied_data_spaces[6]_i_9_n_0\,
       I3 => \occupied_data_spaces[6]_i_10_n_0\,
-      I4 => \occupied_data_spaces[6]_i_18_n_0\,
-      I5 => \occupied_data_spaces[6]_i_19_n_0\,
+      I4 => \occupied_data_spaces[6]_i_17_n_0\,
+      I5 => \occupied_data_spaces[6]_i_18_n_0\,
       O => \occupied_data_spaces[6]_i_6_n_0\
     );
-\occupied_data_spaces[6]_i_7\: unisim.vcomponents.LUT6
+\occupied_data_spaces[6]_i_7\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"96690000FFFF9669"
+      INIT => X"E8"
     )
         port map (
-      I0 => \occupied_data_spaces[6]_i_8_n_0\,
-      I1 => \occupied_data_spaces[6]_i_9_n_0\,
-      I2 => \occupied_data_spaces[6]_i_11_n_0\,
-      I3 => \occupied_data_spaces[6]_i_10_n_0\,
-      I4 => \occupied_data_spaces[6]_i_18_n_0\,
-      I5 => \occupied_data_spaces[6]_i_19_n_0\,
+      I0 => \occupied_data_spaces[6]_i_19_n_0\,
+      I1 => \occupied_data_spaces[6]_i_20_n_0\,
+      I2 => \occupied_data_spaces[6]_i_21_n_0\,
       O => \occupied_data_spaces[6]_i_7_n_0\
     );
 \occupied_data_spaces[6]_i_8\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"8E"
+      INIT => X"E8"
     )
         port map (
-      I0 => \occupied_data_spaces[6]_i_20_n_0\,
-      I1 => \occupied_data_spaces[6]_i_21_n_0\,
-      I2 => \occupied_data_spaces[6]_i_22_n_0\,
+      I0 => \occupied_data_spaces[6]_i_22_n_0\,
+      I1 => \occupied_data_spaces[6]_i_23_n_0\,
+      I2 => \occupied_data_spaces[6]_i_24_n_0\,
       O => \occupied_data_spaces[6]_i_8_n_0\
     );
 \occupied_data_spaces[6]_i_9\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"8E"
+      INIT => X"4D"
     )
         port map (
-      I0 => \occupied_data_spaces[6]_i_23_n_0\,
-      I1 => \occupied_data_spaces[6]_i_24_n_0\,
-      I2 => \occupied_data_spaces[6]_i_25_n_0\,
+      I0 => \occupied_data_spaces[6]_i_25_n_0\,
+      I1 => \occupied_data_spaces[6]_i_26_n_0\,
+      I2 => \occupied_data_spaces[6]_i_27_n_0\,
       O => \occupied_data_spaces[6]_i_9_n_0\
+    );
+old_is_data_mode_i_1: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"FFEF0020"
+    )
+        port map (
+      I0 => is_data_mode,
+      I1 => \^out\(1),
+      I2 => \^out\(0),
+      I3 => \^bramen_raw\,
+      I4 => old_is_data_mode_reg_n_0,
+      O => old_is_data_mode_i_1_n_0
+    );
+old_is_data_mode_reg: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0',
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => old_is_data_mode_i_1_n_0,
+      Q => old_is_data_mode_reg_n_0,
+      R => '0'
     );
 \old_l1a_cntr_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -9713,7 +9987,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I0 => \data_loc_reg_n_0_[3]\,
       I1 => \data_loc_reg_n_0_[4]\,
       I2 => \pl_data_loc_tracker[63]_i_3_n_0\,
-      I3 => \^bramwe\,
+      I3 => \^bramwe_raw\,
       I4 => \data_loc_reg_n_0_[5]\,
       O => \pl_data_loc_tracker[15]_i_2_n_0\
     );
@@ -9832,7 +10106,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I0 => \data_loc_reg_n_0_[4]\,
       I1 => \data_loc_reg_n_0_[3]\,
       I2 => \pl_data_loc_tracker[63]_i_3_n_0\,
-      I3 => \^bramwe\,
+      I3 => \^bramwe_raw\,
       I4 => \data_loc_reg_n_0_[5]\,
       O => \pl_data_loc_tracker[23]_i_2_n_0\
     );
@@ -9949,7 +10223,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \pl_data_loc_tracker[63]_i_3_n_0\,
-      I1 => \^bramwe\,
+      I1 => \^bramwe_raw\,
       I2 => \data_loc_reg_n_0_[5]\,
       I3 => \data_loc_reg_n_0_[4]\,
       I4 => \data_loc_reg_n_0_[3]\,
@@ -10058,7 +10332,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
         port map (
       I0 => \data_loc_reg_n_0_[5]\,
       I1 => \pl_data_loc_tracker[63]_i_3_n_0\,
-      I2 => \^bramwe\,
+      I2 => \^bramwe_raw\,
       I3 => \data_loc_reg_n_0_[4]\,
       I4 => \data_loc_reg_n_0_[3]\,
       O => \pl_data_loc_tracker[39]_i_2_n_0\
@@ -10177,7 +10451,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
         port map (
       I0 => \data_loc_reg_n_0_[5]\,
       I1 => \pl_data_loc_tracker[63]_i_3_n_0\,
-      I2 => \^bramwe\,
+      I2 => \^bramwe_raw\,
       I3 => \data_loc_reg_n_0_[3]\,
       I4 => \data_loc_reg_n_0_[4]\,
       O => \pl_data_loc_tracker[47]_i_2_n_0\
@@ -10298,7 +10572,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
         port map (
       I0 => \data_loc_reg_n_0_[5]\,
       I1 => \pl_data_loc_tracker[63]_i_3_n_0\,
-      I2 => \^bramwe\,
+      I2 => \^bramwe_raw\,
       I3 => \data_loc_reg_n_0_[4]\,
       I4 => \data_loc_reg_n_0_[3]\,
       O => \pl_data_loc_tracker[55]_i_2_n_0\
@@ -10485,7 +10759,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I1 => \data_loc_reg_n_0_[3]\,
       I2 => \data_loc_reg_n_0_[5]\,
       I3 => \pl_data_loc_tracker[63]_i_3_n_0\,
-      I4 => \^bramwe\,
+      I4 => \^bramwe_raw\,
       O => \pl_data_loc_tracker[63]_i_4_n_0\
     );
 \pl_data_loc_tracker[63]_i_5\: unisim.vcomponents.LUT6
@@ -10498,7 +10772,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I2 => old_l1a_cntr(8),
       I3 => old_l1a_cntr(6),
       I4 => \pl_data_loc_tracker[63]_i_7_n_0\,
-      I5 => \l1a_cntr[8]_i_3_n_0\,
+      I5 => \l1a_cntr[2]_i_2_n_0\,
       O => \pl_data_loc_tracker[63]_i_5_n_0\
     );
 \pl_data_loc_tracker[63]_i_6\: unisim.vcomponents.LUT6
@@ -10561,7 +10835,7 @@ l1a_seen_reg: unisim.vcomponents.FDRE
       I0 => \data_loc_reg_n_0_[4]\,
       I1 => \data_loc_reg_n_0_[3]\,
       I2 => \pl_data_loc_tracker[63]_i_3_n_0\,
-      I3 => \^bramwe\,
+      I3 => \^bramwe_raw\,
       I4 => \data_loc_reg_n_0_[5]\,
       O => \pl_data_loc_tracker[7]_i_2_n_0\
     );
@@ -13352,34 +13626,36 @@ entity design_1_tdc_0_1_tdc_v1_0_S00_AXI is
     s00_axi_bvalid : out STD_LOGIC;
     axi_wready_reg_0 : out STD_LOGIC;
     s00_axi_rvalid : out STD_LOGIC;
+    \events_received_helper_reg[2]\ : out STD_LOGIC;
+    Q : out STD_LOGIC_VECTOR ( 0 to 0 );
     \expecting_l1a_reg[10]\ : out STD_LOGIC;
     \msg_reg[8]\ : out STD_LOGIC;
     ps_data_loc_tracker : out STD_LOGIC_VECTOR ( 63 downto 0 );
-    Q : out STD_LOGIC_VECTOR ( 0 to 0 );
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     SR : in STD_LOGIC_VECTOR ( 0 to 0 );
     s00_axi_aclk : in STD_LOGIC;
     axi_wready_reg_1 : in STD_LOGIC;
     axi_bvalid_reg_0 : in STD_LOGIC;
     axi_arready_reg_0 : in STD_LOGIC;
+    old_is_data_mode : in STD_LOGIC;
     \l1as_sent_reg[7]\ : in STD_LOGIC;
     CO : in STD_LOGIC_VECTOR ( 0 to 0 );
-    comparators_0_sp_1 : in STD_LOGIC;
+    comparators_8_sp_1 : in STD_LOGIC;
     comparators : in STD_LOGIC_VECTOR ( 23 downto 0 );
     comparators_21_sp_1 : in STD_LOGIC;
     comparators_16_sp_1 : in STD_LOGIC;
-    comparators_13_sp_1 : in STD_LOGIC;
     comparators_12_sp_1 : in STD_LOGIC;
-    comparators_14_sp_1 : in STD_LOGIC;
-    \comparators[0]_0\ : in STD_LOGIC;
-    \comparators[0]_1\ : in STD_LOGIC;
+    comparators_15_sp_1 : in STD_LOGIC;
+    comparators_13_sp_1 : in STD_LOGIC;
+    \comparators[15]_0\ : in STD_LOGIC;
+    comparators_0_sp_1 : in STD_LOGIC;
     comparators_1_sp_1 : in STD_LOGIC;
-    \comparators[12]_0\ : in STD_LOGIC;
-    comparators_8_sp_1 : in STD_LOGIC;
-    \comparators[0]_2\ : in STD_LOGIC;
-    comparators_18_sp_1 : in STD_LOGIC;
-    \comparators[13]_0\ : in STD_LOGIC;
+    \comparators[15]_1\ : in STD_LOGIC;
     comparators_10_sp_1 : in STD_LOGIC;
+    \comparators[0]_0\ : in STD_LOGIC;
+    comparators_19_sp_1 : in STD_LOGIC;
+    \comparators[12]_0\ : in STD_LOGIC;
+    comparators_7_sp_1 : in STD_LOGIC;
     comparators_3_sp_1 : in STD_LOGIC;
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
@@ -13795,22 +14071,23 @@ architecture STRUCTURE of design_1_tdc_0_1_tdc_v1_0_S00_AXI is
   signal comparators_10_sn_1 : STD_LOGIC;
   signal comparators_12_sn_1 : STD_LOGIC;
   signal comparators_13_sn_1 : STD_LOGIC;
-  signal comparators_14_sn_1 : STD_LOGIC;
+  signal comparators_15_sn_1 : STD_LOGIC;
   signal comparators_16_sn_1 : STD_LOGIC;
-  signal comparators_18_sn_1 : STD_LOGIC;
+  signal comparators_19_sn_1 : STD_LOGIC;
   signal comparators_1_sn_1 : STD_LOGIC;
   signal comparators_21_sn_1 : STD_LOGIC;
   signal comparators_3_sn_1 : STD_LOGIC;
+  signal comparators_7_sn_1 : STD_LOGIC;
   signal comparators_8_sn_1 : STD_LOGIC;
   signal \expecting_l1a[10]_i_11_n_0\ : STD_LOGIC;
-  signal \msg[8]_i_102_n_0\ : STD_LOGIC;
+  signal \msg[8]_i_101_n_0\ : STD_LOGIC;
   signal \msg[8]_i_19_n_0\ : STD_LOGIC;
   signal \msg[8]_i_20_n_0\ : STD_LOGIC;
   signal \msg[8]_i_21_n_0\ : STD_LOGIC;
   signal \msg[8]_i_22_n_0\ : STD_LOGIC;
   signal \msg[8]_i_23_n_0\ : STD_LOGIC;
   signal \msg[8]_i_24_n_0\ : STD_LOGIC;
-  signal \msg[8]_i_28_n_0\ : STD_LOGIC;
+  signal \msg[8]_i_25_n_0\ : STD_LOGIC;
   signal \msg[8]_i_52_n_0\ : STD_LOGIC;
   signal \msg[8]_i_53_n_0\ : STD_LOGIC;
   signal \msg[8]_i_54_n_0\ : STD_LOGIC;
@@ -13965,12 +14242,13 @@ begin
   comparators_10_sn_1 <= comparators_10_sp_1;
   comparators_12_sn_1 <= comparators_12_sp_1;
   comparators_13_sn_1 <= comparators_13_sp_1;
-  comparators_14_sn_1 <= comparators_14_sp_1;
+  comparators_15_sn_1 <= comparators_15_sp_1;
   comparators_16_sn_1 <= comparators_16_sp_1;
-  comparators_18_sn_1 <= comparators_18_sp_1;
+  comparators_19_sn_1 <= comparators_19_sp_1;
   comparators_1_sn_1 <= comparators_1_sp_1;
   comparators_21_sn_1 <= comparators_21_sp_1;
   comparators_3_sn_1 <= comparators_3_sp_1;
+  comparators_7_sn_1 <= comparators_7_sp_1;
   comparators_8_sn_1 <= comparators_8_sp_1;
   ps_data_loc_tracker(63 downto 0) <= \^ps_data_loc_tracker\(63 downto 0);
   s00_axi_arready <= \^s00_axi_arready\;
@@ -19058,12 +19336,21 @@ axi_wready_reg: unisim.vcomponents.FDRE
       Q => \^s00_axi_wready\,
       R => SR(0)
     );
+\events_received_helper[2]_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \^q\(0),
+      I1 => old_is_data_mode,
+      O => \events_received_helper_reg[2]\
+    );
 \expecting_l1a[10]_i_11\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"1F11"
     )
         port map (
-      I0 => comparators_0_sn_1,
+      I0 => comparators_8_sn_1,
       I1 => trig_threshold(4),
       I2 => trig_mode(0),
       I3 => \msg[8]_i_8_n_0\,
@@ -19082,18 +19369,18 @@ axi_wready_reg: unisim.vcomponents.FDRE
       I5 => CO(0),
       O => \expecting_l1a_reg[10]\
     );
-\msg[8]_i_102\: unisim.vcomponents.LUT6
+\msg[8]_i_101\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"96696996FFFFFFFF"
     )
         port map (
-      I0 => \comparators[0]_2\,
-      I1 => comparators_18_sn_1,
-      I2 => \comparators[13]_0\,
-      I3 => comparators_10_sn_1,
+      I0 => \comparators[0]_0\,
+      I1 => comparators_19_sn_1,
+      I2 => \comparators[12]_0\,
+      I3 => comparators_7_sn_1,
       I4 => comparators_3_sn_1,
       I5 => trig_threshold(0),
-      O => \msg[8]_i_102_n_0\
+      O => \msg[8]_i_101_n_0\
     );
 \msg[8]_i_19\: unisim.vcomponents.LUT5
     generic map(
@@ -19112,10 +19399,10 @@ axi_wready_reg: unisim.vcomponents.FDRE
       INIT => X"0000D0DD"
     )
         port map (
-      I0 => trig_pattern(5),
-      I1 => comparators(5),
-      I2 => comparators(4),
-      I3 => trig_pattern(4),
+      I0 => trig_pattern(4),
+      I1 => comparators(4),
+      I2 => comparators(5),
+      I3 => trig_pattern(5),
       I4 => \msg[8]_i_53_n_0\,
       O => \msg[8]_i_20_n_0\
     );
@@ -19124,10 +19411,10 @@ axi_wready_reg: unisim.vcomponents.FDRE
       INIT => X"FFFF22F2"
     )
         port map (
-      I0 => trig_pattern(20),
-      I1 => comparators(20),
-      I2 => trig_pattern(21),
-      I3 => comparators(21),
+      I0 => trig_pattern(9),
+      I1 => comparators(9),
+      I2 => trig_pattern(8),
+      I3 => comparators(8),
       I4 => \msg[8]_i_54_n_0\,
       O => \msg[8]_i_21_n_0\
     );
@@ -19136,10 +19423,10 @@ axi_wready_reg: unisim.vcomponents.FDRE
       INIT => X"FFFF22F2"
     )
         port map (
-      I0 => trig_pattern(18),
-      I1 => comparators(18),
-      I2 => trig_pattern(19),
-      I3 => comparators(19),
+      I0 => trig_pattern(12),
+      I1 => comparators(12),
+      I2 => trig_pattern(13),
+      I3 => comparators(13),
       I4 => \msg[8]_i_55_n_0\,
       O => \msg[8]_i_22_n_0\
     );
@@ -19148,10 +19435,10 @@ axi_wready_reg: unisim.vcomponents.FDRE
       INIT => X"FFFF22F2"
     )
         port map (
-      I0 => trig_pattern(12),
-      I1 => comparators(12),
-      I2 => trig_pattern(13),
-      I3 => comparators(13),
+      I0 => trig_pattern(21),
+      I1 => comparators(21),
+      I2 => trig_pattern(20),
+      I3 => comparators(20),
       I4 => \msg[8]_i_56_n_0\,
       O => \msg[8]_i_23_n_0\
     );
@@ -19160,24 +19447,24 @@ axi_wready_reg: unisim.vcomponents.FDRE
       INIT => X"FFFF22F2"
     )
         port map (
-      I0 => trig_pattern(9),
-      I1 => comparators(9),
-      I2 => trig_pattern(8),
-      I3 => comparators(8),
+      I0 => trig_pattern(19),
+      I1 => comparators(19),
+      I2 => trig_pattern(18),
+      I3 => comparators(18),
       I4 => \msg[8]_i_57_n_0\,
       O => \msg[8]_i_24_n_0\
     );
-\msg[8]_i_28\: unisim.vcomponents.LUT5
+\msg[8]_i_25\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"2882BEEB"
+      INIT => X"D77D4114"
     )
         port map (
       I0 => trig_threshold(2),
-      I1 => comparators_12_sn_1,
-      I2 => comparators_14_sn_1,
-      I3 => \comparators[0]_0\,
+      I1 => comparators_15_sn_1,
+      I2 => comparators_13_sn_1,
+      I3 => \comparators[15]_0\,
       I4 => \msg[8]_i_59_n_0\,
-      O => \msg[8]_i_28_n_0\
+      O => \msg[8]_i_25_n_0\
     );
 \msg[8]_i_4\: unisim.vcomponents.LUT6
     generic map(
@@ -19185,7 +19472,7 @@ axi_wready_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => trig_mode(1),
-      I1 => comparators_0_sn_1,
+      I1 => comparators_8_sn_1,
       I2 => trig_threshold(4),
       I3 => trig_mode(0),
       I4 => \msg[8]_i_8_n_0\,
@@ -19219,10 +19506,10 @@ axi_wready_reg: unisim.vcomponents.FDRE
       INIT => X"4F44"
     )
         port map (
-      I0 => comparators(22),
-      I1 => trig_pattern(22),
-      I2 => comparators(23),
-      I3 => trig_pattern(23),
+      I0 => comparators(11),
+      I1 => trig_pattern(11),
+      I2 => comparators(10),
+      I3 => trig_pattern(10),
       O => \msg[8]_i_54_n_0\
     );
 \msg[8]_i_55\: unisim.vcomponents.LUT4
@@ -19230,10 +19517,10 @@ axi_wready_reg: unisim.vcomponents.FDRE
       INIT => X"4F44"
     )
         port map (
-      I0 => comparators(16),
-      I1 => trig_pattern(16),
-      I2 => comparators(17),
-      I3 => trig_pattern(17),
+      I0 => comparators(15),
+      I1 => trig_pattern(15),
+      I2 => comparators(14),
+      I3 => trig_pattern(14),
       O => \msg[8]_i_55_n_0\
     );
 \msg[8]_i_56\: unisim.vcomponents.LUT4
@@ -19241,10 +19528,10 @@ axi_wready_reg: unisim.vcomponents.FDRE
       INIT => X"4F44"
     )
         port map (
-      I0 => comparators(14),
-      I1 => trig_pattern(14),
-      I2 => comparators(15),
-      I3 => trig_pattern(15),
+      I0 => comparators(22),
+      I1 => trig_pattern(22),
+      I2 => comparators(23),
+      I3 => trig_pattern(23),
       O => \msg[8]_i_56_n_0\
     );
 \msg[8]_i_57\: unisim.vcomponents.LUT4
@@ -19252,23 +19539,23 @@ axi_wready_reg: unisim.vcomponents.FDRE
       INIT => X"4F44"
     )
         port map (
-      I0 => comparators(10),
-      I1 => trig_pattern(10),
-      I2 => comparators(11),
-      I3 => trig_pattern(11),
+      I0 => comparators(17),
+      I1 => trig_pattern(17),
+      I2 => comparators(16),
+      I3 => trig_pattern(16),
       O => \msg[8]_i_57_n_0\
     );
 \msg[8]_i_59\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"96690000FFFF9669"
+      INIT => X"4DD4D44DD44D4DD4"
     )
         port map (
-      I0 => \comparators[0]_1\,
-      I1 => comparators_1_sn_1,
-      I2 => \comparators[12]_0\,
-      I3 => comparators_8_sn_1,
-      I4 => \msg[8]_i_102_n_0\,
-      I5 => trig_threshold(1),
+      I0 => trig_threshold(1),
+      I1 => \msg[8]_i_101_n_0\,
+      I2 => comparators_0_sn_1,
+      I3 => comparators_1_sn_1,
+      I4 => \comparators[15]_1\,
+      I5 => comparators_10_sn_1,
       O => \msg[8]_i_59_n_0\
     );
 \msg[8]_i_8\: unisim.vcomponents.LUT6
@@ -19286,15 +19573,15 @@ axi_wready_reg: unisim.vcomponents.FDRE
     );
 \msg[8]_i_9\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFEB3EEB3E2A02"
+      INIT => X"BFFBF3BFA3BA30A3"
     )
         port map (
       I0 => trig_threshold(4),
-      I1 => comparators_21_sn_1,
-      I2 => comparators_16_sn_1,
-      I3 => comparators_13_sn_1,
-      I4 => trig_threshold(3),
-      I5 => \msg[8]_i_28_n_0\,
+      I1 => \msg[8]_i_25_n_0\,
+      I2 => comparators_21_sn_1,
+      I3 => comparators_16_sn_1,
+      I4 => comparators_12_sn_1,
+      I5 => trig_threshold(3),
       O => \msg[8]_i_9_n_0\
     );
 \slv_reg0[15]_i_1\: unisim.vcomponents.LUT6
@@ -27028,6 +27315,8 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_1_tdc_0_1_trig_arbiter is
   port (
+    old_is_data_mode : out STD_LOGIC;
+    eventid : out STD_LOGIC_VECTOR ( 31 downto 0 );
     panics_tracker : out STD_LOGIC_VECTOR ( 31 downto 0 );
     buffer_rejects_tracker : out STD_LOGIC_VECTOR ( 31 downto 0 );
     derandomizer_rejects_tracker : out STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -27049,30 +27338,14 @@ entity design_1_tdc_0_1_trig_arbiter is
     \msg_reg[8]_13\ : out STD_LOGIC;
     \msg_reg[8]_14\ : out STD_LOGIC;
     \msg_reg[8]_15\ : out STD_LOGIC;
-    \bramwrdata_reg[15]\ : out STD_LOGIC;
-    \bramwrdata_reg[14]\ : out STD_LOGIC;
-    \bramwrdata_reg[13]\ : out STD_LOGIC;
-    \bramwrdata_reg[12]\ : out STD_LOGIC;
-    \bramwrdata_reg[11]\ : out STD_LOGIC;
-    \bramwrdata_reg[10]\ : out STD_LOGIC;
-    \bramwrdata_reg[9]\ : out STD_LOGIC;
-    \bramwrdata_reg[8]\ : out STD_LOGIC;
-    \bramwrdata_reg[7]\ : out STD_LOGIC;
-    \bramwrdata_reg[6]\ : out STD_LOGIC;
-    \bramwrdata_reg[5]\ : out STD_LOGIC;
-    \bramwrdata_reg[4]\ : out STD_LOGIC;
-    \bramwrdata_reg[3]\ : out STD_LOGIC;
-    \bramwrdata_reg[2]\ : out STD_LOGIC;
-    \bramwrdata_reg[1]\ : out STD_LOGIC;
-    \bramwrdata_reg[0]\ : out STD_LOGIC;
     \msg_reg[8]_16\ : out STD_LOGIC;
     data_mode_cmd_out : out STD_LOGIC;
-    is_data_mode : in STD_LOGIC;
+    Q : in STD_LOGIC_VECTOR ( 0 to 0 );
     clk40 : in STD_LOGIC;
+    \slv_reg0_reg[31]\ : in STD_LOGIC;
     \slv_reg0_reg[30]\ : in STD_LOGIC;
     l1a_seen : in STD_LOGIC;
     comparators : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \slv_reg0_reg[30]_0\ : in STD_LOGIC;
     D : in STD_LOGIC_VECTOR ( 6 downto 0 )
   );
@@ -27223,13 +27496,12 @@ architecture STRUCTURE of design_1_tdc_0_1_trig_arbiter is
   signal \derandomizer_rejects_tracker_reg[8]_i_1_n_5\ : STD_LOGIC;
   signal \derandomizer_rejects_tracker_reg[8]_i_1_n_6\ : STD_LOGIC;
   signal \derandomizer_rejects_tracker_reg[8]_i_1_n_7\ : STD_LOGIC;
-  signal eventid : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal \^eventid\ : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal events_received : STD_LOGIC;
   signal \events_received[0]_i_3_n_0\ : STD_LOGIC;
   signal \events_received_helper[0]_i_1_n_0\ : STD_LOGIC;
   signal \events_received_helper[1]_i_1_n_0\ : STD_LOGIC;
   signal \events_received_helper[2]_i_1_n_0\ : STD_LOGIC;
-  signal \events_received_helper[2]_i_2_n_0\ : STD_LOGIC;
   signal \events_received_helper_reg_n_0_[0]\ : STD_LOGIC;
   signal \events_received_helper_reg_n_0_[1]\ : STD_LOGIC;
   signal \events_received_helper_reg_n_0_[2]\ : STD_LOGIC;
@@ -27400,7 +27672,6 @@ architecture STRUCTURE of design_1_tdc_0_1_trig_arbiter is
   signal \i__carry_i_6_n_0\ : STD_LOGIC;
   signal \i__carry_i_7_n_0\ : STD_LOGIC;
   signal \i__carry_i_8_n_0\ : STD_LOGIC;
-  signal is_data_mode_0 : STD_LOGIC;
   signal \^l1as_outstanding\ : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal l1as_received : STD_LOGIC;
   signal \l1as_received[0]_i_4_n_0\ : STD_LOGIC;
@@ -27575,13 +27846,14 @@ architecture STRUCTURE of design_1_tdc_0_1_trig_arbiter is
   signal \msg[5]_i_1_n_0\ : STD_LOGIC;
   signal \msg[6]_i_1_n_0\ : STD_LOGIC;
   signal \msg[7]_i_1_n_0\ : STD_LOGIC;
+  signal \msg[8]_i_100_n_0\ : STD_LOGIC;
   signal \msg[8]_i_10_n_0\ : STD_LOGIC;
   signal \msg[8]_i_11_n_0\ : STD_LOGIC;
   signal \msg[8]_i_12_n_0\ : STD_LOGIC;
-  signal \msg[8]_i_14_n_0\ : STD_LOGIC;
   signal \msg[8]_i_15_n_0\ : STD_LOGIC;
   signal \msg[8]_i_16_n_0\ : STD_LOGIC;
   signal \msg[8]_i_17_n_0\ : STD_LOGIC;
+  signal \msg[8]_i_18_n_0\ : STD_LOGIC;
   signal \msg[8]_i_1_n_0\ : STD_LOGIC;
   signal \msg[8]_i_2_n_0\ : STD_LOGIC;
   signal \msg[8]_i_31_n_0\ : STD_LOGIC;
@@ -27589,8 +27861,8 @@ architecture STRUCTURE of design_1_tdc_0_1_trig_arbiter is
   signal \msg[8]_i_38_n_0\ : STD_LOGIC;
   signal \msg[8]_i_39_n_0\ : STD_LOGIC;
   signal \msg[8]_i_3_n_0\ : STD_LOGIC;
-  signal \msg[8]_i_41_n_0\ : STD_LOGIC;
   signal \msg[8]_i_42_n_0\ : STD_LOGIC;
+  signal \msg[8]_i_43_n_0\ : STD_LOGIC;
   signal \msg[8]_i_45_n_0\ : STD_LOGIC;
   signal \msg[8]_i_46_n_0\ : STD_LOGIC;
   signal \msg[8]_i_47_n_0\ : STD_LOGIC;
@@ -27628,18 +27900,17 @@ architecture STRUCTURE of design_1_tdc_0_1_trig_arbiter is
   signal \msg[8]_i_86_n_0\ : STD_LOGIC;
   signal \msg[8]_i_87_n_0\ : STD_LOGIC;
   signal \msg[8]_i_90_n_0\ : STD_LOGIC;
-  signal \msg[8]_i_91_n_0\ : STD_LOGIC;
   signal \msg[8]_i_92_n_0\ : STD_LOGIC;
   signal \msg[8]_i_93_n_0\ : STD_LOGIC;
-  signal \msg[8]_i_94_n_0\ : STD_LOGIC;
-  signal \msg[8]_i_95_n_0\ : STD_LOGIC;
   signal \msg[8]_i_96_n_0\ : STD_LOGIC;
   signal \msg[8]_i_97_n_0\ : STD_LOGIC;
+  signal \msg[8]_i_98_n_0\ : STD_LOGIC;
+  signal \msg[8]_i_99_n_0\ : STD_LOGIC;
   signal \^msg_reg[8]_0\ : STD_LOGIC;
   signal \^msg_reg[8]_10\ : STD_LOGIC;
   signal \^msg_reg[8]_11\ : STD_LOGIC;
   signal \^msg_reg[8]_12\ : STD_LOGIC;
-  signal \^msg_reg[8]_13\ : STD_LOGIC;
+  signal \^msg_reg[8]_15\ : STD_LOGIC;
   signal \^msg_reg[8]_2\ : STD_LOGIC;
   signal \^msg_reg[8]_3\ : STD_LOGIC;
   signal \^msg_reg[8]_5\ : STD_LOGIC;
@@ -27755,9 +28026,9 @@ architecture STRUCTURE of design_1_tdc_0_1_trig_arbiter is
   signal \msgcntr_reg_n_0_[2]\ : STD_LOGIC;
   signal \msgcntr_reg_n_0_[3]\ : STD_LOGIC;
   signal occupied_data_spaces : STD_LOGIC_VECTOR ( 6 downto 0 );
-  signal old_is_data_mode : STD_LOGIC;
+  signal \^old_is_data_mode\ : STD_LOGIC;
   signal p_0_in : STD_LOGIC_VECTOR ( 10 downto 0 );
-  signal p_0_in_1 : STD_LOGIC_VECTOR ( 2 to 2 );
+  signal p_0_in_0 : STD_LOGIC_VECTOR ( 2 to 2 );
   signal p_1_in : STD_LOGIC;
   signal \p_1_out_carry__0_i_1_n_0\ : STD_LOGIC;
   signal \p_1_out_carry__0_i_2_n_0\ : STD_LOGIC;
@@ -28010,58 +28281,53 @@ architecture STRUCTURE of design_1_tdc_0_1_trig_arbiter is
   signal \NLW_panic1_inferred__0/i__carry__2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_panics_tracker_reg[28]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \derandomizer_rejects_tracker[0]_i_3\ : label is "soft_lutpair152";
-  attribute SOFT_HLUTNM of \events_received_helper[2]_i_2\ : label is "soft_lutpair162";
-  attribute SOFT_HLUTNM of \expecting_l1a[10]_i_6\ : label is "soft_lutpair157";
-  attribute SOFT_HLUTNM of \expecting_l1a[10]_i_9\ : label is "soft_lutpair159";
-  attribute SOFT_HLUTNM of \expecting_l1a[2]_i_1\ : label is "soft_lutpair159";
-  attribute SOFT_HLUTNM of \expecting_l1a[3]_i_1\ : label is "soft_lutpair153";
-  attribute SOFT_HLUTNM of \expecting_l1a[5]_i_2\ : label is "soft_lutpair153";
-  attribute SOFT_HLUTNM of \l1as_sent[0]_i_4\ : label is "soft_lutpair149";
-  attribute SOFT_HLUTNM of \msg[1]_i_1\ : label is "soft_lutpair154";
-  attribute SOFT_HLUTNM of \msg[3]_i_1\ : label is "soft_lutpair161";
-  attribute SOFT_HLUTNM of \msg[4]_i_1\ : label is "soft_lutpair161";
-  attribute SOFT_HLUTNM of \msg[5]_i_1\ : label is "soft_lutpair155";
-  attribute SOFT_HLUTNM of \msg[7]_i_1\ : label is "soft_lutpair154";
-  attribute SOFT_HLUTNM of \msg[8]_i_13\ : label is "soft_lutpair146";
+  attribute SOFT_HLUTNM of \derandomizer_rejects_tracker[0]_i_3\ : label is "soft_lutpair153";
+  attribute SOFT_HLUTNM of \expecting_l1a[10]_i_6\ : label is "soft_lutpair159";
+  attribute SOFT_HLUTNM of \expecting_l1a[10]_i_9\ : label is "soft_lutpair161";
+  attribute SOFT_HLUTNM of \expecting_l1a[2]_i_1\ : label is "soft_lutpair161";
+  attribute SOFT_HLUTNM of \expecting_l1a[3]_i_1\ : label is "soft_lutpair158";
+  attribute SOFT_HLUTNM of \expecting_l1a[5]_i_2\ : label is "soft_lutpair158";
+  attribute SOFT_HLUTNM of \l1as_sent[0]_i_4\ : label is "soft_lutpair152";
+  attribute SOFT_HLUTNM of \msg[1]_i_1\ : label is "soft_lutpair155";
+  attribute SOFT_HLUTNM of \msg[3]_i_1\ : label is "soft_lutpair162";
+  attribute SOFT_HLUTNM of \msg[4]_i_1\ : label is "soft_lutpair162";
+  attribute SOFT_HLUTNM of \msg[6]_i_1\ : label is "soft_lutpair155";
+  attribute SOFT_HLUTNM of \msg[7]_i_1\ : label is "soft_lutpair156";
+  attribute SOFT_HLUTNM of \msg[8]_i_100\ : label is "soft_lutpair164";
+  attribute SOFT_HLUTNM of \msg[8]_i_13\ : label is "soft_lutpair151";
   attribute SOFT_HLUTNM of \msg[8]_i_14\ : label is "soft_lutpair151";
-  attribute SOFT_HLUTNM of \msg[8]_i_15\ : label is "soft_lutpair156";
-  attribute SOFT_HLUTNM of \msg[8]_i_18\ : label is "soft_lutpair146";
-  attribute SOFT_HLUTNM of \msg[8]_i_2\ : label is "soft_lutpair162";
-  attribute SOFT_HLUTNM of \msg[8]_i_26\ : label is "soft_lutpair160";
-  attribute SOFT_HLUTNM of \msg[8]_i_27\ : label is "soft_lutpair160";
-  attribute SOFT_HLUTNM of \msg[8]_i_3\ : label is "soft_lutpair158";
-  attribute SOFT_HLUTNM of \msg[8]_i_41\ : label is "soft_lutpair150";
+  attribute SOFT_HLUTNM of \msg[8]_i_17\ : label is "soft_lutpair154";
+  attribute SOFT_HLUTNM of \msg[8]_i_18\ : label is "soft_lutpair150";
+  attribute SOFT_HLUTNM of \msg[8]_i_27\ : label is "soft_lutpair163";
+  attribute SOFT_HLUTNM of \msg[8]_i_28\ : label is "soft_lutpair163";
+  attribute SOFT_HLUTNM of \msg[8]_i_3\ : label is "soft_lutpair160";
   attribute SOFT_HLUTNM of \msg[8]_i_42\ : label is "soft_lutpair148";
-  attribute SOFT_HLUTNM of \msg[8]_i_45\ : label is "soft_lutpair150";
-  attribute SOFT_HLUTNM of \msg[8]_i_46\ : label is "soft_lutpair166";
-  attribute SOFT_HLUTNM of \msg[8]_i_48\ : label is "soft_lutpair163";
-  attribute SOFT_HLUTNM of \msg[8]_i_50\ : label is "soft_lutpair156";
-  attribute SOFT_HLUTNM of \msg[8]_i_51\ : label is "soft_lutpair151";
-  attribute SOFT_HLUTNM of \msg[8]_i_6\ : label is "soft_lutpair155";
-  attribute SOFT_HLUTNM of \msg[8]_i_89\ : label is "soft_lutpair148";
-  attribute SOFT_HLUTNM of \msg[8]_i_91\ : label is "soft_lutpair166";
-  attribute SOFT_HLUTNM of \msg[8]_i_92\ : label is "soft_lutpair164";
+  attribute SOFT_HLUTNM of \msg[8]_i_43\ : label is "soft_lutpair157";
+  attribute SOFT_HLUTNM of \msg[8]_i_46\ : label is "soft_lutpair154";
+  attribute SOFT_HLUTNM of \msg[8]_i_47\ : label is "soft_lutpair150";
+  attribute SOFT_HLUTNM of \msg[8]_i_48\ : label is "soft_lutpair165";
+  attribute SOFT_HLUTNM of \msg[8]_i_49\ : label is "soft_lutpair157";
+  attribute SOFT_HLUTNM of \msg[8]_i_6\ : label is "soft_lutpair156";
+  attribute SOFT_HLUTNM of \msg[8]_i_89\ : label is "soft_lutpair164";
   attribute SOFT_HLUTNM of \msg[8]_i_93\ : label is "soft_lutpair165";
-  attribute SOFT_HLUTNM of \msg[8]_i_94\ : label is "soft_lutpair163";
-  attribute SOFT_HLUTNM of \msg[8]_i_95\ : label is "soft_lutpair164";
-  attribute SOFT_HLUTNM of \msg[8]_i_97\ : label is "soft_lutpair165";
-  attribute SOFT_HLUTNM of \msgcntr[0]_i_1\ : label is "soft_lutpair158";
-  attribute SOFT_HLUTNM of \msgcntr[1]_i_1\ : label is "soft_lutpair149";
-  attribute SOFT_HLUTNM of \msgcntr[2]_i_1\ : label is "soft_lutpair147";
-  attribute SOFT_HLUTNM of \msgcntr[3]_i_3\ : label is "soft_lutpair147";
-  attribute SOFT_HLUTNM of panic_i_2 : label is "soft_lutpair157";
-  attribute SOFT_HLUTNM of should_send_soft_rst_i_1 : label is "soft_lutpair152";
+  attribute SOFT_HLUTNM of \msg[8]_i_95\ : label is "soft_lutpair148";
+  attribute SOFT_HLUTNM of \msgcntr[0]_i_1\ : label is "soft_lutpair160";
+  attribute SOFT_HLUTNM of \msgcntr[1]_i_1\ : label is "soft_lutpair152";
+  attribute SOFT_HLUTNM of \msgcntr[2]_i_1\ : label is "soft_lutpair149";
+  attribute SOFT_HLUTNM of \msgcntr[3]_i_3\ : label is "soft_lutpair149";
+  attribute SOFT_HLUTNM of panic_i_2 : label is "soft_lutpair159";
+  attribute SOFT_HLUTNM of should_send_soft_rst_i_1 : label is "soft_lutpair153";
 begin
   CO(0) <= \^co\(0);
   buffer_rejects_tracker(31 downto 0) <= \^buffer_rejects_tracker\(31 downto 0);
   derandomizer_rejects_tracker(31 downto 0) <= \^derandomizer_rejects_tracker\(31 downto 0);
+  eventid(31 downto 0) <= \^eventid\(31 downto 0);
   l1as_outstanding(31 downto 0) <= \^l1as_outstanding\(31 downto 0);
   \msg_reg[8]_0\ <= \^msg_reg[8]_0\;
   \msg_reg[8]_10\ <= \^msg_reg[8]_10\;
   \msg_reg[8]_11\ <= \^msg_reg[8]_11\;
   \msg_reg[8]_12\ <= \^msg_reg[8]_12\;
-  \msg_reg[8]_13\ <= \^msg_reg[8]_13\;
+  \msg_reg[8]_15\ <= \^msg_reg[8]_15\;
   \msg_reg[8]_2\ <= \^msg_reg[8]_2\;
   \msg_reg[8]_3\ <= \^msg_reg[8]_3\;
   \msg_reg[8]_5\ <= \^msg_reg[8]_5\;
@@ -28069,6 +28335,7 @@ begin
   \msg_reg[8]_7\ <= \^msg_reg[8]_7\;
   \msg_reg[8]_8\ <= \^msg_reg[8]_8\;
   \msg_reg[8]_9\ <= \^msg_reg[8]_9\;
+  old_is_data_mode <= \^old_is_data_mode\;
   panics_tracker(31 downto 0) <= \^panics_tracker\(31 downto 0);
 \axi_rdata[27]_i_15\: unisim.vcomponents.LUT2
     generic map(
@@ -28121,182 +28388,6 @@ begin
       S(1) => \axi_rdata[27]_i_17_n_0\,
       S(0) => \axi_rdata[27]_i_18_n_0\
     );
-\bramwrdata[0]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(16),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(0),
-      O => \bramwrdata_reg[0]\
-    );
-\bramwrdata[10]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(26),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(10),
-      O => \bramwrdata_reg[10]\
-    );
-\bramwrdata[11]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(27),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(11),
-      O => \bramwrdata_reg[11]\
-    );
-\bramwrdata[12]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(28),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(12),
-      O => \bramwrdata_reg[12]\
-    );
-\bramwrdata[13]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(29),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(13),
-      O => \bramwrdata_reg[13]\
-    );
-\bramwrdata[14]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(30),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(14),
-      O => \bramwrdata_reg[14]\
-    );
-\bramwrdata[15]_i_3\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(31),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(15),
-      O => \bramwrdata_reg[15]\
-    );
-\bramwrdata[1]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(17),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(1),
-      O => \bramwrdata_reg[1]\
-    );
-\bramwrdata[2]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(18),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(2),
-      O => \bramwrdata_reg[2]\
-    );
-\bramwrdata[3]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(19),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(3),
-      O => \bramwrdata_reg[3]\
-    );
-\bramwrdata[4]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(20),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(4),
-      O => \bramwrdata_reg[4]\
-    );
-\bramwrdata[5]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(21),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(5),
-      O => \bramwrdata_reg[5]\
-    );
-\bramwrdata[6]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(22),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(6),
-      O => \bramwrdata_reg[6]\
-    );
-\bramwrdata[7]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(23),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(7),
-      O => \bramwrdata_reg[7]\
-    );
-\bramwrdata[8]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(24),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(8),
-      O => \bramwrdata_reg[8]\
-    );
-\bramwrdata[9]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"3808"
-    )
-        port map (
-      I0 => eventid(25),
-      I1 => Q(0),
-      I2 => Q(1),
-      I3 => eventid(9),
-      O => \bramwrdata_reg[9]\
-    );
 \buffer_rejects_tracker[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000001000000000"
@@ -28305,7 +28396,7 @@ begin
       I0 => \slv_reg0_reg[30]\,
       I1 => should_send_soft_rst_reg_n_0,
       I2 => \^co\(0),
-      I3 => \events_received_helper[2]_i_2_n_0\,
+      I3 => \slv_reg0_reg[31]\,
       I4 => panic_reg_n_0,
       I5 => \msg[8]_i_3_n_0\,
       O => \buffer_rejects_tracker[0]_i_1_n_0\
@@ -28810,8 +28901,8 @@ begin
     )
         port map (
       I0 => panic_reg_n_0,
-      I1 => old_is_data_mode,
-      I2 => is_data_mode_0,
+      I1 => \^old_is_data_mode\,
+      I2 => Q(0),
       O => \derandomizer_rejects_tracker[0]_i_3_n_0\
     );
 \derandomizer_rejects_tracker[0]_i_4\: unisim.vcomponents.LUT1
@@ -29304,8 +29395,8 @@ begin
       I1 => \events_received_helper_reg_n_0_[2]\,
       I2 => \events_received_helper_reg_n_0_[1]\,
       I3 => \events_received_helper_reg_n_0_[0]\,
-      I4 => is_data_mode_0,
-      I5 => old_is_data_mode,
+      I4 => Q(0),
+      I5 => \^old_is_data_mode\,
       O => events_received
     );
 \events_received[0]_i_3\: unisim.vcomponents.LUT1
@@ -29313,7 +29404,7 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => eventid(0),
+      I0 => \^eventid\(0),
       O => \events_received[0]_i_3_n_0\
     );
 \events_received_helper[0]_i_1\: unisim.vcomponents.LUT6
@@ -29321,7 +29412,7 @@ begin
       INIT => X"FFFFFFFF9999CC8C"
     )
         port map (
-      I0 => \events_received_helper[2]_i_2_n_0\,
+      I0 => \slv_reg0_reg[31]\,
       I1 => \events_received_helper_reg_n_0_[0]\,
       I2 => \events_received_helper_reg_n_0_[1]\,
       I3 => \events_received_helper_reg_n_0_[2]\,
@@ -29334,7 +29425,7 @@ begin
       INIT => X"FFFFFFFFB4B4F0B0"
     )
         port map (
-      I0 => \events_received_helper[2]_i_2_n_0\,
+      I0 => \slv_reg0_reg[31]\,
       I1 => \events_received_helper_reg_n_0_[0]\,
       I2 => \events_received_helper_reg_n_0_[1]\,
       I3 => \events_received_helper_reg_n_0_[2]\,
@@ -29347,22 +29438,13 @@ begin
       INIT => X"FFFFFFFFBF40FF00"
     )
         port map (
-      I0 => \events_received_helper[2]_i_2_n_0\,
+      I0 => \slv_reg0_reg[31]\,
       I1 => \events_received_helper_reg_n_0_[0]\,
       I2 => \events_received_helper_reg_n_0_[1]\,
       I3 => \events_received_helper_reg_n_0_[2]\,
       I4 => l1a_seen,
       I5 => \expecting_l1a[10]_i_1_n_0\,
       O => \events_received_helper[2]_i_1_n_0\
-    );
-\events_received_helper[2]_i_2\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => is_data_mode_0,
-      I1 => old_is_data_mode,
-      O => \events_received_helper[2]_i_2_n_0\
     );
 \events_received_helper_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -29405,7 +29487,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[0]_i_2_n_7\,
-      Q => eventid(0),
+      Q => \^eventid\(0),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[0]_i_2\: unisim.vcomponents.CARRY4
@@ -29421,7 +29503,7 @@ begin
       O(2) => \events_received_reg[0]_i_2_n_5\,
       O(1) => \events_received_reg[0]_i_2_n_6\,
       O(0) => \events_received_reg[0]_i_2_n_7\,
-      S(3 downto 1) => eventid(3 downto 1),
+      S(3 downto 1) => \^eventid\(3 downto 1),
       S(0) => \events_received[0]_i_3_n_0\
     );
 \events_received_reg[10]\: unisim.vcomponents.FDRE
@@ -29432,7 +29514,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[8]_i_1_n_5\,
-      Q => eventid(10),
+      Q => \^eventid\(10),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[11]\: unisim.vcomponents.FDRE
@@ -29443,7 +29525,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[8]_i_1_n_4\,
-      Q => eventid(11),
+      Q => \^eventid\(11),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[12]\: unisim.vcomponents.FDRE
@@ -29454,7 +29536,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[12]_i_1_n_7\,
-      Q => eventid(12),
+      Q => \^eventid\(12),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[12]_i_1\: unisim.vcomponents.CARRY4
@@ -29470,7 +29552,7 @@ begin
       O(2) => \events_received_reg[12]_i_1_n_5\,
       O(1) => \events_received_reg[12]_i_1_n_6\,
       O(0) => \events_received_reg[12]_i_1_n_7\,
-      S(3 downto 0) => eventid(15 downto 12)
+      S(3 downto 0) => \^eventid\(15 downto 12)
     );
 \events_received_reg[13]\: unisim.vcomponents.FDRE
     generic map(
@@ -29480,7 +29562,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[12]_i_1_n_6\,
-      Q => eventid(13),
+      Q => \^eventid\(13),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[14]\: unisim.vcomponents.FDRE
@@ -29491,7 +29573,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[12]_i_1_n_5\,
-      Q => eventid(14),
+      Q => \^eventid\(14),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[15]\: unisim.vcomponents.FDRE
@@ -29502,7 +29584,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[12]_i_1_n_4\,
-      Q => eventid(15),
+      Q => \^eventid\(15),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[16]\: unisim.vcomponents.FDRE
@@ -29513,7 +29595,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[16]_i_1_n_7\,
-      Q => eventid(16),
+      Q => \^eventid\(16),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[16]_i_1\: unisim.vcomponents.CARRY4
@@ -29529,7 +29611,7 @@ begin
       O(2) => \events_received_reg[16]_i_1_n_5\,
       O(1) => \events_received_reg[16]_i_1_n_6\,
       O(0) => \events_received_reg[16]_i_1_n_7\,
-      S(3 downto 0) => eventid(19 downto 16)
+      S(3 downto 0) => \^eventid\(19 downto 16)
     );
 \events_received_reg[17]\: unisim.vcomponents.FDRE
     generic map(
@@ -29539,7 +29621,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[16]_i_1_n_6\,
-      Q => eventid(17),
+      Q => \^eventid\(17),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[18]\: unisim.vcomponents.FDRE
@@ -29550,7 +29632,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[16]_i_1_n_5\,
-      Q => eventid(18),
+      Q => \^eventid\(18),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[19]\: unisim.vcomponents.FDRE
@@ -29561,7 +29643,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[16]_i_1_n_4\,
-      Q => eventid(19),
+      Q => \^eventid\(19),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[1]\: unisim.vcomponents.FDRE
@@ -29572,7 +29654,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[0]_i_2_n_6\,
-      Q => eventid(1),
+      Q => \^eventid\(1),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[20]\: unisim.vcomponents.FDRE
@@ -29583,7 +29665,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[20]_i_1_n_7\,
-      Q => eventid(20),
+      Q => \^eventid\(20),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[20]_i_1\: unisim.vcomponents.CARRY4
@@ -29599,7 +29681,7 @@ begin
       O(2) => \events_received_reg[20]_i_1_n_5\,
       O(1) => \events_received_reg[20]_i_1_n_6\,
       O(0) => \events_received_reg[20]_i_1_n_7\,
-      S(3 downto 0) => eventid(23 downto 20)
+      S(3 downto 0) => \^eventid\(23 downto 20)
     );
 \events_received_reg[21]\: unisim.vcomponents.FDRE
     generic map(
@@ -29609,7 +29691,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[20]_i_1_n_6\,
-      Q => eventid(21),
+      Q => \^eventid\(21),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[22]\: unisim.vcomponents.FDRE
@@ -29620,7 +29702,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[20]_i_1_n_5\,
-      Q => eventid(22),
+      Q => \^eventid\(22),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[23]\: unisim.vcomponents.FDRE
@@ -29631,7 +29713,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[20]_i_1_n_4\,
-      Q => eventid(23),
+      Q => \^eventid\(23),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[24]\: unisim.vcomponents.FDRE
@@ -29642,7 +29724,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[24]_i_1_n_7\,
-      Q => eventid(24),
+      Q => \^eventid\(24),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[24]_i_1\: unisim.vcomponents.CARRY4
@@ -29658,7 +29740,7 @@ begin
       O(2) => \events_received_reg[24]_i_1_n_5\,
       O(1) => \events_received_reg[24]_i_1_n_6\,
       O(0) => \events_received_reg[24]_i_1_n_7\,
-      S(3 downto 0) => eventid(27 downto 24)
+      S(3 downto 0) => \^eventid\(27 downto 24)
     );
 \events_received_reg[25]\: unisim.vcomponents.FDRE
     generic map(
@@ -29668,7 +29750,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[24]_i_1_n_6\,
-      Q => eventid(25),
+      Q => \^eventid\(25),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[26]\: unisim.vcomponents.FDRE
@@ -29679,7 +29761,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[24]_i_1_n_5\,
-      Q => eventid(26),
+      Q => \^eventid\(26),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[27]\: unisim.vcomponents.FDRE
@@ -29690,7 +29772,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[24]_i_1_n_4\,
-      Q => eventid(27),
+      Q => \^eventid\(27),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[28]\: unisim.vcomponents.FDRE
@@ -29701,7 +29783,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[28]_i_1_n_7\,
-      Q => eventid(28),
+      Q => \^eventid\(28),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[28]_i_1\: unisim.vcomponents.CARRY4
@@ -29717,7 +29799,7 @@ begin
       O(2) => \events_received_reg[28]_i_1_n_5\,
       O(1) => \events_received_reg[28]_i_1_n_6\,
       O(0) => \events_received_reg[28]_i_1_n_7\,
-      S(3 downto 0) => eventid(31 downto 28)
+      S(3 downto 0) => \^eventid\(31 downto 28)
     );
 \events_received_reg[29]\: unisim.vcomponents.FDRE
     generic map(
@@ -29727,7 +29809,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[28]_i_1_n_6\,
-      Q => eventid(29),
+      Q => \^eventid\(29),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[2]\: unisim.vcomponents.FDRE
@@ -29738,7 +29820,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[0]_i_2_n_5\,
-      Q => eventid(2),
+      Q => \^eventid\(2),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[30]\: unisim.vcomponents.FDRE
@@ -29749,7 +29831,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[28]_i_1_n_5\,
-      Q => eventid(30),
+      Q => \^eventid\(30),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[31]\: unisim.vcomponents.FDRE
@@ -29760,7 +29842,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[28]_i_1_n_4\,
-      Q => eventid(31),
+      Q => \^eventid\(31),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[3]\: unisim.vcomponents.FDRE
@@ -29771,7 +29853,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[0]_i_2_n_4\,
-      Q => eventid(3),
+      Q => \^eventid\(3),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[4]\: unisim.vcomponents.FDRE
@@ -29782,7 +29864,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[4]_i_1_n_7\,
-      Q => eventid(4),
+      Q => \^eventid\(4),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[4]_i_1\: unisim.vcomponents.CARRY4
@@ -29798,7 +29880,7 @@ begin
       O(2) => \events_received_reg[4]_i_1_n_5\,
       O(1) => \events_received_reg[4]_i_1_n_6\,
       O(0) => \events_received_reg[4]_i_1_n_7\,
-      S(3 downto 0) => eventid(7 downto 4)
+      S(3 downto 0) => \^eventid\(7 downto 4)
     );
 \events_received_reg[5]\: unisim.vcomponents.FDRE
     generic map(
@@ -29808,7 +29890,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[4]_i_1_n_6\,
-      Q => eventid(5),
+      Q => \^eventid\(5),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[6]\: unisim.vcomponents.FDRE
@@ -29819,7 +29901,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[4]_i_1_n_5\,
-      Q => eventid(6),
+      Q => \^eventid\(6),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[7]\: unisim.vcomponents.FDRE
@@ -29830,7 +29912,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[4]_i_1_n_4\,
-      Q => eventid(7),
+      Q => \^eventid\(7),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[8]\: unisim.vcomponents.FDRE
@@ -29841,7 +29923,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[8]_i_1_n_7\,
-      Q => eventid(8),
+      Q => \^eventid\(8),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \events_received_reg[8]_i_1\: unisim.vcomponents.CARRY4
@@ -29857,7 +29939,7 @@ begin
       O(2) => \events_received_reg[8]_i_1_n_5\,
       O(1) => \events_received_reg[8]_i_1_n_6\,
       O(0) => \events_received_reg[8]_i_1_n_7\,
-      S(3 downto 0) => eventid(11 downto 8)
+      S(3 downto 0) => \^eventid\(11 downto 8)
     );
 \events_received_reg[9]\: unisim.vcomponents.FDRE
     generic map(
@@ -29867,7 +29949,7 @@ begin
       C => clk40,
       CE => events_received,
       D => \events_received_reg[8]_i_1_n_6\,
-      Q => eventid(9),
+      Q => \^eventid\(9),
       R => \l1as_sent[0]_i_1_n_0\
     );
 \expecting_l1a[0]_i_1\: unisim.vcomponents.LUT6
@@ -29888,8 +29970,8 @@ begin
       INIT => X"E2"
     )
         port map (
-      I0 => is_data_mode_0,
-      I1 => old_is_data_mode,
+      I0 => Q(0),
+      I1 => \^old_is_data_mode\,
       I2 => panic_reg_n_0,
       O => \expecting_l1a[10]_i_1_n_0\
     );
@@ -29909,7 +29991,7 @@ begin
       INIT => X"5555555555554000"
     )
         port map (
-      I0 => \events_received_helper[2]_i_2_n_0\,
+      I0 => \slv_reg0_reg[31]\,
       I1 => \expecting_l1a[10]_i_4_n_0\,
       I2 => \l1as_sent[0]_i_4_n_0\,
       I3 => \slv_reg0_reg[30]_0\,
@@ -31078,7 +31160,7 @@ begin
     )
         port map (
       I0 => l1as_received_reg(2),
-      O => p_0_in_1(2)
+      O => p_0_in_0(2)
     );
 \i__carry_i_1__0\: unisim.vcomponents.LUT4
     generic map(
@@ -31205,25 +31287,14 @@ begin
       I3 => l1as_received_reg(0),
       O => \i__carry_i_8_n_0\
     );
-is_data_mode_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => clk40,
-      CE => '1',
-      D => is_data_mode,
-      Q => is_data_mode_0,
-      R => '0'
-    );
 \l1as_received[0]_i_1\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"FCA8"
     )
         port map (
       I0 => panic_reg_n_0,
-      I1 => is_data_mode_0,
-      I2 => old_is_data_mode,
+      I1 => Q(0),
+      I2 => \^old_is_data_mode\,
       I3 => l1a_seen,
       O => l1as_received
     );
@@ -32057,8 +32128,8 @@ is_data_mode_reg: unisim.vcomponents.FDRE
       INIT => X"04"
     )
         port map (
-      I0 => old_is_data_mode,
-      I1 => is_data_mode_0,
+      I0 => \^old_is_data_mode\,
+      I1 => Q(0),
       I2 => panic_reg_n_0,
       O => \l1as_sent[0]_i_1_n_0\
     );
@@ -32067,7 +32138,7 @@ is_data_mode_reg: unisim.vcomponents.FDRE
       INIT => X"0000000000100000"
     )
         port map (
-      I0 => \events_received_helper[2]_i_2_n_0\,
+      I0 => \slv_reg0_reg[31]\,
       I1 => panic_reg_n_0,
       I2 => \l1as_sent[0]_i_4_n_0\,
       I3 => \slv_reg0_reg[30]\,
@@ -32584,7 +32655,7 @@ is_data_mode_reg: unisim.vcomponents.FDRE
         port map (
       I0 => should_send_soft_rst_reg_n_0,
       I1 => \msg[8]_i_3_n_0\,
-      I2 => old_is_data_mode,
+      I2 => \^old_is_data_mode\,
       I3 => panic_reg_n_0,
       O => \msg[1]_i_1_n_0\
     );
@@ -32595,7 +32666,7 @@ is_data_mode_reg: unisim.vcomponents.FDRE
         port map (
       I0 => should_send_soft_rst_reg_n_0,
       I1 => panic_reg_n_0,
-      I2 => old_is_data_mode,
+      I2 => \^old_is_data_mode\,
       I3 => \msg[8]_i_3_n_0\,
       I4 => \msg_reg_n_0_[1]\,
       O => \msg[2]_i_1_n_0\
@@ -32607,7 +32678,7 @@ is_data_mode_reg: unisim.vcomponents.FDRE
         port map (
       I0 => \msg[8]_i_3_n_0\,
       I1 => panic_reg_n_0,
-      I2 => old_is_data_mode,
+      I2 => \^old_is_data_mode\,
       I3 => \msg_reg_n_0_[2]\,
       O => \msg[3]_i_1_n_0\
     );
@@ -32616,7 +32687,7 @@ is_data_mode_reg: unisim.vcomponents.FDRE
       INIT => X"2220"
     )
         port map (
-      I0 => old_is_data_mode,
+      I0 => \^old_is_data_mode\,
       I1 => panic_reg_n_0,
       I2 => \msg[8]_i_3_n_0\,
       I3 => \msg_reg_n_0_[3]\,
@@ -32629,7 +32700,7 @@ is_data_mode_reg: unisim.vcomponents.FDRE
         port map (
       I0 => should_send_soft_rst_reg_n_0,
       I1 => panic_reg_n_0,
-      I2 => old_is_data_mode,
+      I2 => \^old_is_data_mode\,
       I3 => \msg[8]_i_3_n_0\,
       I4 => \msg_reg_n_0_[4]\,
       O => \msg[5]_i_1_n_0\
@@ -32641,7 +32712,7 @@ is_data_mode_reg: unisim.vcomponents.FDRE
         port map (
       I0 => should_send_soft_rst_reg_n_0,
       I1 => panic_reg_n_0,
-      I2 => old_is_data_mode,
+      I2 => \^old_is_data_mode\,
       I3 => \msg_reg_n_0_[5]\,
       I4 => \msg[8]_i_3_n_0\,
       O => \msg[6]_i_1_n_0\
@@ -32653,7 +32724,7 @@ is_data_mode_reg: unisim.vcomponents.FDRE
         port map (
       I0 => should_send_soft_rst_reg_n_0,
       I1 => panic_reg_n_0,
-      I2 => old_is_data_mode,
+      I2 => \^old_is_data_mode\,
       I3 => \msg[8]_i_3_n_0\,
       I4 => \msg_reg_n_0_[6]\,
       O => \msg[7]_i_1_n_0\
@@ -32686,26 +32757,26 @@ is_data_mode_reg: unisim.vcomponents.FDRE
     );
 \msg[8]_i_100\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"69"
+      INIT => X"17"
     )
         port map (
-      I0 => comparators(22),
-      I1 => comparators(23),
-      I2 => comparators(0),
-      O => \^msg_reg[8]_12\
+      I0 => comparators(7),
+      I1 => comparators(9),
+      I2 => comparators(8),
+      O => \msg[8]_i_100_n_0\
     );
-\msg[8]_i_101\: unisim.vcomponents.LUT6
+\msg[8]_i_102\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"17E8E8E8171717E8"
+      INIT => X"5DA2A2A25D5D5DA2"
     )
         port map (
-      I0 => \^msg_reg[8]_12\,
-      I1 => \msg[8]_i_92_n_0\,
-      I2 => \msg[8]_i_91_n_0\,
-      I3 => \^msg_reg[8]_10\,
-      I4 => \msg[8]_i_94_n_0\,
-      I5 => \msg[8]_i_93_n_0\,
-      O => \msg_reg[8]_14\
+      I0 => \msg[8]_i_97_n_0\,
+      I1 => \^msg_reg[8]_12\,
+      I2 => \msg[8]_i_96_n_0\,
+      I3 => \msg[8]_i_93_n_0\,
+      I4 => \^msg_reg[8]_10\,
+      I5 => \msg[8]_i_92_n_0\,
+      O => \msg_reg[8]_13\
     );
 \msg[8]_i_11\: unisim.vcomponents.LUT6
     generic map(
@@ -32735,38 +32806,34 @@ is_data_mode_reg: unisim.vcomponents.FDRE
     );
 \msg[8]_i_13\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"BEEB2882"
+      INIT => X"2BB2B22B"
     )
         port map (
       I0 => \^msg_reg[8]_6\,
-      I1 => \msg[8]_i_41_n_0\,
+      I1 => \^msg_reg[8]_7\,
       I2 => \msg[8]_i_42_n_0\,
-      I3 => \^msg_reg[8]_7\,
+      I3 => \msg[8]_i_43_n_0\,
       I4 => \^msg_reg[8]_8\,
       O => \^msg_reg[8]_2\
     );
-\msg[8]_i_14\: unisim.vcomponents.LUT5
+\msg[8]_i_14\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"001717FF"
+      INIT => X"8E"
     )
         port map (
-      I0 => comparators(16),
-      I1 => comparators(18),
-      I2 => comparators(17),
-      I3 => \msg[8]_i_45_n_0\,
-      I4 => \msg[8]_i_46_n_0\,
-      O => \msg[8]_i_14_n_0\
+      I0 => \^msg_reg[8]_8\,
+      I1 => \msg[8]_i_42_n_0\,
+      I2 => \msg[8]_i_43_n_0\,
+      O => \^msg_reg[8]_3\
     );
-\msg[8]_i_15\: unisim.vcomponents.LUT5
+\msg[8]_i_15\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"EEE8E888"
+      INIT => X"D4"
     )
         port map (
-      I0 => \msg[8]_i_47_n_0\,
-      I1 => \msg[8]_i_48_n_0\,
-      I2 => comparators(7),
-      I3 => comparators(9),
-      I4 => comparators(8),
+      I0 => \msg[8]_i_45_n_0\,
+      I1 => \msg[8]_i_46_n_0\,
+      I2 => \msg[8]_i_47_n_0\,
       O => \msg[8]_i_15_n_0\
     );
 \msg[8]_i_16\: unisim.vcomponents.LUT6
@@ -32774,75 +32841,79 @@ is_data_mode_reg: unisim.vcomponents.FDRE
       INIT => X"E8E8E800E8000000"
     )
         port map (
-      I0 => comparators(6),
-      I1 => comparators(5),
-      I2 => comparators(4),
-      I3 => comparators(3),
-      I4 => comparators(2),
-      I5 => comparators(1),
+      I0 => comparators(3),
+      I1 => comparators(2),
+      I2 => comparators(1),
+      I3 => comparators(6),
+      I4 => comparators(5),
+      I5 => comparators(4),
       O => \msg[8]_i_16_n_0\
     );
-\msg[8]_i_17\: unisim.vcomponents.LUT3
+\msg[8]_i_17\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"D4"
+      INIT => X"EEE8E888"
     )
         port map (
-      I0 => \msg[8]_i_49_n_0\,
-      I1 => \msg[8]_i_50_n_0\,
-      I2 => \msg[8]_i_51_n_0\,
+      I0 => \msg[8]_i_48_n_0\,
+      I1 => \msg[8]_i_49_n_0\,
+      I2 => comparators(7),
+      I3 => comparators(9),
+      I4 => comparators(8),
       O => \msg[8]_i_17_n_0\
     );
-\msg[8]_i_18\: unisim.vcomponents.LUT3
+\msg[8]_i_18\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"8E"
+      INIT => X"001717FF"
     )
         port map (
-      I0 => \msg[8]_i_41_n_0\,
-      I1 => \^msg_reg[8]_7\,
-      I2 => \msg[8]_i_42_n_0\,
-      O => \^msg_reg[8]_3\
+      I0 => comparators(16),
+      I1 => comparators(18),
+      I2 => comparators(17),
+      I3 => \msg[8]_i_50_n_0\,
+      I4 => \msg[8]_i_51_n_0\,
+      O => \msg[8]_i_18_n_0\
     );
 \msg[8]_i_2\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"2220"
     )
         port map (
-      I0 => old_is_data_mode,
+      I0 => \^old_is_data_mode\,
       I1 => panic_reg_n_0,
       I2 => \msg[8]_i_3_n_0\,
       I3 => \msg_reg_n_0_[7]\,
       O => \msg[8]_i_2_n_0\
     );
-\msg[8]_i_25\: unisim.vcomponents.LUT3
+\msg[8]_i_26\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"E8"
+      INIT => X"17"
     )
         port map (
       I0 => \^msg_reg[8]_2\,
-      I1 => \^msg_reg[8]_5\,
-      I2 => \^msg_reg[8]_3\,
+      I1 => \^msg_reg[8]_3\,
+      I2 => \^msg_reg[8]_5\,
       O => \msg_reg[8]_4\
     );
-\msg[8]_i_26\: unisim.vcomponents.LUT4
+\msg[8]_i_27\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"0069"
     )
         port map (
-      I0 => \msg[8]_i_14_n_0\,
-      I1 => \msg[8]_i_15_n_0\,
+      I0 => \msg[8]_i_18_n_0\,
+      I1 => \msg[8]_i_17_n_0\,
       I2 => \msg[8]_i_16_n_0\,
-      I3 => \msg[8]_i_17_n_0\,
+      I3 => \msg[8]_i_15_n_0\,
       O => \msg_reg[8]_16\
     );
-\msg[8]_i_27\: unisim.vcomponents.LUT3
+\msg[8]_i_28\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"2B"
     )
         port map (
-      I0 => \msg[8]_i_14_n_0\,
+      I0 => \msg[8]_i_18_n_0\,
       I1 => \msg[8]_i_16_n_0\,
-      I2 => \msg[8]_i_15_n_0\,
-      O => \msg_reg[8]_15\
+      I2 => \msg[8]_i_17_n_0\,
+      O => \msg_reg[8]_14\
     );
 \msg[8]_i_3\: unisim.vcomponents.LUT4
     generic map(
@@ -32903,95 +32974,102 @@ is_data_mode_reg: unisim.vcomponents.FDRE
     );
 \msg[8]_i_40\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FF9696FF96000096"
+      INIT => X"96000096FF9696FF"
     )
         port map (
       I0 => comparators(6),
       I1 => comparators(5),
       I2 => comparators(4),
-      I3 => \^msg_reg[8]_13\,
+      I3 => \^msg_reg[8]_15\,
       I4 => \^msg_reg[8]_10\,
       I5 => \msg[8]_i_90_n_0\,
       O => \^msg_reg[8]_6\
     );
-\msg[8]_i_41\: unisim.vcomponents.LUT5
+\msg[8]_i_41\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"71171771"
-    )
-        port map (
-      I0 => \msg[8]_i_91_n_0\,
-      I1 => \msg[8]_i_92_n_0\,
-      I2 => comparators(22),
-      I3 => comparators(23),
-      I4 => comparators(0),
-      O => \msg[8]_i_41_n_0\
-    );
-\msg[8]_i_42\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"2BB2B22B"
-    )
-        port map (
-      I0 => \msg[8]_i_93_n_0\,
-      I1 => \msg[8]_i_94_n_0\,
-      I2 => comparators(12),
-      I3 => comparators(11),
-      I4 => comparators(10),
-      O => \msg[8]_i_42_n_0\
-    );
-\msg[8]_i_43\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"6996966996696996"
-    )
-        port map (
-      I0 => \msg[8]_i_49_n_0\,
-      I1 => \msg[8]_i_95_n_0\,
-      I2 => \msg[8]_i_96_n_0\,
-      I3 => \msg[8]_i_97_n_0\,
-      I4 => \msg[8]_i_48_n_0\,
-      I5 => \msg[8]_i_47_n_0\,
-      O => \^msg_reg[8]_7\
-    );
-\msg[8]_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"9669000000009669"
+      INIT => X"FFFF96699669FFFF"
     )
         port map (
       I0 => \^msg_reg[8]_9\,
       I1 => \^msg_reg[8]_10\,
-      I2 => \msg[8]_i_94_n_0\,
+      I2 => \msg[8]_i_92_n_0\,
       I3 => \msg[8]_i_93_n_0\,
       I4 => \^msg_reg[8]_11\,
       I5 => \^msg_reg[8]_12\,
+      O => \^msg_reg[8]_7\
+    );
+\msg[8]_i_42\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"4114FFFF"
+    )
+        port map (
+      I0 => \msg[8]_i_96_n_0\,
+      I1 => comparators(22),
+      I2 => comparators(23),
+      I3 => comparators(0),
+      I4 => \msg[8]_i_97_n_0\,
+      O => \msg[8]_i_42_n_0\
+    );
+\msg[8]_i_43\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"006969FF"
+    )
+        port map (
+      I0 => comparators(12),
+      I1 => comparators(11),
+      I2 => comparators(10),
+      I3 => \^msg_reg[8]_10\,
+      I4 => \msg[8]_i_93_n_0\,
+      O => \msg[8]_i_43_n_0\
+    );
+\msg[8]_i_44\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"6996966996696996"
+    )
+        port map (
+      I0 => \msg[8]_i_45_n_0\,
+      I1 => \msg[8]_i_98_n_0\,
+      I2 => \msg[8]_i_99_n_0\,
+      I3 => \msg[8]_i_100_n_0\,
+      I4 => \msg[8]_i_49_n_0\,
+      I5 => \msg[8]_i_48_n_0\,
       O => \^msg_reg[8]_8\
     );
-\msg[8]_i_45\: unisim.vcomponents.LUT3
+\msg[8]_i_45\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"E8"
+      INIT => X"171717E817E8E8E8"
     )
         port map (
-      I0 => comparators(0),
-      I1 => comparators(23),
-      I2 => comparators(22),
+      I0 => comparators(3),
+      I1 => comparators(2),
+      I2 => comparators(1),
+      I3 => comparators(6),
+      I4 => comparators(5),
+      I5 => comparators(4),
       O => \msg[8]_i_45_n_0\
     );
-\msg[8]_i_46\: unisim.vcomponents.LUT3
+\msg[8]_i_46\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"E8"
+      INIT => X"17E8E817"
     )
         port map (
-      I0 => comparators(19),
-      I1 => comparators(20),
-      I2 => comparators(21),
+      I0 => comparators(8),
+      I1 => comparators(9),
+      I2 => comparators(7),
+      I3 => \msg[8]_i_49_n_0\,
+      I4 => \msg[8]_i_48_n_0\,
       O => \msg[8]_i_46_n_0\
     );
-\msg[8]_i_47\: unisim.vcomponents.LUT3
+\msg[8]_i_47\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"E8"
+      INIT => X"17E8E817"
     )
         port map (
-      I0 => comparators(10),
-      I1 => comparators(11),
-      I2 => comparators(12),
+      I0 => comparators(17),
+      I1 => comparators(18),
+      I2 => comparators(16),
+      I3 => \msg[8]_i_50_n_0\,
+      I4 => \msg[8]_i_51_n_0\,
       O => \msg[8]_i_47_n_0\
     );
 \msg[8]_i_48\: unisim.vcomponents.LUT3
@@ -32999,22 +33077,19 @@ is_data_mode_reg: unisim.vcomponents.FDRE
       INIT => X"E8"
     )
         port map (
-      I0 => comparators(14),
-      I1 => comparators(15),
-      I2 => comparators(13),
+      I0 => comparators(13),
+      I1 => comparators(14),
+      I2 => comparators(15),
       O => \msg[8]_i_48_n_0\
     );
-\msg[8]_i_49\: unisim.vcomponents.LUT6
+\msg[8]_i_49\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"171717E817E8E8E8"
+      INIT => X"E8"
     )
         port map (
-      I0 => comparators(6),
-      I1 => comparators(5),
-      I2 => comparators(4),
-      I3 => comparators(3),
-      I4 => comparators(2),
-      I5 => comparators(1),
+      I0 => comparators(10),
+      I1 => comparators(11),
+      I2 => comparators(12),
       O => \msg[8]_i_49_n_0\
     );
 \msg[8]_i_5\: unisim.vcomponents.LUT3
@@ -33027,28 +33102,24 @@ is_data_mode_reg: unisim.vcomponents.FDRE
       I2 => \msg[8]_i_12_n_0\,
       O => \^msg_reg[8]_0\
     );
-\msg[8]_i_50\: unisim.vcomponents.LUT5
+\msg[8]_i_50\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"17E8E817"
+      INIT => X"E8"
     )
         port map (
-      I0 => comparators(8),
-      I1 => comparators(9),
-      I2 => comparators(7),
-      I3 => \msg[8]_i_48_n_0\,
-      I4 => \msg[8]_i_47_n_0\,
+      I0 => comparators(22),
+      I1 => comparators(0),
+      I2 => comparators(23),
       O => \msg[8]_i_50_n_0\
     );
-\msg[8]_i_51\: unisim.vcomponents.LUT5
+\msg[8]_i_51\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"17E8E817"
+      INIT => X"E8"
     )
         port map (
-      I0 => comparators(17),
-      I1 => comparators(18),
-      I2 => comparators(16),
-      I3 => \msg[8]_i_45_n_0\,
-      I4 => \msg[8]_i_46_n_0\,
+      I0 => comparators(19),
+      I1 => comparators(20),
+      I2 => comparators(21),
       O => \msg[8]_i_51_n_0\
     );
 \msg[8]_i_58\: unisim.vcomponents.LUT6
@@ -33056,12 +33127,12 @@ is_data_mode_reg: unisim.vcomponents.FDRE
       INIT => X"718E8E718E71718E"
     )
         port map (
-      I0 => \msg[8]_i_51_n_0\,
-      I1 => \msg[8]_i_50_n_0\,
-      I2 => \msg[8]_i_49_n_0\,
+      I0 => \msg[8]_i_47_n_0\,
+      I1 => \msg[8]_i_46_n_0\,
+      I2 => \msg[8]_i_45_n_0\,
       I3 => \msg[8]_i_16_n_0\,
-      I4 => \msg[8]_i_15_n_0\,
-      I5 => \msg[8]_i_14_n_0\,
+      I4 => \msg[8]_i_17_n_0\,
+      I5 => \msg[8]_i_18_n_0\,
       O => \^msg_reg[8]_5\
     );
 \msg[8]_i_6\: unisim.vcomponents.LUT2
@@ -33070,7 +33141,7 @@ is_data_mode_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => panic_reg_n_0,
-      I1 => old_is_data_mode,
+      I1 => \^old_is_data_mode\,
       O => \msg[8]_i_6_n_0\
     );
 \msg[8]_i_60\: unisim.vcomponents.LUT2
@@ -33165,15 +33236,15 @@ is_data_mode_reg: unisim.vcomponents.FDRE
     );
 \msg[8]_i_7\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"4DDF044DDFFF4DDF"
+      INIT => X"71F7F7FF107171F7"
     )
         port map (
       I0 => \^msg_reg[8]_2\,
-      I1 => \msg[8]_i_14_n_0\,
+      I1 => \^msg_reg[8]_3\,
       I2 => \msg[8]_i_15_n_0\,
       I3 => \msg[8]_i_16_n_0\,
       I4 => \msg[8]_i_17_n_0\,
-      I5 => \^msg_reg[8]_3\,
+      I5 => \msg[8]_i_18_n_0\,
       O => \msg_reg[8]_1\
     );
 \msg[8]_i_70\: unisim.vcomponents.LUT2
@@ -33343,27 +33414,27 @@ is_data_mode_reg: unisim.vcomponents.FDRE
       INIT => X"9669699669969669"
     )
         port map (
-      I0 => comparators(8),
-      I1 => comparators(9),
-      I2 => comparators(7),
-      I3 => comparators(14),
-      I4 => comparators(15),
-      I5 => comparators(13),
-      O => \^msg_reg[8]_13\
+      I0 => comparators(13),
+      I1 => comparators(14),
+      I2 => comparators(15),
+      I3 => comparators(10),
+      I4 => comparators(11),
+      I5 => comparators(12),
+      O => \^msg_reg[8]_15\
     );
 \msg[8]_i_89\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"96"
     )
         port map (
-      I0 => comparators(12),
-      I1 => comparators(11),
-      I2 => comparators(10),
+      I0 => comparators(9),
+      I1 => comparators(8),
+      I2 => comparators(7),
       O => \^msg_reg[8]_10\
     );
 \msg[8]_i_90\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"96"
+      INIT => X"69"
     )
         port map (
       I0 => comparators(3),
@@ -33371,82 +33442,9 @@ is_data_mode_reg: unisim.vcomponents.FDRE
       I2 => comparators(1),
       O => \msg[8]_i_90_n_0\
     );
-\msg[8]_i_91\: unisim.vcomponents.LUT3
+\msg[8]_i_91\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"69"
-    )
-        port map (
-      I0 => comparators(21),
-      I1 => comparators(20),
-      I2 => comparators(19),
-      O => \msg[8]_i_91_n_0\
-    );
-\msg[8]_i_92\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"69"
-    )
-        port map (
-      I0 => comparators(18),
-      I1 => comparators(17),
-      I2 => comparators(16),
-      O => \msg[8]_i_92_n_0\
-    );
-\msg[8]_i_93\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"69"
-    )
-        port map (
-      I0 => comparators(7),
-      I1 => comparators(9),
-      I2 => comparators(8),
-      O => \msg[8]_i_93_n_0\
-    );
-\msg[8]_i_94\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"96"
-    )
-        port map (
-      I0 => comparators(13),
-      I1 => comparators(15),
-      I2 => comparators(14),
-      O => \msg[8]_i_94_n_0\
-    );
-\msg[8]_i_95\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"17"
-    )
-        port map (
-      I0 => comparators(16),
-      I1 => comparators(18),
-      I2 => comparators(17),
-      O => \msg[8]_i_95_n_0\
-    );
-\msg[8]_i_96\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"171717E817E8E8E8"
-    )
-        port map (
-      I0 => comparators(21),
-      I1 => comparators(20),
-      I2 => comparators(19),
-      I3 => comparators(22),
-      I4 => comparators(23),
-      I5 => comparators(0),
-      O => \msg[8]_i_96_n_0\
-    );
-\msg[8]_i_97\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"17"
-    )
-        port map (
-      I0 => comparators(7),
-      I1 => comparators(9),
-      I2 => comparators(8),
-      O => \msg[8]_i_97_n_0\
-    );
-\msg[8]_i_98\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"6996966996696996"
+      INIT => X"9669699669969669"
     )
         port map (
       I0 => comparators(4),
@@ -33457,9 +33455,52 @@ is_data_mode_reg: unisim.vcomponents.FDRE
       I5 => comparators(3),
       O => \^msg_reg[8]_9\
     );
-\msg[8]_i_99\: unisim.vcomponents.LUT6
+\msg[8]_i_92\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"69"
+    )
+        port map (
+      I0 => comparators(12),
+      I1 => comparators(11),
+      I2 => comparators(10),
+      O => \msg[8]_i_92_n_0\
+    );
+\msg[8]_i_93\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"96"
+    )
+        port map (
+      I0 => comparators(15),
+      I1 => comparators(14),
+      I2 => comparators(13),
+      O => \msg[8]_i_93_n_0\
+    );
+\msg[8]_i_94\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"6996966996696996"
+    )
+        port map (
+      I0 => comparators(18),
+      I1 => comparators(17),
+      I2 => comparators(16),
+      I3 => comparators(21),
+      I4 => comparators(20),
+      I5 => comparators(19),
+      O => \^msg_reg[8]_11\
+    );
+\msg[8]_i_95\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"96"
+    )
+        port map (
+      I0 => comparators(22),
+      I1 => comparators(23),
+      I2 => comparators(0),
+      O => \^msg_reg[8]_12\
+    );
+\msg[8]_i_96\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0069690069000069"
     )
         port map (
       I0 => comparators(19),
@@ -33468,7 +33509,43 @@ is_data_mode_reg: unisim.vcomponents.FDRE
       I3 => comparators(16),
       I4 => comparators(17),
       I5 => comparators(18),
-      O => \^msg_reg[8]_11\
+      O => \msg[8]_i_96_n_0\
+    );
+\msg[8]_i_97\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"69FFFF69FF6969FF"
+    )
+        port map (
+      I0 => comparators(19),
+      I1 => comparators(20),
+      I2 => comparators(21),
+      I3 => comparators(16),
+      I4 => comparators(17),
+      I5 => comparators(18),
+      O => \msg[8]_i_97_n_0\
+    );
+\msg[8]_i_98\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"17"
+    )
+        port map (
+      I0 => comparators(16),
+      I1 => comparators(18),
+      I2 => comparators(17),
+      O => \msg[8]_i_98_n_0\
+    );
+\msg[8]_i_99\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"171717E817E8E8E8"
+    )
+        port map (
+      I0 => comparators(21),
+      I1 => comparators(20),
+      I2 => comparators(19),
+      I3 => comparators(23),
+      I4 => comparators(0),
+      I5 => comparators(22),
+      O => \msg[8]_i_99_n_0\
     );
 \msg_reg[1]\: unisim.vcomponents.FDRE
     generic map(
@@ -33672,7 +33749,7 @@ is_data_mode_reg: unisim.vcomponents.FDRE
       CO(1) => \msgcntr2_inferred__1/i__carry_n_2\,
       CO(0) => \msgcntr2_inferred__1/i__carry_n_3\,
       CYINIT => '0',
-      DI(3) => p_0_in_1(2),
+      DI(3) => p_0_in_0(2),
       DI(2) => l1as_received_reg(2),
       DI(1 downto 0) => l1as_sent_reg(1 downto 0),
       O(3) => \msgcntr2_inferred__1/i__carry_n_4\,
@@ -33868,7 +33945,7 @@ is_data_mode_reg: unisim.vcomponents.FDRE
       INIT => X"D"
     )
         port map (
-      I0 => old_is_data_mode,
+      I0 => \^old_is_data_mode\,
       I1 => panic_reg_n_0,
       O => \msgcntr[3]_i_1_n_0\
     );
@@ -34024,8 +34101,8 @@ old_is_data_mode_reg: unisim.vcomponents.FDRE
         port map (
       C => clk40,
       CE => '1',
-      D => is_data_mode_0,
-      Q => old_is_data_mode,
+      D => Q(0),
+      Q => \^old_is_data_mode\,
       R => '0'
     );
 p_1_out_carry: unisim.vcomponents.CARRY4
@@ -35213,7 +35290,7 @@ panic_i_1: unisim.vcomponents.LUT5
       I1 => panic_reg_n_0,
       I2 => \panic1_inferred__0/i__carry__2_n_0\,
       I3 => \panic0_carry__2_n_0\,
-      I4 => old_is_data_mode,
+      I4 => \^old_is_data_mode\,
       O => panic_i_1_n_0
     );
 panic_i_2: unisim.vcomponents.LUT5
@@ -35245,8 +35322,8 @@ panic_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => panic_reg_n_0,
-      I1 => old_is_data_mode,
-      I2 => is_data_mode_0,
+      I1 => \^old_is_data_mode\,
+      I2 => Q(0),
       O => \panics_tracker[0]_i_1_n_0\
     );
 \panics_tracker[0]_i_3\: unisim.vcomponents.LUT1
@@ -35738,8 +35815,8 @@ should_send_soft_rst_i_1: unisim.vcomponents.LUT5
       I0 => should_send_soft_rst_reg_n_0,
       I1 => \msg[8]_i_3_n_0\,
       I2 => panic_reg_n_0,
-      I3 => old_is_data_mode,
-      I4 => is_data_mode_0,
+      I3 => \^old_is_data_mode\,
+      I4 => Q(0),
       O => should_send_soft_rst_i_1_n_0
     );
 should_send_soft_rst_reg: unisim.vcomponents.FDRE
@@ -35760,12 +35837,13 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_1_tdc_0_1_tdc_v1_0 is
   port (
+    \out\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
     is_data_mode : out STD_LOGIC;
+    data_mode_cmd_out : out STD_LOGIC;
     bramaddr : out STD_LOGIC_VECTOR ( 16 downto 0 );
+    bramwrdata : out STD_LOGIC_VECTOR ( 15 downto 0 );
     bramen : out STD_LOGIC;
     bramwe : out STD_LOGIC;
-    bramwrdata : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    data_mode_cmd_out : out STD_LOGIC;
     S_AXI_AWREADY : out STD_LOGIC;
     S_AXI_WREADY : out STD_LOGIC;
     S_AXI_ARREADY : out STD_LOGIC;
@@ -35776,7 +35854,7 @@ entity design_1_tdc_0_1_tdc_v1_0 is
     clk120_0 : in STD_LOGIC;
     clk120 : in STD_LOGIC;
     comparators : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    dtmroc_data_out : in STD_LOGIC_VECTOR ( 0 to 0 );
+    dtmroc_data_out : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
@@ -35801,14 +35879,19 @@ architecture STRUCTURE of design_1_tdc_0_1_tdc_v1_0 is
   signal axi_bvalid_i_1_n_0 : STD_LOGIC;
   signal axi_rvalid_i_1_n_0 : STD_LOGIC;
   signal bram_overflows_tracker : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal bramaddr_raw : STD_LOGIC_VECTOR ( 16 downto 0 );
+  signal bramen_raw : STD_LOGIC;
+  signal bramwe_raw : STD_LOGIC;
+  signal bramwrdata_raw : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal buffer_rejects_tracker : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal data_loc_tracker : STD_LOGIC_VECTOR ( 63 downto 0 );
   signal derandomizer_rejects_tracker : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal eventid : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \^is_data_mode\ : STD_LOGIC;
   signal l1a_seen : STD_LOGIC;
   signal l1as_outstanding : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal occupied_data_spaces0 : STD_LOGIC_VECTOR ( 6 downto 0 );
-  signal p_0_in : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal old_is_data_mode : STD_LOGIC;
   signal panics_tracker : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal ps_data_loc_tracker : STD_LOGIC_VECTOR ( 63 downto 0 );
   signal \^s00_axi_bvalid\ : STD_LOGIC;
@@ -35816,41 +35899,26 @@ architecture STRUCTURE of design_1_tdc_0_1_tdc_v1_0 is
   signal \slv_reg0[31]_i_1_n_0\ : STD_LOGIC;
   signal tdc_v1_0_S00_AXI_inst_n_4 : STD_LOGIC;
   signal tdc_v1_0_S00_AXI_inst_n_6 : STD_LOGIC;
-  signal tdc_v1_0_S00_AXI_inst_n_7 : STD_LOGIC;
+  signal tdc_v1_0_S00_AXI_inst_n_8 : STD_LOGIC;
+  signal tdc_v1_0_S00_AXI_inst_n_9 : STD_LOGIC;
+  signal trig_arbiter_inst_n_129 : STD_LOGIC;
   signal trig_arbiter_inst_n_130 : STD_LOGIC;
-  signal trig_arbiter_inst_n_131 : STD_LOGIC;
-  signal trig_arbiter_inst_n_132 : STD_LOGIC;
-  signal trig_arbiter_inst_n_133 : STD_LOGIC;
-  signal trig_arbiter_inst_n_134 : STD_LOGIC;
-  signal trig_arbiter_inst_n_135 : STD_LOGIC;
-  signal trig_arbiter_inst_n_136 : STD_LOGIC;
-  signal trig_arbiter_inst_n_137 : STD_LOGIC;
-  signal trig_arbiter_inst_n_138 : STD_LOGIC;
-  signal trig_arbiter_inst_n_139 : STD_LOGIC;
-  signal trig_arbiter_inst_n_140 : STD_LOGIC;
-  signal trig_arbiter_inst_n_141 : STD_LOGIC;
-  signal trig_arbiter_inst_n_142 : STD_LOGIC;
-  signal trig_arbiter_inst_n_143 : STD_LOGIC;
-  signal trig_arbiter_inst_n_144 : STD_LOGIC;
-  signal trig_arbiter_inst_n_145 : STD_LOGIC;
-  signal trig_arbiter_inst_n_146 : STD_LOGIC;
-  signal trig_arbiter_inst_n_147 : STD_LOGIC;
-  signal trig_arbiter_inst_n_148 : STD_LOGIC;
-  signal trig_arbiter_inst_n_149 : STD_LOGIC;
-  signal trig_arbiter_inst_n_150 : STD_LOGIC;
-  signal trig_arbiter_inst_n_151 : STD_LOGIC;
-  signal trig_arbiter_inst_n_152 : STD_LOGIC;
-  signal trig_arbiter_inst_n_153 : STD_LOGIC;
-  signal trig_arbiter_inst_n_154 : STD_LOGIC;
-  signal trig_arbiter_inst_n_155 : STD_LOGIC;
-  signal trig_arbiter_inst_n_156 : STD_LOGIC;
-  signal trig_arbiter_inst_n_157 : STD_LOGIC;
-  signal trig_arbiter_inst_n_158 : STD_LOGIC;
-  signal trig_arbiter_inst_n_159 : STD_LOGIC;
-  signal trig_arbiter_inst_n_160 : STD_LOGIC;
-  signal trig_arbiter_inst_n_161 : STD_LOGIC;
-  signal trig_arbiter_inst_n_96 : STD_LOGIC;
-  signal trig_arbiter_inst_n_97 : STD_LOGIC;
+  signal trig_arbiter_inst_n_163 : STD_LOGIC;
+  signal trig_arbiter_inst_n_164 : STD_LOGIC;
+  signal trig_arbiter_inst_n_165 : STD_LOGIC;
+  signal trig_arbiter_inst_n_166 : STD_LOGIC;
+  signal trig_arbiter_inst_n_167 : STD_LOGIC;
+  signal trig_arbiter_inst_n_168 : STD_LOGIC;
+  signal trig_arbiter_inst_n_169 : STD_LOGIC;
+  signal trig_arbiter_inst_n_170 : STD_LOGIC;
+  signal trig_arbiter_inst_n_171 : STD_LOGIC;
+  signal trig_arbiter_inst_n_172 : STD_LOGIC;
+  signal trig_arbiter_inst_n_173 : STD_LOGIC;
+  signal trig_arbiter_inst_n_174 : STD_LOGIC;
+  signal trig_arbiter_inst_n_175 : STD_LOGIC;
+  signal trig_arbiter_inst_n_176 : STD_LOGIC;
+  signal trig_arbiter_inst_n_177 : STD_LOGIC;
+  signal trig_arbiter_inst_n_178 : STD_LOGIC;
 begin
   S_AXI_ARREADY <= \^s_axi_arready\;
   S_AXI_AWREADY <= \^s_axi_awready\;
@@ -35895,38 +35963,408 @@ axi_rvalid_i_1: unisim.vcomponents.LUT4
       I3 => s00_axi_rready,
       O => axi_rvalid_i_1_n_0
     );
+\bramaddr_reg[0]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(0),
+      Q => bramaddr(0),
+      R => '0'
+    );
+\bramaddr_reg[10]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(10),
+      Q => bramaddr(10),
+      R => '0'
+    );
+\bramaddr_reg[11]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(11),
+      Q => bramaddr(11),
+      R => '0'
+    );
+\bramaddr_reg[12]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(12),
+      Q => bramaddr(12),
+      R => '0'
+    );
+\bramaddr_reg[13]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(13),
+      Q => bramaddr(13),
+      R => '0'
+    );
+\bramaddr_reg[14]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(14),
+      Q => bramaddr(14),
+      R => '0'
+    );
+\bramaddr_reg[15]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(15),
+      Q => bramaddr(15),
+      R => '0'
+    );
+\bramaddr_reg[16]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(16),
+      Q => bramaddr(16),
+      R => '0'
+    );
+\bramaddr_reg[1]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(1),
+      Q => bramaddr(1),
+      R => '0'
+    );
+\bramaddr_reg[2]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(2),
+      Q => bramaddr(2),
+      R => '0'
+    );
+\bramaddr_reg[3]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(3),
+      Q => bramaddr(3),
+      R => '0'
+    );
+\bramaddr_reg[4]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(4),
+      Q => bramaddr(4),
+      R => '0'
+    );
+\bramaddr_reg[5]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(5),
+      Q => bramaddr(5),
+      R => '0'
+    );
+\bramaddr_reg[6]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(6),
+      Q => bramaddr(6),
+      R => '0'
+    );
+\bramaddr_reg[7]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(7),
+      Q => bramaddr(7),
+      R => '0'
+    );
+\bramaddr_reg[8]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(8),
+      Q => bramaddr(8),
+      R => '0'
+    );
+\bramaddr_reg[9]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramaddr_raw(9),
+      Q => bramaddr(9),
+      R => '0'
+    );
+bramen_reg: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramen_raw,
+      Q => bramen,
+      R => '0'
+    );
+bramwe_reg: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwe_raw,
+      Q => bramwe,
+      R => '0'
+    );
+\bramwrdata_reg[0]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(0),
+      Q => bramwrdata(0),
+      R => '0'
+    );
+\bramwrdata_reg[10]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(10),
+      Q => bramwrdata(10),
+      R => '0'
+    );
+\bramwrdata_reg[11]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(11),
+      Q => bramwrdata(11),
+      R => '0'
+    );
+\bramwrdata_reg[12]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(12),
+      Q => bramwrdata(12),
+      R => '0'
+    );
+\bramwrdata_reg[13]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(13),
+      Q => bramwrdata(13),
+      R => '0'
+    );
+\bramwrdata_reg[14]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(14),
+      Q => bramwrdata(14),
+      R => '0'
+    );
+\bramwrdata_reg[15]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(15),
+      Q => bramwrdata(15),
+      R => '0'
+    );
+\bramwrdata_reg[1]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(1),
+      Q => bramwrdata(1),
+      R => '0'
+    );
+\bramwrdata_reg[2]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(2),
+      Q => bramwrdata(2),
+      R => '0'
+    );
+\bramwrdata_reg[3]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(3),
+      Q => bramwrdata(3),
+      R => '0'
+    );
+\bramwrdata_reg[4]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(4),
+      Q => bramwrdata(4),
+      R => '0'
+    );
+\bramwrdata_reg[5]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(5),
+      Q => bramwrdata(5),
+      R => '0'
+    );
+\bramwrdata_reg[6]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(6),
+      Q => bramwrdata(6),
+      R => '0'
+    );
+\bramwrdata_reg[7]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(7),
+      Q => bramwrdata(7),
+      R => '0'
+    );
+\bramwrdata_reg[8]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(8),
+      Q => bramwrdata(8),
+      R => '0'
+    );
+\bramwrdata_reg[9]\: unisim.vcomponents.FDRE
+    generic map(
+      IS_C_INVERTED => '1'
+    )
+        port map (
+      C => clk120,
+      CE => '1',
+      D => bramwrdata_raw(9),
+      Q => bramwrdata(9),
+      R => '0'
+    );
 data_recorder_inst: entity work.design_1_tdc_0_1_data_recorder
      port map (
-      D(6 downto 0) => occupied_data_spaces0(6 downto 0),
-      DI(0) => bramen,
-      Q(1 downto 0) => p_0_in(1 downto 0),
+      D(16 downto 0) => bramaddr_raw(16 downto 0),
+      Q(15 downto 0) => bramwrdata_raw(15 downto 0),
       bram_overflows_tracker(31 downto 0) => bram_overflows_tracker(31 downto 0),
-      bramaddr(16 downto 0) => bramaddr(16 downto 0),
-      bramwe => bramwe,
-      bramwrdata(15 downto 0) => bramwrdata(15 downto 0),
+      bramen_raw => bramen_raw,
+      bramwe_raw => bramwe_raw,
       clk120 => clk120,
       clk120_0 => clk120_0,
       clk40 => clk40,
       data_loc_tracker(63 downto 0) => data_loc_tracker(63 downto 0),
-      dtmroc_data_out(0) => dtmroc_data_out(0),
-      \events_received_reg[16]\ => trig_arbiter_inst_n_160,
-      \events_received_reg[17]\ => trig_arbiter_inst_n_159,
-      \events_received_reg[18]\ => trig_arbiter_inst_n_158,
-      \events_received_reg[19]\ => trig_arbiter_inst_n_157,
-      \events_received_reg[20]\ => trig_arbiter_inst_n_156,
-      \events_received_reg[21]\ => trig_arbiter_inst_n_155,
-      \events_received_reg[22]\ => trig_arbiter_inst_n_154,
-      \events_received_reg[23]\ => trig_arbiter_inst_n_153,
-      \events_received_reg[24]\ => trig_arbiter_inst_n_152,
-      \events_received_reg[25]\ => trig_arbiter_inst_n_151,
-      \events_received_reg[26]\ => trig_arbiter_inst_n_150,
-      \events_received_reg[27]\ => trig_arbiter_inst_n_149,
-      \events_received_reg[28]\ => trig_arbiter_inst_n_148,
-      \events_received_reg[29]\ => trig_arbiter_inst_n_147,
-      \events_received_reg[30]\ => trig_arbiter_inst_n_146,
-      \events_received_reg[31]\ => trig_arbiter_inst_n_145,
+      dtmroc_data_out(1 downto 0) => dtmroc_data_out(1 downto 0),
+      eventid(31 downto 0) => eventid(31 downto 0),
       is_data_mode => \^is_data_mode\,
       l1a_seen => l1a_seen,
+      \occupied_data_spaces_reg[6]\(6 downto 0) => occupied_data_spaces0(6 downto 0),
+      \out\(1 downto 0) => \out\(1 downto 0),
       ps_data_loc_tracker(63 downto 0) => ps_data_loc_tracker(63 downto 0)
     );
 \slv_reg0[31]_i_1\: unisim.vcomponents.LUT1
@@ -35939,7 +36377,7 @@ data_recorder_inst: entity work.design_1_tdc_0_1_data_recorder
     );
 tdc_v1_0_S00_AXI_inst: entity work.design_1_tdc_0_1_tdc_v1_0_S00_AXI
      port map (
-      CO(0) => trig_arbiter_inst_n_96,
+      CO(0) => trig_arbiter_inst_n_129,
       Q(0) => \^is_data_mode\,
       SR(0) => \slv_reg0[31]_i_1_n_0\,
       axi_arready_reg_0 => axi_rvalid_i_1_n_0,
@@ -35949,28 +36387,30 @@ tdc_v1_0_S00_AXI_inst: entity work.design_1_tdc_0_1_tdc_v1_0_S00_AXI
       bram_overflows_tracker(31 downto 0) => bram_overflows_tracker(31 downto 0),
       buffer_rejects_tracker(31 downto 0) => buffer_rejects_tracker(31 downto 0),
       comparators(23 downto 0) => comparators(23 downto 0),
-      \comparators[0]_0\ => trig_arbiter_inst_n_131,
-      \comparators[0]_1\ => trig_arbiter_inst_n_137,
-      \comparators[0]_2\ => trig_arbiter_inst_n_141,
-      \comparators[12]_0\ => trig_arbiter_inst_n_136,
-      \comparators[13]_0\ => trig_arbiter_inst_n_142,
-      comparators_0_sp_1 => trig_arbiter_inst_n_130,
-      comparators_10_sp_1 => trig_arbiter_inst_n_139,
-      comparators_12_sp_1 => trig_arbiter_inst_n_134,
-      comparators_13_sp_1 => trig_arbiter_inst_n_144,
-      comparators_14_sp_1 => trig_arbiter_inst_n_132,
-      comparators_16_sp_1 => trig_arbiter_inst_n_161,
-      comparators_18_sp_1 => trig_arbiter_inst_n_140,
-      comparators_1_sp_1 => trig_arbiter_inst_n_135,
-      comparators_21_sp_1 => trig_arbiter_inst_n_133,
-      comparators_3_sp_1 => trig_arbiter_inst_n_138,
-      comparators_8_sp_1 => trig_arbiter_inst_n_143,
+      \comparators[0]_0\ => trig_arbiter_inst_n_174,
+      \comparators[12]_0\ => trig_arbiter_inst_n_177,
+      \comparators[15]_0\ => trig_arbiter_inst_n_164,
+      \comparators[15]_1\ => trig_arbiter_inst_n_170,
+      comparators_0_sp_1 => trig_arbiter_inst_n_169,
+      comparators_10_sp_1 => trig_arbiter_inst_n_175,
+      comparators_12_sp_1 => trig_arbiter_inst_n_176,
+      comparators_13_sp_1 => trig_arbiter_inst_n_165,
+      comparators_15_sp_1 => trig_arbiter_inst_n_167,
+      comparators_16_sp_1 => trig_arbiter_inst_n_178,
+      comparators_19_sp_1 => trig_arbiter_inst_n_173,
+      comparators_1_sp_1 => trig_arbiter_inst_n_168,
+      comparators_21_sp_1 => trig_arbiter_inst_n_166,
+      comparators_3_sp_1 => trig_arbiter_inst_n_171,
+      comparators_7_sp_1 => trig_arbiter_inst_n_172,
+      comparators_8_sp_1 => trig_arbiter_inst_n_163,
       data_loc_tracker(63 downto 0) => data_loc_tracker(63 downto 0),
       derandomizer_rejects_tracker(31 downto 0) => derandomizer_rejects_tracker(31 downto 0),
-      \expecting_l1a_reg[10]\ => tdc_v1_0_S00_AXI_inst_n_6,
+      \events_received_helper_reg[2]\ => tdc_v1_0_S00_AXI_inst_n_6,
+      \expecting_l1a_reg[10]\ => tdc_v1_0_S00_AXI_inst_n_8,
       l1as_outstanding(31 downto 0) => l1as_outstanding(31 downto 0),
-      \l1as_sent_reg[7]\ => trig_arbiter_inst_n_97,
-      \msg_reg[8]\ => tdc_v1_0_S00_AXI_inst_n_7,
+      \l1as_sent_reg[7]\ => trig_arbiter_inst_n_130,
+      \msg_reg[8]\ => tdc_v1_0_S00_AXI_inst_n_9,
+      old_is_data_mode => old_is_data_mode,
       panics_tracker(31 downto 0) => panics_tracker(31 downto 0),
       ps_data_loc_tracker(63 downto 0) => ps_data_loc_tracker(63 downto 0),
       s00_axi_aclk => s00_axi_aclk,
@@ -35990,53 +36430,39 @@ tdc_v1_0_S00_AXI_inst: entity work.design_1_tdc_0_1_tdc_v1_0_S00_AXI
     );
 trig_arbiter_inst: entity work.design_1_tdc_0_1_trig_arbiter
      port map (
-      CO(0) => trig_arbiter_inst_n_96,
+      CO(0) => trig_arbiter_inst_n_129,
       D(6 downto 0) => occupied_data_spaces0(6 downto 0),
-      Q(1 downto 0) => p_0_in(1 downto 0),
-      \bramwrdata_reg[0]\ => trig_arbiter_inst_n_160,
-      \bramwrdata_reg[10]\ => trig_arbiter_inst_n_150,
-      \bramwrdata_reg[11]\ => trig_arbiter_inst_n_149,
-      \bramwrdata_reg[12]\ => trig_arbiter_inst_n_148,
-      \bramwrdata_reg[13]\ => trig_arbiter_inst_n_147,
-      \bramwrdata_reg[14]\ => trig_arbiter_inst_n_146,
-      \bramwrdata_reg[15]\ => trig_arbiter_inst_n_145,
-      \bramwrdata_reg[1]\ => trig_arbiter_inst_n_159,
-      \bramwrdata_reg[2]\ => trig_arbiter_inst_n_158,
-      \bramwrdata_reg[3]\ => trig_arbiter_inst_n_157,
-      \bramwrdata_reg[4]\ => trig_arbiter_inst_n_156,
-      \bramwrdata_reg[5]\ => trig_arbiter_inst_n_155,
-      \bramwrdata_reg[6]\ => trig_arbiter_inst_n_154,
-      \bramwrdata_reg[7]\ => trig_arbiter_inst_n_153,
-      \bramwrdata_reg[8]\ => trig_arbiter_inst_n_152,
-      \bramwrdata_reg[9]\ => trig_arbiter_inst_n_151,
+      Q(0) => \^is_data_mode\,
       buffer_rejects_tracker(31 downto 0) => buffer_rejects_tracker(31 downto 0),
       clk40 => clk40,
       comparators(23 downto 0) => comparators(23 downto 0),
       data_mode_cmd_out => data_mode_cmd_out,
       derandomizer_rejects_tracker(31 downto 0) => derandomizer_rejects_tracker(31 downto 0),
-      is_data_mode => \^is_data_mode\,
+      eventid(31 downto 0) => eventid(31 downto 0),
       l1a_seen => l1a_seen,
       l1as_outstanding(31 downto 0) => l1as_outstanding(31 downto 0),
-      \msg_reg[8]_0\ => trig_arbiter_inst_n_97,
-      \msg_reg[8]_1\ => trig_arbiter_inst_n_130,
-      \msg_reg[8]_10\ => trig_arbiter_inst_n_139,
-      \msg_reg[8]_11\ => trig_arbiter_inst_n_140,
-      \msg_reg[8]_12\ => trig_arbiter_inst_n_141,
-      \msg_reg[8]_13\ => trig_arbiter_inst_n_142,
-      \msg_reg[8]_14\ => trig_arbiter_inst_n_143,
-      \msg_reg[8]_15\ => trig_arbiter_inst_n_144,
-      \msg_reg[8]_16\ => trig_arbiter_inst_n_161,
-      \msg_reg[8]_2\ => trig_arbiter_inst_n_131,
-      \msg_reg[8]_3\ => trig_arbiter_inst_n_132,
-      \msg_reg[8]_4\ => trig_arbiter_inst_n_133,
-      \msg_reg[8]_5\ => trig_arbiter_inst_n_134,
-      \msg_reg[8]_6\ => trig_arbiter_inst_n_135,
-      \msg_reg[8]_7\ => trig_arbiter_inst_n_136,
-      \msg_reg[8]_8\ => trig_arbiter_inst_n_137,
-      \msg_reg[8]_9\ => trig_arbiter_inst_n_138,
+      \msg_reg[8]_0\ => trig_arbiter_inst_n_130,
+      \msg_reg[8]_1\ => trig_arbiter_inst_n_163,
+      \msg_reg[8]_10\ => trig_arbiter_inst_n_172,
+      \msg_reg[8]_11\ => trig_arbiter_inst_n_173,
+      \msg_reg[8]_12\ => trig_arbiter_inst_n_174,
+      \msg_reg[8]_13\ => trig_arbiter_inst_n_175,
+      \msg_reg[8]_14\ => trig_arbiter_inst_n_176,
+      \msg_reg[8]_15\ => trig_arbiter_inst_n_177,
+      \msg_reg[8]_16\ => trig_arbiter_inst_n_178,
+      \msg_reg[8]_2\ => trig_arbiter_inst_n_164,
+      \msg_reg[8]_3\ => trig_arbiter_inst_n_165,
+      \msg_reg[8]_4\ => trig_arbiter_inst_n_166,
+      \msg_reg[8]_5\ => trig_arbiter_inst_n_167,
+      \msg_reg[8]_6\ => trig_arbiter_inst_n_168,
+      \msg_reg[8]_7\ => trig_arbiter_inst_n_169,
+      \msg_reg[8]_8\ => trig_arbiter_inst_n_170,
+      \msg_reg[8]_9\ => trig_arbiter_inst_n_171,
+      old_is_data_mode => old_is_data_mode,
       panics_tracker(31 downto 0) => panics_tracker(31 downto 0),
-      \slv_reg0_reg[30]\ => tdc_v1_0_S00_AXI_inst_n_7,
-      \slv_reg0_reg[30]_0\ => tdc_v1_0_S00_AXI_inst_n_6
+      \slv_reg0_reg[30]\ => tdc_v1_0_S00_AXI_inst_n_9,
+      \slv_reg0_reg[30]_0\ => tdc_v1_0_S00_AXI_inst_n_8,
+      \slv_reg0_reg[31]\ => tdc_v1_0_S00_AXI_inst_n_6
     );
 end STRUCTURE;
 library IEEE;
@@ -36050,7 +36476,7 @@ entity design_1_tdc_0_1 is
     clk40 : in STD_LOGIC;
     clk120 : in STD_LOGIC;
     comparators : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    dtmroc_data_out : in STD_LOGIC_VECTOR ( 0 to 0 );
+    dtmroc_data_out : in STD_LOGIC_VECTOR ( 1 downto 0 );
     bramaddr : out STD_LOGIC_VECTOR ( 16 downto 0 );
     bramclk : out STD_LOGIC;
     bramwrdata : out STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -36058,6 +36484,7 @@ entity design_1_tdc_0_1 is
     bramwe : out STD_LOGIC;
     bramrst : out STD_LOGIC;
     bramrddata : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    inner_cntr : out STD_LOGIC_VECTOR ( 2 downto 0 );
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
     s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s00_axi_awvalid : in STD_LOGIC;
@@ -36092,8 +36519,9 @@ end design_1_tdc_0_1;
 
 architecture STRUCTURE of design_1_tdc_0_1 is
   signal \<const0>\ : STD_LOGIC;
-  signal \bramaddr_reg[16]_i_3_n_0\ : STD_LOGIC;
+  signal \bramaddr_reg[0]_i_3_n_0\ : STD_LOGIC;
   signal \^clk120\ : STD_LOGIC;
+  signal \^inner_cntr\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of bramclk : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_A CLK";
   attribute X_INTERFACE_INFO of bramen : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT_A EN";
@@ -36132,6 +36560,8 @@ begin
   \^clk120\ <= clk120;
   bramclk <= \^clk120\;
   bramrst <= \<const0>\;
+  inner_cntr(2) <= \<const0>\;
+  inner_cntr(1 downto 0) <= \^inner_cntr\(1 downto 0);
   s00_axi_bresp(1) <= \<const0>\;
   s00_axi_bresp(0) <= \<const0>\;
   s00_axi_rresp(1) <= \<const0>\;
@@ -36140,13 +36570,13 @@ GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
     );
-\bramaddr_reg[16]_i_3\: unisim.vcomponents.LUT1
+\bramaddr_reg[0]_i_3\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => \^clk120\,
-      O => \bramaddr_reg[16]_i_3_n_0\
+      O => \bramaddr_reg[0]_i_3_n_0\
     );
 inst: entity work.design_1_tdc_0_1_tdc_v1_0
      port map (
@@ -36158,12 +36588,13 @@ inst: entity work.design_1_tdc_0_1_tdc_v1_0
       bramwe => bramwe,
       bramwrdata(15 downto 0) => bramwrdata(15 downto 0),
       clk120 => \^clk120\,
-      clk120_0 => \bramaddr_reg[16]_i_3_n_0\,
+      clk120_0 => \bramaddr_reg[0]_i_3_n_0\,
       clk40 => clk40,
       comparators(23 downto 0) => comparators(23 downto 0),
       data_mode_cmd_out => data_mode_cmd_out,
-      dtmroc_data_out(0) => dtmroc_data_out(0),
+      dtmroc_data_out(1 downto 0) => dtmroc_data_out(1 downto 0),
       is_data_mode => is_data_mode,
+      \out\(1 downto 0) => \^inner_cntr\(1 downto 0),
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_araddr(4 downto 0) => s00_axi_araddr(6 downto 2),
       s00_axi_aresetn => s00_axi_aresetn,
