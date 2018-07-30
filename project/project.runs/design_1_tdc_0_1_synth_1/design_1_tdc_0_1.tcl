@@ -34,6 +34,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part em.avnet.com:microzed_7010:part0:1.1 [current_project]
 set_property ip_repo_paths {
+  c:/Users/HEP/Documents/universefactory/ip_repo/dips_1.0
   c:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0
   c:/Users/HEP/AppData/Roaming/Xilinx/ip_repo
   c:/Users/HEP/Documents/universefactory/ip_repo/dcd_1.0

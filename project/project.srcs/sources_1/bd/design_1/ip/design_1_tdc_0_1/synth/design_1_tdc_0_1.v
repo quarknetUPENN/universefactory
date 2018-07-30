@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:tdc:1.0
-// IP Revision: 55
+// IP Revision: 68
 
 (* X_CORE_INFO = "tdc_v1_0,Vivado 2018.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_tdc_0_1,tdc_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "design_1_tdc_0_1,tdc_v1_0,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=tdc,x_ipVersion=1.0,x_ipCoreRevision=55,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=7}" *)
+(* CORE_GENERATION_INFO = "design_1_tdc_0_1,tdc_v1_0,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=tdc,x_ipVersion=1.0,x_ipCoreRevision=68,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=7}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_tdc_0_1 (
   is_data_mode,
@@ -61,14 +61,13 @@ module design_1_tdc_0_1 (
   clk120,
   comparators,
   dtmroc_data_out,
-  bramaddr,
-  bramclk,
-  bramwrdata,
-  bramen,
-  bramwe,
-  bramrst,
-  bramrddata,
-  inner_cntr,
+  fifowrclk,
+  fifowrdata,
+  fifowren,
+  fifofull,
+  fifo_wr_data_count,
+  fifo_rst,
+  fifo_wr_rst_busy,
   s00_axi_awaddr,
   s00_axi_awprot,
   s00_axi_awvalid,
@@ -98,22 +97,18 @@ input wire clk40;
 input wire clk120;
 input wire [23 : 0] comparators;
 input wire [1 : 0] dtmroc_data_out;
-(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORT_A ADDR" *)
-output wire [16 : 0] bramaddr;
-(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORT_A CLK" *)
-output wire bramclk;
-(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORT_A DIN" *)
-output wire [15 : 0] bramwrdata;
-(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORT_A EN" *)
-output wire bramen;
-(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORT_A WE" *)
-output wire bramwe;
-(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORT_A RST" *)
-output wire bramrst;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_PORT_A, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER" *)
-(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORT_A DOUT" *)
-input wire [15 : 0] bramrddata;
-output wire [2 : 0] inner_cntr;
+output wire fifowrclk;
+(* X_INTERFACE_INFO = "xilinx.com:interface:fifo_write:1.0 FIFO_WRITE WR_DATA" *)
+output wire [15 : 0] fifowrdata;
+(* X_INTERFACE_INFO = "xilinx.com:interface:fifo_write:1.0 FIFO_WRITE WR_EN" *)
+output wire fifowren;
+(* X_INTERFACE_INFO = "xilinx.com:interface:fifo_write:1.0 FIFO_WRITE FULL" *)
+input wire fifofull;
+input wire [15 : 0] fifo_wr_data_count;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME fifo_rst, POLARITY ACTIVE_LOW" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 fifo_rst RST" *)
+output wire fifo_rst;
+input wire fifo_wr_rst_busy;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *)
 input wire [6 : 0] s00_axi_awaddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *)
@@ -171,14 +166,13 @@ input wire s00_axi_aresetn;
     .clk120(clk120),
     .comparators(comparators),
     .dtmroc_data_out(dtmroc_data_out),
-    .bramaddr(bramaddr),
-    .bramclk(bramclk),
-    .bramwrdata(bramwrdata),
-    .bramen(bramen),
-    .bramwe(bramwe),
-    .bramrst(bramrst),
-    .bramrddata(bramrddata),
-    .inner_cntr(inner_cntr),
+    .fifowrclk(fifowrclk),
+    .fifowrdata(fifowrdata),
+    .fifowren(fifowren),
+    .fifofull(fifofull),
+    .fifo_wr_data_count(fifo_wr_data_count),
+    .fifo_rst(fifo_rst),
+    .fifo_wr_rst_busy(fifo_wr_rst_busy),
     .s00_axi_awaddr(s00_axi_awaddr),
     .s00_axi_awprot(s00_axi_awprot),
     .s00_axi_awvalid(s00_axi_awvalid),

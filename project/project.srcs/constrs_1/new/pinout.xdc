@@ -73,30 +73,9 @@ set_property IOSTANDARD LVDS_25 [get_ports DTMROC_DATA_OUT_P]
 set_property IOSTANDARD LVDS_25 [get_ports DTMROC_DATA_OUT1_P]
 set_property PACKAGE_PIN Y18 [get_ports DTMROC_DATA_OUT1_P]
 
-create_pblock pblock_tdc_0
-add_cells_to_pblock [get_pblocks pblock_tdc_0] [get_cells -quiet [list design_1_i/tdc_0]]
-resize_pblock [get_pblocks pblock_tdc_0] -add {SLICE_X10Y7:SLICE_X23Y51}
-create_pblock pblock_axi_interconnect_0
-add_cells_to_pblock [get_pblocks pblock_axi_interconnect_0] [get_cells -quiet [list design_1_i/axi_interconnect_0]]
-resize_pblock [get_pblocks pblock_axi_interconnect_0] -add {SLICE_X6Y58:SLICE_X43Y65}
-create_pblock pblock_main_0
-add_cells_to_pblock [get_pblocks pblock_main_0] [get_cells -quiet [list design_1_i/main_0]]
-resize_pblock [get_pblocks pblock_main_0] -add {SLICE_X14Y52:SLICE_X41Y57}
-create_pblock pblock_blk_mem_gen_0
-add_cells_to_pblock [get_pblocks pblock_blk_mem_gen_0] [get_cells -quiet [list design_1_i/blk_mem_gen_0]]
-resize_pblock [get_pblocks pblock_blk_mem_gen_0] -add {SLICE_X26Y0:SLICE_X29Y35}
-create_pblock pblock_axi_bram_ctrl_0
-add_cells_to_pblock [get_pblocks pblock_axi_bram_ctrl_0] [get_cells -quiet [list design_1_i/axi_bram_ctrl_0]]
-resize_pblock [get_pblocks pblock_axi_bram_ctrl_0] -add {SLICE_X30Y10:SLICE_X33Y41}
-create_pblock pblock_cccd_0
-add_cells_to_pblock [get_pblocks pblock_cccd_0] [get_cells -quiet [list design_1_i/cccd_0]]
-resize_pblock [get_pblocks pblock_cccd_0] -add {SLICE_X24Y43:SLICE_X31Y51}
-create_pblock pblock_processing_system7_0
-add_cells_to_pblock [get_pblocks pblock_processing_system7_0] [get_cells -quiet [list design_1_i/processing_system7_0]]
-resize_pblock [get_pblocks pblock_processing_system7_0] -add {SLICE_X26Y40:SLICE_X27Y40}
-create_pblock pblock_proc_sys_reset_0
-add_cells_to_pblock [get_pblocks pblock_proc_sys_reset_0] [get_cells -quiet [list design_1_i/proc_sys_reset_0]]
-resize_pblock [get_pblocks pblock_proc_sys_reset_0] -add {SLICE_X26Y36:SLICE_X29Y39}
-create_pblock pblock_clk_wiz_0
-add_cells_to_pblock [get_pblocks pblock_clk_wiz_0] [get_cells -quiet [list design_1_i/clk_wiz_0]]
-resize_pblock [get_pblocks pblock_clk_wiz_0] -add {SLICE_X26Y41:SLICE_X27Y41}
+
+
+set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
+set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
+set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
+connect_debug_port dbg_hub/clk [get_nets clk]

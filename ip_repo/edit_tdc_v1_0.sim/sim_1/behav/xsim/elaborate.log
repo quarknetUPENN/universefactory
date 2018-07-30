@@ -8,7 +8,7 @@ Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.data_recorder
-Compiling module xil_defaultlib.trig_arbiter
+Compiling module xil_defaultlib.trig_arbiter(FIFO_DEPTH=51)
 Compiling module xil_defaultlib.data_trig_test
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot data_trig_test_behav

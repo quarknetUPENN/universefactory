@@ -1,0 +1,5 @@
+17:07:49 INFO  : Registering command handlers for SDK TCF services
+17:07:50 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\HEP\Documents\universefactory\temp_xsdb_launch_script.tcl
+17:07:53 INFO  : XSCT server has started successfully.
+17:07:53 INFO  : Successfully done setting XSCT server connection channel  
+17:07:54 INFO  : Successfully done setting SDK workspace  

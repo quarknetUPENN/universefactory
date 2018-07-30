@@ -17,10 +17,8 @@ proc create_report { reportName command } {
   }
 }
 set_param tcl.collectionResultDisplayLimit 0
-set_param synth.incrementalSynthesisCache C:/Users/HEP/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-6716-HEP-PC/incrSyn
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xc7z010clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -41,7 +39,6 @@ set_property ip_repo_paths {
 set_property ip_output_repo c:/Users/HEP/Documents/universefactory/ip_repo/edit_tdc_v1_0.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/dac_controller.v
   C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/data_recorder.v
   C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/hdl/tdc_v1_0_S00_AXI.v
   C:/Users/HEP/Documents/universefactory/ip_repo/tdc_1.0/src/trig_arbiter.v
